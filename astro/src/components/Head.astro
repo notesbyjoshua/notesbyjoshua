@@ -1,0 +1,14 @@
+---
+// Override of Starlight's <Head> — used purely as a universal mount point
+// (it renders on every page, splash + docs) for the animated "paper canvas"
+// background. The script self-injects a fixed full-viewport <canvas> behind the
+// page content; reduced-motion users keep the static CSS dot-grid instead.
+import Default from '@astrojs/starlight/components/Head.astro';
+---
+
+<Default><slot /></Default>
+
+<script>
+  import { mountPaperCanvas } from '../scripts/paper-canvas';
+  mountPaperCanvas();
+</script>

@@ -15,6 +15,14 @@ Most reactions we have looked at previously were **irreversible reactions**, or 
 - **Concentrations** (or for gases, **partial pressures**) remain **constant** over time (they are **not** necessarily equal to one another)
 - The system is **dynamic**: molecules still react, but there is **no net** change in amounts. This is different from a **completed** or **irreversible** reaction, where at least one reactant is effectively exhausted and the process does not establish a lasting balance between forward and reverse paths at ordinary conditions.
 
+The approach to equilibrium has a characteristic shape: starting from pure reactants, the **forward rate** is high (reactant concentrations are large) and the **reverse rate** is zero. As products build up, the forward rate falls and the reverse rate rises until the two are **equal**—from that moment on, concentrations level off and stay flat. Crucially, "equal rates" does *not* mean "equal concentrations"; the leveled-off amounts can be lopsided in either direction depending on $$K$$.
+
+<div class="placeholder-box">
+
+**Image placeholder:** Two stacked graphs sharing a time axis — (top) concentration vs. time showing reactants falling and products rising, both flattening to constant plateaus; (bottom) forward and reverse reaction rates vs. time converging to a single equal value at the moment equilibrium is reached.
+
+</div>
+
 **Homogeneous** equilibrium means all reacting species are in the same phase (e.g. all gases, or all in one solution). **Heterogeneous** equilibrium includes **pure solids** or **pure liquids** as separate phases; their activities are taken as constant and they are **omitted** from the equilibrium expression (see below).
 
 ---
@@ -107,6 +115,12 @@ A useful trick is to line up $$K$$ and $$Q$$ alphabetically (so $$K$$ on the lef
 
 The same logic applies to $$Q_p$$ and $$K_p$$ for gases.
 
+<div class="placeholder-box">
+
+**Image placeholder:** A number line with $$K$$ marked at the center — region where $$Q<K$$ on the left labeled "shifts right, toward products," region where $$Q>K$$ on the right labeled "shifts left, toward reactants," and the point $$Q=K$$ labeled "at equilibrium."
+
+</div>
+
 A **catalyst** speeds both forward and reverse rates equally, so it **does not change** $$K$$ or the equilibrium position - it only shortens the time needed to reach equilibrium.
 
 ---
@@ -192,6 +206,16 @@ Since $$K$$ depends on $$T$$, **do not** treat temperature like a simple concent
 - If a reactant is **limiting**, one species may be **consumed completely** before equilibrium in a sequential sense; still check whether the reaction can **proceed in reverse** from that state (ICE applies to the equilibrium stage you model).
 - **Small $$K$$** (product-poor): equilibrium lies left; $$x$$ may be negligible compared to initial concentrations—**verify** with the **5% rule** (or exact quadratic) when your course allows.
 - **Large $$K$$:** equilibrium lies right; sometimes you assume **complete** reaction first, then **back-react** a small amount.
+
+### The small-$$x$$ approximation and the 5% rule
+
+When $$K$$ is small, very little reactant converts, so a term like $$0.500-x$$ in the denominator is barely changed by $$x$$. Approximating $$0.500-x\approx0.500$$ turns an otherwise-quadratic (or worse) equation into one you can solve by simple algebra. The approximation is considered valid when
+
+$$
+\frac{x}{[\text{A}]_0}\times100\% \le 5\%,
+$$
+
+i.e. $$x$$ is at most $$5\%$$ of the initial concentration it was subtracted from. If the computed $$x$$ fails this test, the approximation is too rough—go back and solve the **quadratic** exactly (or iterate). As a rough guide, the approximation is usually safe when $$[\text{A}]_0/K \gtrsim 400$$.
 
 <img class="note-img note-img--w480" src="/assets/APs/AP%20Chem/equilibrium/icetable.png" alt="ICE Table" loading="lazy" decoding="async" />
 

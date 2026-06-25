@@ -53,28 +53,53 @@ export default defineConfig({
 				PageTitle: './src/components/PageTitle.astro',
 				// Add a "Report an issue with this note" link in the page footer.
 				Footer: './src/components/Footer.astro',
+				// Replace Starlight's <select> light/dark/auto picker with the
+				// animated sun/stars light↔dark toggle (handwritten theme).
+				ThemeSelect: './src/components/ThemeSelect.astro',
+				// Universal mount point for the animated paper-canvas background.
+				Head: './src/components/Head.astro',
 			},
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/notesbyjoshua' }],
 			customCss: [
 				// KaTeX stylesheet (math rendering).
 				'katex/dist/katex.min.css',
-				// Inter font + theorem boxes + note images, ported from the Jekyll site.
+				// Theorem boxes + note images + account/dashboard UI, ported from the Jekyll site.
 				'./src/styles/custom.css',
+				// Handwritten notebook theme: remaps Starlight tokens to the warm
+				// paper palette + hand-drawn fonts. Loaded LAST so it wins.
+				'./src/styles/handwritten-theme.css',
 			],
 			head: [
+				// Preload the self-hosted handwritten-theme fonts so first paint isn't
+				// stuck on the fallback. Paths are under /public/fonts.
 				{
 					tag: 'link',
-					attrs: { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
-				},
-				{
-					tag: 'link',
-					attrs: { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: true },
+					attrs: {
+						rel: 'preload',
+						href: '/fonts/saira/Saira_SemiCondensed-Regular.ttf',
+						as: 'font',
+						type: 'font/ttf',
+						crossorigin: true,
+					},
 				},
 				{
 					tag: 'link',
 					attrs: {
-						rel: 'stylesheet',
-						href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap',
+						rel: 'preload',
+						href: '/fonts/playpen-sans/PlaypenSans-VariableFont_wght.ttf',
+						as: 'font',
+						type: 'font/ttf',
+						crossorigin: true,
+					},
+				},
+				{
+					tag: 'link',
+					attrs: {
+						rel: 'preload',
+						href: '/fonts/cabin-sketch/CabinSketch-Bold.ttf',
+						as: 'font',
+						type: 'font/ttf',
+						crossorigin: true,
 					},
 				},
 				// Google Analytics (same measurement ID as the old site).

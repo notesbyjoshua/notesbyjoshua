@@ -24,6 +24,14 @@ $$
 
 the species $$\text{A}^-$$ is the **conjugate base** of $$\text{HA}$$, and $$\text{H}_3\text{O}^+$$ is the **conjugate acid** of $$\text{H}_2\text{O}$$. Every Brønsted acid has a conjugate base, and every base has a conjugate acid, differing by one $$\text{H}^+$$ in the formula and one charge unit. For AP purposes, we will generally use this theory.
 
+A key consequence is an **inverse strength relationship**: the stronger an acid, the weaker its conjugate base, and vice versa. A strong acid like $$\text{HCl}$$ ionizes almost completely precisely *because* its conjugate base $$\text{Cl}^-$$ has essentially no tendency to grab a proton back. A weak acid like $$\text{HF}$$ ionizes only slightly because its conjugate base $$\text{F}^-$$ is a reasonably good proton acceptor that pulls the equilibrium back toward the molecular form. This is the qualitative idea behind $$K_a\times K_b=K_w$$ (derived below).
+
+<div class="placeholder-box">
+
+**Image placeholder:** Conjugate acid–base pair diagram showing $$\text{HA}+\text{H}_2\text{O}\rightleftharpoons\text{H}_3\text{O}^++\text{A}^-$$ with the two conjugate pairs (HA/A$$^-$$ and H$$_2$$O/H$$_3$$O$$^+$$) bracketed and arrows indicating which way the proton is transferred.
+
+</div>
+
 ### Lewis Theory
 
 A **Lewis acid** accepts an electron pair; a **Lewis base** donates an electron pair. This picture includes reactions without proton transfer (e.g. $$\text{BF}_3$$ with $$\text{NH}_3$$) and matches how metal ions bind ligands in [Unit 7](/notes/ap/chem/equilibrium/) complex-ion formation. This is usually not covered on the AP exam.
@@ -42,7 +50,17 @@ Ionic hydroxides are named as cation + hydroxide. Molecular bases include ammoni
 
 Strong acids and strong bases are treated as complete ionization or dissociation in dilute aqueous solution for stoichiometry and pH estimates. Weak species reach equilibrium between the unionized form and ions.
 
-For binary acids $$\text{HX}$$, bond polarity and bond strength both matter: across a period, polarity toward $$\text{X}$$ can strengthen the acid; down a group, longer/weaker $$\text{H–X}$$ often dominates and acidity increases ($$\text{HF}$$ is a weak acid in water; $$\text{HCl}$$, $$\text{HBr}$$, $$\text{HI}$$ are strong). For oxoacids with the same central atom, more electronegative atoms attached to that center or a higher oxidation state generally strengthens the acid. For carboxylic acids, electron-withdrawing groups stabilize the conjugate base and increase $$K_a$$.
+The unifying principle behind every acid-strength trend is **conjugate-base stability**: anything that makes the conjugate base more stable (better able to hold the negative charge after the proton leaves) makes the acid stronger, because it pulls the ionization equilibrium toward products.
+
+For binary acids $$\text{HX}$$, bond polarity and bond strength both matter: across a period, polarity toward $$\text{X}$$ can strengthen the acid; down a group, longer/weaker $$\text{H–X}$$ often dominates and acidity increases ($$\text{HF}$$ is a weak acid in water; $$\text{HCl}$$, $$\text{HBr}$$, $$\text{HI}$$ are strong). The down-a-group trend wins because the larger halogen forms a longer, weaker bond to hydrogen that breaks more easily, and the resulting larger anion spreads its charge over more volume.
+
+For **oxoacids** with the same central atom, more electronegative atoms attached to that center or a higher oxidation state (more terminal oxygens) generally strengthens the acid: those extra electronegative oxygens pull electron density away from the O–H bond and spread out the negative charge of the conjugate base. This is why acid strength rises in the series $$\text{HClO}<\text{HClO}_2<\text{HClO}_3<\text{HClO}_4$$. For **carboxylic acids**, electron-withdrawing groups (such as the chlorines in chloroacetic acids) stabilize the conjugate base and increase $$K_a$$, while the resonance delocalization of the carboxylate anion is what makes carboxylic acids more acidic than alcohols in the first place.
+
+<div class="placeholder-box">
+
+**Image placeholder:** Two-panel acidity-trend chart — (left) binary hydrides showing acidity increasing down a group and across a period on a periodic-table snippet; (right) the $$\text{HClO}_x$$ oxoacid series with the conjugate-base charge shown delocalizing over additional oxygens as strength increases.
+
+</div>
 
 Acid-base reactions favor formation of the **weaker acid** and **weaker base**. A quick way to predict direction is to compare acid strengths: the side with the larger $$K_a$$ acid tends to react toward the side with the smaller $$K_a$$ acid. In $$\text{p}K_a$$ language, reactions tend to go from lower $$\text{p}K_a$$ acid to higher $$\text{p}K_a$$ acid.
 
@@ -197,7 +215,9 @@ $$
 
 ## Buffers
 
-A **buffer** resists pH change when modest amounts of strong acid or strong base are added. It contains a weak acid and its conjugate base in comparable amounts (or a weak base + conjugate acid). The **Henderson–Hasselbalch equation** (same assumptions as the small-change approximation from equilibrium) is
+A **buffer** resists pH change when modest amounts of strong acid or strong base are added. It contains a weak acid and its conjugate base in comparable amounts (or a weak base + conjugate acid).
+
+The reason it works is that a buffer keeps a reservoir of **both** a proton donor and a proton acceptor on hand. When a small amount of strong **acid** is added, the conjugate base $$\text{A}^-$$ neutralizes it (soaking up the added $$\text{H}_3\text{O}^+$$ to form $$\text{HA}$$); when a small amount of strong **base** is added, the weak acid $$\text{HA}$$ neutralizes it (donating a proton to form $$\text{A}^-$$). Because the strong acid or base is converted into a weak conjugate rather than left free, the pH barely moves—only the *ratio* $$[\text{A}^-]/[\text{HA}]$$ shifts slightly. The **Henderson–Hasselbalch equation** (same assumptions as the small-change approximation from equilibrium) is
 
 $$
 \text{pH} = \text{p}K_a + \log\left(\frac{[\text{A}^-]}{[\text{HA}]}\right),
@@ -252,6 +272,12 @@ For a weak acid $$\text{HA}$$ titrated with strong base:
 | After equivalence | Excess strong base | Stoichiometry for leftover $$\text{OH}^-$$ |
 
 For a weak base titrated with strong acid, swap the acid/base roles: the buffer contains $$\text{B}$$ and $$\text{BH}^+$$, the half-equivalence point gives $$\text{pOH} = \text{p}K_b$$ or $$\text{pH} = \text{p}K_a$$ for $$\text{BH}^+$$, and the equivalence point is acidic.
+
+<div class="placeholder-box">
+
+**Image placeholder:** Weak acid–strong base titration curve annotated with the five calculation regions mapped to the table above — initial weak-acid point, the buffer region, the half-equivalence point (labeled $$\text{pH}=\text{p}K_a$$), the equivalence point (labeled $$\text{pH}>7$$), and the excess-strong-base region after equivalence.
+
+</div>
 
 <img class="note-img note-img--w480" src="/assets/APs/AP%20Chem/acidbase/titrationcurve.gif" alt="Titration curves" loading="lazy" decoding="async" />
 

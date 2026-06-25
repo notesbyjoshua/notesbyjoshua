@@ -6,8 +6,14 @@
 import Default from '@astrojs/starlight/components/PageTitle.astro';
 import PracticeFilters from './PracticeFilters.astro';
 import Highlighter from './Highlighter.astro';
+import ReferenceSheetDrawer from './ReferenceSheetDrawer.astro';
+import { findReferenceSheet } from '../data/reference-sheets';
 const path = Astro.url.pathname;
 const isNote = path.startsWith('/notes/');
+// Cheatsheet drawer: show on notes in a section that has a cheatsheet, except
+// on the cheatsheet page itself.
+const sheet = isNote ? findReferenceSheet(path) : null;
+const showSheet = sheet && path !== sheet.url;
 // Subject practice pages (not the /practiceproblems/practice/ overview) get a
 // Unit / MCQ-FRQ filter bar + subject switcher.
 const isPracticeSubject = path.startsWith('/practiceproblems/') && path !== '/practiceproblems/practice/';
@@ -42,6 +48,7 @@ const editHref = isNote && filePath ? `/admin/edit?path=${encodeURIComponent(`as
         <span class="highlight-pen" aria-hidden="true">🖊</span>
         <span class="highlight-label">Highlight</span>
       </button>
+      {showSheet && <ReferenceSheetDrawer label={sheet!.label} url={sheet!.url} />}
     </div>
   )}
 </div>

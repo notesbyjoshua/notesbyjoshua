@@ -1,0 +1,208 @@
+---
+// Slide-out cheatsheet drawer for note pages (idea ported from gxboy12345's
+// fork). The matching sheet is resolved at build time in PageTitle.astro, so
+// this component only renders when there's one to show. Clicking the handle
+// fetches the already-rendered cheatsheet page, lifts out its
+// `.sl-markdown-content` (KaTeX + theorem boxes already baked in; the styles
+// are global), and shows it in a <dialog> without leaving the current note.
+interface Props {
+	label: string;
+	url: string;
+}
+const { label, url } = Astro.props;
+---
+
+<button
+	type="button"
+	class="cheatsheet-btn"
+	data-cheatsheet-open
+	data-url={url}
+	data-label={label}
+>
+	<span aria-hidden="true">📋</span>
+	<span class="cheatsheet-label">Cheatsheet</span>
+</button>
+
+<dialog class="ref-sheet" data-ref-sheet aria-label={label}>
+	<div class="ref-sheet__panel">
+		<header class="ref-sheet__header">
+			<h2 class="ref-sheet__title">{label}</h2>
+			<a class="ref-sheet__open" href={url} title="Open full page">Open ↗</a>
+			<button type="button" class="ref-sheet__close" data-ref-sheet-close aria-label="Close cheatsheet">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</header>
+		<div class="ref-sheet__body sl-markdown-content" data-ref-sheet-body>
+			<p class="ref-sheet__loading">Loading…</p>
+		</div>
+	</div>
+</dialog>
+
+<script>
+	function initReferenceSheet() {
+		const openBtn = document.querySelector<HTMLButtonElement>('[data-cheatsheet-open]');
+		const dialog = document.querySelector<HTMLDialogElement>('[data-ref-sheet]');
+		if (!openBtn || !dialog) return;
+		if (dialog.dataset.bound === '1') return;
+		dialog.dataset.bound = '1';
+
+		const body = dialog.querySelector<HTMLElement>('[data-ref-sheet-body]')!;
+		const url = openBtn.dataset.url!;
+		let loaded = false;
+
+		async function loadContent() {
+			if (loaded) return;
+			try {
+				const res = await fetch(url);
+				if (!res.ok) throw new Error(`cheatsheet ${res.status}`);
+				const html = await res.text();
+				const doc = new DOMParser().parseFromString(html, 'text/html');
+				const content = doc.querySelector('.sl-markdown-content');
+				if (content) {
+					// Drop the intro <hr>/blurb? Keep as-is — it's the real cheatsheet.
+					body.replaceChildren(...Array.from(content.childNodes).map((n) => n.cloneNode(true)));
+					loaded = true;
+				} else {
+					body.innerHTML = `<p>Couldn’t load the cheatsheet. <a href="${url}">Open the full page</a> instead.</p>`;
+				}
+			} catch (err) {
+				console.error('[cheatsheet] load failed:', err);
+				body.innerHTML = `<p>Couldn’t load the cheatsheet. <a href="${url}">Open the full page</a> instead.</p>`;
+			}
+		}
+
+		function open() {
+			document.documentElement.classList.add('ref-sheet-open');
+			if (!dialog.open) dialog.showModal();
+			loadContent();
+		}
+		function close() {
+			document.documentElement.classList.remove('ref-sheet-open');
+			if (dialog.open) dialog.close();
+		}
+
+		openBtn.addEventListener('click', open);
+		dialog.addEventListener('click', (e) => {
+			const t = e.target as HTMLElement;
+			// Click on the backdrop (the <dialog> itself, outside the panel) or a
+			// close control dismisses the drawer.
+			if (t === dialog || t.closest('[data-ref-sheet-close]')) close();
+		});
+		dialog.addEventListener('cancel', (e) => { e.preventDefault(); close(); });
+	}
+
+	initReferenceSheet();
+	document.addEventListener('astro:page-load', initReferenceSheet);
+</script>
+
+<style is:global>
+	.cheatsheet-btn {
+		flex: none;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.35rem;
+		padding: 0.3rem 0.7rem;
+		border: 1px solid var(--sl-color-gray-5);
+		border-radius: 999px;
+		background: var(--sl-color-bg);
+		color: var(--sl-color-text-accent);
+		font-size: var(--sl-text-sm);
+		font-weight: 600;
+		cursor: pointer;
+	}
+	.cheatsheet-btn:hover {
+		background: var(--sl-color-gray-6);
+		border-color: var(--sl-color-text-accent);
+	}
+
+	/* The drawer is a right-hand sheet. <dialog> gives us the top layer +
+	   backdrop + Esc handling for free. */
+	.ref-sheet {
+		max-width: none;
+		max-height: none;
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		margin-left: auto; /* dock to the right */
+		padding: 0;
+		border: none;
+		background: transparent;
+		overflow: hidden;
+	}
+	.ref-sheet::backdrop {
+		background: var(--sl-color-backdrop-overlay, rgba(0, 0, 0, 0.5));
+		backdrop-filter: blur(2px);
+	}
+	.ref-sheet__panel {
+		position: fixed;
+		top: 0;
+		right: 0;
+		display: flex;
+		flex-direction: column;
+		width: min(40rem, 92vw);
+		height: 100%;
+		background: var(--sl-color-bg);
+		border-left: 1px solid var(--sl-color-gray-5);
+		box-shadow: var(--sl-shadow-lg);
+		transform: translateX(100%);
+		transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+	}
+	.ref-sheet[open] .ref-sheet__panel {
+		transform: translateX(0);
+	}
+	@media (prefers-reduced-motion: reduce) {
+		.ref-sheet__panel { transition: none; }
+	}
+
+	.ref-sheet__header {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+		padding: 0.85rem 1rem;
+		border-bottom: 1px solid var(--sl-color-gray-5);
+		flex-shrink: 0;
+	}
+	.ref-sheet__title {
+		margin: 0;
+		font-family: var(--font-display, inherit);
+		font-size: 1.1rem;
+		line-height: 1.2;
+		flex: 1;
+	}
+	.ref-sheet__open {
+		font-size: var(--sl-text-sm);
+		font-weight: 600;
+		white-space: nowrap;
+	}
+	.ref-sheet__close {
+		flex-shrink: 0;
+		width: 2rem;
+		height: 2rem;
+		border: none;
+		border-radius: 0.4rem;
+		background: transparent;
+		color: var(--sl-color-gray-2);
+		font-size: 1.6rem;
+		line-height: 1;
+		cursor: pointer;
+	}
+	.ref-sheet__close:hover {
+		background: var(--sl-color-gray-6);
+		color: var(--sl-color-text);
+	}
+
+	.ref-sheet__body {
+		flex: 1;
+		overflow-y: auto;
+		padding: 1rem 1.25rem 3rem;
+	}
+	.ref-sheet__loading {
+		color: var(--sl-color-gray-3);
+	}
+
+	/* Lock background scroll while the drawer is open. */
+	html.ref-sheet-open,
+	html.ref-sheet-open body {
+		overflow: hidden;
+	}
+</style>
