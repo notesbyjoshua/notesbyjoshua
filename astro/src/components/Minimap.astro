@@ -8,7 +8,6 @@
 
 <aside class="doc-minimap" data-doc-minimap aria-label="Page minimap" hidden>
 	<div class="doc-minimap__preview" data-minimap-preview>
-		<div class="doc-minimap__scaled doc-minimap__scaled--sharp" data-minimap-sharp aria-hidden="true"></div>
 		<div class="doc-minimap__viewport" data-minimap-viewport aria-hidden="true"></div>
 		<nav class="doc-minimap__labels" data-minimap-labels aria-label="Headings"></nav>
 	</div>
@@ -30,9 +29,7 @@
 		contain: layout paint style;
 		user-select: none;
 		touch-action: none;
-		--minimap-preview-pad-x: 0.5rem;
-		--minimap-preview-pad-y: 0.5rem;
-		--minimap-feather: 16px;
+		--minimap-rail-inset: 14px;
 	}
 	.doc-minimap[hidden] { display: none; }
 
@@ -44,27 +41,6 @@
 		cursor: pointer;
 		contain: strict;
 	}
-
-	.doc-minimap__scaled {
-		position: absolute;
-		top: var(--preview-top-inset, 0px);
-		left: var(--preview-left-inset, 0px);
-		width: var(--article-width, 720px);
-		height: var(--article-height, 6000px);
-		transform: scale(var(--minimap-scale, 0.08));
-		transform-origin: top left;
-		pointer-events: none;
-		overflow: visible;
-	}
-	/* The cloned note keeps its own width; strip Starlight's centering/max-width. */
-	.doc-minimap__scaled > .sl-markdown-content,
-	.doc-minimap__clone {
-		margin: 0 !important;
-		max-width: none !important;
-		width: var(--article-width, 720px) !important;
-		pointer-events: none !important;
-	}
-	.doc-minimap__scaled--sharp { opacity: 0.9; z-index: 1; will-change: mask-image; }
 
 	.doc-minimap__viewport {
 		position: absolute;
@@ -90,9 +66,9 @@
 		max-width: calc(100% - 0.4rem);
 		transform: translateY(-50%);
 		font-family: var(--font-ui, sans-serif);
-		font-size: 0.62rem;
+		font-size: 0.72rem;
 		font-weight: 700;
-		line-height: 1.05;
+		line-height: 1.1;
 		color: var(--sl-color-text);
 		text-decoration: none;
 		white-space: nowrap;
@@ -103,9 +79,9 @@
 		text-shadow: 0 0 4px var(--sl-color-bg), 0 0 8px var(--sl-color-bg), 0 0 14px var(--sl-color-bg);
 	}
 	.doc-minimap__label[data-depth='3'] {
-		left: 0.55rem;
-		max-width: calc(100% - 0.75rem);
-		font-size: 0.58rem;
+		left: 0.7rem;
+		max-width: calc(100% - 0.9rem);
+		font-size: 0.66rem;
 		font-weight: 600;
 	}
 	.doc-minimap__label[data-active='true'] { color: var(--sl-color-accent); }

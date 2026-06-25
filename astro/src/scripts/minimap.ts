@@ -1,34 +1,21 @@
-// Minimap controller — a scaled DOM-clone preview of the note with a feathered
-// "sharp window" over the visible band, a draggable viewport thumb, heading
-// labels, and scroll-spy. Desktop-only; disabled under reduced motion.
+// Minimap controller — an evenly-spaced rail of the note's headings with a
+// scroll-position thumb, scroll-spy active state, and click / drag / wheel
+// navigation. Desktop-only; disabled under reduced motion.
 //
-// Adapted from gxboy12345's fork for our Starlight site: the page scrolls via
-// the WINDOW (not a `.doc-main` container), the article is `.sl-markdown-content`,
-// and headings come straight from the rendered DOM. Annotation/bookmark markers
-// from the fork are dropped (different data model here).
+// (Originally a scaled page clone, à la gxboy12345's fork. Switched to an
+// even-spaced rail: a content-proportional map bunched short topics and spread
+// long ones — e.g. practice + solutions — which read as uneven. Even spacing is
+// tidier and the thumb still shows your position.)
 
 const DESKTOP_QUERY = '(min-width: 1200px)';
 const REDUCED_MOTION_QUERY = '(prefers-reduced-motion: reduce)';
-const MIN_THUMB_PX = 14;
-const LABEL_MIN_GAP_PX = 11;
+const MIN_THUMB_PX = 22;
+const HEADER_OFFSET_PX = 88; // sticky two-tier header height for jump targets
 
 type Heading = { depth: 2 | 3; slug: string; text: string };
-type Geometry = {
-	articleWidth: number;
-	articleHeight: number;
-	scale: number;
-	topInset: number;
-	leftInset: number;
-	renderedHeight: number;
-};
 type Controller = { destroy(): void };
 
 const clamp = (v: number, lo: number, hi: number) => Math.max(lo, Math.min(hi, v));
-const nextFrame = () => new Promise<void>((r) => requestAnimationFrame(() => r()));
-function cssPropPx(el: HTMLElement, prop: string, fallback: number): number {
-	const v = parseFloat(getComputedStyle(el).getPropertyValue(prop));
-	return Number.isFinite(v) ? v : fallback;
-}
 
 // ── window-scroll helpers ──
 const scrollTop = () => window.scrollY || document.documentElement.scrollTop || 0;
@@ -38,21 +25,9 @@ const articleTopInDoc = (article: HTMLElement) => scrollTop() + article.getBound
 const scrollToY = (y: number, smooth: boolean) =>
 	window.scrollTo({ top: clamp(y, 0, scrollMax()), behavior: smooth ? 'smooth' : 'auto' });
 
-// ── clone ──
-function buildClone(article: HTMLElement): HTMLElement {
-	const clone = article.cloneNode(true) as HTMLElement;
-	clone.classList.add('doc-minimap__clone');
-	clone.setAttribute('aria-hidden', 'true');
-	clone.setAttribute('inert', '');
-	clone.querySelectorAll('[id]').forEach((el) => el.removeAttribute('id'));
-	clone.querySelectorAll<HTMLAnchorElement>('a').forEach((a) => a.removeAttribute('href'));
-	clone.querySelectorAll<HTMLDetailsElement>('details').forEach((d) => (d.open = true));
-	clone.querySelectorAll('script, style, iframe, video, audio, canvas').forEach((el) => el.remove());
-	clone.querySelectorAll<HTMLImageElement>('img').forEach((img) => {
-		img.loading = 'eager';
-		img.removeAttribute('srcset');
-	});
-	return clone;
+function cssPropPx(el: HTMLElement, prop: string, fallback: number): number {
+	const v = parseFloat(getComputedStyle(el).getPropertyValue(prop));
+	return Number.isFinite(v) ? v : fallback;
 }
 
 function readHeadings(article: HTMLElement): Heading[] {
@@ -63,70 +38,6 @@ function readHeadings(article: HTMLElement): Heading[] {
 	}));
 }
 
-// ── geometry ──
-function measureGeometry(article: HTMLElement, preview: HTMLElement, minimap: HTMLElement): Geometry {
-	const aRect = article.getBoundingClientRect();
-	const padX = cssPropPx(minimap, '--minimap-preview-pad-x', 10);
-	const padY = cssPropPx(minimap, '--minimap-preview-pad-y', 8);
-	const pRect = preview.getBoundingClientRect();
-	const articleWidth = aRect.width;
-	const articleHeight = article.scrollHeight;
-	const scale = Math.min(
-		(pRect.width - 2 * padX) / articleWidth,
-		(pRect.height - 2 * padY) / articleHeight,
-	);
-	if (!Number.isFinite(scale) || scale <= 0) {
-		return { articleWidth, articleHeight, scale: 0, topInset: padY, leftInset: padX, renderedHeight: 0 };
-	}
-	const renderedWidth = articleWidth * scale;
-	const renderedHeight = articleHeight * scale;
-	return {
-		articleWidth,
-		articleHeight,
-		scale,
-		leftInset: Math.max(padX, (pRect.width - renderedWidth) / 2),
-		topInset: Math.max(padY, (pRect.height - renderedHeight) / 2),
-		renderedHeight,
-	};
-}
-
-function applyGeometry(minimap: HTMLElement, g: Geometry) {
-	minimap.style.setProperty('--article-width', `${g.articleWidth}px`);
-	minimap.style.setProperty('--article-height', `${g.articleHeight}px`);
-	minimap.style.setProperty('--minimap-scale', String(g.scale));
-	minimap.style.setProperty('--preview-top-inset', `${g.topInset}px`);
-	minimap.style.setProperty('--preview-left-inset', `${g.leftInset}px`);
-}
-
-const aToM = (articleY: number, g: Geometry) => g.topInset + articleY * g.scale;
-const mToA = (miniY: number, g: Geometry) => clamp((miniY - g.topInset) / g.scale, 0, g.articleHeight);
-
-function visibleRange(article: HTMLElement) {
-	const top = articleTopInDoc(article);
-	const h = article.scrollHeight;
-	const vs = scrollTop();
-	const ve = vs + clientH();
-	let t = clamp(Math.max(vs, top) - top, 0, h);
-	let b = clamp(Math.min(ve, top + h) - top, t, h);
-	if (scrollTop() >= scrollMax() - 2) {
-		const band = b - t;
-		b = h;
-		t = Math.max(0, h - band);
-	}
-	return { top: t, bottom: b, articleHeight: h };
-}
-
-function applySharpMask(layer: HTMLElement, top: number, bottom: number, feather: number, total: number) {
-	const a = clamp(top - feather, 0, total);
-	const b = clamp(top, 0, total);
-	const c = clamp(bottom, 0, total);
-	const d = clamp(bottom + feather, 0, total);
-	const mask = `linear-gradient(to bottom, transparent ${a}px, black ${b}px, black ${c}px, transparent ${d}px)`;
-	layer.style.maskImage = mask;
-	(layer.style as any).webkitMaskImage = mask;
-}
-
-// ── labels ──
 function buildLabels(container: HTMLElement, headings: Heading[]) {
 	const frag = document.createDocumentFragment();
 	for (const h of headings) {
@@ -141,68 +52,11 @@ function buildLabels(container: HTMLElement, headings: Heading[]) {
 	container.replaceChildren(frag);
 }
 
-function positionLabels(container: HTMLElement, headings: Heading[], article: HTMLElement, g: Geometry) {
-	const articleTop = article.getBoundingClientRect().top;
-	for (const h of headings) {
-		const label = container.querySelector<HTMLElement>(
-			`.doc-minimap__label[data-slug="${CSS.escape(h.slug)}"]`,
-		);
-		const el = document.getElementById(h.slug);
-		if (!label) continue;
-		if (!el) {
-			label.style.opacity = '0';
-			continue;
-		}
-		const y = el.getBoundingClientRect().top - articleTop;
-		label.style.top = `${aToM(clamp(y, 0, g.articleHeight), g)}px`;
-		label.style.opacity = '';
-		label.style.pointerEvents = '';
-	}
-	// Hide colliding H3 labels (never move — position is the invariant).
-	const labels = [...container.querySelectorAll<HTMLElement>('.doc-minimap__label')].sort(
-		(a, b) => parseFloat(a.style.top || '0') - parseFloat(b.style.top || '0'),
-	);
-	let lastBottom = -Infinity;
-	for (const label of labels) {
-		const y = parseFloat(label.style.top || '0');
-		if (label.dataset.depth === '3' && y < lastBottom + LABEL_MIN_GAP_PX) {
-			label.style.opacity = '0';
-			label.style.pointerEvents = 'none';
-		} else if (!label.style.opacity) {
-			lastBottom = y;
-		}
-	}
-}
-
-function setupScrollSpy(headings: Heading[], onActive: (slug: string) => void): IntersectionObserver {
-	const els = headings.map((h) => document.getElementById(h.slug)).filter((e): e is HTMLElement => !!e);
-	let current: string | null = null;
-	const obs = new IntersectionObserver(
-		() => {
-			const candidates = els
-				.map((el) => ({ id: el.id, y: el.getBoundingClientRect().top }))
-				.filter((x) => x.y <= clientH() * 0.3)
-				.sort((a, b) => b.y - a.y);
-			const next = candidates[0]?.id ?? els[0]?.id ?? null;
-			if (next && next !== current) {
-				current = next;
-				onActive(next);
-			}
-		},
-		{ rootMargin: '0px 0px -70% 0px', threshold: [0, 1] },
-	);
-	for (const el of els) obs.observe(el);
-	requestAnimationFrame(() => els[0] && onActive(els[0].id));
-	return obs;
-}
-
-// ── main controller ──
 function setup(): Controller | null {
 	if (matchMedia(REDUCED_MOTION_QUERY).matches || !matchMedia(DESKTOP_QUERY).matches) return null;
 
 	const minimap = document.querySelector<HTMLElement>('[data-doc-minimap]');
 	const preview = document.querySelector<HTMLElement>('[data-minimap-preview]');
-	const sharpSlot = document.querySelector<HTMLElement>('[data-minimap-sharp]');
 	const vpEl = document.querySelector<HTMLElement>('[data-minimap-viewport]');
 	const labelsEl = document.querySelector<HTMLElement>('[data-minimap-labels]');
 	// The note body — never the cheatsheet drawer's cloned content.
@@ -210,21 +64,21 @@ function setup(): Controller | null {
 		[...document.querySelectorAll<HTMLElement>('.sl-markdown-content')].find(
 			(el) => !el.closest('[data-ref-sheet]'),
 		) ?? null;
-	if (!minimap || !preview || !sharpSlot || !vpEl || !labelsEl || !article) return null;
+	if (!minimap || !preview || !vpEl || !labelsEl || !article) return null;
 
 	const headings = readHeadings(article);
 	if (headings.length < 2) return null; // not worth a minimap for a tiny page
 
-	let g: Geometry | null = null;
+	let previewH = 0;
 	let measureRaf = 0;
 	let syncRaf = 0;
 	let destroyed = false;
 	const abort = new AbortController();
 	const { signal } = abort;
 
-	sharpSlot.replaceChildren(buildClone(article));
 	buildLabels(labelsEl, headings);
 	minimap.removeAttribute('hidden');
+	document.documentElement.classList.add('has-minimap');
 
 	const ro = new ResizeObserver(() => scheduleMeasure());
 	ro.observe(article);
@@ -235,22 +89,22 @@ function setup(): Controller | null {
 	preview.addEventListener('pointerdown', onPreviewDown, { signal });
 	vpEl.addEventListener('pointerdown', onViewportDown, { signal });
 	minimap.addEventListener('wheel', onWheel, { passive: false, signal });
+	// Smooth jump when a label is clicked (offset for the sticky header).
+	labelsEl.addEventListener(
+		'click',
+		(e) => {
+			const a = (e.target as HTMLElement).closest<HTMLAnchorElement>('.doc-minimap__label');
+			if (!a) return;
+			const el = a.dataset.slug && document.getElementById(a.dataset.slug);
+			if (!el) return;
+			e.preventDefault();
+			scrollToY(scrollTop() + el.getBoundingClientRect().top - HEADER_OFFSET_PX, true);
+		},
+		{ signal },
+	);
 
-	const spy = setupScrollSpy(headings, (slug) => {
-		labelsEl.querySelectorAll<HTMLElement>('.doc-minimap__label').forEach((el) => {
-			el.dataset.active = el.dataset.slug === slug ? 'true' : 'false';
-		});
-	});
-
-	article.querySelectorAll<HTMLImageElement>('img').forEach((img) => {
-		if (!img.complete) img.addEventListener('load', scheduleMeasure, { once: true, signal });
-	});
-
-	document.fonts?.ready
-		.catch(() => undefined)
-		.then(() => nextFrame())
-		.then(() => nextFrame())
-		.then(() => { if (!destroyed) measureAndSync(); });
+	const spy = setupScrollSpy();
+	requestAnimationFrame(measureAndSync);
 
 	return {
 		destroy() {
@@ -261,69 +115,130 @@ function setup(): Controller | null {
 			cancelAnimationFrame(syncRaf);
 			ro.disconnect();
 			spy.disconnect();
-			sharpSlot.replaceChildren();
 			labelsEl.replaceChildren();
 			minimap.hidden = true;
 			document.documentElement.classList.remove('has-minimap');
 		},
 	};
 
+	// ── measurement + layout ──
+	function railInset(): number {
+		// Keep first/last labels off the very edges.
+		return cssPropPx(minimap!, '--minimap-rail-inset', 14);
+	}
+
+	function positionLabels() {
+		const inset = railInset();
+		const railH = Math.max(1, previewH - 2 * inset);
+		const n = headings.length;
+		headings.forEach((h, i) => {
+			const label = labelsEl!.querySelector<HTMLElement>(
+				`.doc-minimap__label[data-slug="${CSS.escape(h.slug)}"]`,
+			);
+			if (!label) return;
+			const y = n === 1 ? previewH / 2 : inset + (railH * i) / (n - 1);
+			label.style.top = `${y}px`;
+		});
+	}
+
+	function measureAndSync() {
+		previewH = preview!.getBoundingClientRect().height;
+		if (previewH <= 0) {
+			minimap!.hidden = true;
+			document.documentElement.classList.remove('has-minimap');
+			return;
+		}
+		minimap!.hidden = false;
+		document.documentElement.classList.add('has-minimap');
+		positionLabels();
+		syncThumb();
+	}
+
+	function syncThumb() {
+		if (previewH <= 0) return;
+		const articleTop = articleTopInDoc(article!);
+		const articleH = article!.scrollHeight;
+		const range = Math.max(1, articleH - clientH());
+		const p = clamp((scrollTop() - articleTop) / range, 0, 1);
+		const visFrac = clamp(clientH() / articleH, 0.06, 1);
+		const thumbH = clamp(visFrac * previewH, MIN_THUMB_PX, previewH);
+		vpEl!.style.height = `${thumbH}px`;
+		vpEl!.style.top = `${p * (previewH - thumbH)}px`;
+	}
+
+	// ── scroll spy ──
+	function setupScrollSpy(): IntersectionObserver {
+		const els = headings
+			.map((h) => document.getElementById(h.slug))
+			.filter((e): e is HTMLElement => !!e);
+		let current: string | null = null;
+		const obs = new IntersectionObserver(
+			() => {
+				const candidates = els
+					.map((el) => ({ id: el.id, y: el.getBoundingClientRect().top }))
+					.filter((x) => x.y <= clientH() * 0.3)
+					.sort((a, b) => b.y - a.y);
+				const next = candidates[0]?.id ?? els[0]?.id ?? null;
+				if (next && next !== current) {
+					current = next;
+					labelsEl!.querySelectorAll<HTMLElement>('.doc-minimap__label').forEach((el) => {
+						el.dataset.active = el.dataset.slug === next ? 'true' : 'false';
+					});
+				}
+			},
+			{ rootMargin: '0px 0px -70% 0px', threshold: [0, 1] },
+		);
+		for (const el of els) obs.observe(el);
+		requestAnimationFrame(() => {
+			if (els[0]) {
+				labelsEl!.querySelectorAll<HTMLElement>('.doc-minimap__label').forEach((el) => {
+					el.dataset.active = el.dataset.slug === els[0].id ? 'true' : 'false';
+				});
+			}
+		});
+		return obs;
+	}
+
+	// ── scheduling ──
 	function scheduleMeasure() {
 		cancelAnimationFrame(measureRaf);
 		measureRaf = requestAnimationFrame(() => { measureRaf = 0; measureAndSync(); });
 	}
 	function scheduleSync() {
 		cancelAnimationFrame(syncRaf);
-		syncRaf = requestAnimationFrame(() => { syncRaf = 0; syncScroll(); });
+		syncRaf = requestAnimationFrame(() => { syncRaf = 0; syncThumb(); });
 	}
-	function measureAndSync() {
-		g = measureGeometry(article!, preview!, minimap!);
-		if (g.scale <= 0) {
-			minimap!.hidden = true;
-			document.documentElement.classList.remove('has-minimap');
-			return;
-		}
-		minimap!.hidden = false;
-		// Signals CSS to swap Starlight's text TOC for the minimap on desktop.
-		document.documentElement.classList.add('has-minimap');
-		applyGeometry(minimap!, g);
-		positionLabels(labelsEl!, headings, article!, g);
-		syncScroll();
+
+	// ── navigation ──
+	/** Map a pointer Y (viewport px) to a page scroll position via rail progress. */
+	function scrollToPointer(clientY: number, smooth: boolean) {
+		const previewTop = preview!.getBoundingClientRect().top;
+		const p = clamp((clientY - previewTop) / previewH, 0, 1);
+		const articleTop = articleTopInDoc(article!);
+		const range = Math.max(1, article!.scrollHeight - clientH());
+		scrollToY(articleTop + p * range, smooth);
 	}
-	function syncScroll() {
-		if (!g || g.scale <= 0) return;
-		const { top, bottom, articleHeight } = visibleRange(article!);
-		const miniTop = aToM(top, g);
-		const miniBot = aToM(bottom, g);
-		vpEl!.style.top = `${miniTop}px`;
-		vpEl!.style.height = `${Math.max(MIN_THUMB_PX, miniBot - miniTop)}px`;
-		const featherArticle = cssPropPx(minimap!, '--minimap-feather', 18) / g.scale;
-		applySharpMask(sharpSlot!, top, bottom, featherArticle, Math.max(articleHeight, g.articleHeight));
-	}
-	function scrollToArticleY(articleY: number, smooth: boolean) {
-		scrollToY(articleTopInDoc(article!) + articleY - clientH() / 2, smooth);
-	}
+
 	function onPreviewDown(ev: PointerEvent) {
-		if (ev.button !== 0 || !g) return;
+		if (ev.button !== 0) return;
 		preview!.setPointerCapture(ev.pointerId);
 		minimap!.dataset.dragging = 'true';
 		const gesture = new AbortController();
 		signal.addEventListener('abort', () => gesture.abort(), { once: true });
 		let dragged = false;
-		const previewTop = preview!.getBoundingClientRect().top;
-		const at = (clientY: number) => mToA(clientY - previewTop, g!);
-		const scrub = (e: PointerEvent) => { dragged = true; scrollToArticleY(at(e.clientY), false); };
+		const move = (e: PointerEvent) => { dragged = true; scrollToPointer(e.clientY, false); };
 		const end = (e: PointerEvent) => {
-			if (!dragged) scrollToArticleY(at(e.clientY), true);
+			if (!dragged) scrollToPointer(e.clientY, true);
 			minimap!.dataset.dragging = 'false';
 			gesture.abort();
 		};
-		preview!.addEventListener('pointermove', scrub, { signal: gesture.signal });
+		preview!.addEventListener('pointermove', move, { signal: gesture.signal });
 		preview!.addEventListener('pointerup', end, { once: true, signal: gesture.signal });
 		preview!.addEventListener('pointercancel', end, { once: true, signal: gesture.signal });
 	}
+
 	function onViewportDown(ev: PointerEvent) {
-		if (ev.button !== 0 || !g) return;
+		if (ev.button !== 0) return;
 		ev.preventDefault();
 		ev.stopPropagation();
 		vpEl!.setPointerCapture(ev.pointerId);
@@ -332,22 +247,26 @@ function setup(): Controller | null {
 		signal.addEventListener('abort', () => gesture.abort(), { once: true });
 		const previewTop = preview!.getBoundingClientRect().top;
 		const grabOffset = ev.clientY - previewTop - parseFloat(vpEl!.style.top || '0');
+		const thumbH = vpEl!.getBoundingClientRect().height;
 		const drag = (e: PointerEvent) => {
-			if (!g) return;
-			scrollToY(articleTopInDoc(article!) + mToA(e.clientY - previewTop - grabOffset, g), false);
+			const thumbTop = clamp(e.clientY - previewTop - grabOffset, 0, previewH - thumbH);
+			const p = previewH - thumbH > 0 ? thumbTop / (previewH - thumbH) : 0;
+			const articleTop = articleTopInDoc(article!);
+			const range = Math.max(1, article!.scrollHeight - clientH());
+			scrollToY(articleTop + p * range, false);
 		};
 		const end = () => { minimap!.dataset.dragging = 'false'; gesture.abort(); };
 		vpEl!.addEventListener('pointermove', drag, { signal: gesture.signal });
 		vpEl!.addEventListener('pointerup', end, { once: true, signal: gesture.signal });
 		vpEl!.addEventListener('pointercancel', end, { once: true, signal: gesture.signal });
 	}
+
 	function onWheel(ev: WheelEvent) {
-		if (!g) return;
 		ev.preventDefault();
 		const delta =
 			ev.deltaMode === WheelEvent.DOM_DELTA_LINE ? ev.deltaY * 16 :
 			ev.deltaMode === WheelEvent.DOM_DELTA_PAGE ? ev.deltaY * clientH() : ev.deltaY;
-		scrollToY(scrollTop() + delta / g.scale, false);
+		scrollToY(scrollTop() + delta, false);
 	}
 }
 
