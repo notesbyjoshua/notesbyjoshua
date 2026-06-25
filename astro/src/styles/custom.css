@@ -628,11 +628,16 @@
 }
 
 .dash-bar--mini {
-	width: 5rem;
-	height: 0.4rem;
+	width: 8rem;
+	max-width: 35vw;
+	height: 0.55rem;
 	margin: 0;
 	flex: none;
 }
+
+/* When a whole course is read, tint its bar + count green for a clear win. */
+.dash-section.is-complete .dash-bar--mini .dash-bar__fill { background: linear-gradient(90deg, #16a34a, #22c55e); }
+.dash-section.is-complete .dash-section-count { color: #22c55e; font-weight: 600; }
 
 .dash-bar__fill {
 	display: block;

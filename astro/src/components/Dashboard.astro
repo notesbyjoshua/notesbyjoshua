@@ -81,11 +81,14 @@ const total = sections.reduce((n, s) => n + s.notes.length, 0);
     (byId('dash-bar-fill') as HTMLElement).style.width = pct(readTotal, all.length) + '%';
     document.querySelectorAll<HTMLElement>('.dash-section').forEach((sec) => {
       const cbs = Array.from(sec.querySelectorAll<HTMLInputElement>('input[data-slug]'));
+      if (!cbs.length) return; // bookmarks section has no note checkboxes
       const read = cbs.filter((c) => c.checked).length;
+      const p = pct(read, cbs.length);
       const countEl = sec.querySelector('.dash-section-count');
-      if (countEl) countEl.textContent = `${read} / ${cbs.length}`;
+      if (countEl) countEl.textContent = `${read} / ${cbs.length} · ${p}%`;
       const fill = sec.querySelector<HTMLElement>('.dash-bar__fill');
-      if (fill) fill.style.width = pct(read, cbs.length) + '%';
+      if (fill) fill.style.width = p + '%';
+      sec.classList.toggle('is-complete', p === 100);
     });
   }
 
