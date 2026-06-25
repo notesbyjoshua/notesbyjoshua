@@ -4,7 +4,7 @@ sidebar:
   order: 0
 ---
 
-This page is a high-yield AP Chemistry reference sheet. It collects the most important concepts, formulas, trends, and problem-solving checks from Units 1-9 in one place. It is best used as a last-minute review tool or a quick lookup page while studying a full unit. Always remember that you have a [formula sheet](https://apcentral.collegeboard.org/media/pdf/ap-chemistry-equations-sheet.pdf) for the AP test!
+# AP Chemistry Cheat Sheet
 
 ---
 

@@ -4,7 +4,7 @@ sidebar:
   order: 0
 ---
 
-This page is a high-yield AP Precalculus reference sheet. It collects the most important definitions, formulas, and graph behaviors from every unit grouping in these notes into one place. It is best used as a last-minute review tool or a quick lookup page while studying a full unit. For full explanations, examples, and practice, see the individual unit pages.
+# AP Precalculus Cheat Sheet
 
 ---
 

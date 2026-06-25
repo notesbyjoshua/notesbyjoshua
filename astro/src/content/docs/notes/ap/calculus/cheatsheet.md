@@ -4,7 +4,7 @@ sidebar:
   order: 0
 ---
 
-This page is a high-yield AP Calculus reference sheet. It collects the most important definitions, theorems, derivative and integral tables, applications, and BC series/parametric/polar tools from Units 1-10 in one place. It is best used as a last-minute review tool or a quick lookup page while studying a full unit. Units 9 and 10 are BC-only and are labeled as such. On the exam you also get an official reference sheet, but it is short: see the [AP Calculus exam information](https://apcentral.collegeboard.org/courses/ap-calculus-ab/exam) for what is provided, and memorize the rest below.
+# AP Calculus Cheat Sheet
 
 ---
 

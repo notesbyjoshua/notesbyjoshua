@@ -4,7 +4,7 @@ sidebar:
   order: 0
 ---
 
-This page is a high-yield AP Physics C: Mechanics reference sheet. It collects the most important definitions, formulas, and calculus relationships from every unit—kinematics, forces, work and energy, momentum, rotation, oscillations, and gravitation—in one place. Because this is calculus-based physics, the derivative and integral forms are included alongside the algebraic shortcuts. It is best used as a last-minute review tool or a quick lookup while studying. Remember that the AP exam provides an official [equation sheet](https://apcentral.collegeboard.org/media/pdf/ap-physics-c-mechanics-equations-sheet.pdf), so focus your memorization on knowing which relationship to use and when.
+# AP Physics C Mechanics Cheat Sheet
 
 ---
 

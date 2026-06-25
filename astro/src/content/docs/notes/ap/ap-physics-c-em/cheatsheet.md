@@ -4,7 +4,7 @@ sidebar:
   order: 0
 ---
 
-This page is a high-yield, calculus-based reference sheet for AP Physics C: Electricity and Magnetism. It collects the most important definitions, fields, integral and differential laws, circuit relations, and induction results from all six units in one place. Use it as a last-minute review tool or a quick lookup while studying. Remember that the AP exam provides an official equation sheet, so this page focuses on the relationships and standard results worth recognizing on sight.
+# AP Physics C E&M Cheat Sheet
 
 ---
 
