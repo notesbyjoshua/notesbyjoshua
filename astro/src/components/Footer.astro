@@ -5,10 +5,46 @@
 // page. Submits straight to the Supabase `feedback` table (the feedback-to-linear
 // Edge Function then opens a Linear ticket that links back here).
 import Default from '@astrojs/starlight/components/Footer.astro';
+import { getCollection } from 'astro:content';
 const path = Astro.url.pathname;
 const isNote = path.startsWith('/notes/');
+
+// "Related notes" = the other notes in the same unit/folder as this one (its
+// sidebar siblings), computed at build time. filePath is project-root relative
+// (src/content/docs/notes/ap/chem/kinetics.md).
+const toUrl = (fp: string) =>
+  '/' + fp.replace(/^src\/content\/docs\//, '').replace(/\.md$/, '').replace(/\/index$/, '') + '/';
+
+let related: { title: string; url: string }[] = [];
+const curFp = (Astro.locals as any).starlightRoute?.entry?.filePath as string | undefined;
+if (isNote && curFp) {
+  const dir = curFp.slice(0, curFp.lastIndexOf('/'));
+  const docs = await getCollection('docs');
+  related = docs
+    .filter((d) => {
+      const fp = (d as any).filePath as string | undefined;
+      if (!fp || fp === curFp || !fp.startsWith(dir + '/')) return false;
+      // Same directory only (no deeper nesting), and skip section landing pages.
+      if (fp.slice(dir.length + 1).includes('/')) return false;
+      if (fp.endsWith('/index.md')) return false;
+      return !(d.data.title || '').endsWith(' Home');
+    })
+    .map((d) => ({ title: d.data.title || (d as any).filePath, url: toUrl((d as any).filePath) }))
+    .sort((a, b) => a.title.localeCompare(b.title))
+    .slice(0, 8);
+}
 ---
 <Default><slot /></Default>
+{isNote && related.length > 0 && (
+  <nav class="related-notes" aria-label="Related notes">
+    <h2 class="related-title">Related notes</h2>
+    <ul class="related-list">
+      {related.map((r) => (
+        <li><a href={r.url}>{r.title}</a></li>
+      ))}
+    </ul>
+  </nav>
+)}
 {isNote && (
   <div class="note-feedback">
     <button type="button" id="nf-toggle" class="nf-toggle" aria-expanded="false">
@@ -98,6 +134,20 @@ const isNote = path.startsWith('/notes/');
 </script>
 
 <style>
+  .related-notes { margin-top: 2.5rem; padding-top: 1.25rem; border-top: 1px solid var(--sl-color-gray-6); }
+  .related-title { font-size: 1.1rem; margin: 0 0 0.75rem; }
+  .related-list {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); gap: 0.5rem;
+  }
+  .related-list li { margin: 0; }
+  .related-list a {
+    display: block; padding: 0.55rem 0.75rem;
+    border: 1px solid var(--sl-color-gray-5); border-radius: 0.5rem;
+    color: var(--sl-color-white); text-decoration: none; font-weight: 600; font-size: var(--sl-text-sm);
+  }
+  .related-list a:hover { border-color: var(--sl-color-text-accent); background: var(--sl-color-gray-6); }
+
   .note-feedback { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--sl-color-gray-6); }
   .nf-toggle {
     background: none; border: none; padding: 0; cursor: pointer; font: inherit;
