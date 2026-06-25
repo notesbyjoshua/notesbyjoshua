@@ -7,6 +7,7 @@
 
   <div id="admin-denied" hidden>
     <p>This page is for admins only. <a href="/account/">Go to your account</a> to sign in.</p>
+    <p id="admin-why" class="admin-why" hidden></p>
   </div>
 
   <div id="admin-content" hidden>
@@ -175,25 +176,39 @@
     byId('admin-summary').textContent = `${data?.length ?? 0} registered user(s).`;
   }
 
+  // Show the denied screen with a visible reason (so a silent client-side
+  // failure can be diagnosed without the browser console).
+  function deny(reason: string) {
+    const why = byId('admin-why');
+    why.textContent = `Diagnostic: ${reason}`;
+    why.hidden = false;
+    console.error('[admin] denied:', reason);
+    show('admin-denied');
+  }
+
   async function gate(session: any) {
-    if (!session?.user) { show('admin-denied'); return; }
+    if (!session?.user) { deny('no active session detected in this browser (signed out or token refresh failed).'); return; }
     // Pass the session user (no auth-method call inside this callback, which can
     // deadlock) and retry a transient role read before denying.
     let role: string | null = null;
+    let lastErr: any = null;
     for (let i = 0; i < 3; i++) {
       try { role = await getRole(session.user); break; }
       catch (err) {
-        if (i === 2) { console.error('[admin] role check failed:', err); show('admin-denied'); return; }
+        lastErr = err;
+        if (i === 2) { deny(`couldn't read your profile: ${err?.message ?? err}`); return; }
         await new Promise((r) => setTimeout(r, 400));
       }
     }
-    if (role !== 'admin') { show('admin-denied'); return; }
+    if (role !== 'admin') {
+      deny(`signed in as ${session.user.email ?? '(unknown email)'}, role = "${role ?? 'unknown'}"${lastErr ? ` (last error: ${lastErr.message ?? lastErr})` : ''}.`);
+      return;
+    }
     try {
       await loadUsers();
       show('admin-content');
-    } catch (err) {
-      console.error('[admin] load failed:', err);
-      show('admin-denied');
+    } catch (err: any) {
+      deny(`role is admin, but loading the user list failed: ${err?.message ?? err}`);
     }
   }
 
@@ -206,3 +221,16 @@
     sb.auth.onAuthStateChange((event, session) => { if (event !== 'INITIAL_SESSION') gate(session); });
   }
 </script>
+
+<style>
+  .admin-why {
+    margin-top: 0.75rem;
+    padding: 0.6rem 0.8rem;
+    border-left: 3px solid var(--sl-color-orange, #f59e0b);
+    background: var(--sl-color-gray-6);
+    font-size: var(--sl-text-sm);
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    color: var(--sl-color-gray-2);
+    word-break: break-word;
+  }
+</style>
