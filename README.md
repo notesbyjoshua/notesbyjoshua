@@ -59,3 +59,7 @@ publish — GitHub Actions builds and deploys automatically.
 
 - `astro/scripts/notes_progress.py` — scores each note's completeness for `/admin/progress`
   (runs automatically in CI; run manually to preview locally).
+
+## Credits
+
+This page was made by Joshua Bie, with major contributions from Garret Morberg-Nguyen
