@@ -31,6 +31,7 @@ const totalNotes = countLeaves(notesSidebar as Item[]);
       <a href="/practiceproblems/practice/">Practice Problems</a>
       <a href="/feedback/">Feedback</a>
       <a href="/account/">Account</a>
+      <a class="ha-write" href="/admin/edit/" hidden>Write</a>
       <a class="ha-admin" href="/admin/" hidden>Admin</a>
       <button type="button" class="ha-signout">Sign out</button>
     </div>
@@ -42,7 +43,7 @@ const totalNotes = countLeaves(notesSidebar as Item[]);
   import { getSupabase, getProfile } from '../lib/supabase';
 
   const CACHE_KEY = 'notes-hdr';
-  type State = { in: boolean; name?: string; admin?: boolean; pct?: number; avatar?: string };
+  type State = { in: boolean; name?: string; admin?: boolean; writer?: boolean; pct?: number; avatar?: string };
 
   const sb = getSupabase();
   const roots = Array.from(document.querySelectorAll<HTMLElement>('.header-account'));
@@ -57,6 +58,7 @@ const totalNotes = countLeaves(notesSidebar as Item[]);
     const avatarEl = root.querySelector<HTMLImageElement>('.ha-avatar')!;
     const dotEl = root.querySelector<HTMLElement>('.ha-dot')!;
     const statsEl = root.querySelector<HTMLElement>('.ha-stats')!;
+    const writeEl = root.querySelector<HTMLElement>('.ha-write')!;
     const adminEl = root.querySelector<HTMLElement>('.ha-admin')!;
     const signout = root.querySelector<HTMLElement>('.ha-signout')!;
     const close = () => { menu.hidden = true; toggle.setAttribute('aria-expanded', 'false'); };
@@ -72,7 +74,7 @@ const totalNotes = countLeaves(notesSidebar as Item[]);
       try { await sb!.auth.signOut(); } catch (err) { console.error('[header] signout failed:', err); }
       close();
     });
-    return { signin, wrap, toggle, menu, nameEl, avatarEl, dotEl, statsEl, adminEl, close };
+    return { signin, wrap, toggle, menu, nameEl, avatarEl, dotEl, statsEl, writeEl, adminEl, close };
   }
 
   if (sb && roots.length) {
@@ -87,6 +89,7 @@ const totalNotes = countLeaves(notesSidebar as Item[]);
           // Show the profile picture if we have one, else the status dot.
           if (s.avatar) { i.avatarEl.src = s.avatar; i.avatarEl.hidden = false; i.dotEl.hidden = true; }
           else { i.avatarEl.hidden = true; i.dotEl.hidden = false; }
+          i.writeEl.hidden = !(s.admin || s.writer);
           i.adminEl.hidden = !s.admin;
           if (typeof s.pct === 'number') { i.statsEl.textContent = `${s.pct}% read`; i.statsEl.hidden = false; }
           else i.statsEl.hidden = true;
@@ -131,7 +134,7 @@ const totalNotes = countLeaves(notesSidebar as Item[]);
       const meta = user.user_metadata || {};
       const providerAvatar = meta.avatar_url || meta.picture || undefined;
       // Show immediately using the cached values (avoids the email-prefix flash).
-      apply({ in: true, name: cached?.name || prefix, admin: cached?.admin, pct: cached?.pct, avatar: cached?.avatar || providerAvatar });
+      apply({ in: true, name: cached?.name || prefix, admin: cached?.admin, writer: cached?.writer, pct: cached?.pct, avatar: cached?.avatar || providerAvatar });
       // getProfile() rejects on a transient read failure; only OVERWRITE the
       // cached state on a confident success, so a hiccup never demotes you to
       // "visitor"/the email prefix and then persists it via localStorage.
@@ -140,7 +143,7 @@ const totalNotes = countLeaves(notesSidebar as Item[]);
           if (!p) return; // signed out between events — leave it to the next event
           const pct = cnt != null && total ? Math.round((cnt / total) * 100) : cached?.pct;
           const avatar = p.avatar_url || providerAvatar;
-          save({ in: true, name: p.display_name || prefix, admin: p.role === 'admin', pct, avatar });
+          save({ in: true, name: p.display_name || prefix, admin: p.role === 'admin', writer: p.role === 'writer', pct, avatar });
         })
         .catch((err) => console.warn('[header] profile refresh failed; keeping cached state', err));
     });

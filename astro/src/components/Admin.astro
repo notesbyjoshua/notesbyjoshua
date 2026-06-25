@@ -17,7 +17,7 @@
     <div class="table-scroll">
       <table class="admin-users">
         <thead>
-          <tr><th>Email</th><th>Role</th><th>Joined</th></tr>
+          <tr><th>Email</th><th>Role</th><th>Writer topics</th><th>Joined</th><th></th></tr>
         </thead>
         <tbody id="admin-users-body"></tbody>
       </table>
@@ -27,28 +27,148 @@
 
 <script>
   import { getSupabase, getRole } from '../lib/supabase';
+  import { EDITABLE_TOPICS } from '../lib/editorTopics';
 
   const byId = (id: string) => document.getElementById(id)!;
   const STATES = ['admin-status', 'admin-denied', 'admin-content'];
   const show = (id: string) => STATES.forEach((s) => (byId(s).hidden = s !== id));
   const sb = getSupabase();
+  const topicKeys = new Set(EDITABLE_TOPICS.map((topic) => topic.key));
+
+  function makeRoleSelect(role: string) {
+    const select = document.createElement('select');
+    select.className = 'admin-role-select';
+    for (const value of ['visitor', 'writer', 'admin']) {
+      const option = document.createElement('option');
+      option.value = value;
+      option.textContent = value;
+      option.selected = role === value;
+      select.appendChild(option);
+    }
+    return select;
+  }
+
+  function makeTopicChecks(selected: Set<string>) {
+    const wrap = document.createElement('div');
+    wrap.className = 'admin-topic-checks';
+    for (const topic of EDITABLE_TOPICS) {
+      const label = document.createElement('label');
+      const input = document.createElement('input');
+      input.type = 'checkbox';
+      input.value = topic.key;
+      input.checked = selected.has(topic.key);
+      label.append(input, document.createTextNode(topic.label));
+      wrap.appendChild(label);
+    }
+    return wrap;
+  }
+
+  async function saveUserRow(tr: HTMLTableRowElement) {
+    const userId = tr.dataset.userId!;
+    const role = (tr.querySelector('.admin-role-select') as HTMLSelectElement).value;
+    const checked = Array.from(tr.querySelectorAll<HTMLInputElement>('.admin-topic-checks input:checked'))
+      .map((input) => input.value)
+      .filter((key) => topicKeys.has(key));
+    const status = tr.querySelector<HTMLElement>('.admin-save-status')!;
+    status.textContent = 'Saving...';
+
+    const { error: roleError } = await sb!
+      .from('profiles')
+      .update({ role })
+      .eq('id', userId);
+    if (roleError) throw roleError;
+
+    const { data: existing, error: existingError } = await sb!
+      .from('writer_topic_permissions')
+      .select('topic_key')
+      .eq('user_id', userId);
+    if (existingError) throw existingError;
+
+    const existingKeys = new Set((existing ?? []).map((row: any) => String(row.topic_key)));
+    const selectedKeys = new Set(checked);
+    const toAdd = checked.filter((key) => !existingKeys.has(key));
+    const toRemove = Array.from(existingKeys).filter((key) => !selectedKeys.has(key));
+
+    if (toAdd.length) {
+      const { error } = await sb!
+        .from('writer_topic_permissions')
+        .upsert(toAdd.map((topic_key) => ({ user_id: userId, topic_key })));
+      if (error) throw error;
+    }
+    if (toRemove.length) {
+      const { error } = await sb!
+        .from('writer_topic_permissions')
+        .delete()
+        .eq('user_id', userId)
+        .in('topic_key', toRemove);
+      if (error) throw error;
+    }
+
+    status.textContent = 'Saved';
+    setTimeout(() => { if (status.textContent === 'Saved') status.textContent = ''; }, 1800);
+  }
 
   async function loadUsers() {
     const { data, error } = await sb!
       .from('profiles')
-      .select('email, role, created_at')
+      .select('id, email, role, created_at')
       .order('created_at', { ascending: true });
     if (error) throw error;
+    const { data: perms, error: permsError } = await sb!
+      .from('writer_topic_permissions')
+      .select('user_id, topic_key');
+    if (permsError) throw permsError;
+
+    const topicsByUser = new Map<string, Set<string>>();
+    for (const perm of perms ?? []) {
+      const userId = String((perm as any).user_id);
+      if (!topicsByUser.has(userId)) topicsByUser.set(userId, new Set());
+      topicsByUser.get(userId)!.add(String((perm as any).topic_key));
+    }
+
     const body = byId('admin-users-body');
     body.innerHTML = '';
     for (const u of data ?? []) {
       const joined = u.created_at ? new Date(u.created_at).toLocaleDateString() : '';
       const tr = document.createElement('tr');
-      for (const value of [u.email ?? '', u.role, joined]) {
-        const td = document.createElement('td');
-        td.textContent = value;
-        tr.appendChild(td);
-      }
+      tr.dataset.userId = u.id;
+
+      const emailTd = document.createElement('td');
+      emailTd.textContent = u.email ?? '';
+      tr.appendChild(emailTd);
+
+      const roleTd = document.createElement('td');
+      roleTd.appendChild(makeRoleSelect(u.role));
+      tr.appendChild(roleTd);
+
+      const topicsTd = document.createElement('td');
+      topicsTd.appendChild(makeTopicChecks(topicsByUser.get(u.id) ?? new Set()));
+      tr.appendChild(topicsTd);
+
+      const joinedTd = document.createElement('td');
+      joinedTd.textContent = joined;
+      tr.appendChild(joinedTd);
+
+      const actionTd = document.createElement('td');
+      const save = document.createElement('button');
+      save.type = 'button';
+      save.className = 'admin-save-user';
+      save.textContent = 'Save';
+      const status = document.createElement('span');
+      status.className = 'admin-save-status';
+      save.addEventListener('click', async () => {
+        save.disabled = true;
+        try { await saveUserRow(tr); }
+        catch (err: any) {
+          console.error('[admin] save user failed:', err);
+          status.textContent = `Error: ${err.message ?? err}`;
+        } finally {
+          save.disabled = false;
+        }
+      });
+      actionTd.append(save, status);
+      tr.appendChild(actionTd);
+
       body.appendChild(tr);
     }
     byId('admin-summary').textContent = `${data?.length ?? 0} registered user(s).`;

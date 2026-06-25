@@ -1,11 +1,12 @@
 ---
-// Admin-only in-browser note editor. Lists every note, loads its markdown
+// Admin/writer in-browser note editor. Lists every note, loads its markdown
 // source (via the commit-note Edge Function — never via a public CDN, so edits
 // aren't masked by stale caches), shows a live KaTeX+theorem-box preview, and
 // commits changes straight to the repo. Saving requires the edit password (a
-// second factor on top of the admin login). After a save, GitHub Actions
+// second factor on top of the login). After a save, GitHub Actions
 // rebuilds the site and the live page updates in ~1–2 minutes.
 import { getCollection } from 'astro:content';
+import { topicForPath } from '../lib/editorTopics';
 
 // Build the note picker at build time. `filePath` is repo-relative from the
 // astro/ project root (e.g. src/content/docs/notes/physics.md); the function
@@ -15,8 +16,10 @@ const notes = docs
   .map((entry) => {
     const fp = (entry as any).filePath as string | undefined;
     const rel = fp ?? `src/content/docs/${entry.id}`;
-    return { path: `astro/${rel}`, title: entry.data.title || entry.id, id: entry.id };
+    const path = `astro/${rel}`;
+    return { path, title: entry.data.title || entry.id, id: entry.id, topicKey: topicForPath(path)?.key ?? '' };
   })
+  .filter((entry) => entry.path.endsWith('.md'))
   .sort((a, b) => a.id.localeCompare(b.id));
 ---
 
@@ -24,7 +27,7 @@ const notes = docs
   <p id="ed-status">Loading…</p>
 
   <div id="ed-denied" hidden>
-    <p>This page is for admins only. <a href="/account/">Go to your account</a> to sign in.</p>
+    <p>This page is for approved editors only. <a href="/account/">Go to your account</a> to sign in.</p>
   </div>
 
   <div id="ed-content" hidden>
@@ -33,7 +36,7 @@ const notes = docs
         Note
         <select id="ed-file">
           <option value="">— choose a note —</option>
-          {notes.map((n) => <option value={n.path}>{n.title} — {n.id}</option>)}
+          {notes.map((n) => <option value={n.path} data-topic-key={n.topicKey}>{n.title} — {n.id}</option>)}
         </select>
       </label>
       <button type="button" id="ed-reload" class="ed-secondary" disabled>Reload</button>
@@ -62,7 +65,7 @@ const notes = docs
 </div>
 
 <script>
-  import { getSupabase, getRole } from '../lib/supabase';
+  import { getSupabase, getRole, getWriterTopicKeys } from '../lib/supabase';
   import { marked } from 'marked';
   import renderMathInElement from 'katex/contrib/auto-render';
 
@@ -82,6 +85,7 @@ const notes = docs
   const resultEl = byId('ed-result');
 
   let loadedContent = ''; // last content fetched/saved, to detect "dirty"
+  let allowedTopicKeys: Set<string> | null = null; // null means admin/unrestricted
 
   // Strip YAML front matter so the preview shows the body (front matter still
   // saves — we only hide it from the rendered preview).
@@ -115,6 +119,33 @@ const notes = docs
     saveBtn.disabled = !fileSel.value || !dirty || !pwEl.value;
   }
 
+  function selectedOptionAllowed() {
+    const selected = fileSel.selectedOptions[0];
+    if (!selected || !selected.value) return false;
+    if (!allowedTopicKeys) return true;
+    const topicKey = selected.dataset.topicKey || '';
+    return allowedTopicKeys.has(topicKey);
+  }
+
+  function filterNoteOptions(topicKeys: string[] | null) {
+    allowedTopicKeys = topicKeys ? new Set(topicKeys) : null;
+    for (const option of Array.from(fileSel.options)) {
+      if (!option.value) continue;
+      const allowed = !allowedTopicKeys || allowedTopicKeys.has(option.dataset.topicKey || '');
+      option.hidden = !allowed;
+      option.disabled = !allowed;
+    }
+    if (fileSel.value && !selectedOptionAllowed()) {
+      fileSel.value = '';
+      srcEl.value = '';
+      loadedContent = '';
+      srcEl.disabled = true;
+      previewEl.innerHTML = '';
+      reloadBtn.disabled = true;
+      setResult('That note is outside your assigned writer topics.', 'err');
+    }
+  }
+
   // Call the Edge Function with the current admin session attached automatically.
   async function callFn(body: Record<string, unknown>) {
     const { data, error } = await sb!.functions.invoke('commit-note', { body });
@@ -130,6 +161,10 @@ const notes = docs
   async function loadFile() {
     const path = fileSel.value;
     if (!path) return;
+    if (!selectedOptionAllowed()) {
+      setResult('That note is outside your assigned writer topics.', 'err');
+      return;
+    }
     srcEl.disabled = true;
     setResult('Loading…', '');
     try {
@@ -148,6 +183,10 @@ const notes = docs
   async function save() {
     const path = fileSel.value;
     if (!path) return;
+    if (!selectedOptionAllowed()) {
+      setResult('That note is outside your assigned writer topics.', 'err');
+      return;
+    }
     saveBtn.disabled = true;
     setResult('Saving…', '');
     try {
@@ -214,7 +253,16 @@ const notes = docs
         await new Promise((r) => setTimeout(r, 400));
       }
     }
-    if (role !== 'admin') { show('ed-denied'); return; }
+    if (role === 'admin') {
+      filterNoteOptions(null);
+    } else if (role === 'writer') {
+      const topicKeys = await getWriterTopicKeys(session.user);
+      filterNoteOptions(topicKeys);
+      if (!topicKeys.length) { setResult('No writer topics assigned yet.', 'err'); }
+    } else {
+      show('ed-denied');
+      return;
+    }
     show('ed-content');
     // Deep-link from a note's pencil: ?path=astro/src/content/docs/... — select
     // and load that note automatically if it matches a known option.

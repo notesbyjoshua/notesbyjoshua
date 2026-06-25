@@ -7,13 +7,18 @@ create table if not exists public.profiles (
   id           uuid primary key references auth.users (id) on delete cascade,
   email        text,
   display_name text,
-  role         text not null default 'visitor' check (role in ('visitor', 'admin')),
+  role         text not null default 'visitor' check (role in ('visitor', 'writer', 'admin')),
   created_at   timestamptz not null default now()
 );
 
 -- If the table already existed, make sure the columns are present.
 alter table public.profiles add column if not exists display_name text;
 alter table public.profiles add column if not exists avatar_url text;
+
+-- Existing projects may still have the original two-role check constraint.
+alter table public.profiles drop constraint if exists profiles_role_check;
+alter table public.profiles add constraint profiles_role_check
+  check (role in ('visitor', 'writer', 'admin'));
 
 alter table public.profiles enable row level security;
 
@@ -40,6 +45,11 @@ create policy "read own or admin" on public.profiles
 drop policy if exists "update own profile" on public.profiles;
 create policy "update own profile" on public.profiles
   for update using (auth.uid() = id) with check (auth.uid() = id);
+
+-- Admins may update other profiles, including assigning writer/admin roles.
+drop policy if exists "admins update profiles" on public.profiles;
+create policy "admins update profiles" on public.profiles
+  for update using (public.is_admin()) with check (public.is_admin());
 
 -- Guard: only admins may change the `role` column (blocks self-promotion).
 create or replace function public.prevent_role_change()
@@ -88,6 +98,28 @@ create trigger on_auth_user_created
 
 -- To make yourself admin after signing up, run (with your email):
 --   update public.profiles set role = 'admin' where email = 'you@example.com';
+
+
+-- ---------------------------------------------------------------------------
+-- Writer note-editing permissions.
+-- ---------------------------------------------------------------------------
+create table if not exists public.writer_topic_permissions (
+  user_id    uuid not null references auth.users (id) on delete cascade,
+  topic_key  text not null,
+  created_at timestamptz not null default now(),
+  primary key (user_id, topic_key)
+);
+
+alter table public.writer_topic_permissions enable row level security;
+
+-- Writers can see their own allowed topics; admins can manage everyone.
+drop policy if exists "read own writer topics or admin" on public.writer_topic_permissions;
+create policy "read own writer topics or admin" on public.writer_topic_permissions
+  for select using (auth.uid() = user_id or public.is_admin());
+
+drop policy if exists "admins manage writer topics" on public.writer_topic_permissions;
+create policy "admins manage writer topics" on public.writer_topic_permissions
+  for all using (public.is_admin()) with check (public.is_admin());
 
 
 -- ---------------------------------------------------------------------------

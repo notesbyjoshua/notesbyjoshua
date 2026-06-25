@@ -38,7 +38,7 @@ const editHref = isNote && filePath ? `/admin/edit?path=${encodeURIComponent(`as
 </div>
 
 <script>
-  import { getSupabase, getRole } from '../lib/supabase';
+  import { canEditNotePath, getSupabase } from '../lib/supabase';
 
   // --- Theorem boxes: colour-code by type; make solutions attempt-first. -----
   const TYPES: [RegExp, string][] = [
@@ -95,16 +95,18 @@ const editHref = isNote && filePath ? `/admin/edit?path=${encodeURIComponent(`as
     meta.hidden = false;
   }
 
-  // --- Edit pencil (note pages, admins only). --------------------------------
+  // --- Edit pencil (note pages, admins and assigned writers only). -----------
   const sbEdit = getSupabase();
   const editBtn = document.querySelector<HTMLAnchorElement>('.edit-note-btn');
   if (sbEdit && editBtn) {
+    const editPath = new URL(editBtn.href).searchParams.get('path') ?? '';
     sbEdit.auth.onAuthStateChange(async (_event, session) => {
       if (!session?.user) { editBtn.hidden = true; return; }
       try {
-        if ((await getRole(session.user)) === 'admin') editBtn.hidden = false;
+        editBtn.hidden = !(await canEditNotePath(editPath, session.user));
       } catch (err) {
         // Transient role-read failure: leave the pencil hidden (fail closed).
+        editBtn.hidden = true;
       }
     });
   }

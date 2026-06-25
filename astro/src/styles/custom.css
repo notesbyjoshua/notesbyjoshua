@@ -271,6 +271,55 @@
 	text-align: left;
 	padding: 0.5rem 0.75rem;
 	border-bottom: 1px solid var(--sl-color-gray-5);
+	vertical-align: top;
+}
+
+.admin-role-select {
+	min-width: 7rem;
+	height: 2rem;
+	border: 1px solid var(--sl-color-gray-5);
+	border-radius: 0.3rem;
+	background: var(--sl-color-black);
+	color: var(--sl-color-white);
+	font: inherit;
+}
+
+.admin-topic-checks {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+	gap: 0.35rem 0.75rem;
+	min-width: min(34rem, 70vw);
+	font-size: var(--sl-text-sm);
+}
+
+.admin-topic-checks label {
+	display: flex;
+	align-items: center;
+	gap: 0.35rem;
+	white-space: nowrap;
+}
+
+.admin-save-user {
+	height: 2rem;
+	padding: 0 0.75rem;
+	border: 1px solid var(--sl-color-accent);
+	border-radius: 0.3rem;
+	background: var(--sl-color-accent);
+	color: var(--sl-color-white);
+	font: inherit;
+	cursor: pointer;
+}
+
+.admin-save-user:disabled {
+	opacity: 0.55;
+	cursor: not-allowed;
+}
+
+.admin-save-status {
+	display: block;
+	margin-top: 0.3rem;
+	font-size: var(--sl-text-xs);
+	color: var(--sl-color-gray-3);
 }
 
 /* --- Notes progress report (admin) --- */

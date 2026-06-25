@@ -122,9 +122,10 @@ with a `supabase/.env.local` holding `LINEAR_API_KEY`, `LINEAR_TEAM_ID`,
 
 ## `commit-note`
 
-Backs the in-browser note editor at **`/admin/edit`**. An admin picks a note,
-edits its markdown with a live preview, and clicks save — the function commits
-the file to GitHub, which triggers the normal Pages rebuild.
+Backs the in-browser note editor at **`/admin/edit`**. An admin, or a writer
+assigned to that note's subject, picks a note, edits its markdown with a live
+preview, and clicks save — the function commits the file to GitHub, which
+triggers the normal Pages rebuild.
 
 ```
 /admin/edit → this function → GitHub commit → deploy.yml → live site (~1–2 min)
@@ -132,9 +133,10 @@ the file to GitHub, which triggers the normal Pages rebuild.
 
 **Security model (two factors):**
 
-1. The browser sends the admin's Supabase session JWT (attached automatically by
-   `supabase.functions.invoke`). The function verifies it and confirms the
-   user's `profiles.role = 'admin'` — same admin role used everywhere else.
+1. The browser sends the user's Supabase session JWT (attached automatically by
+   `supabase.functions.invoke`). The function verifies it and confirms either
+   `profiles.role = 'admin'`, or `profiles.role = 'writer'` plus a matching row
+   in `writer_topic_permissions` for that note's subject.
 2. **Saving** additionally requires the secret **edit password** (`EDIT_PASSWORD`).
    This is the "password system" — a second factor on top of the login, so a
    stolen browser session still can't publish edits.
@@ -171,8 +173,9 @@ supabase functions deploy commit-note --no-verify-jwt
 ```
 
 `--no-verify-jwt` is required because the function does its own auth (it must
-read the user id from the JWT and check the admin role). `SUPABASE_URL` and
-`SUPABASE_SERVICE_ROLE_KEY` are injected automatically — don't set them.
+read the user id from the JWT and check admin/writer permissions).
+`SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` are injected automatically —
+don't set them.
 
 **Dashboard alternative:** Edge Functions → *Deploy a new function* → name it
 `commit-note` → paste `commit-note/index.ts` → disable "Verify JWT" → add the
@@ -180,10 +183,11 @@ four secrets under *Manage secrets*.
 
 ### 4. Use it
 
-Sign in as an admin, open **Account menu → Admin → Edit notes in the browser**
-(or go to `/admin/edit`). Pick a note, edit, enter the edit password, and save.
-The live page updates after the GitHub Actions rebuild (~1–2 min); watch progress
-under the repo's **Actions** tab.
+Sign in as an admin, open **Account menu → Admin**, set a user to `writer`, and
+check the subjects they can edit. Writers can then open **Account menu → Write**
+(or go to `/admin/edit`). Pick an allowed note, edit, enter the edit password,
+and save. The live page updates after the GitHub Actions rebuild (~1–2 min);
+watch progress under the repo's **Actions** tab.
 
 > Edits land directly on `main`, exactly like editing the file locally — so the
 > same notes linter (`scripts/check_notes.py`) runs in CI. If a save breaks the

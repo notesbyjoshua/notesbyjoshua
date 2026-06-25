@@ -1,4 +1,5 @@
 import { createClient, type SupabaseClient } from '@supabase/supabase-js';
+import { canTopicEditPath } from './editorTopics';
 
 // These are PUBLIC values (safe to ship to the browser): the anon key only
 // grants access allowed by Row-Level Security policies, and it already appears
@@ -33,14 +34,16 @@ export function getSupabase(): SupabaseClient | null {
  * so we don't call an auth method (which can deadlock) inside that callback. */
 export type SessionUser = { id: string; email?: string | null };
 
-/** The current user's role ('visitor' | 'admin'), or null if signed out. */
-export async function getRole(user?: SessionUser): Promise<'visitor' | 'admin' | null> {
+export type UserRole = 'visitor' | 'writer' | 'admin';
+
+/** The current user's role ('visitor' | 'writer' | 'admin'), or null if signed out. */
+export async function getRole(user?: SessionUser): Promise<UserRole | null> {
 	const profile = await getProfile(user);
 	return profile ? profile.role : null;
 }
 
 export interface Profile {
-	role: 'visitor' | 'admin';
+	role: UserRole;
 	display_name: string | null;
 	email: string | null;
 	created_at: string | null;
@@ -84,10 +87,34 @@ export async function getProfile(user?: SessionUser): Promise<Profile | null> {
 		.maybeSingle();
 	if (!avatarErr) avatar_url = (avatarRow as any)?.avatar_url ?? null;
 	return {
-		role: (data.role as 'visitor' | 'admin') ?? 'visitor',
+		role: (data.role as UserRole) ?? 'visitor',
 		display_name: data.display_name ?? null,
 		email: data.email ?? user.email ?? null,
 		created_at: data.created_at ?? null,
 		avatar_url,
 	};
+}
+
+export async function getWriterTopicKeys(user?: SessionUser): Promise<string[]> {
+	const sb = getSupabase();
+	if (!sb) return [];
+	if (!user) {
+		const { data } = await sb.auth.getUser();
+		user = data.user ?? undefined;
+	}
+	if (!user) return [];
+	const { data, error } = await sb
+		.from('writer_topic_permissions')
+		.select('topic_key')
+		.eq('user_id', user.id);
+	if (error) throw error;
+	return (data ?? []).map((row: any) => String(row.topic_key));
+}
+
+export async function canEditNotePath(path: string, user?: SessionUser): Promise<boolean> {
+	const role = await getRole(user);
+	if (role === 'admin') return true;
+	if (role !== 'writer') return false;
+	const topicKeys = await getWriterTopicKeys(user);
+	return canTopicEditPath(topicKeys, path);
 }

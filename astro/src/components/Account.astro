@@ -74,6 +74,7 @@ const totalNotes = sections.reduce((n, s) => n + s.slugs.length, 0);
 
     <p><a href="/dashboard/">Open your reading dashboard →</a></p>
 
+    <p id="writer-links" hidden><a href="/admin/edit/">Open the note editor →</a></p>
     <p id="admin-links" hidden><a href="/admin/">Open the admin dashboard →</a></p>
     <p><button id="signout" class="account-btn account-btn--secondary" type="button">Sign out</button></p>
   </div>
@@ -184,6 +185,7 @@ const totalNotes = sections.reduce((n, s) => n + s.slugs.length, 0);
     if (profile) {
       byId('account-role').textContent = profile.role;
       (byId('account-username') as HTMLInputElement).value = profile.display_name ?? '';
+      byId('writer-links').hidden = profile.role !== 'writer' && profile.role !== 'admin';
       byId('admin-links').hidden = profile.role !== 'admin';
     }
     byId('account-name').textContent = profile?.display_name || email.split('@')[0] || 'Account';
