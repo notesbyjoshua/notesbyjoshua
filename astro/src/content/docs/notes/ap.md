@@ -37,3 +37,5 @@ These notes will roughly follow a AP curriculum but might have some extra stuff 
 - ### [AP Precalculus hub](/notes/ap/precalculus/)
 
 - ### [AP Statistics hub](/notes/ap/statistics/)
+
+- ### AP US History 🚧

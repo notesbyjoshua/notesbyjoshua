@@ -325,3 +325,4 @@ Note: $$L$$ is conserved whenever external torque vanishes, but $$K_{\text{rot}}
 4. For energy/momentum problems, check whether the relevant quantity is conserved before writing equations.
 5. Solve symbolically first, then substitute numbers with units.
 6. Check limiting cases (zero friction, equal masses, small angle) and confirm the sign and magnitude make physical sense.
+7. If given a graph, always remember that the slope corresponds to the derivative/division, and the area under the curve correlates to integration/multiplication.
