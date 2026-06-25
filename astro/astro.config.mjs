@@ -152,8 +152,8 @@ export default defineConfig({
 				{ label: 'Blog', link: '/blog/' },
 				{ label: 'About', link: '/about/' },
 				{ label: 'Feedback', link: '/feedback/' },
-				{ label: 'My Dashboard', link: '/dashboard/' },
-				{ label: 'Account', link: '/account/' },
+				// Dashboard + Account live in the header account menu (top-right), not
+				// the sidebar — keeps the nav focused on content.
 			],
 		}),
 	],
