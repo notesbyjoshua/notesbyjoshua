@@ -6,6 +6,7 @@
 import Default from '@astrojs/starlight/components/PageTitle.astro';
 import PracticeFilters from './PracticeFilters.astro';
 import Highlighter from './Highlighter.astro';
+import Minimap from './Minimap.astro';
 import ReferenceSheetDrawer from './ReferenceSheetDrawer.astro';
 import { findReferenceSheet } from '../data/reference-sheets';
 const path = Astro.url.pathname;
@@ -53,6 +54,7 @@ const editHref = isNote && filePath ? `/admin/edit?path=${encodeURIComponent(`as
   )}
 </div>
 {isNote && <Highlighter slug={path} />}
+{isNote && <Minimap />}
 {isPracticeSubject && <PracticeFilters />}
 
 <script>

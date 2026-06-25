@@ -1,0 +1,38 @@
+---
+// A row of small "pill" tags — handy for competition qualifications, topics,
+// a tech stack, etc. Pass `items`, or use the default slot for custom markup.
+//   <Pills items={["AIME", "USAPhO", "USNCO"]} />
+interface Props {
+	items?: string[];
+}
+const { items } = Astro.props;
+---
+
+<ul class="mdx-pills">
+	{items?.map((item) => <li class="mdx-pill">{item}</li>)}
+	<slot />
+</ul>
+
+<style>
+	.mdx-pills {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.45rem;
+		margin: 1rem 0;
+		padding: 0;
+		list-style: none;
+	}
+	.mdx-pill,
+	.mdx-pills :global(li) {
+		display: inline-flex;
+		align-items: center;
+		padding: 0.25rem 0.7rem;
+		border: 1px solid color-mix(in srgb, var(--sl-color-accent) 35%, var(--sl-color-gray-5));
+		border-radius: 999px;
+		background: var(--sl-color-accent-low, transparent);
+		color: var(--sl-color-text-accent);
+		font-size: var(--sl-text-sm);
+		font-weight: 600;
+		line-height: 1.3;
+	}
+</style>

@@ -1,0 +1,52 @@
+---
+// A handwritten-themed callout box for notes/pages. Distinct from Starlight's
+// built-in `:::note` asides — use whichever reads better in context.
+//   <Callout type="tip" title="Exam tip">Watch your units.</Callout>
+interface Props {
+	type?: 'note' | 'tip' | 'important' | 'caution';
+	title?: string;
+}
+const { type = 'note', title } = Astro.props;
+const ICON: Record<string, string> = { note: '✎', tip: '✦', important: '★', caution: '⚠' };
+const DEFAULT_TITLE: Record<string, string> = {
+	note: 'Note',
+	tip: 'Tip',
+	important: 'Important',
+	caution: 'Caution',
+};
+---
+
+<aside class={`mdx-callout mdx-callout--${type}`}>
+	<p class="mdx-callout__title">
+		<span class="mdx-callout__icon" aria-hidden="true">{ICON[type]}</span>
+		{title ?? DEFAULT_TITLE[type]}
+	</p>
+	<div class="mdx-callout__body"><slot /></div>
+</aside>
+
+<style>
+	.mdx-callout {
+		margin: 1.25rem 0;
+		padding: 0.85rem 1.1rem;
+		border-left: 4px solid var(--cl-accent);
+		border-radius: 0 0.5rem 0.5rem 0;
+		background: color-mix(in srgb, var(--cl-accent) 9%, var(--sl-color-bg));
+		--cl-accent: var(--sl-color-accent);
+	}
+	.mdx-callout--note { --cl-accent: #0ea5e9; }
+	.mdx-callout--tip { --cl-accent: #22c55e; }
+	.mdx-callout--important { --cl-accent: var(--sl-color-accent); }
+	.mdx-callout--caution { --cl-accent: #f59e0b; }
+	.mdx-callout__title {
+		display: flex;
+		align-items: center;
+		gap: 0.45rem;
+		margin: 0 0 0.4rem;
+		font-family: var(--font-display, inherit);
+		font-weight: 700;
+		color: color-mix(in srgb, var(--cl-accent) 80%, var(--sl-color-text));
+	}
+	.mdx-callout__icon { color: var(--cl-accent); }
+	.mdx-callout__body :global(> :first-child) { margin-top: 0; }
+	.mdx-callout__body :global(> :last-child) { margin-bottom: 0; }
+</style>

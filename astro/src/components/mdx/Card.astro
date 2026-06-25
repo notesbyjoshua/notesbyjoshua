@@ -1,0 +1,74 @@
+---
+// A themed content card. Renders as a link when `href` is given (with a hover
+// lift + arrow), otherwise a static panel. Body is the default slot.
+interface Props {
+	title?: string;
+	href?: string;
+	icon?: string;
+	/** Call-to-action label shown at the bottom of a linked card. */
+	cta?: string;
+	external?: boolean;
+}
+const { title, href, icon, cta, external } = Astro.props;
+const Tag = href ? 'a' : 'div';
+const linkAttrs = href
+	? { href, ...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {}) }
+	: {};
+---
+
+<Tag class:list={['mdx-card', { 'mdx-card--link': !!href }]} {...linkAttrs}>
+	{(icon || title) && (
+		<p class="mdx-card__head">
+			{icon && <span class="mdx-card__icon" aria-hidden="true">{icon}</span>}
+			{title && <span class="mdx-card__title">{title}</span>}
+		</p>
+	)}
+	<div class="mdx-card__body"><slot /></div>
+	{href && cta && (
+		<span class="mdx-card__cta">{cta} <span aria-hidden="true">→</span></span>
+	)}
+</Tag>
+
+<style>
+	.mdx-card {
+		display: flex;
+		flex-direction: column;
+		gap: 0.4rem;
+		padding: 1rem 1.1rem;
+		border: 1px solid var(--sl-color-gray-5);
+		border-radius: 0.7rem;
+		background: var(--sl-color-bg);
+		color: var(--sl-color-text);
+		text-decoration: none;
+	}
+	.mdx-card--link {
+		transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+	}
+	.mdx-card--link:hover {
+		border-color: var(--sl-color-accent);
+		transform: translateY(-2px);
+		box-shadow: var(--sl-shadow-sm);
+	}
+	.mdx-card__head {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		margin: 0;
+	}
+	.mdx-card__icon { font-size: 1.2rem; line-height: 1; }
+	.mdx-card__title {
+		font-family: var(--font-display, inherit);
+		font-weight: 700;
+		font-size: 1.05rem;
+	}
+	.mdx-card__body { font-size: 0.95rem; }
+	.mdx-card__body :global(> :first-child) { margin-top: 0; }
+	.mdx-card__body :global(> :last-child) { margin-bottom: 0; }
+	.mdx-card__cta {
+		margin-top: auto;
+		padding-top: 0.3rem;
+		font-weight: 600;
+		font-size: 0.9rem;
+		color: var(--sl-color-text-accent);
+	}
+</style>

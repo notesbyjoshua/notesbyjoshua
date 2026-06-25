@@ -1,0 +1,23 @@
+---
+// Responsive grid wrapper for <Card>s. Usable in any .mdx page/note:
+//   import { CardGrid, Card } from '../../../components/mdx';
+//   <CardGrid><Card title="…">…</Card></CardGrid>
+interface Props {
+	/** Minimum card width before wrapping (default 14rem). */
+	min?: string;
+}
+const { min = '14rem' } = Astro.props;
+---
+
+<div class="mdx-card-grid" style={`--mdx-card-min: ${min}`}>
+	<slot />
+</div>
+
+<style>
+	.mdx-card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(var(--mdx-card-min), 1fr));
+		gap: 0.9rem;
+		margin: 1.5rem 0;
+	}
+</style>
