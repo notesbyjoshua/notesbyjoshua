@@ -1,13 +1,109 @@
 {
   "summary": {
-    "generated_at": "2026-06-24",
-    "unit_pages": 74,
-    "all_pages": 80,
-    "average_progress": 66,
-    "below_complete": 61,
-    "with_placeholders": 35
+    "generated_at": "2026-06-25",
+    "unit_pages": 87,
+    "all_pages": 92,
+    "average_progress": 54,
+    "below_complete": 77,
+    "with_placeholders": 43
   },
   "pages": [
+    {
+      "title": "Unit 1: Chemistry of Life",
+      "route": "/notes/ap/biology/biochem/",
+      "course": "AP Biology",
+      "kind": "unit",
+      "status": "stub",
+      "progress": 0,
+      "issues": [
+        "empty/stub page"
+      ],
+      "next_step": "Write the note"
+    },
+    {
+      "title": "Unit 2: Cell Structure and Function",
+      "route": "/notes/ap/biology/cells/",
+      "course": "AP Biology",
+      "kind": "unit",
+      "status": "stub",
+      "progress": 0,
+      "issues": [
+        "empty/stub page"
+      ],
+      "next_step": "Write the note"
+    },
+    {
+      "title": "Unit 3: Cellular Energetics",
+      "route": "/notes/ap/biology/cellenergy/",
+      "course": "AP Biology",
+      "kind": "unit",
+      "status": "stub",
+      "progress": 0,
+      "issues": [
+        "empty/stub page"
+      ],
+      "next_step": "Write the note"
+    },
+    {
+      "title": "Unit 4: Cell Communication and Cell Cycle",
+      "route": "/notes/ap/biology/cellcommcycle/",
+      "course": "AP Biology",
+      "kind": "unit",
+      "status": "stub",
+      "progress": 0,
+      "issues": [
+        "empty/stub page"
+      ],
+      "next_step": "Write the note"
+    },
+    {
+      "title": "Unit 5: Heredity",
+      "route": "/notes/ap/biology/heredity/",
+      "course": "AP Biology",
+      "kind": "unit",
+      "status": "stub",
+      "progress": 0,
+      "issues": [
+        "empty/stub page"
+      ],
+      "next_step": "Write the note"
+    },
+    {
+      "title": "Unit 6: Gene Expression and Regulation",
+      "route": "/notes/ap/biology/geneexpreg/",
+      "course": "AP Biology",
+      "kind": "unit",
+      "status": "stub",
+      "progress": 0,
+      "issues": [
+        "empty/stub page"
+      ],
+      "next_step": "Write the note"
+    },
+    {
+      "title": "Unit 7: Natural Selection",
+      "route": "/notes/ap/biology/natselection/",
+      "course": "AP Biology",
+      "kind": "unit",
+      "status": "stub",
+      "progress": 0,
+      "issues": [
+        "empty/stub page"
+      ],
+      "next_step": "Write the note"
+    },
+    {
+      "title": "Unit 8: Ecology",
+      "route": "/notes/ap/biology/ecology/",
+      "course": "AP Biology",
+      "kind": "unit",
+      "status": "stub",
+      "progress": 0,
+      "issues": [
+        "empty/stub page"
+      ],
+      "next_step": "Write the note"
+    },
     {
       "title": "Homothety",
       "route": "/notes/math/geometry/homothety/",
@@ -18,7 +114,19 @@
       "issues": [
         "empty/stub page"
       ],
-      "next_step": "Run a focused review"
+      "next_step": "Write the note"
+    },
+    {
+      "title": "AP Biology Cheat Sheet",
+      "route": "/notes/ap/biology/cheatsheet/",
+      "course": "AP Biology",
+      "kind": "unit",
+      "status": "stub",
+      "progress": 2,
+      "issues": [
+        "empty/stub page"
+      ],
+      "next_step": "Write the note"
     },
     {
       "title": "Advanced Kinetics",
@@ -30,7 +138,7 @@
       "issues": [
         "empty/stub page"
       ],
-      "next_step": "Run a focused review"
+      "next_step": "Write the note"
     },
     {
       "title": "Solid-State Chemistry",
@@ -42,7 +150,7 @@
       "issues": [
         "empty/stub page"
       ],
-      "next_step": "Run a focused review"
+      "next_step": "Write the note"
     },
     {
       "title": "Spectroscopy",
@@ -54,7 +162,7 @@
       "issues": [
         "empty/stub page"
       ],
-      "next_step": "Run a focused review"
+      "next_step": "Write the note"
     },
     {
       "title": "Coordination Chemistry",
@@ -66,7 +174,7 @@
       "issues": [
         "empty/stub page"
       ],
-      "next_step": "Run a focused review"
+      "next_step": "Write the note"
     },
     {
       "title": "Organic Chemistry",
@@ -78,7 +186,7 @@
       "issues": [
         "empty/stub page"
       ],
-      "next_step": "Run a focused review"
+      "next_step": "Write the note"
     },
     {
       "title": "Unit 7: Inference for Quantitative Data: Means",
@@ -86,26 +194,12 @@
       "course": "AP Statistics",
       "kind": "unit",
       "status": "draft",
-      "progress": 33,
+      "progress": 32,
       "issues": [
-        "missing practice",
+        "practice without solutions",
         "has TODOs/placeholders"
       ],
-      "next_step": "Add practice problems"
-    },
-    {
-      "title": "Unit 5: Sampling Distributions",
-      "route": "/notes/ap/stats/samplingdistr/",
-      "course": "AP Statistics",
-      "kind": "unit",
-      "status": "draft",
-      "progress": 35,
-      "issues": [
-        "few or no worked boxes",
-        "missing practice",
-        "has TODOs/placeholders"
-      ],
-      "next_step": "Add worked examples"
+      "next_step": "Add matching solutions"
     },
     {
       "title": "Unit 8: Inference for Categorical Data: Chi-Square",
@@ -113,23 +207,10 @@
       "course": "AP Statistics",
       "kind": "unit",
       "status": "draft",
-      "progress": 35,
-      "issues": [
-        "missing practice",
-        "has TODOs/placeholders"
-      ],
-      "next_step": "Add practice problems"
-    },
-    {
-      "title": "Unit 6: Inference for Categorical Data: Proportions",
-      "route": "/notes/ap/stats/catprop/",
-      "course": "AP Statistics",
-      "kind": "unit",
-      "status": "draft",
-      "progress": 37,
+      "progress": 34,
       "issues": [
         "few or no worked boxes",
-        "missing practice",
+        "practice without solutions",
         "has TODOs/placeholders"
       ],
       "next_step": "Add worked examples"
@@ -140,12 +221,55 @@
       "course": "AP Statistics",
       "kind": "unit",
       "status": "draft",
+      "progress": 34,
+      "issues": [
+        "few or no worked boxes",
+        "practice without solutions",
+        "has TODOs/placeholders"
+      ],
+      "next_step": "Add worked examples"
+    },
+    {
+      "title": "Unit 6: Inference for Categorical Data: Proportions",
+      "route": "/notes/ap/stats/catprop/",
+      "course": "AP Statistics",
+      "kind": "unit",
+      "status": "draft",
+      "progress": 36,
+      "issues": [
+        "few or no worked boxes",
+        "practice without solutions",
+        "has TODOs/placeholders"
+      ],
+      "next_step": "Add worked examples"
+    },
+    {
+      "title": "Unit 5: Sampling Distributions",
+      "route": "/notes/ap/stats/samplingdistr/",
+      "course": "AP Statistics",
+      "kind": "unit",
+      "status": "draft",
       "progress": 37,
       "issues": [
+        "few or no worked boxes",
+        "practice without solutions",
+        "has TODOs/placeholders"
+      ],
+      "next_step": "Add worked examples"
+    },
+    {
+      "title": "AP Chemistry Cheat Sheet",
+      "route": "/notes/ap/chem/cheatsheet/",
+      "course": "AP Chemistry",
+      "kind": "unit",
+      "status": "draft",
+      "progress": 41,
+      "issues": [
+        "few or no worked boxes",
         "missing practice",
         "has TODOs/placeholders"
       ],
-      "next_step": "Add practice problems"
+      "next_step": "Add worked examples"
     },
     {
       "title": "Unit 4: Probability, Random Variables, and Probability Distributions",
@@ -153,11 +277,24 @@
       "course": "AP Statistics",
       "kind": "unit",
       "status": "draft",
-      "progress": 43,
+      "progress": 42,
       "issues": [
         "few or no worked boxes",
-        "missing practice",
+        "practice without solutions",
         "has TODOs/placeholders"
+      ],
+      "next_step": "Add worked examples"
+    },
+    {
+      "title": "AP Precalculus Cheat Sheet",
+      "route": "/notes/ap/precalc/cheatsheet/",
+      "course": "Notes",
+      "kind": "unit",
+      "status": "draft",
+      "progress": 44,
+      "issues": [
+        "few or no worked boxes",
+        "missing practice"
       ],
       "next_step": "Add worked examples"
     },
@@ -167,10 +304,10 @@
       "course": "AP Statistics",
       "kind": "unit",
       "status": "draft",
-      "progress": 46,
+      "progress": 47,
       "issues": [
         "few or no worked boxes",
-        "missing practice",
+        "practice without solutions",
         "has TODOs/placeholders"
       ],
       "next_step": "Add worked examples"
@@ -181,10 +318,10 @@
       "course": "AP Statistics",
       "kind": "unit",
       "status": "draft",
-      "progress": 49,
+      "progress": 47,
       "issues": [
         "few or no worked boxes",
-        "missing practice",
+        "practice without solutions",
         "has TODOs/placeholders"
       ],
       "next_step": "Add worked examples"
@@ -195,11 +332,24 @@
       "course": "AP Statistics",
       "kind": "unit",
       "status": "draft",
-      "progress": 49,
+      "progress": 47,
       "issues": [
         "few or no worked boxes",
-        "missing practice",
+        "practice without solutions",
         "has TODOs/placeholders"
+      ],
+      "next_step": "Add worked examples"
+    },
+    {
+      "title": "AP Calculus AB/BC Cheat Sheet",
+      "route": "/notes/ap/calculus/cheatsheet/",
+      "course": "Notes",
+      "kind": "unit",
+      "status": "draft",
+      "progress": 53,
+      "issues": [
+        "few or no worked boxes",
+        "missing practice"
       ],
       "next_step": "Add worked examples"
     },
@@ -213,6 +363,102 @@
       "issues": [
         "few or no worked boxes",
         "missing practice"
+      ],
+      "next_step": "Add worked examples"
+    },
+    {
+      "title": "AP Physics C: E&M Cheat Sheet",
+      "route": "/notes/ap/ap-physics-c-em/cheatsheet/",
+      "course": "Notes",
+      "kind": "unit",
+      "status": "draft",
+      "progress": 55,
+      "issues": [
+        "few or no worked boxes",
+        "missing practice"
+      ],
+      "next_step": "Add worked examples"
+    },
+    {
+      "title": "AP Physics C: Mechanics Cheat Sheet",
+      "route": "/notes/ap/ap-physics-c-mechanics/cheatsheet/",
+      "course": "Notes",
+      "kind": "unit",
+      "status": "draft",
+      "progress": 55,
+      "issues": [
+        "few or no worked boxes",
+        "missing practice"
+      ],
+      "next_step": "Add worked examples"
+    },
+    {
+      "title": "Unit 4: Chemical Reactions",
+      "route": "/notes/ap/chem/chemrxns/",
+      "course": "AP Chemistry",
+      "kind": "unit",
+      "status": "developing",
+      "progress": 60,
+      "issues": [
+        "few or no worked boxes",
+        "practice without solutions",
+        "has TODOs/placeholders"
+      ],
+      "next_step": "Add worked examples"
+    },
+    {
+      "title": "Unit 5: Kinetics",
+      "route": "/notes/ap/chem/kinetics/",
+      "course": "AP Chemistry",
+      "kind": "unit",
+      "status": "developing",
+      "progress": 60,
+      "issues": [
+        "few or no worked boxes",
+        "practice without solutions",
+        "has TODOs/placeholders"
+      ],
+      "next_step": "Add worked examples"
+    },
+    {
+      "title": "Unit 6: Thermochemistry",
+      "route": "/notes/ap/chem/thermochemistry/",
+      "course": "AP Chemistry",
+      "kind": "unit",
+      "status": "developing",
+      "progress": 60,
+      "issues": [
+        "few or no worked boxes",
+        "practice without solutions",
+        "has TODOs/placeholders"
+      ],
+      "next_step": "Add worked examples"
+    },
+    {
+      "title": "Unit 7: Equilibrium",
+      "route": "/notes/ap/chem/equilibrium/",
+      "course": "AP Chemistry",
+      "kind": "unit",
+      "status": "developing",
+      "progress": 60,
+      "issues": [
+        "few or no worked boxes",
+        "practice without solutions",
+        "has TODOs/placeholders"
+      ],
+      "next_step": "Add worked examples"
+    },
+    {
+      "title": "Unit 8: Acid-Base Equilibrium",
+      "route": "/notes/ap/chem/acidbase/",
+      "course": "AP Chemistry",
+      "kind": "unit",
+      "status": "developing",
+      "progress": 60,
+      "issues": [
+        "few or no worked boxes",
+        "practice without solutions",
+        "has TODOs/placeholders"
       ],
       "next_step": "Add worked examples"
     },
@@ -242,58 +488,6 @@
       "next_step": "Add practice problems"
     },
     {
-      "title": "1D and 2D Kinematics",
-      "route": "/notes/ap/ap-physics-c-mechanics/kinematics/",
-      "course": "AP Physics C Mechanics",
-      "kind": "unit",
-      "status": "developing",
-      "progress": 61,
-      "issues": [
-        "missing practice",
-        "has TODOs/placeholders"
-      ],
-      "next_step": "Add practice problems"
-    },
-    {
-      "title": "Oscillations",
-      "route": "/notes/ap/ap-physics-c-mechanics/oscillations/",
-      "course": "AP Physics C Mechanics",
-      "kind": "unit",
-      "status": "developing",
-      "progress": 61,
-      "issues": [
-        "missing practice",
-        "has TODOs/placeholders"
-      ],
-      "next_step": "Add practice problems"
-    },
-    {
-      "title": "Torque and Rotational Dynamics",
-      "route": "/notes/ap/ap-physics-c-mechanics/torque/",
-      "course": "AP Physics C Mechanics",
-      "kind": "unit",
-      "status": "developing",
-      "progress": 61,
-      "issues": [
-        "missing practice",
-        "has TODOs/placeholders"
-      ],
-      "next_step": "Add practice problems"
-    },
-    {
-      "title": "Work, Energy, and Power",
-      "route": "/notes/ap/ap-physics-c-mechanics/work/",
-      "course": "AP Physics C Mechanics",
-      "kind": "unit",
-      "status": "developing",
-      "progress": 61,
-      "issues": [
-        "missing practice",
-        "has TODOs/placeholders"
-      ],
-      "next_step": "Add practice problems"
-    },
-    {
       "title": "Uncertainty",
       "route": "/notes/physics/uncertainty/",
       "course": "Physics",
@@ -306,6 +500,110 @@
       "next_step": "Add practice problems"
     },
     {
+      "title": "Conductors and Capacitors",
+      "route": "/notes/ap/ap-physics-c-em/condcap/",
+      "course": "AP Physics C E&M",
+      "kind": "unit",
+      "status": "developing",
+      "progress": 62,
+      "issues": [
+        "practice without solutions",
+        "has TODOs/placeholders"
+      ],
+      "next_step": "Add matching solutions"
+    },
+    {
+      "title": "Electric Fields and Forces",
+      "route": "/notes/ap/ap-physics-c-em/electrostatics/",
+      "course": "AP Physics C E&M",
+      "kind": "unit",
+      "status": "developing",
+      "progress": 62,
+      "issues": [
+        "practice without solutions",
+        "has TODOs/placeholders"
+      ],
+      "next_step": "Add matching solutions"
+    },
+    {
+      "title": "1D and 2D Kinematics",
+      "route": "/notes/ap/ap-physics-c-mechanics/kinematics/",
+      "course": "AP Physics C Mechanics",
+      "kind": "unit",
+      "status": "developing",
+      "progress": 62,
+      "issues": [
+        "practice without solutions",
+        "has TODOs/placeholders"
+      ],
+      "next_step": "Add matching solutions"
+    },
+    {
+      "title": "Energy and Momentum of Rotating Systems",
+      "route": "/notes/ap/ap-physics-c-mechanics/rotationalmomentum/",
+      "course": "AP Physics C Mechanics",
+      "kind": "unit",
+      "status": "developing",
+      "progress": 62,
+      "issues": [
+        "practice without solutions",
+        "has TODOs/placeholders"
+      ],
+      "next_step": "Add matching solutions"
+    },
+    {
+      "title": "Linear Momentum and Impulse",
+      "route": "/notes/ap/ap-physics-c-mechanics/linearmomentum/",
+      "course": "AP Physics C Mechanics",
+      "kind": "unit",
+      "status": "developing",
+      "progress": 62,
+      "issues": [
+        "practice without solutions",
+        "has TODOs/placeholders"
+      ],
+      "next_step": "Add matching solutions"
+    },
+    {
+      "title": "Oscillations",
+      "route": "/notes/ap/ap-physics-c-mechanics/oscillations/",
+      "course": "AP Physics C Mechanics",
+      "kind": "unit",
+      "status": "developing",
+      "progress": 62,
+      "issues": [
+        "practice without solutions",
+        "has TODOs/placeholders"
+      ],
+      "next_step": "Add matching solutions"
+    },
+    {
+      "title": "Torque and Rotational Dynamics",
+      "route": "/notes/ap/ap-physics-c-mechanics/torque/",
+      "course": "AP Physics C Mechanics",
+      "kind": "unit",
+      "status": "developing",
+      "progress": 62,
+      "issues": [
+        "practice without solutions",
+        "has TODOs/placeholders"
+      ],
+      "next_step": "Add matching solutions"
+    },
+    {
+      "title": "Work, Energy, and Power",
+      "route": "/notes/ap/ap-physics-c-mechanics/work/",
+      "course": "AP Physics C Mechanics",
+      "kind": "unit",
+      "status": "developing",
+      "progress": 62,
+      "issues": [
+        "practice without solutions",
+        "has TODOs/placeholders"
+      ],
+      "next_step": "Add matching solutions"
+    },
+    {
       "title": "Problem Solving Techniques",
       "route": "/notes/physics/techniques/",
       "course": "Physics",
@@ -316,6 +614,71 @@
         "missing practice"
       ],
       "next_step": "Add practice problems"
+    },
+    {
+      "title": "Circuits",
+      "route": "/notes/ap/ap-physics-c-em/circuits/",
+      "course": "AP Physics C E&M",
+      "kind": "unit",
+      "status": "developing",
+      "progress": 63,
+      "issues": [
+        "practice without solutions",
+        "has TODOs/placeholders"
+      ],
+      "next_step": "Add matching solutions"
+    },
+    {
+      "title": "Electric Potential",
+      "route": "/notes/ap/ap-physics-c-em/electricpot/",
+      "course": "AP Physics C E&M",
+      "kind": "unit",
+      "status": "developing",
+      "progress": 63,
+      "issues": [
+        "practice without solutions",
+        "has TODOs/placeholders"
+      ],
+      "next_step": "Add matching solutions"
+    },
+    {
+      "title": "Electromagnetic Induction",
+      "route": "/notes/ap/ap-physics-c-em/eminduction/",
+      "course": "AP Physics C E&M",
+      "kind": "unit",
+      "status": "developing",
+      "progress": 63,
+      "issues": [
+        "practice without solutions",
+        "has TODOs/placeholders"
+      ],
+      "next_step": "Add matching solutions"
+    },
+    {
+      "title": "Magnetic Fields and Electromagnetism",
+      "route": "/notes/ap/ap-physics-c-em/magnetism/",
+      "course": "AP Physics C E&M",
+      "kind": "unit",
+      "status": "developing",
+      "progress": 63,
+      "issues": [
+        "practice without solutions",
+        "has TODOs/placeholders"
+      ],
+      "next_step": "Add matching solutions"
+    },
+    {
+      "title": "Force and Translational Dynamics",
+      "route": "/notes/ap/ap-physics-c-mechanics/forces/",
+      "course": "AP Physics C Mechanics",
+      "kind": "unit",
+      "status": "developing",
+      "progress": 63,
+      "issues": [
+        "practice without solutions",
+        "has TODOs/placeholders"
+      ],
+      "next_step": "Add matching solutions"
     },
     {
       "title": "Unit 1: Limits and Continuity",
@@ -383,30 +746,46 @@
       "next_step": "Add practice problems"
     },
     {
-      "title": "Energy and Momentum of Rotating Systems",
-      "route": "/notes/ap/ap-physics-c-mechanics/rotationalmomentum/",
-      "course": "AP Physics C Mechanics",
+      "title": "Unit 2: Compound Structure and Properties",
+      "route": "/notes/ap/chem/compounds/",
+      "course": "AP Chemistry",
       "kind": "unit",
       "status": "developing",
       "progress": 64,
       "issues": [
-        "missing practice",
+        "few or no worked boxes",
+        "practice without solutions",
         "has TODOs/placeholders"
       ],
-      "next_step": "Add practice problems"
+      "next_step": "Add worked examples"
     },
     {
-      "title": "Linear Momentum and Impulse",
-      "route": "/notes/ap/ap-physics-c-mechanics/linearmomentum/",
-      "course": "AP Physics C Mechanics",
+      "title": "Unit 3: Substances and Mixtures",
+      "route": "/notes/ap/chem/submix/",
+      "course": "AP Chemistry",
       "kind": "unit",
       "status": "developing",
       "progress": 64,
       "issues": [
-        "missing practice",
+        "few or no worked boxes",
+        "practice without solutions",
         "has TODOs/placeholders"
       ],
-      "next_step": "Add practice problems"
+      "next_step": "Add worked examples"
+    },
+    {
+      "title": "Unit 9: Thermodynamics and Electrochemistry",
+      "route": "/notes/ap/chem/thermoelectro/",
+      "course": "AP Chemistry",
+      "kind": "unit",
+      "status": "developing",
+      "progress": 64,
+      "issues": [
+        "few or no worked boxes",
+        "practice without solutions",
+        "has TODOs/placeholders"
+      ],
+      "next_step": "Add worked examples"
     },
     {
       "title": "Recursion",
@@ -419,18 +798,6 @@
         "missing practice"
       ],
       "next_step": "Add practice problems"
-    },
-    {
-      "title": "AP Chemistry Cheat Sheet",
-      "route": "/notes/ap/chem/cheatsheet/",
-      "course": "AP Chemistry",
-      "kind": "unit",
-      "status": "developing",
-      "progress": 66,
-      "issues": [
-        "has TODOs/placeholders"
-      ],
-      "next_step": "Resolve placeholders"
     },
     {
       "title": "Unit 10: Infinite Sums and Series (BC-only)",
@@ -498,32 +865,6 @@
       "next_step": "Add practice problems"
     },
     {
-      "title": "Conductors and Capacitors",
-      "route": "/notes/ap/ap-physics-c-em/condcap/",
-      "course": "AP Physics C E&M",
-      "kind": "unit",
-      "status": "developing",
-      "progress": 67,
-      "issues": [
-        "missing practice",
-        "has TODOs/placeholders"
-      ],
-      "next_step": "Add practice problems"
-    },
-    {
-      "title": "Electric Fields and Forces",
-      "route": "/notes/ap/ap-physics-c-em/electrostatics/",
-      "course": "AP Physics C E&M",
-      "kind": "unit",
-      "status": "developing",
-      "progress": 67,
-      "issues": [
-        "missing practice",
-        "has TODOs/placeholders"
-      ],
-      "next_step": "Add practice problems"
-    },
-    {
       "title": "Summations",
       "route": "/notes/math/algebra/summations/",
       "course": "Math",
@@ -549,64 +890,17 @@
       "next_step": "Add practice problems"
     },
     {
-      "title": "Circuits",
-      "route": "/notes/ap/ap-physics-c-em/circuits/",
-      "course": "AP Physics C E&M",
+      "title": "Unit 1: Atomic Structure and Properties",
+      "route": "/notes/ap/chem/atomicstrucprop/",
+      "course": "AP Chemistry",
       "kind": "unit",
       "status": "developing",
       "progress": 70,
       "issues": [
-        "missing practice"
+        "few or no worked boxes",
+        "practice without solutions"
       ],
-      "next_step": "Add practice problems"
-    },
-    {
-      "title": "Electric Potential",
-      "route": "/notes/ap/ap-physics-c-em/electricpot/",
-      "course": "AP Physics C E&M",
-      "kind": "unit",
-      "status": "developing",
-      "progress": 70,
-      "issues": [
-        "missing practice"
-      ],
-      "next_step": "Add practice problems"
-    },
-    {
-      "title": "Electromagnetic Induction",
-      "route": "/notes/ap/ap-physics-c-em/eminduction/",
-      "course": "AP Physics C E&M",
-      "kind": "unit",
-      "status": "developing",
-      "progress": 70,
-      "issues": [
-        "missing practice"
-      ],
-      "next_step": "Add practice problems"
-    },
-    {
-      "title": "Magnetic Fields and Electromagnetism",
-      "route": "/notes/ap/ap-physics-c-em/magnetism/",
-      "course": "AP Physics C E&M",
-      "kind": "unit",
-      "status": "developing",
-      "progress": 70,
-      "issues": [
-        "missing practice"
-      ],
-      "next_step": "Add practice problems"
-    },
-    {
-      "title": "Force and Translational Dynamics",
-      "route": "/notes/ap/ap-physics-c-mechanics/forces/",
-      "course": "AP Physics C Mechanics",
-      "kind": "unit",
-      "status": "developing",
-      "progress": 70,
-      "issues": [
-        "missing practice"
-      ],
-      "next_step": "Add practice problems"
+      "next_step": "Add worked examples"
     },
     {
       "title": "Advanced Mechanics",
@@ -705,16 +999,6 @@
       "next_step": "Add practice problems"
     },
     {
-      "title": "AP Biology",
-      "route": "/notes/ap/biology/",
-      "course": "AP",
-      "kind": "index",
-      "status": "developing",
-      "progress": 71,
-      "issues": [],
-      "next_step": "Review for accuracy"
-    },
-    {
       "title": "Notes",
       "route": "/notes/notes/",
       "course": "Notes",
@@ -767,106 +1051,6 @@
       "progress": 88,
       "issues": [],
       "next_step": "Review for accuracy"
-    },
-    {
-      "title": "Unit 8: Acid-Base Equilibrium",
-      "route": "/notes/ap/chem/acidbase/",
-      "course": "AP Chemistry",
-      "kind": "unit",
-      "status": "review",
-      "progress": 91,
-      "issues": [
-        "has TODOs/placeholders"
-      ],
-      "next_step": "Resolve placeholders"
-    },
-    {
-      "title": "Unit 6: Thermochemistry",
-      "route": "/notes/ap/chem/thermochemistry/",
-      "course": "AP Chemistry",
-      "kind": "unit",
-      "status": "review",
-      "progress": 92,
-      "issues": [],
-      "next_step": "Review for accuracy"
-    },
-    {
-      "title": "Unit 2: Compound Structure and Properties",
-      "route": "/notes/ap/chem/compounds/",
-      "course": "AP Chemistry",
-      "kind": "unit",
-      "status": "review",
-      "progress": 94,
-      "issues": [
-        "has TODOs/placeholders"
-      ],
-      "next_step": "Resolve placeholders"
-    },
-    {
-      "title": "Unit 3: Substances and Mixtures",
-      "route": "/notes/ap/chem/submix/",
-      "course": "AP Chemistry",
-      "kind": "unit",
-      "status": "review",
-      "progress": 94,
-      "issues": [
-        "has TODOs/placeholders"
-      ],
-      "next_step": "Resolve placeholders"
-    },
-    {
-      "title": "Unit 7: Equilibrium",
-      "route": "/notes/ap/chem/equilibrium/",
-      "course": "AP Chemistry",
-      "kind": "unit",
-      "status": "review",
-      "progress": 94,
-      "issues": [
-        "has TODOs/placeholders"
-      ],
-      "next_step": "Resolve placeholders"
-    },
-    {
-      "title": "Unit 9: Thermodynamics and Electrochemistry",
-      "route": "/notes/ap/chem/thermoelectro/",
-      "course": "AP Chemistry",
-      "kind": "unit",
-      "status": "review",
-      "progress": 94,
-      "issues": [
-        "has TODOs/placeholders"
-      ],
-      "next_step": "Resolve placeholders"
-    },
-    {
-      "title": "Unit 1: Atomic Structure and Properties",
-      "route": "/notes/ap/chem/atomicstrucprop/",
-      "course": "AP Chemistry",
-      "kind": "unit",
-      "status": "complete",
-      "progress": 100,
-      "issues": [],
-      "next_step": ""
-    },
-    {
-      "title": "Unit 4: Chemical Reactions",
-      "route": "/notes/ap/chem/chemrxns/",
-      "course": "AP Chemistry",
-      "kind": "unit",
-      "status": "complete",
-      "progress": 100,
-      "issues": [],
-      "next_step": ""
-    },
-    {
-      "title": "Unit 5: Kinetics",
-      "route": "/notes/ap/chem/kinetics/",
-      "course": "AP Chemistry",
-      "kind": "unit",
-      "status": "complete",
-      "progress": 100,
-      "issues": [],
-      "next_step": ""
     },
     {
       "title": "Unit 1 & 2: Fundamentals, Equations, and Inequalities",

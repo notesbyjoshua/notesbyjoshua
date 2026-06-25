@@ -180,6 +180,9 @@ def score_unit(fm: str, body: str) -> tuple[int, list[str]]:
 
 
 NEXT_STEPS = [
+    # An empty/stub page just needs to be written — checked first so a stub's
+    # next step is the obvious "write it", not a vague review.
+    ("empty/stub page", "Write the note"),
     ("thin explanations", "Expand core explanations"),
     ("few or no worked boxes", "Add worked examples"),
     ("missing practice", "Add practice problems"),
