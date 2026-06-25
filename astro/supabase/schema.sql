@@ -199,6 +199,29 @@ create policy "admins read feedback" on public.feedback
 
 
 -- ---------------------------------------------------------------------------
+-- Admin to-do list: a personal task list for each admin (add / check off /
+-- delete). Admin-only, and each admin sees only their own items.
+-- ---------------------------------------------------------------------------
+create table if not exists public.admin_todos (
+  id           uuid primary key default gen_random_uuid(),
+  user_id      uuid not null references auth.users (id) on delete cascade,
+  title        text not null,
+  done         boolean not null default false,
+  created_at   timestamptz not null default now(),
+  completed_at timestamptz
+);
+
+alter table public.admin_todos enable row level security;
+
+-- Only admins, and only their own rows (the is_admin() check means a demoted
+-- user immediately loses access even though the rows still exist).
+drop policy if exists "own admin todos" on public.admin_todos;
+create policy "own admin todos" on public.admin_todos
+  for all using (auth.uid() = user_id and public.is_admin())
+  with check (auth.uid() = user_id and public.is_admin());
+
+
+-- ---------------------------------------------------------------------------
 -- Profile-picture storage lives in a SEPARATE file: supabase/storage.sql.
 -- It is kept apart because creating policies on storage.objects can fail with
 -- "must be owner of table objects" depending on the project, and the SQL editor

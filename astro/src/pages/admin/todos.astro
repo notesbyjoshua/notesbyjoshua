@@ -1,0 +1,15 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import AdminTodos from '../../components/AdminTodos.astro';
+---
+
+<StarlightPage
+  frontmatter={{
+    title: 'To-Do List',
+    prev: false,
+    next: false,
+    head: [{ tag: 'meta', attrs: { name: 'robots', content: 'noindex' } }],
+  }}
+>
+  <AdminTodos />
+</StarlightPage>

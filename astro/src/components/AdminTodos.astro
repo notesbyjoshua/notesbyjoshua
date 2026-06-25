@@ -1,0 +1,203 @@
+---
+// Admin-only to-do list. Add tasks, check them off when done, delete them.
+// Backed by the public.admin_todos table; RLS limits rows to the signed-in
+// admin, and the client gate below mirrors that for UX.
+---
+<div class="todos">
+  <p id="todos-status">Loading…</p>
+
+  <div id="todos-denied" hidden>
+    <p>This page is for admins only. <a href="/account/">Go to your account</a> to sign in.</p>
+  </div>
+
+  <div id="todos-content" hidden>
+    <form id="todos-add" class="todos-add">
+      <input id="todos-input" type="text" placeholder="Add a task…" autocomplete="off" maxlength="500" required />
+      <button type="submit">Add</button>
+    </form>
+
+    <ul id="todos-list" class="todos-list"></ul>
+    <p id="todos-empty" class="todos-empty" hidden>No tasks yet — add one above.</p>
+    <p id="todos-summary" class="todos-summary"></p>
+  </div>
+</div>
+
+<script>
+  import { getSupabase, getRole, type SessionUser } from '../lib/supabase';
+
+  type Todo = { id: string; title: string; done: boolean; created_at: string };
+
+  const byId = (id: string) => document.getElementById(id)!;
+  const STATES = ['todos-status', 'todos-denied', 'todos-content'];
+  const show = (id: string) => STATES.forEach((s) => (byId(s).hidden = s !== id));
+  const sb = getSupabase();
+
+  const listEl = byId('todos-list') as HTMLUListElement;
+  const emptyEl = byId('todos-empty');
+  const summaryEl = byId('todos-summary');
+  const form = byId('todos-add') as HTMLFormElement;
+  const input = byId('todos-input') as HTMLInputElement;
+
+  let uid: string | null = null;
+  let todos: Todo[] = [];
+
+  // Incomplete first (newest at top), completed below (most recently added first).
+  function sortTodos() {
+    todos.sort((a, b) => {
+      if (a.done !== b.done) return a.done ? 1 : -1;
+      return b.created_at.localeCompare(a.created_at);
+    });
+  }
+
+  function render() {
+    sortTodos();
+    listEl.innerHTML = '';
+    for (const t of todos) {
+      const li = document.createElement('li');
+      li.className = 'todo' + (t.done ? ' is-done' : '');
+      li.dataset.id = t.id;
+
+      const label = document.createElement('label');
+      label.className = 'todo-main';
+      const box = document.createElement('input');
+      box.type = 'checkbox';
+      box.checked = t.done;
+      box.addEventListener('change', () => toggle(t, box));
+      const text = document.createElement('span');
+      text.className = 'todo-text';
+      text.textContent = t.title;
+      label.append(box, text);
+
+      const del = document.createElement('button');
+      del.type = 'button';
+      del.className = 'todo-del';
+      del.setAttribute('aria-label', 'Delete task');
+      del.title = 'Delete';
+      del.textContent = '×';
+      del.addEventListener('click', () => remove(t, li));
+
+      li.append(label, del);
+      listEl.appendChild(li);
+    }
+    const open = todos.filter((t) => !t.done).length;
+    emptyEl.hidden = todos.length > 0;
+    summaryEl.textContent = todos.length
+      ? `${open} open · ${todos.length - open} done`
+      : '';
+  }
+
+  async function load() {
+    const { data, error } = await sb!
+      .from('admin_todos')
+      .select('id, title, done, created_at');
+    if (error) throw error;
+    todos = (data ?? []) as Todo[];
+    render();
+  }
+
+  async function add(title: string) {
+    if (!uid) return;
+    // Optimistic insert; reconcile id from the returned row.
+    const { data, error } = await sb!
+      .from('admin_todos')
+      .insert({ user_id: uid, title })
+      .select('id, title, done, created_at')
+      .single();
+    if (error) { console.error('[todos] add failed:', error); return; }
+    todos.push(data as Todo);
+    render();
+  }
+
+  async function toggle(t: Todo, box: HTMLInputElement) {
+    const next = box.checked;
+    box.disabled = true;
+    const { error } = await sb!
+      .from('admin_todos')
+      .update({ done: next, completed_at: next ? new Date().toISOString() : null })
+      .eq('id', t.id);
+    box.disabled = false;
+    if (error) { console.error('[todos] toggle failed:', error); box.checked = !next; return; }
+    t.done = next;
+    render();
+  }
+
+  async function remove(t: Todo, li: HTMLElement) {
+    li.style.opacity = '0.4';
+    const { error } = await sb!.from('admin_todos').delete().eq('id', t.id);
+    if (error) { console.error('[todos] delete failed:', error); li.style.opacity = '1'; return; }
+    todos = todos.filter((x) => x.id !== t.id);
+    render();
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const title = input.value.trim();
+    if (!title) return;
+    input.value = '';
+    await add(title);
+    input.focus();
+  });
+
+  async function gate(session: { user?: SessionUser } | null) {
+    if (!session?.user) { show('todos-denied'); return; }
+    let role: string | null = null;
+    for (let i = 0; i < 3; i++) {
+      try { role = await getRole(session.user); break; }
+      catch (err) {
+        if (i === 2) { console.error('[todos] role check failed:', err); show('todos-denied'); return; }
+        await new Promise((r) => setTimeout(r, 400));
+      }
+    }
+    if (role !== 'admin') { show('todos-denied'); return; }
+    uid = session.user.id;
+    try {
+      await load();
+      show('todos-content');
+      input.focus();
+    } catch (err) {
+      console.error('[todos] load failed:', err);
+      show('todos-denied');
+    }
+  }
+
+  if (!sb) {
+    show('todos-denied');
+  } else {
+    let settled = false;
+    sb.auth.onAuthStateChange((_event, session) => { settled = true; gate(session); });
+    setTimeout(() => { if (!settled) show('todos-denied'); }, 2500);
+  }
+</script>
+
+<style>
+  .todos-add { display: flex; gap: 0.5rem; margin-bottom: 1.25rem; }
+  .todos-add input {
+    flex: 1; min-width: 0; height: 2.4rem; padding: 0 0.7rem;
+    border: 1px solid var(--sl-color-gray-5); border-radius: 0.4rem;
+    background: var(--sl-color-black); color: var(--sl-color-white); font: inherit;
+  }
+  .todos-add button {
+    height: 2.4rem; padding: 0 1.1rem; border: 1px solid var(--sl-color-accent);
+    background: var(--sl-color-accent); color: var(--sl-color-white);
+    border-radius: 0.4rem; cursor: pointer; font: inherit; font-weight: 600;
+  }
+
+  .todos-list { list-style: none; margin: 0; padding: 0; }
+  .todo {
+    display: flex; align-items: center; gap: 0.6rem;
+    padding: 0.55rem 0.4rem; border-bottom: 1px solid var(--sl-color-gray-6);
+  }
+  .todo-main { display: flex; align-items: center; gap: 0.6rem; flex: 1; min-width: 0; cursor: pointer; margin: 0; }
+  .todo-main input { width: 1.15rem; height: 1.15rem; flex: none; cursor: pointer; accent-color: var(--sl-color-accent); }
+  .todo-text { flex: 1; min-width: 0; word-break: break-word; }
+  .todo.is-done .todo-text { text-decoration: line-through; color: var(--sl-color-gray-3); }
+  .todo-del {
+    flex: none; width: 1.8rem; height: 1.8rem; line-height: 1; font-size: 1.2rem;
+    border: 1px solid transparent; border-radius: 0.35rem; background: transparent;
+    color: var(--sl-color-gray-3); cursor: pointer;
+  }
+  .todo-del:hover { color: #f87171; border-color: var(--sl-color-gray-5); }
+
+  .todos-empty { color: var(--sl-color-gray-3); }
+  .todos-summary { margin-top: 1rem; font-size: var(--sl-text-sm); color: var(--sl-color-gray-3); }
+</style>
