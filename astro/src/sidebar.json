@@ -12,7 +12,48 @@
       },
       {
         "label": "AP Biology",
-        "link": "/notes/ap/biology/"
+        "items": [
+          {
+            "label": "AP Biology Home",
+            "link": "/notes/ap/biology/"
+          },
+          {
+            "label": "AP Biology Cheat Sheet",
+            "link": "/notes/ap/biology/cheatsheet/"
+          },
+          {
+            "label": "Unit 1: Chemistry of Life",
+            "link": "/notes/ap/biology/biochem/"
+          },
+          {
+            "label": "Unit 2: Cell Structure and Function",
+            "link": "/notes/ap/biology/cells/"
+          },
+          {
+            "label": "Unit 3: Cellular Energetics",
+            "link": "/notes/ap/biology/cellenergy/"
+          },
+          {
+            "label": "Unit 4: Cell Communication and Cell Cycle",
+            "link": "/notes/ap/biology/cellcommcycle/"
+          },
+          {
+            "label": "Unit 5: Heredity",
+            "link": "/notes/ap/biology/heredity/"
+          },
+          {
+            "label": "Unit 6: Gene Expression and Regulation",
+            "link": "/notes/ap/biology/geneexpreg/"
+          },
+          {
+            "label": "Unit 7: Natural Selection",
+            "link": "/notes/ap/biology/natselection/"
+          },
+          {
+            "label": "Unit 8: Ecology",
+            "link": "/notes/ap/biology/ecology/"
+          }
+        ]
       },
       {
         "label": "AP Calculus AB/BC",
