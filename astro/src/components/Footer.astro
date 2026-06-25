@@ -1,28 +1,126 @@
 ---
 // Override of Starlight's Footer. Renders the default footer (last-updated,
-// prev/next), and on note pages adds a "Report an issue" link that opens the
-// feedback form pre-filled with this note's path + title, so any ticket the
-// feedback-to-linear Edge Function creates points straight back here.
+// prev/next), and on note pages adds an INLINE feedback form pre-filled with
+// this note's path + title — so readers can report an issue without leaving the
+// page. Submits straight to the Supabase `feedback` table (the feedback-to-linear
+// Edge Function then opens a Linear ticket that links back here).
 import Default from '@astrojs/starlight/components/Footer.astro';
 const path = Astro.url.pathname;
 const isNote = path.startsWith('/notes/');
 ---
 <Default><slot /></Default>
 {isNote && (
-  <p class="note-report">
-    Spot a mistake or something missing?
-    <a id="note-report-link" href="/feedback/">Report an issue with this note</a>
-  </p>
+  <div class="note-feedback">
+    <button type="button" id="nf-toggle" class="nf-toggle" aria-expanded="false">
+      Spot a mistake or something missing? <span class="nf-cta">Report an issue with this note →</span>
+    </button>
+
+    <form id="nf-form" class="nf-form" hidden>
+      <select id="nf-category" required>
+        <option value="" disabled selected>Type of feedback…</option>
+        <option value="correction">A correction / something to fix</option>
+        <option value="note-to-add">A topic to add</option>
+        <option value="bug">A bug with the site</option>
+        <option value="question">A question</option>
+        <option value="praise">Just saying thanks</option>
+      </select>
+      <textarea id="nf-message" rows="3" required placeholder="What should I fix or add on this page?"></textarea>
+      <div class="nf-actions">
+        <input id="nf-name" type="text" maxlength="80" placeholder="Name (optional)" />
+        <button type="submit" class="nf-submit">Send</button>
+      </div>
+      <p id="nf-msg" class="nf-msg" hidden></p>
+      <p class="nf-context" id="nf-context"></p>
+    </form>
+  </div>
 )}
 
 <script>
-  // Build the feedback link from the live page so it carries the note's path
-  // and title (read-only context shown in the form, stored on the row).
-  const link = document.getElementById('note-report-link') as HTMLAnchorElement | null;
-  if (link) {
-    const title = document.querySelector('h1')?.textContent?.trim() || '';
-    const qs = new URLSearchParams({ from: location.pathname });
-    if (title) qs.set('title', title);
-    link.href = `/feedback/?${qs.toString()}`;
+  import { getSupabase } from '../lib/supabase';
+
+  const toggle = document.getElementById('nf-toggle') as HTMLButtonElement | null;
+  const form = document.getElementById('nf-form') as HTMLFormElement | null;
+  if (toggle && form) {
+    const category = document.getElementById('nf-category') as HTMLSelectElement;
+    const message = document.getElementById('nf-message') as HTMLTextAreaElement;
+    const name = document.getElementById('nf-name') as HTMLInputElement;
+    const msg = document.getElementById('nf-msg')!;
+    const contextEl = document.getElementById('nf-context')!;
+
+    const pageUrl = location.pathname;
+    const pageTitle = document.querySelector('h1')?.textContent?.trim() || pageUrl;
+    contextEl.textContent = `This report is about: ${pageTitle}`;
+
+    toggle.addEventListener('click', () => {
+      const open = form.hidden;
+      form.hidden = !open;
+      toggle.setAttribute('aria-expanded', String(open));
+      if (open) message.focus();
+    });
+
+    const notify = (text: string, ok: boolean) => {
+      msg.textContent = text;
+      msg.dataset.ok = String(ok);
+      msg.hidden = false;
+    };
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const sb = getSupabase();
+      if (!sb) { notify('Feedback is temporarily unavailable.', false); return; }
+      const text = message.value.trim();
+      if (!text || !category.value) return;
+      const btn = form.querySelector('button[type=submit]') as HTMLButtonElement;
+      btn.disabled = true;
+      try {
+        const { data: { user } } = await sb.auth.getUser();
+        const { error } = await sb.from('feedback').insert({
+          message: text,
+          name: name.value.trim() || null,
+          category: category.value,
+          page_url: pageUrl,
+          page_title: pageTitle,
+          user_id: user?.id ?? null,
+        });
+        if (error) throw error;
+        form.reset();
+        notify('Thanks! Your feedback was sent.', true);
+        // Collapse shortly after success so the note isn't left cluttered.
+        setTimeout(() => { form.hidden = true; toggle.setAttribute('aria-expanded', 'false'); msg.hidden = true; }, 2500);
+      } catch (err) {
+        console.error('[note-feedback] submit failed:', err);
+        notify('Sorry, that didn’t go through. Please try again.', false);
+      } finally {
+        btn.disabled = false;
+      }
+    });
   }
 </script>
+
+<style>
+  .note-feedback { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--sl-color-gray-6); }
+  .nf-toggle {
+    background: none; border: none; padding: 0; cursor: pointer; font: inherit;
+    color: var(--sl-color-gray-3); text-align: left;
+  }
+  .nf-cta { color: var(--sl-color-text-accent); font-weight: 600; white-space: nowrap; }
+  .nf-toggle:hover .nf-cta { text-decoration: underline; }
+
+  .nf-form { margin-top: 0.9rem; max-width: 38rem; }
+  .nf-actions { display: flex; gap: 0.6rem; margin-top: 0.6rem; align-items: center; }
+  .nf-form select, .nf-form textarea, .nf-form input {
+    width: 100%; padding: 0.5rem 0.65rem; font: inherit;
+    border: 1px solid var(--sl-color-gray-5); border-radius: 0.4rem;
+    background: var(--sl-color-black); color: var(--sl-color-white);
+  }
+  .nf-form textarea { margin-top: 0.6rem; resize: vertical; }
+  .nf-submit {
+    flex: none; width: auto; padding: 0.5rem 1.3rem; font-weight: 600; cursor: pointer;
+    border: 1px solid var(--sl-color-accent); background: var(--sl-color-accent); color: var(--sl-color-white);
+  }
+  .nf-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+  .nf-msg { margin-top: 0.6rem; font-size: var(--sl-text-sm); }
+  .nf-msg[data-ok='true'] { color: var(--sl-color-green-high, #4ade80); }
+  .nf-msg[data-ok='false'] { color: var(--sl-color-red-high, #f87171); }
+  .nf-context { margin-top: 0.5rem; font-size: var(--sl-text-xs); color: var(--sl-color-gray-4); }
+</style>
