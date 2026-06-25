@@ -32,7 +32,12 @@ const { label, url } = Astro.props;
 				<span aria-hidden="true">&times;</span>
 			</button>
 		</header>
-		<div class="ref-sheet__body sl-markdown-content" data-ref-sheet-body>
+		<!-- NB: this body must NOT carry the `sl-markdown-content` class — that
+		     class is queried across the site (highlighter, reading-time,
+		     practice) and a second one here would shadow the real note. The
+		     cheatsheet's own `.sl-markdown-content` is injected (cloned) on open,
+		     which keeps the markdown styling without the load-time collision. -->
+		<div class="ref-sheet__body" data-ref-sheet-body>
 			<p class="ref-sheet__loading">Loading…</p>
 		</div>
 	</div>
@@ -59,8 +64,11 @@ const { label, url } = Astro.props;
 				const doc = new DOMParser().parseFromString(html, 'text/html');
 				const content = doc.querySelector('.sl-markdown-content');
 				if (content) {
-					// Drop the intro <hr>/blurb? Keep as-is — it's the real cheatsheet.
-					body.replaceChildren(...Array.from(content.childNodes).map((n) => n.cloneNode(true)));
+					// Clone the whole `.sl-markdown-content` wrapper so the cheatsheet
+					// keeps its markdown styling (theorem boxes, KaTeX spacing, …).
+					// It only exists in the DOM once the drawer is opened, and lives
+					// last in document order, so it never shadows the note content.
+					body.replaceChildren(content.cloneNode(true));
 					loaded = true;
 				} else {
 					body.innerHTML = `<p>Couldn’t load the cheatsheet. <a href="${url}">Open the full page</a> instead.</p>`;

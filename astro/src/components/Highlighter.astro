@@ -21,7 +21,12 @@
   import { getSupabase } from '../lib/supabase';
 
   const btn = document.querySelector<HTMLButtonElement>('.highlight-btn');
-  const content = document.querySelector<HTMLElement>('.sl-markdown-content');
+  // The note body — explicitly NOT the cheatsheet drawer, which also renders a
+  // `.sl-markdown-content` (its cloned cheatsheet) once opened.
+  const content =
+    [...document.querySelectorAll<HTMLElement>('.sl-markdown-content')].find(
+      (el) => !el.closest('[data-ref-sheet]'),
+    ) ?? null;
   const sb = getSupabase();
   // Feature-detect the CSS Custom Highlight API.
   const HL = (window as any).Highlight;
