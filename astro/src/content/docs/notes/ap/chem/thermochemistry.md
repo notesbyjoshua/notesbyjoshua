@@ -36,6 +36,21 @@ $$
 
 when no other work or losses matter (Conservation of energy/matter).
 
+The central move in any calorimetry problem is this sign relationship: the heat lost by one part of the setup equals the heat gained by the other. In a coffee-cup calorimeter, the reaction is the **system** and the solution is the **surroundings**, so $$q_{\text{rxn}}=-q_{\text{solution}}$$. If the solution warms up, $$q_{\text{solution}}>0$$, which forces $$q_{\text{rxn}}<0$$—an exothermic reaction.
+
+### Two kinds of calorimeter
+
+- A **coffee-cup (constant-pressure) calorimeter** is open to the atmosphere, so the heat it measures is $$q_p=\Delta H$$ directly. This is the standard AP setup for solution reactions, dissolving, and neutralization.
+- A **bomb (constant-volume) calorimeter** seals the reaction in a rigid steel vessel, usually to burn a sample in excess oxygen. Because $$\Delta V=0$$, no $$PV$$ work is done and the measured heat is $$q_v=\Delta U$$, the internal-energy change, rather than $$\Delta H$$. Bomb calorimeters are the tool of choice for combustion and food-energy measurements.
+
+In both, the apparatus itself absorbs some heat, accounted for by the **calorimeter constant** $$C_{\text{cal}}$$ (energy per kelvin), determined by a calibration run.
+
+<div class="placeholder-box">
+
+**Image placeholder:** Side-by-side cutaway diagrams of a coffee-cup calorimeter (nested foam cups, lid, thermometer, stirrer) labeled "constant pressure, measures $$\Delta H$$" and a bomb calorimeter (sealed steel bomb in a water bath) labeled "constant volume, measures $$\Delta U$$."
+
+</div>
+
 ---
 
 ### Work and Potential Energy
@@ -65,6 +80,19 @@ q = n\Delta H_{\text{fus}}, \qquad q = n\Delta H_{\text{vap}},
 $$
 
 with molar enthalpies of fusion and vaporization. A heating curve (temperature vs heat added) shows slopes $$1/(mc)$$ and plateaus at phase changes.
+
+A full heating curve alternates between **sloped segments** and **flat plateaus**:
+
+- On a **sloped segment**, a single phase is being warmed, temperature rises, and you use $$q=mc\Delta T$$ with the specific heat *of that phase* (ice, liquid water, and steam all have different $$c$$ values, which is why the slopes differ).
+- On a **plateau**, two phases coexist and temperature is constant while a phase change happens. All the added energy goes into overcoming intermolecular forces (raising potential energy, not kinetic energy), so you use $$q=n\Delta H_{\text{fus}}$$ or $$q=n\Delta H_{\text{vap}}$$.
+
+The vaporization plateau is longer than the fusion plateau for most substances because $$\Delta H_{\text{vap}}>\Delta H_{\text{fus}}$$—separating molecules completely into a gas costs more energy than just loosening them from a fixed lattice into a liquid. To find the total energy to take a substance across several phase regions, add the $$q$$ for every segment and plateau in sequence.
+
+<div class="placeholder-box">
+
+**Image placeholder:** Heating curve for water (temperature vs. heat added) showing the solid-warming slope, the melting plateau at $$0^\circ\text{C}$$, the liquid-warming slope, the boiling plateau at $$100^\circ\text{C}$$, and the gas-warming slope, with each segment annotated with the relevant equation ($$mc\Delta T$$ or $$n\Delta H$$).
+
+</div>
 
 ---
 
@@ -120,6 +148,21 @@ where $$\nu$$ are stoichiometric coefficients. Thermochemical equations can be s
 
 **Hess’s law** states that $$\Delta H$$ for an overall process is the sum of $$\Delta H$$ values for steps that add up to the same net reaction—because $$H$$ is a state function. Reverse a step → flip the sign of $$\Delta H$$. Multiply a step by a factor → multiply $$\Delta H$$ by the same factor.
 
+Because $$H$$ is a state function, the enthalpy change depends only on the initial and final states, not on the route taken. That means you can build any target reaction out of known steps and the enthalpies add—just like the legs of a trip add to the same net displacement no matter which path you walk.
+
+A reliable strategy for combining given equations:
+
+1. Identify a species that appears in only **one** of the given equations and in the **target**; orient (and if needed, flip) that equation so the species lands on the correct side.
+2. **Scale** each equation so its coefficients match the target, multiplying its $$\Delta H$$ by the same factor.
+3. **Add** the manipulated equations; intermediates that appear on opposite sides should cancel, leaving the target equation.
+4. **Sum** the manipulated $$\Delta H$$ values to get $$\Delta H_{\text{target}}$$.
+
+<div class="placeholder-box">
+
+**Image placeholder:** Hess’s-law energy-level (enthalpy) diagram showing reactants at top or bottom, an alternative two-step path through an intermediate level, and the direct one-step path, illustrating that both routes sum to the same overall $$\Delta H$$.
+
+</div>
+
 ---
 
 ## Bond enthalpies (estimates)
@@ -132,11 +175,29 @@ $$
 
 using positive bond energies for each bond listed. This ignores liquids, solvents, and exact environments, so it is less accurate than calorimetry or formation cycles.
 
+The conceptual core is a sign rule: **breaking bonds always absorbs energy** (endothermic) and **forming bonds always releases energy** (exothermic). A reaction is exothermic overall when the bonds formed in the products are collectively stronger (release more) than the bonds broken in the reactants. The formula above is just that comparison written out—broken minus formed. Note that this method only works when **every** species is in the gas phase, since tabulated bond energies assume isolated gas-phase molecules with no intermolecular forces to account for.
+
+Bond strength also tracks bond order and length: in general a triple bond is stronger (and shorter) than a double bond, which is stronger than a single bond between the same atoms, so multiply-bonded molecules such as $$\text{N}_2$$ are very stable and costly to break.
+
 ---
 
 ## Solution formation (preview)
 
 $$\Delta H_{\text{solution}}$$ combines lattice (endothermic breakup of solid) and hydration (exothermic ion–solvent interaction) terms. A slightly endothermic $$\Delta H_{\text{solution}}$$ can still occur if entropy favors mixing (full explanation in later units). A very endothermic process may give negligible solubility unless entropy dominates strongly.
+
+Both of those terms ultimately trace back to **Coulomb's law**: the energy of an ionic interaction scales with the product of the charges over the distance between centers,
+
+$$
+E \propto \frac{q_1 q_2}{r}.
+$$
+
+This means **lattice energy** (and therefore how much energy it costs to pull the crystal apart) is largest for ions with **high charges** and **small radii**—for example, $$\text{MgO}$$ has a far larger lattice energy than $$\text{NaCl}$$ because both ions carry a $$\pm2$$ charge and are compact. The same Coulombic reasoning explains why those small, highly charged ions also release a lot of energy on hydration. Whether dissolving is net exothermic or endothermic depends on which of the two large opposing terms wins.
+
+Dissolving as a three-step thermodynamic cycle:
+
+1. Separate the solute particles (break the lattice) — endothermic, $$+\Delta H_{\text{lattice}}$$.
+2. Separate the solvent particles to make room — endothermic.
+3. Let solute and solvent particles attract one another (hydration/solvation) — exothermic.
 
 ---
 

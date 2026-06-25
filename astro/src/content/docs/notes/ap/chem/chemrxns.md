@@ -42,6 +42,49 @@ The balanced equation conserves **mass** (atom counts). For **ionic** reactions 
 
 ---
 
+## Stoichiometry, limiting reactants, and yield
+
+Once an equation is balanced, the coefficients are **mole ratios**: a conversion factor between any two species in the reaction. Every quantitative reaction problem is some version of the same three-step path:
+
+1. Convert what you are **given** into **moles** (using molar mass for a mass, $$M\times V$$ for a solution, or the ideal gas law $$PV=nRT$$ for a gas).
+2. Use the **mole ratio** from the balanced equation to cross over to the species you **want**.
+3. Convert moles of the wanted species back into the requested unit (grams, liters of solution, liters of gas, particles).
+
+$$
+\text{given quantity} \longrightarrow \text{mol given} \xrightarrow{\text{mole ratio}} \text{mol wanted} \longrightarrow \text{wanted quantity}.
+$$
+
+<div class="placeholder-box">
+
+**Image placeholder:** "Stoichiometry road map" flowchart — boxes for mass, volume of solution, and volume of gas all funneling through a central "moles" hub, crossing the balanced-equation mole ratio, then fanning back out to mass / solution volume / gas volume of the target species.
+
+</div>
+
+### Limiting and excess reactants
+
+When amounts of two or more reactants are given, one usually runs out first and caps how much product forms—the **limiting reactant**. The others are **excess reactants** and have leftover material when the reaction stops. To find the limiting reactant, convert each reactant to moles and divide by its coefficient; the **smallest** of these ratios marks the limiting reactant. Equivalently, pick either reactant, compute how much of the other it *would* require, and compare to how much is actually present.
+
+At the particle level, the limiting reactant is simply the species whose particles are exhausted first, so the remaining excess particles have no partner left to collide and react with in the required ratio.
+
+### Percent yield
+
+The **theoretical yield** is the maximum product predicted from the limiting reactant by stoichiometry. The **actual yield** is what is recovered in the lab, which is almost always smaller because of side reactions, incomplete reactions, transfer losses, or impure reactants. The two are compared with
+
+$$
+\text{percent yield} = \frac{\text{actual yield}}{\text{theoretical yield}} \times 100\%.
+$$
+
+A yield above $$100\%$$ usually signals a measurement problem, such as a product that is still wet with solvent or contaminated with leftover reactant.
+
+### Gravimetric and volumetric analysis
+
+Two common quantitative experiments rest entirely on this stoichiometry:
+
+- **Gravimetric analysis** isolates a product (often a filtered, dried **precipitate**) and weighs it; the mass of the pure solid is converted through the mole ratio back to the amount of the unknown ion in the original sample.
+- **Titration** (volumetric analysis) delivers a measured volume of a solution of known concentration (the **titrant**) until it exactly reacts with the analyte at the **equivalence point**. From $$n=MV$$ and the mole ratio you solve for the unknown concentration or amount. Acid–base titrations are explored fully in [Unit 8](/notes/ap/chem/acidbase/); redox titrations follow the same bookkeeping using the balanced electron-transfer equation.
+
+---
+
 ## Double-displacement (metathesis) and precipitation
 
 In a **double-displacement** reaction, cations and anions exchange partners, often in solution:
@@ -71,6 +114,12 @@ For a precipitation prediction, swap ion partners, apply the table, and write a 
 $$
 \text{Ag}^+(aq) + \text{Cl}^-(aq) \longrightarrow \text{AgCl}(s)
 $$
+
+<div class="placeholder-box">
+
+**Image placeholder:** Particle-level "before and after" of mixing two clear ionic solutions — free, separated ions floating on the left; the insoluble pair locking together into a solid lattice that settles out on the right while the spectator ions stay dissolved.
+
+</div>
 
 ---
 
@@ -133,6 +182,27 @@ For halogens, a more reactive halogen displaces the halide ion of a less reactiv
 **Redox** reactions transfer electrons between species. **Oxidation** is loss of electrons (increase in **oxidation number**); **reduction** is gain of electrons (decrease in oxidation number). A very helpful mnemonic is **OIL RIG**: **O**xidation **I**s **L**osing, **R**eduction **I**s **G**aining.
 
 The **reducing agent** is the one being oxidized, and the **oxidizing agent** is the one being reduced. Assigning oxidation states to every atom in a formula is the standard bookkeeping method (refer to [Unit 1](/notes/ap/chem/atomicstrucprop/)). Many combustion, single-displacement, and electrochemical processes are redox; they are often slower in the lab than simple precipitation or strong acid–strong base neutralization because covalent bonds must break and form in the elemental or molecular reactants.
+
+<div class="placeholder-box">
+
+**Image placeholder:** Electron-transfer diagram for a simple redox reaction (e.g. $$\text{Zn}+\text{Cu}^{2+}$$) — arrows showing electrons leaving the species being oxidized (reducing agent) and arriving at the species being reduced (oxidizing agent), with oxidation numbers labeled before and after.
+
+</div>
+
+### Assigning oxidation numbers (quick rules)
+
+The whole framework depends on assigning oxidation numbers consistently. The standard priority list:
+
+- A **free element** is $$0$$ (e.g. $$\text{O}_2$$, $$\text{Na}$$, $$\text{P}_4$$).
+- A **monatomic ion** equals its charge ($$\text{Na}^+$$ is $$+1$$, $$\text{S}^{2-}$$ is $$-2$$).
+- **Fluorine** is always $$-1$$ in compounds; **oxygen** is usually $$-2$$ (but $$-1$$ in peroxides such as $$\text{H}_2\text{O}_2$$ and positive when bonded to F); **hydrogen** is $$+1$$ with nonmetals but $$-1$$ in metal hydrides such as $$\text{NaH}$$.
+- The sum of oxidation numbers equals the overall **charge** of the species (zero for a neutral formula, the ion charge for a polyatomic ion).
+
+### Recognizing and classifying redox
+
+If *any* element changes oxidation number from reactants to products, the reaction is redox. Combustion, single-displacement, and many synthesis/decomposition reactions are redox; most precipitation and acid–base reactions are not. A special case is **disproportionation**, where a *single* element is **both oxidized and reduced** in the same reaction—one portion goes up in oxidation number while another goes down (for example, $$\text{Cl}_2$$ reacting with cold base to give $$\text{Cl}^-$$ and $$\text{ClO}^-$$). The reverse, where two different oxidation states of an element combine into one intermediate state, is **comproportionation**.
+
+Strong **oxidizing agents** (easily reduced) include $$\text{F}_2$$, $$\text{O}_2$$, $$\text{Cl}_2$$, $$\text{MnO}_4^-$$, $$\text{Cr}_2\text{O}_7^{2-}$$, and concentrated $$\text{HNO}_3$$. Strong **reducing agents** (easily oxidized) include reactive metals such as $$\text{Na}$$, $$\text{K}$$, and $$\text{Mg}$$, as well as $$\text{H}_2$$. These tendencies are quantified later as **standard reduction potentials** in [Unit 9](/notes/ap/chem/thermoelectro/).
 
 ### Half-reactions (oxidation and reduction)
 
