@@ -16,10 +16,19 @@
     <p><a href="/admin/progress/">View notes completion progress →</a></p>
     <p><a href="/admin/feedback/">View submitted feedback →</a></p>
     <p id="admin-summary"></p>
+    <div class="admin-search-wrap">
+      <input
+        id="admin-search"
+        type="search"
+        class="admin-search"
+        placeholder="Search by email or username…"
+        autocomplete="off"
+      />
+    </div>
     <div class="table-scroll">
       <table class="admin-users">
         <thead>
-          <tr><th>Email</th><th>Role</th><th>Writer topics</th><th>Joined</th><th></th></tr>
+          <tr><th>Email</th><th>Username</th><th>Role</th><th>Writer topics</th><th></th></tr>
         </thead>
         <tbody id="admin-users-body"></tbody>
       </table>
@@ -65,12 +74,27 @@
     return wrap;
   }
 
+  // Per-topic checkboxes only make sense for writers: admins can write
+  // everything by virtue of their role, and visitors can write nothing. So we
+  // only surface the checkboxes when the selected role is "writer" and show a
+  // short note otherwise.
+  function applyTopicVisibility(role: string, checks: HTMLElement, note: HTMLElement) {
+    const isWriter = role === 'writer';
+    checks.hidden = !isWriter;
+    note.hidden = isWriter;
+    if (!isWriter) note.textContent = role === 'admin' ? 'All topics' : 'None';
+  }
+
   async function saveUserRow(tr: HTMLTableRowElement) {
     const userId = tr.dataset.userId!;
     const role = (tr.querySelector('.admin-role-select') as HTMLSelectElement).value;
-    const checked = Array.from(tr.querySelectorAll<HTMLInputElement>('.admin-topic-checks input:checked'))
-      .map((input) => input.value)
-      .filter((key) => topicKeys.has(key));
+    // Only writers carry per-topic permissions. Admins write everything via
+    // their role and visitors write nothing, so we clear any stale rows for them.
+    const checked = role !== 'writer'
+      ? []
+      : Array.from(tr.querySelectorAll<HTMLInputElement>('.admin-topic-checks input:checked'))
+          .map((input) => input.value)
+          .filter((key) => topicKeys.has(key));
     const status = tr.querySelector<HTMLElement>('.admin-save-status')!;
     status.textContent = 'Saving...';
 
@@ -113,7 +137,7 @@
   async function loadUsers() {
     const { data, error } = await sb!
       .from('profiles')
-      .select('id, email, role, created_at')
+      .select('id, email, role, display_name, created_at')
       .order('created_at', { ascending: true });
     if (error) throw error;
     const { data: perms, error: permsError } = await sb!
@@ -131,25 +155,33 @@
     const body = byId('admin-users-body');
     body.innerHTML = '';
     for (const u of data ?? []) {
-      const joined = u.created_at ? new Date(u.created_at).toLocaleDateString() : '';
       const tr = document.createElement('tr');
       tr.dataset.userId = u.id;
+      // Lower-cased haystack for the search filter (email + username).
+      tr.dataset.search = `${u.email ?? ''} ${u.display_name ?? ''}`.toLowerCase();
 
       const emailTd = document.createElement('td');
       emailTd.textContent = u.email ?? '';
       tr.appendChild(emailTd);
 
+      const usernameTd = document.createElement('td');
+      usernameTd.textContent = u.display_name ?? '';
+      tr.appendChild(usernameTd);
+
+      const roleSelect = makeRoleSelect(u.role);
       const roleTd = document.createElement('td');
-      roleTd.appendChild(makeRoleSelect(u.role));
+      roleTd.appendChild(roleSelect);
       tr.appendChild(roleTd);
 
       const topicsTd = document.createElement('td');
-      topicsTd.appendChild(makeTopicChecks(topicsByUser.get(u.id) ?? new Set()));
+      const checks = makeTopicChecks(topicsByUser.get(u.id) ?? new Set());
+      const topicNote = document.createElement('span');
+      topicNote.className = 'admin-topic-note';
+      topicsTd.append(checks, topicNote);
+      applyTopicVisibility(u.role, checks, topicNote);
+      roleSelect.addEventListener('change', () =>
+        applyTopicVisibility(roleSelect.value, checks, topicNote));
       tr.appendChild(topicsTd);
-
-      const joinedTd = document.createElement('td');
-      joinedTd.textContent = joined;
-      tr.appendChild(joinedTd);
 
       const actionTd = document.createElement('td');
       const save = document.createElement('button');
@@ -174,6 +206,14 @@
       body.appendChild(tr);
     }
     byId('admin-summary').textContent = `${data?.length ?? 0} registered user(s).`;
+  }
+
+  function filterUsers(query: string) {
+    const q = query.trim().toLowerCase();
+    const rows = byId('admin-users-body').querySelectorAll<HTMLTableRowElement>('tr');
+    rows.forEach((tr) => {
+      tr.hidden = q !== '' && !(tr.dataset.search ?? '').includes(q);
+    });
   }
 
   // Show the denied screen with a visible reason (so a silent client-side
@@ -206,6 +246,12 @@
     }
     try {
       await loadUsers();
+      const search = byId('admin-search') as HTMLInputElement;
+      if (!search.dataset.wired) {
+        search.dataset.wired = '1';
+        search.addEventListener('input', () => filterUsers(search.value));
+      }
+      filterUsers(search.value); // re-apply any active filter after a reload
       show('admin-content');
     } catch (err: any) {
       deny(`role is admin, but loading the user list failed: ${err?.message ?? err}`);
@@ -223,6 +269,28 @@
 </script>
 
 <style>
+  .admin-search-wrap {
+    margin: 0.75rem 0;
+  }
+  .admin-search {
+    width: 100%;
+    max-width: 22rem;
+    padding: 0.45rem 0.7rem;
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 0.5rem;
+    background: var(--sl-color-bg);
+    color: var(--sl-color-text);
+    font-size: var(--sl-text-sm);
+  }
+  .admin-search:focus {
+    outline: none;
+    border-color: var(--sl-color-accent);
+  }
+  .admin-topic-note {
+    color: var(--sl-color-gray-3);
+    font-size: var(--sl-text-sm);
+    font-style: italic;
+  }
   .admin-why {
     margin-top: 0.75rem;
     padding: 0.6rem 0.8rem;
