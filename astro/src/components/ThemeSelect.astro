@@ -1,0 +1,79 @@
+---
+/*
+ * Sun/stars light–dark toggle — overrides Starlight's default <select> theme
+ * picker (registered in astro.config.mjs `components.ThemeSelect`).
+ *
+ * Ported from gxboy12345's fork. It's purely light↔dark (no "auto"), and it
+ * integrates with Starlight's own theming rather than fighting it:
+ *   - reads/writes localStorage['starlight-theme'] (Starlight's key)
+ *   - sets document.documentElement.dataset.theme
+ * so Starlight's no-FOUC inline ThemeProvider applies the saved choice on load.
+ *
+ * The animated face (sky gradients, stars, the orbiting "eclipse" knob) is all
+ * CSS in handwritten-theme styles below.
+ */
+---
+
+<button
+	type="button"
+	class="theme-switch"
+	data-theme-toggle
+	aria-label="Toggle color theme"
+	aria-pressed="false"
+>
+	<span class="theme-switch__track" aria-hidden="true">
+		<span class="theme-switch__sky theme-switch__sky--day"></span>
+		<span class="theme-switch__sky theme-switch__sky--night"></span>
+		<span class="theme-switch__stars"></span>
+		<span class="theme-switch__eclipse"></span>
+	</span>
+</button>
+
+<script>
+	type Theme = 'light' | 'dark';
+	const STORAGE_KEY = 'starlight-theme';
+
+	const currentTheme = (): Theme =>
+		document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light';
+
+	function applyTheme(theme: Theme) {
+		document.documentElement.dataset.theme = theme;
+		try {
+			localStorage.setItem(STORAGE_KEY, theme);
+		} catch {
+			/* storage may be unavailable (private mode) — theme still applies for the session */
+		}
+	}
+
+	function syncSwitch(btn: HTMLButtonElement) {
+		const dark = currentTheme() === 'dark';
+		btn.setAttribute('aria-pressed', dark ? 'true' : 'false');
+		btn.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+	}
+
+	function bind() {
+		// Starlight renders the picker in both the header and the mobile menu.
+		const buttons = document.querySelectorAll<HTMLButtonElement>('[data-theme-toggle]');
+		buttons.forEach((btn) => {
+			syncSwitch(btn);
+			if (btn.dataset.bound === '1') return;
+			btn.dataset.bound = '1';
+
+			btn.addEventListener('click', () => {
+				applyTheme(currentTheme() === 'dark' ? 'light' : 'dark');
+				// Keep every instance (header + mobile) in sync.
+				document
+					.querySelectorAll<HTMLButtonElement>('[data-theme-toggle]')
+					.forEach(syncSwitch);
+				// Replay the little "snap" animation.
+				btn.classList.remove('theme-switch--snap');
+				void btn.offsetWidth;
+				btn.classList.add('theme-switch--snap');
+			});
+		});
+	}
+
+	bind();
+	// Re-bind after Starlight's view-transition navigations.
+	document.addEventListener('astro:page-load', bind);
+</script>

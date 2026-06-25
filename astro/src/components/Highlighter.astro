@@ -2,12 +2,20 @@
 // Per-user text highlighting for note pages. Rendered (no visible markup of its
 // own) on note pages; it wires the `.highlight-btn` toggle in the page actions.
 //
-// - Signed-in users only (highlights persist per account in public.highlights).
+// - Signed-in users only (highlights persist per account in public.highlights,
+//   so they sync across devices — unlike the local-only fork we borrowed ideas
+//   from).
 // - Rendered with the CSS Custom Highlight API, so the note DOM is never
 //   rewritten (robust across math/links; nothing to clean up).
 // - Anchored by character offsets into the note's rendered text content.
-// - With highlight mode ON: select text to highlight it; click an existing
-//   highlight to remove it. Mode OFF: reading/selecting/copying is untouched.
+// - Multiple pen colors + an optional comment per highlight (the upgrade).
+// - With highlight mode ON: a floating toolbar lets you pick a pen color and
+//   export/import; selecting text highlights it and opens an editor popover
+//   (recolor / comment / delete). Commented highlights get a dotted underline.
+// - Mode OFF: reading/selecting/copying is untouched.
+//
+// Requires the `highlights.color` (text) and `highlights.comment` (text)
+// columns — see astro/supabase/schema.sql. Apply schema before relying on it.
 ---
 <script>
   import { getSupabase } from '../lib/supabase';
@@ -19,16 +27,56 @@
   const HL = (window as any).Highlight;
   const supported = typeof HL === 'function' && (CSS as any)?.highlights;
 
-  type Row = { id: string; start_off: number; end_off: number; quote: string };
+  // Pen colors (swatch name -> label). Keep in sync with the ::highlight CSS below.
+  const COLORS = [
+    { name: 'amber', label: 'Amber' },
+    { name: 'sage', label: 'Sage' },
+    { name: 'sky', label: 'Sky' },
+    { name: 'rose', label: 'Rose' },
+    { name: 'lavender', label: 'Lavender' },
+    { name: 'graphite', label: 'Graphite' },
+  ] as const;
+  const COLOR_NAMES = COLORS.map((c) => c.name) as readonly string[];
+  const DEFAULT_COLOR = 'amber';
+  const PEN_KEY = 'notes-hl-pen';
+
+  type Row = {
+    id: string;
+    start_off: number;
+    end_off: number;
+    quote: string;
+    color: string;
+    comment: string | null;
+  };
 
   if (btn && content && sb && supported) {
     const slug = location.pathname;
     let uid: string | null = null;
     let mode = false;
     let rows: Row[] = [];
+    let activeColor = readPen();
 
-    const registry = new HL();
-    (CSS as any).highlights.set('note-highlight', registry);
+    function readPen(): string {
+      try {
+        const v = localStorage.getItem(PEN_KEY);
+        if (v && COLOR_NAMES.includes(v)) return v;
+      } catch {}
+      return DEFAULT_COLOR;
+    }
+    function writePen(c: string) {
+      try { localStorage.setItem(PEN_KEY, c); } catch {}
+    }
+
+    // One CSS Highlight registry per color (background), plus one shared
+    // "commented" registry (dotted underline) layered on top.
+    const registries = new Map<string, any>();
+    for (const { name } of COLORS) {
+      const reg = new HL();
+      registries.set(name, reg);
+      (CSS as any).highlights.set(`note-hl-${name}`, reg);
+    }
+    const commentedReg = new HL();
+    (CSS as any).highlights.set('note-commented', commentedReg);
 
     // --- offset <-> Range helpers (offsets are over the content's text) -------
     const offsetOf = (node: Node, off: number): number => {
@@ -58,10 +106,14 @@
     };
 
     const render = () => {
-      registry.clear();
+      for (const reg of registries.values()) reg.clear();
+      commentedReg.clear();
       for (const h of rows) {
         const r = rangeFromOffsets(h.start_off, h.end_off);
-        if (r) registry.add(r);
+        if (!r) continue;
+        const reg = registries.get(COLOR_NAMES.includes(h.color) ? h.color : DEFAULT_COLOR);
+        reg?.add(r);
+        if (h.comment && h.comment.trim()) commentedReg.add(r);
       }
     };
 
@@ -82,38 +134,223 @@
       return offsetOf(node, off);
     };
 
+    // ---- data ops -----------------------------------------------------------
     async function load() {
       const { data, error } = await sb!
         .from('highlights')
-        .select('id, start_off, end_off, quote')
+        .select('id, start_off, end_off, quote, color, comment')
         .eq('slug', slug);
       if (error) { console.error('[highlight] load failed:', error); return; }
       rows = (data ?? []) as Row[];
       render();
     }
 
-    async function add(start: number, end: number, quote: string) {
-      if (!uid) return;
+    async function add(start: number, end: number, quote: string): Promise<Row | null> {
+      if (!uid) return null;
       const { data, error } = await sb!
         .from('highlights')
-        .insert({ user_id: uid, slug, start_off: start, end_off: end, quote: quote.slice(0, 2000) })
-        .select('id, start_off, end_off, quote')
+        .insert({
+          user_id: uid, slug, start_off: start, end_off: end,
+          quote: quote.slice(0, 2000), color: activeColor,
+        })
+        .select('id, start_off, end_off, quote, color, comment')
         .single();
-      if (error) { console.error('[highlight] add failed:', error); return; }
-      rows.push(data as Row);
+      if (error) { console.error('[highlight] add failed:', error); return null; }
+      const row = data as Row;
+      rows.push(row);
       render();
+      return row;
+    }
+
+    async function update(row: Row, patch: Partial<Pick<Row, 'color' | 'comment'>>) {
+      Object.assign(row, patch);
+      render();
+      const { error } = await sb!.from('highlights').update(patch).eq('id', row.id);
+      if (error) console.error('[highlight] update failed:', error);
     }
 
     async function remove(row: Row) {
-      const { error } = await sb!.from('highlights').delete().eq('id', row.id);
-      if (error) { console.error('[highlight] remove failed:', error); return; }
       rows = rows.filter((r) => r.id !== row.id);
       render();
+      const { error } = await sb!.from('highlights').delete().eq('id', row.id);
+      if (error) console.error('[highlight] remove failed:', error);
     }
 
+    // ---- export / import ----------------------------------------------------
+    async function exportAll() {
+      const { data, error } = await sb!
+        .from('highlights')
+        .select('slug, quote, start_off, end_off, color, comment, created_at');
+      if (error) { console.error('[highlight] export failed:', error); return; }
+      const payload = {
+        schemaVersion: 1,
+        site: 'notesbyjoshua',
+        exportedAt: new Date().toISOString(),
+        highlights: data ?? [],
+      };
+      const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `notesbyjoshua-highlights-${new Date().toISOString().slice(0, 10)}.json`;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    }
+
+    async function importFrom(file: File) {
+      if (!uid) return;
+      let parsed: any;
+      try { parsed = JSON.parse(await file.text()); }
+      catch { alert('That file is not valid JSON.'); return; }
+      const items: any[] = Array.isArray(parsed) ? parsed : parsed?.highlights;
+      if (!Array.isArray(items)) { alert('No highlights found in that file.'); return; }
+
+      // Skip anything we already have on the same note at the same offsets.
+      const { data: existing } = await sb!
+        .from('highlights').select('slug, start_off, end_off');
+      const seen = new Set((existing ?? []).map((e: any) => `${e.slug}|${e.start_off}|${e.end_off}`));
+
+      const toInsert = items
+        .filter((it) => it && typeof it.slug === 'string' &&
+          Number.isFinite(it.start_off) && Number.isFinite(it.end_off))
+        .filter((it) => !seen.has(`${it.slug}|${it.start_off}|${it.end_off}`))
+        .map((it) => ({
+          user_id: uid!,
+          slug: String(it.slug),
+          quote: String(it.quote ?? '').slice(0, 2000),
+          start_off: it.start_off | 0,
+          end_off: it.end_off | 0,
+          color: COLOR_NAMES.includes(it.color) ? it.color : DEFAULT_COLOR,
+          comment: it.comment ? String(it.comment).slice(0, 4096) : null,
+        }));
+
+      if (!toInsert.length) { alert('Nothing new to import.'); return; }
+      const { error } = await sb!.from('highlights').insert(toInsert);
+      if (error) { console.error('[highlight] import failed:', error); alert('Import failed.'); return; }
+      alert(`Imported ${toInsert.length} highlight${toInsert.length === 1 ? '' : 's'}.`);
+      await load();
+    }
+
+    // ---- floating toolbar (pen picker + export/import) ----------------------
+    let toolbar: HTMLDivElement | null = null;
+    function buildToolbar() {
+      if (toolbar) return toolbar;
+      toolbar = document.createElement('div');
+      toolbar.className = 'hl-toolbar';
+      toolbar.hidden = true;
+      toolbar.innerHTML = `
+        <span class="hl-toolbar__label">Pen</span>
+        <div class="hl-swatches" role="radiogroup" aria-label="Highlight color">
+          ${COLORS.map((c) => `<button type="button" class="hl-swatch hl-swatch--${c.name}" role="radio" data-color="${c.name}" title="${c.label}" aria-label="${c.label}"></button>`).join('')}
+        </div>
+        <span class="hl-toolbar__sep"></span>
+        <button type="button" class="hl-tool-btn" data-act="export">Export</button>
+        <button type="button" class="hl-tool-btn" data-act="import">Import</button>
+        <input type="file" accept="application/json,.json" class="hl-file" hidden />
+        <p class="hl-toolbar__hint">Select text to highlight · click a highlight to edit</p>`;
+      document.body.appendChild(toolbar);
+
+      const fileInput = toolbar.querySelector<HTMLInputElement>('.hl-file')!;
+      toolbar.querySelectorAll<HTMLButtonElement>('.hl-swatch').forEach((sw) => {
+        sw.addEventListener('click', () => { activeColor = sw.dataset.color!; writePen(activeColor); syncSwatches(); });
+      });
+      toolbar.querySelector('[data-act="export"]')!.addEventListener('click', () => exportAll());
+      toolbar.querySelector('[data-act="import"]')!.addEventListener('click', () => fileInput.click());
+      fileInput.addEventListener('change', () => {
+        const f = fileInput.files?.[0];
+        if (f) importFrom(f);
+        fileInput.value = '';
+      });
+      return toolbar;
+    }
+    function syncSwatches() {
+      toolbar?.querySelectorAll<HTMLButtonElement>('.hl-swatch').forEach((sw) => {
+        const on = sw.dataset.color === activeColor;
+        sw.classList.toggle('is-active', on);
+        sw.setAttribute('aria-checked', String(on));
+      });
+    }
+
+    // ---- per-highlight editor popover ---------------------------------------
+    let popover: HTMLDivElement | null = null;
+    let popoverRow: Row | null = null;
+    function buildPopover() {
+      if (popover) return popover;
+      popover = document.createElement('div');
+      popover.className = 'hl-popover';
+      popover.hidden = true;
+      popover.innerHTML = `
+        <div class="hl-swatches" role="radiogroup" aria-label="Highlight color">
+          ${COLORS.map((c) => `<button type="button" class="hl-swatch hl-swatch--${c.name}" data-color="${c.name}" title="${c.label}" aria-label="${c.label}"></button>`).join('')}
+        </div>
+        <textarea class="hl-comment" rows="2" maxlength="4096" placeholder="Add a note (optional)…"></textarea>
+        <div class="hl-popover__row">
+          <button type="button" class="hl-pop-btn hl-pop-del" data-act="delete">Delete</button>
+          <button type="button" class="hl-pop-btn hl-pop-done" data-act="done">Done</button>
+        </div>`;
+      document.body.appendChild(popover);
+
+      const ta = popover.querySelector<HTMLTextAreaElement>('.hl-comment')!;
+      popover.querySelectorAll<HTMLButtonElement>('.hl-swatch').forEach((sw) => {
+        sw.addEventListener('click', () => {
+          if (!popoverRow) return;
+          update(popoverRow, { color: sw.dataset.color! });
+          syncPopoverSwatches();
+        });
+      });
+      // Save the comment as the user types (debounced) and on close.
+      let t: number | undefined;
+      ta.addEventListener('input', () => {
+        window.clearTimeout(t);
+        t = window.setTimeout(() => {
+          if (popoverRow) update(popoverRow, { comment: ta.value.trim() || null });
+        }, 500);
+      });
+      popover.querySelector('[data-act="delete"]')!.addEventListener('click', () => {
+        if (popoverRow) remove(popoverRow);
+        closePopover();
+      });
+      popover.querySelector('[data-act="done"]')!.addEventListener('click', () => {
+        if (popoverRow) update(popoverRow, { comment: ta.value.trim() || null });
+        closePopover();
+      });
+      // Stop clicks inside the popover from bubbling to the document closer.
+      popover.addEventListener('mousedown', (e) => e.stopPropagation());
+      return popover;
+    }
+    function syncPopoverSwatches() {
+      popover?.querySelectorAll<HTMLButtonElement>('.hl-swatch').forEach((sw) => {
+        sw.classList.toggle('is-active', sw.dataset.color === popoverRow?.color);
+      });
+    }
+    function openPopover(row: Row, x: number, y: number) {
+      buildPopover();
+      popoverRow = row;
+      const ta = popover!.querySelector<HTMLTextAreaElement>('.hl-comment')!;
+      ta.value = row.comment ?? '';
+      syncPopoverSwatches();
+      popover!.hidden = false;
+      // Clamp within the viewport.
+      const pw = 260, ph = 160;
+      const left = Math.max(8, Math.min(x, window.innerWidth - pw - 8));
+      const top = Math.max(8, Math.min(y, window.innerHeight - ph - 8));
+      popover!.style.left = `${left}px`;
+      popover!.style.top = `${top}px`;
+      setTimeout(() => ta.focus(), 0);
+    }
+    function closePopover() {
+      if (!popover) return;
+      popover.hidden = true;
+      popoverRow = null;
+    }
+    document.addEventListener('mousedown', () => { if (popover && !popover.hidden) closePopover(); });
+
+    // ---- interactions -------------------------------------------------------
     let suppressClick = false;
 
-    content.addEventListener('mouseup', () => {
+    content.addEventListener('mouseup', async (e) => {
       if (!mode) return;
       const sel = window.getSelection();
       if (!sel || sel.isCollapsed || sel.rangeCount === 0) return;
@@ -122,11 +359,13 @@
       const start = offsetOf(range.startContainer, range.startOffset);
       const end = offsetOf(range.endContainer, range.endOffset);
       const quote = sel.toString();
+      const px = e.clientX, py = e.clientY;
       sel.removeAllRanges();
       if (end > start) {
-        suppressClick = true; // the click that follows mouseup shouldn't "remove"
+        suppressClick = true; // the click that follows mouseup shouldn't "edit"
         setTimeout(() => { suppressClick = false; }, 400);
-        add(start, end, quote);
+        const row = await add(start, end, quote);
+        if (row) openPopover(row, px + 8, py + 12);
       }
     });
 
@@ -134,11 +373,11 @@
       if (!mode) return;
       if (suppressClick) { suppressClick = false; return; }
       const sel = window.getSelection();
-      if (sel && !sel.isCollapsed) return; // mid-selection, not a remove click
+      if (sel && !sel.isCollapsed) return; // mid-selection, not an edit click
       const off = offsetFromPoint(e.clientX, e.clientY);
       if (off == null) return;
       const hit = rows.find((h) => off >= h.start_off && off < h.end_off);
-      if (hit) remove(hit);
+      if (hit) { e.stopPropagation(); openPopover(hit, e.clientX + 8, e.clientY + 12); }
     });
 
     btn.addEventListener('click', () => {
@@ -146,6 +385,10 @@
       btn.setAttribute('aria-pressed', String(mode));
       btn.classList.toggle('is-on', mode);
       document.body.classList.toggle('hl-mode', mode);
+      buildToolbar();
+      toolbar!.hidden = !mode;
+      syncSwatches();
+      if (!mode) closePopover();
     });
 
     sb.auth.onAuthStateChange((_event, session) => {
@@ -159,6 +402,8 @@
         mode = false;
         btn.classList.remove('is-on');
         document.body.classList.remove('hl-mode');
+        if (toolbar) toolbar.hidden = true;
+        closePopover();
         rows = [];
         render();
       }
@@ -167,14 +412,93 @@
 </script>
 
 <style is:global>
-  /* The highlight itself (CSS Custom Highlight API — no DOM elements). */
-  ::highlight(note-highlight) { background-color: rgba(250, 204, 21, 0.45); }
-  :root[data-theme='dark'] ::highlight(note-highlight) { background-color: rgba(250, 204, 21, 0.30); }
+  /* --- The highlights themselves (CSS Custom Highlight API — no DOM nodes) --- */
+  ::highlight(note-hl-amber)    { background-color: rgba(250, 204, 21, 0.45); }
+  ::highlight(note-hl-sage)     { background-color: rgba(132, 204, 131, 0.45); }
+  ::highlight(note-hl-sky)      { background-color: rgba(120, 194, 245, 0.45); }
+  ::highlight(note-hl-rose)     { background-color: rgba(244, 160, 180, 0.50); }
+  ::highlight(note-hl-lavender) { background-color: rgba(190, 170, 240, 0.48); }
+  ::highlight(note-hl-graphite) { background-color: rgba(150, 156, 170, 0.45); }
+  /* Highlights that carry a comment get a dotted underline cue. */
+  ::highlight(note-commented)   { text-decoration: underline dotted; text-decoration-thickness: 2px; }
+
+  :root[data-theme='dark'] ::highlight(note-hl-amber)    { background-color: rgba(250, 204, 21, 0.32); }
+  :root[data-theme='dark'] ::highlight(note-hl-sage)     { background-color: rgba(132, 204, 131, 0.32); }
+  :root[data-theme='dark'] ::highlight(note-hl-sky)      { background-color: rgba(120, 194, 245, 0.32); }
+  :root[data-theme='dark'] ::highlight(note-hl-rose)     { background-color: rgba(244, 160, 180, 0.34); }
+  :root[data-theme='dark'] ::highlight(note-hl-lavender) { background-color: rgba(190, 170, 240, 0.34); }
+  :root[data-theme='dark'] ::highlight(note-hl-graphite) { background-color: rgba(170, 176, 190, 0.34); }
 
   /* While highlight mode is on, hint that selecting text will highlight it. */
   body.hl-mode .sl-markdown-content { cursor: text; }
   .highlight-btn.is-on {
-    border-color: #facc15 !important;
-    color: #facc15 !important;
+    border-color: var(--sl-color-accent) !important;
+    color: var(--sl-color-accent) !important;
   }
+
+  /* --- Color swatches (shared by toolbar + popover) --- */
+  .hl-swatches { display: flex; gap: 0.3rem; }
+  .hl-swatch {
+    width: 1.25rem; height: 1.25rem; padding: 0;
+    border: 2px solid transparent; border-radius: 50%;
+    cursor: pointer; transition: transform 0.1s ease;
+  }
+  .hl-swatch:hover { transform: scale(1.12); }
+  .hl-swatch.is-active { border-color: var(--sl-color-text); }
+  .hl-swatch--amber    { background: rgba(250, 204, 21, 0.85); }
+  .hl-swatch--sage     { background: rgba(132, 204, 131, 0.9); }
+  .hl-swatch--sky      { background: rgba(120, 194, 245, 0.9); }
+  .hl-swatch--rose     { background: rgba(244, 160, 180, 0.95); }
+  .hl-swatch--lavender { background: rgba(190, 170, 240, 0.95); }
+  .hl-swatch--graphite { background: rgba(150, 156, 170, 0.95); }
+
+  /* --- Floating toolbar --- */
+  .hl-toolbar {
+    position: fixed; right: 1rem; bottom: 1rem; z-index: 60;
+    display: flex; align-items: center; flex-wrap: wrap; gap: 0.5rem;
+    max-width: min(92vw, 30rem);
+    padding: 0.55rem 0.75rem;
+    border: 1px solid var(--sl-color-gray-5); border-radius: 0.75rem;
+    background: var(--sl-color-bg-nav); color: var(--sl-color-text);
+    box-shadow: var(--sl-shadow-md);
+    font-family: var(--font-ui, inherit); font-size: var(--sl-text-sm);
+  }
+  .hl-toolbar[hidden] { display: none; }
+  .hl-toolbar__label { font-weight: 600; }
+  .hl-toolbar__sep { width: 1px; align-self: stretch; background: var(--sl-color-gray-5); }
+  .hl-tool-btn {
+    padding: 0.25rem 0.6rem; border: 1px solid var(--sl-color-gray-5);
+    border-radius: 0.4rem; background: transparent; color: var(--sl-color-text-accent);
+    font: inherit; font-weight: 600; cursor: pointer;
+  }
+  .hl-tool-btn:hover { background: var(--sl-color-gray-6); }
+  .hl-toolbar__hint {
+    flex-basis: 100%; margin: 0; font-size: var(--sl-text-xs); color: var(--sl-color-gray-3);
+  }
+
+  /* --- Per-highlight editor popover --- */
+  .hl-popover {
+    position: fixed; z-index: 70; width: 16rem;
+    display: flex; flex-direction: column; gap: 0.5rem;
+    padding: 0.65rem; border: 1px solid var(--sl-color-gray-5);
+    border-radius: 0.6rem; background: var(--sl-color-bg-nav);
+    box-shadow: var(--sl-shadow-lg); font-family: var(--font-ui, inherit);
+  }
+  .hl-popover[hidden] { display: none; }
+  .hl-comment {
+    width: 100%; padding: 0.4rem 0.5rem; resize: vertical;
+    border: 1px solid var(--sl-color-gray-5); border-radius: 0.4rem;
+    background: var(--sl-color-bg); color: var(--sl-color-text);
+    font: inherit; font-size: var(--sl-text-sm);
+  }
+  .hl-popover__row { display: flex; justify-content: space-between; gap: 0.5rem; }
+  .hl-pop-btn {
+    padding: 0.3rem 0.7rem; border: 1px solid var(--sl-color-gray-5);
+    border-radius: 0.4rem; background: transparent; font: inherit;
+    font-size: var(--sl-text-sm); font-weight: 600; cursor: pointer;
+  }
+  .hl-pop-done { color: var(--sl-color-white); background: var(--sl-color-accent); border-color: var(--sl-color-accent); }
+  .hl-pop-del { color: #dc2626; }
+  .hl-pop-del:hover { background: rgba(220, 38, 38, 0.1); }
+  .hl-pop-done:hover { background: var(--sl-color-accent-high); }
 </style>

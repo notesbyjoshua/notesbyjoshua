@@ -210,9 +210,15 @@ create table if not exists public.highlights (
   quote      text not null,                       -- the highlighted text (for reference)
   start_off  integer not null,                    -- char offset into the note's text content
   end_off    integer not null,
-  color      text not null default 'yellow',
+  color      text not null default 'amber',       -- swatch name (amber/sage/sky/rose/lavender/graphite)
+  comment    text,                                -- optional note attached to the highlight
   created_at timestamptz not null default now()
 );
+
+-- Backfill columns on databases created before they were added (schema.sql is
+-- applied by hand; see the supabase-schema-drift note). Idempotent.
+alter table public.highlights add column if not exists color   text not null default 'amber';
+alter table public.highlights add column if not exists comment text;
 
 alter table public.highlights enable row level security;
 
