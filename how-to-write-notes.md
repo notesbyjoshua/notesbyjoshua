@@ -126,7 +126,7 @@ When writing examples, always follow this format:
 ``` markdown
 <div class="theorem-box">
 
-**Example.** question statement
+**Example (Broad subject).** question statement
 
 solution here
 
@@ -135,11 +135,57 @@ solution here
 
 When writing the question statement, always end with what you are trying to find/derive, and don't just state the needed information. For example, say *"A is the 1st letter of the alphabet and C is 2 letters after A. Find the position of letter C."* instead of *"A is the 1st letter of the alphabet and C is 2 letters after A."* and going straight to the answer.
 
-Note that for examples, you NEVER state the main theme of the example. This is done because usually the main idea is already given in the problem and thus will be redundant.
+**Tag every example with its broad subject** in parentheses on the lead-in — e.g. `**Example (Finding rate laws).**`. The site renders the parenthetical as a subject chip. Tag with the *broad topic*, not a hyper-specific title:
+
+- ✅ `**Example (Finding rate laws).**`
+- ❌ `**Example (Rate law from k).**` — too specific
+
+(This supersedes the older rule that examples never state a theme. A plain `**Example.**` with no tag still renders — no chip — but prefer tagging.)
 
 ### Theorems
 
 idk I might do this I might not
+
+---
+
+## Callouts
+
+Beyond theorem boxes, themed **callout directives** are available for asides.
+Author them as `:::type` … `:::` (a blank line inside is fine; close with `:::`).
+See the live [component reference](/dev/components/) for how each one looks.
+
+``` markdown
+:::tip{title="Strategy"}
+1. Draw a diagram.
+2. Relate the variables.
+:::
+
+:::warning
+Don't mix up rate-constant units across reaction orders.
+:::
+
+:::exam{topic="Linearized plots"}
+AP often asks you to justify order from a linearized plot.
+:::
+```
+
+Types and their optional field (the field renders as a chip next to the label):
+
+| Directive | Optional field | Use for |
+| --- | --- | --- |
+| `:::tip` | `title` | actionable strategy / how-to |
+| `:::note` | — | neutral aside / context |
+| `:::warning` | — | cautions, common pitfalls |
+| `:::exam` | `topic` | what the AP/exam tends to ask |
+| `:::key` | `name` | a key fact / formula to remember |
+| `:::summary` | `title` | recap of a section |
+| `:::mistakes` | — | bulleted "common mistakes" list |
+| `:::checklist` | — | numbered problem-solving steps |
+| `:::conditions` | — | numbered requirements / assumptions |
+| `:::equations` | — | a markdown table of key equations |
+
+Tag fields follow the same **broad-subject** rule as examples — tag with the
+topic, not a hyper-specific title.
 
 ### Practice solutions
 

@@ -1,0 +1,164 @@
+---
+title: Component reference
+description: Every authoring block available for notes — callouts, theorem boxes, practice, figures, and MDX components. Not linked from navigation.
+prev: false
+next: false
+pagefind: false
+sidebar:
+  hidden: true
+head:
+  - tag: meta
+    attrs:
+      name: robots
+      content: noindex
+---
+
+import { Card, CardGrid, Pills, ProfileCard, Callout } from '../../../components/mdx';
+
+This page shows every block you can use when writing notes, with the markup that
+produces it. It mirrors the live styling, so use it as a copy-paste reference.
+
+---
+
+## Callout directives
+
+Authored as `:::type{field="…"}` … `:::`. Types with an optional field show the
+type label plus a subject chip; the rest show just the label.
+
+:::tip{title="Strategy"}
+1. Draw and label a diagram.
+2. Write an equation relating the variables.
+3. Differentiate implicitly with respect to time.
+:::
+
+:::note
+A neutral aside for context that isn't a warning or a tip.
+:::
+
+:::warning
+Do not confuse rate-constant units across reaction orders.
+:::
+
+:::exam{topic="Linearized plots"}
+AP often asks you to justify reaction order from a linearized plot.
+:::
+
+:::key{name="First-order half-life"}
+First order: $$t_{1/2} = \dfrac{0.693}{k}$$
+:::
+
+:::mistakes
+- Using the first-order half-life when the reaction is second order.
+- Dropping units on $$k$$ before comparing trials.
+:::
+
+:::checklist
+1. Identify the rate law from initial-rate data.
+2. Integrate the rate law for concentration vs. time.
+3. Check the units on $$k$$ against the reaction order.
+:::
+
+:::conditions
+1. Random sample or random assignment.
+2. Independence: if sampling without replacement, $$n \le 0.10N$$.
+3. Large counts: $$n\hat{p} \ge 10$$ and $$n(1-\hat{p}) \ge 10$$.
+:::
+
+:::summary{title="Rate laws"}
+Rate laws come from a mechanism or from experiment; order is not always equal to
+the stoichiometric coefficients.
+:::
+
+:::equations
+| Idea | Equation |
+| --- | --- |
+| First-order decay | $$\ln[A]_t = \ln[A]_0 - kt$$ |
+| First-order half-life | $$t_{1/2} = \dfrac{0.693}{k}$$ |
+:::
+
+---
+
+## Theorem boxes (legacy, still supported)
+
+Authored as `<div class="theorem-box">` with a bold lead-in. Colour-coded by the
+lead-in word.
+
+<div class="theorem-box">
+
+**Definition.** A *rate law* relates reaction rate to reactant concentrations.
+
+</div>
+
+<div class="theorem-box">
+
+**Theorem.** For an elementary step, the order in each reactant equals its
+stoichiometric coefficient.
+
+</div>
+
+Examples now take a **broad-subject tag** in parentheses — the topic, not a
+hyper-specific title (write `**Example (Finding rate laws).**`):
+
+<div class="theorem-box">
+
+**Example (Finding rate laws).** Initial-rate data triples the rate when $$[A]$$
+triples. Find the order in $$A$$.
+
+The rate is first order in $$A$$, so rate $$= k[A]$$.
+
+</div>
+
+<div class="theorem-box">
+
+**Proof (First-order integrated rate law).** Separating variables in
+$$\frac{d[A]}{dt} = -k[A]$$ and integrating gives $$\ln[A]_t = \ln[A]_0 - kt$$.
+
+</div>
+
+---
+
+## Practice blocks
+
+::::problem
+1. What is the pH of a $$1.0\times10^{-3}\ \text{M}$$ HCl solution?
+   (A) 3  (B) 11  (C) 7  (D) 1
+
+:::solution
+### Solution
+(A) — strong acid, so $$[\text{H}^+] = 1.0\times10^{-3}$$ and $$\text{pH}=3$$.
+:::
+::::
+
+---
+
+## MDX components
+
+Imported at the top of an `.mdx` page: `import { Card, CardGrid, Pills, Callout } from '…/components/mdx'`.
+
+<Pills items={["Inline tags", "Topics", "Skills"]} />
+
+<CardGrid>
+	<Card title="Linked card" icon="📘" href="/notes/notes/" cta="Browse notes">
+		Cards can link somewhere, with a hover lift and a call-to-action.
+	</Card>
+	<Card title="Plain card" icon="🗂️">
+		Or just group related content without a link.
+	</Card>
+</CardGrid>
+
+<Callout type="tip" title="MDX vs directive">
+This `<Callout>` is the MDX component; the `:::tip` above is the directive. Use
+whichever fits — directives in plain `.md` notes, components in `.mdx` pages.
+</Callout>
+
+---
+
+## Math & figures
+
+Inline $$E = mc^2$$ and display:
+
+$$
+\int_0^1 x^2\,dx = \frac{1}{3}
+$$
+
+<img class="note-img note-img--w480" src="/assets/Images/og-card.png" alt="Example figure" loading="lazy" decoding="async" />

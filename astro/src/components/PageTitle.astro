@@ -80,14 +80,32 @@ const editHref = isNote && filePath ? `/admin/edit?path=${encodeURIComponent(`as
     // (**Proof.**, **Example 4.3.** …). Read whichever is present.
     const headingEl = box.querySelector('h1,h2,h3,h4,h5,h6');
     let label = headingEl?.textContent?.trim() ?? '';
+    let lead: Element | null = null;
     if (!label) {
-      const lead = box.querySelector('p')?.firstElementChild;
+      lead = box.querySelector('p')?.firstElementChild ?? null;
       if (lead && (lead.tagName === 'STRONG' || lead.tagName === 'B')) {
         label = lead.textContent?.trim() ?? '';
+      } else {
+        lead = null;
       }
     }
     const match = TYPES.find(([re]) => re.test(label));
     if (match) box.classList.add('tb--' + match[1]);
+
+    // Example subject tags: `**Example (Finding rate laws).**` → an "Example"
+    // lead-in plus a subject chip. The subject is the BROAD topic, not a
+    // hyper-specific title (project convention). Backward compatible: a plain
+    // `**Example.**` gets no chip.
+    if (match && match[1] === 'ex' && lead) {
+      const m = lead.textContent?.match(/^(\s*Example)\s*\(([^)]+)\)\s*(\.?)\s*$/i);
+      if (m) {
+        lead.textContent = `${m[1].trim()}${m[3] || '.'}`;
+        const chip = document.createElement('span');
+        chip.className = 'tb-tag';
+        chip.textContent = m[2].trim();
+        lead.after(document.createTextNode(' '), chip);
+      }
+    }
     // Practice solutions start hidden behind a "Show solution" toggle. Only
     // heading-style solutions (#### Solution) collapse — bold inline solutions
     // in notes stay visible, so this is gated on an actual heading.

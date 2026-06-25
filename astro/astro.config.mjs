@@ -5,6 +5,7 @@ import remarkMath from 'remark-math';
 import remarkDirective from 'remark-directive';
 import rehypeKatex from 'rehype-katex';
 import remarkPractice from './src/lib/markdown/remark-practice.mjs';
+import remarkCallouts from './src/lib/markdown/remark-callouts.mjs';
 import rehypeCleanHeadingMath from './src/lib/markdown/rehype-clean-heading-math.mjs';
 import redirects from './src/redirects.json' with { type: 'json' };
 import notesSidebar from './src/sidebar.json' with { type: 'json' };
@@ -33,7 +34,7 @@ export default defineConfig({
 		// remarkDirective parses `:::name{...}` blocks; remarkPractice turns
 		// `:::problem` / `:::frq{id=…}` / `:::solution` into the practice-box markup
 		// the grader + reveal toggles hook into (other directives are left alone).
-		remarkPlugins: [remarkMath, remarkDirective, remarkPractice],
+		remarkPlugins: [remarkMath, remarkDirective, remarkPractice, remarkCallouts],
 		// strict: false -> render quirks like an em-dash inside math instead of warning.
 		// rehypeCleanHeadingMath runs AFTER katex to de-duplicate heading text so the
 		// "On this page" ToC isn't garbled (e.g. "KcK_cKc"); body math is untouched.
