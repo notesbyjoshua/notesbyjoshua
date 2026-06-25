@@ -18,16 +18,9 @@ hero:
       variant: minimal
 ---
 
-import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+import HomeTiles from '../../components/HomeTiles.astro';
 
-<CardGrid>
-  <LinkCard title="AP Notes" href="/notes/ap/" description="Chemistry, Precalculus, Physics C, Calculus, Statistics, and more." />
-  <LinkCard title="Math" href="/notes/math/" description="Competition math — algebra, geometry, and calculus topics." />
-  <LinkCard title="Physics" href="/notes/physics/" description="AP Physics C and competition prep (F=ma, USAPhO)." />
-  <LinkCard title="Chemistry" href="/notes/chemistry/" description="Competition chemistry preparation." />
-  <LinkCard title="Practice Problems" href="/practiceproblems/practice/" description="Exercises by subject to work through after the notes." />
-  <LinkCard title="Resources" href="/resources/resources/" description="External references and tools worth bookmarking." />
-</CardGrid>
+<HomeTiles />
 
 ## News
 

@@ -1,0 +1,67 @@
+---
+// Polished course tiles for the homepage (replaces the plain Starlight
+// CardGrid/LinkCard). Each tile has an emoji glyph, title, blurb, and a soft
+// accent that lifts on hover. Edit the list below to change the homepage cards.
+const tiles = [
+  { icon: '📚', title: 'AP Notes', href: '/notes/ap/', blurb: 'Chemistry, Precalculus, Physics C, Calculus, Statistics, and more.', accent: '#7c9cff' },
+  { icon: '📐', title: 'Math', href: '/notes/math/', blurb: 'Competition math — algebra, geometry, and calculus topics.', accent: '#34d399' },
+  { icon: '⚛️', title: 'Physics', href: '/notes/physics/', blurb: 'AP Physics C and competition prep (F=ma, USAPhO).', accent: '#f59e0b' },
+  { icon: '🧪', title: 'Chemistry', href: '/notes/chemistry/', blurb: 'Competition chemistry preparation.', accent: '#f472b6' },
+  { icon: '✏️', title: 'Practice Problems', href: '/practiceproblems/practice/', blurb: 'Exercises by subject to work through after the notes.', accent: '#a78bfa' },
+  { icon: '🔖', title: 'Resources', href: '/resources/resources/', blurb: 'External references and tools worth bookmarking.', accent: '#22d3ee' },
+];
+---
+<ul class="home-tiles">
+  {tiles.map((t) => (
+    <li>
+      <a class="home-tile" href={t.href} style={`--tile-accent:${t.accent}`}>
+        <span class="home-tile-icon" aria-hidden="true">{t.icon}</span>
+        <span class="home-tile-body">
+          <span class="home-tile-title">{t.title}</span>
+          <span class="home-tile-blurb">{t.blurb}</span>
+        </span>
+        <span class="home-tile-arrow" aria-hidden="true">→</span>
+      </a>
+    </li>
+  ))}
+</ul>
+
+<style>
+  .home-tiles {
+    list-style: none; margin: 1.5rem 0 0; padding: 0;
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr)); gap: 1rem;
+  }
+  .home-tiles li { margin: 0; }
+  .home-tile {
+    position: relative; display: flex; align-items: flex-start; gap: 0.9rem;
+    height: 100%; padding: 1.1rem 1.2rem;
+    border: 1px solid var(--sl-color-gray-5); border-radius: 0.9rem;
+    background: var(--sl-color-black);
+    text-decoration: none; color: var(--sl-color-white);
+    transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+  /* Accent wash along the top edge, tinted per tile. */
+  .home-tile::before {
+    content: ''; position: absolute; inset: 0 0 auto 0; height: 4px;
+    background: var(--tile-accent); border-radius: 0.9rem 0.9rem 0 0; opacity: 0.9;
+  }
+  .home-tile:hover {
+    transform: translateY(-3px);
+    border-color: var(--tile-accent);
+    box-shadow: 0 8px 24px -12px var(--tile-accent);
+  }
+  .home-tile-icon {
+    flex: none; display: grid; place-items: center;
+    width: 3rem; height: 3rem; border-radius: 0.7rem;
+    font-size: 1.6rem; line-height: 1;
+    background: color-mix(in srgb, var(--tile-accent) 16%, transparent);
+  }
+  .home-tile-body { display: flex; flex-direction: column; gap: 0.25rem; min-width: 0; }
+  .home-tile-title { font-size: 1.15rem; font-weight: 700; }
+  .home-tile-blurb { font-size: var(--sl-text-sm); color: var(--sl-color-gray-3); line-height: 1.45; }
+  .home-tile-arrow {
+    position: absolute; top: 1.1rem; right: 1.1rem; color: var(--sl-color-gray-4);
+    transition: transform 0.15s ease, color 0.15s ease;
+  }
+  .home-tile:hover .home-tile-arrow { color: var(--tile-accent); transform: translateX(3px); }
+</style>
