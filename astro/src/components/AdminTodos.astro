@@ -185,50 +185,52 @@
   }
 </script>
 
-<style>
-  .todos-add { display: flex; gap: 0.5rem; margin-bottom: 1.25rem; }
-  .todos-add input {
+<!-- is:global because the task rows (.todo …) are created in JavaScript, and
+     Astro's scoped styles only attach to elements present in the template. All
+     selectors are namespaced under .todos so nothing leaks. -->
+<style is:global>
+  .todos .todos-add { display: flex; gap: 0.5rem; margin-bottom: 1.25rem; }
+  .todos .todos-add input {
     flex: 1; min-width: 0; height: 2.4rem; padding: 0 0.7rem;
     border: 1px solid var(--sl-color-gray-5); border-radius: 0.4rem;
     background: var(--sl-color-black); color: var(--sl-color-white); font: inherit;
   }
-  .todos-add button {
+  .todos .todos-add button {
     height: 2.4rem; padding: 0 1.1rem; border: 1px solid var(--sl-color-accent);
     background: var(--sl-color-accent); color: var(--sl-color-white);
     border-radius: 0.4rem; cursor: pointer; font: inherit; font-weight: 600;
   }
 
-  .todos-list { list-style: none; margin: 0; padding: 0; }
-  /* Uniform rows: same min-height regardless of 1- or 2-line text, even gaps. */
-  .todo {
-    display: flex; align-items: center; gap: 1rem;
-    min-height: 3rem; padding: 0.4rem 0.25rem;
-    border-bottom: 1px solid var(--sl-color-gray-6);
+  .todos .todos-list { list-style: none; margin: 0; padding: 0; }
+  /* Compact, uniform rows with clear horizontal spacing. */
+  .todos .todo {
+    display: flex; align-items: center; gap: 0.9rem;
+    padding: 0.7rem 0.25rem; border-bottom: 1px solid var(--sl-color-gray-6);
   }
-  .todo-main { display: flex; align-items: center; gap: 0.85rem; flex: 1; min-width: 0; cursor: pointer; margin: 0; }
-  .todo-main input { width: 1.2rem; height: 1.2rem; flex: none; cursor: pointer; accent-color: var(--sl-color-accent); }
-  .todo-text { flex: 1; min-width: 0; word-break: break-word; line-height: 1.4; }
-  .todo.is-done .todo-text { text-decoration: line-through; color: var(--sl-color-gray-3); }
-  /* Delete button: clearly separated on the right, obvious on hover. */
-  .todo-del {
-    flex: none; width: 2rem; height: 2rem; line-height: 1; font-size: 1.35rem;
+  .todos .todo-main { display: flex; align-items: center; gap: 0.9rem; flex: 1; min-width: 0; cursor: pointer; margin: 0; }
+  .todos .todo-main input { width: 1.2rem; height: 1.2rem; flex: none; cursor: pointer; accent-color: var(--sl-color-accent); }
+  .todos .todo-text { flex: 1; min-width: 0; word-break: break-word; line-height: 1.45; }
+  .todos .todo.is-done .todo-text { text-decoration: line-through; color: var(--sl-color-gray-3); }
+  /* Delete button sits at the far right, clearly separated, red on hover. */
+  .todos .todo-del {
+    flex: none; width: 2rem; height: 2rem; margin-left: 0.5rem; line-height: 1; font-size: 1.35rem;
     display: inline-flex; align-items: center; justify-content: center;
     border: 1px solid var(--sl-color-gray-5); border-radius: 0.4rem; background: transparent;
     color: var(--sl-color-gray-2); cursor: pointer;
   }
-  .todo-del:hover { color: #fff; background: #ef4444; border-color: #ef4444; }
+  .todos .todo-del:hover { color: #fff; background: #ef4444; border-color: #ef4444; }
 
-  .todos-empty { color: var(--sl-color-gray-3); }
-  .todos-foot {
+  .todos .todos-empty { color: var(--sl-color-gray-3); }
+  .todos .todos-foot {
     display: flex; align-items: center; justify-content: space-between; gap: 1rem;
     margin-top: 1.1rem; flex-wrap: wrap;
   }
-  .todos-summary { font-size: var(--sl-text-sm); color: var(--sl-color-gray-3); }
-  .todos-clear {
+  .todos .todos-summary { font-size: var(--sl-text-sm); color: var(--sl-color-gray-3); }
+  .todos .todos-clear {
     padding: 0.35rem 0.8rem; font: inherit; font-size: var(--sl-text-sm); font-weight: 600;
     border: 1px solid var(--sl-color-gray-5); border-radius: 0.4rem;
     background: transparent; color: var(--sl-color-text-accent); cursor: pointer;
   }
-  .todos-clear:hover:not(:disabled) { background: var(--sl-color-gray-6); }
-  .todos-clear:disabled { opacity: 0.5; cursor: not-allowed; }
+  .todos .todos-clear:hover:not(:disabled) { background: var(--sl-color-gray-6); }
+  .todos .todos-clear:disabled { opacity: 0.5; cursor: not-allowed; }
 </style>
