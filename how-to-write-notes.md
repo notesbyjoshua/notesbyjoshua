@@ -152,7 +152,7 @@ idk I might do this I might not
 
 Beyond theorem boxes, themed **callout directives** are available for asides.
 Author them as `:::type` … `:::` (a blank line inside is fine; close with `:::`).
-See the live [component reference](/dev/components/) for how each one looks.
+See the live [Writing notes reference](/writing-notes/) for how each one looks.
 
 ``` markdown
 :::tip{title="Strategy"}
