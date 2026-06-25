@@ -254,10 +254,15 @@
         <button type="button" class="hl-tool-btn" data-act="export">Export</button>
         <button type="button" class="hl-tool-btn" data-act="import">Import</button>
         <input type="file" accept="application/json,.json" class="hl-file" hidden />
+        <button type="button" class="hl-tool-close" data-act="close" aria-label="Close highlight menu" title="Close highlight menu">&times;</button>
         <p class="hl-toolbar__hint">Select text to highlight · click a highlight to edit</p>`;
       document.body.appendChild(toolbar);
 
       const fileInput = toolbar.querySelector<HTMLInputElement>('.hl-file')!;
+      // Close button turns off highlight mode (same as toggling the title button).
+      toolbar.querySelector('[data-act="close"]')!.addEventListener('click', () => {
+        if (mode) btn!.click();
+      });
       toolbar.querySelectorAll<HTMLButtonElement>('.hl-swatch').forEach((sw) => {
         sw.addEventListener('click', () => { activeColor = sw.dataset.color!; writePen(activeColor); syncSwatches(); });
       });
@@ -477,6 +482,15 @@
     font: inherit; font-weight: 600; cursor: pointer;
   }
   .hl-tool-btn:hover { background: var(--sl-color-gray-6); }
+  .hl-tool-close {
+    margin-left: auto;
+    width: 1.7rem; height: 1.7rem;
+    display: inline-flex; align-items: center; justify-content: center;
+    border: 1px solid var(--sl-color-gray-5); border-radius: 0.4rem;
+    background: transparent; color: var(--sl-color-gray-2);
+    font-size: 1.3rem; line-height: 1; cursor: pointer;
+  }
+  .hl-tool-close:hover { background: var(--sl-color-gray-6); color: var(--sl-color-text); }
   .hl-toolbar__hint {
     flex-basis: 100%; margin: 0; font-size: var(--sl-text-xs); color: var(--sl-color-gray-3);
   }
