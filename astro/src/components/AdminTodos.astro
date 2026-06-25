@@ -23,7 +23,7 @@
 </div>
 
 <script>
-  import { getSupabase, getRole, type SessionUser } from '../lib/supabase';
+  import { getSupabase, getRole, getCurrentUser, type SessionUser } from '../lib/supabase';
 
   type Todo = { id: string; title: string; done: boolean; created_at: string };
 
@@ -163,9 +163,8 @@
   if (!sb) {
     show('todos-denied');
   } else {
-    let settled = false;
-    sb.auth.onAuthStateChange((_event, session) => { settled = true; gate(session); });
-    setTimeout(() => { if (!settled) show('todos-denied'); }, 2500);
+    getCurrentUser().then((user) => gate(user ? { user } : null)).catch(() => show('todos-denied'));
+    sb.auth.onAuthStateChange((event, session) => { if (event !== 'INITIAL_SESSION') gate(session); });
   }
 </script>
 

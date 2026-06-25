@@ -27,7 +27,7 @@
 </div>
 
 <script>
-  import { getSupabase, getRole } from '../lib/supabase';
+  import { getSupabase, getRole, getCurrentUser } from '../lib/supabase';
   import { EDITABLE_TOPICS } from '../lib/editorTopics';
 
   const byId = (id: string) => document.getElementById(id)!;
@@ -200,8 +200,9 @@
   if (!sb) {
     show('admin-denied');
   } else {
-    let settled = false;
-    sb.auth.onAuthStateChange((_event, session) => { settled = true; gate(session); });
-    setTimeout(() => { if (!settled) show('admin-denied'); }, 2500);
+    // Decide once from the restored session (reliable even if the auth event is
+    // slow/missing), then keep responding to later sign-in/out changes.
+    getCurrentUser().then((user) => gate(user ? { user } : null)).catch(() => show('admin-denied'));
+    sb.auth.onAuthStateChange((event, session) => { if (event !== 'INITIAL_SESSION') gate(session); });
   }
 </script>

@@ -15,7 +15,7 @@
 </div>
 
 <script>
-  import { getSupabase, getRole } from '../lib/supabase';
+  import { getSupabase, getRole, getCurrentUser } from '../lib/supabase';
   const byId = (id: string) => document.getElementById(id)!;
   const show = (id: string) => ['afb-status', 'afb-denied', 'afb-content'].forEach((s) => (byId(s).hidden = s !== id));
   const sb = getSupabase();
@@ -74,7 +74,7 @@
 
   async function gate(session: any) {
     if (!session?.user) { show('afb-denied'); return; }
-    const role = await getRole().catch(() => 'visitor');
+    const role = await getRole(session.user).catch(() => 'visitor');
     if (role !== 'admin') { show('afb-denied'); return; }
     try { await loadFeedback(); show('afb-content'); }
     catch (err) { console.error('[admin feedback] load failed:', err); show('afb-denied'); }
@@ -83,8 +83,7 @@
   if (!sb) {
     show('afb-denied');
   } else {
-    let settled = false;
-    sb.auth.onAuthStateChange((_event, session) => { settled = true; gate(session); });
-    setTimeout(() => { if (!settled) show('afb-denied'); }, 2500);
+    getCurrentUser().then((user) => gate(user ? { user } : null)).catch(() => show('afb-denied'));
+    sb.auth.onAuthStateChange((event, session) => { if (event !== 'INITIAL_SESSION') gate(session); });
   }
 </script>

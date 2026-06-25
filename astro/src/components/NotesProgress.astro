@@ -114,7 +114,7 @@ const sections = orderedCourses
 </div>
 
 <script>
-  import { getSupabase, getRole } from '../lib/supabase';
+  import { getSupabase, getRole, getCurrentUser } from '../lib/supabase';
   const byId = (id: string) => document.getElementById(id)!;
   const show = (id: string) => ['np-status', 'np-denied', 'np-content'].forEach((s) => (byId(s).hidden = s !== id));
   const sb = getSupabase();
@@ -138,8 +138,7 @@ const sections = orderedCourses
   if (!sb) {
     show('np-denied');
   } else {
-    let settled = false;
-    sb.auth.onAuthStateChange((_event, session) => { settled = true; gate(session); });
-    setTimeout(() => { if (!settled) show('np-denied'); }, 2500);
+    getCurrentUser().then((user) => gate(user ? { user } : null)).catch(() => show('np-denied'));
+    sb.auth.onAuthStateChange((event, session) => { if (event !== 'INITIAL_SESSION') gate(session); });
   }
 </script>

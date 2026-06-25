@@ -34,6 +34,30 @@ export function getSupabase(): SupabaseClient | null {
  * so we don't call an auth method (which can deadlock) inside that callback. */
 export type SessionUser = { id: string; email?: string | null };
 
+/** Resolve the signed-in user from the restored session, reliably and once.
+ *
+ * Safe to call at page startup (it is NOT inside an onAuthStateChange callback,
+ * so the auth-lock deadlock doesn't apply). getSession() reads/refreshes the
+ * persisted token directly, so gates don't depend on an INITIAL_SESSION event
+ * arriving in time — that timing race was making real admins fall through to a
+ * blanket "denied". Returns null only when genuinely signed out. */
+export async function getCurrentUser(): Promise<SessionUser | null> {
+	const sb = getSupabase();
+	if (!sb) return null;
+	try {
+		const { data } = await sb.auth.getSession();
+		if (data.session?.user) return data.session.user;
+	} catch {
+		/* fall through to getUser */
+	}
+	try {
+		const { data } = await sb.auth.getUser();
+		return data.user ?? null;
+	} catch {
+		return null;
+	}
+}
+
 export type UserRole = 'visitor' | 'writer' | 'admin';
 
 /** The current user's role ('visitor' | 'writer' | 'admin'), or null if signed out. */

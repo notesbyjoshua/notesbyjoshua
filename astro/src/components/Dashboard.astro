@@ -60,7 +60,7 @@ const total = sections.reduce((n, s) => n + s.notes.length, 0);
 </div>
 
 <script>
-  import { getSupabase } from '../lib/supabase';
+  import { getSupabase, getCurrentUser } from '../lib/supabase';
 
   const byId = (id: string) => document.getElementById(id)!;
   const STATES = ['dash-status', 'dash-signedout', 'dash-content'];
@@ -179,8 +179,7 @@ const total = sections.reduce((n, s) => n + s.notes.length, 0);
   if (!sb) {
     show('dash-signedout');
   } else {
-    let settled = false;
-    sb.auth.onAuthStateChange((_event, session) => { settled = true; load(session); });
-    setTimeout(() => { if (!settled) show('dash-signedout'); }, 2500);
+    getCurrentUser().then((user) => load(user ? { user } : null)).catch(() => show('dash-signedout'));
+    sb.auth.onAuthStateChange((event, session) => { if (event !== 'INITIAL_SESSION') load(session); });
   }
 </script>

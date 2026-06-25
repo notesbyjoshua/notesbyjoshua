@@ -65,7 +65,7 @@ const notes = docs
 </div>
 
 <script>
-  import { getSupabase, getRole, getWriterTopicKeys } from '../lib/supabase';
+  import { getSupabase, getRole, getWriterTopicKeys, getCurrentUser } from '../lib/supabase';
   import { marked } from 'marked';
   import renderMathInElement from 'katex/contrib/auto-render';
 
@@ -276,9 +276,8 @@ const notes = docs
   if (!sb) {
     show('ed-denied');
   } else {
-    let settled = false;
-    sb.auth.onAuthStateChange((_event, session) => { settled = true; gate(session); });
-    setTimeout(() => { if (!settled) show('ed-denied'); }, 2500);
+    getCurrentUser().then((user) => gate(user ? { user } : null)).catch(() => show('ed-denied'));
+    sb.auth.onAuthStateChange((event, session) => { if (event !== 'INITIAL_SESSION') gate(session); });
   }
 </script>
 

@@ -83,7 +83,7 @@ const totalNotes = sections.reduce((n, s) => n + s.slugs.length, 0);
 </div>
 
 <script>
-  import { getSupabase, getProfile } from '../lib/supabase';
+  import { getSupabase, getProfile, getCurrentUser } from '../lib/supabase';
 
   const byId = (id: string) => document.getElementById(id)!;
   const STATES = ['account-status', 'account-signedout', 'account-signedin', 'account-disabled'];
@@ -227,11 +227,12 @@ const totalNotes = sections.reduce((n, s) => n + s.slugs.length, 0);
   if (!sb) {
     show('account-disabled');
   } else {
-    let settled = false;
-    sb.auth.onAuthStateChange((_event, session) => {
-      settled = true;
+    getCurrentUser()
+      .then((user) => (user ? loadSignedIn({ user }) : show('account-signedout')))
+      .catch(() => show('account-signedout'));
+    sb.auth.onAuthStateChange((event, session) => {
+      if (event === 'INITIAL_SESSION') return;
       session?.user ? loadSignedIn(session) : show('account-signedout');
     });
-    setTimeout(() => { if (!settled) show('account-signedout'); }, 2500);
   }
 </script>
