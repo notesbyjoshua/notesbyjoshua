@@ -4,8 +4,12 @@
 // A small client enhancement also colour-codes theorem boxes and turns
 // practice "Solution" boxes into attempt-first collapsibles (all pages).
 import Default from '@astrojs/starlight/components/PageTitle.astro';
+import PracticeFilters from './PracticeFilters.astro';
 const path = Astro.url.pathname;
 const isNote = path.startsWith('/notes/');
+// Subject practice pages (not the /practiceproblems/practice/ overview) get a
+// Unit / MCQ-FRQ filter bar + subject switcher.
+const isPracticeSubject = path.startsWith('/practiceproblems/') && path !== '/practiceproblems/practice/';
 // Source file of this note, repo-root relative (e.g. astro/src/content/docs/...),
 // so the pencil can open the editor pre-loaded with this exact file. filePath is
 // project-root relative (src/content/docs/...), so prefix astro/.
@@ -36,6 +40,7 @@ const editHref = isNote && filePath ? `/admin/edit?path=${encodeURIComponent(`as
     </div>
   )}
 </div>
+{isPracticeSubject && <PracticeFilters />}
 
 <script>
   import { canEditNotePath, getSupabase } from '../lib/supabase';

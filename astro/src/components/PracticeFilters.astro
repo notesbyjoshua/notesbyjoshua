@@ -1,0 +1,123 @@
+---
+// Filter bar for a subject's practice page. Subjects are separate pages (the
+// links below switch between them); within a page you can filter by Unit and by
+// problem Type (MCQ / FRQ). Units are read from the page's <h2> headings and
+// each problem's type from the <h4> it sits under, so this needs no extra
+// metadata. (Difficulty isn't tracked in the source problems, so it's omitted.)
+const subjects = [
+  { slug: 'ap-chemistry', label: 'Chemistry' },
+  { slug: 'ap-physics-c-mechanics', label: 'Physics C: Mech' },
+  { slug: 'ap-physics-c-e-m', label: 'Physics C: E&M' },
+  { slug: 'ap-precalculus', label: 'Precalculus' },
+  { slug: 'ap-statistics', label: 'Statistics' },
+];
+const current = Astro.url.pathname.replace(/\/$/, '').split('/').pop();
+---
+<div class="pf">
+  <div class="pf-subjects">
+    {subjects.map((s) => (
+      <a href={`/practiceproblems/${s.slug}/`} class={current === s.slug ? 'is-active' : ''}>{s.label}</a>
+    ))}
+  </div>
+  <div class="pf-controls">
+    <label class="pf-unit-label">Unit
+      <select id="pf-unit"><option value="all">All units</option></select>
+    </label>
+    <div class="pf-types" role="group" aria-label="Filter by type">
+      <button type="button" data-type="all" class="is-active">All</button>
+      <button type="button" data-type="mcq">MCQ</button>
+      <button type="button" data-type="frq">FRQ</button>
+    </div>
+    <span id="pf-count" class="pf-count"></span>
+  </div>
+</div>
+
+<script>
+  const content = document.querySelector('.sl-markdown-content');
+  const unitSelect = document.getElementById('pf-unit') as HTMLSelectElement | null;
+  if (content && unitSelect) {
+    const children = Array.from(content.children) as HTMLElement[];
+
+    // Annotate each block with the unit (current <h2> id) and type (mcq/frq)
+    // inferred from the most recent <h4>. Headings carry their own values.
+    const units: { id: string; label: string }[] = [];
+    let unit = '';
+    let type = '';
+    for (const el of children) {
+      if (el.tagName === 'H2') {
+        unit = el.id;
+        type = '';
+        units.push({ id: el.id, label: (el.textContent || '').trim() });
+      } else if (el.tagName === 'H4') {
+        const t = (el.textContent || '').toLowerCase();
+        type = t.includes('frq') ? 'frq' : t.includes('mcq') ? 'mcq' : '';
+      }
+      el.dataset.pfUnit = unit;
+      el.dataset.pfType = type;
+    }
+
+    for (const u of units) {
+      const o = document.createElement('option');
+      o.value = u.id;
+      o.textContent = u.label;
+      unitSelect.appendChild(o);
+    }
+
+    let unitSel = 'all';
+    let typeSel = 'all';
+    const countEl = document.getElementById('pf-count')!;
+
+    const apply = () => {
+      let shown = 0;
+      for (const el of children) {
+        const unitOk = unitSel === 'all' || el.dataset.pfUnit === unitSel;
+        // Untyped blocks (unit intros, "Practice" heading) always show; typed
+        // blocks (MCQ/FRQ headings + problems) show only when they match.
+        const typeOk = typeSel === 'all' || !el.dataset.pfType || el.dataset.pfType === typeSel;
+        const vis = unitOk && typeOk;
+        el.style.display = vis ? '' : 'none';
+        if (vis && el.classList.contains('problem-box')) shown++;
+      }
+      countEl.textContent = `${shown} problem${shown === 1 ? '' : 's'}`;
+    };
+
+    unitSelect.addEventListener('change', () => { unitSel = unitSelect.value; apply(); });
+    document.querySelectorAll<HTMLButtonElement>('.pf-types button').forEach((b) => {
+      b.addEventListener('click', () => {
+        typeSel = b.dataset.type || 'all';
+        document.querySelectorAll('.pf-types button').forEach((x) => x.classList.toggle('is-active', x === b));
+        apply();
+      });
+    });
+
+    apply();
+  }
+</script>
+
+<style>
+  .pf { margin: 0.75rem 0 1.25rem; display: flex; flex-direction: column; gap: 0.75rem; }
+  .pf-subjects { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .pf-subjects a {
+    padding: 0.3rem 0.7rem; border: 1px solid var(--sl-color-gray-5); border-radius: 999px;
+    font-size: var(--sl-text-sm); font-weight: 600; text-decoration: none; color: var(--sl-color-text-accent);
+  }
+  .pf-subjects a:hover { background: var(--sl-color-gray-6); }
+  .pf-subjects a.is-active { background: var(--sl-color-text-accent); color: var(--sl-color-black); border-color: var(--sl-color-text-accent); }
+
+  .pf-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; }
+  .pf-unit-label { display: flex; align-items: center; gap: 0.4rem; font-size: var(--sl-text-sm); font-weight: 600; }
+  .pf-unit-label select {
+    padding: 0.35rem 0.5rem; max-width: 18rem; font: inherit;
+    border: 1px solid var(--sl-color-gray-5); border-radius: 0.4rem;
+    background: var(--sl-color-black); color: var(--sl-color-white);
+  }
+  .pf-types { display: inline-flex; border: 1px solid var(--sl-color-gray-5); border-radius: 0.4rem; overflow: hidden; }
+  .pf-types button {
+    padding: 0.35rem 0.8rem; font: inherit; font-size: var(--sl-text-sm); font-weight: 600;
+    background: transparent; color: var(--sl-color-white); border: none; cursor: pointer;
+    border-left: 1px solid var(--sl-color-gray-5);
+  }
+  .pf-types button:first-child { border-left: none; }
+  .pf-types button.is-active { background: var(--sl-color-text-accent); color: var(--sl-color-black); }
+  .pf-count { font-size: var(--sl-text-sm); color: var(--sl-color-gray-3); margin-left: auto; }
+</style>
