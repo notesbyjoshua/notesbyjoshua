@@ -324,6 +324,7 @@ Transmittance rarely shows up on the AP exam. Beer's law is very applicable for 
 
 ### MCQ
 
+::::problem
 1. Which substance is expected to have the highest boiling point?
 
    (A) $$\text{CH}_4$$<br>
@@ -331,6 +332,16 @@ Transmittance rarely shows up on the AP exam. Beer's law is very applicable for 
    (C) $$\text{CH}_3\text{OH}$$<br>
    (D) $$\text{CH}_3\text{OCH}_3$$
 
+:::solution
+$$\text{CH}_3\text{OH}$$ can form hydrogen bonds because it has an O-H bond. The other choices rely mainly on London dispersion forces or dipole-dipole attractions.
+
+$$
+\boxed{\text{C}}
+$$
+:::
+::::
+
+::::problem
 2. A solution is prepared by dissolving $$0.250\ \text{mol}$$ of $$\text{NaCl}$$ in enough water to make $$0.500\ \text{L}$$ of solution. Assuming complete dissociation, what is the approximate total particle concentration?
 
    (A) $$0.250\ M$$<br>
@@ -338,74 +349,7 @@ Transmittance rarely shows up on the AP exam. Beer's law is very applicable for 
    (C) $$1.00\ M$$<br>
    (D) $$2.00\ M$$
 
-3. Which pair is most likely to be miscible?
-
-   (A) Hexane and water<br>
-   (B) Ethanol and water<br>
-   (C) Sodium chloride and hexane<br>
-   (D) Oil and water
-
-4. If the pressure of a gas above a liquid is increased at constant temperature, the solubility of the gas in the liquid generally
-
-   (A) increases.<br>
-   (B) decreases.<br>
-   (C) remains exactly zero.<br>
-   (D) becomes independent of gas identity.
-
-5. Which sample should behave most ideally as a gas?
-
-   (A) $$\text{NH}_3$$ at high pressure and low temperature<br>
-   (B) $$\text{CO}_2$$ at high pressure and low temperature<br>
-   (C) He at low pressure and high temperature<br>
-   (D) $$\text{H}_2\text{O}$$ vapor near condensation
-
-6. Which solution has the highest boiling point, assuming ideal behavior?
-
-   (A) $$0.10\ m$$ glucose<br>
-   (B) $$0.10\ m\ \text{NaCl}$$<br>
-   (C) $$0.10\ m\ \text{CaCl}_2$$<br>
-   (D) pure water
-
-### FRQ
-
-7. A student measures the absorbance of several solutions of $$\text{Cu}^{2+}$$ at the same wavelength and path length.
-
-   $$(A)$$ Explain why absorbance can be used to determine concentration.
-
-   $$(B)$$ A solution has absorbance $$0.420$$. A calibration line has equation $$A=15.0c$$, where $$c$$ is in $$\text{mol/L}$$. Calculate the concentration.
-
-   $$(C)$$ Explain why the wavelength should be chosen near the color most strongly absorbed by the solution.
-
-8. The 2026 AP Chemistry exam included a spectrophotometry particle-diagram question about absorbance and ion concentration. (Adapted from College Board, [2026 AP Chemistry FRQ 6](https://apcentral.collegeboard.org/media/pdf/ap26-frq-chemistry.pdf).)
-
-   $$(A)$$ Explain why a solution with greater concentration of colored ions has greater absorbance at a fixed wavelength.
-
-   $$(B)$$ If a calibration curve has equation $$A=4.00c$$ and an unknown solution has $$A=0.120$$, calculate $$c$$.
-
-   $$(C)$$ In a particle diagram of equal volume, how should the number of colored ions compare between a $$0.020\ M$$ solution and a $$0.040\ M$$ solution?
-
----
-
-## Solutions
-
-### MCQ
-
-<div class="theorem-box">
-
-### Solution 1
-
-$$\text{CH}_3\text{OH}$$ can form hydrogen bonds because it has an O-H bond. The other choices rely mainly on London dispersion forces or dipole-dipole attractions.
-
-$$
-\boxed{\text{C}}
-$$
-
-</div>
-
-<div class="theorem-box">
-
-### Solution 2
-
+:::solution
 The formal concentration of $$\text{NaCl}$$ is
 
 $$
@@ -423,63 +367,89 @@ So the answer is
 $$
 \boxed{\text{C}}.
 $$
+:::
+::::
 
-</div>
+::::problem
+3. Which pair is most likely to be miscible?
 
-<div class="theorem-box">
+   (A) Hexane and water<br>
+   (B) Ethanol and water<br>
+   (C) Sodium chloride and hexane<br>
+   (D) Oil and water
 
-### Solution 3
-
+:::solution
 Ethanol and water are both polar and can hydrogen bond with each other, so they mix well.
 
 $$
 \boxed{\text{B}}
 $$
+:::
+::::
 
-</div>
+::::problem
+4. If the pressure of a gas above a liquid is increased at constant temperature, the solubility of the gas in the liquid generally
 
-<div class="theorem-box">
+   (A) increases.<br>
+   (B) decreases.<br>
+   (C) remains exactly zero.<br>
+   (D) becomes independent of gas identity.
 
-### Solution 4
-
+:::solution
 Henry's law says gas solubility increases as the partial pressure of the gas above the liquid increases.
 
 $$
 \boxed{\text{A}}
 $$
+:::
+::::
 
-</div>
+::::problem
+5. Which sample should behave most ideally as a gas?
 
-<div class="theorem-box">
+   (A) $$\text{NH}_3$$ at high pressure and low temperature<br>
+   (B) $$\text{CO}_2$$ at high pressure and low temperature<br>
+   (C) He at low pressure and high temperature<br>
+   (D) $$\text{H}_2\text{O}$$ vapor near condensation
 
-### Solution 5
-
+:::solution
 Gases behave most ideally at low pressure and high temperature, especially when particles have weak intermolecular forces. Helium fits best.
 
 $$
 \boxed{\text{C}}
 $$
+:::
+::::
 
-</div>
+::::problem
+6. Which solution has the highest boiling point, assuming ideal behavior?
 
-<div class="theorem-box">
+   (A) $$0.10\ m$$ glucose<br>
+   (B) $$0.10\ m\ \text{NaCl}$$<br>
+   (C) $$0.10\ m\ \text{CaCl}_2$$<br>
+   (D) pure water
 
-### Solution 6
-
+:::solution
 Boiling-point elevation depends on total dissolved particle concentration. $$\text{CaCl}_2$$ produces about three ions per formula unit, the largest value among the choices.
 
 $$
 \boxed{\text{C}}
 $$
-
-</div>
+:::
+::::
 
 ### FRQ
 
-<div class="theorem-box">
+::::frq{id=chem-submix-1}
+7. A student measures the absorbance of several solutions of $$\text{Cu}^{2+}$$ at the same wavelength and path length.
 
-### Solution 1
+   $$(A)$$ Explain why absorbance can be used to determine concentration.
 
+   $$(B)$$ A solution has absorbance $$0.420$$. A calibration line has equation $$A=15.0c$$, where $$c$$ is in $$\text{mol/L}$$. Calculate the concentration.
+
+   $$(C)$$ Explain why the wavelength should be chosen near the color most strongly absorbed by the solution.
+
+:::solution
 $$(A)$$ Beer-Lambert law gives
 
 $$
@@ -501,13 +471,19 @@ c=\frac{0.420}{15.0}=0.0280\ \text{mol/L}.
 $$
 
 $$(C)$$ Choosing a strongly absorbed wavelength gives a larger absorbance change for a given concentration change, which makes the measurement more sensitive. If the wavelength is poorly absorbed, the absorbance values may be too small and close together, making it harder to distinguish concentrations accurately.
+:::
+::::
 
-</div>
+::::frq{id=chem-submix-2}
+8. The 2026 AP Chemistry exam included a spectrophotometry particle-diagram question about absorbance and ion concentration. (Adapted from College Board, [2026 AP Chemistry FRQ 6](https://apcentral.collegeboard.org/media/pdf/ap26-frq-chemistry.pdf).)
 
-<div class="theorem-box">
+   $$(A)$$ Explain why a solution with greater concentration of colored ions has greater absorbance at a fixed wavelength.
 
-### Solution 2
+   $$(B)$$ If a calibration curve has equation $$A=4.00c$$ and an unknown solution has $$A=0.120$$, calculate $$c$$.
 
+   $$(C)$$ In a particle diagram of equal volume, how should the number of colored ions compare between a $$0.020\ M$$ solution and a $$0.040\ M$$ solution?
+
+:::solution
 $$(A)$$ More colored ions means more particles are available to absorb photons at that wavelength. For fixed path length, Beer-Lambert law says absorbance is proportional to concentration.
 
 $$(B)$$
@@ -529,5 +505,5 @@ $$(C)$$ The $$0.040\ M$$ solution has twice the concentration, so an equal-volum
 **Image placeholder:** Equal-volume particle diagrams showing the $$0.040\ M$$ solution with twice as many colored ions as the $$0.020\ M$$ solution.
 
 </div>
-
-</div>
+:::
+::::

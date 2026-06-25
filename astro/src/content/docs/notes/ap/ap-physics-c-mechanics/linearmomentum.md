@@ -699,3 +699,21 @@ Momentum complements the energy methods of [work and energy](/notes/ap/ap-physic
 | 1D elastic final velocities | $$v_{1f} = \tfrac{m_1-m_2}{m_1+m_2}v_{1i} + \tfrac{2m_2}{m_1+m_2}v_{2i}$$ |
 | Kinetic energy from momentum | $$K = p^2/2m$$ |
 | Rocket equation | $$\Delta v = u\ln(m_0/m_f)$$ |
+
+## Practice
+
+### FRQ
+
+::::frq{id=ap-physics-c-mechanics-linearmomentum-1}
+1. _Temporary placeholder FRQ for wiring/testing — replace with a real free-response question for this unit._
+
+   $$(A)$$ State one key idea from this unit and explain it in your own words.
+
+   $$(B)$$ Give a worked example or application of that idea.
+
+:::solution
+$$(A)$$ _Placeholder solution._ Any accurate statement of a core concept from this unit, with a correct explanation, earns full credit.
+
+$$(B)$$ _Placeholder solution._ Any correct worked example or application consistent with part (A).
+:::
+::::

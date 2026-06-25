@@ -683,3 +683,21 @@ Equivalently, the engine supplies gravitational potential energy at the rate $$P
 | With nonconservative work | $$K_i + U_i + W_{\text{nc}} = K_f + U_f$$ |
 | Escape speed | $$v_{\text{esc}} = \sqrt{\dfrac{2GM}{R}}$$ |
 | Power | $$P = \dfrac{dW}{dt} = \vec{F}\cdot\vec{v}$$ |
+
+## Practice
+
+### FRQ
+
+::::frq{id=ap-physics-c-mechanics-work-1}
+1. _Temporary placeholder FRQ for wiring/testing — replace with a real free-response question for this unit._
+
+   $$(A)$$ State one key idea from this unit and explain it in your own words.
+
+   $$(B)$$ Give a worked example or application of that idea.
+
+:::solution
+$$(A)$$ _Placeholder solution._ Any accurate statement of a core concept from this unit, with a correct explanation, earns full credit.
+
+$$(B)$$ _Placeholder solution._ Any correct worked example or application consistent with part (A).
+:::
+::::

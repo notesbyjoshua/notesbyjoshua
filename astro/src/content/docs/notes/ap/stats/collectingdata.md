@@ -134,3 +134,21 @@ A **randomized block design** first forms blocks of similar units, then runs a c
 ### Matched-pairs design
 
 A **matched-pairs design** is a specialized block design for comparing two treatments: each block has two units matched on relevant characteristics, and treatments are randomized within the pair. Alternatively, the same unit can receive both treatments in **random order** (a crossover-style idea), with randomization of order controlling **order effects**. The second version uses each subject as its own block; **carryover effects** must be considered when treatments could permanently change the unit.
+
+## Practice
+
+### FRQ
+
+::::frq{id=stats-collectingdata-1}
+1. _Temporary placeholder FRQ for wiring/testing — replace with a real free-response question for this unit._
+
+   $$(A)$$ State one key idea from this unit and explain it in your own words.
+
+   $$(B)$$ Give a worked example or application of that idea.
+
+:::solution
+$$(A)$$ _Placeholder solution._ Any accurate statement of a core concept from this unit, with a correct explanation, earns full credit.
+
+$$(B)$$ _Placeholder solution._ Any correct worked example or application consistent with part (A).
+:::
+::::

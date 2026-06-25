@@ -13,102 +13,6 @@ All practice problems and solutions for **AP Chemistry**, organized by unit. Wor
 
 _Auto-collected from the practice sections of each unit's notes (`scripts/build_practice.py`). Edit the source notes, not this page._
 
-## AP Chemistry Cheat Sheet
-
-[Full notes →](/notes/ap/chem/cheatsheet/)
-
-### Practice
-
-#### MCQ
-
-1. A reaction has $$\Delta H^\circ<0$$ and $$\Delta S^\circ<0$$. At which temperatures is the reaction most likely spontaneous?
-
-   (A) Low temperatures only<br>
-   (B) High temperatures only<br>
-   (C) All temperatures<br>
-   (D) No temperatures
-
-2. Which equation correctly relates standard free energy and the equilibrium constant?
-
-   (A) $$\Delta G^\circ=RT\ln K$$<br>
-   (B) $$\Delta G^\circ=-RT\ln K$$<br>
-   (C) $$\Delta G^\circ=-nFE$$<br>
-   (D) $$K=e^{RT\Delta G^\circ}$$
-
-#### FRQ
-
-3. A student is solving an AP Chemistry FRQ involving a weak acid titration.
-
-   $$(A)$$ Explain why stoichiometry must be done before equilibrium at points before the equivalence point.
-
-   $$(B)$$ At the half-equivalence point, explain why $$\text{pH}=\text{p}K_a$$.
-
-   $$(C)$$ Describe one common error students make when writing equilibrium expressions.
-
----
-
-### Solutions
-
-#### MCQ
-
-<div class="theorem-box">
-
-#### Solution 1
-
-Spontaneity depends on
-
-$$
-\Delta G=\Delta H-T\Delta S.
-$$
-
-If $$\Delta H<0$$ and $$\Delta S<0$$, then $$-T\Delta S$$ is positive. At low temperature, the favorable negative enthalpy term is more likely to dominate.
-
-$$
-\boxed{\text{A}}
-$$
-
-</div>
-
-<div class="theorem-box">
-
-#### Solution 2
-
-The relationship between standard free energy and equilibrium is
-
-$$
-\Delta G^\circ=-RT\ln K.
-$$
-
-$$
-\boxed{\text{B}}
-$$
-
-</div>
-
-#### FRQ
-
-<div class="theorem-box">
-
-#### Solution 1
-
-$$(A)$$ Before the equivalence point, added strong base or strong acid reacts essentially completely with the weak acid or conjugate base. The reaction changes the amounts present, so the equilibrium calculation must use the post-stoichiometry mixture.
-
-$$(B)$$ At the half-equivalence point, half of the original weak acid has been converted into its conjugate base, so
-
-$$
-[\text{HA}]=[\text{A}^-].
-$$
-
-The Henderson-Hasselbalch equation becomes
-
-$$
-\text{pH}=\text{p}K_a+\log(1)=\text{p}K_a.
-$$
-
-$$(C)$$ A common error is including pure solids, pure liquids, or liquid water as concentration terms in equilibrium expressions when they should be omitted.
-
-</div>
-
 ## Unit 1: Atomic Structure and Properties
 
 [Full notes →](/notes/ap/chem/atomicstrucprop/)
@@ -117,6 +21,7 @@ $$(C)$$ A common error is including pure solids, pure liquids, or liquid water a
 
 #### MCQ
 
+::::problem
 1. A neutral atom has the electron configuration $$1s^2 2s^2 2p^6 3s^2 3p^4$$. Which statement is correct?
 
    (A) The atom is in group 4 and forms $$4+$$ ions most often.<br>
@@ -124,69 +29,7 @@ $$(C)$$ A common error is including pure solids, pure liquids, or liquid water a
    (C) The atom is a noble gas because the $$3p$$ subshell is occupied.<br>
    (D) The atom has four valence electrons because the last exponent is $$4$$.
 
-2. Which set of particles is arranged in order of increasing radius?
-
-   (A) $$\text{Cl}^- < \text{S}^{2-} < \text{K}^+$$<br>
-   (B) $$\text{K}^+ < \text{Cl}^- < \text{S}^{2-}$$<br>
-   (C) $$\text{S}^{2-} < \text{Cl}^- < \text{K}^+$$<br>
-   (D) $$\text{Cl}^- < \text{K}^+ < \text{S}^{2-}$$
-
-3. Which photon has the greatest energy?
-
-   (A) A photon with wavelength $$700\ \text{nm}$$<br>
-   (B) A photon with wavelength $$500\ \text{nm}$$<br>
-   (C) A photon with wavelength $$300\ \text{nm}$$<br>
-   (D) A photon with wavelength $$900\ \text{nm}$$
-
-4. Which statement best explains why first ionization energy generally increases from left to right across a period?
-
-   (A) Atomic radius increases, so electrons are easier to remove.<br>
-   (B) Effective nuclear charge increases, so valence electrons are held more strongly.<br>
-   (C) Shielding increases sharply, so valence electrons are held more weakly.<br>
-   (D) The number of occupied principal energy levels increases.
-
-5. Which element has the electron configuration $$[\text{Ne}]3s^2 3p^1$$?
-
-   (A) Mg<br>
-   (B) Al<br>
-   (C) Si<br>
-   (D) P
-
-6. Which set of quantum numbers is not allowed for an electron in an atom?
-
-   (A) $$n=2,\ l=1,\ m_l=0,\ m_s=+\frac12$$<br>
-   (B) $$n=3,\ l=2,\ m_l=-2,\ m_s=-\frac12$$<br>
-   (C) $$n=3,\ l=3,\ m_l=0,\ m_s=+\frac12$$<br>
-   (D) $$n=4,\ l=0,\ m_l=0,\ m_s=-\frac12$$
-
-#### FRQ
-
-7. A sample of chlorine contains $$75.78\%$$ $$^{35}\text{Cl}$$ atoms and $$24.22\%$$ $$^{37}\text{Cl}$$ atoms.
-
-   $$(A)$$ Calculate the average atomic mass of chlorine.
-
-   $$(B)$$ Explain why the average atomic mass is closer to $$35$$ than to $$37$$.
-
-   $$(C)$$ A PES spectrum for chlorine shows peaks from core electrons and valence electrons. Explain why core-electron peaks appear at higher binding energy than valence-electron peaks.
-
-8. Sterling silver contains silver and copper. In a released AP Chemistry question, students compared atomic radii using Coulomb's law. (Adapted from College Board, [2024 AP Chemistry FRQ 3](https://apcentral.collegeboard.org/media/pdf/ap24-frq-chemistry.pdf).)
-
-   $$(A)$$ Identify which atom has the larger atomic radius: $$\text{Ag}$$ or $$\text{Cu}$$.
-
-   $$(B)$$ Use shell structure and Coulomb's law to justify your answer.
-
-   $$(C)$$ Explain why comparing only nuclear charge is not enough to predict the radius in this case.
-
----
-
-### Solutions
-
-#### MCQ
-
-<div class="theorem-box">
-
-#### Solution 1
-
+:::solution
 The highest principal energy level is $$n=3$$, and the atom has
 
 $$
@@ -198,13 +41,18 @@ as its valence-shell configuration. That is $$6$$ valence electrons, which place
 $$
 \boxed{\text{B}}
 $$
+:::
+::::
 
-</div>
+::::problem
+2. Which set of particles is arranged in order of increasing radius?
 
-<div class="theorem-box">
+   (A) $$\text{Cl}^- < \text{S}^{2-} < \text{K}^+$$<br>
+   (B) $$\text{K}^+ < \text{Cl}^- < \text{S}^{2-}$$<br>
+   (C) $$\text{S}^{2-} < \text{Cl}^- < \text{K}^+$$<br>
+   (D) $$\text{Cl}^- < \text{K}^+ < \text{S}^{2-}$$
 
-#### Solution 2
-
+:::solution
 The ions $$\text{K}^+$$, $$\text{Cl}^-$$, and $$\text{S}^{2-}$$ are isoelectronic, each with $$18$$ electrons. In an isoelectronic series, radius decreases as nuclear charge increases. Potassium has the most protons, so $$\text{K}^+$$ is smallest; sulfur has the fewest, so $$\text{S}^{2-}$$ is largest.
 
 $$
@@ -216,13 +64,18 @@ So the answer is
 $$
 \boxed{\text{B}}.
 $$
+:::
+::::
 
-</div>
+::::problem
+3. Which photon has the greatest energy?
 
-<div class="theorem-box">
+   (A) A photon with wavelength $$700\ \text{nm}$$<br>
+   (B) A photon with wavelength $$500\ \text{nm}$$<br>
+   (C) A photon with wavelength $$300\ \text{nm}$$<br>
+   (D) A photon with wavelength $$900\ \text{nm}$$
 
-#### Solution 3
-
+:::solution
 Photon energy is
 
 $$
@@ -234,51 +87,72 @@ Energy is inversely proportional to wavelength, so the shortest wavelength has t
 $$
 \boxed{\text{C}}
 $$
+:::
+::::
 
-</div>
+::::problem
+4. Which statement best explains why first ionization energy generally increases from left to right across a period?
 
-<div class="theorem-box">
+   (A) Atomic radius increases, so electrons are easier to remove.<br>
+   (B) Effective nuclear charge increases, so valence electrons are held more strongly.<br>
+   (C) Shielding increases sharply, so valence electrons are held more weakly.<br>
+   (D) The number of occupied principal energy levels increases.
 
-#### Solution 4
-
+:::solution
 Across a period, protons are added to the nucleus while electrons are added to the same principal energy level. Shielding does not increase enough to cancel the increased nuclear attraction, so $$Z_{\text{eff}}$$ increases.
 
 $$
 \boxed{\text{B}}
 $$
+:::
+::::
 
-</div>
+::::problem
+5. Which element has the electron configuration $$[\text{Ne}]3s^2 3p^1$$?
 
-<div class="theorem-box">
+   (A) Mg<br>
+   (B) Al<br>
+   (C) Si<br>
+   (D) P
 
-#### Solution 5
-
+:::solution
 After the neon core, $$3s^2 3p^1$$ gives three valence electrons in the third period. That is aluminum.
 
 $$
 \boxed{\text{B}}
 $$
+:::
+::::
 
-</div>
+::::problem
+6. Which set of quantum numbers is not allowed for an electron in an atom?
 
-<div class="theorem-box">
+   (A) $$n=2,\ l=1,\ m_l=0,\ m_s=+\frac12$$<br>
+   (B) $$n=3,\ l=2,\ m_l=-2,\ m_s=-\frac12$$<br>
+   (C) $$n=3,\ l=3,\ m_l=0,\ m_s=+\frac12$$<br>
+   (D) $$n=4,\ l=0,\ m_l=0,\ m_s=-\frac12$$
 
-#### Solution 6
-
+:::solution
 For a given $$n$$, the value of $$l$$ must be an integer from $$0$$ to $$n-1$$. If $$n=3$$, then $$l=3$$ is not allowed.
 
 $$
 \boxed{\text{C}}
 $$
-
-</div>
+:::
+::::
 
 #### FRQ
 
-<div class="theorem-box">
+::::frq{id=chem-atomicstrucprop-1}
+7. A sample of chlorine contains $$75.78\%$$ $$^{35}\text{Cl}$$ atoms and $$24.22\%$$ $$^{37}\text{Cl}$$ atoms.
 
-#### Solution 1
+   $$(A)$$ Calculate the average atomic mass of chlorine.
 
+   $$(B)$$ Explain why the average atomic mass is closer to $$35$$ than to $$37$$.
+
+   $$(C)$$ A PES spectrum for chlorine shows peaks from core electrons and valence electrons. Explain why core-electron peaks appear at higher binding energy than valence-electron peaks.
+
+:::solution
 $$(A)$$ Use a weighted average:
 
 $$
@@ -296,13 +170,19 @@ $$
 $$(B)$$ The average is closer to $$35$$ because the $$^{35}\text{Cl}$$ isotope is much more abundant than $$^{37}\text{Cl}$$. In a weighted average, the more abundant isotope pulls the average closer to its mass. Since about three-fourths of the atoms are $$^{35}\text{Cl}$$, the average should sit much nearer $$35$$ than $$37$$, which matches the calculated value.
 
 $$(C)$$ Core electrons are closer to the nucleus and experience a larger effective nuclear attraction than valence electrons. They are also less shielded by other electrons. Because the attraction between the nucleus and a core electron is stronger, more energy is required to remove a core electron from the atom. Therefore, core-electron peaks appear at higher binding energy on a PES spectrum than valence-electron peaks.
+:::
+::::
 
-</div>
+::::frq{id=chem-atomicstrucprop-2}
+8. Sterling silver contains silver and copper. In a released AP Chemistry question, students compared atomic radii using Coulomb's law. (Adapted from College Board, [2024 AP Chemistry FRQ 3](https://apcentral.collegeboard.org/media/pdf/ap24-frq-chemistry.pdf).)
 
-<div class="theorem-box">
+   $$(A)$$ Identify which atom has the larger atomic radius: $$\text{Ag}$$ or $$\text{Cu}$$.
 
-#### Solution 2
+   $$(B)$$ Use shell structure and Coulomb's law to justify your answer.
 
+   $$(C)$$ Explain why comparing only nuclear charge is not enough to predict the radius in this case.
+
+:::solution
 $$(A)$$ $$\text{Ag}$$ has the larger atomic radius.
 
 $$(B)$$ Silver's valence electrons occupy a higher principal energy level than copper's valence electrons. Copper is in period 4, while silver is in period 5, so the outer electrons in silver are farther from the nucleus. By Coulomb's law, attraction decreases as distance increases:
@@ -314,8 +194,8 @@ $$
 Silver also has more inner electrons, which increases shielding. The greater distance and shielding make the attraction between the nucleus and valence electrons weaker, so the atomic radius is larger.
 
 $$(C)$$ Silver has more protons than copper, which by itself would increase attraction. But the valence electrons in silver are also farther from the nucleus and more shielded. Radius depends on the balance of nuclear charge, shielding, and distance, not nuclear charge alone. On the AP exam, a complete explanation should explicitly compare both the attractive force from the nucleus and the distance/shielding effect.
-
-</div>
+:::
+::::
 
 ## Unit 2: Compound Structure and Properties
 
@@ -325,6 +205,7 @@ $$(C)$$ Silver has more protons than copper, which by itself would increase attr
 
 #### MCQ
 
+::::problem
 1. Which molecule is polar?
 
    (A) $$\text{CO}_2$$<br>
@@ -332,6 +213,16 @@ $$(C)$$ Silver has more protons than copper, which by itself would increase attr
    (C) $$\text{CH}_4$$<br>
    (D) $$\text{NH}_3$$
 
+:::solution
+$$\text{NH}_3$$ has three N-H bonds and one lone pair on nitrogen, giving a trigonal pyramidal shape. The bond dipoles do not cancel.
+
+$$
+\boxed{\text{D}}
+$$
+:::
+::::
+
+::::problem
 2. Which compound should have the greatest lattice energy magnitude?
 
    (A) $$\text{NaF}$$<br>
@@ -339,6 +230,16 @@ $$(C)$$ Silver has more protons than copper, which by itself would increase attr
    (C) $$\text{MgO}$$<br>
    (D) $$\text{MgCl}_2$$
 
+:::solution
+Lattice energy increases when ion charges are larger and ion radii are smaller. $$\text{MgO}$$ contains $$\text{Mg}^{2+}$$ and $$\text{O}^{2-}$$, so the charge product is larger than in the salts with only $$1+$$ or $$1-$$ ions.
+
+$$
+\boxed{\text{C}}
+$$
+:::
+::::
+
+::::problem
 3. Which species has a tetrahedral molecular geometry?
 
    (A) $$\text{CO}_2$$<br>
@@ -346,6 +247,16 @@ $$(C)$$ Silver has more protons than copper, which by itself would increase attr
    (C) $$\text{CH}_4$$<br>
    (D) $$\text{BF}_3$$
 
+:::solution
+$$\text{CH}_4$$ has four bonding domains and no lone pairs on the central atom, so its molecular geometry is tetrahedral.
+
+$$
+\boxed{\text{C}}
+$$
+:::
+::::
+
+::::problem
 4. In a nitrate ion, $$\text{NO}_3^-$$, resonance means that
 
    (A) the atoms repeatedly switch positions.<br>
@@ -353,6 +264,16 @@ $$(C)$$ Silver has more protons than copper, which by itself would increase attr
    (C) the actual ion has three equivalent N-O bonds with bond order between single and double.<br>
    (D) the ion violates conservation of charge.
 
+:::solution
+Resonance structures are different valid Lewis structures with the same atom connectivity but different electron placement. In nitrate, the real ion is a resonance hybrid with equivalent N-O bonds.
+
+$$
+\boxed{\text{C}}
+$$
+:::
+::::
+
+::::problem
 5. Which molecule has a bent molecular geometry?
 
    (A) $$\text{CO}_2$$<br>
@@ -360,6 +281,16 @@ $$(C)$$ Silver has more protons than copper, which by itself would increase attr
    (C) $$\text{BF}_3$$<br>
    (D) $$\text{CH}_4$$
 
+:::solution
+Water has two bonding domains and two lone pairs around oxygen, giving a bent molecular geometry.
+
+$$
+\boxed{\text{B}}
+$$
+:::
+::::
+
+::::problem
 6. Which bond is most polar?
 
    (A) C-H<br>
@@ -367,8 +298,18 @@ $$(C)$$ Silver has more protons than copper, which by itself would increase attr
    (C) H-F<br>
    (D) Cl-Cl
 
+:::solution
+The H-F bond has the largest electronegativity difference among the choices, so it is the most polar.
+
+$$
+\boxed{\text{C}}
+$$
+:::
+::::
+
 #### FRQ
 
+::::frq{id=chem-compounds-1}
 7. Consider the molecules $$\text{CH}_2\text{O}$$ and $$\text{CH}_3\text{OH}$$.
 
    $$(A)$$ Draw a reasonable Lewis structure for each molecule.
@@ -377,98 +318,7 @@ $$(C)$$ Silver has more protons than copper, which by itself would increase attr
 
    $$(C)$$ Explain which molecule can form stronger intermolecular attractions with water.
 
-8. The 2026 AP Chemistry exam asked students about chromate resonance and VSEPR geometry. (Adapted from College Board, [2026 AP Chemistry FRQ 2](https://apcentral.collegeboard.org/media/pdf/ap26-frq-chemistry.pdf).)
-
-   $$(A)$$ Predict the molecular geometry around chromium in $$\text{CrO}_4^{2-}$$.
-
-   $$(B)$$ Explain why multiple resonance structures can be drawn for $$\text{CrO}_4^{2-}$$.
-
-   $$(C)$$ Explain why the four Cr-O bonds are expected to be equivalent in the resonance hybrid.
-
----
-
-### Solutions
-
-#### MCQ
-
-<div class="theorem-box">
-
-#### Solution 1
-
-$$\text{NH}_3$$ has three N-H bonds and one lone pair on nitrogen, giving a trigonal pyramidal shape. The bond dipoles do not cancel.
-
-$$
-\boxed{\text{D}}
-$$
-
-</div>
-
-<div class="theorem-box">
-
-#### Solution 2
-
-Lattice energy increases when ion charges are larger and ion radii are smaller. $$\text{MgO}$$ contains $$\text{Mg}^{2+}$$ and $$\text{O}^{2-}$$, so the charge product is larger than in the salts with only $$1+$$ or $$1-$$ ions.
-
-$$
-\boxed{\text{C}}
-$$
-
-</div>
-
-<div class="theorem-box">
-
-#### Solution 3
-
-$$\text{CH}_4$$ has four bonding domains and no lone pairs on the central atom, so its molecular geometry is tetrahedral.
-
-$$
-\boxed{\text{C}}
-$$
-
-</div>
-
-<div class="theorem-box">
-
-#### Solution 4
-
-Resonance structures are different valid Lewis structures with the same atom connectivity but different electron placement. In nitrate, the real ion is a resonance hybrid with equivalent N-O bonds.
-
-$$
-\boxed{\text{C}}
-$$
-
-</div>
-
-<div class="theorem-box">
-
-#### Solution 5
-
-Water has two bonding domains and two lone pairs around oxygen, giving a bent molecular geometry.
-
-$$
-\boxed{\text{B}}
-$$
-
-</div>
-
-<div class="theorem-box">
-
-#### Solution 6
-
-The H-F bond has the largest electronegativity difference among the choices, so it is the most polar.
-
-$$
-\boxed{\text{C}}
-$$
-
-</div>
-
-#### FRQ
-
-<div class="theorem-box">
-
-#### Solution 1
-
+:::solution
 $$(A)$$ In $$\text{CH}_2\text{O}$$, carbon is bonded to two H atoms and double-bonded to O. In $$\text{CH}_3\text{OH}$$, carbon is bonded to three H atoms and single-bonded to O, while O is bonded to H and has two lone pairs.
 
 <div class="placeholder-box">
@@ -490,13 +340,19 @@ $$
 $$
 
 $$(C)$$ $$\text{CH}_3\text{OH}$$ forms stronger attractions with water because it can both donate and accept hydrogen bonds through its $$\text{O-H}$$ group. The O atom has lone pairs that can accept hydrogen bonds, and the H attached to O can be donated into a hydrogen bond with water. $$\text{CH}_2\text{O}$$ can accept hydrogen bonds at oxygen, but it cannot donate hydrogen bonds because its H atoms are bonded to carbon, not to a highly electronegative atom. This gives methanol stronger overall interactions with water.
+:::
+::::
 
-</div>
+::::frq{id=chem-compounds-2}
+8. The 2026 AP Chemistry exam asked students about chromate resonance and VSEPR geometry. (Adapted from College Board, [2026 AP Chemistry FRQ 2](https://apcentral.collegeboard.org/media/pdf/ap26-frq-chemistry.pdf).)
 
-<div class="theorem-box">
+   $$(A)$$ Predict the molecular geometry around chromium in $$\text{CrO}_4^{2-}$$.
 
-#### Solution 2
+   $$(B)$$ Explain why multiple resonance structures can be drawn for $$\text{CrO}_4^{2-}$$.
 
+   $$(C)$$ Explain why the four Cr-O bonds are expected to be equivalent in the resonance hybrid.
+
+:::solution
 $$(A)$$ The chromium has four bonding regions around it, so the electron-domain geometry and molecular geometry are both
 
 $$
@@ -506,8 +362,8 @@ $$
 $$(B)$$ The double-bond character can be placed between chromium and different oxygen atoms while keeping the same atom connectivity and total number of valence electrons. These drawings differ only in electron placement, not in which atoms are bonded to which, so they are resonance structures rather than different compounds.
 
 $$(C)$$ The resonance hybrid averages the valid resonance structures. Since no single resonance structure fully describes the ion, the Cr-O bonds have the same average bond order and are equivalent. A good particle-level explanation is that the extra electron density is delocalized over the Cr-O bonding framework rather than locked into one permanent double bond.
-
-</div>
+:::
+::::
 
 ## Unit 3: Substances and Mixtures
 
@@ -517,6 +373,7 @@ $$(C)$$ The resonance hybrid averages the valid resonance structures. Since no s
 
 #### MCQ
 
+::::problem
 1. Which substance is expected to have the highest boiling point?
 
    (A) $$\text{CH}_4$$<br>
@@ -524,6 +381,16 @@ $$(C)$$ The resonance hybrid averages the valid resonance structures. Since no s
    (C) $$\text{CH}_3\text{OH}$$<br>
    (D) $$\text{CH}_3\text{OCH}_3$$
 
+:::solution
+$$\text{CH}_3\text{OH}$$ can form hydrogen bonds because it has an O-H bond. The other choices rely mainly on London dispersion forces or dipole-dipole attractions.
+
+$$
+\boxed{\text{C}}
+$$
+:::
+::::
+
+::::problem
 2. A solution is prepared by dissolving $$0.250\ \text{mol}$$ of $$\text{NaCl}$$ in enough water to make $$0.500\ \text{L}$$ of solution. Assuming complete dissociation, what is the approximate total particle concentration?
 
    (A) $$0.250\ M$$<br>
@@ -531,74 +398,7 @@ $$(C)$$ The resonance hybrid averages the valid resonance structures. Since no s
    (C) $$1.00\ M$$<br>
    (D) $$2.00\ M$$
 
-3. Which pair is most likely to be miscible?
-
-   (A) Hexane and water<br>
-   (B) Ethanol and water<br>
-   (C) Sodium chloride and hexane<br>
-   (D) Oil and water
-
-4. If the pressure of a gas above a liquid is increased at constant temperature, the solubility of the gas in the liquid generally
-
-   (A) increases.<br>
-   (B) decreases.<br>
-   (C) remains exactly zero.<br>
-   (D) becomes independent of gas identity.
-
-5. Which sample should behave most ideally as a gas?
-
-   (A) $$\text{NH}_3$$ at high pressure and low temperature<br>
-   (B) $$\text{CO}_2$$ at high pressure and low temperature<br>
-   (C) He at low pressure and high temperature<br>
-   (D) $$\text{H}_2\text{O}$$ vapor near condensation
-
-6. Which solution has the highest boiling point, assuming ideal behavior?
-
-   (A) $$0.10\ m$$ glucose<br>
-   (B) $$0.10\ m\ \text{NaCl}$$<br>
-   (C) $$0.10\ m\ \text{CaCl}_2$$<br>
-   (D) pure water
-
-#### FRQ
-
-7. A student measures the absorbance of several solutions of $$\text{Cu}^{2+}$$ at the same wavelength and path length.
-
-   $$(A)$$ Explain why absorbance can be used to determine concentration.
-
-   $$(B)$$ A solution has absorbance $$0.420$$. A calibration line has equation $$A=15.0c$$, where $$c$$ is in $$\text{mol/L}$$. Calculate the concentration.
-
-   $$(C)$$ Explain why the wavelength should be chosen near the color most strongly absorbed by the solution.
-
-8. The 2026 AP Chemistry exam included a spectrophotometry particle-diagram question about absorbance and ion concentration. (Adapted from College Board, [2026 AP Chemistry FRQ 6](https://apcentral.collegeboard.org/media/pdf/ap26-frq-chemistry.pdf).)
-
-   $$(A)$$ Explain why a solution with greater concentration of colored ions has greater absorbance at a fixed wavelength.
-
-   $$(B)$$ If a calibration curve has equation $$A=4.00c$$ and an unknown solution has $$A=0.120$$, calculate $$c$$.
-
-   $$(C)$$ In a particle diagram of equal volume, how should the number of colored ions compare between a $$0.020\ M$$ solution and a $$0.040\ M$$ solution?
-
----
-
-### Solutions
-
-#### MCQ
-
-<div class="theorem-box">
-
-#### Solution 1
-
-$$\text{CH}_3\text{OH}$$ can form hydrogen bonds because it has an O-H bond. The other choices rely mainly on London dispersion forces or dipole-dipole attractions.
-
-$$
-\boxed{\text{C}}
-$$
-
-</div>
-
-<div class="theorem-box">
-
-#### Solution 2
-
+:::solution
 The formal concentration of $$\text{NaCl}$$ is
 
 $$
@@ -616,63 +416,89 @@ So the answer is
 $$
 \boxed{\text{C}}.
 $$
+:::
+::::
 
-</div>
+::::problem
+3. Which pair is most likely to be miscible?
 
-<div class="theorem-box">
+   (A) Hexane and water<br>
+   (B) Ethanol and water<br>
+   (C) Sodium chloride and hexane<br>
+   (D) Oil and water
 
-#### Solution 3
-
+:::solution
 Ethanol and water are both polar and can hydrogen bond with each other, so they mix well.
 
 $$
 \boxed{\text{B}}
 $$
+:::
+::::
 
-</div>
+::::problem
+4. If the pressure of a gas above a liquid is increased at constant temperature, the solubility of the gas in the liquid generally
 
-<div class="theorem-box">
+   (A) increases.<br>
+   (B) decreases.<br>
+   (C) remains exactly zero.<br>
+   (D) becomes independent of gas identity.
 
-#### Solution 4
-
+:::solution
 Henry's law says gas solubility increases as the partial pressure of the gas above the liquid increases.
 
 $$
 \boxed{\text{A}}
 $$
+:::
+::::
 
-</div>
+::::problem
+5. Which sample should behave most ideally as a gas?
 
-<div class="theorem-box">
+   (A) $$\text{NH}_3$$ at high pressure and low temperature<br>
+   (B) $$\text{CO}_2$$ at high pressure and low temperature<br>
+   (C) He at low pressure and high temperature<br>
+   (D) $$\text{H}_2\text{O}$$ vapor near condensation
 
-#### Solution 5
-
+:::solution
 Gases behave most ideally at low pressure and high temperature, especially when particles have weak intermolecular forces. Helium fits best.
 
 $$
 \boxed{\text{C}}
 $$
+:::
+::::
 
-</div>
+::::problem
+6. Which solution has the highest boiling point, assuming ideal behavior?
 
-<div class="theorem-box">
+   (A) $$0.10\ m$$ glucose<br>
+   (B) $$0.10\ m\ \text{NaCl}$$<br>
+   (C) $$0.10\ m\ \text{CaCl}_2$$<br>
+   (D) pure water
 
-#### Solution 6
-
+:::solution
 Boiling-point elevation depends on total dissolved particle concentration. $$\text{CaCl}_2$$ produces about three ions per formula unit, the largest value among the choices.
 
 $$
 \boxed{\text{C}}
 $$
-
-</div>
+:::
+::::
 
 #### FRQ
 
-<div class="theorem-box">
+::::frq{id=chem-submix-1}
+7. A student measures the absorbance of several solutions of $$\text{Cu}^{2+}$$ at the same wavelength and path length.
 
-#### Solution 1
+   $$(A)$$ Explain why absorbance can be used to determine concentration.
 
+   $$(B)$$ A solution has absorbance $$0.420$$. A calibration line has equation $$A=15.0c$$, where $$c$$ is in $$\text{mol/L}$$. Calculate the concentration.
+
+   $$(C)$$ Explain why the wavelength should be chosen near the color most strongly absorbed by the solution.
+
+:::solution
 $$(A)$$ Beer-Lambert law gives
 
 $$
@@ -694,13 +520,19 @@ c=\frac{0.420}{15.0}=0.0280\ \text{mol/L}.
 $$
 
 $$(C)$$ Choosing a strongly absorbed wavelength gives a larger absorbance change for a given concentration change, which makes the measurement more sensitive. If the wavelength is poorly absorbed, the absorbance values may be too small and close together, making it harder to distinguish concentrations accurately.
+:::
+::::
 
-</div>
+::::frq{id=chem-submix-2}
+8. The 2026 AP Chemistry exam included a spectrophotometry particle-diagram question about absorbance and ion concentration. (Adapted from College Board, [2026 AP Chemistry FRQ 6](https://apcentral.collegeboard.org/media/pdf/ap26-frq-chemistry.pdf).)
 
-<div class="theorem-box">
+   $$(A)$$ Explain why a solution with greater concentration of colored ions has greater absorbance at a fixed wavelength.
 
-#### Solution 2
+   $$(B)$$ If a calibration curve has equation $$A=4.00c$$ and an unknown solution has $$A=0.120$$, calculate $$c$$.
 
+   $$(C)$$ In a particle diagram of equal volume, how should the number of colored ions compare between a $$0.020\ M$$ solution and a $$0.040\ M$$ solution?
+
+:::solution
 $$(A)$$ More colored ions means more particles are available to absorb photons at that wavelength. For fixed path length, Beer-Lambert law says absorbance is proportional to concentration.
 
 $$(B)$$
@@ -722,8 +554,8 @@ $$(C)$$ The $$0.040\ M$$ solution has twice the concentration, so an equal-volum
 **Image placeholder:** Equal-volume particle diagrams showing the $$0.040\ M$$ solution with twice as many colored ions as the $$0.020\ M$$ solution.
 
 </div>
-
-</div>
+:::
+::::
 
 ## Unit 4: Chemical Reactions
 
@@ -733,6 +565,7 @@ $$(C)$$ The $$0.040\ M$$ solution has twice the concentration, so an equal-volum
 
 #### MCQ
 
+::::problem
 1. What volume of $$0.200\ M\ \text{NaOH}$$ is required to neutralize $$25.0\ \text{mL}$$ of $$0.100\ M\ \text{H}_2\text{SO}_4$$?
 
    (A) $$12.5\ \text{mL}$$<br>
@@ -740,75 +573,7 @@ $$(C)$$ The $$0.040\ M$$ solution has twice the concentration, so an equal-volum
    (C) $$50.0\ \text{mL}$$<br>
    (D) $$100.\ \text{mL}$$
 
-2. Which net ionic equation represents the precipitation reaction between aqueous $$\text{AgNO}_3$$ and aqueous $$\text{NaCl}$$?
-
-   (A) $$\text{Ag}^+(aq)+\text{Cl}^-(aq)\rightarrow\text{AgCl}(s)$$<br>
-   (B) $$\text{Na}^+(aq)+\text{NO}_3^-(aq)\rightarrow\text{NaNO}_3(s)$$<br>
-   (C) $$\text{Ag}^+(aq)+\text{NO}_3^-(aq)\rightarrow\text{AgNO}_3(s)$$<br>
-   (D) $$\text{Na}^+(aq)+\text{Cl}^-(aq)\rightarrow\text{NaCl}(s)$$
-
-3. In the reaction $$\text{Zn}(s)+\text{Cu}^{2+}(aq)\rightarrow\text{Zn}^{2+}(aq)+\text{Cu}(s)$$, which species is oxidized?
-
-   (A) $$\text{Zn}(s)$$<br>
-   (B) $$\text{Cu}^{2+}(aq)$$<br>
-   (C) $$\text{Zn}^{2+}(aq)$$<br>
-   (D) $$\text{Cu}(s)$$
-
-4. Which observation gives the strongest evidence that a precipitation reaction occurred?
-
-   (A) The solution remains clear and colorless.<br>
-   (B) A solid appears after two aqueous solutions are mixed.<br>
-   (C) The total volume of solution increases.<br>
-   (D) The beaker is made of glass.
-
-5. What is the oxidation number of sulfur in $$\text{SO}_4^{2-}$$?
-
-   (A) $$+2$$<br>
-   (B) $$+4$$<br>
-   (C) $$+6$$<br>
-   (D) $$-2$$
-
-6. Which pair of aqueous solutions will produce a precipitate when mixed?
-
-   (A) $$\text{NaNO}_3$$ and $$\text{KCl}$$<br>
-   (B) $$\text{BaCl}_2$$ and $$\text{Na}_2\text{SO}_4$$<br>
-   (C) $$\text{KNO}_3$$ and $$\text{NaC}_2\text{H}_3\text{O}_2$$<br>
-   (D) $$\text{NH}_4\text{Cl}$$ and $$\text{NaNO}_3$$
-
-#### FRQ
-
-7. A $$2.50\ \text{g}$$ sample of impure $$\text{CaCO}_3$$ reacts with excess $$\text{HCl}$$ according to
-
-$$
-\text{CaCO}_3(s)+2\text{HCl}(aq)\rightarrow \text{CaCl}_2(aq)+\text{CO}_2(g)+\text{H}_2\text{O}(l).
-$$
-
-The reaction produces $$0.0200\ \text{mol}$$ of $$\text{CO}_2$$.
-
-   $$(A)$$ Calculate the moles of $$\text{CaCO}_3$$ that reacted.
-
-   $$(B)$$ Calculate the mass of $$\text{CaCO}_3$$ in the sample.
-
-   $$(C)$$ Calculate the percent by mass of $$\text{CaCO}_3$$ in the impure sample.
-
-8. A released AP Chemistry question asked students to identify a limiting reactant from experimental data. (Adapted from College Board, [2024 AP Chemistry FRQ 2](https://apcentral.collegeboard.org/media/pdf/ap24-frq-chemistry.pdf).)
-
-   $$(A)$$ In a trial, $$0.0300\ \text{mol}$$ of $$\text{Al}$$ reacts with $$0.0200\ \text{mol}$$ of $$\text{Cl}_2$$ according to $$2\text{Al}+3\text{Cl}_2\rightarrow2\text{AlCl}_3$$. Identify the limiting reactant.
-
-   $$(B)$$ Calculate the theoretical moles of $$\text{AlCl}_3$$ produced.
-
-   $$(C)$$ Explain why the excess reactant remains after the limiting reactant is consumed.
-
----
-
-### Solutions
-
-#### MCQ
-
-<div class="theorem-box">
-
-#### Solution 1
-
+:::solution
 Moles of acid are
 
 $$
@@ -830,13 +595,18 @@ $$
 $$
 \boxed{\text{B}}
 $$
+:::
+::::
 
-</div>
+::::problem
+2. Which net ionic equation represents the precipitation reaction between aqueous $$\text{AgNO}_3$$ and aqueous $$\text{NaCl}$$?
 
-<div class="theorem-box">
+   (A) $$\text{Ag}^+(aq)+\text{Cl}^-(aq)\rightarrow\text{AgCl}(s)$$<br>
+   (B) $$\text{Na}^+(aq)+\text{NO}_3^-(aq)\rightarrow\text{NaNO}_3(s)$$<br>
+   (C) $$\text{Ag}^+(aq)+\text{NO}_3^-(aq)\rightarrow\text{AgNO}_3(s)$$<br>
+   (D) $$\text{Na}^+(aq)+\text{Cl}^-(aq)\rightarrow\text{NaCl}(s)$$
 
-#### Solution 2
-
+:::solution
 Nitrates and sodium salts remain soluble, while $$\text{AgCl}$$ is insoluble. The spectator ions are $$\text{Na}^+$$ and $$\text{NO}_3^-$$.
 
 $$
@@ -848,37 +618,52 @@ So the answer is
 $$
 \boxed{\text{A}}.
 $$
+:::
+::::
 
-</div>
+::::problem
+3. In the reaction $$\text{Zn}(s)+\text{Cu}^{2+}(aq)\rightarrow\text{Zn}^{2+}(aq)+\text{Cu}(s)$$, which species is oxidized?
 
-<div class="theorem-box">
+   (A) $$\text{Zn}(s)$$<br>
+   (B) $$\text{Cu}^{2+}(aq)$$<br>
+   (C) $$\text{Zn}^{2+}(aq)$$<br>
+   (D) $$\text{Cu}(s)$$
 
-#### Solution 3
-
+:::solution
 Zinc goes from oxidation number $$0$$ in $$\text{Zn}(s)$$ to $$+2$$ in $$\text{Zn}^{2+}$$, so it loses electrons and is oxidized.
 
 $$
 \boxed{\text{A}}
 $$
+:::
+::::
 
-</div>
+::::problem
+4. Which observation gives the strongest evidence that a precipitation reaction occurred?
 
-<div class="theorem-box">
+   (A) The solution remains clear and colorless.<br>
+   (B) A solid appears after two aqueous solutions are mixed.<br>
+   (C) The total volume of solution increases.<br>
+   (D) The beaker is made of glass.
 
-#### Solution 4
-
+:::solution
 A precipitate is an insoluble solid that forms from ions in solution.
 
 $$
 \boxed{\text{B}}
 $$
+:::
+::::
 
-</div>
+::::problem
+5. What is the oxidation number of sulfur in $$\text{SO}_4^{2-}$$?
 
-<div class="theorem-box">
+   (A) $$+2$$<br>
+   (B) $$+4$$<br>
+   (C) $$+6$$<br>
+   (D) $$-2$$
 
-#### Solution 5
-
+:::solution
 Oxygen is usually $$-2$$. Let sulfur be $$x$$:
 
 $$
@@ -890,27 +675,44 @@ So $$x=+6$$.
 $$
 \boxed{\text{C}}
 $$
+:::
+::::
 
-</div>
+::::problem
+6. Which pair of aqueous solutions will produce a precipitate when mixed?
 
-<div class="theorem-box">
+   (A) $$\text{NaNO}_3$$ and $$\text{KCl}$$<br>
+   (B) $$\text{BaCl}_2$$ and $$\text{Na}_2\text{SO}_4$$<br>
+   (C) $$\text{KNO}_3$$ and $$\text{NaC}_2\text{H}_3\text{O}_2$$<br>
+   (D) $$\text{NH}_4\text{Cl}$$ and $$\text{NaNO}_3$$
 
-#### Solution 6
-
+:::solution
 $$\text{Ba}^{2+}$$ and $$\text{SO}_4^{2-}$$ form $$\text{BaSO}_4(s)$$, which is insoluble.
 
 $$
 \boxed{\text{B}}
 $$
-
-</div>
+:::
+::::
 
 #### FRQ
 
-<div class="theorem-box">
+::::frq{id=chem-chemrxns-1}
+7. A $$2.50\ \text{g}$$ sample of impure $$\text{CaCO}_3$$ reacts with excess $$\text{HCl}$$ according to
 
-#### Solution 1
+$$
+\text{CaCO}_3(s)+2\text{HCl}(aq)\rightarrow \text{CaCl}_2(aq)+\text{CO}_2(g)+\text{H}_2\text{O}(l).
+$$
 
+The reaction produces $$0.0200\ \text{mol}$$ of $$\text{CO}_2$$.
+
+   $$(A)$$ Calculate the moles of $$\text{CaCO}_3$$ that reacted.
+
+   $$(B)$$ Calculate the mass of $$\text{CaCO}_3$$ in the sample.
+
+   $$(C)$$ Calculate the percent by mass of $$\text{CaCO}_3$$ in the impure sample.
+
+:::solution
 $$(A)$$ The balanced equation has a $$1:1$$ mole ratio between $$\text{CaCO}_3$$ and $$\text{CO}_2$$. The problem says the acid is in excess, so all of the carbonate that can react is converted to products, and the moles of $$\text{CO}_2$$ produced directly equal the moles of $$\text{CaCO}_3$$ that reacted:
 
 $$
@@ -932,13 +734,19 @@ $$
 $$
 
 This means $$80.0\%$$ of the impure sample was reactive $$\text{CaCO}_3$$, and the remaining $$20.0\%$$ was impurity that did not produce $$\text{CO}_2$$.
+:::
+::::
 
-</div>
+::::frq{id=chem-chemrxns-2}
+8. A released AP Chemistry question asked students to identify a limiting reactant from experimental data. (Adapted from College Board, [2024 AP Chemistry FRQ 2](https://apcentral.collegeboard.org/media/pdf/ap24-frq-chemistry.pdf).)
 
-<div class="theorem-box">
+   $$(A)$$ In a trial, $$0.0300\ \text{mol}$$ of $$\text{Al}$$ reacts with $$0.0200\ \text{mol}$$ of $$\text{Cl}_2$$ according to $$2\text{Al}+3\text{Cl}_2\rightarrow2\text{AlCl}_3$$. Identify the limiting reactant.
 
-#### Solution 2
+   $$(B)$$ Calculate the theoretical moles of $$\text{AlCl}_3$$ produced.
 
+   $$(C)$$ Explain why the excess reactant remains after the limiting reactant is consumed.
+
+:::solution
 $$(A)$$ Compare how much $$\text{Cl}_2$$ is needed for the available Al:
 
 $$
@@ -956,8 +764,8 @@ $$
 The mole ratio comes from the balanced equation: $$3$$ moles of $$\text{Cl}_2$$ produce $$2$$ moles of $$\text{AlCl}_3$$.
 
 $$(C)$$ The balanced reaction requires fixed mole ratios. Once $$\text{Cl}_2$$ is used up, no more $$\text{AlCl}_3$$ can form, even though some Al remains. The excess reactant remains because there are no longer enough particles of the limiting reactant available to collide and react in the required stoichiometric ratio.
-
-</div>
+:::
+::::
 
 ## Unit 5: Kinetics
 
@@ -967,6 +775,7 @@ $$(C)$$ The balanced reaction requires fixed mole ratios. Once $$\text{Cl}_2$$ i
 
 #### MCQ
 
+::::problem
 1. For the reaction $$A+B\rightarrow C$$, the initial-rate data below are collected.
 
 | Trial | $$[A]$$ | $$[B]$$ | Initial rate |
@@ -982,69 +791,7 @@ What is the rate law?
    (C) $$\text{rate}=k[A]^2[B]$$<br>
    (D) $$\text{rate}=k[B]^2$$
 
-2. A catalyst increases the rate of a reaction by
-
-   (A) increasing $$\Delta G^\circ$$<br>
-   (B) lowering the activation energy<br>
-   (C) increasing the equilibrium constant<br>
-   (D) increasing the enthalpy change of the reaction
-
-3. For a first-order reaction, which plot should be linear?
-
-   (A) $$[A]$$ versus time<br>
-   (B) $$\ln[A]$$ versus time<br>
-   (C) $$1/[A]$$ versus time<br>
-   (D) rate versus $$1/T$$
-
-4. If the rate law is $$\text{rate}=k[A]^2[B]$$, what happens to the rate when $$[A]$$ is doubled and $$[B]$$ is held constant?
-
-   (A) It doubles.<br>
-   (B) It triples.<br>
-   (C) It quadruples.<br>
-   (D) It stays the same.
-
-5. A reaction has a rate law $$\text{rate}=k[A]$$. What are the units of $$k$$ if rate is measured in $$M/s$$?
-
-   (A) $$M^{-1}s^{-1}$$<br>
-   (B) $$s^{-1}$$<br>
-   (C) $$M/s$$<br>
-   (D) $$M^2/s$$
-
-6. Increasing temperature usually increases reaction rate because
-
-   (A) the activation energy becomes zero.<br>
-   (B) more collisions have energy greater than or equal to $$E_a$$.<br>
-   (C) the equilibrium constant must become larger.<br>
-   (D) the reaction mechanism cannot change.
-
-#### FRQ
-
-7. A first-order decomposition has rate constant $$k=0.0300\ \text{s}^{-1}$$.
-
-   $$(A)$$ Calculate the half-life.
-
-   $$(B)$$ If the initial concentration is $$0.800\ M$$, calculate the concentration after $$60.0\ \text{s}$$.
-
-   $$(C)$$ Explain how the slope of a graph of $$\ln[A]$$ versus time is related to $$k$$.
-
-8. The 2026 AP Chemistry exam included a kinetics question using concentration-time data and a graph of natural log of concentration. (Adapted from College Board, [2026 AP Chemistry FRQ 2](https://apcentral.collegeboard.org/media/pdf/ap26-frq-chemistry.pdf).)
-
-   $$(A)$$ Explain how concentration-time data can support that a reaction is first order in a reactant.
-
-   $$(B)$$ If a plot of $$\ln[A]$$ versus time has slope $$-0.0150\ \text{s}^{-1}$$, identify $$k$$.
-
-   $$(C)$$ Calculate the half-life for the reaction.
-
----
-
-### Solutions
-
-#### MCQ
-
-<div class="theorem-box">
-
-#### Solution 1
-
+:::solution
 Compare trials 1 and 2. Doubling $$[A]$$ while holding $$[B]$$ constant makes the rate four times larger, so the reaction is second order in $$A$$.
 
 Compare trials 2 and 3. Doubling $$[B]$$ while holding $$[A]$$ constant does not change the rate, so the reaction is zero order in $$B$$.
@@ -1058,25 +805,35 @@ So the answer is
 $$
 \boxed{\text{B}}.
 $$
+:::
+::::
 
-</div>
+::::problem
+2. A catalyst increases the rate of a reaction by
 
-<div class="theorem-box">
+   (A) increasing $$\Delta G^\circ$$<br>
+   (B) lowering the activation energy<br>
+   (C) increasing the equilibrium constant<br>
+   (D) increasing the enthalpy change of the reaction
 
-#### Solution 2
-
+:::solution
 A catalyst provides an alternate pathway with lower activation energy. It does not change $$\Delta G^\circ$$, $$\Delta H$$, or $$K$$.
 
 $$
 \boxed{\text{B}}
 $$
+:::
+::::
 
-</div>
+::::problem
+3. For a first-order reaction, which plot should be linear?
 
-<div class="theorem-box">
+   (A) $$[A]$$ versus time<br>
+   (B) $$\ln[A]$$ versus time<br>
+   (C) $$1/[A]$$ versus time<br>
+   (D) rate versus $$1/T$$
 
-#### Solution 3
-
+:::solution
 For a first-order reaction,
 
 $$
@@ -1088,13 +845,18 @@ so $$\ln[A]$$ versus time is linear.
 $$
 \boxed{\text{B}}
 $$
+:::
+::::
 
-</div>
+::::problem
+4. If the rate law is $$\text{rate}=k[A]^2[B]$$, what happens to the rate when $$[A]$$ is doubled and $$[B]$$ is held constant?
 
-<div class="theorem-box">
+   (A) It doubles.<br>
+   (B) It triples.<br>
+   (C) It quadruples.<br>
+   (D) It stays the same.
 
-#### Solution 4
-
+:::solution
 The rate depends on $$[A]^2$$. Doubling $$[A]$$ multiplies the rate by
 
 $$
@@ -1104,13 +866,18 @@ $$
 $$
 \boxed{\text{C}}
 $$
+:::
+::::
 
-</div>
+::::problem
+5. A reaction has a rate law $$\text{rate}=k[A]$$. What are the units of $$k$$ if rate is measured in $$M/s$$?
 
-<div class="theorem-box">
+   (A) $$M^{-1}s^{-1}$$<br>
+   (B) $$s^{-1}$$<br>
+   (C) $$M/s$$<br>
+   (D) $$M^2/s$$
 
-#### Solution 5
-
+:::solution
 For $$\text{rate}=k[A]$$,
 
 $$
@@ -1120,27 +887,38 @@ $$
 $$
 \boxed{\text{B}}
 $$
+:::
+::::
 
-</div>
+::::problem
+6. Increasing temperature usually increases reaction rate because
 
-<div class="theorem-box">
+   (A) the activation energy becomes zero.<br>
+   (B) more collisions have energy greater than or equal to $$E_a$$.<br>
+   (C) the equilibrium constant must become larger.<br>
+   (D) the reaction mechanism cannot change.
 
-#### Solution 6
-
+:::solution
 At higher temperature, particles have greater kinetic energy on average, so a larger fraction of collisions can overcome the activation energy.
 
 $$
 \boxed{\text{B}}
 $$
-
-</div>
+:::
+::::
 
 #### FRQ
 
-<div class="theorem-box">
+::::frq{id=chem-kinetics-1}
+7. A first-order decomposition has rate constant $$k=0.0300\ \text{s}^{-1}$$.
 
-#### Solution 1
+   $$(A)$$ Calculate the half-life.
 
+   $$(B)$$ If the initial concentration is $$0.800\ M$$, calculate the concentration after $$60.0\ \text{s}$$.
+
+   $$(C)$$ Explain how the slope of a graph of $$\ln[A]$$ versus time is related to $$k$$.
+
+:::solution
 $$(A)$$ For a first-order reaction,
 
 $$
@@ -1180,13 +958,19 @@ $$
 $$
 
 The negative slope shows that $$[A]$$ decreases as time increases. The magnitude of the slope gives the rate constant, so a steeper negative line means a faster first-order reaction.
+:::
+::::
 
-</div>
+::::frq{id=chem-kinetics-2}
+8. The 2026 AP Chemistry exam included a kinetics question using concentration-time data and a graph of natural log of concentration. (Adapted from College Board, [2026 AP Chemistry FRQ 2](https://apcentral.collegeboard.org/media/pdf/ap26-frq-chemistry.pdf).)
 
-<div class="theorem-box">
+   $$(A)$$ Explain how concentration-time data can support that a reaction is first order in a reactant.
 
-#### Solution 2
+   $$(B)$$ If a plot of $$\ln[A]$$ versus time has slope $$-0.0150\ \text{s}^{-1}$$, identify $$k$$.
 
+   $$(C)$$ Calculate the half-life for the reaction.
+
+:::solution
 $$(A)$$ If a plot of $$\ln[A]$$ versus time is linear, the data support a first-order relationship in $$A$$. Equivalently, the concentration should decrease by the same fraction over equal time intervals. A plot of $$[A]$$ versus time or $$1/[A]$$ versus time would be used to test zero-order or second-order behavior, so the linear graph identifies the order.
 
 $$(B)$$ For a first-order reaction, the slope is $$-k$$, so
@@ -1204,8 +988,8 @@ t_{1/2}=\frac{0.693}{k}=\frac{0.693}{0.0150}=46.2\ \text{s}.
 $$
 
 For a first-order reaction, this half-life is constant, meaning every $$46.2\ \text{s}$$ the concentration is cut in half regardless of the starting concentration.
-
-</div>
+:::
+::::
 
 ## Unit 6: Thermochemistry
 
@@ -1215,6 +999,7 @@ For a first-order reaction, this half-life is constant, meaning every $$46.2\ \t
 
 #### MCQ
 
+::::problem
 1. A reaction has $$\Delta H=-85\ \text{kJ/mol}$$. Which statement is correct?
 
    (A) The reaction absorbs heat from the surroundings.<br>
@@ -1222,6 +1007,16 @@ For a first-order reaction, this half-life is constant, meaning every $$46.2\ \t
    (C) The reaction is exothermic.<br>
    (D) The reaction must be spontaneous at all temperatures.
 
+:::solution
+A negative $$\Delta H$$ means heat is released by the system. The reaction is exothermic.
+
+$$
+\boxed{\text{C}}
+$$
+:::
+::::
+
+::::problem
 2. A $$50.0\ \text{g}$$ sample of water is warmed from $$22.0^\circ\text{C}$$ to $$28.0^\circ\text{C}$$. Using $$c=4.184\ \text{J/(g}\cdot^\circ\text{C)}$$, how much heat is absorbed by the water?
 
    (A) $$1.26\times10^2\ \text{J}$$<br>
@@ -1229,80 +1024,7 @@ For a first-order reaction, this half-life is constant, meaning every $$46.2\ \t
    (C) $$5.02\times10^3\ \text{J}$$<br>
    (D) $$1.17\times10^4\ \text{J}$$
 
-3. Which process is endothermic?
-
-   (A) Freezing water<br>
-   (B) Condensing steam<br>
-   (C) Burning methane<br>
-   (D) Vaporizing liquid water
-
-4. In a coffee-cup calorimeter, the solution temperature increases. What is true about the reaction occurring in the solution?
-
-   (A) The reaction releases heat to the solution.<br>
-   (B) The reaction absorbs heat from the solution.<br>
-   (C) The reaction has no enthalpy change.<br>
-   (D) The reaction must have $$\Delta S<0$$.
-
-5. Which equation correctly represents Hess's law?
-
-   (A) $$q=mc\Delta T$$<br>
-   (B) $$\Delta H_{\text{rxn}}=\sum \Delta H_{\text{steps}}$$<br>
-   (C) $$PV=nRT$$<br>
-   (D) $$K=\frac{[\text{products}]}{[\text{reactants}]}$$
-
-6. If bonds broken require $$650\ \text{kJ}$$ and bonds formed release $$900\ \text{kJ}$$, what is the approximate $$\Delta H_{\text{rxn}}$$?
-
-   (A) $$+250\ \text{kJ}$$<br>
-   (B) $$-250\ \text{kJ}$$<br>
-   (C) $$+1550\ \text{kJ}$$<br>
-   (D) $$-1550\ \text{kJ}$$
-
-#### FRQ
-
-7. A reaction is represented by
-
-$$
-2\text{H}_2(g)+\text{O}_2(g)\rightarrow2\text{H}_2\text{O}(l)
-$$
-
-with $$\Delta H^\circ_{\text{rxn}}=-572\ \text{kJ}$$ for the reaction as written.
-
-   $$(A)$$ Calculate the enthalpy change for forming $$1.00\ \text{mol}$$ of $$\text{H}_2\text{O}(l)$$.
-
-   $$(B)$$ Calculate the enthalpy change when $$4.00\ \text{mol}$$ of $$\text{H}_2(g)$$ reacts completely.
-
-   $$(C)$$ Explain why breaking bonds is endothermic even when the overall reaction is exothermic.
-
-8. The 2026 AP Chemistry exam included a sodium oxide thermochemistry problem using formation enthalpy and limiting reactants. (Adapted from College Board, [2026 AP Chemistry FRQ 7](https://apcentral.collegeboard.org/media/pdf/ap26-frq-chemistry.pdf).)
-
-   $$(A)$$ For $$4\text{Na}(s)+\text{O}_2(g)\rightarrow2\text{Na}_2\text{O}(s)$$ with $$\Delta H^\circ_{\text{rxn}}=-828\ \text{kJ}$$, calculate $$\Delta H_f^\circ$$ for $$\text{Na}_2\text{O}(s)$$.
-
-   $$(B)$$ If $$2.00\ \text{mol}$$ Na reacts completely with excess oxygen, calculate the heat released.
-
-   $$(C)$$ Explain why elements in their standard states have $$\Delta H_f^\circ=0$$.
-
----
-
-### Solutions
-
-#### MCQ
-
-<div class="theorem-box">
-
-#### Solution 1
-
-A negative $$\Delta H$$ means heat is released by the system. The reaction is exothermic.
-
-$$
-\boxed{\text{C}}
-$$
-
-</div>
-
-<div class="theorem-box">
-
-#### Solution 2
-
+:::solution
 Use
 
 $$
@@ -1318,49 +1040,69 @@ $$
 $$
 \boxed{\text{B}}
 $$
+:::
+::::
 
-</div>
+::::problem
+3. Which process is endothermic?
 
-<div class="theorem-box">
+   (A) Freezing water<br>
+   (B) Condensing steam<br>
+   (C) Burning methane<br>
+   (D) Vaporizing liquid water
 
-#### Solution 3
-
+:::solution
 Vaporization requires energy to overcome intermolecular attractions in the liquid.
 
 $$
 \boxed{\text{D}}
 $$
+:::
+::::
 
-</div>
+::::problem
+4. In a coffee-cup calorimeter, the solution temperature increases. What is true about the reaction occurring in the solution?
 
-<div class="theorem-box">
+   (A) The reaction releases heat to the solution.<br>
+   (B) The reaction absorbs heat from the solution.<br>
+   (C) The reaction has no enthalpy change.<br>
+   (D) The reaction must have $$\Delta S<0$$.
 
-#### Solution 4
-
+:::solution
 If the solution temperature increases, the solution absorbed heat. The reaction released that heat, so the reaction is exothermic.
 
 $$
 \boxed{\text{A}}
 $$
+:::
+::::
 
-</div>
+::::problem
+5. Which equation correctly represents Hess's law?
 
-<div class="theorem-box">
+   (A) $$q=mc\Delta T$$<br>
+   (B) $$\Delta H_{\text{rxn}}=\sum \Delta H_{\text{steps}}$$<br>
+   (C) $$PV=nRT$$<br>
+   (D) $$K=\frac{[\text{products}]}{[\text{reactants}]}$$
 
-#### Solution 5
-
+:::solution
 Hess's law says enthalpy is a state function, so the enthalpy change for an overall reaction equals the sum of the enthalpy changes for the steps.
 
 $$
 \boxed{\text{B}}
 $$
+:::
+::::
 
-</div>
+::::problem
+6. If bonds broken require $$650\ \text{kJ}$$ and bonds formed release $$900\ \text{kJ}$$, what is the approximate $$\Delta H_{\text{rxn}}$$?
 
-<div class="theorem-box">
+   (A) $$+250\ \text{kJ}$$<br>
+   (B) $$-250\ \text{kJ}$$<br>
+   (C) $$+1550\ \text{kJ}$$<br>
+   (D) $$-1550\ \text{kJ}$$
 
-#### Solution 6
-
+:::solution
 Use
 
 $$
@@ -1374,15 +1116,27 @@ $$
 $$
 \boxed{\text{B}}
 $$
-
-</div>
+:::
+::::
 
 #### FRQ
 
-<div class="theorem-box">
+::::frq{id=chem-thermochemistry-1}
+7. A reaction is represented by
 
-#### Solution 1
+$$
+2\text{H}_2(g)+\text{O}_2(g)\rightarrow2\text{H}_2\text{O}(l)
+$$
 
+with $$\Delta H^\circ_{\text{rxn}}=-572\ \text{kJ}$$ for the reaction as written.
+
+   $$(A)$$ Calculate the enthalpy change for forming $$1.00\ \text{mol}$$ of $$\text{H}_2\text{O}(l)$$.
+
+   $$(B)$$ Calculate the enthalpy change when $$4.00\ \text{mol}$$ of $$\text{H}_2(g)$$ reacts completely.
+
+   $$(C)$$ Explain why breaking bonds is endothermic even when the overall reaction is exothermic.
+
+:::solution
 $$(A)$$ The reaction forms $$2$$ moles of water, so the enthalpy change must be divided by $$2$$ to find the value per mole of water:
 
 $$
@@ -1398,13 +1152,19 @@ $$
 $$
 
 $$(C)$$ Energy must be added to separate bonded atoms, so bond breaking is endothermic. The overall reaction is exothermic because forming the O-H bonds in water releases more energy than was required to break the H-H and O=O bonds. In bond-enthalpy language, $$\Delta H_{\text{rxn}}$$ is negative because the energy released by bonds formed is greater than the energy absorbed by bonds broken.
+:::
+::::
 
-</div>
+::::frq{id=chem-thermochemistry-2}
+8. The 2026 AP Chemistry exam included a sodium oxide thermochemistry problem using formation enthalpy and limiting reactants. (Adapted from College Board, [2026 AP Chemistry FRQ 7](https://apcentral.collegeboard.org/media/pdf/ap26-frq-chemistry.pdf).)
 
-<div class="theorem-box">
+   $$(A)$$ For $$4\text{Na}(s)+\text{O}_2(g)\rightarrow2\text{Na}_2\text{O}(s)$$ with $$\Delta H^\circ_{\text{rxn}}=-828\ \text{kJ}$$, calculate $$\Delta H_f^\circ$$ for $$\text{Na}_2\text{O}(s)$$.
 
-#### Solution 2
+   $$(B)$$ If $$2.00\ \text{mol}$$ Na reacts completely with excess oxygen, calculate the heat released.
 
+   $$(C)$$ Explain why elements in their standard states have $$\Delta H_f^\circ=0$$.
+
+:::solution
 $$(A)$$ The reaction forms $$2$$ moles of $$\text{Na}_2\text{O}(s)$$ from elements in their standard states, so the reaction enthalpy is twice the molar enthalpy of formation:
 
 $$
@@ -1420,8 +1180,8 @@ $$
 So $$414\ \text{kJ}$$ of heat is released.
 
 $$(C)$$ Formation enthalpy measures formation from elements in their standard states. An element already in its standard state requires no formation reaction, so its assigned value is zero. This is a reference convention that lets formation enthalpies be added and subtracted consistently in Hess's law calculations.
-
-</div>
+:::
+::::
 
 ## Unit 7: Equilibrium
 
@@ -1431,6 +1191,7 @@ $$(C)$$ Formation enthalpy measures formation from elements in their standard st
 
 #### MCQ
 
+::::problem
 1. For the reaction $$\text{N}_2(g)+3\text{H}_2(g)\rightleftharpoons2\text{NH}_3(g)$$, which expression is $$K_c$$?
 
    (A) $$\dfrac{[\text{NH}_3]}{[\text{N}_2][\text{H}_2]}$$<br>
@@ -1438,6 +1199,20 @@ $$(C)$$ Formation enthalpy measures formation from elements in their standard st
    (C) $$\dfrac{[\text{N}_2][\text{H}_2]^3}{[\text{NH}_3]^2}$$<br>
    (D) $$\dfrac{2[\text{NH}_3]}{[\text{N}_2]+3[\text{H}_2]}$$
 
+:::solution
+Gas and aqueous equilibrium expressions use concentrations raised to stoichiometric coefficients:
+
+$$
+K_c=\frac{[\text{NH}_3]^2}{[\text{N}_2][\text{H}_2]^3}.
+$$
+
+$$
+\boxed{\text{B}}
+$$
+:::
+::::
+
+::::problem
 2. For a system at equilibrium, adding a catalyst will
 
    (A) increase $$K$$<br>
@@ -1445,6 +1220,16 @@ $$(C)$$ Formation enthalpy measures formation from elements in their standard st
    (C) shift the equilibrium toward products<br>
    (D) leave the equilibrium composition unchanged
 
+:::solution
+A catalyst speeds both forward and reverse reactions. It helps the system reach equilibrium faster, but it does not change $$K$$ or the equilibrium composition.
+
+$$
+\boxed{\text{D}}
+$$
+:::
+::::
+
+::::problem
 3. If $$Q>K$$ for a reaction mixture, the reaction will proceed
 
    (A) toward products until equilibrium is reached.<br>
@@ -1452,6 +1237,16 @@ $$(C)$$ Formation enthalpy measures formation from elements in their standard st
    (C) in neither direction because it is already at equilibrium.<br>
    (D) only if a catalyst is added.
 
+:::solution
+If $$Q>K$$, the mixture has too much product relative to equilibrium, so it shifts toward reactants.
+
+$$
+\boxed{\text{B}}
+$$
+:::
+::::
+
+::::problem
 4. Which species is omitted from the equilibrium expression for $$\text{CaCO}_3(s)\rightleftharpoons\text{CaO}(s)+\text{CO}_2(g)$$?
 
    (A) $$\text{CO}_2(g)$$ only<br>
@@ -1459,6 +1254,16 @@ $$(C)$$ Formation enthalpy measures formation from elements in their standard st
    (C) $$\text{CaO}(s)$$ and $$\text{CO}_2(g)$$<br>
    (D) all species
 
+:::solution
+Pure solids are omitted from equilibrium expressions, so both solids are omitted.
+
+$$
+\boxed{\text{B}}
+$$
+:::
+::::
+
+::::problem
 5. For $$\text{AgCl}(s)\rightleftharpoons\text{Ag}^+(aq)+\text{Cl}^-(aq)$$, what is the expression for $$K_{sp}$$?
 
    (A) $$[\text{Ag}^+][\text{Cl}^-]$$<br>
@@ -1466,6 +1271,20 @@ $$(C)$$ Formation enthalpy measures formation from elements in their standard st
    (C) $$[\text{AgCl}]$$<br>
    (D) $$\dfrac{1}{[\text{Ag}^+][\text{Cl}^-]}$$
 
+:::solution
+Pure solids are omitted from equilibrium expressions, so
+
+$$
+K_{sp}=[\text{Ag}^+][\text{Cl}^-].
+$$
+
+$$
+\boxed{\text{A}}
+$$
+:::
+::::
+
+::::problem
 6. If an exothermic equilibrium reaction is heated, the equilibrium shifts
 
    (A) toward products.<br>
@@ -1473,8 +1292,18 @@ $$(C)$$ Formation enthalpy measures formation from elements in their standard st
    (C) nowhere, because temperature does not affect equilibrium.<br>
    (D) only if a catalyst is present.
 
+:::solution
+For an exothermic reaction, heat behaves like a product. Adding heat shifts the equilibrium toward reactants.
+
+$$
+\boxed{\text{B}}
+$$
+:::
+::::
+
 #### FRQ
 
+::::frq{id=chem-equilibrium-1}
 7. At a certain temperature, $$K_c=4.00$$ for
 
 $$
@@ -1489,106 +1318,7 @@ A sealed container initially has $$0.600\ M$$ $$\text{A}$$ and no $$\text{B}$$.
 
    $$(C)$$ Calculate the equilibrium concentrations of $$\text{A}$$ and $$\text{B}$$.
 
-8. The 2024 AP Chemistry exam included an equilibrium particle-diagram question for $$\text{H}_2(g)+\text{I}_2(g)\rightleftharpoons2\text{HI}(g)$$. (Adapted from College Board, [2024 AP Chemistry FRQ 5](https://apcentral.collegeboard.org/media/pdf/ap24-frq-chemistry.pdf).)
-
-   $$(A)$$ Write the expression for $$Q$$.
-
-   $$(B)$$ If $$[\text{H}_2]=0.20\ M$$, $$[\text{I}_2]=0.10\ M$$, and $$[\text{HI}]=0.30\ M$$, calculate $$Q$$.
-
-   $$(C)$$ If $$K=50$$, predict the direction the system shifts.
-
----
-
-### Solutions
-
-#### MCQ
-
-<div class="theorem-box">
-
-#### Solution 1
-
-Gas and aqueous equilibrium expressions use concentrations raised to stoichiometric coefficients:
-
-$$
-K_c=\frac{[\text{NH}_3]^2}{[\text{N}_2][\text{H}_2]^3}.
-$$
-
-$$
-\boxed{\text{B}}
-$$
-
-</div>
-
-<div class="theorem-box">
-
-#### Solution 2
-
-A catalyst speeds both forward and reverse reactions. It helps the system reach equilibrium faster, but it does not change $$K$$ or the equilibrium composition.
-
-$$
-\boxed{\text{D}}
-$$
-
-</div>
-
-<div class="theorem-box">
-
-#### Solution 3
-
-If $$Q>K$$, the mixture has too much product relative to equilibrium, so it shifts toward reactants.
-
-$$
-\boxed{\text{B}}
-$$
-
-</div>
-
-<div class="theorem-box">
-
-#### Solution 4
-
-Pure solids are omitted from equilibrium expressions, so both solids are omitted.
-
-$$
-\boxed{\text{B}}
-$$
-
-</div>
-
-<div class="theorem-box">
-
-#### Solution 5
-
-Pure solids are omitted from equilibrium expressions, so
-
-$$
-K_{sp}=[\text{Ag}^+][\text{Cl}^-].
-$$
-
-$$
-\boxed{\text{A}}
-$$
-
-</div>
-
-<div class="theorem-box">
-
-#### Solution 6
-
-For an exothermic reaction, heat behaves like a product. Adding heat shifts the equilibrium toward reactants.
-
-$$
-\boxed{\text{B}}
-$$
-
-</div>
-
-#### FRQ
-
-<div class="theorem-box">
-
-#### Solution 1
-
+:::solution
 $$(A)$$
 
 $$
@@ -1644,13 +1374,19 @@ $$
 $$
 
 The negative root is rejected because it would make no physical sense for the reaction progress variable in this setup. Both equilibrium concentrations are positive, which is a useful check.
+:::
+::::
 
-</div>
+::::frq{id=chem-equilibrium-2}
+8. The 2024 AP Chemistry exam included an equilibrium particle-diagram question for $$\text{H}_2(g)+\text{I}_2(g)\rightleftharpoons2\text{HI}(g)$$. (Adapted from College Board, [2024 AP Chemistry FRQ 5](https://apcentral.collegeboard.org/media/pdf/ap24-frq-chemistry.pdf).)
 
-<div class="theorem-box">
+   $$(A)$$ Write the expression for $$Q$$.
 
-#### Solution 2
+   $$(B)$$ If $$[\text{H}_2]=0.20\ M$$, $$[\text{I}_2]=0.10\ M$$, and $$[\text{HI}]=0.30\ M$$, calculate $$Q$$.
 
+   $$(C)$$ If $$K=50$$, predict the direction the system shifts.
+
+:::solution
 $$(A)$$
 
 $$
@@ -1672,8 +1408,8 @@ $$(C)$$ Since $$Q<K$$, the system has too little product relative to equilibrium
 **Image placeholder:** Particle diagram for $$\text{H}_2+\text{I}_2\rightleftharpoons2\text{HI}$$ showing the mixture shifting toward more $$\text{HI}$$.
 
 </div>
-
-</div>
+:::
+::::
 
 ## Unit 8: Acid-Base Equilibrium
 
@@ -1683,6 +1419,7 @@ $$(C)$$ Since $$Q<K$$, the system has too little product relative to equilibrium
 
 #### MCQ
 
+::::problem
 1. What is the $$\text{pH}$$ of a $$1.0\times10^{-3}\ M$$ solution of $$\text{HCl}$$ at $$25^\circ\text{C}$$?
 
    (A) $$1.00$$<br>
@@ -1690,71 +1427,7 @@ $$(C)$$ Since $$Q<K$$, the system has too little product relative to equilibrium
    (C) $$7.00$$<br>
    (D) $$11.00$$
 
-2. A buffer contains equal concentrations of $$\text{HF}$$ and $$\text{F}^-$$. If $$K_a$$ for $$\text{HF}$$ is $$6.8\times10^{-4}$$, what is the $$\text{pH}$$ of the buffer?
-
-   (A) $$1.68$$<br>
-   (B) $$3.17$$<br>
-   (C) $$7.00$$<br>
-   (D) $$10.83$$
-
-3. Which solution has the greatest $$\text{pH}$$?
-
-   (A) $$0.10\ M\ \text{HCl}$$<br>
-   (B) $$0.10\ M\ \text{HC}_2\text{H}_3\text{O}_2$$<br>
-   (C) $$0.10\ M\ \text{NaCl}$$<br>
-   (D) $$0.10\ M\ \text{NaOH}$$
-
-4. At the half-equivalence point in a weak acid-strong base titration,
-
-   (A) $$\text{pH}=\text{p}K_a$$.<br>
-   (B) $$\text{pH}=7.00$$ for every weak acid.<br>
-   (C) all weak acid has been converted to conjugate base.<br>
-   (D) $$[\text{H}_3\text{O}^+]=[\text{OH}^-]$$.
-
-5. Which species is the conjugate base of $$\text{H}_2\text{PO}_4^-$$?
-
-   (A) $$\text{H}_3\text{PO}_4$$<br>
-   (B) $$\text{HPO}_4^{2-}$$<br>
-   (C) $$\text{PO}_4^{3-}$$<br>
-   (D) $$\text{OH}^-$$
-
-6. Which mixture is a buffer?
-
-   (A) $$\text{HCl}$$ and $$\text{NaCl}$$<br>
-   (B) $$\text{NaOH}$$ and $$\text{NaCl}$$<br>
-   (C) $$\text{HF}$$ and $$\text{NaF}$$<br>
-   (D) $$\text{HNO}_3$$ and $$\text{NaNO}_3$$
-
-#### FRQ
-
-7. A $$0.100\ M$$ solution of acetic acid, $$\text{HC}_2\text{H}_3\text{O}_2$$, has $$K_a=1.8\times10^{-5}$$.
-
-   $$(A)$$ Write the acid-ionization equation.
-
-   $$(B)$$ Calculate $$[\text{H}_3\text{O}^+]$$ using the small-$$x$$ approximation.
-
-   $$(C)$$ Calculate the $$\text{pH}$$.
-
-   $$(D)$$ Explain what happens to the percent ionization if sodium acetate is added.
-
-8. The 2026 AP Chemistry exam included a nitrous acid titration and indicator question. (Adapted from College Board, [2026 AP Chemistry FRQ 3](https://apcentral.collegeboard.org/media/pdf/ap26-frq-chemistry.pdf).)
-
-   $$(A)$$ Explain why the equivalence point of a weak acid-strong base titration has $$\text{pH}>7$$.
-
-   $$(B)$$ A $$35.0\ \text{mL}$$ sample of $$\text{HNO}_2$$ is titrated to equivalence with $$21.0\ \text{mL}$$ of $$0.160\ M\ \text{NaOH}$$. Calculate the molarity of $$\text{HNO}_2$$.
-
-   $$(C)$$ Explain why an indicator should change color near the steep part of the titration curve.
-
----
-
-### Solutions
-
-#### MCQ
-
-<div class="theorem-box">
-
-#### Solution 1
-
+:::solution
 $$\text{HCl}$$ is a strong acid, so
 
 $$
@@ -1770,13 +1443,18 @@ $$
 $$
 \boxed{\text{B}}
 $$
+:::
+::::
 
-</div>
+::::problem
+2. A buffer contains equal concentrations of $$\text{HF}$$ and $$\text{F}^-$$. If $$K_a$$ for $$\text{HF}$$ is $$6.8\times10^{-4}$$, what is the $$\text{pH}$$ of the buffer?
 
-<div class="theorem-box">
+   (A) $$1.68$$<br>
+   (B) $$3.17$$<br>
+   (C) $$7.00$$<br>
+   (D) $$10.83$$
 
-#### Solution 2
-
+:::solution
 When $$[\text{HF}]=[\text{F}^-]$$, the Henderson-Hasselbalch equation gives
 
 $$
@@ -1790,25 +1468,35 @@ $$
 $$
 \boxed{\text{B}}
 $$
+:::
+::::
 
-</div>
+::::problem
+3. Which solution has the greatest $$\text{pH}$$?
 
-<div class="theorem-box">
+   (A) $$0.10\ M\ \text{HCl}$$<br>
+   (B) $$0.10\ M\ \text{HC}_2\text{H}_3\text{O}_2$$<br>
+   (C) $$0.10\ M\ \text{NaCl}$$<br>
+   (D) $$0.10\ M\ \text{NaOH}$$
 
-#### Solution 3
-
+:::solution
 $$\text{NaOH}$$ is a strong base, so it produces the greatest $$[\text{OH}^-]$$ and therefore the greatest $$\text{pH}$$.
 
 $$
 \boxed{\text{D}}
 $$
+:::
+::::
 
-</div>
+::::problem
+4. At the half-equivalence point in a weak acid-strong base titration,
 
-<div class="theorem-box">
+   (A) $$\text{pH}=\text{p}K_a$$.<br>
+   (B) $$\text{pH}=7.00$$ for every weak acid.<br>
+   (C) all weak acid has been converted to conjugate base.<br>
+   (D) $$[\text{H}_3\text{O}^+]=[\text{OH}^-]$$.
 
-#### Solution 4
-
+:::solution
 At the half-equivalence point, $$[\text{HA}]=[\text{A}^-]$$. Henderson-Hasselbalch becomes
 
 $$
@@ -1818,39 +1506,57 @@ $$
 $$
 \boxed{\text{A}}
 $$
+:::
+::::
 
-</div>
+::::problem
+5. Which species is the conjugate base of $$\text{H}_2\text{PO}_4^-$$?
 
-<div class="theorem-box">
+   (A) $$\text{H}_3\text{PO}_4$$<br>
+   (B) $$\text{HPO}_4^{2-}$$<br>
+   (C) $$\text{PO}_4^{3-}$$<br>
+   (D) $$\text{OH}^-$$
 
-#### Solution 5
-
+:::solution
 A conjugate base is formed by removing one proton. Removing $$\text{H}^+$$ from $$\text{H}_2\text{PO}_4^-$$ gives $$\text{HPO}_4^{2-}$$.
 
 $$
 \boxed{\text{B}}
 $$
+:::
+::::
 
-</div>
+::::problem
+6. Which mixture is a buffer?
 
-<div class="theorem-box">
+   (A) $$\text{HCl}$$ and $$\text{NaCl}$$<br>
+   (B) $$\text{NaOH}$$ and $$\text{NaCl}$$<br>
+   (C) $$\text{HF}$$ and $$\text{NaF}$$<br>
+   (D) $$\text{HNO}_3$$ and $$\text{NaNO}_3$$
 
-#### Solution 6
-
+:::solution
 A buffer contains a weak acid and its conjugate base, or a weak base and its conjugate acid. $$\text{HF}$$ and $$\text{F}^-$$ form a buffer pair.
 
 $$
 \boxed{\text{C}}
 $$
-
-</div>
+:::
+::::
 
 #### FRQ
 
-<div class="theorem-box">
+::::frq{id=chem-acidbase-1}
+7. A $$0.100\ M$$ solution of acetic acid, $$\text{HC}_2\text{H}_3\text{O}_2$$, has $$K_a=1.8\times10^{-5}$$.
 
-#### Solution 1
+   $$(A)$$ Write the acid-ionization equation.
 
+   $$(B)$$ Calculate $$[\text{H}_3\text{O}^+]$$ using the small-$$x$$ approximation.
+
+   $$(C)$$ Calculate the $$\text{pH}$$.
+
+   $$(D)$$ Explain what happens to the percent ionization if sodium acetate is added.
+
+:::solution
 $$(A)$$
 
 $$
@@ -1890,13 +1596,19 @@ $$
 $$
 
 $$(D)$$ Sodium acetate adds the common ion $$\text{C}_2\text{H}_3\text{O}_2^-$$, shifting the acid ionization left. Since less acetic acid ionizes, $$[\text{H}_3\text{O}^+]$$ decreases and the percent ionization decreases. This is the common-ion effect.
+:::
+::::
 
-</div>
+::::frq{id=chem-acidbase-2}
+8. The 2026 AP Chemistry exam included a nitrous acid titration and indicator question. (Adapted from College Board, [2026 AP Chemistry FRQ 3](https://apcentral.collegeboard.org/media/pdf/ap26-frq-chemistry.pdf).)
 
-<div class="theorem-box">
+   $$(A)$$ Explain why the equivalence point of a weak acid-strong base titration has $$\text{pH}>7$$.
 
-#### Solution 2
+   $$(B)$$ A $$35.0\ \text{mL}$$ sample of $$\text{HNO}_2$$ is titrated to equivalence with $$21.0\ \text{mL}$$ of $$0.160\ M\ \text{NaOH}$$. Calculate the molarity of $$\text{HNO}_2$$.
 
+   $$(C)$$ Explain why an indicator should change color near the steep part of the titration curve.
+
+:::solution
 $$(A)$$ At equivalence, the weak acid has been converted mostly into its conjugate base. The conjugate base reacts with water to produce $$\text{OH}^-$$:
 
 $$
@@ -1928,8 +1640,8 @@ $$(C)$$ The steep part of the titration curve is where a tiny volume change caus
 **Image placeholder:** Weak acid-strong base titration curve with equivalence point above $$\text{pH}=7$$ and an indicator transition range near the steep region.
 
 </div>
-
-</div>
+:::
+::::
 
 ## Unit 9: Thermodynamics and Electrochemistry
 
@@ -1939,6 +1651,7 @@ $$(C)$$ The steep part of the titration curve is where a tiny volume change caus
 
 #### MCQ
 
+::::problem
 1. For a spontaneous galvanic cell under standard conditions, which statement is correct?
 
    (A) $$E^\circ_{\text{cell}}<0$$ and $$\Delta G^\circ<0$$<br>
@@ -1946,6 +1659,22 @@ $$(C)$$ The steep part of the titration curve is where a tiny volume change caus
    (C) $$E^\circ_{\text{cell}}>0$$ and $$\Delta G^\circ>0$$<br>
    (D) $$E^\circ_{\text{cell}}=0$$ and $$\Delta G^\circ=0$$
 
+:::solution
+For a spontaneous galvanic cell,
+
+$$
+\Delta G^\circ=-nFE^\circ_{\text{cell}}.
+$$
+
+Spontaneous means $$\Delta G^\circ<0$$, which requires $$E^\circ_{\text{cell}}>0$$.
+
+$$
+\boxed{\text{B}}
+$$
+:::
+::::
+
+::::problem
 2. Which change always increases the entropy of the system?
 
    (A) $$\text{H}_2\text{O}(g)\rightarrow\text{H}_2\text{O}(l)$$<br>
@@ -1953,6 +1682,16 @@ $$(C)$$ The steep part of the titration curve is where a tiny volume change caus
    (C) $$\text{CO}_2(s)\rightarrow\text{CO}_2(g)$$<br>
    (D) $$2\text{NO}_2(g)\rightarrow\text{N}_2\text{O}_4(g)$$
 
+:::solution
+Sublimation changes a solid directly into a gas. Gas particles have many more accessible microstates than particles in a solid.
+
+$$
+\boxed{\text{C}}
+$$
+:::
+::::
+
+::::problem
 3. A reaction has $$\Delta H^\circ>0$$ and $$\Delta S^\circ>0$$. The reaction is most likely thermodynamically favorable at
 
    (A) low temperatures only.<br>
@@ -1960,6 +1699,22 @@ $$(C)$$ The steep part of the titration curve is where a tiny volume change caus
    (C) all temperatures.<br>
    (D) no temperatures.
 
+:::solution
+Use
+
+$$
+\Delta G^\circ=\Delta H^\circ-T\Delta S^\circ.
+$$
+
+When both $$\Delta H^\circ$$ and $$\Delta S^\circ$$ are positive, high temperature makes the $$-T\Delta S^\circ$$ term large and negative.
+
+$$
+\boxed{\text{B}}
+$$
+:::
+::::
+
+::::problem
 4. In an electrolytic cell, oxidation occurs at the
 
    (A) anode.<br>
@@ -1967,6 +1722,16 @@ $$(C)$$ The steep part of the titration curve is where a tiny volume change caus
    (C) salt bridge.<br>
    (D) voltmeter.
 
+:::solution
+Oxidation always occurs at the anode, in both galvanic and electrolytic cells.
+
+$$
+\boxed{\text{A}}
+$$
+:::
+::::
+
+::::problem
 5. If $$\Delta G^\circ<0$$ for a reaction under standard conditions, which statement is true?
 
    (A) $$K<1$$<br>
@@ -1974,6 +1739,22 @@ $$(C)$$ The steep part of the titration curve is where a tiny volume change caus
    (C) $$K>1$$<br>
    (D) $$E^\circ_{\text{cell}}<0$$ for the corresponding galvanic cell
 
+:::solution
+Since
+
+$$
+\Delta G^\circ=-RT\ln K,
+$$
+
+a negative $$\Delta G^\circ$$ means $$\ln K>0$$, so $$K>1$$.
+
+$$
+\boxed{\text{C}}
+$$
+:::
+::::
+
+::::problem
 6. What mass of Ag is plated by $$1.00\ \text{mol}$$ of electrons from $$\text{Ag}^+$$?
 
    (A) $$53.9\ \text{g}$$<br>
@@ -1981,8 +1762,22 @@ $$(C)$$ The steep part of the titration curve is where a tiny volume change caus
    (C) $$215.8\ \text{g}$$<br>
    (D) $$96500\ \text{g}$$
 
+:::solution
+For $$\text{Ag}^+ + e^- \rightarrow \text{Ag}(s)$$, $$1.00\ \text{mol}$$ of electrons plates $$1.00\ \text{mol}$$ of Ag.
+
+$$
+1.00\ \text{mol Ag}\times107.9\ \text{g/mol}=107.9\ \text{g}.
+$$
+
+$$
+\boxed{\text{B}}
+$$
+:::
+::::
+
 #### FRQ
 
+::::frq{id=chem-thermoelectro-1}
 7. A galvanic cell is based on the reaction
 
 $$
@@ -1999,120 +1794,7 @@ Use $$E^\circ_{\text{red}}(\text{Cu}^{2+}/\text{Cu})=+0.34\ \text{V}$$ and $$E^\
 
    $$(D)$$ Explain the direction of electron flow in the external circuit.
 
-8. The 2024 AP Chemistry exam included electroplating and nonspontaneous electrochemistry in a sterling silver context. (Adapted from College Board, [2024 AP Chemistry FRQ 3](https://apcentral.collegeboard.org/media/pdf/ap24-frq-chemistry.pdf).)
-
-   $$(A)$$ Explain why an electrolytic plating process requires an external power source.
-
-   $$(B)$$ Calculate the time required to plate $$1.00\ \text{g}$$ of $$\text{Cu}(s)$$ from $$\text{Cu}^{2+}$$ using a current of $$2.00\ \text{A}$$.
-
-   $$(C)$$ Identify whether reduction or oxidation occurs at the object being plated.
-
----
-
-### Solutions
-
-#### MCQ
-
-<div class="theorem-box">
-
-#### Solution 1
-
-For a spontaneous galvanic cell,
-
-$$
-\Delta G^\circ=-nFE^\circ_{\text{cell}}.
-$$
-
-Spontaneous means $$\Delta G^\circ<0$$, which requires $$E^\circ_{\text{cell}}>0$$.
-
-$$
-\boxed{\text{B}}
-$$
-
-</div>
-
-<div class="theorem-box">
-
-#### Solution 2
-
-Sublimation changes a solid directly into a gas. Gas particles have many more accessible microstates than particles in a solid.
-
-$$
-\boxed{\text{C}}
-$$
-
-</div>
-
-<div class="theorem-box">
-
-#### Solution 3
-
-Use
-
-$$
-\Delta G^\circ=\Delta H^\circ-T\Delta S^\circ.
-$$
-
-When both $$\Delta H^\circ$$ and $$\Delta S^\circ$$ are positive, high temperature makes the $$-T\Delta S^\circ$$ term large and negative.
-
-$$
-\boxed{\text{B}}
-$$
-
-</div>
-
-<div class="theorem-box">
-
-#### Solution 4
-
-Oxidation always occurs at the anode, in both galvanic and electrolytic cells.
-
-$$
-\boxed{\text{A}}
-$$
-
-</div>
-
-<div class="theorem-box">
-
-#### Solution 5
-
-Since
-
-$$
-\Delta G^\circ=-RT\ln K,
-$$
-
-a negative $$\Delta G^\circ$$ means $$\ln K>0$$, so $$K>1$$.
-
-$$
-\boxed{\text{C}}
-$$
-
-</div>
-
-<div class="theorem-box">
-
-#### Solution 6
-
-For $$\text{Ag}^+ + e^- \rightarrow \text{Ag}(s)$$, $$1.00\ \text{mol}$$ of electrons plates $$1.00\ \text{mol}$$ of Ag.
-
-$$
-1.00\ \text{mol Ag}\times107.9\ \text{g/mol}=107.9\ \text{g}.
-$$
-
-$$
-\boxed{\text{B}}
-$$
-
-</div>
-
-#### FRQ
-
-<div class="theorem-box">
-
-#### Solution 1
-
+:::solution
 $$(A)$$ Zinc is oxidized:
 
 $$
@@ -2162,13 +1844,19 @@ $$(D)$$ Electrons are produced at the zinc anode and consumed at the copper cath
 **Image placeholder:** Galvanic cell diagram with Zn anode, Cu cathode, electron flow from Zn to Cu, and ion flow through the salt bridge.
 
 </div>
+:::
+::::
 
-</div>
+::::frq{id=chem-thermoelectro-2}
+8. The 2024 AP Chemistry exam included electroplating and nonspontaneous electrochemistry in a sterling silver context. (Adapted from College Board, [2024 AP Chemistry FRQ 3](https://apcentral.collegeboard.org/media/pdf/ap24-frq-chemistry.pdf).)
 
-<div class="theorem-box">
+   $$(A)$$ Explain why an electrolytic plating process requires an external power source.
 
-#### Solution 2
+   $$(B)$$ Calculate the time required to plate $$1.00\ \text{g}$$ of $$\text{Cu}(s)$$ from $$\text{Cu}^{2+}$$ using a current of $$2.00\ \text{A}$$.
 
+   $$(C)$$ Identify whether reduction or oxidation occurs at the object being plated.
+
+:::solution
 $$(A)$$ Electroplating is nonspontaneous as written, so an external power source is needed to drive electron flow and force reduction of metal ions onto the object. In other words, electrical energy is used to make a thermodynamically unfavorable redox process occur.
 
 $$(B)$$ Moles of copper plated:
@@ -2198,5 +1886,5 @@ $$
 This is about $$25.3\ \text{min}$$ if converted to minutes.
 
 $$(C)$$ Metal ions gain electrons and become solid metal on the object, so reduction occurs at the object being plated. The object being plated acts as the cathode in the electrolytic cell.
-
-</div>
+:::
+::::

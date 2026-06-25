@@ -732,3 +732,21 @@ If the actual $$\mu_s$$ is smaller than this, the cylinder slips: it then accele
 | Static equilibrium | $$\sum\vec F=0,\quad \sum\tau=0$$ |
 | Rolling constraint | $$v_{\text{cm}}=R\omega,\quad a_{\text{cm}}=R\alpha$$ |
 | Rolling down an incline | $$a=\dfrac{g\sin\theta}{1+I_{\text{cm}}/MR^2}$$ |
+
+## Practice
+
+### FRQ
+
+::::frq{id=ap-physics-c-mechanics-torque-1}
+1. _Temporary placeholder FRQ for wiring/testing — replace with a real free-response question for this unit._
+
+   $$(A)$$ State one key idea from this unit and explain it in your own words.
+
+   $$(B)$$ Give a worked example or application of that idea.
+
+:::solution
+$$(A)$$ _Placeholder solution._ Any accurate statement of a core concept from this unit, with a correct explanation, earns full credit.
+
+$$(B)$$ _Placeholder solution._ Any correct worked example or application consistent with part (A).
+:::
+::::

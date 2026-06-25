@@ -264,3 +264,21 @@ Multiplying by a constant $$b$$ (for example, feet to inches): $$y_i = b \times 
 | Interquartile Range | unchanged | $$\times \lvert b \rvert$$ |
 
 These rules are worth memorizing: they explain why z-scores are unchanged by shifts and rescaling when you use the matching mean and standard deviation of the transformed data, and they explain many standardization tricks in later units.
+
+## Practice
+
+### FRQ
+
+::::frq{id=stats-univardata-1}
+1. _Temporary placeholder FRQ for wiring/testing — replace with a real free-response question for this unit._
+
+   $$(A)$$ State one key idea from this unit and explain it in your own words.
+
+   $$(B)$$ Give a worked example or application of that idea.
+
+:::solution
+$$(A)$$ _Placeholder solution._ Any accurate statement of a core concept from this unit, with a correct explanation, earns full credit.
+
+$$(B)$$ _Placeholder solution._ Any correct worked example or application consistent with part (A).
+:::
+::::

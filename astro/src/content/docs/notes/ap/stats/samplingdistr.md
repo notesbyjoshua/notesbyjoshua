@@ -257,3 +257,21 @@ $$
 | z-score | $$z = (x-\mu)/\sigma$$ |
 | Binomial probability | $$P(X=k)=\binom{n}{k}p^k(1-p)^{n-k}$$ |
 | Geometric probability | $$P(X=k)=(1-p)^{k-1}p$$ |
+
+## Practice
+
+### FRQ
+
+::::frq{id=stats-samplingdistr-1}
+1. _Temporary placeholder FRQ for wiring/testing — replace with a real free-response question for this unit._
+
+   $$(A)$$ State one key idea from this unit and explain it in your own words.
+
+   $$(B)$$ Give a worked example or application of that idea.
+
+:::solution
+$$(A)$$ _Placeholder solution._ Any accurate statement of a core concept from this unit, with a correct explanation, earns full credit.
+
+$$(B)$$ _Placeholder solution._ Any correct worked example or application consistent with part (A).
+:::
+::::

@@ -226,3 +226,21 @@ Calculator output does not replace communication. You still need hypotheses, con
 | Two-proportion interval | $$(\hat{p}_1-\hat{p}_2)\pm z^*\sqrt{\frac{\hat{p}_1(1-\hat{p}_1)}{n_1}+\frac{\hat{p}_2(1-\hat{p}_2)}{n_2}}$$ |
 | Pooled proportion | $$\hat{p}_c=(x_1+x_2)/(n_1+n_2)$$ |
 | Two-proportion test | $$z=\frac{(\hat{p}_1-\hat{p}_2)}{\sqrt{\hat{p}_c(1-\hat{p}_c)(1/n_1+1/n_2)}}$$ |
+
+## Practice
+
+### FRQ
+
+::::frq{id=stats-catprop-1}
+1. _Temporary placeholder FRQ for wiring/testing — replace with a real free-response question for this unit._
+
+   $$(A)$$ State one key idea from this unit and explain it in your own words.
+
+   $$(B)$$ Give a worked example or application of that idea.
+
+:::solution
+$$(A)$$ _Placeholder solution._ Any accurate statement of a core concept from this unit, with a correct explanation, earns full credit.
+
+$$(B)$$ _Placeholder solution._ Any correct worked example or application consistent with part (A).
+:::
+::::

@@ -558,3 +558,21 @@ The comet moves five times slower at aphelion than at perihelion, in exact propo
 | Conservation of $$L$$ | $$I_i\omega_i = I_f\omega_f$$ (zero ext. torque) |
 | Angular impulse | $$\displaystyle\int\vec\tau_{\text{ext}}\,dt = \Delta\vec L$$ |
 | Areal velocity (central force) | $$\dfrac{dA}{dt} = \dfrac{L}{2m}$$ |
+
+## Practice
+
+### FRQ
+
+::::frq{id=ap-physics-c-mechanics-rotationalmomentum-1}
+1. _Temporary placeholder FRQ for wiring/testing — replace with a real free-response question for this unit._
+
+   $$(A)$$ State one key idea from this unit and explain it in your own words.
+
+   $$(B)$$ Give a worked example or application of that idea.
+
+:::solution
+$$(A)$$ _Placeholder solution._ Any accurate statement of a core concept from this unit, with a correct explanation, earns full credit.
+
+$$(B)$$ _Placeholder solution._ Any correct worked example or application consistent with part (A).
+:::
+::::

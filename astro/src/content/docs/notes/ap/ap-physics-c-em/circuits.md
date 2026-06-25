@@ -700,3 +700,21 @@ Real meters disturb circuits slightly: an ammeter adds small series resistance, 
 | Charging current | $$I(t) = \dfrac{\mathcal{E}}{R}e^{-t/RC}$$ |
 | Discharging capacitor | $$Q(t) = Q_0 e^{-t/RC}$$ |
 | Discharge half-life | $$t_{1/2} = RC\ln 2$$ |
+
+## Practice
+
+### FRQ
+
+::::frq{id=ap-physics-c-em-circuits-1}
+1. _Temporary placeholder FRQ for wiring/testing — replace with a real free-response question for this unit._
+
+   $$(A)$$ State one key idea from this unit and explain it in your own words.
+
+   $$(B)$$ Give a worked example or application of that idea.
+
+:::solution
+$$(A)$$ _Placeholder solution._ Any accurate statement of a core concept from this unit, with a correct explanation, earns full credit.
+
+$$(B)$$ _Placeholder solution._ Any correct worked example or application consistent with part (A).
+:::
+::::

@@ -560,3 +560,21 @@ Magnetic flux becomes central in [electromagnetic induction](/notes/ap/ap-physic
 | Ampère's law | $$\oint\vec{B}\cdot d\vec{\ell} = \mu_0 I_{\text{enc}}$$ |
 | Force between parallel wires | $$\dfrac{F}{L} = \dfrac{\mu_0 I_1 I_2}{2\pi d}$$ |
 | Magnetic flux | $$\Phi_B = \int\vec{B}\cdot d\vec{A} = BA\cos\theta$$ |
+
+## Practice
+
+### FRQ
+
+::::frq{id=ap-physics-c-em-magnetism-1}
+1. _Temporary placeholder FRQ for wiring/testing — replace with a real free-response question for this unit._
+
+   $$(A)$$ State one key idea from this unit and explain it in your own words.
+
+   $$(B)$$ Give a worked example or application of that idea.
+
+:::solution
+$$(A)$$ _Placeholder solution._ Any accurate statement of a core concept from this unit, with a correct explanation, earns full credit.
+
+$$(B)$$ _Placeholder solution._ Any correct worked example or application consistent with part (A).
+:::
+::::

@@ -743,3 +743,21 @@ After any initial transient dies away, the system settles into a steady oscillat
 | Simple pendulum | $$T=2\pi\sqrt{L/g}$$ |
 | Physical pendulum | $$T=2\pi\sqrt{I/(mgd)}$$ |
 | Critical damping | $$b_c=2\sqrt{mk}$$ |
+
+## Practice
+
+### FRQ
+
+::::frq{id=ap-physics-c-mechanics-oscillations-1}
+1. _Temporary placeholder FRQ for wiring/testing — replace with a real free-response question for this unit._
+
+   $$(A)$$ State one key idea from this unit and explain it in your own words.
+
+   $$(B)$$ Give a worked example or application of that idea.
+
+:::solution
+$$(A)$$ _Placeholder solution._ Any accurate statement of a core concept from this unit, with a correct explanation, earns full credit.
+
+$$(B)$$ _Placeholder solution._ Any correct worked example or application consistent with part (A).
+:::
+::::

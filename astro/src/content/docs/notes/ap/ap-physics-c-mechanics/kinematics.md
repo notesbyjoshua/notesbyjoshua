@@ -531,3 +531,21 @@ You can find more on the [USAPhO section on mechanics](/notes/physics/advmech/).
 | Max height (level ground) | $$h = \dfrac{v_0^2\sin^2\theta}{2g}$$ |
 | Time of flight (level ground) | $$T = \dfrac{2v_0\sin\theta}{g}$$ |
 | Relative velocity | $$\vec{v}_{A/C} = \vec{v}_{A/B} + \vec{v}_{B/C}$$ |
+
+## Practice
+
+### FRQ
+
+::::frq{id=ap-physics-c-mechanics-kinematics-1}
+1. _Temporary placeholder FRQ for wiring/testing — replace with a real free-response question for this unit._
+
+   $$(A)$$ State one key idea from this unit and explain it in your own words.
+
+   $$(B)$$ Give a worked example or application of that idea.
+
+:::solution
+$$(A)$$ _Placeholder solution._ Any accurate statement of a core concept from this unit, with a correct explanation, earns full credit.
+
+$$(B)$$ _Placeholder solution._ Any correct worked example or application consistent with part (A).
+:::
+::::

@@ -39,6 +39,10 @@ const editHref = isNote && filePath ? `/admin/edit?path=${encodeURIComponent(`as
 
 <script>
   import { canEditNotePath, getSupabase } from '../lib/supabase';
+  import { initPractice } from '../lib/practice';
+
+  // --- Practice boxes: "Show solution" on each box; "Grade" button on FRQs. --
+  initPractice();
 
   // --- Theorem boxes: colour-code by type; make solutions attempt-first. -----
   const TYPES: [RegExp, string][] = [

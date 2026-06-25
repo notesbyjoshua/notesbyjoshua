@@ -2,7 +2,7 @@
 title: "AP Precalculus — Practice"
 sidebar:
   label: "AP Precalculus"
-  order: 2
+  order: 5
 prev: false
 next: false
 tableOfContents:

@@ -186,3 +186,21 @@ from the regression output.
 | Confidence interval for slope | $$b\pm t^*SE_b$$ |
 | Test statistic for slope | $$t=(b-0)/SE_b$$ |
 | Degrees of freedom | $$df=n-2$$ |
+
+## Practice
+
+### FRQ
+
+::::frq{id=stats-quantslopes-1}
+1. _Temporary placeholder FRQ for wiring/testing — replace with a real free-response question for this unit._
+
+   $$(A)$$ State one key idea from this unit and explain it in your own words.
+
+   $$(B)$$ Give a worked example or application of that idea.
+
+:::solution
+$$(A)$$ _Placeholder solution._ Any accurate statement of a core concept from this unit, with a correct explanation, earns full credit.
+
+$$(B)$$ _Placeholder solution._ Any correct worked example or application consistent with part (A).
+:::
+::::

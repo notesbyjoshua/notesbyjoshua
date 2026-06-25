@@ -11,3 +11,9 @@ verify_jwt = false
 # here too.
 [functions.commit-note]
 verify_jwt = false
+
+# The grade-frq function (in-note FRQ grader) is called by anonymous students
+# with no login, so JWT verification is disabled. It guards itself with an
+# Origin allowlist, size/length caps, and OpenRouter's per-key rate limits.
+[functions.grade-frq]
+verify_jwt = false

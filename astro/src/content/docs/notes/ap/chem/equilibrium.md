@@ -301,6 +301,7 @@ This unit’s equilibrium constant logic is the same machinery you will reuse fo
 
 ### MCQ
 
+::::problem
 1. For the reaction $$\text{N}_2(g)+3\text{H}_2(g)\rightleftharpoons2\text{NH}_3(g)$$, which expression is $$K_c$$?
 
    (A) $$\dfrac{[\text{NH}_3]}{[\text{N}_2][\text{H}_2]}$$<br>
@@ -308,6 +309,20 @@ This unit’s equilibrium constant logic is the same machinery you will reuse fo
    (C) $$\dfrac{[\text{N}_2][\text{H}_2]^3}{[\text{NH}_3]^2}$$<br>
    (D) $$\dfrac{2[\text{NH}_3]}{[\text{N}_2]+3[\text{H}_2]}$$
 
+:::solution
+Gas and aqueous equilibrium expressions use concentrations raised to stoichiometric coefficients:
+
+$$
+K_c=\frac{[\text{NH}_3]^2}{[\text{N}_2][\text{H}_2]^3}.
+$$
+
+$$
+\boxed{\text{B}}
+$$
+:::
+::::
+
+::::problem
 2. For a system at equilibrium, adding a catalyst will
 
    (A) increase $$K$$<br>
@@ -315,6 +330,16 @@ This unit’s equilibrium constant logic is the same machinery you will reuse fo
    (C) shift the equilibrium toward products<br>
    (D) leave the equilibrium composition unchanged
 
+:::solution
+A catalyst speeds both forward and reverse reactions. It helps the system reach equilibrium faster, but it does not change $$K$$ or the equilibrium composition.
+
+$$
+\boxed{\text{D}}
+$$
+:::
+::::
+
+::::problem
 3. If $$Q>K$$ for a reaction mixture, the reaction will proceed
 
    (A) toward products until equilibrium is reached.<br>
@@ -322,6 +347,16 @@ This unit’s equilibrium constant logic is the same machinery you will reuse fo
    (C) in neither direction because it is already at equilibrium.<br>
    (D) only if a catalyst is added.
 
+:::solution
+If $$Q>K$$, the mixture has too much product relative to equilibrium, so it shifts toward reactants.
+
+$$
+\boxed{\text{B}}
+$$
+:::
+::::
+
+::::problem
 4. Which species is omitted from the equilibrium expression for $$\text{CaCO}_3(s)\rightleftharpoons\text{CaO}(s)+\text{CO}_2(g)$$?
 
    (A) $$\text{CO}_2(g)$$ only<br>
@@ -329,6 +364,16 @@ This unit’s equilibrium constant logic is the same machinery you will reuse fo
    (C) $$\text{CaO}(s)$$ and $$\text{CO}_2(g)$$<br>
    (D) all species
 
+:::solution
+Pure solids are omitted from equilibrium expressions, so both solids are omitted.
+
+$$
+\boxed{\text{B}}
+$$
+:::
+::::
+
+::::problem
 5. For $$\text{AgCl}(s)\rightleftharpoons\text{Ag}^+(aq)+\text{Cl}^-(aq)$$, what is the expression for $$K_{sp}$$?
 
    (A) $$[\text{Ag}^+][\text{Cl}^-]$$<br>
@@ -336,6 +381,20 @@ This unit’s equilibrium constant logic is the same machinery you will reuse fo
    (C) $$[\text{AgCl}]$$<br>
    (D) $$\dfrac{1}{[\text{Ag}^+][\text{Cl}^-]}$$
 
+:::solution
+Pure solids are omitted from equilibrium expressions, so
+
+$$
+K_{sp}=[\text{Ag}^+][\text{Cl}^-].
+$$
+
+$$
+\boxed{\text{A}}
+$$
+:::
+::::
+
+::::problem
 6. If an exothermic equilibrium reaction is heated, the equilibrium shifts
 
    (A) toward products.<br>
@@ -343,8 +402,18 @@ This unit’s equilibrium constant logic is the same machinery you will reuse fo
    (C) nowhere, because temperature does not affect equilibrium.<br>
    (D) only if a catalyst is present.
 
+:::solution
+For an exothermic reaction, heat behaves like a product. Adding heat shifts the equilibrium toward reactants.
+
+$$
+\boxed{\text{B}}
+$$
+:::
+::::
+
 ### FRQ
 
+::::frq{id=chem-equilibrium-1}
 7. At a certain temperature, $$K_c=4.00$$ for
 
 $$
@@ -359,106 +428,7 @@ A sealed container initially has $$0.600\ M$$ $$\text{A}$$ and no $$\text{B}$$.
 
    $$(C)$$ Calculate the equilibrium concentrations of $$\text{A}$$ and $$\text{B}$$.
 
-8. The 2024 AP Chemistry exam included an equilibrium particle-diagram question for $$\text{H}_2(g)+\text{I}_2(g)\rightleftharpoons2\text{HI}(g)$$. (Adapted from College Board, [2024 AP Chemistry FRQ 5](https://apcentral.collegeboard.org/media/pdf/ap24-frq-chemistry.pdf).)
-
-   $$(A)$$ Write the expression for $$Q$$.
-
-   $$(B)$$ If $$[\text{H}_2]=0.20\ M$$, $$[\text{I}_2]=0.10\ M$$, and $$[\text{HI}]=0.30\ M$$, calculate $$Q$$.
-
-   $$(C)$$ If $$K=50$$, predict the direction the system shifts.
-
----
-
-## Solutions
-
-### MCQ
-
-<div class="theorem-box">
-
-### Solution 1
-
-Gas and aqueous equilibrium expressions use concentrations raised to stoichiometric coefficients:
-
-$$
-K_c=\frac{[\text{NH}_3]^2}{[\text{N}_2][\text{H}_2]^3}.
-$$
-
-$$
-\boxed{\text{B}}
-$$
-
-</div>
-
-<div class="theorem-box">
-
-### Solution 2
-
-A catalyst speeds both forward and reverse reactions. It helps the system reach equilibrium faster, but it does not change $$K$$ or the equilibrium composition.
-
-$$
-\boxed{\text{D}}
-$$
-
-</div>
-
-<div class="theorem-box">
-
-### Solution 3
-
-If $$Q>K$$, the mixture has too much product relative to equilibrium, so it shifts toward reactants.
-
-$$
-\boxed{\text{B}}
-$$
-
-</div>
-
-<div class="theorem-box">
-
-### Solution 4
-
-Pure solids are omitted from equilibrium expressions, so both solids are omitted.
-
-$$
-\boxed{\text{B}}
-$$
-
-</div>
-
-<div class="theorem-box">
-
-### Solution 5
-
-Pure solids are omitted from equilibrium expressions, so
-
-$$
-K_{sp}=[\text{Ag}^+][\text{Cl}^-].
-$$
-
-$$
-\boxed{\text{A}}
-$$
-
-</div>
-
-<div class="theorem-box">
-
-### Solution 6
-
-For an exothermic reaction, heat behaves like a product. Adding heat shifts the equilibrium toward reactants.
-
-$$
-\boxed{\text{B}}
-$$
-
-</div>
-
-### FRQ
-
-<div class="theorem-box">
-
-### Solution 1
-
+:::solution
 $$(A)$$
 
 $$
@@ -514,13 +484,19 @@ $$
 $$
 
 The negative root is rejected because it would make no physical sense for the reaction progress variable in this setup. Both equilibrium concentrations are positive, which is a useful check.
+:::
+::::
 
-</div>
+::::frq{id=chem-equilibrium-2}
+8. The 2024 AP Chemistry exam included an equilibrium particle-diagram question for $$\text{H}_2(g)+\text{I}_2(g)\rightleftharpoons2\text{HI}(g)$$. (Adapted from College Board, [2024 AP Chemistry FRQ 5](https://apcentral.collegeboard.org/media/pdf/ap24-frq-chemistry.pdf).)
 
-<div class="theorem-box">
+   $$(A)$$ Write the expression for $$Q$$.
 
-### Solution 2
+   $$(B)$$ If $$[\text{H}_2]=0.20\ M$$, $$[\text{I}_2]=0.10\ M$$, and $$[\text{HI}]=0.30\ M$$, calculate $$Q$$.
 
+   $$(C)$$ If $$K=50$$, predict the direction the system shifts.
+
+:::solution
 $$(A)$$
 
 $$
@@ -542,5 +518,5 @@ $$(C)$$ Since $$Q<K$$, the system has too little product relative to equilibrium
 **Image placeholder:** Particle diagram for $$\text{H}_2+\text{I}_2\rightleftharpoons2\text{HI}$$ showing the mixture shifting toward more $$\text{HI}$$.
 
 </div>
-
-</div>
+:::
+::::

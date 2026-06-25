@@ -301,6 +301,7 @@ $$\text{HF}$$ is weak; $$\text{HSO}_4^-$$ is a weak acid.
 
 ### MCQ
 
+::::problem
 1. What is the $$\text{pH}$$ of a $$1.0\times10^{-3}\ M$$ solution of $$\text{HCl}$$ at $$25^\circ\text{C}$$?
 
    (A) $$1.00$$<br>
@@ -308,71 +309,7 @@ $$\text{HF}$$ is weak; $$\text{HSO}_4^-$$ is a weak acid.
    (C) $$7.00$$<br>
    (D) $$11.00$$
 
-2. A buffer contains equal concentrations of $$\text{HF}$$ and $$\text{F}^-$$. If $$K_a$$ for $$\text{HF}$$ is $$6.8\times10^{-4}$$, what is the $$\text{pH}$$ of the buffer?
-
-   (A) $$1.68$$<br>
-   (B) $$3.17$$<br>
-   (C) $$7.00$$<br>
-   (D) $$10.83$$
-
-3. Which solution has the greatest $$\text{pH}$$?
-
-   (A) $$0.10\ M\ \text{HCl}$$<br>
-   (B) $$0.10\ M\ \text{HC}_2\text{H}_3\text{O}_2$$<br>
-   (C) $$0.10\ M\ \text{NaCl}$$<br>
-   (D) $$0.10\ M\ \text{NaOH}$$
-
-4. At the half-equivalence point in a weak acid-strong base titration,
-
-   (A) $$\text{pH}=\text{p}K_a$$.<br>
-   (B) $$\text{pH}=7.00$$ for every weak acid.<br>
-   (C) all weak acid has been converted to conjugate base.<br>
-   (D) $$[\text{H}_3\text{O}^+]=[\text{OH}^-]$$.
-
-5. Which species is the conjugate base of $$\text{H}_2\text{PO}_4^-$$?
-
-   (A) $$\text{H}_3\text{PO}_4$$<br>
-   (B) $$\text{HPO}_4^{2-}$$<br>
-   (C) $$\text{PO}_4^{3-}$$<br>
-   (D) $$\text{OH}^-$$
-
-6. Which mixture is a buffer?
-
-   (A) $$\text{HCl}$$ and $$\text{NaCl}$$<br>
-   (B) $$\text{NaOH}$$ and $$\text{NaCl}$$<br>
-   (C) $$\text{HF}$$ and $$\text{NaF}$$<br>
-   (D) $$\text{HNO}_3$$ and $$\text{NaNO}_3$$
-
-### FRQ
-
-7. A $$0.100\ M$$ solution of acetic acid, $$\text{HC}_2\text{H}_3\text{O}_2$$, has $$K_a=1.8\times10^{-5}$$.
-
-   $$(A)$$ Write the acid-ionization equation.
-
-   $$(B)$$ Calculate $$[\text{H}_3\text{O}^+]$$ using the small-$$x$$ approximation.
-
-   $$(C)$$ Calculate the $$\text{pH}$$.
-
-   $$(D)$$ Explain what happens to the percent ionization if sodium acetate is added.
-
-8. The 2026 AP Chemistry exam included a nitrous acid titration and indicator question. (Adapted from College Board, [2026 AP Chemistry FRQ 3](https://apcentral.collegeboard.org/media/pdf/ap26-frq-chemistry.pdf).)
-
-   $$(A)$$ Explain why the equivalence point of a weak acid-strong base titration has $$\text{pH}>7$$.
-
-   $$(B)$$ A $$35.0\ \text{mL}$$ sample of $$\text{HNO}_2$$ is titrated to equivalence with $$21.0\ \text{mL}$$ of $$0.160\ M\ \text{NaOH}$$. Calculate the molarity of $$\text{HNO}_2$$.
-
-   $$(C)$$ Explain why an indicator should change color near the steep part of the titration curve.
-
----
-
-## Solutions
-
-### MCQ
-
-<div class="theorem-box">
-
-### Solution 1
-
+:::solution
 $$\text{HCl}$$ is a strong acid, so
 
 $$
@@ -388,13 +325,18 @@ $$
 $$
 \boxed{\text{B}}
 $$
+:::
+::::
 
-</div>
+::::problem
+2. A buffer contains equal concentrations of $$\text{HF}$$ and $$\text{F}^-$$. If $$K_a$$ for $$\text{HF}$$ is $$6.8\times10^{-4}$$, what is the $$\text{pH}$$ of the buffer?
 
-<div class="theorem-box">
+   (A) $$1.68$$<br>
+   (B) $$3.17$$<br>
+   (C) $$7.00$$<br>
+   (D) $$10.83$$
 
-### Solution 2
-
+:::solution
 When $$[\text{HF}]=[\text{F}^-]$$, the Henderson-Hasselbalch equation gives
 
 $$
@@ -408,25 +350,35 @@ $$
 $$
 \boxed{\text{B}}
 $$
+:::
+::::
 
-</div>
+::::problem
+3. Which solution has the greatest $$\text{pH}$$?
 
-<div class="theorem-box">
+   (A) $$0.10\ M\ \text{HCl}$$<br>
+   (B) $$0.10\ M\ \text{HC}_2\text{H}_3\text{O}_2$$<br>
+   (C) $$0.10\ M\ \text{NaCl}$$<br>
+   (D) $$0.10\ M\ \text{NaOH}$$
 
-### Solution 3
-
+:::solution
 $$\text{NaOH}$$ is a strong base, so it produces the greatest $$[\text{OH}^-]$$ and therefore the greatest $$\text{pH}$$.
 
 $$
 \boxed{\text{D}}
 $$
+:::
+::::
 
-</div>
+::::problem
+4. At the half-equivalence point in a weak acid-strong base titration,
 
-<div class="theorem-box">
+   (A) $$\text{pH}=\text{p}K_a$$.<br>
+   (B) $$\text{pH}=7.00$$ for every weak acid.<br>
+   (C) all weak acid has been converted to conjugate base.<br>
+   (D) $$[\text{H}_3\text{O}^+]=[\text{OH}^-]$$.
 
-### Solution 4
-
+:::solution
 At the half-equivalence point, $$[\text{HA}]=[\text{A}^-]$$. Henderson-Hasselbalch becomes
 
 $$
@@ -436,39 +388,57 @@ $$
 $$
 \boxed{\text{A}}
 $$
+:::
+::::
 
-</div>
+::::problem
+5. Which species is the conjugate base of $$\text{H}_2\text{PO}_4^-$$?
 
-<div class="theorem-box">
+   (A) $$\text{H}_3\text{PO}_4$$<br>
+   (B) $$\text{HPO}_4^{2-}$$<br>
+   (C) $$\text{PO}_4^{3-}$$<br>
+   (D) $$\text{OH}^-$$
 
-### Solution 5
-
+:::solution
 A conjugate base is formed by removing one proton. Removing $$\text{H}^+$$ from $$\text{H}_2\text{PO}_4^-$$ gives $$\text{HPO}_4^{2-}$$.
 
 $$
 \boxed{\text{B}}
 $$
+:::
+::::
 
-</div>
+::::problem
+6. Which mixture is a buffer?
 
-<div class="theorem-box">
+   (A) $$\text{HCl}$$ and $$\text{NaCl}$$<br>
+   (B) $$\text{NaOH}$$ and $$\text{NaCl}$$<br>
+   (C) $$\text{HF}$$ and $$\text{NaF}$$<br>
+   (D) $$\text{HNO}_3$$ and $$\text{NaNO}_3$$
 
-### Solution 6
-
+:::solution
 A buffer contains a weak acid and its conjugate base, or a weak base and its conjugate acid. $$\text{HF}$$ and $$\text{F}^-$$ form a buffer pair.
 
 $$
 \boxed{\text{C}}
 $$
-
-</div>
+:::
+::::
 
 ### FRQ
 
-<div class="theorem-box">
+::::frq{id=chem-acidbase-1}
+7. A $$0.100\ M$$ solution of acetic acid, $$\text{HC}_2\text{H}_3\text{O}_2$$, has $$K_a=1.8\times10^{-5}$$.
 
-### Solution 1
+   $$(A)$$ Write the acid-ionization equation.
 
+   $$(B)$$ Calculate $$[\text{H}_3\text{O}^+]$$ using the small-$$x$$ approximation.
+
+   $$(C)$$ Calculate the $$\text{pH}$$.
+
+   $$(D)$$ Explain what happens to the percent ionization if sodium acetate is added.
+
+:::solution
 $$(A)$$
 
 $$
@@ -508,13 +478,19 @@ $$
 $$
 
 $$(D)$$ Sodium acetate adds the common ion $$\text{C}_2\text{H}_3\text{O}_2^-$$, shifting the acid ionization left. Since less acetic acid ionizes, $$[\text{H}_3\text{O}^+]$$ decreases and the percent ionization decreases. This is the common-ion effect.
+:::
+::::
 
-</div>
+::::frq{id=chem-acidbase-2}
+8. The 2026 AP Chemistry exam included a nitrous acid titration and indicator question. (Adapted from College Board, [2026 AP Chemistry FRQ 3](https://apcentral.collegeboard.org/media/pdf/ap26-frq-chemistry.pdf).)
 
-<div class="theorem-box">
+   $$(A)$$ Explain why the equivalence point of a weak acid-strong base titration has $$\text{pH}>7$$.
 
-### Solution 2
+   $$(B)$$ A $$35.0\ \text{mL}$$ sample of $$\text{HNO}_2$$ is titrated to equivalence with $$21.0\ \text{mL}$$ of $$0.160\ M\ \text{NaOH}$$. Calculate the molarity of $$\text{HNO}_2$$.
 
+   $$(C)$$ Explain why an indicator should change color near the steep part of the titration curve.
+
+:::solution
 $$(A)$$ At equivalence, the weak acid has been converted mostly into its conjugate base. The conjugate base reacts with water to produce $$\text{OH}^-$$:
 
 $$
@@ -546,5 +522,5 @@ $$(C)$$ The steep part of the titration curve is where a tiny volume change caus
 **Image placeholder:** Weak acid-strong base titration curve with equivalence point above $$\text{pH}=7$$ and an indicator transition range near the steep region.
 
 </div>
-
-</div>
+:::
+::::

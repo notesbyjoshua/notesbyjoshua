@@ -705,3 +705,21 @@ The extra term is the **displacement current** contribution. It lets changing el
 | LC angular frequency | $$\omega = \dfrac{1}{\sqrt{LC}}$$ |
 | LC period | $$T = 2\pi\sqrt{LC}$$ |
 | Ampère–Maxwell law | $$\oint \vec{B}\cdot d\vec{\ell} = \mu_0 I_{\text{enc}} + \mu_0\varepsilon_0\dfrac{d\Phi_E}{dt}$$ |
+
+## Practice
+
+### FRQ
+
+::::frq{id=ap-physics-c-em-eminduction-1}
+1. _Temporary placeholder FRQ for wiring/testing — replace with a real free-response question for this unit._
+
+   $$(A)$$ State one key idea from this unit and explain it in your own words.
+
+   $$(B)$$ Give a worked example or application of that idea.
+
+:::solution
+$$(A)$$ _Placeholder solution._ Any accurate statement of a core concept from this unit, with a correct explanation, earns full credit.
+
+$$(B)$$ _Placeholder solution._ Any correct worked example or application consistent with part (A).
+:::
+::::

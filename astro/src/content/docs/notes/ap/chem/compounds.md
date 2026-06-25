@@ -193,6 +193,7 @@ Qualitatively, larger ion charges and smaller ions (shorter internuclear distanc
 
 ### MCQ
 
+::::problem
 1. Which molecule is polar?
 
    (A) $$\text{CO}_2$$<br>
@@ -200,6 +201,16 @@ Qualitatively, larger ion charges and smaller ions (shorter internuclear distanc
    (C) $$\text{CH}_4$$<br>
    (D) $$\text{NH}_3$$
 
+:::solution
+$$\text{NH}_3$$ has three N-H bonds and one lone pair on nitrogen, giving a trigonal pyramidal shape. The bond dipoles do not cancel.
+
+$$
+\boxed{\text{D}}
+$$
+:::
+::::
+
+::::problem
 2. Which compound should have the greatest lattice energy magnitude?
 
    (A) $$\text{NaF}$$<br>
@@ -207,6 +218,16 @@ Qualitatively, larger ion charges and smaller ions (shorter internuclear distanc
    (C) $$\text{MgO}$$<br>
    (D) $$\text{MgCl}_2$$
 
+:::solution
+Lattice energy increases when ion charges are larger and ion radii are smaller. $$\text{MgO}$$ contains $$\text{Mg}^{2+}$$ and $$\text{O}^{2-}$$, so the charge product is larger than in the salts with only $$1+$$ or $$1-$$ ions.
+
+$$
+\boxed{\text{C}}
+$$
+:::
+::::
+
+::::problem
 3. Which species has a tetrahedral molecular geometry?
 
    (A) $$\text{CO}_2$$<br>
@@ -214,6 +235,16 @@ Qualitatively, larger ion charges and smaller ions (shorter internuclear distanc
    (C) $$\text{CH}_4$$<br>
    (D) $$\text{BF}_3$$
 
+:::solution
+$$\text{CH}_4$$ has four bonding domains and no lone pairs on the central atom, so its molecular geometry is tetrahedral.
+
+$$
+\boxed{\text{C}}
+$$
+:::
+::::
+
+::::problem
 4. In a nitrate ion, $$\text{NO}_3^-$$, resonance means that
 
    (A) the atoms repeatedly switch positions.<br>
@@ -221,6 +252,16 @@ Qualitatively, larger ion charges and smaller ions (shorter internuclear distanc
    (C) the actual ion has three equivalent N-O bonds with bond order between single and double.<br>
    (D) the ion violates conservation of charge.
 
+:::solution
+Resonance structures are different valid Lewis structures with the same atom connectivity but different electron placement. In nitrate, the real ion is a resonance hybrid with equivalent N-O bonds.
+
+$$
+\boxed{\text{C}}
+$$
+:::
+::::
+
+::::problem
 5. Which molecule has a bent molecular geometry?
 
    (A) $$\text{CO}_2$$<br>
@@ -228,6 +269,16 @@ Qualitatively, larger ion charges and smaller ions (shorter internuclear distanc
    (C) $$\text{BF}_3$$<br>
    (D) $$\text{CH}_4$$
 
+:::solution
+Water has two bonding domains and two lone pairs around oxygen, giving a bent molecular geometry.
+
+$$
+\boxed{\text{B}}
+$$
+:::
+::::
+
+::::problem
 6. Which bond is most polar?
 
    (A) C-H<br>
@@ -235,8 +286,18 @@ Qualitatively, larger ion charges and smaller ions (shorter internuclear distanc
    (C) H-F<br>
    (D) Cl-Cl
 
+:::solution
+The H-F bond has the largest electronegativity difference among the choices, so it is the most polar.
+
+$$
+\boxed{\text{C}}
+$$
+:::
+::::
+
 ### FRQ
 
+::::frq{id=chem-compounds-1}
 7. Consider the molecules $$\text{CH}_2\text{O}$$ and $$\text{CH}_3\text{OH}$$.
 
    $$(A)$$ Draw a reasonable Lewis structure for each molecule.
@@ -245,98 +306,7 @@ Qualitatively, larger ion charges and smaller ions (shorter internuclear distanc
 
    $$(C)$$ Explain which molecule can form stronger intermolecular attractions with water.
 
-8. The 2026 AP Chemistry exam asked students about chromate resonance and VSEPR geometry. (Adapted from College Board, [2026 AP Chemistry FRQ 2](https://apcentral.collegeboard.org/media/pdf/ap26-frq-chemistry.pdf).)
-
-   $$(A)$$ Predict the molecular geometry around chromium in $$\text{CrO}_4^{2-}$$.
-
-   $$(B)$$ Explain why multiple resonance structures can be drawn for $$\text{CrO}_4^{2-}$$.
-
-   $$(C)$$ Explain why the four Cr-O bonds are expected to be equivalent in the resonance hybrid.
-
----
-
-## Solutions
-
-### MCQ
-
-<div class="theorem-box">
-
-### Solution 1
-
-$$\text{NH}_3$$ has three N-H bonds and one lone pair on nitrogen, giving a trigonal pyramidal shape. The bond dipoles do not cancel.
-
-$$
-\boxed{\text{D}}
-$$
-
-</div>
-
-<div class="theorem-box">
-
-### Solution 2
-
-Lattice energy increases when ion charges are larger and ion radii are smaller. $$\text{MgO}$$ contains $$\text{Mg}^{2+}$$ and $$\text{O}^{2-}$$, so the charge product is larger than in the salts with only $$1+$$ or $$1-$$ ions.
-
-$$
-\boxed{\text{C}}
-$$
-
-</div>
-
-<div class="theorem-box">
-
-### Solution 3
-
-$$\text{CH}_4$$ has four bonding domains and no lone pairs on the central atom, so its molecular geometry is tetrahedral.
-
-$$
-\boxed{\text{C}}
-$$
-
-</div>
-
-<div class="theorem-box">
-
-### Solution 4
-
-Resonance structures are different valid Lewis structures with the same atom connectivity but different electron placement. In nitrate, the real ion is a resonance hybrid with equivalent N-O bonds.
-
-$$
-\boxed{\text{C}}
-$$
-
-</div>
-
-<div class="theorem-box">
-
-### Solution 5
-
-Water has two bonding domains and two lone pairs around oxygen, giving a bent molecular geometry.
-
-$$
-\boxed{\text{B}}
-$$
-
-</div>
-
-<div class="theorem-box">
-
-### Solution 6
-
-The H-F bond has the largest electronegativity difference among the choices, so it is the most polar.
-
-$$
-\boxed{\text{C}}
-$$
-
-</div>
-
-### FRQ
-
-<div class="theorem-box">
-
-### Solution 1
-
+:::solution
 $$(A)$$ In $$\text{CH}_2\text{O}$$, carbon is bonded to two H atoms and double-bonded to O. In $$\text{CH}_3\text{OH}$$, carbon is bonded to three H atoms and single-bonded to O, while O is bonded to H and has two lone pairs.
 
 <div class="placeholder-box">
@@ -358,13 +328,19 @@ $$
 $$
 
 $$(C)$$ $$\text{CH}_3\text{OH}$$ forms stronger attractions with water because it can both donate and accept hydrogen bonds through its $$\text{O-H}$$ group. The O atom has lone pairs that can accept hydrogen bonds, and the H attached to O can be donated into a hydrogen bond with water. $$\text{CH}_2\text{O}$$ can accept hydrogen bonds at oxygen, but it cannot donate hydrogen bonds because its H atoms are bonded to carbon, not to a highly electronegative atom. This gives methanol stronger overall interactions with water.
+:::
+::::
 
-</div>
+::::frq{id=chem-compounds-2}
+8. The 2026 AP Chemistry exam asked students about chromate resonance and VSEPR geometry. (Adapted from College Board, [2026 AP Chemistry FRQ 2](https://apcentral.collegeboard.org/media/pdf/ap26-frq-chemistry.pdf).)
 
-<div class="theorem-box">
+   $$(A)$$ Predict the molecular geometry around chromium in $$\text{CrO}_4^{2-}$$.
 
-### Solution 2
+   $$(B)$$ Explain why multiple resonance structures can be drawn for $$\text{CrO}_4^{2-}$$.
 
+   $$(C)$$ Explain why the four Cr-O bonds are expected to be equivalent in the resonance hybrid.
+
+:::solution
 $$(A)$$ The chromium has four bonding regions around it, so the electron-domain geometry and molecular geometry are both
 
 $$
@@ -374,5 +350,5 @@ $$
 $$(B)$$ The double-bond character can be placed between chromium and different oxygen atoms while keeping the same atom connectivity and total number of valence electrons. These drawings differ only in electron placement, not in which atoms are bonded to which, so they are resonance structures rather than different compounds.
 
 $$(C)$$ The resonance hybrid averages the valid resonance structures. Since no single resonance structure fully describes the ion, the Cr-O bonds have the same average bond order and are equivalent. A good particle-level explanation is that the extra electron density is delocalized over the Cr-O bonding framework rather than locked into one permanent double bond.
-
-</div>
+:::
+::::

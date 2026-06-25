@@ -711,3 +711,21 @@ Equivalently, work-energy gives the same answer: the field does work $$W = qEd =
 | Dipole moment | $$\vec p = q\vec d$$ |
 | Dipole far field (on axis) | $$E \approx \dfrac{1}{4\pi\varepsilon_0}\dfrac{2p}{r^3}$$ |
 | Torque on a dipole | $$\vec\tau = \vec p \times \vec E,\quad \tau = pE\sin\phi$$ |
+
+## Practice
+
+### FRQ
+
+::::frq{id=ap-physics-c-em-electrostatics-1}
+1. _Temporary placeholder FRQ for wiring/testing — replace with a real free-response question for this unit._
+
+   $$(A)$$ State one key idea from this unit and explain it in your own words.
+
+   $$(B)$$ Give a worked example or application of that idea.
+
+:::solution
+$$(A)$$ _Placeholder solution._ Any accurate statement of a core concept from this unit, with a correct explanation, earns full credit.
+
+$$(B)$$ _Placeholder solution._ Any correct worked example or application consistent with part (A).
+:::
+::::

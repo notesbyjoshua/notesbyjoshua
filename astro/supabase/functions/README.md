@@ -203,3 +203,121 @@ supabase functions serve commit-note --no-verify-jwt --env-file ./supabase/.env.
 with `GITHUB_TOKEN`, `EDIT_PASSWORD`, `GITHUB_REPO`, `GITHUB_BRANCH` in
 `supabase/.env.local` (git-ignored). The dev site runs on `http://localhost:4321`,
 which is already in the function's CORS allow-list.
+
+---
+
+## `grade-frq`
+
+Backs the in-note **FRQ grader**. On any note page, each `:::frq` block renders a
+"Grade my answer" button; clicking it sends the student's answer to this
+function, which grades it with an LLM (via OpenRouter) against the question's
+model solution and returns per-part feedback.
+
+```
+:::frq block → "Grade my answer" → this function → OpenRouter → feedback
+```
+
+The browser sends **only** the student's answer + the FRQ id. The question and
+model solution are looked up server-side by id in the public FRQ manifest
+(`/generated/frq-manifest.json`, regenerated on every site build), so a student
+can't tamper with the rubric. The OpenRouter key lives here as a secret and
+never reaches the browser. The student answer is treated as untrusted text (the
+grading prompt is instructed not to follow instructions inside it).
+
+### 1. Get an OpenRouter API key
+
+- Create a free account at [openrouter.ai](https://openrouter.ai).
+- Dashboard → **Keys** → *Create API key*. Name it `notes-frq-grader`. Copy it
+  (shown once).
+- Free tier: ~50 grades/day. Add **$10** of credits to raise it to ~1,000/day
+  (only needed once a class is actually using it).
+
+### 2. Set the function secret
+
+From `astro/` (the Supabase project lives here):
+
+```bash
+supabase secrets set OPENROUTER_API_KEY=<your-openrouter-key>
+```
+
+That's the only required secret. Optional overrides (all have sensible
+defaults): `OPENROUTER_MODEL` (default `openrouter/free`), `OPENROUTER_SITE_URL`,
+`OPENROUTER_APP_TITLE`, `FRQ_MANIFEST_URL`.
+
+### 3. Deploy the function
+
+```bash
+supabase functions deploy grade-frq
+```
+
+`config.toml` already sets `verify_jwt = false` for it (students aren't logged
+in; the function guards itself with an Origin allowlist + size/length caps).
+
+The function URL is:
+
+```
+https://<your-project-ref>.functions.supabase.co/grade-frq
+```
+
+(`<your-project-ref>` is the `project_id` in `config.toml`.)
+
+### 4. Point the site at the function
+
+The grader URL is injected at build time from a **GitHub Actions repo variable**
+(not a secret — it's a public URL). Set it once:
+
+- Repo → Settings → Secrets and variables → **Actions** → **Variables** →
+  *New repository variable*
+  - Name: `PUBLIC_FRQ_GRADER_URL`
+  - Value: `https://<your-project-ref>.functions.supabase.co/grade-frq`
+
+Then re-run the **Deploy** workflow (or push any commit). Until this variable is
+set, the site builds fine and FRQ questions render normally — they just won't
+show a Grade button.
+
+### 5. Verify
+
+After the deploy finishes:
+
+- Open a chem unit page (e.g. `/notes/ap/chem/acidbase/`), scroll to an FRQ,
+  type an answer, click **Grade my answer** → feedback appears in a few seconds.
+- CORS / reachability check from a terminal:
+
+  ```bash
+  curl -i -X OPTIONS "https://<your-project-ref>.functions.supabase.co/grade-frq" \
+    -H "Origin: https://notesbyjoshua.github.io" \
+    -H "Access-Control-Request-Method: POST"
+  # expect: access-control-allow-origin: https://notesbyjoshua.github.io
+  ```
+
+### Adding FRQs to a note
+
+Wrap a question + its solution in an FRQ box (4 colons outside, 3 inside).
+The `id` must be unique across the whole site:
+
+```markdown
+::::frq{id=chem-acidbase-1}
+7. A 0.100 M acetic acid solution has $$K_a = 1.8\times10^{-5}$$.
+
+   $$(A)$$ Write the ionization equation.
+   $$(B)$$ Calculate the pH.
+
+:::solution
+$$(A)$$ … model solution …
+:::
+::::
+```
+
+Non-graded problems use `::::problem` (same shape, no `id`, no Grade button —
+just a "Show solution" toggle). `npm run frq:manifest` (run automatically by
+`prebuild`) picks up new FRQs and rebuilds the manifest.
+
+### Troubleshooting
+
+| Symptom | Cause | Fix |
+|---|---|---|
+| No Grade button on FRQs | `PUBLIC_FRQ_GRADER_URL` not set at build time | Step 4, then re-deploy |
+| "grader is not configured" | `OPENROUTER_API_KEY` secret missing | Step 2, redeploy function |
+| "Daily grading limit reached" (429) | Hit OpenRouter free quota | Add $10 credits on OpenRouter |
+| "question is not registered" | FRQ `id` not in the manifest | Rebuild site (manifest regenerates on build) |
+| CORS error in console | Origin not in the allowlist | Add it to `ALLOWED_ORIGINS` in `grade-frq/index.ts`, redeploy |

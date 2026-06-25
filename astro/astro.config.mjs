@@ -2,7 +2,9 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import remarkMath from 'remark-math';
+import remarkDirective from 'remark-directive';
 import rehypeKatex from 'rehype-katex';
+import remarkPractice from './src/lib/markdown/remark-practice.mjs';
 import redirects from './src/redirects.json' with { type: 'json' };
 import notesSidebar from './src/sidebar.json' with { type: 'json' };
 
@@ -19,7 +21,10 @@ export default defineConfig({
 	redirects,
 	markdown: {
 		// MathJax-style `$...$` (inline) and `$$...$$` (display) delimiters, rendered with KaTeX.
-		remarkPlugins: [remarkMath],
+		// remarkDirective parses `:::name{...}` blocks; remarkPractice turns
+		// `:::problem` / `:::frq{id=…}` / `:::solution` into the practice-box markup
+		// the grader + reveal toggles hook into (other directives are left alone).
+		remarkPlugins: [remarkMath, remarkDirective, remarkPractice],
 		// strict: false -> render quirks like an em-dash inside math instead of warning.
 		rehypePlugins: [[rehypeKatex, { strict: false }]],
 	},

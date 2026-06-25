@@ -156,6 +156,7 @@ Higher $$T$$ increases vapor pressure; stronger IMFs tend to lower vapor pressur
 
 ### MCQ
 
+::::problem
 1. A reaction has $$\Delta H=-85\ \text{kJ/mol}$$. Which statement is correct?
 
    (A) The reaction absorbs heat from the surroundings.<br>
@@ -163,6 +164,16 @@ Higher $$T$$ increases vapor pressure; stronger IMFs tend to lower vapor pressur
    (C) The reaction is exothermic.<br>
    (D) The reaction must be spontaneous at all temperatures.
 
+:::solution
+A negative $$\Delta H$$ means heat is released by the system. The reaction is exothermic.
+
+$$
+\boxed{\text{C}}
+$$
+:::
+::::
+
+::::problem
 2. A $$50.0\ \text{g}$$ sample of water is warmed from $$22.0^\circ\text{C}$$ to $$28.0^\circ\text{C}$$. Using $$c=4.184\ \text{J/(g}\cdot^\circ\text{C)}$$, how much heat is absorbed by the water?
 
    (A) $$1.26\times10^2\ \text{J}$$<br>
@@ -170,80 +181,7 @@ Higher $$T$$ increases vapor pressure; stronger IMFs tend to lower vapor pressur
    (C) $$5.02\times10^3\ \text{J}$$<br>
    (D) $$1.17\times10^4\ \text{J}$$
 
-3. Which process is endothermic?
-
-   (A) Freezing water<br>
-   (B) Condensing steam<br>
-   (C) Burning methane<br>
-   (D) Vaporizing liquid water
-
-4. In a coffee-cup calorimeter, the solution temperature increases. What is true about the reaction occurring in the solution?
-
-   (A) The reaction releases heat to the solution.<br>
-   (B) The reaction absorbs heat from the solution.<br>
-   (C) The reaction has no enthalpy change.<br>
-   (D) The reaction must have $$\Delta S<0$$.
-
-5. Which equation correctly represents Hess's law?
-
-   (A) $$q=mc\Delta T$$<br>
-   (B) $$\Delta H_{\text{rxn}}=\sum \Delta H_{\text{steps}}$$<br>
-   (C) $$PV=nRT$$<br>
-   (D) $$K=\frac{[\text{products}]}{[\text{reactants}]}$$
-
-6. If bonds broken require $$650\ \text{kJ}$$ and bonds formed release $$900\ \text{kJ}$$, what is the approximate $$\Delta H_{\text{rxn}}$$?
-
-   (A) $$+250\ \text{kJ}$$<br>
-   (B) $$-250\ \text{kJ}$$<br>
-   (C) $$+1550\ \text{kJ}$$<br>
-   (D) $$-1550\ \text{kJ}$$
-
-### FRQ
-
-7. A reaction is represented by
-
-$$
-2\text{H}_2(g)+\text{O}_2(g)\rightarrow2\text{H}_2\text{O}(l)
-$$
-
-with $$\Delta H^\circ_{\text{rxn}}=-572\ \text{kJ}$$ for the reaction as written.
-
-   $$(A)$$ Calculate the enthalpy change for forming $$1.00\ \text{mol}$$ of $$\text{H}_2\text{O}(l)$$.
-
-   $$(B)$$ Calculate the enthalpy change when $$4.00\ \text{mol}$$ of $$\text{H}_2(g)$$ reacts completely.
-
-   $$(C)$$ Explain why breaking bonds is endothermic even when the overall reaction is exothermic.
-
-8. The 2026 AP Chemistry exam included a sodium oxide thermochemistry problem using formation enthalpy and limiting reactants. (Adapted from College Board, [2026 AP Chemistry FRQ 7](https://apcentral.collegeboard.org/media/pdf/ap26-frq-chemistry.pdf).)
-
-   $$(A)$$ For $$4\text{Na}(s)+\text{O}_2(g)\rightarrow2\text{Na}_2\text{O}(s)$$ with $$\Delta H^\circ_{\text{rxn}}=-828\ \text{kJ}$$, calculate $$\Delta H_f^\circ$$ for $$\text{Na}_2\text{O}(s)$$.
-
-   $$(B)$$ If $$2.00\ \text{mol}$$ Na reacts completely with excess oxygen, calculate the heat released.
-
-   $$(C)$$ Explain why elements in their standard states have $$\Delta H_f^\circ=0$$.
-
----
-
-## Solutions
-
-### MCQ
-
-<div class="theorem-box">
-
-### Solution 1
-
-A negative $$\Delta H$$ means heat is released by the system. The reaction is exothermic.
-
-$$
-\boxed{\text{C}}
-$$
-
-</div>
-
-<div class="theorem-box">
-
-### Solution 2
-
+:::solution
 Use
 
 $$
@@ -259,49 +197,69 @@ $$
 $$
 \boxed{\text{B}}
 $$
+:::
+::::
 
-</div>
+::::problem
+3. Which process is endothermic?
 
-<div class="theorem-box">
+   (A) Freezing water<br>
+   (B) Condensing steam<br>
+   (C) Burning methane<br>
+   (D) Vaporizing liquid water
 
-### Solution 3
-
+:::solution
 Vaporization requires energy to overcome intermolecular attractions in the liquid.
 
 $$
 \boxed{\text{D}}
 $$
+:::
+::::
 
-</div>
+::::problem
+4. In a coffee-cup calorimeter, the solution temperature increases. What is true about the reaction occurring in the solution?
 
-<div class="theorem-box">
+   (A) The reaction releases heat to the solution.<br>
+   (B) The reaction absorbs heat from the solution.<br>
+   (C) The reaction has no enthalpy change.<br>
+   (D) The reaction must have $$\Delta S<0$$.
 
-### Solution 4
-
+:::solution
 If the solution temperature increases, the solution absorbed heat. The reaction released that heat, so the reaction is exothermic.
 
 $$
 \boxed{\text{A}}
 $$
+:::
+::::
 
-</div>
+::::problem
+5. Which equation correctly represents Hess's law?
 
-<div class="theorem-box">
+   (A) $$q=mc\Delta T$$<br>
+   (B) $$\Delta H_{\text{rxn}}=\sum \Delta H_{\text{steps}}$$<br>
+   (C) $$PV=nRT$$<br>
+   (D) $$K=\frac{[\text{products}]}{[\text{reactants}]}$$
 
-### Solution 5
-
+:::solution
 Hess's law says enthalpy is a state function, so the enthalpy change for an overall reaction equals the sum of the enthalpy changes for the steps.
 
 $$
 \boxed{\text{B}}
 $$
+:::
+::::
 
-</div>
+::::problem
+6. If bonds broken require $$650\ \text{kJ}$$ and bonds formed release $$900\ \text{kJ}$$, what is the approximate $$\Delta H_{\text{rxn}}$$?
 
-<div class="theorem-box">
+   (A) $$+250\ \text{kJ}$$<br>
+   (B) $$-250\ \text{kJ}$$<br>
+   (C) $$+1550\ \text{kJ}$$<br>
+   (D) $$-1550\ \text{kJ}$$
 
-### Solution 6
-
+:::solution
 Use
 
 $$
@@ -315,15 +273,27 @@ $$
 $$
 \boxed{\text{B}}
 $$
-
-</div>
+:::
+::::
 
 ### FRQ
 
-<div class="theorem-box">
+::::frq{id=chem-thermochemistry-1}
+7. A reaction is represented by
 
-### Solution 1
+$$
+2\text{H}_2(g)+\text{O}_2(g)\rightarrow2\text{H}_2\text{O}(l)
+$$
 
+with $$\Delta H^\circ_{\text{rxn}}=-572\ \text{kJ}$$ for the reaction as written.
+
+   $$(A)$$ Calculate the enthalpy change for forming $$1.00\ \text{mol}$$ of $$\text{H}_2\text{O}(l)$$.
+
+   $$(B)$$ Calculate the enthalpy change when $$4.00\ \text{mol}$$ of $$\text{H}_2(g)$$ reacts completely.
+
+   $$(C)$$ Explain why breaking bonds is endothermic even when the overall reaction is exothermic.
+
+:::solution
 $$(A)$$ The reaction forms $$2$$ moles of water, so the enthalpy change must be divided by $$2$$ to find the value per mole of water:
 
 $$
@@ -339,13 +309,19 @@ $$
 $$
 
 $$(C)$$ Energy must be added to separate bonded atoms, so bond breaking is endothermic. The overall reaction is exothermic because forming the O-H bonds in water releases more energy than was required to break the H-H and O=O bonds. In bond-enthalpy language, $$\Delta H_{\text{rxn}}$$ is negative because the energy released by bonds formed is greater than the energy absorbed by bonds broken.
+:::
+::::
 
-</div>
+::::frq{id=chem-thermochemistry-2}
+8. The 2026 AP Chemistry exam included a sodium oxide thermochemistry problem using formation enthalpy and limiting reactants. (Adapted from College Board, [2026 AP Chemistry FRQ 7](https://apcentral.collegeboard.org/media/pdf/ap26-frq-chemistry.pdf).)
 
-<div class="theorem-box">
+   $$(A)$$ For $$4\text{Na}(s)+\text{O}_2(g)\rightarrow2\text{Na}_2\text{O}(s)$$ with $$\Delta H^\circ_{\text{rxn}}=-828\ \text{kJ}$$, calculate $$\Delta H_f^\circ$$ for $$\text{Na}_2\text{O}(s)$$.
 
-### Solution 2
+   $$(B)$$ If $$2.00\ \text{mol}$$ Na reacts completely with excess oxygen, calculate the heat released.
 
+   $$(C)$$ Explain why elements in their standard states have $$\Delta H_f^\circ=0$$.
+
+:::solution
 $$(A)$$ The reaction forms $$2$$ moles of $$\text{Na}_2\text{O}(s)$$ from elements in their standard states, so the reaction enthalpy is twice the molar enthalpy of formation:
 
 $$
@@ -361,5 +337,5 @@ $$
 So $$414\ \text{kJ}$$ of heat is released.
 
 $$(C)$$ Formation enthalpy measures formation from elements in their standard states. An element already in its standard state requires no formation reaction, so its assigned value is zero. This is a reference convention that lets formation enthalpies be added and subtracted consistently in Hess's law calculations.
-
-</div>
+:::
+::::

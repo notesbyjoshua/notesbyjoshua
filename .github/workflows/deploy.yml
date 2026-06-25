@@ -35,7 +35,15 @@ jobs:
       - run: python3 scripts/notes_progress.py
       # Supabase URL/anon key are committed as public defaults in src/lib/supabase.ts,
       # so no build-time secrets are needed.
+      #
+      # PUBLIC_FRQ_GRADER_URL points the in-note FRQ grader at the deployed
+      # grade-frq Supabase function. Set it as a repo *variable* (Settings >
+      # Secrets and variables > Actions > Variables). If unset, the build still
+      # succeeds and FRQ questions render normally — just without a Grade button.
+      # `npm run build` runs `prebuild` first, regenerating the FRQ manifest.
       - run: npm run build
+        env:
+          PUBLIC_FRQ_GRADER_URL: ${{ vars.PUBLIC_FRQ_GRADER_URL }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: astro/dist
