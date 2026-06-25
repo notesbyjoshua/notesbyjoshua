@@ -8,7 +8,6 @@
 
 <aside class="doc-minimap" data-doc-minimap aria-label="Page minimap" hidden>
 	<div class="doc-minimap__preview" data-minimap-preview>
-		<div class="doc-minimap__scaled doc-minimap__scaled--blur" data-minimap-blur aria-hidden="true"></div>
 		<div class="doc-minimap__scaled doc-minimap__scaled--sharp" data-minimap-sharp aria-hidden="true"></div>
 		<div class="doc-minimap__viewport" data-minimap-viewport aria-hidden="true"></div>
 		<nav class="doc-minimap__labels" data-minimap-labels aria-label="Headings"></nav>
@@ -34,7 +33,6 @@
 		--minimap-preview-pad-x: 0.5rem;
 		--minimap-preview-pad-y: 0.5rem;
 		--minimap-feather: 16px;
-		--minimap-blur: 1.3px;
 	}
 	.doc-minimap[hidden] { display: none; }
 
@@ -66,7 +64,6 @@
 		width: var(--article-width, 720px) !important;
 		pointer-events: none !important;
 	}
-	.doc-minimap__scaled--blur { filter: blur(var(--minimap-blur, 1.3px)); opacity: 0.5; z-index: 0; }
 	.doc-minimap__scaled--sharp { opacity: 0.9; z-index: 1; will-change: mask-image; }
 
 	.doc-minimap__viewport {

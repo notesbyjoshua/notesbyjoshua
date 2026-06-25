@@ -202,7 +202,6 @@ function setup(): Controller | null {
 
 	const minimap = document.querySelector<HTMLElement>('[data-doc-minimap]');
 	const preview = document.querySelector<HTMLElement>('[data-minimap-preview]');
-	const blurSlot = document.querySelector<HTMLElement>('[data-minimap-blur]');
 	const sharpSlot = document.querySelector<HTMLElement>('[data-minimap-sharp]');
 	const vpEl = document.querySelector<HTMLElement>('[data-minimap-viewport]');
 	const labelsEl = document.querySelector<HTMLElement>('[data-minimap-labels]');
@@ -211,7 +210,7 @@ function setup(): Controller | null {
 		[...document.querySelectorAll<HTMLElement>('.sl-markdown-content')].find(
 			(el) => !el.closest('[data-ref-sheet]'),
 		) ?? null;
-	if (!minimap || !preview || !blurSlot || !sharpSlot || !vpEl || !labelsEl || !article) return null;
+	if (!minimap || !preview || !sharpSlot || !vpEl || !labelsEl || !article) return null;
 
 	const headings = readHeadings(article);
 	if (headings.length < 2) return null; // not worth a minimap for a tiny page
@@ -223,7 +222,6 @@ function setup(): Controller | null {
 	const abort = new AbortController();
 	const { signal } = abort;
 
-	blurSlot.replaceChildren(buildClone(article));
 	sharpSlot.replaceChildren(buildClone(article));
 	buildLabels(labelsEl, headings);
 	minimap.removeAttribute('hidden');
@@ -263,7 +261,6 @@ function setup(): Controller | null {
 			cancelAnimationFrame(syncRaf);
 			ro.disconnect();
 			spy.disconnect();
-			blurSlot.replaceChildren();
 			sharpSlot.replaceChildren();
 			labelsEl.replaceChildren();
 			minimap.hidden = true;
