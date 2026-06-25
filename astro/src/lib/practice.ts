@@ -277,9 +277,11 @@ function enhanceBox(box: HTMLElement) {
       '',
     );
     // Hidden until a grade is shown, then toggles the feedback like a solution.
-    const fbToggle = makeButton('problem-btn problem-btn--ghost', 'Hide feedback');
+    // Default label is "Show feedback" so it never reads "Hide feedback" while
+    // there's nothing to hide.
+    const fbToggle = makeButton('problem-btn problem-btn--ghost', 'Show feedback');
     fbToggle.setAttribute('data-frq-feedback-toggle', '');
-    fbToggle.setAttribute('aria-expanded', 'true');
+    fbToggle.setAttribute('aria-expanded', 'false');
     fbToggle.hidden = true;
     fbToggle.addEventListener('click', () => {
       if (!output) return;
