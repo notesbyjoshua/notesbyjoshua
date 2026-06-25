@@ -87,6 +87,16 @@ export default defineConfig({
 					content:
 						"window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-868QCS9DJP');",
 				},
+				// Neutralise Starlight's sidebar-state persister (it remembers which
+				// groups you opened in sessionStorage and re-opens them on the next
+				// page — so a manually-opened group like AP Calculus would reappear on
+				// unrelated pages). Clearing the key in <head>, before the body's
+				// restore script runs, makes every page use its correct server-rendered
+				// accordion state (only the current page's group open). Runs head-first.
+				{
+					tag: 'script',
+					content: "try{sessionStorage.removeItem('sl-sidebar-state')}catch(e){}",
+				},
 				// Sidebar accordion: opening a nav group collapses its open siblings so
 				// the sidebar stays tidy. `toggle` doesn't bubble, but a capture-phase
 				// listener still sees it, so one delegated handler covers every group.
