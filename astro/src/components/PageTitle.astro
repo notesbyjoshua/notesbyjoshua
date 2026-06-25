@@ -5,6 +5,7 @@
 // practice "Solution" boxes into attempt-first collapsibles (all pages).
 import Default from '@astrojs/starlight/components/PageTitle.astro';
 import PracticeFilters from './PracticeFilters.astro';
+import Highlighter from './Highlighter.astro';
 const path = Astro.url.pathname;
 const isNote = path.startsWith('/notes/');
 // Subject practice pages (not the /practiceproblems/practice/ overview) get a
@@ -37,9 +38,14 @@ const editHref = isNote && filePath ? `/admin/edit?path=${encodeURIComponent(`as
         <span class="bookmark-star" aria-hidden="true">☆</span>
         <span class="bookmark-label">Bookmark</span>
       </button>
+      <button class="highlight-btn" type="button" aria-pressed="false" hidden>
+        <span class="highlight-pen" aria-hidden="true">🖊</span>
+        <span class="highlight-label">Highlight</span>
+      </button>
     </div>
   )}
 </div>
+{isNote && <Highlighter slug={path} />}
 {isPracticeSubject && <PracticeFilters />}
 
 <script>

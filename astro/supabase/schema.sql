@@ -199,6 +199,31 @@ create policy "admins read feedback" on public.feedback
 
 
 -- ---------------------------------------------------------------------------
+-- Per-user highlights: text a signed-in reader has highlighted on a note.
+-- Anchored by character offsets into the rendered note text, plus the quoted
+-- text for reference. Personal to each user (like bookmarks / read state).
+-- ---------------------------------------------------------------------------
+create table if not exists public.highlights (
+  id         uuid primary key default gen_random_uuid(),
+  user_id    uuid not null references auth.users (id) on delete cascade,
+  slug       text not null,                       -- note route, e.g. /notes/ap/chem/kinetics/
+  quote      text not null,                       -- the highlighted text (for reference)
+  start_off  integer not null,                    -- char offset into the note's text content
+  end_off    integer not null,
+  color      text not null default 'yellow',
+  created_at timestamptz not null default now()
+);
+
+alter table public.highlights enable row level security;
+
+drop policy if exists "own highlights" on public.highlights;
+create policy "own highlights" on public.highlights
+  for all using (auth.uid() = user_id) with check (auth.uid() = user_id);
+
+create index if not exists highlights_user_slug on public.highlights (user_id, slug);
+
+
+-- ---------------------------------------------------------------------------
 -- Admin to-do list: a personal task list for each admin (add / check off /
 -- delete). Admin-only, and each admin sees only their own items.
 -- ---------------------------------------------------------------------------

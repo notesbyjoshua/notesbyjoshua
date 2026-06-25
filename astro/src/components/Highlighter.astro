@@ -1,0 +1,180 @@
+---
+// Per-user text highlighting for note pages. Rendered (no visible markup of its
+// own) on note pages; it wires the `.highlight-btn` toggle in the page actions.
+//
+// - Signed-in users only (highlights persist per account in public.highlights).
+// - Rendered with the CSS Custom Highlight API, so the note DOM is never
+//   rewritten (robust across math/links; nothing to clean up).
+// - Anchored by character offsets into the note's rendered text content.
+// - With highlight mode ON: select text to highlight it; click an existing
+//   highlight to remove it. Mode OFF: reading/selecting/copying is untouched.
+---
+<script>
+  import { getSupabase } from '../lib/supabase';
+
+  const btn = document.querySelector<HTMLButtonElement>('.highlight-btn');
+  const content = document.querySelector<HTMLElement>('.sl-markdown-content');
+  const sb = getSupabase();
+  // Feature-detect the CSS Custom Highlight API.
+  const HL = (window as any).Highlight;
+  const supported = typeof HL === 'function' && (CSS as any)?.highlights;
+
+  type Row = { id: string; start_off: number; end_off: number; quote: string };
+
+  if (btn && content && sb && supported) {
+    const slug = location.pathname;
+    let uid: string | null = null;
+    let mode = false;
+    let rows: Row[] = [];
+
+    const registry = new HL();
+    (CSS as any).highlights.set('note-highlight', registry);
+
+    // --- offset <-> Range helpers (offsets are over the content's text) -------
+    const offsetOf = (node: Node, off: number): number => {
+      const r = document.createRange();
+      r.setStart(content, 0);
+      r.setEnd(node, off);
+      return r.toString().length;
+    };
+    const textNodes = (): Text[] => {
+      const out: Text[] = [];
+      const w = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      let n: Node | null;
+      while ((n = w.nextNode())) out.push(n as Text);
+      return out;
+    };
+    const rangeFromOffsets = (start: number, end: number): Range | null => {
+      const r = document.createRange();
+      let acc = 0;
+      let setStart = false;
+      for (const tn of textNodes()) {
+        const len = tn.nodeValue!.length;
+        if (!setStart && start <= acc + len) { r.setStart(tn, start - acc); setStart = true; }
+        if (end <= acc + len) { r.setEnd(tn, end - acc); return setStart ? r : null; }
+        acc += len;
+      }
+      return null;
+    };
+
+    const render = () => {
+      registry.clear();
+      for (const h of rows) {
+        const r = rangeFromOffsets(h.start_off, h.end_off);
+        if (r) registry.add(r);
+      }
+    };
+
+    const offsetFromPoint = (x: number, y: number): number | null => {
+      const doc = document as any;
+      let node: Node | null = null;
+      let off = 0;
+      if (doc.caretPositionFromPoint) {
+        const p = doc.caretPositionFromPoint(x, y);
+        if (!p) return null;
+        node = p.offsetNode; off = p.offset;
+      } else if (doc.caretRangeFromPoint) {
+        const rr = doc.caretRangeFromPoint(x, y);
+        if (!rr) return null;
+        node = rr.startContainer; off = rr.startOffset;
+      }
+      if (!node || !content.contains(node)) return null;
+      return offsetOf(node, off);
+    };
+
+    async function load() {
+      const { data, error } = await sb!
+        .from('highlights')
+        .select('id, start_off, end_off, quote')
+        .eq('slug', slug);
+      if (error) { console.error('[highlight] load failed:', error); return; }
+      rows = (data ?? []) as Row[];
+      render();
+    }
+
+    async function add(start: number, end: number, quote: string) {
+      if (!uid) return;
+      const { data, error } = await sb!
+        .from('highlights')
+        .insert({ user_id: uid, slug, start_off: start, end_off: end, quote: quote.slice(0, 2000) })
+        .select('id, start_off, end_off, quote')
+        .single();
+      if (error) { console.error('[highlight] add failed:', error); return; }
+      rows.push(data as Row);
+      render();
+    }
+
+    async function remove(row: Row) {
+      const { error } = await sb!.from('highlights').delete().eq('id', row.id);
+      if (error) { console.error('[highlight] remove failed:', error); return; }
+      rows = rows.filter((r) => r.id !== row.id);
+      render();
+    }
+
+    let suppressClick = false;
+
+    content.addEventListener('mouseup', () => {
+      if (!mode) return;
+      const sel = window.getSelection();
+      if (!sel || sel.isCollapsed || sel.rangeCount === 0) return;
+      const range = sel.getRangeAt(0);
+      if (!content.contains(range.commonAncestorContainer)) return;
+      const start = offsetOf(range.startContainer, range.startOffset);
+      const end = offsetOf(range.endContainer, range.endOffset);
+      const quote = sel.toString();
+      sel.removeAllRanges();
+      if (end > start) {
+        suppressClick = true; // the click that follows mouseup shouldn't "remove"
+        setTimeout(() => { suppressClick = false; }, 400);
+        add(start, end, quote);
+      }
+    });
+
+    content.addEventListener('click', (e) => {
+      if (!mode) return;
+      if (suppressClick) { suppressClick = false; return; }
+      const sel = window.getSelection();
+      if (sel && !sel.isCollapsed) return; // mid-selection, not a remove click
+      const off = offsetFromPoint(e.clientX, e.clientY);
+      if (off == null) return;
+      const hit = rows.find((h) => off >= h.start_off && off < h.end_off);
+      if (hit) remove(hit);
+    });
+
+    btn.addEventListener('click', () => {
+      mode = !mode;
+      btn.setAttribute('aria-pressed', String(mode));
+      btn.classList.toggle('is-on', mode);
+      document.body.classList.toggle('hl-mode', mode);
+    });
+
+    sb.auth.onAuthStateChange((_event, session) => {
+      if (session?.user) {
+        uid = session.user.id;
+        btn.hidden = false;
+        load();
+      } else {
+        uid = null;
+        btn.hidden = true;
+        mode = false;
+        btn.classList.remove('is-on');
+        document.body.classList.remove('hl-mode');
+        rows = [];
+        render();
+      }
+    });
+  }
+</script>
+
+<style is:global>
+  /* The highlight itself (CSS Custom Highlight API — no DOM elements). */
+  ::highlight(note-highlight) { background-color: rgba(250, 204, 21, 0.45); }
+  :root[data-theme='dark'] ::highlight(note-highlight) { background-color: rgba(250, 204, 21, 0.30); }
+
+  /* While highlight mode is on, hint that selecting text will highlight it. */
+  body.hl-mode .sl-markdown-content { cursor: text; }
+  .highlight-btn.is-on {
+    border-color: #facc15 !important;
+    color: #facc15 !important;
+  }
+</style>
