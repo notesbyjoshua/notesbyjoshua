@@ -60,6 +60,12 @@
 :root[data-theme='dark'] .sl-markdown-content .theorem-box.tb--proof    { border-left-color: #cbd5e1; background: rgba(148, 163, 184, 0.16); }
 :root[data-theme='dark'] .sl-markdown-content .theorem-box.tb--solution { border-left-color: #4ade80; background: rgba(74, 222, 128, 0.13); }
 
+/* Writers/admins-only sidebar link ("Writing guide"): hidden until the root
+   gets `.is-writer` (set by HeaderAccount.astro from the cached role). Hides the
+   whole <li> so readers see no gap. */
+.sidebar-content li:has(> a.writer-only) { display: none; }
+:root.is-writer .sidebar-content li:has(> a.writer-only) { display: revert; }
+
 /* Example subject chip (theorem-box `**Example (Subject).**`), client-inserted
    by PageTitle.astro. Matches the callout named-chip look, amber like tb--ex. */
 .sl-markdown-content .tb-tag {

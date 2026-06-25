@@ -40,7 +40,6 @@ const totalNotes = countLeaves(notesSidebar as Item[]);
       <a href="/practiceproblems/practice/">Practice Problems</a>
       <a href="/feedback/">Feedback</a>
       <a class="ha-write" href="/admin/edit/" hidden>Write</a>
-      <a class="ha-guide" href="/writing-notes/" hidden>Writing guide</a>
       <a class="ha-admin" href="/admin/" hidden>Admin</a>
       <button type="button" class="ha-signout">Sign out</button>
     </div>
@@ -68,7 +67,6 @@ const totalNotes = countLeaves(notesSidebar as Item[]);
     const dotEl = root.querySelector<HTMLElement>('.ha-dot')!;
     const statsEl = root.querySelector<HTMLElement>('.ha-stats')!;
     const writeEl = root.querySelector<HTMLElement>('.ha-write')!;
-    const guideEl = root.querySelector<HTMLElement>('.ha-guide')!;
     const adminEl = root.querySelector<HTMLElement>('.ha-admin')!;
     const signout = root.querySelector<HTMLElement>('.ha-signout')!;
     const close = () => { menu.hidden = true; toggle.setAttribute('aria-expanded', 'false'); };
@@ -101,13 +99,16 @@ const totalNotes = countLeaves(notesSidebar as Item[]);
       try { await sb!.auth.signOut(); } catch (err) { console.error('[header] signout failed:', err); }
       close();
     });
-    return { signin, wrap, toggle, menu, nameEl, avatarEl, dotEl, statsEl, writeEl, guideEl, adminEl, close };
+    return { signin, wrap, toggle, menu, nameEl, avatarEl, dotEl, statsEl, writeEl, adminEl, close };
   }
 
   if (sb && roots.length) {
     const instances = roots.map(wire);
 
     const apply = (s: State | null) => {
+      // Flag writers/admins on the root so the sidebar's "Writing guide" link
+      // (a.writer-only) can reveal itself. Leave unchanged while state is unknown.
+      if (s) document.documentElement.classList.toggle('is-writer', !!(s.in && (s.admin || s.writer)));
       for (const i of instances) {
         if (s?.in) {
           i.signin.hidden = true;
@@ -117,7 +118,6 @@ const totalNotes = countLeaves(notesSidebar as Item[]);
           if (s.avatar) { i.avatarEl.src = s.avatar; i.avatarEl.hidden = false; i.dotEl.hidden = true; }
           else { i.avatarEl.hidden = true; i.dotEl.hidden = false; }
           i.writeEl.hidden = !(s.admin || s.writer);
-          i.guideEl.hidden = !(s.admin || s.writer);
           i.adminEl.hidden = !s.admin;
           if (typeof s.pct === 'number') { i.statsEl.textContent = `${s.pct}% read`; i.statsEl.hidden = false; }
           else i.statsEl.hidden = true;
