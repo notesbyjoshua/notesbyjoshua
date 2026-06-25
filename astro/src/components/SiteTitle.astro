@@ -1,0 +1,78 @@
+---
+// Single-row header: render Starlight's site title, then the site nav inline
+// right after it (so the nav shares the header row with the search bar instead
+// of a cluttered second tier). Desktop only (≥75rem). The same links live in
+// the sidebar config tagged `site-link`: shown in the sidebar below 75rem
+// (incl. the mobile drawer), hidden at ≥75rem where this nav takes over.
+import Default from '@astrojs/starlight/components/SiteTitle.astro';
+
+const links = [
+	{ label: 'Home', href: '/' },
+	{ label: 'How to use', href: '/how-to-use-these-notes/' },
+	{ label: 'Resources', href: '/resources/resources/' },
+	{ label: 'Blog', href: '/blog/' },
+	{ label: 'About', href: '/about/' },
+	{ label: 'Feedback', href: '/feedback/' },
+];
+const path = Astro.url.pathname;
+const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWith(href));
+---
+
+<div class="site-title-nav">
+	<Default />
+	<nav class="site-top-nav" aria-label="Site">
+		{links.map((l) => (
+			<a
+				href={l.href}
+				class:list={['site-top-nav__link', { 'is-active': isActive(l.href) }]}
+				aria-current={isActive(l.href) ? 'page' : undefined}
+			>
+				{l.label}
+			</a>
+		))}
+	</nav>
+</div>
+
+<style is:global>
+	.site-title-nav {
+		display: flex;
+		align-items: center;
+		gap: 1.5rem;
+		min-width: 0;
+	}
+	/* Hidden by default; only inline on wide screens (links stay in the sidebar
+	   otherwise). */
+	.site-top-nav { display: none; }
+
+	@media (min-width: 75rem) {
+		/* Starlight clips the title column, which stops it growing to fit the
+		   inline nav (so the nav would overlap the search). Let it expand; the
+		   search box (the 1fr track) gives up the space instead. */
+		.header .title-wrapper { overflow: visible; }
+
+		.site-top-nav {
+			display: flex;
+			align-items: center;
+			gap: 1.25rem;
+			white-space: nowrap;
+		}
+		.site-top-nav__link {
+			font-family: var(--font-ui, sans-serif);
+			font-size: var(--sl-text-sm);
+			font-weight: 600;
+			color: var(--sl-color-text);
+			text-decoration: none;
+			padding: 0.1rem 0;
+			border-bottom: 2px solid transparent;
+		}
+		.site-top-nav__link:hover { color: var(--sl-color-text-accent); }
+		.site-top-nav__link.is-active {
+			color: var(--sl-color-text-accent);
+			border-bottom-color: var(--sl-color-accent);
+		}
+
+		/* At this width the inline nav covers the site pages, so hide the
+		   duplicated links from the sidebar (they remain below 75rem). */
+		.sidebar-content a.site-link { display: none; }
+	}
+</style>

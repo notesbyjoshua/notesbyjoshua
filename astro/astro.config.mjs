@@ -58,8 +58,8 @@ export default defineConfig({
 				ThemeSelect: './src/components/ThemeSelect.astro',
 				// Universal mount point for the animated paper-canvas background.
 				Head: './src/components/Head.astro',
-				// Two-tier header: Starlight's bar + a second-row site nav (desktop).
-				Header: './src/components/Header.astro',
+				// Inline the site nav next to the title (single-row header, desktop).
+				SiteTitle: './src/components/SiteTitle.astro',
 			},
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/notesbyjoshua' }],
 			customCss: [
