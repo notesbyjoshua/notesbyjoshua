@@ -12,6 +12,8 @@
 //
 // Called once from PageTitle.astro's note-page script.
 
+import { SUPABASE_ANON_KEY } from './supabase';
+
 const GRADER_URL = import.meta.env.PUBLIC_FRQ_GRADER_URL as string | undefined;
 const ANON_ID_KEY = 'notes_frq_anon_id';
 
@@ -183,11 +185,19 @@ async function gradeFrq(frq: HTMLElement) {
   output.classList.remove('is-error');
   output.textContent = 'Grading…';
   if (gradeBtn) gradeBtn.disabled = true;
+  const fbToggle = frq.querySelector<HTMLButtonElement>('[data-frq-feedback-toggle]');
+  if (fbToggle) fbToggle.hidden = true;
 
   try {
     const res = await fetch(GRADER_URL, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        // The Supabase /functions/v1/ gateway requires the public anon key even
+        // though grade-frq runs with verify_jwt = false.
+        apikey: SUPABASE_ANON_KEY,
+        Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
+      },
       body: JSON.stringify({
         frqId,
         pagePath: graderPagePath(),
@@ -209,6 +219,11 @@ async function gradeFrq(frq: HTMLElement) {
     }
     output.classList.remove('is-loading', 'is-error');
     output.innerHTML = renderGrade(data);
+    if (fbToggle) {
+      fbToggle.hidden = false;
+      fbToggle.textContent = 'Hide feedback';
+      fbToggle.setAttribute('aria-expanded', 'true');
+    }
   } catch {
     output.classList.remove('is-loading');
     output.classList.add('is-error');
@@ -234,9 +249,6 @@ function enhanceBox(box: HTMLElement) {
 
   const solution = box.querySelector<HTMLElement>('[data-solution]');
   const isFrq = box.hasAttribute('data-frq');
-
-  const controls = document.createElement('div');
-  controls.className = 'problem-controls';
 
   let output: HTMLElement | null = null;
   if (isFrq && GRADER_URL) {
@@ -264,6 +276,19 @@ function enhanceBox(box: HTMLElement) {
       'data-frq-grade',
       '',
     );
+    // Hidden until a grade is shown, then toggles the feedback like a solution.
+    const fbToggle = makeButton('problem-btn problem-btn--ghost', 'Hide feedback');
+    fbToggle.setAttribute('data-frq-feedback-toggle', '');
+    fbToggle.setAttribute('aria-expanded', 'true');
+    fbToggle.hidden = true;
+    fbToggle.addEventListener('click', () => {
+      if (!output) return;
+      const opening = output.hidden;
+      output.hidden = !opening;
+      fbToggle.textContent = opening ? 'Hide feedback' : 'Show feedback';
+      fbToggle.setAttribute('aria-expanded', String(opening));
+    });
+    actions.appendChild(fbToggle);
   }
   if (solution) {
     const toggle = makeButton('problem-btn problem-btn--ghost', 'Show solution');

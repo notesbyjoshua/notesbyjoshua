@@ -11,6 +11,11 @@ const anonKey =
 	import.meta.env.PUBLIC_SUPABASE_ANON_KEY ||
 	'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdlcXdqcnhkYmFsYXZpdXN0ZWVvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODIyMzY5MzYsImV4cCI6MjA5NzgxMjkzNn0.YGgu5YWMWFweq92xPpiA1hwe4dcaeh0JdVl4fgDOWO4';
 
+// Public defaults, exported for code that calls Edge Functions with a raw fetch
+// (e.g. the FRQ grader): the `/functions/v1/` gateway wants the anon key as an
+// `apikey` header even when the function itself sets verify_jwt = false.
+export const SUPABASE_ANON_KEY = anonKey;
+
 /** Returns the browser Supabase client, or null if env vars aren't configured.
  *
  * Cached on globalThis so every component script (header, account, dashboard,

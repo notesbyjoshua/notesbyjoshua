@@ -256,7 +256,7 @@ in; the function guards itself with an Origin allowlist + size/length caps).
 The function URL is:
 
 ```
-https://<your-project-ref>.functions.supabase.co/grade-frq
+https://<your-project-ref>.supabase.co/functions/v1/grade-frq
 ```
 
 (`<your-project-ref>` is the `project_id` in `config.toml`.)
@@ -269,7 +269,7 @@ The grader URL is injected at build time from a **GitHub Actions repo variable**
 - Repo → Settings → Secrets and variables → **Actions** → **Variables** →
   *New repository variable*
   - Name: `PUBLIC_FRQ_GRADER_URL`
-  - Value: `https://<your-project-ref>.functions.supabase.co/grade-frq`
+  - Value: `https://<your-project-ref>.supabase.co/functions/v1/grade-frq`
 
 Then re-run the **Deploy** workflow (or push any commit). Until this variable is
 set, the site builds fine and FRQ questions render normally — they just won't
@@ -284,7 +284,7 @@ After the deploy finishes:
 - CORS / reachability check from a terminal:
 
   ```bash
-  curl -i -X OPTIONS "https://<your-project-ref>.functions.supabase.co/grade-frq" \
+  curl -i -X OPTIONS "https://<your-project-ref>.supabase.co/functions/v1/grade-frq" \
     -H "Origin: https://notesbyjoshua.github.io" \
     -H "Access-Control-Request-Method: POST"
   # expect: access-control-allow-origin: https://notesbyjoshua.github.io
