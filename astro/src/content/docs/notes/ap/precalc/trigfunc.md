@@ -16,7 +16,23 @@ An angle is in **standard position** if:
 - its initial side lies on the positive $$x$$-axis,
 - its terminal side is determined by rotating from the positive $$x$$-axis.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Precalc/standpos.jpg" alt="parent functions" loading="lazy" decoding="async" />
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{angles,arrows.meta,quotes}
+\begin{tikzpicture}[>=Stealth, scale=1.05]
+\draw[->, gray!70] (-1.1,0) -- (4.2,0) node[right] {$x$};
+\draw[->, gray!70] (0,-0.8) -- (0,3.1) node[above] {$y$};
+\coordinate (O) at (0,0);
+\coordinate (I) at (3.4,0);
+\coordinate (T) at (2.35,2.05);
+\draw[very thick, blue] (O) -- (I) node[below right] {initial side};
+\draw[very thick, red!80!black, ->] (O) -- (T) node[above right] {terminal side};
+\draw[red!70!black, thick, ->] (1.1,0) arc[start angle=0,end angle=41,radius=1.1];
+\node[red!70!black] at (1.35,0.45) {$\theta>0$};
+\fill (O) circle (1.5pt) node[below left] {vertex};
+\node[align=center] at (2.8,-0.65) {standard position};
+\end{tikzpicture}
+```
 
 By definition, counterclockwise rotations are positive, and clockwise rotations are negative.
 
@@ -601,7 +617,43 @@ $$
 
 An image of the unit circle is shown below (with filled in values as described later):
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Precalc/unitcircle.png" alt="parent functions" loading="lazy" decoding="async" />
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\begin{tikzpicture}[>=Stealth, scale=2.55]
+\draw[->, gray!70] (-1.25,0) -- (1.3,0) node[right] {$x$};
+\draw[->, gray!70] (0,-1.25) -- (0,1.3) node[above] {$y$};
+\draw[blue, very thick] (0,0) circle (1);
+\foreach \x/\y/\lab/\pos in {
+1/0/{(1,0)}/right,
+0/1/{(0,1)}/above,
+-1/0/{(-1,0)}/left,
+0/-1/{(0,-1)}/below,
+0.866/0.5/{\left(\frac{\sqrt3}{2},\frac12\right)}/above right,
+0.707/0.707/{\left(\frac{\sqrt2}{2},\frac{\sqrt2}{2}\right)}/above right,
+0.5/0.866/{\left(\frac12,\frac{\sqrt3}{2}\right)}/above left,
+-0.5/0.866/{\left(-\frac12,\frac{\sqrt3}{2}\right)}/above right,
+-0.707/0.707/{\left(-\frac{\sqrt2}{2},\frac{\sqrt2}{2}\right)}/above left,
+-0.866/0.5/{\left(-\frac{\sqrt3}{2},\frac12\right)}/above left,
+-0.866/-0.5/{\left(-\frac{\sqrt3}{2},-\frac12\right)}/below left,
+-0.707/-0.707/{\left(-\frac{\sqrt2}{2},-\frac{\sqrt2}{2}\right)}/below left,
+-0.5/-0.866/{\left(-\frac12,-\frac{\sqrt3}{2}\right)}/below right,
+0.5/-0.866/{\left(\frac12,-\frac{\sqrt3}{2}\right)}/below left,
+0.707/-0.707/{\left(\frac{\sqrt2}{2},-\frac{\sqrt2}{2}\right)}/below right,
+0.866/-0.5/{\left(\frac{\sqrt3}{2},-\frac12\right)}/below right}
+{
+  \fill[blue] (\x,\y) circle (0.012);
+}
+\node[above right, font=\scriptsize] at (0.86,0.5) {$30^\circ,\ \frac{\pi}{6}$};
+\node[above, font=\scriptsize] at (0.55,0.78) {$45^\circ,\ \frac{\pi}{4}$};
+\node[left, font=\scriptsize] at (0.45,0.88) {$60^\circ,\ \frac{\pi}{3}$};
+\node[below right, font=\scriptsize] at (1,0) {$0,\ 2\pi$};
+\node[above left, font=\scriptsize] at (0,1) {$90^\circ,\ \frac{\pi}{2}$};
+\node[above right, font=\scriptsize] at (-1,0) {$180^\circ,\ \pi$};
+\node[below left, font=\scriptsize] at (0,-1) {$270^\circ,\ \frac{3\pi}{2}$};
+\node[align=center, font=\scriptsize] at (0,-1.48) {points on the unit circle have coordinates $(\cos\theta,\sin\theta)$};
+\end{tikzpicture}
+```
 
 ### Coterminal angles
 
@@ -1690,7 +1742,31 @@ $$
 ::::problem
 11. The radius of the circle in the figure is 2 units. Express the length of $$DC$$ in terms of $$\alpha$$.
 
-   <img class="note-img note-img--w480" src="/assets/APs/AP%20Precalc/cirtri1.png" alt="parent functions" loading="lazy" decoding="async" />
+   ```tikz
+   \usepackage{tikz}
+   \usetikzlibrary{angles,quotes,calc}
+   \begin{tikzpicture}[scale=1.15]
+   \coordinate (O) at (0,0);
+   \coordinate (A) at (1.55,0);
+   \coordinate (B) at (1.55,1.26);
+   \coordinate (C) at (2,0);
+   \coordinate (D) at (2,1.63);
+   \draw[->, gray!70] (-2.4,0) -- (2.55,0) node[right] {$x$};
+   \draw[->, gray!70] (0,-2.25) -- (0,2.55) node[above] {$y$};
+   \draw[blue, very thick] (O) circle (2);
+   \draw[blue, very thick] (O) -- (D);
+   \draw[blue, very thick] (A) -- (B);
+   \draw[blue, very thick] (C) -- (D);
+   \draw pic[draw, "$\alpha$", angle radius=0.55cm] {angle=C--O--D};
+   \draw ($(A)+(0,0.18)$) -- ($(A)+(0.18,0.18)$) -- ($(A)+(0.18,0)$);
+   \draw ($(C)+(0,0.18)$) -- ($(C)+(0.18,0.18)$) -- ($(C)+(0.18,0)$);
+   \node[below left] at (O) {$O$};
+   \node[below] at (A) {$A$};
+   \node[above left] at (B) {$B$};
+   \node[below] at (C) {$C$};
+   \node[above right] at (D) {$D$};
+   \end{tikzpicture}
+   ```
 
 :::solution
 The radius of the circle is $$2$$, and $$C$$ is the point on the positive $$x$$-axis at the right edge of the circle. Thus
@@ -1873,7 +1949,34 @@ $$
 ::::problem
 14. For each of the following trigonometric expressions, find a segment in the diagram that has length equal to the trigonometric expression: $$\sin\theta, \cos\theta, \sec\theta, \csc\theta, \tan\theta, \cot\theta$$. Note that you are not asked to express each trigonometric function in terms of multiple segments in the diagram. You must find a segment whose whole length equals the corresponding trig function. The graph is given below:
 
-   <img class="note-img note-img--w480" src="/assets/APs/AP%20Precalc/cirtri2.png" alt="parent functions" loading="lazy" decoding="async" />
+   ```tikz
+   \usepackage{tikz}
+   \usetikzlibrary{angles,quotes,calc}
+   \begin{tikzpicture}[scale=2.25]
+   \coordinate (O) at (0,0);
+   \coordinate (A) at (0.72,0.69);
+   \coordinate (C) at (0.72,0);
+   \coordinate (D) at (1.92,0);
+   \coordinate (B) at (0,1.45);
+   \draw[gray!70, ->] (-1.15,0) -- (2.1,0) node[right] {$x$};
+   \draw[gray!70, ->] (0,-1.15) -- (0,1.6) node[above] {$y$};
+   \draw[blue, very thick] (O) circle (1);
+   \draw[very thick] (O) -- (A);
+   \draw[very thick] (A) -- (C);
+   \draw[very thick] (O) -- (B);
+   \draw[very thick] (A) -- (B);
+   \draw[very thick] (A) -- (D);
+   \draw pic[draw, "$\theta$", angle radius=0.25cm] {angle=C--O--A};
+   \draw ($(C)+(0,0.09)$) -- ($(C)+(0.09,0.09)$) -- ($(C)+(0.09,0)$);
+   \draw ($(O)+(0.09,0)$) -- ($(O)+(0.09,0.09)$) -- ($(O)+(0,0.09)$);
+   \draw ($(A)+(-0.06,0.07)$) -- ($(A)+(0.01,0.13)$) -- ($(A)+(0.07,0.06)$);
+   \node[below left] at (O) {$O$};
+   \node[above right] at (A) {$A$};
+   \node[below] at (C) {$C$};
+   \node[right] at (D) {$D$};
+   \node[above] at (B) {$B$};
+   \end{tikzpicture}
+   ```
 
 :::solution
 In the diagram, the circle is the unit circle and $$A=(\cos\theta,\sin\theta)$$.

@@ -146,7 +146,26 @@ $$
 (h+p,k+2p).
 $$
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Precalc/parabolastuff.jpg" alt="parent functions" loading="lazy" decoding="async" />
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\begin{tikzpicture}[>=Stealth, scale=0.85]
+\draw[->, gray!70] (-4.2,0) -- (4.2,0) node[right] {$x$};
+\draw[->, gray!70] (0,-2.2) -- (0,5.2) node[above] {$y$};
+\draw[blue, very thick, domain=-3.6:3.6, samples=120] plot (\x,{0.25*\x*\x});
+\coordinate (V) at (0,0);
+\coordinate (F) at (0,1);
+\draw[red!75!black, dashed, thick] (-4,-1) -- (4,-1) node[right] {directrix};
+\draw[orange!85!black, thick] (-2,1) -- (2,1);
+\fill (V) circle (2pt) node[below right] {vertex $(h,k)$};
+\fill[red!80!black] (F) circle (2pt) node[above right] {focus $(h,k+p)$};
+\fill (-2,1) circle (1.5pt) node[above left] {latus rectum};
+\fill (2,1) circle (1.5pt);
+\draw[<->] (2.35,0) -- (2.35,1) node[midway, right] {$p$};
+\draw[<->] (2.7,0) -- (2.7,-1) node[midway, right] {$p$};
+\node[align=center] at (0,4.5) {$(x-h)^2=4p(y-k)$};
+\end{tikzpicture}
+```
 
 <div class="theorem-box">
 
@@ -190,7 +209,24 @@ In photography, lenses are made up of portions of parabolas. Suppose you have a 
 
 An ellipse is defined as the set of points the sum of whose distances to two fixed foci is constant (greater than the distance between the foci).
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Precalc/ellipse.png" alt="Ellipse" loading="lazy" decoding="async" />
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\begin{tikzpicture}[>=Stealth, scale=0.95]
+\draw[->, gray!70] (-4.2,0) -- (4.2,0) node[right] {$x$};
+\draw[->, gray!70] (0,-2.4) -- (0,2.4) node[above] {$y$};
+\draw[blue, very thick] (0,0) ellipse (3 and 1.55);
+\draw[orange!80!black, thick] (-3,0) -- (3,0) node[midway, below] {major axis};
+\draw[green!50!black, thick] (0,-1.55) -- (0,1.55) node[midway, right] {minor axis};
+\fill (0,0) circle (1.6pt) node[below right] {center};
+\fill[red!80!black] (-1.9,0) circle (2pt) node[above] {$F_1$};
+\fill[red!80!black] (1.9,0) circle (2pt) node[above] {$F_2$};
+\fill (-3,0) circle (1.6pt) node[below left] {vertex};
+\fill (3,0) circle (1.6pt) node[below right] {vertex};
+\draw[dashed] (-1.9,0) -- (1.45,1.35) -- (1.9,0);
+\node[align=center] at (0,-2.05) {$PF_1+PF_2$ is constant for every point $P$ on the ellipse};
+\end{tikzpicture}
+```
 
 ### Basic definitions
 
@@ -359,7 +395,28 @@ $$
 e=\frac{c}{a}=\frac{\sqrt5}{3}.
 $$
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Precalc/ellipsegraph1.png" alt="Ellipse" loading="lazy" decoding="async" />
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[
+  axis lines=middle, axis equal image,
+  xmin=-4, xmax=4, ymin=-3, ymax=3,
+  xtick={-3,-2,-1,0,1,2,3}, ytick={-2,-1,0,1,2},
+  grid=both, grid style={gray!18},
+  width=10cm, height=7.5cm,
+  xlabel=$x$, ylabel=$y$,
+]
+\addplot[blue, very thick, samples=260, domain=0:360] ({3*cos(x)}, {2*sin(x)});
+\addplot[orange!80!black, thick] coordinates {(-3,0) (3,0)};
+\addplot[green!50!black, thick] coordinates {(0,-2) (0,2)};
+\addplot[only marks, mark=*, mark size=1.8pt, red!80!black] coordinates {(-2.236,0) (2.236,0)};
+\node[red!80!black, anchor=south] at (axis cs:-2.236,0) {$(-\sqrt5,0)$};
+\node[red!80!black, anchor=south] at (axis cs:2.236,0) {$(\sqrt5,0)$};
+\node[blue, anchor=west] at (axis cs:1.2,2.25) {$\frac{x^2}{9}+\frac{y^2}{4}=1$};
+\end{axis}
+\end{tikzpicture}
+```
 
 </div>
 
@@ -403,7 +460,29 @@ $$
 
 Each focus has its own directrix. The right focus pairs with the right directrix, the left focus pairs with the left directrix, and similarly for vertical ellipses. These directrices will come in handy later in the Focus-Directrix section.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Precalc/ellipsedir.png" alt="Ellipse" loading="lazy" decoding="async" />
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[
+  axis lines=middle, axis equal image,
+  xmin=-5.2, xmax=5.2, ymin=-2.8, ymax=2.8,
+  xtick={-5,-4,...,5}, ytick={-2,-1,0,1,2},
+  grid=both, grid style={gray!18},
+  width=11cm, height=6.2cm,
+  xlabel=$x$, ylabel=$y$,
+]
+\addplot[blue, very thick, samples=260, domain=0:360] ({3*cos(x)}, {2*sin(x)});
+\addplot[red!75!black, dashed, thick] coordinates {(-4.025,-2.6) (-4.025,2.6)};
+\addplot[red!75!black, dashed, thick] coordinates {(4.025,-2.6) (4.025,2.6)};
+\addplot[only marks, mark=*, mark size=1.8pt, orange!85!black] coordinates {(-2.236,0) (2.236,0)};
+\node[red!75!black, anchor=south] at (axis cs:-4.025,2.2) {$x=-a/e$};
+\node[red!75!black, anchor=south] at (axis cs:4.025,2.2) {$x=a/e$};
+\node[orange!85!black, anchor=north] at (axis cs:-2.236,0) {$F_1$};
+\node[orange!85!black, anchor=north] at (axis cs:2.236,0) {$F_2$};
+\end{axis}
+\end{tikzpicture}
+```
 
 ### Applications of ellipses
 
@@ -454,7 +533,31 @@ Eccentricity: $$\displaystyle e = \frac{c}{a} > 1$$.
 
 The conjugate hyperbola swaps the roles of the terms (e.g. $$\frac{y^{2}}{a^{2}} - \frac{x^{2}}{b^{2}} = 1$$ vs $$\frac{x^{2}}{a^{2}} - \frac{y^{2}}{b^{2}} = 1$$) and shares the same asymptote rectangle but different vertices and branches.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Precalc/hyperbolapic.jpg" alt="Ellipse" loading="lazy" decoding="async" />
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[
+  axis lines=middle, axis equal image,
+  xmin=-5, xmax=5, ymin=-3.5, ymax=3.5,
+  xtick=\empty, ytick=\empty,
+  width=10cm, height=6.5cm,
+  xlabel=$x$, ylabel=$y$,
+]
+\addplot[blue, very thick, samples=160, domain=2.01:5] ({x}, {1.15*sqrt(x^2-4)});
+\addplot[blue, very thick, samples=160, domain=2.01:5] ({x}, {-1.15*sqrt(x^2-4)});
+\addplot[blue, very thick, samples=160, domain=-5:-2.01] ({x}, {1.15*sqrt(x^2-4)});
+\addplot[blue, very thick, samples=160, domain=-5:-2.01] ({x}, {-1.15*sqrt(x^2-4)});
+\addplot[red!70!black, dashed, domain=-5:5] {0.75*x};
+\addplot[red!70!black, dashed, domain=-5:5] {-0.75*x};
+\addplot[gray!70, dashed] coordinates {(-2,-1.5) (2,-1.5) (2,1.5) (-2,1.5) (-2,-1.5)};
+\addplot[only marks, mark=*, mark size=1.8pt, orange!85!black] coordinates {(-3,0) (3,0)};
+\node[orange!85!black, anchor=south] at (axis cs:-3,0) {$F_1$};
+\node[orange!85!black, anchor=south] at (axis cs:3,0) {$F_2$};
+\node[red!70!black, anchor=west] at (axis cs:2.2,2.0) {asymptotes};
+\end{axis}
+\end{tikzpicture}
+```
 
 ### Graphing a hyperbola
 
@@ -549,7 +652,31 @@ $$
 e=\frac ca=\frac{\sqrt{13}}{3}.
 $$
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Precalc/hyperbolagraph1.png" alt="Ellipse" loading="lazy" decoding="async" />
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[
+  axis lines=middle, axis equal image,
+  xmin=-6, xmax=6, ymin=-5, ymax=5,
+  xtick={-6,-4,-2,0,2,4,6}, ytick={-4,-2,0,2,4},
+  grid=both, grid style={gray!18},
+  width=10cm, height=8cm,
+  xlabel=$x$, ylabel=$y$,
+]
+\addplot[blue, very thick, samples=160, domain=3.01:6] ({x}, {2/3*sqrt(x^2-9)});
+\addplot[blue, very thick, samples=160, domain=3.01:6] ({x}, {-2/3*sqrt(x^2-9)});
+\addplot[blue, very thick, samples=160, domain=-6:-3.01] ({x}, {2/3*sqrt(x^2-9)});
+\addplot[blue, very thick, samples=160, domain=-6:-3.01] ({x}, {-2/3*sqrt(x^2-9)});
+\addplot[red!75!black, dashed, domain=-6:6] {(2/3)*x};
+\addplot[red!75!black, dashed, domain=-6:6] {-(2/3)*x};
+\addplot[only marks, mark=*, mark size=1.8pt, orange!85!black] coordinates {(-3.606,0) (3.606,0)};
+\node[blue, anchor=west] at (axis cs:1.0,4.3) {$\frac{x^2}{9}-\frac{y^2}{4}=1$};
+\node[orange!85!black, anchor=south] at (axis cs:-3.606,0) {$-\sqrt{13}$};
+\node[orange!85!black, anchor=south] at (axis cs:3.606,0) {$\sqrt{13}$};
+\end{axis}
+\end{tikzpicture}
+```
 
 </div>
 
@@ -597,7 +724,32 @@ $$
 \frac ae<a<c.
 $$
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Precalc/hyperboladir.jpg" alt="Ellipse" loading="lazy" decoding="async" />
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[
+  axis lines=middle, axis equal image,
+  xmin=-5.2, xmax=5.2, ymin=-4, ymax=4,
+  xtick={-5,-4,...,5}, ytick={-4,-2,0,2,4},
+  grid=both, grid style={gray!18},
+  width=10cm, height=8cm,
+  xlabel=$x$, ylabel=$y$,
+]
+\addplot[blue, very thick, samples=160, domain=3.01:5.2] ({x}, {2/3*sqrt(x^2-9)});
+\addplot[blue, very thick, samples=160, domain=3.01:5.2] ({x}, {-2/3*sqrt(x^2-9)});
+\addplot[blue, very thick, samples=160, domain=-5.2:-3.01] ({x}, {2/3*sqrt(x^2-9)});
+\addplot[blue, very thick, samples=160, domain=-5.2:-3.01] ({x}, {-2/3*sqrt(x^2-9)});
+\addplot[red!75!black, dashed, thick] coordinates {(-2.496,-3.8) (-2.496,3.8)};
+\addplot[red!75!black, dashed, thick] coordinates {(2.496,-3.8) (2.496,3.8)};
+\addplot[only marks, mark=*, mark size=1.8pt, orange!85!black] coordinates {(-3.606,0) (3.606,0)};
+\node[red!75!black, anchor=south] at (axis cs:-2.496,3.3) {$x=-a/e$};
+\node[red!75!black, anchor=south] at (axis cs:2.496,3.3) {$x=a/e$};
+\node[orange!85!black, anchor=north] at (axis cs:-3.606,0) {$F_1$};
+\node[orange!85!black, anchor=north] at (axis cs:3.606,0) {$F_2$};
+\end{axis}
+\end{tikzpicture}
+```
 
 <div class="theorem-box">
 
@@ -1386,7 +1538,28 @@ $$
 
 These angles give the asymptotic directions of the hyperbola.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Precalc/hyperbolagraph2.png" alt="Ellipse" loading="lazy" decoding="async" />
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[
+  axis lines=middle, axis equal image,
+  xmin=-2.5, xmax=8, ymin=-6, ymax=6,
+  xtick={-2,0,2,4,6,8}, ytick={-6,-4,-2,0,2,4,6},
+  grid=both, grid style={gray!18},
+  width=10cm, height=9cm,
+  xlabel=$x$, ylabel=$y$,
+]
+\addplot[blue, very thick, samples=240, domain=-130:130, unbounded coords=jump]
+  ({3*cos(x)/(1+(4/3)*cos(x))}, {3*sin(x)/(1+(4/3)*cos(x))});
+\addplot[red!75!black, dashed, thick] coordinates {(3,-6) (3,6)};
+\addplot[only marks, mark=*, mark size=1.8pt, orange!85!black] coordinates {(0,0)};
+\node[orange!85!black, anchor=north east] at (axis cs:0,0) {focus/pole};
+\node[red!75!black, anchor=south west] at (axis cs:3,4.9) {$x=3$};
+\node[blue, anchor=west] at (axis cs:3.6,-3.9) {$r=\frac{3}{1+\frac43\cos\theta}$};
+\end{axis}
+\end{tikzpicture}
+```
 
 </div>
 
@@ -1452,7 +1625,26 @@ with center $$\boxed{(3,-2)}$$, vertices $$\boxed{(0,-2),(6,-2)}$$, co-vertices 
 
 The graph of the conic is displayed below:
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Precalc/ellipsegraph2.png" alt="Ellipse" loading="lazy" decoding="async" />
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[
+  axis lines=middle, axis equal image,
+  xmin=-1, xmax=7, ymin=-5, ymax=2,
+  xtick={-1,0,...,7}, ytick={-5,-4,...,2},
+  grid=both, grid style={gray!18},
+  width=9.5cm, height=8cm,
+  xlabel=$x$, ylabel=$y$,
+]
+\addplot[blue, very thick, samples=260, domain=0:360] ({3+3*cos(x)}, {-2+2*sin(x)});
+\addplot[orange!80!black, thick] coordinates {(0,-2) (6,-2)};
+\addplot[green!50!black, thick] coordinates {(3,-4) (3,0)};
+\addplot[only marks, mark=*, mark size=1.8pt, red!80!black] coordinates {(0.764,-2) (5.236,-2)};
+\node[blue, anchor=west] at (axis cs:1.2,0.75) {$\frac{(x-3)^2}{9}+\frac{(y+2)^2}{4}=1$};
+\end{axis}
+\end{tikzpicture}
+```
 :::
 ::::
 
@@ -1796,7 +1988,29 @@ $$
 
 An image of the hyperbola is shown below:
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Precalc/hyperbolagraph3.png" alt="Ellipse" loading="lazy" decoding="async" />
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[
+  axis lines=middle, axis equal image,
+  xmin=-7, xmax=3, ymin=-2, ymax=8,
+  xtick={-7,-6,...,3}, ytick={-2,0,2,4,6,8},
+  grid=both, grid style={gray!18},
+  width=9cm, height=9cm,
+  xlabel=$x$, ylabel=$y$,
+]
+\addplot[blue, very thick, samples=160, domain=5.01:8] ({-2 + (3/2)*sqrt(x^2-25)}, {3+x});
+\addplot[blue, very thick, samples=160, domain=5.01:8] ({-2 - (3/2)*sqrt(x^2-25)}, {3+x});
+\addplot[blue, very thick, samples=160, domain=5.01:8] ({-2 + (3/2)*sqrt(x^2-25)}, {3-x});
+\addplot[blue, very thick, samples=160, domain=5.01:8] ({-2 - (3/2)*sqrt(x^2-25)}, {3-x});
+\addplot[red!75!black, dashed, domain=-7:3] {3 + (5/3)*(x+2)};
+\addplot[red!75!black, dashed, domain=-7:3] {3 - (5/3)*(x+2)};
+\addplot[only marks, mark=*, mark size=1.8pt, orange!85!black] coordinates {(-2,6.606) (-2,-0.606)};
+\node[blue, anchor=west] at (axis cs:-6.7,7.2) {$\frac{(y-3)^2}{25}-\frac{(x+2)^2}{9}=1$};
+\end{axis}
+\end{tikzpicture}
+```
 :::
 ::::
 

@@ -1219,9 +1219,26 @@ $$
 
 So the graph spirals outward from the pole.
 
-A graph (with the helper graph) of the function is shown below:
+A graph of the function is shown below:
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Precalc/polargraph1.png" alt="parent functions" loading="lazy" decoding="async" />
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[
+  axis lines=middle, axis equal image,
+  xmin=-2.2, xmax=2.2, ymin=-2.2, ymax=2.2,
+  xtick={-2,-1,0,1,2}, ytick={-2,-1,0,1,2},
+  grid=both, grid style={gray!18},
+  width=9cm, height=9cm,
+  xlabel=$x$, ylabel=$y$,
+]
+\addplot[blue, very thick, samples=260, domain=0:720]
+  ({(x/180)*cos(x)}, {(x/180)*sin(x)});
+\node[blue, anchor=west] at (axis cs:0.75,1.2) {$r=\theta/\pi$};
+\end{axis}
+\end{tikzpicture}
+```
 
 </div>
 
@@ -1259,9 +1276,27 @@ the graph has an inner loop.
 
 If the equation uses sine, the main symmetry is usually vertical. If the equation uses cosine, the main symmetry is usually horizontal.
 
-A list of all the limacons are shown below (note that a circle is technically a limacon as well):
+A list of common limacon shapes is shown below (note that a circle is technically a limacon as well):
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Precalc/limacon.png" alt="parent functions" loading="lazy" decoding="async" />
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\pgfplotsset{limacon/.style={scale only axis, width=3.8cm, height=3.2cm,
+  axis lines=middle, axis equal image, xmin=-5, xmax=5, ymin=-5, ymax=5,
+  xtick=\empty, ytick=\empty, axis line style={gray!60},
+  title style={font=\footnotesize}, clip=true}}
+\begin{tikzpicture}
+\begin{axis}[limacon, at={(0cm,0cm)}, title={$|a|>|b|$: dimple/no loop}]
+\addplot[blue, very thick, samples=220, domain=0:360] ({(3+1.5*cos(x))*cos(x)}, {(3+1.5*cos(x))*sin(x)});
+\end{axis}
+\begin{axis}[limacon, at={(4.6cm,0cm)}, title={$|a|=|b|$: cardioid}]
+\addplot[blue, very thick, samples=220, domain=0:360] ({(2.5+2.5*cos(x))*cos(x)}, {(2.5+2.5*cos(x))*sin(x)});
+\end{axis}
+\begin{axis}[limacon, at={(9.2cm,0cm)}, title={$|a|<|b|$: inner loop}]
+\addplot[blue, very thick, samples=260, domain=0:360] ({(2+4*cos(x))*cos(x)}, {(2+4*cos(x))*sin(x)});
+\end{axis}
+\end{tikzpicture}
+```
 
 <div class="theorem-box">
 
@@ -1277,9 +1312,26 @@ the graph is a limacon with an inner loop.
 
 Since the equation uses cosine, the graph has symmetry across the polar axis.
 
-A graph (with the helper graph) of the function is shown below:
+A graph of the function is shown below:
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Precalc/polargraph2.png" alt="parent functions" loading="lazy" decoding="async" />
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[
+  axis lines=middle, axis equal image,
+  xmin=-2.5, xmax=6.5, ymin=-4.5, ymax=4.5,
+  xtick={-2,0,2,4,6}, ytick={-4,-2,0,2,4},
+  grid=both, grid style={gray!18},
+  width=10cm, height=8cm,
+  xlabel=$x$, ylabel=$y$,
+]
+\addplot[blue, very thick, samples=360, domain=0:360]
+  ({(2+4*cos(x))*cos(x)}, {(2+4*cos(x))*sin(x)});
+\node[blue, anchor=west] at (axis cs:3.2,2.8) {$r=2+4\cos\theta$};
+\end{axis}
+\end{tikzpicture}
+```
 
 </div>
 
@@ -1334,13 +1386,30 @@ For even $$n$$, the negative radius portions trace new petals, so there are $$2n
 
 **Example.** Draw the rose curve $$r=4\sin(3\theta)$$.
 
-For this curve, the value of $$n$$ is $$2$$, which is odd. Therefore, the rose curve has $$3$$ petals, and each petal has length $$2$$.
+For this curve, the value of $$n$$ is $$3$$, which is odd. Therefore, the rose curve has $$3$$ petals, and each petal has length $$4$$.
 
 To draw the rose, start at $$\theta=0$$ (point $$0,0$$) and start plotting points along a polar graph. Once you draw one petal, repeat for the other two petals and make sure they are evenly spread out.
 
-A graph (with the helper graph) of the function is shown below:
+A graph of the function is shown below:
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Precalc/polargraph3.png" alt="parent functions" loading="lazy" decoding="async" />
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[
+  axis lines=middle, axis equal image,
+  xmin=-4.5, xmax=4.5, ymin=-4.5, ymax=4.5,
+  xtick={-4,-2,0,2,4}, ytick={-4,-2,0,2,4},
+  grid=both, grid style={gray!18},
+  width=9cm, height=9cm,
+  xlabel=$x$, ylabel=$y$,
+]
+\addplot[blue, very thick, samples=420, domain=0:360]
+  ({(4*sin(3*x))*cos(x)}, {(4*sin(3*x))*sin(x)});
+\node[blue, anchor=west] at (axis cs:1.1,3.7) {$r=4\sin(3\theta)$};
+\end{axis}
+\end{tikzpicture}
+```
 
 </div>
 
@@ -1368,11 +1437,28 @@ For this graph, the maximum value of $$r^2$$ is $$9$$, so the maximum value of $
 
 The graph is a lemniscate. Since it uses $$\sin(2\theta)$$, its loops lie along the diagonal directions rather than directly on the polar axis.
 
-An image of the lemniscate is shown below:
+A graph of the lemniscate is shown below:
 
-A graph (with the helper graph) of the function is shown below:
-
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Precalc/polargraph4.png" alt="parent functions" loading="lazy" decoding="async" />
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[
+  axis lines=middle, axis equal image,
+  xmin=-3.5, xmax=3.5, ymin=-3.5, ymax=3.5,
+  xtick={-3,-2,-1,0,1,2,3}, ytick={-3,-2,-1,0,1,2,3},
+  grid=both, grid style={gray!18},
+  width=9cm, height=9cm,
+  xlabel=$x$, ylabel=$y$,
+]
+\addplot[blue, very thick, samples=220, domain=0:90]
+  ({(3*sqrt(sin(2*x)))*cos(x)}, {(3*sqrt(sin(2*x)))*sin(x)});
+\addplot[blue, very thick, samples=220, domain=180:270]
+  ({(3*sqrt(sin(2*x)))*cos(x)}, {(3*sqrt(sin(2*x)))*sin(x)});
+\node[blue, anchor=west] at (axis cs:0.6,2.4) {$r^2=9\sin(2\theta)$};
+\end{axis}
+\end{tikzpicture}
+```
 
 </div>
 
@@ -2021,8 +2107,26 @@ $$
 1,\ i,\ -1,\ -i.
 $$
 
-Geomertrically, the solutions look like this:
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Precalc/complex1.png" alt="parent functions" loading="lazy" decoding="async" />
+Geometrically, the solutions look like this:
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\begin{tikzpicture}[>=Stealth, scale=1.25]
+\draw[->, gray!70] (-1.6,0) -- (1.75,0) node[right] {real};
+\draw[->, gray!70] (0,-1.6) -- (0,1.75) node[above] {imaginary};
+\draw[blue, thick] (0,0) circle (1);
+\foreach \p/\lab/\pos in {
+(1,0)/$1$/below right,
+(0,1)/$i$/above right,
+(-1,0)/$-1$/below left,
+(0,-1)/$-i$/below right}
+{
+  \fill[red!80!black] \p circle (2pt) node[\pos] {\lab};
+}
+\node[align=center] at (0,-2.0) {fourth roots of unity on the unit circle};
+\end{tikzpicture}
+```
 
 Note that the rendering on the $$y$$-axis shows that it is real, but treat it like the imaginary axis.
 

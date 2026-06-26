@@ -9,6 +9,11 @@ This repo is a Jekyll notes website. The agent's job is to help track note progr
 - Preserve the voice of the existing notes. These are student-facing study notes, so explanations should be clear, direct, and useful without becoming overly formal.
 - Treat existing Markdown/Jekyll conventions in nearby files as stronger guidance than inventing a new pattern.
 
+## Git Workflow
+
+- After making requested changes, commit them and push the current branch unless the user explicitly says not to.
+- Keep commits focused on the requested work. Do not include unrelated generated churn or user changes.
+
 ## Notes Style
 
 Follow `how-to-write-notes.md` as the source of truth for note structure.
