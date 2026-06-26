@@ -247,7 +247,7 @@ Substitute the angle expressions and divide by $$h$$:
 $$
 n_1\!\left(\frac{1}{s_o}+\frac{1}{R}\right)=n_2\!\left(\frac{1}{R}-\frac{1}{s_i}\right)
 \quad\Longrightarrow\quad
-\boxed{\ \frac{n_1}{s_o}+\frac{n_2}{s_i}=\frac{n_2-n_1}{R}\ }.
+\ \frac{n_1}{s_o}+\frac{n_2}{s_i}=\frac{n_2-n_1}{R}\ .
 $$
 
 </div>
@@ -293,7 +293,7 @@ $$
 Comparing to the thin-lens form $$1/s_o+1/s_i=1/f$$ identifies the focal length:
 
 $$
-\boxed{\ \frac{1}{f}=(n-1)\!\left(\frac{1}{R_1}-\frac{1}{R_2}\right)\ }.
+\ \frac{1}{f}=(n-1)\!\left(\frac{1}{R_1}-\frac{1}{R_2}\right)\ .
 $$
 
 </div>
@@ -445,7 +445,7 @@ $$
 Then $$\delta_m=2\theta_1-A$$, so $$\theta_1=(A+\delta_m)/2$$, and Snell at the first face $$\sin\theta_1=n\sin r_1$$ gives
 
 $$
-\boxed{\ n=\frac{\sin\!\frac{A+\delta_m}{2}}{\sin\!\frac{A}{2}}\ }.
+\ n=\frac{\sin\!\frac{A+\delta_m}{2}}{\sin\!\frac{A}{2}}\ .
 $$
 
 This symmetric, minimum-deviation configuration is how prism spectrometers measure $$n$$ precisely: rotate the prism until the deviated image stops moving and reverses.
@@ -499,7 +499,7 @@ $$
 $$
 
 $$
-\boxed{\ \cos i=\sqrt{\frac{n^2-1}{3}}\ }.
+\ \cos i=\sqrt{\frac{n^2-1}{3}}\ .
 $$
 
 For water $$n=1.33$$: $$\cos i=\sqrt{(1.769-1)/3}=\sqrt{0.256}=0.506$$, so $$i=59.6^\circ$$, $$\sin r=\sin i/n=0.863/1.33=0.649$$, $$r=40.4^\circ$$. Then
@@ -567,7 +567,7 @@ $$
 Since $$C=-1/f_{\text{eff}}$$,
 
 $$
-\boxed{\ \frac{1}{f_{\text{eff}}}=\frac{1}{f_1}+\frac{1}{f_2}-\frac{d}{f_1 f_2}\ },
+\ \frac{1}{f_{\text{eff}}}=\frac{1}{f_1}+\frac{1}{f_2}-\frac{d}{f_1 f_2}\ ,
 $$
 
 the standard two-lens formula. Setting $$d=0$$ (lenses in contact) recovers $$1/f=1/f_1+1/f_2$$. As a self-check, propagating a distance $$s_o$$ before a single lens and $$s_i$$ after, then imposing $$B=0$$, regenerates the thin-lens equation $$1/s_o+1/s_i=1/f$$.

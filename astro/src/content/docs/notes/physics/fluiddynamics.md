@@ -40,7 +40,7 @@ Consider a fluid at rest in a gravitational field $$\vec g = -g\hat z$$. Take a 
 $$
 pA-(p+dp)A-\rho g A\,dz=0
 \quad\Longrightarrow\quad
-\boxed{\ \frac{dp}{dz}=-\rho g\ }.
+\ \frac{dp}{dz}=-\rho g\ .
 $$
 
 Pressure increases as you go *down*. For an incompressible fluid with $$\rho$$ constant, integrating from the surface (depth $$0$$, pressure $$p_0$$) to depth $$h$$:
@@ -111,7 +111,7 @@ The denser fluid sits lower; the height ratio is the inverse density ratio.
 Imagine the region occupied by a submerged body, but filled with fluid instead. That fluid blob is in equilibrium, so the net pressure force on its boundary exactly balances its weight and points up. The pressure distribution on the boundary doesn't know whether fluid or a solid sits inside, so the same upward force — the **buoyant force** — acts on the real body:
 
 $$
-\boxed{\ F_B=\rho_{\text{fluid}}\,g\,V_{\text{displaced}}\ }
+\ F_B=\rho_{\text{fluid}}\,g\,V_{\text{displaced}}\ 
 $$
 
 directed upward, acting at the **center of buoyancy** = the centroid of the displaced fluid volume.
@@ -269,7 +269,7 @@ A tank of fluid with a small hole at depth $$h$$ below the surface. Apply Bernou
 $$
 p_{\text{atm}}+\rho g h = p_{\text{atm}}+\tfrac12\rho v^2
 \quad\Longrightarrow\quad
-\boxed{\ v=\sqrt{2gh}\ }.
+\ v=\sqrt{2gh}\ .
 $$
 
 The efflux speed is the same as if the fluid had *free-fallen* the height $$h$$. A few standard extensions:
