@@ -113,7 +113,7 @@ Lenz's law is conservation of energy in disguise. If induced currents helped the
 
 <div class="theorem-box">
 
-**Example (Lenz's law).** A circular loop lies flat in the plane of the page with a magnetic field pointing **into** the page passing through it. Find the direction of the induced current in two cases:
+**Example.** A circular loop lies flat in the plane of the page with a magnetic field pointing **into** the page passing through it. Find the direction of the induced current in two cases:
 
 **Case 1 — field increasing.** The into-the-page flux is growing. The induced current must oppose the increase, so it must create a field pointing **out of the page** inside the loop. By the right-hand rule (curl fingers in the current direction, thumb points along the field the loop makes), the induced current flows **counterclockwise**.
 

@@ -391,7 +391,7 @@ The flatness ($$z=0$$ everywhere) is essential; the theorem fails for a three-di
 
 <div class="theorem-box">
 
-**Example (Disk about a diameter).** A uniform disk of mass $$M$$ and radius $$R$$ has $$I_z = \tfrac{1}{2}MR^2$$ about its central perpendicular axis. Find its rotational inertia about a diameter (an in-plane axis through the center).
+**Example.** A uniform disk of mass $$M$$ and radius $$R$$ has $$I_z = \tfrac{1}{2}MR^2$$ about its central perpendicular axis. Find its rotational inertia about a diameter (an in-plane axis through the center).
 
 The disk lies in its own plane, so the perpendicular-axis theorem applies:
 

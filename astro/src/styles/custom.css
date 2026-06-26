@@ -110,6 +110,16 @@
 	content: var(--cl-icon);
 	color: var(--cl);
 	font-family: var(--font-ui, sans-serif);
+	/* Center each icon in a fixed square box so glyphs with odd font metrics
+	   (e.g. the variables '𝑥' and equations '∑', which fall back to a math font)
+	   line up vertically with the label text instead of riding high/low. */
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	flex: none;
+	width: 1.15em;
+	height: 1.15em;
+	line-height: 1;
 }
 /* Named variant: "Type" + a filled subject chip. */
 .sl-markdown-content .callout__label--named { gap: 0.55rem; }
@@ -122,6 +132,21 @@
 	border: 1px solid color-mix(in srgb, var(--cl) 40%, transparent);
 	background: color-mix(in srgb, var(--cl) 18%, var(--sl-color-bg));
 	color: color-mix(in srgb, var(--cl) 85%, var(--sl-color-text));
+}
+
+/* Dark mode: the 78%-accent label / 85%-accent chip / accent icon all read too
+   dark on the dark surface (worst for blue/indigo/violet). Brighten them toward
+   white so the type stays legible while keeping the accent identity. */
+:root[data-theme='dark'] .sl-markdown-content .callout__label {
+	color: color-mix(in srgb, var(--cl) 45%, white);
+}
+:root[data-theme='dark'] .sl-markdown-content .callout__label::before {
+	color: color-mix(in srgb, var(--cl) 62%, white);
+}
+:root[data-theme='dark'] .sl-markdown-content .callout__name {
+	border-color: color-mix(in srgb, var(--cl) 55%, transparent);
+	background: color-mix(in srgb, var(--cl) 26%, var(--sl-color-bg));
+	color: color-mix(in srgb, var(--cl) 45%, white);
 }
 
 /* Per-type accents + icons. */

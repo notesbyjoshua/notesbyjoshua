@@ -78,12 +78,10 @@ $$
 
 where the integral runs over one full classical period of the motion, and the extra phase $$\alpha$$ accounts for what happens at the turning points.
 
-:::key{name="Turning-point phase rule"}
 The rule for $$\alpha$$ at the two ends of the motion:
 
 - A **hard wall** (potential jumps to infinity) contributes $$\pi$$ to $$\alpha$$.
 - A **soft turning point** (potential rises smoothly through $$E$$) contributes $$\pi/2$$ to $$\alpha$$.
-:::
 
 So a box with two hard walls has $$\alpha = 2\pi$$ (equivalent to $$\alpha = 0$$), while a smooth potential well like the harmonic oscillator has $$\alpha = \pi$$.
 

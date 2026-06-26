@@ -130,7 +130,7 @@ This helical guiding of charges along field lines is why charged particles from 
 
 <div class="theorem-box">
 
-**Example (cyclotron radius and frequency).** A proton ($$m=1.67\times10^{-27}\ \text{kg}$$, $$q=1.60\times10^{-19}\ \text{C}$$) moves at $$v=3.0\times10^{6}\ \text{m/s}$$ perpendicular to a uniform field $$B=0.50\ \text{T}$$. Find the orbit radius, the cyclotron frequency, and the period.
+**Example.** A proton ($$m=1.67\times10^{-27}\ \text{kg}$$, $$q=1.60\times10^{-19}\ \text{C}$$) moves at $$v=3.0\times10^{6}\ \text{m/s}$$ perpendicular to a uniform field $$B=0.50\ \text{T}$$. Find the orbit radius, the cyclotron frequency, and the period.
 
 The radius is
 
@@ -212,7 +212,7 @@ since $$\vec E\times\vec B=(E\hat y)\times(B\hat z)=EB\,\hat x$$. Notice $$q$$ a
 
 <div class="theorem-box">
 
-**Example (mass from a spectrometer).** Singly ionized atoms ($$q=e=1.60\times10^{-19}\ \text{C}$$) pass a velocity selector with $$E=3.0\times10^{4}\ \text{V/m}$$ and $$B=0.20\ \text{T}$$, then enter a deflecting field $$B'=0.40\ \text{T}$$. An ion strikes the detector $$2r=0.250\ \text{m}$$ from the slit. Find its mass.
+**Example.** Singly ionized atoms ($$q=e=1.60\times10^{-19}\ \text{C}$$) pass a velocity selector with $$E=3.0\times10^{4}\ \text{V/m}$$ and $$B=0.20\ \text{T}$$, then enter a deflecting field $$B'=0.40\ \text{T}$$. An ion strikes the detector $$2r=0.250\ \text{m}$$ from the slit. Find its mass.
 
 The selected speed is
 
@@ -403,7 +403,7 @@ The analogy with Gauss's law is exact, including its limitation: **Ampère's law
 
 <div class="theorem-box">
 
-**Example (infinite wire, the easy way).** Exploit the cylindrical symmetry: $$\vec B$$ circles the wire with constant magnitude on any circle of radius $$R$$ centered on it, and is everywhere parallel to $$d\vec\ell$$. So
+**Example.** Exploit the cylindrical symmetry: $$\vec B$$ circles the wire with constant magnitude on any circle of radius $$R$$ centered on it, and is everywhere parallel to $$d\vec\ell$$. So
 
 $$
 \oint\vec B\cdot d\vec\ell=B\,(2\pi R)=\mu_0 I_{\text{enc}}=\mu_0 I
@@ -417,7 +417,7 @@ Compare the labor with the Biot–Savart integral above: symmetry did all the wo
 
 <div class="theorem-box">
 
-**Example (solenoid).** A long solenoid has $$n$$ turns per unit length carrying current $$I$$. Find the field inside.
+**Example.** A long solenoid has $$n$$ turns per unit length carrying current $$I$$. Find the field inside.
 
 For an ideal (infinitely long) solenoid the field is uniform and axial inside and zero outside. Take a rectangular Amperian loop with one side of length $$L$$ inside the solenoid (parallel to the axis), the opposite side outside, and the two short sides perpendicular to the axis. The outside side contributes nothing ($$B=0$$ there); the two perpendicular sides contribute nothing because $$\vec B\perp d\vec\ell$$ there. Only the inside side contributes:
 
@@ -437,7 +437,7 @@ Notice $$B$$ is independent of the loop's position inside — the field really i
 
 <div class="theorem-box">
 
-**Example (toroid).** A toroid is a solenoid bent into a doughnut: $$N$$ total turns wound around a ring, carrying current $$I$$. Find the field a distance $$r$$ from the central axis, inside the windings.
+**Example.** A toroid is a solenoid bent into a doughnut: $$N$$ total turns wound around a ring, carrying current $$I$$. Find the field a distance $$r$$ from the central axis, inside the windings.
 
 Symmetry makes $$\vec B$$ circulate along circles concentric with the axis, constant on each such circle. Take an Amperian circle of radius $$r$$ inside the coils. It is threaded by all $$N$$ turns, each crossing once:
 
@@ -453,7 +453,7 @@ The field is *not* uniform — it falls as $$1/r$$ across the cross-section. A l
 
 <div class="theorem-box">
 
-**Example (infinite current sheet).** An infinite plane in the $$xz$$-plane carries a uniform surface current $$K$$ (current per unit width) flowing in the $$+\hat x$$ direction. Find $$\vec B$$.
+**Example.** An infinite plane in the $$xz$$-plane carries a uniform surface current $$K$$ (current per unit width) flowing in the $$+\hat x$$ direction. Find $$\vec B$$.
 
 By symmetry $$\vec B$$ is parallel to the sheet, perpendicular to the current ($$\pm\hat z$$), and points in opposite directions on the two sides (reversing as you cross the sheet). Take a rectangular loop of length $$\ell$$ straddling the sheet, with the two long sides parallel to $$\hat z$$ at equal distances above and below. Each long side contributes $$B\ell$$; the short sides are perpendicular to $$\vec B$$ and contribute nothing:
 
@@ -469,7 +469,7 @@ The field is *uniform* and independent of distance from the sheet — exactly mi
 
 <div class="theorem-box">
 
-**Example (coaxial cable — field in each region).** A coaxial cable has a solid inner conductor of radius $$a$$ carrying current $$I$$ (uniformly distributed) in the $$+\hat z$$ direction, and a thin outer shell of radius $$b$$ carrying the return current $$I$$ in $$-\hat z$$. Find $$B(r)$$ in all four regions.
+**Example.** A coaxial cable has a solid inner conductor of radius $$a$$ carrying current $$I$$ (uniformly distributed) in the $$+\hat z$$ direction, and a thin outer shell of radius $$b$$ carrying the return current $$I$$ in $$-\hat z$$. Find $$B(r)$$ in all four regions.
 
 Cylindrical symmetry makes $$\vec B$$ azimuthal and constant on each circle of radius $$r$$, so $$\oint\vec B\cdot d\vec\ell=B(2\pi r)=\mu_0 I_{\text{enc}}(r)$$ in every region; only $$I_{\text{enc}}$$ changes.
 
@@ -511,7 +511,7 @@ Working out the directions with the right-hand rule shows: **parallel currents a
 
 <div class="theorem-box">
 
-**Example (numeric).** Two long parallel wires $$d=2.0\ \text{cm}$$ apart carry $$I_1=10\ \text{A}$$ and $$I_2=15\ \text{A}$$ in the same direction. Find the force per unit length.
+**Example.** Two long parallel wires $$d=2.0\ \text{cm}$$ apart carry $$I_1=10\ \text{A}$$ and $$I_2=15\ \text{A}$$ in the same direction. Find the force per unit length.
 
 $$
 \frac{F}{L}=\frac{\mu_0 I_1 I_2}{2\pi d}
@@ -562,7 +562,7 @@ If $$\vec\mu$$ is held aligned with $$\vec B$$, this is $$F=\mu\,\dfrac{dB}{dx}$
 
 <div class="theorem-box">
 
-**Example (torque on a current loop).** A rectangular loop of sides $$a$$ and $$b$$ carries current $$I$$ in a uniform field $$\vec B$$, with its normal making angle $$\theta$$ with $$\vec B$$. Find the torque.
+**Example.** A rectangular loop of sides $$a$$ and $$b$$ carries current $$I$$ in a uniform field $$\vec B$$, with its normal making angle $$\theta$$ with $$\vec B$$. Find the torque.
 
 The forces on opposite sides are equal and opposite, so the net force is zero. The pair of forces on the sides of length $$a$$ form a couple: each has magnitude $$F=BIa$$, separated by a moment arm $$b\sin\theta$$. The torque is
 
@@ -576,7 +576,7 @@ with $$\mu=Iab$$, which is exactly the magnitude of $$\vec\mu\times\vec B$$. The
 
 <div class="theorem-box">
 
-**Example (small oscillations of a compass needle).** A magnetic dipole of moment $$\mu$$ and moment of inertia $$I$$ (about its pivot) sits in a uniform field $$B$$. Find the period of small oscillations about alignment.
+**Example.** A magnetic dipole of moment $$\mu$$ and moment of inertia $$I$$ (about its pivot) sits in a uniform field $$B$$. Find the period of small oscillations about alignment.
 
 This is the rotational version of the pendulum, with $$U=-\mu B\cos\theta$$ playing the role of the gravitational potential. The restoring torque is
 
@@ -680,7 +680,7 @@ You can also get this straight from Faraday's law: if the rod slides on rails se
 
 <div class="theorem-box">
 
-**Example (the rod on rails, worked fully).** A frictionless conducting rod of mass $$m$$ and length $$L$$ slides on two parallel horizontal rails separated by $$L$$, connected at one end by a resistor $$R$$. A uniform field $$B$$ points vertically (perpendicular to the plane of the rails). Find the induced current, the retarding force, verify the power balance, and find the terminal velocity (a) when the rod is given a push and left alone, and (b) when a constant external force $$F_0$$ is applied.
+**Example.** A frictionless conducting rod of mass $$m$$ and length $$L$$ slides on two parallel horizontal rails separated by $$L$$, connected at one end by a resistor $$R$$. A uniform field $$B$$ points vertically (perpendicular to the plane of the rails). Find the induced current, the retarding force, verify the power balance, and find the terminal velocity (a) when the rod is given a push and left alone, and (b) when a constant external force $$F_0$$ is applied.
 
 *Induced EMF and current.* At speed $$v$$ the flux through the circuit changes at $$BLv$$, so
 
@@ -792,7 +792,7 @@ The energy goes into Joule heating of the conductor — eddy braking converts ki
 
 <div class="theorem-box">
 
-**Example (order-of-magnitude eddy braking).** Estimate the terminal velocity of a magnet of pole strength giving field $$B$$ over a region of size $$\ell$$, falling through a metal pipe of wall conductivity $$\sigma$$, wall thickness $$t$$, and radius $$\sim\ell$$.
+**Example.** Estimate the terminal velocity of a magnet of pole strength giving field $$B$$ over a region of size $$\ell$$, falling through a metal pipe of wall conductivity $$\sigma$$, wall thickness $$t$$, and radius $$\sim\ell$$.
 
 Treat the wall region near the magnet as a loop of effective resistance $$R\sim 1/(\sigma t)$$ (a strip of length $$\sim\ell$$, cross-section $$\sim\ell t$$, so $$R\sim \ell/(\sigma\,\ell t)=1/(\sigma t)$$). As the magnet moves at speed $$v$$, the flux through this band changes at a rate $$\sim B\ell v$$, inducing an EMF $$\varepsilon\sim B\ell v$$ and an eddy current $$I\sim\varepsilon/R\sim \sigma t B\ell v$$. The retarding force is
 
@@ -884,7 +884,7 @@ This stands in exact parallel with the electric energy density $$u=\tfrac12\vare
 
 <div class="theorem-box">
 
-**Example (magnetic energy two ways).** Verify that the field-energy density gives the same stored energy as $$\tfrac12 LI^2$$ for a solenoid.
+**Example.** Verify that the field-energy density gives the same stored energy as $$\tfrac12 LI^2$$ for a solenoid.
 
 *Circuit way.* From the inductance derivation, $$L=\mu_0 n^2 V$$, so
 
@@ -908,7 +908,7 @@ The most important application of Faraday's law is the rotating loop, which turn
 
 <div class="theorem-box">
 
-**Example (AC generator).** A flat coil of $$N$$ turns and area $$A$$ rotates with constant angular velocity $$\omega$$ about an axis in its plane, in a uniform field $$B$$. Find the induced EMF.
+**Example.** A flat coil of $$N$$ turns and area $$A$$ rotates with constant angular velocity $$\omega$$ about an axis in its plane, in a uniform field $$B$$. Find the induced EMF.
 
 Let $$\theta$$ be the angle between $$\vec B$$ and the coil's normal. If the coil spins at constant rate, $$\theta=\omega t$$ (taking $$\theta=0$$ at $$t=0$$). The flux through one turn is
 
@@ -1230,7 +1230,7 @@ which carries on seamlessly where the conduction current stops. Adding it gives 
 
 <div class="theorem-box">
 
-**Example (the displacement current equals the wire current).** A parallel-plate capacitor with plate area $$A$$ is charged by a steady current $$I$$. Show that the displacement current between the plates exactly equals $$I$$, and find the magnetic field a distance $$r$$ from the axis inside the gap.
+**Example.** A parallel-plate capacitor with plate area $$A$$ is charged by a steady current $$I$$. Show that the displacement current between the plates exactly equals $$I$$, and find the magnetic field a distance $$r$$ from the axis inside the gap.
 
 Treat the plates as an ideal capacitor: the field is uniform between them with magnitude $$E=\sigma/\varepsilon_0=Q/(\varepsilon_0 A)$$, where $$Q$$ is the instantaneous charge. The electric flux through a surface spanning the gap is
 
@@ -1419,7 +1419,7 @@ the reflected case being twice as large because the photon momentum reverses (a 
 
 <div class="theorem-box">
 
-**Example (sunlight: fields, intensity, and a solar sail).** At Earth's distance the solar intensity (the "solar constant") is $$I\approx 1360\ \text{W/m}^2$$. Find the peak electric and magnetic fields in sunlight, and the force on a perfectly reflecting solar sail of area $$A=1000\ \text{m}^2$$ facing the Sun.
+**Example.** At Earth's distance the solar intensity (the "solar constant") is $$I\approx 1360\ \text{W/m}^2$$. Find the peak electric and magnetic fields in sunlight, and the force on a perfectly reflecting solar sail of area $$A=1000\ \text{m}^2$$ facing the Sun.
 
 *Peak fields.* From $$I=\tfrac12\varepsilon_0 c E_0^2$$,
 
@@ -1450,7 +1450,7 @@ About nine millinewtons — tiny, but it acts continuously and costs no fuel, wh
 
 <div class="theorem-box">
 
-**Example (laser: relating $$E_0$$ and $$B_0$$ to power).** A laser pointer emits $$P=5\ \text{mW}$$ in a beam of radius $$0.5\ \text{mm}$$. Find the intensity and the peak field amplitudes.
+**Example.** A laser pointer emits $$P=5\ \text{mW}$$ in a beam of radius $$0.5\ \text{mm}$$. Find the intensity and the peak field amplitudes.
 
 The intensity is power over beam area:
 

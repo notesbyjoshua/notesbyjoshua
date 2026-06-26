@@ -195,11 +195,9 @@ This new equation is not random. It is built from equations the solution already
 
 The allowed row operations are:
 
-:::key{name="Elementary row operations"}
 1. Multiply a row by a nonzero constant.
 2. Interchange two rows.
 3. Add a multiple of one row to another row.
-:::
 
 These operations do not change the solution set of the corresponding linear system.
 

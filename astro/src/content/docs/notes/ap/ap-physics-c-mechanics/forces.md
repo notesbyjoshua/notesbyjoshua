@@ -291,9 +291,9 @@ $$
 
 Thus,
 
-:::key{name="Maximum angle before sliding"}
-$$\tan\theta_{\max} = \mu_s$$
-:::
+$$
+\tan\theta_{\max} = \mu_s.
+$$
 
 This is the maximum angle before sliding for a simple block on a rough incline (rough meaning that there is friction). If external forces or other constraints are present, the slipping condition must be rederived from the free-body diagram.
 
@@ -714,7 +714,7 @@ Pseudo-forces are not interaction forces and do not have third-law partners. The
 
 <div class="theorem-box">
 
-**Example (block on an accelerating wedge).** A block of mass $$m$$ rests on a frictionless incline of angle $$\theta$$ built on a cart. How fast must the cart accelerate horizontally (toward the foot of the incline) so that the block does not slide relative to the incline?
+**Example.** A block of mass $$m$$ rests on a frictionless incline of angle $$\theta$$ built on a cart. How fast must the cart accelerate horizontally (toward the foot of the incline) so that the block does not slide relative to the incline?
 
 Work in the cart's non-inertial frame, where the block is in equilibrium. Three forces act on it: gravity $$mg$$ downward, the normal force $$F_N$$ perpendicular to the incline surface, and the pseudo-force $$ma$$ pointing horizontally backward (opposite the cart's acceleration). Resolve along the incline, taking down-the-slope as positive. Gravity contributes $$mg\sin\theta$$ down the slope, while the pseudo-force contributes $$ma\cos\theta$$ up the slope. For the block not to slide, these must cancel:
 

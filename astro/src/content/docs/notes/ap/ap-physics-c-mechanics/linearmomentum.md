@@ -354,7 +354,7 @@ This loss is maximal among all collisions with the same initial momenta, because
 
 <div class="theorem-box">
 
-**Example (perfectly inelastic collision).** A $$1500\ \text{kg}$$ car moving east at $$20\ \text{m/s}$$ rear-ends a $$1000\ \text{kg}$$ car moving east at $$8.0\ \text{m/s}$$. They lock bumpers. Find their common velocity and the kinetic energy lost.
+**Example.** A $$1500\ \text{kg}$$ car moving east at $$20\ \text{m/s}$$ rear-ends a $$1000\ \text{kg}$$ car moving east at $$8.0\ \text{m/s}$$. They lock bumpers. Find their common velocity and the kinetic energy lost.
 
 Momentum conservation in one dimension:
 
@@ -646,7 +646,7 @@ If both objects move ($$v_{1f},v_{2f}\neq 0$$), the dot product vanishing means 
 
 <div class="theorem-box">
 
-**Example (2D collision, numeric).** A $$0.20\ \text{kg}$$ puck moving east at $$5.0\ \text{m/s}$$ strikes a stationary $$0.30\ \text{kg}$$ puck. After the collision the $$0.20\ \text{kg}$$ puck moves at $$3.0\ \text{m/s}$$ at $$37^\circ$$ north of east. Find the velocity (magnitude and direction) of the $$0.30\ \text{kg}$$ puck.
+**Example.** A $$0.20\ \text{kg}$$ puck moving east at $$5.0\ \text{m/s}$$ strikes a stationary $$0.30\ \text{kg}$$ puck. After the collision the $$0.20\ \text{kg}$$ puck moves at $$3.0\ \text{m/s}$$ at $$37^\circ$$ north of east. Find the velocity (magnitude and direction) of the $$0.30\ \text{kg}$$ puck.
 
 Conserve momentum in each direction. Initial momentum is entirely along $$x$$ (east): $$p_x = (0.20)(5.0) = 1.0\ \text{kg}\cdot\text{m/s}$$, $$p_y = 0$$.
 

@@ -102,7 +102,6 @@ Mathematical induction is a great way to prove statements $$P(n)$$ for all integ
 3. **Inductive step**: Prove $$P(k+1)$$ follows from $$P(k)$$.
 :::
 
-fdf
 If the step needs several earlier cases, use strong induction: assume $$P(n_0),\ldots,P(k)$$ and deduce $$P(k+1)$$.
 
 ### Tips for induction
@@ -236,7 +235,7 @@ The most common mistake is stopping too early. It is not enough to use the induc
 
 <div class="theorem-box">
 
-**Example (Inequality induction).** Prove that
+**Example.** Prove that
 
 $$
 2^{n}\ge n^{2}

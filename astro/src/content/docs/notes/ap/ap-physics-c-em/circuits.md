@@ -313,11 +313,9 @@ $$
 
 around any closed loop.
 
-:::key{name="Loop-rule sign conventions"}
 - Traversing a resistor in the direction of current: potential change is $$-IR$$.
 - Traversing a resistor against the current: potential change is $$+IR$$.
 - Crossing an ideal battery from the negative to the positive terminal: potential change is $$+\mathcal{E}$$.
-:::
 
 <div class="theorem-box">
 
@@ -581,7 +579,7 @@ That is about $$2.3\tau$$ — a useful rule of thumb is that a capacitor reaches
 
 <div class="theorem-box">
 
-**Example (discharging half-life).** A charged capacitor discharges through a resistor with $$Q(t) = Q_0 e^{-t/RC}$$. How long until the charge falls to half its initial value?
+**Example.** A charged capacitor discharges through a resistor with $$Q(t) = Q_0 e^{-t/RC}$$. How long until the charge falls to half its initial value?
 
 Set $$Q(t_{1/2}) = \tfrac{1}{2}Q_0$$:
 
@@ -649,7 +647,7 @@ $$
 
 <div class="theorem-box">
 
-**Example (initial vs. steady-state behavior).** An initially uncharged capacitor $$C$$ sits in parallel with a resistor $$R_2 = 6\ \Omega$$; that combination is in series with $$R_1 = 4\ \Omega$$ and an ideal $$\mathcal{E} = 20\ \text{V}$$ battery. The switch closes at $$t = 0$$. Find the current from the battery and the current through $$R_2$$ both immediately after closing and a long time later.
+**Example.** An initially uncharged capacitor $$C$$ sits in parallel with a resistor $$R_2 = 6\ \Omega$$; that combination is in series with $$R_1 = 4\ \Omega$$ and an ideal $$\mathcal{E} = 20\ \text{V}$$ battery. The switch closes at $$t = 0$$. Find the current from the battery and the current through $$R_2$$ both immediately after closing and a long time later.
 
 The trick is to use the two limiting behaviors of a capacitor:
 

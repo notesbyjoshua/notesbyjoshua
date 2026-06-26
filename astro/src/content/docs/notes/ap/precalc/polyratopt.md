@@ -525,7 +525,7 @@ a **horizontal asymptote** is the value of which $$y$$ approaches as $$x$$ appro
 
 Below are two common examples of rational polynomials and their horizontal asymptotes.
 
-**Example (Horizontal asymptote).** Find the horizontal/slant asymptote of $$\frac{2x+3}{x-1}$$.
+**Example.** Find the horizontal/slant asymptote of $$\frac{2x+3}{x-1}$$.
 
 The numerator and denominator have equal degrees, so the horizontal asymptote is
 
@@ -543,7 +543,7 @@ $$
 
 as $$x\to \pm\infty$$.
 
-**Example (Slant asymptote).** Find the horizontal/slant asymptote for $$R(x)=\frac{x^2+1}{x-2}.$$
+**Example.** Find the horizontal/slant asymptote for $$R(x)=\frac{x^2+1}{x-2}.$$
 
 The numerator degree is one more than the denominator degree. Divide:
 
@@ -602,7 +602,7 @@ The usual workflow is:
 
 <div class="theorem-box">
 
-**Example (largest rectangle with fixed perimeter).**
+**Example.**
 
 What is the largest possible area of a rectangle with perimeter $$80\text{ cm}$$?
 
@@ -646,7 +646,7 @@ $$
 
 <div class="theorem-box">
 
-**Example (maximizing a rational model).**
+**Example.**
 
 Suppose the efficiency of a machine after $$x$$ hours is modeled by
 

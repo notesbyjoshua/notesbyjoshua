@@ -126,7 +126,7 @@ When writing examples, always follow this format:
 ``` markdown
 <div class="theorem-box">
 
-**Example (Broad subject).** question statement
+**Example.** question statement
 
 solution here
 
@@ -135,12 +135,7 @@ solution here
 
 When writing the question statement, always end with what you are trying to find/derive, and don't just state the needed information. For example, say *"A is the 1st letter of the alphabet and C is 2 letters after A. Find the position of letter C."* instead of *"A is the 1st letter of the alphabet and C is 2 letters after A."* and going straight to the answer.
 
-**Tag every example with its broad subject** in parentheses on the lead-in — e.g. `**Example (Finding rate laws).**`. The site renders the parenthetical as a subject chip. Tag with the *broad topic*, not a hyper-specific title:
-
-- ✅ `**Example (Finding rate laws).**`
-- ❌ `**Example (Rate law from k).**` — too specific
-
-(This supersedes the older rule that examples never state a theme. A plain `**Example.**` with no tag still renders — no chip — but prefer tagging.)
+Use a plain `**Example.**` lead-in — **do not** tag examples with a parenthetical subject (e.g. not `**Example (Finding rate laws).**`).
 
 ### Theorems
 

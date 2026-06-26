@@ -25,12 +25,10 @@ This unit studies how conductors rearrange charge in electrostatic equilibrium a
 
 A conductor has mobile charges. In **electrostatic equilibrium**, the charges are no longer drifting, so the electric field inside the conducting material must be zero. If there were a nonzero internal field, free electrons would accelerate and the charge distribution would not be static.
 
-:::key{name="Conductor in electrostatic equilibrium"}
 - The electric field inside the conducting material is zero.
 - If there are no charges trapped in cavities, any excess charge on an isolated conductor lives on its outer surface.
 - The electric field just outside a conducting surface is perpendicular to that surface.
 - Charge gathers more densely near sharp points, where the surface curvature is larger.
-:::
 
 <img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20EM/condcap/conductor-equilibrium.png" alt="Conductor in electrostatic equilibrium" loading="lazy" decoding="async" />
 

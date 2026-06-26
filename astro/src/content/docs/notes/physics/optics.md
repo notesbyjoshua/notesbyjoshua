@@ -31,7 +31,7 @@ A **plane mirror** forms a virtual, upright image the same size as the object, l
 
 <div class="theorem-box">
 
-**Example (Minimum mirror length).** How tall must a vertical plane mirror be for you to see your whole body, and does the answer depend on how far you stand from it?
+**Example.** How tall must a vertical plane mirror be for you to see your whole body, and does the answer depend on how far you stand from it?
 
 Let your eyes be at height $$E$$ and the top of your head at $$T$$, feet at the floor ($$0$$). To see the top of your head, a ray must leave the head, reflect off the mirror, and reach your eye. By the law of reflection the reflection point lies exactly **halfway** in height between the head and the eye, at height $$(T+E)/2$$. To see your feet, the ray reflects at height $$E/2$$ (halfway between eye and floor). The mirror therefore only needs to span from $$E/2$$ to $$(T+E)/2$$, a length
 
@@ -45,7 +45,7 @@ where $$H=T$$ is your full height. The required length is **half your height**, 
 
 <div class="theorem-box">
 
-**Example (Two mirrors at an angle).** Two plane mirrors meet along an edge at angle $$\phi$$ (with $$360^\circ/\phi$$ an integer). How many images of a point object placed between them appear?
+**Example.** Two plane mirrors meet along an edge at angle $$\phi$$ (with $$360^\circ/\phi$$ an integer). How many images of a point object placed between them appear?
 
 Each mirror reflects the object, then those images are reflected again by the other mirror, and so on. All images lie on a circle centered on the hinge (reflection preserves distance from the vertex). Reflecting repeatedly tiles the full $$360^\circ$$ around the vertex into wedges of angular width $$\phi$$; there are $$360^\circ/\phi$$ such wedges, hence $$360^\circ/\phi$$ copies of the object counting the object itself. Subtracting the original object,
 
@@ -91,7 +91,7 @@ $$
 
 <div class="theorem-box">
 
-**Example (Apparent depth).** A coin lies at depth $$d$$ at the bottom of a pool of water (index $$n$$). Looking straight down, how deep does it appear?
+**Example.** A coin lies at depth $$d$$ at the bottom of a pool of water (index $$n$$). Looking straight down, how deep does it appear?
 
 A ray leaves the coin at a small angle $$\theta_1$$ to the vertical inside the water and refracts to angle $$\theta_2$$ in air, with $$n\sin\theta_1=\sin\theta_2$$. Trace two such rays back: to the eye they appear to diverge from a shallower point at apparent depth $$d'$$. If the rays emerge at horizontal distance $$x$$ from the point above the coin, then $$\tan\theta_1=x/d$$ and $$\tan\theta_2=x/d'$$, so
 
@@ -113,7 +113,7 @@ A pool of true depth $$1.0\text{ m}$$ ($$n=1.33$$) looks only $$0.75\text{ m}$$ 
 
 <div class="theorem-box">
 
-**Example (Lateral displacement through a slab).** A ray hits a parallel-faced glass slab of thickness $$t$$ and index $$n$$ at incidence angle $$\theta_i$$. The two faces are parallel, so the ray emerges parallel to its original direction but displaced sideways. Find the displacement $$\Delta$$.
+**Example.** A ray hits a parallel-faced glass slab of thickness $$t$$ and index $$n$$ at incidence angle $$\theta_i$$. The two faces are parallel, so the ray emerges parallel to its original direction but displaced sideways. Find the displacement $$\Delta$$.
 
 Inside the slab the ray travels at the refracted angle $$\theta_r$$ ($$\sin\theta_i=n\sin\theta_r$$). The path length inside is $$\ell=t/\cos\theta_r$$. The emerging ray is parallel to the incident one; the perpendicular offset between the two parallel rays is
 
@@ -127,7 +127,7 @@ To see the geometry: the in-slab segment makes angle $$\theta_r$$ with the norma
 
 <div class="theorem-box">
 
-**Example (Snell's window).** A fish (or diver) looking up through calm water sees the *entire* hemisphere of sky squeezed into a bright circular cone overhead; outside that cone it sees only the dark reflected bottom. Find the half-angle of the cone.
+**Example.** A fish (or diver) looking up through calm water sees the *entire* hemisphere of sky squeezed into a bright circular cone overhead; outside that cone it sees only the dark reflected bottom. Find the half-angle of the cone.
 
 A ray coming in from the horizon (grazing the surface, $$\theta_{\text{air}}=90^\circ$$) refracts into the water at the largest possible underwater angle. By Snell, $$\sin 90^\circ=n\sin\theta_w$$, so
 
@@ -163,7 +163,7 @@ all the light is reflected back — **total internal reflection** (TIR). This is
 
 <div class="theorem-box">
 
-**Example (Optical fiber acceptance angle).** A step-index fiber has a core of index $$n_1$$ and cladding $$n_2<n_1$$, surrounded by air. Light entering the flat end face at angle $$\theta_a$$ to the fiber axis must strike the core–cladding wall beyond its critical angle to be guided. Find the maximum acceptance angle and the **numerical aperture** $$\text{NA}=\sin\theta_a$$, for $$n_1=1.50$$, $$n_2=1.48$$.
+**Example.** A step-index fiber has a core of index $$n_1$$ and cladding $$n_2<n_1$$, surrounded by air. Light entering the flat end face at angle $$\theta_a$$ to the fiber axis must strike the core–cladding wall beyond its critical angle to be guided. Find the maximum acceptance angle and the **numerical aperture** $$\text{NA}=\sin\theta_a$$, for $$n_1=1.50$$, $$n_2=1.48$$.
 
 At the wall, TIR requires the internal angle (from the wall normal) to exceed $$\theta_c$$ with $$\sin\theta_c=n_2/n_1$$. A ray entering at $$\theta_a$$ refracts to angle $$\theta$$ from the axis with $$\sin\theta_a=n_1\sin\theta$$; it hits the wall at angle $$90^\circ-\theta$$ from the wall normal, so the guiding condition $$90^\circ-\theta\ge\theta_c$$ means $$\theta\le 90^\circ-\theta_c$$, i.e. $$\sin\theta\le\cos\theta_c$$. Then
 
@@ -254,7 +254,7 @@ $$
 
 <div class="theorem-box">
 
-**Example (The fish in the bowl).** A fish sits a distance $$p=20\text{ cm}$$ from the near wall of a large spherical fishbowl of radius $$R=30\text{ cm}$$ (water $$n_1=1.33$$, air $$n_2=1.00$$, glass thin enough to ignore). Where does the fish appear to an outside observer?
+**Example.** A fish sits a distance $$p=20\text{ cm}$$ from the near wall of a large spherical fishbowl of radius $$R=30\text{ cm}$$ (water $$n_1=1.33$$, air $$n_2=1.00$$, glass thin enough to ignore). Where does the fish appear to an outside observer?
 
 Light goes water $$\to$$ air, so $$n_1=1.33$$, $$n_2=1.00$$. The surface bulges *toward* the observer (outgoing side), and the center of curvature $$C$$ lies on the object (water) side, so by our convention $$R=-30\text{ cm}$$. With $$s_o=20\text{ cm}$$,
 
@@ -347,7 +347,7 @@ $$
 
 <div class="theorem-box">
 
-**Example (Makeup mirror — object inside the focus).** You hold your face $$d_o=10\text{ cm}$$ from a concave makeup mirror of radius $$R=40\text{ cm}$$ ($$f=20\text{ cm}$$). Describe the image.
+**Example.** You hold your face $$d_o=10\text{ cm}$$ from a concave makeup mirror of radius $$R=40\text{ cm}$$ ($$f=20\text{ cm}$$). Describe the image.
 
 $$
 \frac{1}{d_i}=\frac{1}{f}-\frac{1}{d_o}=\frac{1}{20}-\frac{1}{10}=-\frac{1}{20}
@@ -540,7 +540,7 @@ For a system matrix $$M=\begin{pmatrix}A&B\\C&D\end{pmatrix}$$, the imaging cond
 
 <div class="theorem-box">
 
-**Example (Two thin lenses).** Two thin lenses of focal lengths $$f_1,f_2$$ are separated by distance $$d$$. Find the effective focal length.
+**Example.** Two thin lenses of focal lengths $$f_1,f_2$$ are separated by distance $$d$$. Find the effective focal length.
 
 Build the system right-to-left: lens 1, propagate $$d$$, lens 2.
 
@@ -584,7 +584,7 @@ The eye's relaxed near point is $$25\text{ cm}$$; angular magnification compares
 
 <div class="theorem-box">
 
-**Example (Telescope).** A refracting telescope has an objective of focal length $$f_o=100\text{ cm}$$ and an eyepiece of $$f_e=2.0\text{ cm}$$. What is its angular magnification, and how long is the tube?
+**Example.** A refracting telescope has an objective of focal length $$f_o=100\text{ cm}$$ and an eyepiece of $$f_e=2.0\text{ cm}$$. What is its angular magnification, and how long is the tube?
 
 $$
 M=-\frac{f_o}{f_e}=-\frac{100}{2.0}=-50\times,
@@ -636,7 +636,7 @@ Measuring this spacing is a standard way to determine an unknown wavelength.
 
 <div class="theorem-box">
 
-**Example (Slab over one slit).** A thin transparent sheet of index $$n=1.50$$ and thickness $$t=6.0\,\mu\text{m}$$ is placed over one slit of a double-slit setup illuminated by $$\lambda=600\text{ nm}$$. By how many fringes does the pattern shift, and which way?
+**Example.** A thin transparent sheet of index $$n=1.50$$ and thickness $$t=6.0\,\mu\text{m}$$ is placed over one slit of a double-slit setup illuminated by $$\lambda=600\text{ nm}$$. By how many fringes does the pattern shift, and which way?
 
 The slab replaces a length $$t$$ of air (optical path $$t$$) with glass (optical path $$nt$$), adding extra optical path $$(n-1)t$$ to that arm. The number of fringes the central maximum shifts is the extra path measured in wavelengths:
 
@@ -693,7 +693,7 @@ If instead there is a phase flip at *both* surfaces (or neither), the conditions
 
 <div class="theorem-box">
 
-**Example (Anti-reflection coating).** A camera lens ($$n_{\text{glass}}=1.52$$) is coated with magnesium fluoride ($$n=1.38$$) to suppress reflection at $$\lambda=550\text{ nm}$$ (green). Find the minimum coating thickness, and state the index that would give *zero* reflection.
+**Example.** A camera lens ($$n_{\text{glass}}=1.52$$) is coated with magnesium fluoride ($$n=1.38$$) to suppress reflection at $$\lambda=550\text{ nm}$$ (green). Find the minimum coating thickness, and state the index that would give *zero* reflection.
 
 Light reflects off air$$\to$$coating ($$1.00\to1.38$$, $$\pi$$ flip) and coating$$\to$$glass ($$1.38\to1.52$$, also a $$\pi$$ flip). Both flip, so the flips cancel and destructive interference of the reflections requires the round-trip path to be a half-integer number of in-film wavelengths:
 
@@ -719,7 +719,7 @@ MgF$$_2$$ at $$1.38$$ is the closest cheap, durable material — hence the faint
 
 <div class="theorem-box">
 
-**Example (Newton's rings).** A plano-convex lens of radius of curvature $$R$$ rests on a flat glass plate, leaving a thin air wedge between them. Illuminated from above with wavelength $$\lambda$$, it shows concentric bright and dark rings. Find the radii of the dark rings.
+**Example.** A plano-convex lens of radius of curvature $$R$$ rests on a flat glass plate, leaving a thin air wedge between them. Illuminated from above with wavelength $$\lambda$$, it shows concentric bright and dark rings. Find the radii of the dark rings.
 
 At radius $$r$$ from the contact point, the gap thickness $$t$$ satisfies $$r^2 = R^2 - (R-t)^2 \approx 2Rt$$ for $$t \ll R$$, so $$t \approx r^2/2R$$. The two interfering reflections are off the bottom of the lens (glass→air, no flip) and off the top of the plate (air→glass, $$\pi$$ flip). The net half-wavelength shift makes the **center dark** (where $$t\to 0$$), and dark rings occur when the round-trip path $$2t$$ is a whole number of wavelengths:
 
@@ -746,7 +746,7 @@ $$
 
 <div class="theorem-box">
 
-**Example (Central-maximum width).** A slit of width $$a=0.10\text{ mm}$$ is lit by $$\lambda=633\text{ nm}$$ (He–Ne laser); the pattern falls on a screen $$L=2.0\text{ m}$$ away. How wide is the central bright band?
+**Example.** A slit of width $$a=0.10\text{ mm}$$ is lit by $$\lambda=633\text{ nm}$$ (He–Ne laser); the pattern falls on a screen $$L=2.0\text{ m}$$ away. How wide is the central bright band?
 
 The first minima sit at $$\sin\theta=\lambda/a$$, and for small angles $$y=L\tan\theta\approx L\lambda/a$$. The central maximum spans from $$-y$$ to $$+y$$, so its full width is
 
@@ -783,7 +783,7 @@ the number of slits times the diffraction order. To resolve finer spectral detai
 
 <div class="theorem-box">
 
-**Example (Sodium doublet).** The sodium D lines are at $$589.0\text{ nm}$$ and $$589.6\text{ nm}$$. How many grating lines must be illuminated to just resolve them in first order ($$m=1$$)?
+**Example.** The sodium D lines are at $$589.0\text{ nm}$$ and $$589.6\text{ nm}$$. How many grating lines must be illuminated to just resolve them in first order ($$m=1$$)?
 
 The required resolving power is
 
@@ -813,7 +813,7 @@ Bigger apertures (telescope mirrors, eye pupils) and shorter wavelengths give fi
 
 <div class="theorem-box">
 
-**Example (Headlights at night).** A car's headlights are $$1.5\text{ m}$$ apart. With a dark-adapted pupil $$D=5.0\text{ mm}$$ and $$\lambda=550\text{ nm}$$, from how far away can the eye just distinguish the two as separate?
+**Example.** A car's headlights are $$1.5\text{ m}$$ apart. With a dark-adapted pupil $$D=5.0\text{ mm}$$ and $$\lambda=550\text{ nm}$$, from how far away can the eye just distinguish the two as separate?
 
 The minimum resolvable angle is
 
@@ -849,7 +849,7 @@ $$
 
 <div class="theorem-box">
 
-**Example (Three polarizers).** Unpolarized light of intensity $$I_0$$ passes through three ideal polarizers with axes at $$0^\circ$$, $$45^\circ$$, and $$90^\circ$$. Find the transmitted intensity, and explain the surprise that *removing* the middle one blocks all the light.
+**Example.** Unpolarized light of intensity $$I_0$$ passes through three ideal polarizers with axes at $$0^\circ$$, $$45^\circ$$, and $$90^\circ$$. Find the transmitted intensity, and explain the surprise that *removing* the middle one blocks all the light.
 
 After the first polarizer, unpolarized light is halved and polarized at $$0^\circ$$: $$I_1=\tfrac12 I_0$$. The second polarizer is at $$45^\circ$$ to that:
 
@@ -875,7 +875,7 @@ $$
 
 <div class="theorem-box">
 
-**Example (Brewster's angle).** At what angle does sunlight reflecting off a calm lake ($$n=1.33$$) become fully polarized, and which way is it polarized?
+**Example.** At what angle does sunlight reflecting off a calm lake ($$n=1.33$$) become fully polarized, and which way is it polarized?
 
 $$
 \theta_B=\arctan\frac{n_2}{n_1}=\arctan\frac{1.33}{1.00}=53.1^\circ

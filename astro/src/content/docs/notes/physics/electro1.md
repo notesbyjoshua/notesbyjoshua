@@ -363,12 +363,10 @@ which lets you relate launch and landing angles of a field line between two char
 
 In a conductor at electrostatic equilibrium, charges have stopped moving macroscopically. Therefore:
 
-:::key{name="Conductor at electrostatic equilibrium"}
 - $$\vec E=0$$ inside the conducting material.
 - Excess charge lies on the conductor's surface.
 - The electric field just outside the surface is perpendicular to the surface.
 - Larger surface charge density means a stronger field just outside.
-:::
 
 If a tangential electric field existed on the surface, free charge would slide along the conductor, so equilibrium would not hold.
 
