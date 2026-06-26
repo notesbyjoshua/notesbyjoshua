@@ -62,4 +62,8 @@ publish — GitHub Actions builds and deploys automatically.
 
 ## Credits
 
-This page was made by Joshua Bie, with major contributions from Garret Morberg-Nguyen
+This page was made by Joshua Bie.
+
+Major Contributors:
+- Garret Morberg-Nguyen (Inspiration for the theme and many key features, including the AI grader and highlighting)
+- Michael Zhao (Helped write some of the physics notes)
