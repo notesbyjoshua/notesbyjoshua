@@ -722,6 +722,45 @@
 	margin-bottom: 0.25rem;
 }
 
+/* --- Mobile: surface the account / sign-in control in the top bar ---
+   Starlight hides the whole header right-group below 50rem (`sl-hidden
+   md:sl-flex`) and only re-renders this control at the very bottom of the nav
+   drawer (MobileMenuFooter), so "Sign in" / the dashboard is easy to miss.
+   Reveal just the account control in the top bar instead, leaving the theme +
+   language pickers in the drawer footer. */
+@media (max-width: 49.99rem) {
+	.header .right-group {
+		display: flex !important;
+		flex: 0 0 auto;
+	}
+	/* Free up row width for the account pill: trim the large wordmark and the
+	   inter-item gap so title + search + account + menu button all fit. */
+	.header .site-title {
+		font-size: var(--sl-text-base);
+	}
+	.header {
+		--sl-nav-gap: 0.5rem;
+	}
+	/* Keep only the account control up top; theme/language stay in the drawer. */
+	.header .right-group > :not(.social-icons) {
+		display: none;
+	}
+	/* No trailing divider when the account is the only thing in the group. */
+	.header .social-icons::after {
+		display: none;
+	}
+	/* Compact pill so it fits alongside the title, search box, and menu button. */
+	.header .header-account-link {
+		padding: 0.28rem 0.6rem;
+		gap: 0.3rem;
+	}
+	/* The control now lives in the top bar — drop the duplicate from the bottom
+	   of the drawer so there aren't two "Sign in" buttons. */
+	.mobile-preferences .social-icons {
+		display: none;
+	}
+}
+
 /* --- Progress bars (reading dashboard) --- */
 .dash-bar {
 	position: relative;
