@@ -1182,77 +1182,10 @@ $$
 
 ## Practice
 
+::::problem
 1. For $$f(x)=-3\sin\left(2\left(x-\frac{\pi}{6}\right)\right)+1$$, find the amplitude, period, phase shift, midline, range, and five key points for one full period. Then sketch one full period.
-2. A sinusoidal function has maximum value $$7$$ at $$x=\frac{\pi}{3}$$ and minimum value $$-1$$ at $$x=\frac{7\pi}{6}$$. Write a cosine model for the function, assuming the given maximum and minimum are consecutive. Then find five key points and sketch one full period.
-3. For $$g(x)=2\tan\left(3\left(x+\frac{\pi}{12}\right)\right)-1$$, find the period, center point of one branch, vertical asymptotes surrounding that branch, and the $$x$$-intercept in that branch. Then sketch the branch.
-4. For $$h(x)=-2\sec\left(\frac12(x-\pi)\right)+3$$, find the period, midline, vertical asymptotes in one period starting at $$x=\pi$$, and range. Then sketch one full period, including the guiding cosine curve.
-5. Solve exactly on $$[0,4\pi)$$. Then sketch $$y=2\sin^2x-\sin x-1$$ on $$[0,4\pi)$$ and label all $$x$$-intercepts: $$2\sin^2x-\sin x-1=0.$$
-6. Solve on $$[0, 4\pi)$$: $$4\sin(4x)\cos(6x)= 2\sin(10x)+1$$.
-7. Solve exactly on $$[0,2\pi)$$: $$\tan x+\cot x=4.$$
-8. Evaluate each of these exactly: $$\sin 75^\circ, \cos 15^\circ,\tan 105^\circ.$$ The sine and cosine values for $$15^\circ$$ and $$75^\circ$$ are also useful to memorize as well.
-9. Prove the identity: $$\frac{\sin(x+y)+\sin(x-y)}{\cos(x+y)+\cos(x-y)}=\tan x.$$
-10. Solve exactly on $$[0,2\pi)$$. Then use the product-to-sum form to sketch enough of the graph to explain why your number of solutions makes sense: $$\cos(5x)+\cos(3x)=0.$$
-11. Evaluate exactly: $$\sin\left(\cos^{-1}\frac35\right)+\cos\left(\sin^{-1}\left(-\frac5{13}\right)\right)+\tan\left(\cos^{-1}\left(-\frac45\right)\right).$$
-12. How many solutions does the equation $$\tan(2x)=\cos(\tfrac{x}{2})$$ have on the interval $$[0,2\pi]$$?
-13. Suppose $$\frac{\pi}{2}<\theta<\pi$$ and $$\cos\theta=-\frac35$$. Find exact values of $$\sin\left(\frac{\theta}{2}\right), \cos\left(\frac{\theta}{2}\right),$$ and $$\tan\left(\frac{\theta}{2}\right).$$
-14. Let $$x$$ and $$y$$ be real numbers such that $$\frac{\sin x}{\sin y} = 3$$ and $$\frac{\cos x}{\cos y} = \frac{1}{2}$$. The value of $$\frac{\sin 2x}{\sin 2y} + \frac{\cos 2x}{\cos 2y}$$ can be expressed in the form $$\frac{p}{q}$$, where $$p$$ and $$q$$ are relatively prime positive integers. Find $$p+q$$. (2014 AIME II)
-15. A tide height is modeled by a sinusoidal function of time. At $$t=2$$ hours, the tide is at a high of $$11$$ feet. At $$t=8$$ hours, the tide is at the next low of $$3$$ feet.
 
-   $$(A)$$ Write a cosine model $$H(t)$$ for the tide height.
-
-   $$(B)$$ Find the period and midline.
-
-   $$(C)$$ Find the first time after $$t=2$$ when the tide height is $$9$$ feet.
-
-   $$(D)$$ Sketch one full period of the tide model and label the high tide, low tide, midline, and the point where $$H(t)=9$$ first occurs after $$t=2$$.
-
-16. (Bonus, Viète's formula for $$\pi$$)
-
-Let
-
-$$
-a_1=\sqrt2
-$$
-
-and define
-
-$$
-a_{n+1}=\sqrt{2+a_n}.
-$$
-
-The nested radicals
-
-$$
-\sqrt2,\quad \sqrt{2+\sqrt2},\quad \sqrt{2+\sqrt{2+\sqrt2}},\quad \ldots
-$$
-
-are connected to repeated half-angle identities.
-
-   $$(A)$$ Use the half-angle identity for cosine to show that
-
-   $$
-   a_n=2\cos\left(\frac{\pi}{2^{n+1}}\right).
-   $$
-
-   $$(B)$$ Use part $$(A)$$ and the identity $$\sin(2x)=2\sin x\cos x$$ to show how products of the terms $$\frac{a_n}{2}$$ are related to $$\frac{2}{\pi}$$.
-
-   $$(C)$$ Explain why this leads to Viète's infinite product:
-
-   $$
-   \frac{2}{\pi}
-   =\frac{\sqrt2}{2}\cdot
-   \frac{\sqrt{2+\sqrt2}}{2}\cdot
-   \frac{\sqrt{2+\sqrt{2+\sqrt2}}}{2}\cdots.
-   $$
-
----
-
-## Solutions
-
-<div class="theorem-box">
-
-### Solution 1
-
+:::solution
 The function is
 
 $$
@@ -1336,13 +1269,13 @@ $$
 A graph with many key points is shown below:
 
 <img class="note-img note-img--w480" src="/assets/APs/AP%20Precalc/triggraph1.png" alt="parent functions" loading="lazy" decoding="async" />
+:::
+::::
 
-</div>
+::::problem
+2. A sinusoidal function has maximum value $$7$$ at $$x=\frac{\pi}{3}$$ and minimum value $$-1$$ at $$x=\frac{7\pi}{6}$$. Write a cosine model for the function, assuming the given maximum and minimum are consecutive. Then find five key points and sketch one full period.
 
-<div class="theorem-box">
-
-### Solution 2
-
+:::solution
 The maximum is $$7$$ and the minimum is $$-1$$. The midline is the average:
 
 $$
@@ -1400,13 +1333,13 @@ $$
 A graph with many key points is shown below:
 
 <img class="note-img note-img--w480" src="/assets/APs/AP%20Precalc/triggraph2.png" alt="parent functions" loading="lazy" decoding="async" />
+:::
+::::
 
-</div>
+::::problem
+3. For $$g(x)=2\tan\left(3\left(x+\frac{\pi}{12}\right)\right)-1$$, find the period, center point of one branch, vertical asymptotes surrounding that branch, and the $$x$$-intercept in that branch. Then sketch the branch.
 
-<div class="theorem-box">
-
-### Solution 3
-
+:::solution
 The function is
 
 $$
@@ -1502,13 +1435,13 @@ The branch should increase from the vertical asymptote $$x=-\frac{\pi}{4}$$ to t
 A graph with many key points is shown below:
 
 <img class="note-img note-img--w480" src="/assets/APs/AP%20Precalc/triggraph3.png" alt="parent functions" loading="lazy" decoding="async" />
+:::
+::::
 
-</div>
+::::problem
+4. For $$h(x)=-2\sec\left(\frac12(x-\pi)\right)+3$$, find the period, midline, vertical asymptotes in one period starting at $$x=\pi$$, and range. Then sketch one full period, including the guiding cosine curve.
 
-<div class="theorem-box">
-
-### Solution 4
-
+:::solution
 The function is
 
 $$
@@ -1592,13 +1525,13 @@ The secant graph has vertices at $$(\pi,1)$$, $$(3\pi,5)$$, and $$(5\pi,1)$$, wi
 A graph with many key points is shown below:
 
 <img class="note-img note-img--w480" src="/assets/APs/AP%20Precalc/triggraph4.png" alt="parent functions" loading="lazy" decoding="async" />
+:::
+::::
 
-</div>
+::::problem
+5. Solve exactly on $$[0,4\pi)$$. Then sketch $$y=2\sin^2x-\sin x-1$$ on $$[0,4\pi)$$ and label all $$x$$-intercepts: $$2\sin^2x-\sin x-1=0.$$
 
-<div class="theorem-box">
-
-### Solution 5
-
+:::solution
 Let
 
 $$
@@ -1660,13 +1593,13 @@ The graph of $$y=2\sin^2x-\sin x-1$$ crosses the $$x$$-axis exactly at those val
 A graph with many key points is shown below:
 
 <img class="note-img note-img--w480" src="/assets/APs/AP%20Precalc/triggraph5.png" alt="parent functions" loading="lazy" decoding="async" />
+:::
+::::
 
-</div>
+::::problem
+6. Solve on $$[0, 4\pi)$$: $$4\sin(4x)\cos(6x)= 2\sin(10x)+1$$.
 
-<div class="theorem-box">
-
-### Solution 6
-
+:::solution
 Start with
 
 $$
@@ -1729,13 +1662,13 @@ $$
 \boxed{x=\frac{7\pi}{12},\frac{11\pi}{12},\frac{19\pi}{12},\frac{23\pi}{12},
 \frac{31\pi}{12},\frac{35\pi}{12},\frac{43\pi}{12},\frac{47\pi}{12}}.
 $$
+:::
+::::
 
-</div>
+::::problem
+7. Solve exactly on $$[0,2\pi)$$: $$\tan x+\cot x=4.$$
 
-<div class="theorem-box">
-
-### Solution 7
-
+:::solution
 The equation is
 
 $$
@@ -1790,13 +1723,13 @@ the solutions on $$[0,2\pi)$$ are
 $$
 \boxed{x=\frac{\pi}{12},\frac{5\pi}{12},\frac{13\pi}{12},\frac{17\pi}{12}}.
 $$
+:::
+::::
 
-</div>
+::::problem
+8. Evaluate each of these exactly: $$\sin 75^\circ, \cos 15^\circ,\tan 105^\circ.$$ The sine and cosine values for $$15^\circ$$ and $$75^\circ$$ are also useful to memorize as well.
 
-<div class="theorem-box">
-
-### Solution 8
-
+:::solution
 Use angle addition and subtraction formulas.
 
 First,
@@ -1871,13 +1804,13 @@ and
 $$
 \boxed{\tan105^\circ=-2-\sqrt3}.
 $$
+:::
+::::
 
-</div>
+::::problem
+9. Prove the identity: $$\frac{\sin(x+y)+\sin(x-y)}{\cos(x+y)+\cos(x-y)}=\tan x.$$
 
-<div class="theorem-box">
-
-### Solution 9
-
+:::solution
 Start with the left-hand side:
 
 $$
@@ -1918,13 +1851,13 @@ Thus
 $$
 \boxed{\frac{\sin(x+y)+\sin(x-y)}{\cos(x+y)+\cos(x-y)}=\tan x}.
 $$
+:::
+::::
 
-</div>
+::::problem
+10. Solve exactly on $$[0,2\pi)$$. Then use the product-to-sum form to sketch enough of the graph to explain why your number of solutions makes sense: $$\cos(5x)+\cos(3x)=0.$$
 
-<div class="theorem-box">
-
-### Solution 10
-
+:::solution
 Use the sum-to-product formula:
 
 $$
@@ -1997,13 +1930,13 @@ $$
 shows that zeros occur whenever either factor is zero. A sketch should mark the eight zeros from $$\cos(4x)=0$$ and the two zeros from $$\cos x=0$$.
 
 **ADD IMAGE OF GRAPH**
+:::
+::::
 
-</div>
+::::problem
+11. Evaluate exactly: $$\sin\left(\cos^{-1}\frac35\right)+\cos\left(\sin^{-1}\left(-\frac5{13}\right)\right)+\tan\left(\cos^{-1}\left(-\frac45\right)\right).$$
 
-<div class="theorem-box">
-
-### Solution 11
-
+:::solution
 Let
 
 $$
@@ -2076,13 +2009,13 @@ Therefore
 $$
 \boxed{\frac{253}{260}}.
 $$
+:::
+::::
 
-</div>
+::::problem
+12. How many solutions does the equation $$\tan(2x)=\cos(\tfrac{x}{2})$$ have on the interval $$[0,2\pi]$$?
 
-<div class="theorem-box">
-
-### Solution 12
-
+:::solution
 We need count solutions to
 
 $$
@@ -2146,13 +2079,13 @@ Therefore there is exactly one solution in each of the five pieces.
 $$
 \boxed{5}
 $$
+:::
+::::
 
-</div>
+::::problem
+13. Suppose $$\frac{\pi}{2}<\theta<\pi$$ and $$\cos\theta=-\frac35$$. Find exact values of $$\sin\left(\frac{\theta}{2}\right), \cos\left(\frac{\theta}{2}\right),$$ and $$\tan\left(\frac{\theta}{2}\right).$$
 
-<div class="theorem-box">
-
-### Solution 13
-
+:::solution
 We are given
 
 $$
@@ -2218,13 +2151,13 @@ $$
 \qquad
 \boxed{\tan\left(\frac{\theta}{2}\right)=2}.
 $$
+:::
+::::
 
-</div>
+::::problem
+14. Let $$x$$ and $$y$$ be real numbers such that $$\frac{\sin x}{\sin y} = 3$$ and $$\frac{\cos x}{\cos y} = \frac{1}{2}$$. The value of $$\frac{\sin 2x}{\sin 2y} + \frac{\cos 2x}{\cos 2y}$$ can be expressed in the form $$\frac{p}{q}$$, where $$p$$ and $$q$$ are relatively prime positive integers. Find $$p+q$$. (2014 AIME II)
 
-<div class="theorem-box">
-
-### Solution 14
-
+:::solution
 We are given
 
 $$
@@ -2381,13 +2314,21 @@ So
 $$
 \boxed{p+q=107}.
 $$
+:::
+::::
 
-</div>
+::::problem
+15. A tide height is modeled by a sinusoidal function of time. At $$t=2$$ hours, the tide is at a high of $$11$$ feet. At $$t=8$$ hours, the tide is at the next low of $$3$$ feet.
 
-<div class="theorem-box">
+   $$(A)$$ Write a cosine model $$H(t)$$ for the tide height.
 
-### Solution 15
+   $$(B)$$ Find the period and midline.
 
+   $$(C)$$ Find the first time after $$t=2$$ when the tide height is $$9$$ feet.
+
+   $$(D)$$ Sketch one full period of the tide model and label the high tide, low tide, midline, and the point where $$H(t)=9$$ first occurs after $$t=2$$.
+
+:::solution
 The high tide is $$11$$ feet and the low tide is $$3$$ feet. The midline is
 
 $$
@@ -2485,13 +2426,50 @@ $$
 $$
 
 **ADD IMAGE OF GRAPH**
+:::
+::::
 
-</div>
+::::problem
+16. (Bonus, Viète's formula for $$\pi$$)
 
-<div class="theorem-box">
+Let
 
-### Solution 16
+$$
+a_1=\sqrt2
+$$
 
+and define
+
+$$
+a_{n+1}=\sqrt{2+a_n}.
+$$
+
+The nested radicals
+
+$$
+\sqrt2,\quad \sqrt{2+\sqrt2},\quad \sqrt{2+\sqrt{2+\sqrt2}},\quad \ldots
+$$
+
+are connected to repeated half-angle identities.
+
+   $$(A)$$ Use the half-angle identity for cosine to show that
+
+   $$
+   a_n=2\cos\left(\frac{\pi}{2^{n+1}}\right).
+   $$
+
+   $$(B)$$ Use part $$(A)$$ and the identity $$\sin(2x)=2\sin x\cos x$$ to show how products of the terms $$\frac{a_n}{2}$$ are related to $$\frac{2}{\pi}$$.
+
+   $$(C)$$ Explain why this leads to Viète's infinite product:
+
+   $$
+   \frac{2}{\pi}
+   =\frac{\sqrt2}{2}\cdot
+   \frac{\sqrt{2+\sqrt2}}{2}\cdot
+   \frac{\sqrt{2+\sqrt{2+\sqrt2}}}{2}\cdots.
+   $$
+
+:::solution
 For part $$(A)$$, first note that
 
 $$
@@ -2646,5 +2624,5 @@ $$
 \frac{\sqrt{2+\sqrt{2+\sqrt2}}}{2}\cdots
 }.
 $$
-
-</div>
+:::
+::::

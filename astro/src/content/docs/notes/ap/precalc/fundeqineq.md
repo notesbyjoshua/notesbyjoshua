@@ -630,49 +630,10 @@ which simplifies back to $$y=x^3$$.
 
 ## Practice
 
+::::problem
 1. The taxicab distance between points $$(x_1, y_1)$$ and $$(x_2, y_2)$$ in the coordinate plane is given by $$\lvert x_1 - x_2 \rvert + \lvert y_1 - y_2 \rvert$$. For how many points $$P$$ with integer coordinates is the taxicab distance between $$P$$ and the origin less than or equal to $$20$$? (2022 AMC 12A)
-2. Solve for $$x$$: $$x^4 - 13x^2 + 36 = 0$$.
-3. Simplify $$\sqrt{\frac{x^4}{256} + \frac{x^3}{32} + \frac{5x^2}{16} + x + 4 + 16x - 8\sqrt{4x-7} - 24 + 2(\frac{x^2}{16} + \frac{x}{4} + 2)(-2 + 2\sqrt{4x-7})}$$. (Hint: Use factor by grouping.)
-4. Solve for $$x$$ and discard any extraneous solutions: $$\dfrac{1}{x-1} + \dfrac{2}{x^2-1} = \dfrac{3}{x+1}$$.
-5. Solve for $$x$$ in $$\mathbb{R}$$: $$9^x - 10\cdot 3^x + 9 = 0$$.
-6. Solve for $$x$$ in $$\mathbb{R}$$ and check every candidate in the original equation: $$\sqrt{2x+3} + \sqrt{x+1} = 3$$.
-7. Solve for $$x$$ in $$\mathbb{R}$$ and write the answer in interval notation: $$\dfrac{3x+1}{x-2} > 2$$.
-8. Solve for $$x$$ in $$\mathbb{R}$$ and write the answer in interval notation: $$\lvert x - 2\rvert + \lvert x + 4\rvert \le 10$$.
-9. Solve for $$x$$ in $$\mathbb{R}$$ and write the answer in interval notation: $$\lvert x^{2} - 9\rvert \le 5$$.
-10. Solve in $$\mathbb{R}$$: $$(x-1)^{2}(x-4)(x+2) < 0$$. Explain how repeated roots change the sign chart compared with all simple roots.
-11. Solve in $$\mathbb{R}$$: $$x^{3} - 5x^{2} + 6x \ge 0$$.
-12. Solve in $$\mathbb{R}$$: $$\dfrac{x^{2} - 4}{x^{2} + x} \le 0$$. Give the domain, a single rational inequality of the form $$\dfrac{R(x)}{Q(x)} \le 0$$ with no common factors, and the solution in interval notation.
-13. Solve in $$\mathbb{R}$$: $$\sqrt{4 - x^{2}} \ge x$$. Find the radical domain first, then split into $$x < 0$$ and $$x \ge 0$$ before squaring where legal.
-14. Solve in $$\mathbb{R}$$: $$\sqrt{x^{2} + 5} \le x + 2$$. Impose all conditions needed before and after squaring.
-15. Determine the symmetries of both graphs: $$f(x)=\dfrac{x^2}{x^2+1}$$ and $$g(x)=x\lvert x\rvert$$. For each, decide whether the graph has $$y$$-axis symmetry, $$x$$-axis symmetry, origin symmetry, or none.
-16. (Bonus, Markov equations)
 
-   Our goal is to find all positive integer solutions $$(x,y)$$ to
-
-   $$
-   x^2+y^2+1=3xy.
-   $$
-
-   This is a small version of a famous family of Diophantine equations (equations with positive integer solutions) known as Markov equations.
-
-   $$(A)$$ Find the solutions with $$y=1$$.
-
-   $$(B)$$ Treat the equation as a quadratic in $$x$$. If $$x$$ is one root, use Vieta's formulas to find the other root $$x'$$.
-
-   $$(C)$$ Suppose $$(x,y)$$ is a positive integer solution with $$x\ge y\ge 2$$. Prove that the other root $$x'$$ is a positive integer and that $$x'<y$$.
-
-   $$(D)$$ Explain why repeatedly replacing the larger coordinate by the smaller Vieta root must eventually reach a solution with one coordinate equal to $$1$$.
-
-   $$(E)$$ Reverse the process to describe all positive integer solutions.
-
----
-
-## Solutions
-
-<div class="theorem-box">
-
-### Solution 1
-
+:::solution
 We want integer points $$(x,y)$$ satisfying
 
 $$
@@ -701,13 +662,13 @@ Thus
 $$
 \boxed{841}.
 $$
+:::
+::::
 
-</div>
+::::problem
+2. Solve for $$x$$: $$x^4 - 13x^2 + 36 = 0$$.
 
-<div class="theorem-box">
-
-### Solution 2
-
+:::solution
 Let $$u=x^2$$. Then
 
 $$
@@ -739,13 +700,13 @@ Therefore
 $$
 \boxed{x=-3,-2,2,3}.
 $$
+:::
+::::
 
-</div>
+::::problem
+3. Simplify $$\sqrt{\frac{x^4}{256} + \frac{x^3}{32} + \frac{5x^2}{16} + x + 4 + 16x - 8\sqrt{4x-7} - 24 + 2(\frac{x^2}{16} + \frac{x}{4} + 2)(-2 + 2\sqrt{4x-7})}$$. (Hint: Use factor by grouping.)
 
-<div class="theorem-box">
-
-### Solution 3
-
+:::solution
 Let
 
 $$
@@ -791,13 +752,13 @@ The domain requires $$4x-7\ge 0$$, so $$x\ge \frac74$$. On this domain, $$A+B\ge
 $$
 \boxed{\frac{x^2}{16}+\frac{x}{4}+2\sqrt{4x-7}}.
 $$
+:::
+::::
 
-</div>
+::::problem
+4. Solve for $$x$$ and discard any extraneous solutions: $$\dfrac{1}{x-1} + \dfrac{2}{x^2-1} = \dfrac{3}{x+1}$$.
 
-<div class="theorem-box">
-
-### Solution 4
-
+:::solution
 The denominators show that
 
 $$
@@ -831,13 +792,13 @@ Since $$3$$ is allowed in the original equation,
 $$
 \boxed{x=3}.
 $$
+:::
+::::
 
-</div>
+::::problem
+5. Solve for $$x$$ in $$\mathbb{R}$$: $$9^x - 10\cdot 3^x + 9 = 0$$.
 
-<div class="theorem-box">
-
-### Solution 5
-
+:::solution
 Let
 
 $$
@@ -883,13 +844,13 @@ Therefore
 $$
 \boxed{x=0,2}.
 $$
+:::
+::::
 
-</div>
+::::problem
+6. Solve for $$x$$ in $$\mathbb{R}$$ and check every candidate in the original equation: $$\sqrt{2x+3} + \sqrt{x+1} = 3$$.
 
-<div class="theorem-box">
-
-### Solution 6
-
+:::solution
 The domain requires
 
 $$
@@ -956,13 +917,13 @@ Check candidates in the original equation. The value $$25+6\sqrt{17}$$ is extran
 $$
 \boxed{x=25-6\sqrt{17}}.
 $$
+:::
+::::
 
-</div>
+::::problem
+7. Solve for $$x$$ in $$\mathbb{R}$$ and write the answer in interval notation: $$\dfrac{3x+1}{x-2} > 2$$.
 
-<div class="theorem-box">
-
-### Solution 7
-
+:::solution
 Move everything to one side:
 
 $$
@@ -990,13 +951,13 @@ Thus
 $$
 \boxed{(-\infty,-5)\cup(2,\infty)}.
 $$
+:::
+::::
 
-</div>
+::::problem
+8. Solve for $$x$$ in $$\mathbb{R}$$ and write the answer in interval notation: $$\lvert x - 2\rvert + \lvert x + 4\rvert \le 10$$.
 
-<div class="theorem-box">
-
-### Solution 8
-
+:::solution
 The expression
 
 $$
@@ -1048,13 +1009,13 @@ This gives $$(2,4]$$. Combining all pieces,
 $$
 \boxed{[-6,4]}.
 $$
+:::
+::::
 
-</div>
+::::problem
+9. Solve for $$x$$ in $$\mathbb{R}$$ and write the answer in interval notation: $$\lvert x^{2} - 9\rvert \le 5$$.
 
-<div class="theorem-box">
-
-### Solution 9
-
+:::solution
 Start with
 
 $$
@@ -1078,13 +1039,13 @@ Thus $$x^2$$ must be at least $$4$$ and at most $$14$$. Therefore
 $$
 \boxed{[-\sqrt{14},-2]\cup[2,\sqrt{14}]}.
 $$
+:::
+::::
 
-</div>
+::::problem
+10. Solve in $$\mathbb{R}$$: $$(x-1)^{2}(x-4)(x+2) < 0$$. Explain how repeated roots change the sign chart compared with all simple roots.
 
-<div class="theorem-box">
-
-### Solution 10
-
+:::solution
 The inequality is already factored:
 
 $$
@@ -1111,13 +1072,13 @@ Because the inequality is strict, none of the zeros are included. Thus
 $$
 \boxed{(-2,1)\cup(1,4)}.
 $$
+:::
+::::
 
-</div>
+::::problem
+11. Solve in $$\mathbb{R}$$: $$x^{3} - 5x^{2} + 6x \ge 0$$.
 
-<div class="theorem-box">
-
-### Solution 11
-
+:::solution
 Factor:
 
 $$
@@ -1142,13 +1103,13 @@ Since the inequality is $$\ge 0$$, include the zeros. Therefore
 $$
 \boxed{[0,2]\cup[3,\infty)}.
 $$
+:::
+::::
 
-</div>
+::::problem
+12. Solve in $$\mathbb{R}$$: $$\dfrac{x^{2} - 4}{x^{2} + x} \le 0$$. Give the domain, a single rational inequality of the form $$\dfrac{R(x)}{Q(x)} \le 0$$ with no common factors, and the solution in interval notation.
 
-<div class="theorem-box">
-
-### Solution 12
-
+:::solution
 The domain comes from the denominator:
 
 $$
@@ -1187,13 +1148,13 @@ Thus
 $$
 \boxed{\text{domain: }x\ne -1,0;\quad \frac{(x-2)(x+2)}{x(x+1)}\le 0;\quad [-2,-1)\cup(0,2]}.
 $$
+:::
+::::
 
-</div>
+::::problem
+13. Solve in $$\mathbb{R}$$: $$\sqrt{4 - x^{2}} \ge x$$. Find the radical domain first, then split into $$x < 0$$ and $$x \ge 0$$ before squaring where legal.
 
-<div class="theorem-box">
-
-### Solution 13
-
+:::solution
 First find the domain:
 
 $$
@@ -1229,13 +1190,13 @@ With $$x\ge 0$$, this gives $$0\le x\le \sqrt2$$. Combining both cases,
 $$
 \boxed{[-2,\sqrt2]}.
 $$
+:::
+::::
 
-</div>
+::::problem
+14. Solve in $$\mathbb{R}$$: $$\sqrt{x^{2} + 5} \le x + 2$$. Impose all conditions needed before and after squaring.
 
-<div class="theorem-box">
-
-### Solution 14
-
+:::solution
 The radical is always defined because
 
 $$
@@ -1281,13 +1242,13 @@ This already satisfies $$x\ge -2$$, so
 $$
 \boxed{\left[\frac14,\infty\right)}.
 $$
+:::
+::::
 
-</div>
+::::problem
+15. Determine the symmetries of both graphs: $$f(x)=\dfrac{x^2}{x^2+1}$$ and $$g(x)=x\lvert x\rvert$$. For each, decide whether the graph has $$y$$-axis symmetry, $$x$$-axis symmetry, origin symmetry, or none.
 
-<div class="theorem-box">
-
-### Solution 15
-
+:::solution
 For
 
 $$
@@ -1323,13 +1284,31 @@ Therefore
 $$
 \boxed{f\text{ has }y\text{-axis symmetry only, and }g\text{ has origin symmetry only}}.
 $$
+:::
+::::
 
-</div>
+::::problem
+16. (Bonus, Markov equations)
 
-<div class="theorem-box">
+   Our goal is to find all positive integer solutions $$(x,y)$$ to
 
-### Solution 16
+   $$
+   x^2+y^2+1=3xy.
+   $$
 
+   This is a small version of a famous family of Diophantine equations (equations with positive integer solutions) known as Markov equations.
+
+   $$(A)$$ Find the solutions with $$y=1$$.
+
+   $$(B)$$ Treat the equation as a quadratic in $$x$$. If $$x$$ is one root, use Vieta's formulas to find the other root $$x'$$.
+
+   $$(C)$$ Suppose $$(x,y)$$ is a positive integer solution with $$x\ge y\ge 2$$. Prove that the other root $$x'$$ is a positive integer and that $$x'<y$$.
+
+   $$(D)$$ Explain why repeatedly replacing the larger coordinate by the smaller Vieta root must eventually reach a solution with one coordinate equal to $$1$$.
+
+   $$(E)$$ Reverse the process to describe all positive integer solutions.
+
+:::solution
 We solve
 
 $$
@@ -1503,5 +1482,5 @@ Since $$(1,1)$$ works, every pair generated by the recurrence works. The descent
 $$
 \boxed{\text{All positive integer solutions are }(1,1),(1,2),(2,1),(2,5),(5,2),(5,13),(13,5),\ldots}
 $$
-
-</div>
+:::
+::::

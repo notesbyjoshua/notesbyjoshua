@@ -2092,94 +2092,10 @@ So the $$n$$ roots of any nonzero complex number also form a regular $$n$$-gon c
 
 ## Practice
 
+::::problem
 1. Solve the triangle with $$A=60^\circ$$, $$a=9$$ cm, and $$b=10$$ cm. Determine whether there are zero, one, or two possible triangles. For each valid triangle, find the remaining side and angles.
-2. A plane is flying above the ocean. The angle of depression to a submarine is $$24^\circ$$, and the angle of depression to a ship is $$17^\circ$$. The distance from the plane to the ship is $$5120$$ feet. Assuming the submarine and ship are in the same vertical plane as the airplane, find the distance between the submarine and the ship.
-3. Two towns $$A$$ and $$B$$ are $$1.4$$ miles apart, with $$B$$ due east of $$A$$. A signal is detected on a bearing of $$S22^\circ E$$ from $$A$$ and $$S43^\circ W$$ from $$B$$. Draw a labeled diagram and find the distance from each town to the signal.
-4. Prove that for any triangle with side lengths $$a,b,c$$ and semiperimeter $$s=\frac12(a+b+c)$$, $$\sin^2\left(\frac C2\right)=\frac{(s-a)(s-b)}{ab}.$$
-5. Let $$\mathbf u=\langle -2,1\rangle$$ and $$\mathbf v=\langle -5,3\rangle$$.
 
-    $$(A)$$ Find $$2\mathbf u-3\mathbf v$$.
-
-    $$(B)$$ Find the angle between $$\mathbf u$$ and $$\mathbf v$$ to the nearest degree.
-
-    $$(C)$$ Find a unit vector in the direction of $$\mathbf u+\mathbf v$$.
-
-6. A plane is heading $$40^\circ$$ east of north at $$120$$ mph. A wind blows directly from the east at $$10$$ mph. Find the ground-speed vector, the ground speed, and the drift angle from the plane's intended heading.
-7. A force of $$18$$ Newtons acts in the direction $$235^\circ$$ from the positive $$x$$-axis. Resolve the force into horizontal and vertical components. Then find the magnitude and direction of the vector obtained by adding this force to $$\langle 12,-5\rangle$$.
-8. A particle moves according to $$x(t)=2\cos t-\sin(2t),\qquad y(t)=6\sin t,$$ for $$0\le t\le 2\pi$$.
-
-    $$(A)$$ Find all exact $$x$$-intercepts.
-
-    $$(B)$$ Find the particle's position when $$t=\frac{\pi}{2}$$ and when $$t=\frac{7\pi}{6}$$.
-
-    $$(C)$$ Write a formula for the particle's distance from the origin as a function of $$t$$.
-
-9. Eliminate the parameter and describe the curve, including any domain restrictions and orientation: $$x=e^t$$, $$y=e^{2t}-3$$, $$-\ln2\le t\le \ln3.$$
-10. The curve $$x=4\cos t$$, $$y=-2\sin t$$ is traced for $$0\le t\le 2\pi$$. Eliminate the parameter, state where the curve starts, and determine the direction (clockwise or counterclockwise) the curve is traced in.
-11. Classify each polar curve as a cardioid, limacon, rose curve, lemniscate, circle, line, or spiral. For rose curves, state the number of petals. Graph each of the curves.
-
-    $$(A)$$ Graph $$r=3-3\sin\theta$$
-
-    $$(B)$$ Graph $$r=2+5\cos\theta$$
-
-    $$(C)$$ Graph $$r=4\sin(3\theta)$$
-
-    $$(D)$$ Graph $$r^2=25\sin(2\theta)$$
-
-12. Graph both $$r=2+2\cos\theta$$ and $$r=2-2\cos\theta$$. Then, find the number of intersection points.
-13. Suppose you have an octagon centered at the origin with one vertex at $$P_1=2\sqrt2$$.
-    $$(A)$$ Find a vertex in the third quadrant and a vertex in the fourth quadrant.
-    $$(B)$$ Without finding all of the vertices calculate $$P_1+P_2+\cdots+P_8$$
-    $$(C)$$ Without finding all of the vertices calculate $$P_1P_2\cdots P_8$$.
-14. Let $$z_1=-2+2\sqrt3i,\qquad z_2=1-i.$$
-
-    $$(A)$$ Write both numbers in polar form.
-
-    $$(B)$$ Write both numbers in exponential form.
-
-    $$(C)$$ Compute $$z_1z_2$$ in polar form and rectangular form.
-
-15. Use De Moivre's Theorem to find all fourth roots of $$16\left(\cos\frac{2\pi}{3}+i\sin\frac{2\pi}{3}\right).$$
-16. (Bonus, Brahmagupta's and Bretschneider's formulas)
-
-Let $$ABCD$$ be a cyclic quadrilateral, meaning all four vertices lie on one circle. Let its side lengths be $$a,b,c,d$$, and let its semiperimeter be
-
-$$
-s=\frac12(a+b+c+d).
-$$
-
-The goal is to prove the area of a cyclic quadrilateral is:
-
-$$
-K=\sqrt{(s-a)(s-b)(s-c)(s-d)},
-$$
-
-where $$K$$ is the area of the cyclic quadrilateral. We will also extend the area formula to all cases, not just cyclic ones.
-
-<div style="margin-left: 1.5rem;">
-
-$$(A)$$ Draw diagonal $$AC$$. Let $$\angle ABC=B$$ and $$\angle ADC=D$$. Use triangle area formulas and $$D=180^\circ-B$$ (A property of cyclic quadrilaterals) to rewrite the area as $$K=\frac12(ab+cd)\sin B.$$
-
-$$(B)$$ Apply the Law of Cosines to triangles $$ABC$$ and $$ADC$$ to show that $$2ab\cos B=a^2+b^2-c^2-d^2+2cd\cos D.$$
-
-$$(C)$$ Use $$\cos D=-\cos B$$ to solve for $$\cos B$$, then combine this with $$K=\frac12(ab+cd)\sin B$$ and $$\sin^2B=1-\cos^2B$$ to prove $$K^2=(s-a)(s-b)(s-c)(s-d).$$ This is Brahmagupta's formula.
-
-$$(D)$$ Now suppose $$ABCD$$ is not necessarily cyclic. Keep the same notation, with opposite angles $$B$$ and $$D$$. Show that $$(4K)^2+(a^2+b^2-c^2-d^2)^2=4(a^2b^2+c^2d^2-2abcd\cos(B+D)).$$
-
-$$(E)$$ Now prove **Bretschneider's formula**: $$K^2=(s-a)(s-b)(s-c)(s-d)-abcd\cos^2\left(\frac{B+D}{2}\right).$$
-
-$$(F)$$ Explain why Bretschneider's formula turns into Brahmagupta's formula when $$ABCD$$ is cyclic.
-
-</div>
-
----
-
-## Solutions
-
-<div class="theorem-box">
-
-### Solution 1
-
+:::solution
 By the Law of Sines,
 
 $$
@@ -2211,13 +2127,13 @@ C\approx 14.2^\circ,\qquad c\approx 2.55\text{ cm}.
 $$
 
 Therefore, there are **two possible triangles**.
+:::
+::::
 
-</div>
+::::problem
+2. A plane is flying above the ocean. The angle of depression to a submarine is $$24^\circ$$, and the angle of depression to a ship is $$17^\circ$$. The distance from the plane to the ship is $$5120$$ feet. Assuming the submarine and ship are in the same vertical plane as the airplane, find the distance between the submarine and the ship.
 
-<div class="theorem-box">
-
-### Solution 2
-
+:::solution
 The plane-to-ship distance is $$5120$$ ft, and the angle of depression to the ship is $$17^\circ$$. So the plane's height is
 
 $$
@@ -2241,13 +2157,13 @@ Assuming the ship and submarine are on the same side of the plane, their distanc
 $$
 4896.28-3362.19\approx 1534.09\text{ ft}.
 $$
+:::
+::::
 
-</div>
+::::problem
+3. Two towns $$A$$ and $$B$$ are $$1.4$$ miles apart, with $$B$$ due east of $$A$$. A signal is detected on a bearing of $$S22^\circ E$$ from $$A$$ and $$S43^\circ W$$ from $$B$$. Draw a labeled diagram and find the distance from each town to the signal.
 
-<div class="theorem-box">
-
-### Solution 3
-
+:::solution
 Place town $$A$$ at $$(0,0)$$ and town $$B$$ at $$(1.4,0)$$. The bearing $$S22^\circ E$$ from $$A$$ points down and right, while $$S43^\circ W$$ from $$B$$ points down and left.
 
 Solving the two bearing lines gives the signal at approximately
@@ -2261,13 +2177,13 @@ Therefore,
 $$
 AS\approx 1.13\text{ miles},\qquad BS\approx 1.43\text{ miles}.
 $$
+:::
+::::
 
-</div>
+::::problem
+4. Prove that for any triangle with side lengths $$a,b,c$$ and semiperimeter $$s=\frac12(a+b+c)$$, $$\sin^2\left(\frac C2\right)=\frac{(s-a)(s-b)}{ab}.$$
 
-<div class="theorem-box">
-
-### Solution 4
-
+:::solution
 Use the half-angle identity:
 
 $$
@@ -2305,13 +2221,19 @@ Thus,
 $$
 \sin^2\left(\frac C2\right)=\frac{(s-a)(s-b)}{ab}.
 $$
+:::
+::::
 
-</div>
+::::problem
+5. Let $$\mathbf u=\langle -2,1\rangle$$ and $$\mathbf v=\langle -5,3\rangle$$.
 
-<div class="theorem-box">
+    $$(A)$$ Find $$2\mathbf u-3\mathbf v$$.
 
-### Solution 5
+    $$(B)$$ Find the angle between $$\mathbf u$$ and $$\mathbf v$$ to the nearest degree.
 
+    $$(C)$$ Find a unit vector in the direction of $$\mathbf u+\mathbf v$$.
+
+:::solution
 We have
 
 $$
@@ -2362,13 +2284,13 @@ $$
 \frac{\langle -7,4\rangle}{\sqrt{65}}
 =\left\langle \frac{-7}{\sqrt{65}},\frac{4}{\sqrt{65}}\right\rangle.
 $$
+:::
+::::
 
-</div>
+::::problem
+6. A plane is heading $$40^\circ$$ east of north at $$120$$ mph. A wind blows directly from the east at $$10$$ mph. Find the ground-speed vector, the ground speed, and the drift angle from the plane's intended heading.
 
-<div class="theorem-box">
-
-### Solution 6
-
+:::solution
 Let east be positive $$x$$ and north be positive $$y$$. A heading of $$40^\circ$$ east of north at $$120$$ mph has velocity
 
 $$
@@ -2407,13 +2329,13 @@ $$
 $$
 
 west of the intended heading.
+:::
+::::
 
-</div>
+::::problem
+7. A force of $$18$$ Newtons acts in the direction $$235^\circ$$ from the positive $$x$$-axis. Resolve the force into horizontal and vertical components. Then find the magnitude and direction of the vector obtained by adding this force to $$\langle 12,-5\rangle$$.
 
-<div class="theorem-box">
-
-### Solution 7
-
+:::solution
 The force components are
 
 $$
@@ -2439,13 +2361,19 @@ The direction angle is approximately
 $$
 274.9^\circ.
 $$
+:::
+::::
 
-</div>
+::::problem
+8. A particle moves according to $$x(t)=2\cos t-\sin(2t),\qquad y(t)=6\sin t,$$ for $$0\le t\le 2\pi$$.
 
-<div class="theorem-box">
+    $$(A)$$ Find all exact $$x$$-intercepts.
 
-### Solution 8
+    $$(B)$$ Find the particle's position when $$t=\frac{\pi}{2}$$ and when $$t=\frac{7\pi}{6}$$.
 
+    $$(C)$$ Write a formula for the particle's distance from the origin as a function of $$t$$.
+
+:::solution
 The particle has
 
 $$
@@ -2513,13 +2441,13 @@ Therefore,
 $$
 d(t)=\sqrt{(2\cos t-\sin(2t))^2+36\sin^2t}.
 $$
+:::
+::::
 
-</div>
+::::problem
+9. Eliminate the parameter and describe the curve, including any domain restrictions and orientation: $$x=e^t$$, $$y=e^{2t}-3$$, $$-\ln2\le t\le \ln3.$$
 
-<div class="theorem-box">
-
-### Solution 9
-
+:::solution
 Since
 
 $$
@@ -2567,13 +2495,13 @@ to
 $$
 (3,6).
 $$
+:::
+::::
 
-</div>
+::::problem
+10. The curve $$x=4\cos t$$, $$y=-2\sin t$$ is traced for $$0\le t\le 2\pi$$. Eliminate the parameter, state where the curve starts, and determine the direction (clockwise or counterclockwise) the curve is traced in.
 
-<div class="theorem-box">
-
-### Solution 10
-
+:::solution
 From
 
 $$
@@ -2611,13 +2539,21 @@ $$
 $$
 
 For small positive $$t$$, $$y=-2\sin t$$ is negative, so the curve moves downward from $$(4,0)$$. Therefore, the ellipse is traced **clockwise**.
+:::
+::::
 
-</div>
+::::problem
+11. Classify each polar curve as a cardioid, limacon, rose curve, lemniscate, circle, line, or spiral. For rose curves, state the number of petals. Graph each of the curves.
 
-<div class="theorem-box">
+    $$(A)$$ Graph $$r=3-3\sin\theta$$
 
-### Solution 11
+    $$(B)$$ Graph $$r=2+5\cos\theta$$
 
+    $$(C)$$ Graph $$r=4\sin(3\theta)$$
+
+    $$(D)$$ Graph $$r^2=25\sin(2\theta)$$
+
+:::solution
 This is an Archimedean spiral:
 
 $$
@@ -2627,13 +2563,13 @@ $$
 As $$\theta$$ increases from $$-4\pi$$ to $$4\pi$$, $$r$$ increases from $$-8$$ to $$8$$. Negative $$r$$ values are plotted in the opposite direction from the angle $$\theta$$.
 
 **ADD IMAGE HERE**
+:::
+::::
 
-</div>
+::::problem
+12. Graph both $$r=2+2\cos\theta$$ and $$r=2-2\cos\theta$$. Then, find the number of intersection points.
 
-<div class="theorem-box">
-
-### Solution 12
-
+:::solution
 The curves are
 
 $$
@@ -2687,13 +2623,16 @@ $$
 $$
 
 intersection points.
+:::
+::::
 
-</div>
+::::problem
+13. Suppose you have an octagon centered at the origin with one vertex at $$P_1=2\sqrt2$$.
+    $$(A)$$ Find a vertex in the third quadrant and a vertex in the fourth quadrant.
+    $$(B)$$ Without finding all of the vertices calculate $$P_1+P_2+\cdots+P_8$$
+    $$(C)$$ Without finding all of the vertices calculate $$P_1P_2\cdots P_8$$.
 
-<div class="theorem-box">
-
-### Solution 13
-
+:::solution
 For part (A), the resulting octagon is regular, so consecutive vertices differ by an angle of
 
 $$
@@ -2755,13 +2694,19 @@ Therefore,
 $$
 P_1P_2\cdots P_8=-4096.
 $$
+:::
+::::
 
-</div>
+::::problem
+14. Let $$z_1=-2+2\sqrt3i,\qquad z_2=1-i.$$
 
-<div class="theorem-box">
+    $$(A)$$ Write both numbers in polar form.
 
-### Solution 14
+    $$(B)$$ Write both numbers in exponential form.
 
+    $$(C)$$ Compute $$z_1z_2$$ in polar form and rectangular form.
+
+:::solution
 For part (A), for
 
 $$
@@ -2821,13 +2766,13 @@ In rectangular form,
 $$
 z_1z_2=(2\sqrt3-2)+(2\sqrt3+2)i.
 $$
+:::
+::::
 
-</div>
+::::problem
+15. Use De Moivre's Theorem to find all fourth roots of $$16\left(\cos\frac{2\pi}{3}+i\sin\frac{2\pi}{3}\right).$$
 
-<div class="theorem-box">
-
-### Solution 15
-
+:::solution
 Write the complex number as
 
 $$
@@ -2861,13 +2806,43 @@ In rectangular form, these are
 $$
 \sqrt3+i,\quad -1+\sqrt3i,\quad -\sqrt3-i,\quad 1-\sqrt3i.
 $$
+:::
+::::
+
+::::problem
+16. (Bonus, Brahmagupta's and Bretschneider's formulas)
+
+Let $$ABCD$$ be a cyclic quadrilateral, meaning all four vertices lie on one circle. Let its side lengths be $$a,b,c,d$$, and let its semiperimeter be
+
+$$
+s=\frac12(a+b+c+d).
+$$
+
+The goal is to prove the area of a cyclic quadrilateral is:
+
+$$
+K=\sqrt{(s-a)(s-b)(s-c)(s-d)},
+$$
+
+where $$K$$ is the area of the cyclic quadrilateral. We will also extend the area formula to all cases, not just cyclic ones.
+
+<div style="margin-left: 1.5rem;">
+
+$$(A)$$ Draw diagonal $$AC$$. Let $$\angle ABC=B$$ and $$\angle ADC=D$$. Use triangle area formulas and $$D=180^\circ-B$$ (A property of cyclic quadrilaterals) to rewrite the area as $$K=\frac12(ab+cd)\sin B.$$
+
+$$(B)$$ Apply the Law of Cosines to triangles $$ABC$$ and $$ADC$$ to show that $$2ab\cos B=a^2+b^2-c^2-d^2+2cd\cos D.$$
+
+$$(C)$$ Use $$\cos D=-\cos B$$ to solve for $$\cos B$$, then combine this with $$K=\frac12(ab+cd)\sin B$$ and $$\sin^2B=1-\cos^2B$$ to prove $$K^2=(s-a)(s-b)(s-c)(s-d).$$ This is Brahmagupta's formula.
+
+$$(D)$$ Now suppose $$ABCD$$ is not necessarily cyclic. Keep the same notation, with opposite angles $$B$$ and $$D$$. Show that $$(4K)^2+(a^2+b^2-c^2-d^2)^2=4(a^2b^2+c^2d^2-2abcd\cos(B+D)).$$
+
+$$(E)$$ Now prove **Bretschneider's formula**: $$K^2=(s-a)(s-b)(s-c)(s-d)-abcd\cos^2\left(\frac{B+D}{2}\right).$$
+
+$$(F)$$ Explain why Bretschneider's formula turns into Brahmagupta's formula when $$ABCD$$ is cyclic.
 
 </div>
 
-<div class="theorem-box">
-
-### Solution 16
-
+:::solution
 For part (A), draw diagonal $$AC$$. The diagonal splits the quadrilateral into triangles $$ABC$$ and $$ADC$$. Using $$K=\frac12ab\sin C$$ for triangle area,
 
 $$
@@ -3181,5 +3156,5 @@ K^2=(s-a)(s-b)(s-c)(s-d),
 $$
 
 which is Brahmagupta's formula.
-
-</div>
+:::
+::::

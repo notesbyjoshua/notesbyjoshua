@@ -152,7 +152,7 @@ The graph is shown below (the dashed line is the horizontal asymptote):
 % horizontal asymptote y = 2
 \addplot[red, dashed, thick, domain=-2:7] {2};
 \addplot[blue, very thick, samples=150, domain=-2:6.3] {0.5*exp((x-3)*ln(4))+2};
-\node[blue, anchor=west] at (axis cs:0.2,15) {$y=\tfrac12(4)^{x-3}+2$};
+\node[blue, anchor=east] at (axis cs:4.55,12) {$y=\tfrac12(4)^{x-3}+2$};
 \node[red, anchor=south west] at (axis cs:-2,2) {$y=2$};
 \end{axis}
 \end{tikzpicture}
@@ -504,7 +504,7 @@ $$
 Cancel one factor of $$x+4$$:
 
 $$
-\boxed{\log\left(\frac{x-4}{(x+4)^2x^6}\right)}.
+\log\left(\frac{x-4}{(x+4)^2x^6}\right).
 $$
 
 The original expression requires
@@ -541,7 +541,7 @@ $$
 Then use the quotient rule:
 
 $$
-\boxed{\frac13\log_5(x+3)-\frac13\log_5 x}.
+\frac13\log_5(x+3)-\frac13\log_5 x.
 $$
 
 </div>
@@ -569,7 +569,7 @@ $$
 we get
 
 $$
-\boxed{\frac{\ln 2}{2}}.
+\frac{\ln 2}{2}.
 $$
 
 </div>
@@ -625,7 +625,7 @@ $$
 Therefore
 
 $$
-\boxed{x=\frac{\ln 3}{\ln 3-2\ln 4}}.
+x=\frac{\ln 3}{\ln 3-2\ln 4}.
 $$
 
 </div>
@@ -685,7 +685,7 @@ $$
 so
 
 $$
-\boxed{x=0}.
+x=0.
 $$
 
 </div>
@@ -757,7 +757,7 @@ $$
 This interval is inside the logarithm's domain, so the solution is
 
 $$
-\boxed{\left(-\frac6{13},-\frac14\right)}.
+\left(-\frac6{13},-\frac14\right).
 $$
 
 </div>
@@ -770,53 +770,10 @@ If the logarithm base is between $$0$$ and $$1$$, remember that the logarithm is
 
 ## Practice
 
+::::problem
 1. Let $$f(x)=3-2\cdot 5^{x+1}$$. State the domain, range, horizontal asymptote, intercepts, intervals of increase/decrease, and find an explicit formula for $$f^{-1}(x)$$ with the domain and range of the inverse.
-2. The points $$(-1,17)$$ and $$(2,1)$$ lie on the graph of $$g(x)=a\cdot b^{x-h}+k$$. The horizontal asymptote is $$y=-1$$, and $$h=1$$. Find $$a$$ and $$b$$, then determine whether $$g$$ represents exponential growth or decay.
-3. Find all real solutions to $$4^{x+1}-10\cdot 2^x+1=0$$. Give exact answers.
-4. Solve in $$\mathbb{R}$$: $$3^{2x}-28\cdot 3^x+27\le 0$$. Write the answer in interval notation.
-5. Solve for $$x$$ exactly: $$2^{x+1}=5^{2x-3}.$$
-6. Solve in $$\mathbb{R}$$: $$e^x+e^{-x}=\frac{13}{6}.$$
-7. Rewrite the following expression as a single logarithm with coefficient $$1$$, and state the full domain of the original expression: $$\frac12\ln(x^2-9)-2\ln(x-3)+\ln\left(\frac{x+1}{x}\right).$$
-8. Expand completely using logarithm properties, and state all restrictions on $$x$$ and $$y$$: $$\log_3\left(\frac{x^4\sqrt{y-2}}{(x^2+1)^3(5-y)}\right).$$
-9. Solve in $$\mathbb{R}$$: $$\log_{1/3}(2x-1)\ge \log_{1/3}(7-x).$$
-10. Solve in $$\mathbb{R}$$: $$\ln(x^2-5x+6)\le \ln(2x+3).$$
-11. Let $$h(x)=\log_4(16-4x)-2$$. State the domain, range, vertical asymptote, intercepts, intervals of increase/decrease, and find $$h^{-1}(x)$$. Graph both equations.
-12. A population is modeled by $$P(t)=\dfrac{1200}{1+19e^{-0.4t}}$$ for $$t\ge 0$$. Find the initial population, the limiting population (aka horizontal asymptote), and the exact time when $$P(t)=900$$.
-13. Find the unique positive integer $$n$$ such that $$\log_2 (\log_{16} n) = \log_4 (\log_4 n)$$ (2020 AMC 12A).
-14. Let $$F(x)=\ln\left(\dfrac{x-a}{b-x}\right)$$, where $$a<b$$. Find the domain, intercepts in terms of $$a$$ and $$b$$, the vertical asymptotes, and an explicit formula for $$F^{-1}(x)$$. Then determine the range of $$F$$.
-15. Find the exact value of the product $$\prod_{k=4}^{63}\frac{\log_k\left(5^{k^2-1}\right)}{\log_{k+1}\left(5^{k^2-4}\right)}$$. (Hint: Use change of base and cancel out things to simplify the expression) (2025 AIME II)
-16. (Bonus, The EML function)
 
-   Define a binary operation called $$\operatorname{EML}$$ by
-
-   $$
-   \operatorname{EML}(x,y)=e^x-\ln y,
-   $$
-
-   where $$y>0$$.
-
-   $$(A)$$ First, show that EML contains the exponential function directly: $$e^x=\operatorname{EML}(x,1).$$
-
-   $$(B)$$ Now show that EML also contains logarithms: $$\operatorname{EML}(0,x)=1-\ln x.$$ Use this equation to solve for $$\ln x$$ in terms of $$\operatorname{EML}(0,x)$$.
-
-   $$(C)$$ Using part $$(B)$$, write $$\log_b x$$ in terms of EML expressions, where $$b>0$$, $$b\ne1$$, and $$x>0$$.
-
-   $$(D)$$ Since EML can produce both exponentials and logarithms, it can also build simpler operations. Use the identities $$x+y=\ln(e^x e^y)$$ and $$x-y=\ln\left(\frac{e^x}{e^y}\right)$$ to write formulas for $$x+y$$ and $$x-y$$ using EML expressions.
-
-   $$(E)$$ An **EML tree** is an expression built by repeatedly feeding outputs of EML into new EML operations. For example, $$\operatorname{EML}\left(\operatorname{EML}(x,1),\operatorname{EML}(0,y)\right)$$ is an EML tree. Draw its tree diagram, then simplify the expression as much as possible using exponent and logarithm rules.
-
-   $$(F)$$ It is claimed that EML trees can represent all standard elementary functions. In a short paragraph, compare this idea to the way a single NAND gate can generate all Boolean logic. A NAND gate outputs $$0$$ only when both inputs are $$1$$, and outputs $$1$$ otherwise.
-
-   This problem is inspired by the paper *All elementary functions from a single operator* by Andrzej Odrzywołek. Learn more here: [https://arxiv.org/html/2603.21852v2](https://arxiv.org/html/2603.21852v2).
-
----
-
-## Solutions
-
-<div class="theorem-box">
-
-### Solution 1
-
+:::solution
 The domain is all real numbers:
 
 $$
@@ -932,13 +889,13 @@ The range of $$f^{-1}$$ is the domain of $$f$$:
 $$
 \boxed{(-\infty,\infty)}.
 $$
+:::
+::::
 
-</div>
+::::problem
+2. The points $$(-1,17)$$ and $$(2,1)$$ lie on the graph of $$g(x)=a\cdot b^{x-h}+k$$. The horizontal asymptote is $$y=-1$$, and $$h=1$$. Find $$a$$ and $$b$$, then determine whether $$g$$ represents exponential growth or decay.
 
-<div class="theorem-box">
-
-### Solution 2
-
+:::solution
 Since the horizontal asymptote is $$y=-1$$ and $$h=1$$, the function has the form
 
 $$
@@ -1016,13 +973,13 @@ Since $$0<b<1$$ and $$a>0$$, this represents
 $$
 \boxed{\text{exponential decay}}.
 $$
+:::
+::::
 
-</div>
+::::problem
+3. Find all real solutions to $$4^{x+1}-10\cdot 2^x+1=0$$. Give exact answers.
 
-<div class="theorem-box">
-
-### Solution 3
-
+:::solution
 Rewrite everything in terms of $$2^x$$:
 
 $$
@@ -1070,13 +1027,13 @@ $$
 \quad\text{or}\quad
 x=\log_2\left(\frac{5-\sqrt{21}}4\right)}.
 $$
+:::
+::::
 
-</div>
+::::problem
+4. Solve in $$\mathbb{R}$$: $$3^{2x}-28\cdot 3^x+27\le 0$$. Write the answer in interval notation.
 
-<div class="theorem-box">
-
-### Solution 4
-
+:::solution
 Let
 
 $$
@@ -1118,13 +1075,13 @@ Because $$3^x$$ is increasing,
 $$
 \boxed{[0,3]}.
 $$
+:::
+::::
 
-</div>
+::::problem
+5. Solve for $$x$$ exactly: $$2^{x+1}=5^{2x-3}.$$
 
-<div class="theorem-box">
-
-### Solution 5
-
+:::solution
 Take natural logs of both sides:
 
 $$
@@ -1160,13 +1117,13 @@ Therefore
 $$
 \boxed{x=\frac{3\ln 5+\ln 2}{2\ln 5-\ln 2}}.
 $$
+:::
+::::
 
-</div>
+::::problem
+6. Solve in $$\mathbb{R}$$: $$e^x+e^{-x}=\frac{13}{6}.$$
 
-<div class="theorem-box">
-
-### Solution 6
-
+:::solution
 Let
 
 $$
@@ -1226,13 +1183,13 @@ $$
 \quad\text{or}\quad
 x=\ln\left(\frac32\right)}.
 $$
+:::
+::::
 
-</div>
+::::problem
+7. Rewrite the following expression as a single logarithm with coefficient $$1$$, and state the full domain of the original expression: $$\frac12\ln(x^2-9)-2\ln(x-3)+\ln\left(\frac{x+1}{x}\right).$$
 
-<div class="theorem-box">
-
-### Solution 7
-
+:::solution
 Start with
 
 $$
@@ -1306,13 +1263,13 @@ The intersection is
 $$
 \boxed{x>3}.
 $$
+:::
+::::
 
-</div>
+::::problem
+8. Expand completely using logarithm properties, and state all restrictions on $$x$$ and $$y$$: $$\log_3\left(\frac{x^4\sqrt{y-2}}{(x^2+1)^3(5-y)}\right).$$
 
-<div class="theorem-box">
-
-### Solution 8
-
+:::solution
 The expression is
 
 $$
@@ -1372,13 +1329,13 @@ Thus the restrictions are
 $$
 \boxed{x\ne 0,\qquad 2<y<5}.
 $$
+:::
+::::
 
-</div>
+::::problem
+9. Solve in $$\mathbb{R}$$: $$\log_{1/3}(2x-1)\ge \log_{1/3}(7-x).$$
 
-<div class="theorem-box">
-
-### Solution 9
-
+:::solution
 The domain requires
 
 $$
@@ -1422,13 +1379,13 @@ Intersect this with the domain $$\frac12<x<7$$:
 $$
 \boxed{\left(\frac12,\frac83\right]}.
 $$
+:::
+::::
 
-</div>
+::::problem
+10. Solve in $$\mathbb{R}$$: $$\ln(x^2-5x+6)\le \ln(2x+3).$$
 
-<div class="theorem-box">
-
-### Solution 10
-
+:::solution
 First find the logarithm domain:
 
 $$
@@ -1505,13 +1462,13 @@ Intersect with the logarithm domain:
 $$
 \boxed{\left[\frac{7-\sqrt{37}}2,2\right)\cup\left(3,\frac{7+\sqrt{37}}2\right]}.
 $$
+:::
+::::
 
-</div>
+::::problem
+11. Let $$h(x)=\log_4(16-4x)-2$$. State the domain, range, vertical asymptote, intercepts, intervals of increase/decrease, and find $$h^{-1}(x)$$. Graph both equations.
 
-<div class="theorem-box">
-
-### Solution 11
-
+:::solution
 The function is
 
 $$
@@ -1670,13 +1627,13 @@ The graph of both functions are shown below (green = inverse function):
 \end{axis}
 \end{tikzpicture}
 ```
+:::
+::::
 
-</div>
+::::problem
+12. A population is modeled by $$P(t)=\dfrac{1200}{1+19e^{-0.4t}}$$ for $$t\ge 0$$. Find the initial population, the limiting population (aka horizontal asymptote), and the exact time when $$P(t)=900$$.
 
-<div class="theorem-box">
-
-### Solution 12
-
+:::solution
 The model is
 
 $$
@@ -1769,13 +1726,13 @@ So
 $$
 \boxed{t=\frac52\ln 57}.
 $$
+:::
+::::
 
-</div>
+::::problem
+13. Find the unique positive integer $$n$$ such that $$\log_2 (\log_{16} n) = \log_4 (\log_4 n)$$ (2020 AMC 12A).
 
-<div class="theorem-box">
-
-### Solution 13
-
+:::solution
 Let
 
 $$
@@ -1836,13 +1793,13 @@ Therefore
 $$
 \boxed{n=4^4=256}.
 $$
+:::
+::::
 
-</div>
+::::problem
+14. Let $$F(x)=\ln\left(\dfrac{x-a}{b-x}\right)$$, where $$a<b$$. Find the domain, intercepts in terms of $$a$$ and $$b$$, the vertical asymptotes, and an explicit formula for $$F^{-1}(x)$$. Then determine the range of $$F$$.
 
-<div class="theorem-box">
-
-### Solution 14
-
+:::solution
 The function is
 
 $$
@@ -1984,13 +1941,13 @@ As $$x$$ moves through $$(a,b)$$, the ratio $$\frac{x-a}{b-x}$$ moves through $$
 $$
 \boxed{(-\infty,\infty)}.
 $$
+:::
+::::
 
-</div>
+::::problem
+15. Find the exact value of the product $$\prod_{k=4}^{63}\frac{\log_k\left(5^{k^2-1}\right)}{\log_{k+1}\left(5^{k^2-4}\right)}$$. (Hint: Use change of base and cancel out things to simplify the expression) (2025 AIME II)
 
-<div class="theorem-box">
-
-### Solution 15
-
+:::solution
 The product is
 
 $$
@@ -2076,13 +2033,35 @@ Therefore the product is
 $$
 \frac{31}{13}\cdot 3=\boxed{\frac{93}{13}}.
 $$
+:::
+::::
 
-</div>
+::::problem
+16. (Bonus, The EML function)
 
-<div class="theorem-box">
+   Define a binary operation called $$\operatorname{EML}$$ by
 
-### Solution 16
+   $$
+   \operatorname{EML}(x,y)=e^x-\ln y,
+   $$
 
+   where $$y>0$$.
+
+   $$(A)$$ First, show that EML contains the exponential function directly: $$e^x=\operatorname{EML}(x,1).$$
+
+   $$(B)$$ Now show that EML also contains logarithms: $$\operatorname{EML}(0,x)=1-\ln x.$$ Use this equation to solve for $$\ln x$$ in terms of $$\operatorname{EML}(0,x)$$.
+
+   $$(C)$$ Using part $$(B)$$, write $$\log_b x$$ in terms of EML expressions, where $$b>0$$, $$b\ne1$$, and $$x>0$$.
+
+   $$(D)$$ Since EML can produce both exponentials and logarithms, it can also build simpler operations. Use the identities $$x+y=\ln(e^x e^y)$$ and $$x-y=\ln\left(\frac{e^x}{e^y}\right)$$ to write formulas for $$x+y$$ and $$x-y$$ using EML expressions.
+
+   $$(E)$$ An **EML tree** is an expression built by repeatedly feeding outputs of EML into new EML operations. For example, $$\operatorname{EML}\left(\operatorname{EML}(x,1),\operatorname{EML}(0,y)\right)$$ is an EML tree. Draw its tree diagram, then simplify the expression as much as possible using exponent and logarithm rules.
+
+   $$(F)$$ It is claimed that EML trees can represent all standard elementary functions. In a short paragraph, compare this idea to the way a single NAND gate can generate all Boolean logic. A NAND gate outputs $$0$$ only when both inputs are $$1$$, and outputs $$1$$ otherwise.
+
+   This problem is inspired by the paper *All elementary functions from a single operator* by Andrzej Odrzywołek. Learn more here: [https://arxiv.org/html/2603.21852v2](https://arxiv.org/html/2603.21852v2).
+
+:::solution
 For part $$(A)$$,
 
 $$
@@ -2244,5 +2223,5 @@ $$
 $$
 
 For part $$(F)$$, the comparison is that both EML and NAND are examples of a very small set of building blocks being powerful enough to generate a much larger system. A NAND gate alone can build NOT, AND, OR, and therefore all Boolean logic circuits. Similarly, the paper claims that EML, together with the constant $$1$$, can be composed into trees that represent the standard elementary functions. In both cases, complicated expressions can be built from repeated uses of one simple operation.
-
-</div>
+:::
+::::

@@ -1095,6 +1095,7 @@ REMEMBER to always check for multiple solutions using the trig rules!
 
 ## Practice
 
+::::problem
 1. Let $$\theta=-\frac{29\pi}{6}$$.
 
    $$(A)$$ Find the least positive coterminal angle with $$\theta$$.
@@ -1105,58 +1106,7 @@ REMEMBER to always check for multiple solutions using the trig rules!
 
    $$(D)$$ Evaluate all six trigonometric functions of $$\theta$$ exactly.
 
-2. A sector of a circle has perimeter $$40$$ cm and central angle $$\frac{5\pi}{6}$$. Find the radius, arc length, and area of the sector exactly.
-3. A wheel of radius $$18$$ cm rotates counterclockwise at $$45$$ revolutions per minute. A bug starts at the point on the wheel closest to the ground. After $$7$$ seconds, find the bug's angle in standard position, its coordinates relative to the center of the wheel, and its linear speed in cm/sec.
-4. A pulley system has two wheels connected by a belt without slipping. Wheel A has radius $$4$$ inches and rotates at $$150$$ revolutions per minute. Wheel B rotates at $$60$$ revolutions per minute. Find the radius of Wheel B. Then find the linear belt speed in inches per second.
-5. Let $$\theta$$ be in Quadrant II and suppose $$\tan\theta=-\frac{8}{15}$$. Find exact values of $$\sin\theta$$, $$\cos\theta$$, $$\sec\theta$$, $$\csc\theta$$, and $$\cot\theta$$. Then evaluate $$\sin(\pi-\theta)$$ and $$\cos(\theta+\pi)$$.
-6. Let $$P=(x,y)$$ be a point on the unit circle in Quadrant III. If $$x-y=\frac{\sqrt2}{2}$$, find $$P$$ and the angle $$\theta\in[0,2\pi)$$ whose terminal side passes through $$P$$.
-7. Evaluate exactly: $$6\sin\left(-\frac{7\pi}{6}\right)-4\cos\left(\frac{11\pi}{3}\right)+3\tan\left(-\frac{13\pi}{4}\right)-2\sec\left(\frac{17\pi}{6}\right).$$
-8. Solve exactly on $$[0,4\pi)$$: $$2\sin^2x-\sin x-1=0.$$
-9. Solve exactly on $$[0,2\pi)$$:$$2\cos^2x+\sqrt3\cos x-1=0.$$
-10. Solve exactly on $$[0,3\pi)$$:$$\tan^2x-3=0.$$
-11. The radius of the circle in the figure is 2 units. Express the length of $$DC$$ in terms of $$\alpha$$.
-
-   <img class="note-img note-img--w480" src="/assets/APs/AP%20Precalc/cirtri1.png" alt="parent functions" loading="lazy" decoding="async" />
-
-12. Prove the identity: $$\frac{1-\cos\theta}{\sin\theta}+\frac{\sin\theta}{1-\cos\theta}=2\csc\theta.$$ Then state all values of $$\theta$$ in $$[0,2\pi)$$ for which the original identity is undefined.
-13. Prove the identity: $$1-\frac{\sin^2\theta}{1+\cot\theta}-\frac{\cos^2\theta}{1+\tan\theta}=\sin\theta\cos\theta.$$
-14. For each of the following trigonometric expressions, find a segment in the diagram that has length equal to the trigonometric expression: $$\sin\theta, \cos\theta, \sec\theta, \csc\theta, \tan\theta, \cot\theta$$. Note that you are not asked to express each trigonometric function in terms of multiple segments in the diagram. You must find a segment whose whole length equals the corresponding trig function. The graph is given below:
-
-   <img class="note-img note-img--w480" src="/assets/APs/AP%20Precalc/cirtri2.png" alt="parent functions" loading="lazy" decoding="async" />
-
-15. On $$[0,2\pi)$$, solve the equation numerically to three decimal places: $$3\sin x-2\cos x=1.$$ (Hint: Try the substitution $$t=\tan(x/2)$$, and solve for $$x$$ using the $$\tan^{-1}$$ button on the calculator.)
-16. (Bonus, rational points on the unit circle)
-
-   The unit circle is
-
-   $$
-   x^2+y^2=1.
-   $$
-
-   One obvious rational point on the unit circle is $$(-1,0)$$. Now draw a line with rational slope $$m$$ through $$(-1,0)$$:
-
-   $$
-   y=m(x+1).
-   $$
-
-   $$(A)$$ Substitute $$y=m(x+1)$$ into $$x^2+y^2=1$$ and show that the line intersects the unit circle at $$(-1,0)$$ and one other point.
-
-   $$(B)$$ Find the coordinates of the second intersection point in terms of $$m$$.
-
-   $$(C)$$ Explain why every rational value of $$m$$ gives a rational point on the unit circle.
-
-   $$(D)$$ Use your formula to find a rational point on the unit circle when $$m=\frac23$$, then interpret that point as $$(\cos\theta,\sin\theta)$$ for some angle $$\theta$$.
-
-   $$(E)$$ Why does this method not produce the point $$(-1,0)$$ as the second intersection point? What slope would be needed to reach the point $$(1,0)$$?
-
----
-
-## Solutions
-
-<div class="theorem-box">
-
-### Solution 1
-
+:::solution
 Add multiples of $$2\pi$$ to find a positive coterminal angle:
 
 $$
@@ -1228,13 +1178,13 @@ $$
 \qquad
 \cot\theta=\sqrt3.
 $$
+:::
+::::
 
-</div>
+::::problem
+2. A sector of a circle has perimeter $$40$$ cm and central angle $$\frac{5\pi}{6}$$. Find the radius, arc length, and area of the sector exactly.
 
-<div class="theorem-box">
-
-### Solution 2
-
+:::solution
 For a sector,
 
 $$
@@ -1298,13 +1248,13 @@ Therefore
 $$
 \boxed{A=\frac{24000\pi}{(12+5\pi)^2}\text{ cm}^2}.
 $$
+:::
+::::
 
-</div>
+::::problem
+3. A wheel of radius $$18$$ cm rotates counterclockwise at $$45$$ revolutions per minute. A bug starts at the point on the wheel closest to the ground. After $$7$$ seconds, find the bug's angle in standard position, its coordinates relative to the center of the wheel, and its linear speed in cm/sec.
 
-<div class="theorem-box">
-
-### Solution 3
-
+:::solution
 The wheel rotates at
 
 $$
@@ -1362,13 +1312,13 @@ Thus
 $$
 \boxed{v=27\pi\text{ cm/sec}}.
 $$
+:::
+::::
 
-</div>
+::::problem
+4. A pulley system has two wheels connected by a belt without slipping. Wheel A has radius $$4$$ inches and rotates at $$150$$ revolutions per minute. Wheel B rotates at $$60$$ revolutions per minute. Find the radius of Wheel B. Then find the linear belt speed in inches per second.
 
-<div class="theorem-box">
-
-### Solution 4
-
+:::solution
 Wheel A rotates at
 
 $$
@@ -1414,13 +1364,13 @@ Thus
 $$
 \boxed{20\pi\text{ in/sec}}.
 $$
+:::
+::::
 
-</div>
+::::problem
+5. Let $$\theta$$ be in Quadrant II and suppose $$\tan\theta=-\frac{8}{15}$$. Find exact values of $$\sin\theta$$, $$\cos\theta$$, $$\sec\theta$$, $$\csc\theta$$, and $$\cot\theta$$. Then evaluate $$\sin(\pi-\theta)$$ and $$\cos(\theta+\pi)$$.
 
-<div class="theorem-box">
-
-### Solution 5
-
+:::solution
 Since $$\theta$$ is in Quadrant II and
 
 $$
@@ -1472,13 +1422,13 @@ $$
 \qquad
 \boxed{\cos(\theta+\pi)=\frac{15}{17}}.
 $$
+:::
+::::
 
-</div>
+::::problem
+6. Let $$P=(x,y)$$ be a point on the unit circle in Quadrant III. If $$x-y=\frac{\sqrt2}{2}$$, find $$P$$ and the angle $$\theta\in[0,2\pi)$$ whose terminal side passes through $$P$$.
 
-<div class="theorem-box">
-
-### Solution 6
-
+:::solution
 Since $$P=(x,y)$$ is on the unit circle,
 
 $$
@@ -1556,13 +1506,13 @@ $$
 $$
 
 Equivalently, $$\theta\approx4.451$$ radians.
+:::
+::::
 
-</div>
+::::problem
+7. Evaluate exactly: $$6\sin\left(-\frac{7\pi}{6}\right)-4\cos\left(\frac{11\pi}{3}\right)+3\tan\left(-\frac{13\pi}{4}\right)-2\sec\left(\frac{17\pi}{6}\right).$$
 
-<div class="theorem-box">
-
-### Solution 7
-
+:::solution
 Use coterminal angles:
 
 $$
@@ -1609,13 +1559,13 @@ Therefore
 $$
 \boxed{-2+\frac{4\sqrt3}{3}}.
 $$
+:::
+::::
 
-</div>
+::::problem
+8. Solve exactly on $$[0,4\pi)$$: $$2\sin^2x-\sin x-1=0.$$
 
-<div class="theorem-box">
-
-### Solution 8
-
+:::solution
 Let
 
 $$
@@ -1659,13 +1609,13 @@ Therefore
 $$
 \boxed{x=\frac{\pi}{2},\frac{7\pi}{6},\frac{11\pi}{6},\frac{5\pi}{2},\frac{19\pi}{6},\frac{23\pi}{6}}.
 $$
+:::
+::::
 
-</div>
+::::problem
+9. Solve exactly on $$[0,2\pi)$$:$$2\cos^2x+\sqrt3\cos x-1=0.$$
 
-<div class="theorem-box">
-
-### Solution 9
-
+:::solution
 Let
 
 $$
@@ -1704,13 +1654,13 @@ $$
 \quad\text{or}\quad
 x=2\pi-\cos^{-1}\left(\frac{\sqrt{11}-\sqrt3}{4}\right)}.
 $$
+:::
+::::
 
-</div>
+::::problem
+10. Solve exactly on $$[0,3\pi)$$:$$\tan^2x-3=0.$$
 
-<div class="theorem-box">
-
-### Solution 10
-
+:::solution
 We have
 
 $$
@@ -1734,13 +1684,15 @@ The tangent function has period $$\pi$$. On $$[0,3\pi)$$, the solutions are
 $$
 \boxed{x=\frac{\pi}{3},\frac{2\pi}{3},\frac{4\pi}{3},\frac{5\pi}{3},\frac{7\pi}{3},\frac{8\pi}{3}}.
 $$
+:::
+::::
 
-</div>
+::::problem
+11. The radius of the circle in the figure is 2 units. Express the length of $$DC$$ in terms of $$\alpha$$.
 
-<div class="theorem-box">
+   <img class="note-img note-img--w480" src="/assets/APs/AP%20Precalc/cirtri1.png" alt="parent functions" loading="lazy" decoding="async" />
 
-### Solution 11
-
+:::solution
 The radius of the circle is $$2$$, and $$C$$ is the point on the positive $$x$$-axis at the right edge of the circle. Thus
 
 $$
@@ -1764,13 +1716,13 @@ Therefore
 $$
 \boxed{DC=2\tan\alpha}.
 $$
+:::
+::::
 
-</div>
+::::problem
+12. Prove the identity: $$\frac{1-\cos\theta}{\sin\theta}+\frac{\sin\theta}{1-\cos\theta}=2\csc\theta.$$ Then state all values of $$\theta$$ in $$[0,2\pi)$$ for which the original identity is undefined.
 
-<div class="theorem-box">
-
-### Solution 12
-
+:::solution
 Start with the left-hand side:
 
 $$
@@ -1837,13 +1789,13 @@ On $$[0,2\pi)$$, this happens at
 $$
 \boxed{\theta=0,\pi}.
 $$
+:::
+::::
 
-</div>
+::::problem
+13. Prove the identity: $$1-\frac{\sin^2\theta}{1+\cot\theta}-\frac{\cos^2\theta}{1+\tan\theta}=\sin\theta\cos\theta.$$
 
-<div class="theorem-box">
-
-### Solution 13
-
+:::solution
 Start with the left-hand side:
 
 $$
@@ -1915,13 +1867,15 @@ Therefore,
 $$
 \boxed{1-\frac{\sin^2\theta}{1+\cot\theta}-\frac{\cos^2\theta}{1+\tan\theta}=\sin\theta\cos\theta}.
 $$
+:::
+::::
 
-</div>
+::::problem
+14. For each of the following trigonometric expressions, find a segment in the diagram that has length equal to the trigonometric expression: $$\sin\theta, \cos\theta, \sec\theta, \csc\theta, \tan\theta, \cot\theta$$. Note that you are not asked to express each trigonometric function in terms of multiple segments in the diagram. You must find a segment whose whole length equals the corresponding trig function. The graph is given below:
 
-<div class="theorem-box">
+   <img class="note-img note-img--w480" src="/assets/APs/AP%20Precalc/cirtri2.png" alt="parent functions" loading="lazy" decoding="async" />
 
-### Solution 14
-
+:::solution
 In the diagram, the circle is the unit circle and $$A=(\cos\theta,\sin\theta)$$.
 
 The horizontal segment from the origin to the foot under $$A$$ is
@@ -2024,13 +1978,13 @@ So the six matching segments are
 $$
 \boxed{\sin\theta=AC,\quad \cos\theta=OC,\quad \sec\theta=OD,\quad \csc\theta=OB,\quad \tan\theta=AD,\quad \cot\theta=AB}.
 $$
+:::
+::::
 
-</div>
+::::problem
+15. On $$[0,2\pi)$$, solve the equation numerically to three decimal places: $$3\sin x-2\cos x=1.$$ (Hint: Try the substitution $$t=\tan(x/2)$$, and solve for $$x$$ using the $$\tan^{-1}$$ button on the calculator.)
 
-<div class="theorem-box">
-
-### Solution 15
-
+:::solution
 Use the substitution
 
 $$
@@ -2103,13 +2057,35 @@ Using a calculator and choosing values of $$x$$ in $$[0,2\pi)$$ gives
 $$
 \boxed{x\approx0.869\quad\text{or}\quad x\approx3.450}.
 $$
+:::
+::::
 
-</div>
+::::problem
+16. (Bonus, rational points on the unit circle)
 
-<div class="theorem-box">
+   The unit circle is
 
-### Solution 16
+   $$
+   x^2+y^2=1.
+   $$
 
+   One obvious rational point on the unit circle is $$(-1,0)$$. Now draw a line with rational slope $$m$$ through $$(-1,0)$$:
+
+   $$
+   y=m(x+1).
+   $$
+
+   $$(A)$$ Substitute $$y=m(x+1)$$ into $$x^2+y^2=1$$ and show that the line intersects the unit circle at $$(-1,0)$$ and one other point.
+
+   $$(B)$$ Find the coordinates of the second intersection point in terms of $$m$$.
+
+   $$(C)$$ Explain why every rational value of $$m$$ gives a rational point on the unit circle.
+
+   $$(D)$$ Use your formula to find a rational point on the unit circle when $$m=\frac23$$, then interpret that point as $$(\cos\theta,\sin\theta)$$ for some angle $$\theta$$.
+
+   $$(E)$$ Why does this method not produce the point $$(-1,0)$$ as the second intersection point? What slope would be needed to reach the point $$(1,0)$$?
+
+:::solution
 For part $$(A)$$, substitute
 
 $$
@@ -2226,5 +2202,5 @@ To reach $$(1,0)$$, the line must be the $$x$$-axis, which has slope
 $$
 \boxed{m=0}.
 $$
-
-</div>
+:::
+::::

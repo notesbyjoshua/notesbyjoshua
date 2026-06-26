@@ -567,7 +567,7 @@ $$
 As $$x\to\infty$$, the parenthesized expression approaches $$2$$, while $$x^3\to\infty$$. Therefore
 
 $$
-\boxed{\lim_{x\to\infty}(2x^3+3x^2-5x+1)=\infty}.
+\lim_{x\to\infty}(2x^3+3x^2-5x+1)=\infty.
 $$
 
 </div>
@@ -598,9 +598,7 @@ $$
 The fractional pieces approach zero, so
 
 $$
-\boxed{
-\lim_{x\to\infty}\frac{4x^2-3x+7}{2x^2+5x-1}=2
-}.
+\lim_{x\to\infty}\frac{4x^2-3x+7}{2x^2+5x-1}=2.
 $$
 
 </div>
@@ -660,7 +658,7 @@ $$
 the oblique asymptote is
 
 $$
-\boxed{y=x-1}.
+y=x-1.
 $$
 
 </div>
@@ -713,43 +711,10 @@ does not exist, since $$\sin x$$ keeps oscillating forever instead of approachin
 
 ## Practice
 
+::::problem
 1. Evaluate $$\displaystyle \lim_{x\to\infty}\frac{5x^3-2x+1}{x^3+4x^2-7}$$.
-2. Find the horizontal asymptote, if it exists, of $$\displaystyle f(x)=\frac{3x^2+8x-1}{x^2-5}$$.
-3. Find the oblique asymptote of $$\displaystyle g(x)=\frac{x^2+4x-1}{x+2}$$.
-4. Prove by induction that $$\sum_{k=1}^{n} k^3 = \frac{n^2 (n+1)^2}{4}$$ for all integers $$n \ge 1$$. Extension: This looks like the square of $$1 + 2 + ... + n = \frac{n(n+1)}{2}$$! Prove that this is true (you should not use induction here).
-5. Prove by induction that $$8^{2n} - 3^{2n}$$ is divisible by $$55$$ for all integers $$n \ge 1$$.
-6. Prove by induction that $$2^{n}\ge n^{3}$$ for all integers $$n\ge 10$$.
-7. Expand $$(3x+2y)^{5}$$ using the binomial theorem.
-8. What is the coefficient of the term containing $$x^{22}$$ in $$\left(x^{3} - \dfrac{4}{\sqrt{x}}\right)^{12}$$?
-9. Use the binomial theorem to prove that $$9^{n}-1$$ is divisible by $$8$$ for every integer $$n\ge 1$$.
-10. A nonconstant arithmetic sequence has first term $$5$$ and common difference $$d$$. Its first, third, and seventh terms form a geometric sequence in that order. Find $$d$$ and the three geometric terms.
-11. The sequence $$1,x,y,z$$ is arithmetic. The sequence $$1,p,q,z$$ is geometric. Both sequences are strictly increasing and contain only integers, and $$z$$ is as small as possible. What is the value of $$x+y+z+p+q$$? (2025 AMC 10A)
-12. Find $$\sum_{i=5}^{100}(3i-2)$$.
-13. Evaluate $$\sum_{i=6}^{12} 3\cdot 2^i$$.
-14. The first three terms of a geometric series are the integers $$a$$, $$720$$, and $$b$$, where $$a < 720 < b$$. What is the sum of the digits of the least possible value of $$b$$? (2024 AMC 10A).
-15. Evaluate the finite sum $$\sum_{k=0}^{n}\binom{n}{k}3^{k}2^{n-k}(k+1)$$ in closed form. Hint: $$k\binom{n}{k} = n\binom{n-1}{k-1}$$
-16. (Bonus, Binet's Formula)
 
-   Binet's Formula is a famous explicit formula for the Fibonnaci series. Let $$F_0=0$$, $$F_1=1$$, and $$F_{n+2}=F_{n+1}+F_n$$ for $$n\ge 0$$.
-
-   $$(A)$$ Define a function $$G(x)=\sum_{n=0}^{\infty}F_nx^n$$. Use the recurrence to show that $$G(x)=\frac{x}{1-x-x^2}$$. $$G(x)$$ is called the generating function of $$F_n$$. Hint: How can you telescope to cancel out the correct terms?
-
-   $$(B)$$ Decompose $$G(x)$$ into partial fractions (Hint: All terms should be linear!).
-
-   $$(C)$$ Set the linear factors found in part (B) to $$\alpha$$ and $$\beta$$ (so your partial fraction looks like $$\frac{A}{1 - \alpha x}$$ and $$\frac{B}{1 - \beta x}$$). Use the geometric series formula to prove Binet's formula:
-
-   $$
-   F_n=\frac{\alpha^n-\beta^n}{\sqrt5}.
-   $$
-
----
-
-## Solutions
-
-<div class="theorem-box">
-
-### Solution 1
-
+:::solution
 Divide numerator and denominator by $$x^3$$:
 
 $$
@@ -766,13 +731,13 @@ $$
 $$
 
 Since the numerator and denominator have the same degree, this is also the ratio of leading coefficients.
+:::
+::::
 
-</div>
+::::problem
+2. Find the horizontal asymptote, if it exists, of $$\displaystyle f(x)=\frac{3x^2+8x-1}{x^2-5}$$.
 
-<div class="theorem-box">
-
-### Solution 2
-
+:::solution
 Evaluate the end behavior:
 
 $$
@@ -794,13 +759,13 @@ Therefore the horizontal asymptote is
 $$
 \boxed{y=3}.
 $$
+:::
+::::
 
-</div>
+::::problem
+3. Find the oblique asymptote of $$\displaystyle g(x)=\frac{x^2+4x-1}{x+2}$$.
 
-<div class="theorem-box">
-
-### Solution 3
-
+:::solution
 Use polynomial division:
 
 $$
@@ -825,13 +790,13 @@ the graph approaches the line
 $$
 \boxed{y=x+2}.
 $$
+:::
+::::
 
-</div>
+::::problem
+4. Prove by induction that $$\sum_{k=1}^{n} k^3 = \frac{n^2 (n+1)^2}{4}$$ for all integers $$n \ge 1$$. Extension: This looks like the square of $$1 + 2 + ... + n = \frac{n(n+1)}{2}$$! Prove that this is true (you should not use induction here).
 
-<div class="theorem-box">
-
-### Solution 4
-
+:::solution
 **Base case**: $$n=1$$:
 
 $$
@@ -909,13 +874,13 @@ $$
 $$
 
 with $$S_{0}=0$$.
+:::
+::::
 
-</div>
+::::problem
+5. Prove by induction that $$8^{2n} - 3^{2n}$$ is divisible by $$55$$ for all integers $$n \ge 1$$.
 
-<div class="theorem-box">
-
-### Solution 5
-
+:::solution
 **Base case**: $$n=1$$: $$8^{2}-3^{2}=64-9=55$$, divisible by $$55$$.
 
 **Induction hypothesis**: Assume $$55 \mid 8^{2k}-3^{2k}$$ for some integer $$k \ge 1$$.
@@ -959,13 +924,13 @@ Thus $$55 \mid 8^{2(k+1)} - 3^{2(k+1)}$$. By induction,
 $$
 \boxed{55 \mid 8^{2n} - 3^{2n} \text{ for all integers } n \ge 1}.
 $$
+:::
+::::
 
-</div>
+::::problem
+6. Prove by induction that $$2^{n}\ge n^{3}$$ for all integers $$n\ge 10$$.
 
-<div class="theorem-box">
-
-### Solution 6
-
+:::solution
 **Base case**: $$n=10$$:
 
 $$
@@ -1042,13 +1007,13 @@ Thus the inequality is true for $$k+1$$. By induction,
 $$
 \boxed{2^{n}\ge n^{3} \text{ for all integers } n\ge 10}.
 $$
+:::
+::::
 
-</div>
+::::problem
+7. Expand $$(3x+2y)^{5}$$ using the binomial theorem.
 
-<div class="theorem-box">
-
-### Solution 7
-
+:::solution
 Use the binomial theorem with $$a=3x$$, $$b=2y$$, and $$n=5$$:
 
 $$
@@ -1070,13 +1035,13 @@ Thus
 $$
 \boxed{(3x+2y)^5=243x^5+810x^4y+1080x^3y^2+720x^2y^3+240xy^4+32y^5}.
 $$
+:::
+::::
 
-</div>
+::::problem
+8. What is the coefficient of the term containing $$x^{22}$$ in $$\left(x^{3} - \dfrac{4}{\sqrt{x}}\right)^{12}$$?
 
-<div class="theorem-box">
-
-### Solution 8
-
+:::solution
 Write $$\left(x^{3} - \dfrac{4}{\sqrt{x}}\right)^{12} = \left(x^{3} - 4x^{-1/2}\right)^{12}$$. A general term in the binomial expansion is
 
 $$
@@ -1106,13 +1071,13 @@ Therefore, the coefficient of $$x^{22}$$ is
 $$
 \boxed{126720}.
 $$
+:::
+::::
 
-</div>
+::::problem
+9. Use the binomial theorem to prove that $$9^{n}-1$$ is divisible by $$8$$ for every integer $$n\ge 1$$.
 
-<div class="theorem-box">
-
-### Solution 9
-
+:::solution
 $$
 9^{n}-1=(8+1)^{n}-1.
 $$
@@ -1140,13 +1105,13 @@ Every term in the sum has a factor of $$8$$ because $$k\ge 1$$. Therefore the en
 $$
 \boxed{8\mid 9^{n}-1 \text{ for every integer } n\ge 1}.
 $$
+:::
+::::
 
-</div>
+::::problem
+10. A nonconstant arithmetic sequence has first term $$5$$ and common difference $$d$$. Its first, third, and seventh terms form a geometric sequence in that order. Find $$d$$ and the three geometric terms.
 
-<div class="theorem-box">
-
-### Solution 10
-
+:::solution
 The arithmetic sequence has terms
 
 $$
@@ -1194,13 +1159,13 @@ Thus
 $$
 \boxed{d=\frac{5}{2}\quad\text{and the geometric terms are }5,10,20}.
 $$
+:::
+::::
 
-</div>
+::::problem
+11. The sequence $$1,x,y,z$$ is arithmetic. The sequence $$1,p,q,z$$ is geometric. Both sequences are strictly increasing and contain only integers, and $$z$$ is as small as possible. What is the value of $$x+y+z+p+q$$? (2025 AMC 10A)
 
-<div class="theorem-box">
-
-### Solution 11
-
+:::solution
 Arithmetic: Since $$1,x,y,z$$ is arithmetic, let the common difference be $$d$$. Then
 
 $$
@@ -1238,13 +1203,13 @@ So the arithmetic sequence is $$1,22,43,64$$ and the geometric sequence is $$1,4
 $$
 \boxed{x+y+z+p+q=22+43+64+4+16=149}.
 $$
+:::
+::::
 
-</div>
+::::problem
+12. Find $$\sum_{i=5}^{100}(3i-2)$$.
 
-<div class="theorem-box">
-
-### Solution 12
-
+:::solution
 The terms of the sum form an arithmetic series. The first term occurs when $$i=5$$:
 
 $$
@@ -1274,13 +1239,13 @@ So the answer is
 $$
 \boxed{14928}.
 $$
+:::
+::::
 
-</div>
+::::problem
+13. Evaluate $$\sum_{i=6}^{12} 3\cdot 2^i$$.
 
-<div class="theorem-box">
-
-### Solution 13
-
+:::solution
 This is a finite geometric series with first term $$192$$, common ratio $$2$$, and $$7$$ terms:
 
 $$
@@ -1296,13 +1261,13 @@ Since $$2^{7}=128$$, the answer is $$192\cdot127$$ which is
 $$
 \boxed{24384}.
 $$
+:::
+::::
 
-</div>
+::::problem
+14. The first three terms of a geometric series are the integers $$a$$, $$720$$, and $$b$$, where $$a < 720 < b$$. What is the sum of the digits of the least possible value of $$b$$? (2024 AMC 10A).
 
-<div class="theorem-box">
-
-### Solution 14
-
+:::solution
 For a geometric sequence $$a,720,b$$, the middle term squared equals the product of the neighboring terms:
 
 $$
@@ -1332,13 +1297,13 @@ which is an integer and satisfies $$675<720<768$$. The sum of the digits of $$76
 $$
 \boxed{7+6+8=21}.
 $$
+:::
+::::
 
-</div>
+::::problem
+15. Evaluate the finite sum $$\sum_{k=0}^{n}\binom{n}{k}3^{k}2^{n-k}(k+1)$$ in closed form. Hint: $$k\binom{n}{k} = n\binom{n-1}{k-1}$$
 
-<div class="theorem-box">
-
-### Solution 15
-
+:::solution
 Let
 
 $$
@@ -1400,13 +1365,25 @@ So
 $$
 \boxed{\sum_{k=0}^{n}\binom{n}{k}3^{k}2^{n-k}(k+1)=5^{n-1}(3n+5)}.
 $$
+:::
+::::
 
-</div>
+::::problem
+16. (Bonus, Binet's Formula)
 
-<div class="theorem-box">
+   Binet's Formula is a famous explicit formula for the Fibonnaci series. Let $$F_0=0$$, $$F_1=1$$, and $$F_{n+2}=F_{n+1}+F_n$$ for $$n\ge 0$$.
 
-### Solution 16
+   $$(A)$$ Define a function $$G(x)=\sum_{n=0}^{\infty}F_nx^n$$. Use the recurrence to show that $$G(x)=\frac{x}{1-x-x^2}$$. $$G(x)$$ is called the generating function of $$F_n$$. Hint: How can you telescope to cancel out the correct terms?
 
+   $$(B)$$ Decompose $$G(x)$$ into partial fractions (Hint: All terms should be linear!).
+
+   $$(C)$$ Set the linear factors found in part (B) to $$\alpha$$ and $$\beta$$ (so your partial fraction looks like $$\frac{A}{1 - \alpha x}$$ and $$\frac{B}{1 - \beta x}$$). Use the geometric series formula to prove Binet's formula:
+
+   $$
+   F_n=\frac{\alpha^n-\beta^n}{\sqrt5}.
+   $$
+
+:::solution
 For part (A), start with
 
 $$
@@ -1583,5 +1560,5 @@ Matching coefficients of $$x^n$$ gives
 $$
 \boxed{F_n=\frac{\alpha^n-\beta^n}{\sqrt5}}.
 $$
-
-</div>
+:::
+::::

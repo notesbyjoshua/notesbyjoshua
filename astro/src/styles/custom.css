@@ -192,12 +192,21 @@
 .sl-markdown-content .tikz-figure {
 	margin: 1.5rem auto;
 	text-align: center;
-	color: var(--sl-color-text);
 }
+/* Diagrams always sit on a light "card" with dark ink (currentColor), so the
+   colour plots and axes stay legible in BOTH themes — on the dark page the bare
+   SVG had no background and the dark strokes vanished. */
 .sl-markdown-content .tikz-figure svg {
-	width: auto;
+	display: inline-block;
+	box-sizing: border-box;
 	max-width: min(34rem, 100%);
 	height: auto;
+	padding: 0.8rem 1rem;
+	background: #faf8f3;
+	color: #1c2430;
+	border: 1px solid rgba(15, 23, 42, 0.12);
+	border-radius: 0.6rem;
+	box-shadow: var(--sl-shadow-sm, 0 1px 4px rgba(0, 0, 0, 0.1));
 }
 .sl-markdown-content .tikz-figure figcaption {
 	margin-top: 0.5rem;

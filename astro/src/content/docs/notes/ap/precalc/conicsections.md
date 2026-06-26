@@ -752,7 +752,7 @@ $$
 Therefore
 
 $$
-\boxed{y=-1\pm\frac{25}{\sqrt{34}}}.
+y=-1\pm\frac{25}{\sqrt{34}}.
 $$
 
 </div>
@@ -836,9 +836,7 @@ $$
 Divide by $$\frac{64}{3}$$:
 
 $$
-\boxed{
-\frac{\left(x+\frac43\right)^2}{\frac{64}{9}}+\frac{y^2}{\frac{16}{3}}=1
-}.
+\frac{\left(x+\frac43\right)^2}{\frac{64}{9}}+\frac{y^2}{\frac{16}{3}}=1.
 $$
 
 Since $$0<e<1$$, it makes sense that the result is an ellipse.
@@ -1085,7 +1083,7 @@ $$
 Because the denominator is $$1+e\cos\theta$$, the directrix is
 
 $$
-\boxed{x=12}.
+x=12.
 $$
 
 To find the horizontal vertices, use $$\theta=0$$ and $$\theta=\pi$$:
@@ -1103,13 +1101,13 @@ $$
 So the vertices in polar form are
 
 $$
-\boxed{(4,0)\text{ and }(12,\pi)}.
+(4,0)\text{ and }(12,\pi).
 $$
 
 In rectangular coordinates, these points are
 
 $$
-\boxed{(4,0)\text{ and }(-12,0)}.
+(4,0)\text{ and }(-12,0).
 $$
 
 </div>
@@ -1327,7 +1325,7 @@ $$
 So
 
 $$
-\boxed{y^2=8(x+2)}.
+y^2=8(x+2).
 $$
 
 This is a parabola, which matches $$e=1$$ from the original polar equation.
@@ -1404,73 +1402,10 @@ This is why polar equations with a focus at the pole are often more natural than
 
 ## Practice
 
+::::problem
 1. Complete the square for $$4x^{2}+9y^{2}-24x+36y+36=0$$. Write the equation in standard form and give the center, vertices, co-vertices, foci, eccentricity, and major/minor axis lengths. Graph the conic.
-2. Find the equation of the parabola whose focus is $$(5,-2)$$ and whose directrix is $$x=-1$$. Give the vertex, value of $$p$$, axis of symmetry, and latus rectum endpoints.
-3. Find all lines with slope $$-2$$ that are tangent to the parabola $$(x-1)^{2}=8(y+3)$$.
-4. An ellipse has foci $$(1,4)$$ and $$(1,-2)$$ and passes through $$(5,1)$$. Find its standard-form equation and its eccentricity.
-5. The ellipse $$\dfrac{(x+2)^{2}}{36}+\dfrac{(y-1)^{2}}{20}=1$$ has foci $$F_1$$ and $$F_2$$. If $$P$$ is the point on the ellipse with $$x=1$$ and $$y>1$$, find $$PF_1$$ and $$PF_2$$ separately.
-6. Find all real numbers $$m$$ such that the line $$y=mx+3$$ is tangent to the ellipse $$\dfrac{x^{2}}{9}+\dfrac{y^{2}}{4}=1$$.
-7. Complete the square for $$9y^{2}-4x^{2}-54y-16x+29=0$$. Write the equation in standard form and give the center, vertices, foci, eccentricity, and asymptotes. Graph the conic.
-8. A hyperbola has center $$(2,-1)$$, asymptotes $$y+1=\pm\dfrac{3}{2}(x-2)$$, and one focus at $$(2+\sqrt{52},-1)$$. Assuming it opens left/right, find its standard-form equation.
-9. Find all intersection points in $$\mathbb{R}^{2}$$ of the ellipse $$\dfrac{x^{2}}{16}+\dfrac{y^{2}}{9}=1$$ and the hyperbola $$\dfrac{x^{2}}{4}-\dfrac{y^{2}}{9}=1$$.
-10. With focus at $$(0,0)$$, directrix $$x=-6$$, and eccentricity $$e=\dfrac{2}{3}$$, derive the Cartesian equation of the conic. Write it in standard form and identify the conic type.
-11. Convert $$r=\dfrac{10}{2-\cos\theta}$$ to a Cartesian equation. Identify the conic type, eccentricity, center, vertices, and foci.
-12. For $$r=\dfrac{12}{3+4\cos\theta}$$, identify the conic type and eccentricity, then find the values of $$\theta$$ where the denominator vanishes. Explain what those angles represent geometrically.
-13. A circle is tangent to both axes in Quadrant I and its center lies on the ellipse $$\dfrac{x^{2}}{25}+\dfrac{y^{2}}{9}=1$$. Find the circle's radius.
-14. Show that the conic $$Ax^{2}+Cy^{2}+Dx+Ey+F=0$$ has center $$(h,k)$$ when $$A\ne 0$$ and $$C\ne 0$$. Derive formulas for $$h$$ and $$k$$ in terms of $$A,C,D,E$$, then find the center of $$5x^{2}-3y^{2}+20x+18y-11=0$$.
-15. For the parabola $$y^{2}=4px$$ with $$p>0$$, let a line through the focus $$(p,0)$$ have slope $$m\ne 0$$ and meet the parabola at two distinct points $$A$$ and $$B$$. Prove that the product of the $$y$$-coordinates of $$A$$ and $$B$$ equals $$-4p^{2}$$.
-16. (Bonus, 2026 USAPhO)
 
-You are studying the motion of charged particles constrained to the $$xy$$-plane. Particle $$\alpha$$, with charge $$+1\ \mathrm{C}$$, is fixed at the origin.
-
-For motion under an inverse-square central force, trajectories are conic sections with the fixed particle at a focus. In polar coordinates:
-
-- For an attractive interaction (ellipse),
-
-$$
-r=\frac{r_0}{1+e\cos\phi},\qquad e<1.
-$$
-
-- For a repulsive interaction (hyperbola),
-
-$$
-r=\frac{r_0}{e\cos\phi-1},\qquad e>1.
-$$
-
-You have a camera that takes three snapshots of a moving particle at equal time intervals.
-
-   $$(A)$$ A particle $$\beta$$, with charge $$-1\ \mathrm{C}$$, moves under the electrostatic force of particle $$\alpha$$. In three consecutive snapshots, its positions are
-
-   $$
-   (0,-5\ \mathrm{m}),\qquad (3\ \mathrm{m},0),\qquad (0,5\ \mathrm{m}).
-   $$
-
-   Assuming the motion is governed only by the Coulomb interaction with $$\alpha$$, determine the maximum distance that particle $$\beta$$ reaches from the origin.
-
-   $$(B)$$ Now particle $$\beta$$ is replaced by particle $$\gamma$$, which has charge $$+2\ \mathrm{C}$$ and is free to move in the plane. In three consecutive snapshots, its positions are
-
-   $$
-   (3\ \mathrm{m},-4\ \mathrm{m}),\qquad (2\ \mathrm{m},0),\qquad (3\ \mathrm{m},4\ \mathrm{m}).
-   $$
-
-   Assuming the motion is governed only by the Coulomb interaction with $$\alpha$$, determine the angle $$\theta$$, measured from the positive $$x$$-axis, of the velocity of particle $$\gamma$$ at a large time.
-
-   $$(C)$$ A family of particles, each identical to particle $$\gamma$$ (that is, each has charge $$+2\ \mathrm{C}$$), approaches from infinity in the $$xy$$-plane. All particles have the same speed $$v_{\infty}$$ far from the origin and move along lines parallel to the initial asymptotic direction of particle $$\gamma$$ from part $$(B)$$. The particles are injected one at a time, so they do not interact with one another.
-
-   For each trajectory, define the **impact parameter** $$B$$ to be the perpendicular distance between the initial straight-line path of the particle and the origin.
-
-   As a particle passes near the scattering center, its direction changes due to Coulomb repulsion. Let $$\alpha$$ denote the total deflection angle of the trajectory, i.e. the angle between the incoming and outgoing asymptotic directions.
-
-   $$(i)$$ Using the conic form of the trajectory, derive a formula for $$B(\alpha)$$.
-
-   $$(ii)$$ Using the result of part $$(B)$$, express $$B(\alpha)$$ in terms of $$r_0$$.
-
-## Solutions
-
-<div class="theorem-box">
-
-### Solution 1
-
+:::solution
 Complete the square:
 
 $$
@@ -1518,13 +1453,13 @@ with center $$\boxed{(3,-2)}$$, vertices $$\boxed{(0,-2),(6,-2)}$$, co-vertices 
 The graph of the conic is displayed below:
 
 <img class="note-img note-img--w480" src="/assets/APs/AP%20Precalc/ellipsegraph2.png" alt="Ellipse" loading="lazy" decoding="async" />
+:::
+::::
 
-</div>
+::::problem
+2. Find the equation of the parabola whose focus is $$(5,-2)$$ and whose directrix is $$x=-1$$. Give the vertex, value of $$p$$, axis of symmetry, and latus rectum endpoints.
 
-<div class="theorem-box">
-
-### Solution 2
-
+:::solution
 The focus is $$(5,-2)$$ and the directrix is $$x=-1$$, so the parabola opens horizontally. The vertex is halfway between the focus and directrix along the horizontal axis:
 
 $$
@@ -1554,13 +1489,13 @@ The axis of symmetry is $$\boxed{y=-2}$$. The latus rectum is vertical through t
 $$
 \boxed{(5,4)\text{ and }(5,-8)}.
 $$
+:::
+::::
 
-</div>
+::::problem
+3. Find all lines with slope $$-2$$ that are tangent to the parabola $$(x-1)^{2}=8(y+3)$$.
 
-<div class="theorem-box">
-
-### Solution 3
-
+:::solution
 A line with slope $$-2$$ has equation
 
 $$
@@ -1612,13 +1547,13 @@ Therefore the tangent line is
 $$
 \boxed{y=-2x-9}.
 $$
+:::
+::::
 
-</div>
+::::problem
+4. An ellipse has foci $$(1,4)$$ and $$(1,-2)$$ and passes through $$(5,1)$$. Find its standard-form equation and its eccentricity.
 
-<div class="theorem-box">
-
-### Solution 4
-
+:::solution
 The foci $$(1,4)$$ and $$(1,-2)$$ have midpoint
 
 $$
@@ -1660,13 +1595,13 @@ The eccentricity is
 $$
 \boxed{e=\frac{c}{a}=\frac{3}{5}}.
 $$
+:::
+::::
 
-</div>
+::::problem
+5. The ellipse $$\dfrac{(x+2)^{2}}{36}+\dfrac{(y-1)^{2}}{20}=1$$ has foci $$F_1$$ and $$F_2$$. If $$P$$ is the point on the ellipse with $$x=1$$ and $$y>1$$, find $$PF_1$$ and $$PF_2$$ separately.
 
-<div class="theorem-box">
-
-### Solution 5
-
+:::solution
 The ellipse
 
 $$
@@ -1730,13 +1665,13 @@ Therefore
 $$
 \boxed{PF_{\text{right}}=4\quad\text{and}\quad PF_{\text{left}}=8}.
 $$
+:::
+::::
 
-</div>
+::::problem
+6. Find all real numbers $$m$$ such that the line $$y=mx+3$$ is tangent to the ellipse $$\dfrac{x^{2}}{9}+\dfrac{y^{2}}{4}=1$$.
 
-<div class="theorem-box">
-
-### Solution 6
-
+:::solution
 Substitute $$y=mx+3$$ into
 
 $$
@@ -1790,13 +1725,13 @@ Thus
 $$
 \boxed{m=\pm\frac{\sqrt{5}}{3}}.
 $$
+:::
+::::
 
-</div>
+::::problem
+7. Complete the square for $$9y^{2}-4x^{2}-54y-16x+29=0$$. Write the equation in standard form and give the center, vertices, foci, eccentricity, and asymptotes. Graph the conic.
 
-<div class="theorem-box">
-
-### Solution 7
-
+:::solution
 Start with
 
 $$
@@ -1862,13 +1797,13 @@ $$
 An image of the hyperbola is shown below:
 
 <img class="note-img note-img--w480" src="/assets/APs/AP%20Precalc/hyperbolagraph3.png" alt="Ellipse" loading="lazy" decoding="async" />
+:::
+::::
 
-</div>
+::::problem
+8. A hyperbola has center $$(2,-1)$$, asymptotes $$y+1=\pm\dfrac{3}{2}(x-2)$$, and one focus at $$(2+\sqrt{52},-1)$$. Assuming it opens left/right, find its standard-form equation.
 
-<div class="theorem-box">
-
-### Solution 8
-
+:::solution
 A horizontal hyperbola centered at $$(2,-1)$$ has form
 
 $$
@@ -1912,13 +1847,13 @@ Thus the equation is
 $$
 \boxed{\frac{(x-2)^{2}}{16}-\frac{(y+1)^{2}}{36}=1}.
 $$
+:::
+::::
 
-</div>
+::::problem
+9. Find all intersection points in $$\mathbb{R}^{2}$$ of the ellipse $$\dfrac{x^{2}}{16}+\dfrac{y^{2}}{9}=1$$ and the hyperbola $$\dfrac{x^{2}}{4}-\dfrac{y^{2}}{9}=1$$.
 
-<div class="theorem-box">
-
-### Solution 9
-
+:::solution
 Solve the system
 
 $$
@@ -1992,13 +1927,13 @@ All sign combinations work, so the intersection points are
 $$
 \boxed{\left(\pm\frac{4\sqrt{10}}{5},\,\pm\frac{3\sqrt{15}}{5}\right)}.
 $$
+:::
+::::
 
-</div>
+::::problem
+10. With focus at $$(0,0)$$, directrix $$x=-6$$, and eccentricity $$e=\dfrac{2}{3}$$, derive the Cartesian equation of the conic. Write it in standard form and identify the conic type.
 
-<div class="theorem-box">
-
-### Solution 10
-
+:::solution
 The focus is $$(0,0)$$ and the directrix is $$x=-6$$. For a point $$(x,y)$$ on the conic,
 
 $$
@@ -2060,13 +1995,13 @@ $$
 $$
 
 Since $$0<e<1$$, this conic is an ellipse.
+:::
+::::
 
-</div>
+::::problem
+11. Convert $$r=\dfrac{10}{2-\cos\theta}$$ to a Cartesian equation. Identify the conic type, eccentricity, center, vertices, and foci.
 
-<div class="theorem-box">
-
-### Solution 11
-
+:::solution
 Start with
 
 $$
@@ -2150,13 +2085,13 @@ Also $$c=ea=\frac{10}{3}$$, so the foci are
 $$
 \boxed{(0,0)\text{ and }\left(\frac{20}{3},0\right)}.
 $$
+:::
+::::
 
-</div>
+::::problem
+12. For $$r=\dfrac{12}{3+4\cos\theta}$$, identify the conic type and eccentricity, then find the values of $$\theta$$ where the denominator vanishes. Explain what those angles represent geometrically.
 
-<div class="theorem-box">
-
-### Solution 12
-
+:::solution
 Rewrite
 
 $$
@@ -2196,13 +2131,13 @@ $$
 $$
 
 At those angles, $$r$$ is not finite. Geometrically, they give the asymptotic directions of the hyperbola.
+:::
+::::
 
-</div>
+::::problem
+13. A circle is tangent to both axes in Quadrant I and its center lies on the ellipse $$\dfrac{x^{2}}{25}+\dfrac{y^{2}}{9}=1$$. Find the circle's radius.
 
-<div class="theorem-box">
-
-### Solution 13
-
+:::solution
 A circle tangent to both axes in Quadrant I has center $$(r,r)$$ and radius $$r$$. Since the center lies on
 
 $$
@@ -2240,13 +2175,13 @@ Since $$r>0$$,
 $$
 \boxed{r=\frac{15}{\sqrt{34}}=\frac{15\sqrt{34}}{34}}.
 $$
+:::
+::::
 
-</div>
+::::problem
+14. Show that the conic $$Ax^{2}+Cy^{2}+Dx+Ey+F=0$$ has center $$(h,k)$$ when $$A\ne 0$$ and $$C\ne 0$$. Derive formulas for $$h$$ and $$k$$ in terms of $$A,C,D,E$$, then find the center of $$5x^{2}-3y^{2}+20x+18y-11=0$$.
 
-<div class="theorem-box">
-
-### Solution 14
-
+:::solution
 Start with
 
 $$
@@ -2296,13 +2231,13 @@ So the center is
 $$
 \boxed{(-2,3)}.
 $$
+:::
+::::
 
-</div>
+::::problem
+15. For the parabola $$y^{2}=4px$$ with $$p>0$$, let a line through the focus $$(p,0)$$ have slope $$m\ne 0$$ and meet the parabola at two distinct points $$A$$ and $$B$$. Prove that the product of the $$y$$-coordinates of $$A$$ and $$B$$ equals $$-4p^{2}$$.
 
-<div class="theorem-box">
-
-### Solution 15
-
+:::solution
 The parabola is
 
 $$
@@ -2350,13 +2285,57 @@ Therefore
 $$
 \boxed{y_Ay_B=-4p^{2}}.
 $$
+:::
+::::
 
-</div>
+::::problem
+16. (Bonus, 2026 USAPhO)
 
-<div class="theorem-box">
+You are studying the motion of charged particles constrained to the $$xy$$-plane. Particle $$\alpha$$, with charge $$+1\ \mathrm{C}$$, is fixed at the origin.
 
-### Solution 16
+For motion under an inverse-square central force, trajectories are conic sections with the fixed particle at a focus. In polar coordinates:
 
+- For an attractive interaction (ellipse),
+
+$$
+r=\frac{r_0}{1+e\cos\phi},\qquad e<1.
+$$
+
+- For a repulsive interaction (hyperbola),
+
+$$
+r=\frac{r_0}{e\cos\phi-1},\qquad e>1.
+$$
+
+You have a camera that takes three snapshots of a moving particle at equal time intervals.
+
+   $$(A)$$ A particle $$\beta$$, with charge $$-1\ \mathrm{C}$$, moves under the electrostatic force of particle $$\alpha$$. In three consecutive snapshots, its positions are
+
+   $$
+   (0,-5\ \mathrm{m}),\qquad (3\ \mathrm{m},0),\qquad (0,5\ \mathrm{m}).
+   $$
+
+   Assuming the motion is governed only by the Coulomb interaction with $$\alpha$$, determine the maximum distance that particle $$\beta$$ reaches from the origin.
+
+   $$(B)$$ Now particle $$\beta$$ is replaced by particle $$\gamma$$, which has charge $$+2\ \mathrm{C}$$ and is free to move in the plane. In three consecutive snapshots, its positions are
+
+   $$
+   (3\ \mathrm{m},-4\ \mathrm{m}),\qquad (2\ \mathrm{m},0),\qquad (3\ \mathrm{m},4\ \mathrm{m}).
+   $$
+
+   Assuming the motion is governed only by the Coulomb interaction with $$\alpha$$, determine the angle $$\theta$$, measured from the positive $$x$$-axis, of the velocity of particle $$\gamma$$ at a large time.
+
+   $$(C)$$ A family of particles, each identical to particle $$\gamma$$ (that is, each has charge $$+2\ \mathrm{C}$$), approaches from infinity in the $$xy$$-plane. All particles have the same speed $$v_{\infty}$$ far from the origin and move along lines parallel to the initial asymptotic direction of particle $$\gamma$$ from part $$(B)$$. The particles are injected one at a time, so they do not interact with one another.
+
+   For each trajectory, define the **impact parameter** $$B$$ to be the perpendicular distance between the initial straight-line path of the particle and the origin.
+
+   As a particle passes near the scattering center, its direction changes due to Coulomb repulsion. Let $$\alpha$$ denote the total deflection angle of the trajectory, i.e. the angle between the incoming and outgoing asymptotic directions.
+
+   $$(i)$$ Using the conic form of the trajectory, derive a formula for $$B(\alpha)$$.
+
+   $$(ii)$$ Using the result of part $$(B)$$, express $$B(\alpha)$$ in terms of $$r_0$$.
+
+:::solution
 For part (A), use the attractive model
 
 $$
@@ -2688,5 +2667,5 @@ B=\frac{4}{2\sqrt2}=\sqrt2\ \mathrm{m}.
 $$
 
 Note that the answer may be different depending on how you define the asymptote angle, so always match your work instead of necessarily matching solutions.
-
-</div>
+:::
+::::

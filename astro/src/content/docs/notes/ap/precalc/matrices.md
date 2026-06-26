@@ -73,7 +73,7 @@ $$
 So the solution is
 
 $$
-\boxed{(2,3)}.
+(2,3).
 $$
 
 </div>
@@ -464,7 +464,7 @@ $$
 Thus
 
 $$
-\boxed{(x,y,z)=(1,2,3)}.
+(x,y,z)=(1,2,3).
 $$
 
 </div>
@@ -693,12 +693,10 @@ A^{-1}
 -5 & 2
 \end{bmatrix}
 =
-\boxed{
 \begin{bmatrix}
 3 & -1\\
 -5 & 2
-\end{bmatrix}
-}.
+\end{bmatrix}.
 $$
 
 </div>
@@ -777,7 +775,7 @@ $$
 So
 
 $$
-\boxed{(x,y)=(3,1)}.
+(x,y)=(3,1).
 $$
 
 </div>
@@ -1060,7 +1058,7 @@ $$
 Thus $$x=-4$$ or $$x=3$$. Since $$y=x+1$$, the solutions are
 
 $$
-\boxed{(-4,-3)\text{ and }(3,4)}.
+(-4,-3)\text{ and }(3,4).
 $$
 
 </div>
@@ -1121,6 +1119,7 @@ $$
 
 ## Practice
 
+::::problem
 1. Solve the system using Gaussian elimination:
 
     $$
@@ -1131,179 +1130,7 @@ $$
     \end{cases}
     $$
 
-2. Solve the system and classify it as having one solution, no solution, or infinitely many solutions:
-
-    $$
-    \begin{cases}
-    x+2y-z=4\\
-    2x+4y-2z=8\\
-    3x-y+z=1
-    \end{cases}
-    $$
-
-3. Find all values of $$k$$ for which the system has no unique solution:
-
-    $$
-    \begin{cases}
-    kx+2y=6\\
-    8x+ky=12
-    \end{cases}
-    $$
-
-    For each such value of $$k$$, determine whether the system has no solution or infinitely many solutions.
-
-4. Let
-
-    $$
-    A=\begin{bmatrix}2&-1\\3&4\end{bmatrix},
-    \qquad
-    B=\begin{bmatrix}0&5\\-2&1\end{bmatrix}.
-    $$
-
-    Compute $$2A-3B$$, $$AB$$, and $$BA$$.
-
-5. Let
-
-    $$
-    A=\begin{bmatrix}1&2\\0&3\end{bmatrix},
-    \qquad
-    B=\begin{bmatrix}a&b\\c&d\end{bmatrix}.
-    $$
-
-    Find all matrices $$B$$ such that $$AB=BA$$.
-
-6. Find $$A^{-1}$$, if it exists, and use it to solve $$AX=B$$:
-
-    $$
-    A=\begin{bmatrix}4&7\\2&5\end{bmatrix},
-    \qquad
-    B=\begin{bmatrix}1\\-3\end{bmatrix}.
-    $$
-
-7. Find the inverse of
-
-    $$
-    A=\begin{bmatrix}
-    1&2&0\\
-    0&1&3\\
-    0&0&2
-    \end{bmatrix}.
-    $$
-
-8. Find all values of $$t$$ for which the matrix is singular:
-
-    $$
-    A=\begin{bmatrix}
-    t&1&0\\
-    2&t&1\\
-    0&3&t
-    \end{bmatrix}.
-    $$
-
-9. Use Cramer's Rule to solve:
-
-    $$
-    \begin{cases}
-    3x-2y=11\\
-    5x+4y=7
-    \end{cases}
-    $$
-
-10. A quadratic function $$f(x)=ax^2+bx+c$$ passes through $$(-1,6)$$, $$(2,3)$$, and $$(4,15)$$. Use a system of equations to find $$a,b,c$$.
-
-11. Solve the nonlinear system:
-
-    $$
-    \begin{cases}
-    x^2+y^2=25\\
-    x-y=1
-    \end{cases}
-    $$
-
-12. Solve the nonlinear system:
-
-    $$
-    \begin{cases}
-    xy=12\\
-    x+y=8
-    \end{cases}
-    $$
-
-13. Find the vertices and area of the region satisfying
-
-    $$
-    \begin{cases}
-    x\ge 0\\
-    y\ge 0\\
-    x+2y\le 8\\
-    3x+y\le 9
-    \end{cases}
-    $$
-
-14. A matrix transformation sends the point $$(x,y)$$ to
-
-    $$
-    \begin{bmatrix}
-    x'\\
-    y'
-    \end{bmatrix}
-    =
-    \begin{bmatrix}
-    2&-1\\
-    1&1
-    \end{bmatrix}
-    \begin{bmatrix}
-    x\\
-    y
-    \end{bmatrix}.
-    $$
-
-    Find the original point $$(x,y)$$ that maps to $$(7,5)$$. Then find the image of the line $$y=2x+1$$ under this transformation.
-
-15. A small economy has two sectors: food and tools. Producing one unit of food requires $$0.20$$ units of food and $$0.10$$ units of tools. Producing one unit of tools requires $$0.30$$ units of food and $$0.20$$ units of tools. External demand is $$110$$ units of food and $$80$$ units of tools. Let $$F$$ and $$T$$ be the total production levels. Set up and solve the matrix equation for $$F$$ and $$T$$.
-
-16. **Extension (Cayley-Hamilton and Matrix Powers).** Let
-
-    $$
-    A=\begin{bmatrix}a&b\\c&d\end{bmatrix},
-    \qquad
-    \operatorname{tr}(A)=a+d,
-    \qquad
-    \det(A)=ad-bc.
-    $$
-
-    $$(A)$$ Prove the Cayley-Hamilton identity
-
-    $$
-    A^2-\operatorname{tr}(A)A+\det(A)I=0.
-    $$
-
-    $$(B)$$ Use part $$(A)$$ to derive the inverse formula for $$A$$ when $$\det(A)\ne 0$$.
-
-    $$(C)$$ Explain why every power $$A^n$$ for $$n\ge 2$$ can be rewritten in the form
-
-    $$
-    A^n=\alpha_n A+\beta_n I
-    $$
-
-    for some constants $$\alpha_n$$ and $$\beta_n$$.
-
-    $$(D)$$ Let
-
-    $$
-    M=\begin{bmatrix}2&1\\1&1\end{bmatrix}.
-    $$
-
-    Use part $$(C)$$ to compute $$M^6$$ without multiplying six matrices directly.
-
----
-
-## Solutions
-
-<div class="theorem-box">
-
-### Solution 1
-
+:::solution
 Start with the augmented matrix:
 
 $$
@@ -1405,13 +1232,21 @@ so $$x=1$$. The solution is
 $$
 \boxed{(1,2,3)}.
 $$
+:::
+::::
 
-</div>
+::::problem
+2. Solve the system and classify it as having one solution, no solution, or infinitely many solutions:
 
-<div class="theorem-box">
+    $$
+    \begin{cases}
+    x+2y-z=4\\
+    2x+4y-2z=8\\
+    3x-y+z=1
+    \end{cases}
+    $$
 
-### Solution 2
-
+:::solution
 The second equation is exactly $$2$$ times the first equation, so it does not add new information. Use the first and third equations:
 
 $$
@@ -1470,13 +1305,22 @@ Thus the system has infinitely many solutions:
 $$
 \boxed{(x,y,z)=\left(\frac{6-t}{7},\frac{11+4t}{7},t\right),\quad t\in\mathbb R}.
 $$
+:::
+::::
 
-</div>
+::::problem
+3. Find all values of $$k$$ for which the system has no unique solution:
 
-<div class="theorem-box">
+    $$
+    \begin{cases}
+    kx+2y=6\\
+    8x+ky=12
+    \end{cases}
+    $$
 
-### Solution 3
+    For each such value of $$k$$, determine whether the system has no solution or infinitely many solutions.
 
+:::solution
 The coefficient matrix is
 
 $$
@@ -1531,13 +1375,21 @@ Therefore:
 $$
 \boxed{k=4\text{ gives infinitely many solutions, and }k=-4\text{ gives no solution}.}
 $$
+:::
+::::
 
-</div>
+::::problem
+4. Let
 
-<div class="theorem-box">
+    $$
+    A=\begin{bmatrix}2&-1\\3&4\end{bmatrix},
+    \qquad
+    B=\begin{bmatrix}0&5\\-2&1\end{bmatrix}.
+    $$
 
-### Solution 4
+    Compute $$2A-3B$$, $$AB$$, and $$BA$$.
 
+:::solution
 First,
 
 $$
@@ -1625,13 +1477,21 @@ BA=
 \end{bmatrix}
 }.
 $$
+:::
+::::
 
-</div>
+::::problem
+5. Let
 
-<div class="theorem-box">
+    $$
+    A=\begin{bmatrix}1&2\\0&3\end{bmatrix},
+    \qquad
+    B=\begin{bmatrix}a&b\\c&d\end{bmatrix}.
+    $$
 
-### Solution 5
+    Find all matrices $$B$$ such that $$AB=BA$$.
 
+:::solution
 Compute $$AB$$:
 
 $$
@@ -1700,13 +1560,19 @@ a&b\\
 \text{ for any real numbers }a,b.
 }
 $$
+:::
+::::
 
-</div>
+::::problem
+6. Find $$A^{-1}$$, if it exists, and use it to solve $$AX=B$$:
 
-<div class="theorem-box">
+    $$
+    A=\begin{bmatrix}4&7\\2&5\end{bmatrix},
+    \qquad
+    B=\begin{bmatrix}1\\-3\end{bmatrix}.
+    $$
 
-### Solution 6
-
+:::solution
 The determinant is
 
 $$
@@ -1778,13 +1644,21 @@ X=
 -7/3
 \end{bmatrix}.}
 $$
+:::
+::::
 
-</div>
+::::problem
+7. Find the inverse of
 
-<div class="theorem-box">
+    $$
+    A=\begin{bmatrix}
+    1&2&0\\
+    0&1&3\\
+    0&0&2
+    \end{bmatrix}.
+    $$
 
-### Solution 7
-
+:::solution
 Let
 
 $$
@@ -1874,13 +1748,21 @@ A^{-1}=
 \end{bmatrix}
 }.
 $$
+:::
+::::
 
-</div>
+::::problem
+8. Find all values of $$t$$ for which the matrix is singular:
 
-<div class="theorem-box">
+    $$
+    A=\begin{bmatrix}
+    t&1&0\\
+    2&t&1\\
+    0&3&t
+    \end{bmatrix}.
+    $$
 
-### Solution 8
-
+:::solution
 Compute the determinant:
 
 $$
@@ -1928,13 +1810,20 @@ Therefore
 $$
 \boxed{t=0,\ \sqrt5,\ -\sqrt5}.
 $$
+:::
+::::
 
-</div>
+::::problem
+9. Use Cramer's Rule to solve:
 
-<div class="theorem-box">
+    $$
+    \begin{cases}
+    3x-2y=11\\
+    5x+4y=7
+    \end{cases}
+    $$
 
-### Solution 9
-
+:::solution
 Compute
 
 $$
@@ -1981,13 +1870,13 @@ So
 $$
 \boxed{\left(\frac{29}{11},-\frac{17}{11}\right)}.
 $$
+:::
+::::
 
-</div>
+::::problem
+10. A quadratic function $$f(x)=ax^2+bx+c$$ passes through $$(-1,6)$$, $$(2,3)$$, and $$(4,15)$$. Use a system of equations to find $$a,b,c$$.
 
-<div class="theorem-box">
-
-### Solution 10
-
+:::solution
 Use the three points in $$f(x)=ax^2+bx+c$$.
 
 For $$(-1,6)$$:
@@ -2069,13 +1958,20 @@ Therefore
 $$
 \boxed{f(x)=\frac75x^2-\frac{12}{5}x+\frac{11}{5}}.
 $$
+:::
+::::
 
-</div>
+::::problem
+11. Solve the nonlinear system:
 
-<div class="theorem-box">
+    $$
+    \begin{cases}
+    x^2+y^2=25\\
+    x-y=1
+    \end{cases}
+    $$
 
-### Solution 11
-
+:::solution
 From $$x-y=1$$,
 
 $$
@@ -2117,13 +2013,20 @@ Thus $$y=-4$$ or $$y=3$$. Since $$x=y+1$$, the solutions are
 $$
 \boxed{(-3,-4)\text{ and }(4,3)}.
 $$
+:::
+::::
 
-</div>
+::::problem
+12. Solve the nonlinear system:
 
-<div class="theorem-box">
+    $$
+    \begin{cases}
+    xy=12\\
+    x+y=8
+    \end{cases}
+    $$
 
-### Solution 12
-
+:::solution
 Since
 
 $$
@@ -2153,13 +2056,22 @@ So the two numbers are $$2$$ and $$6$$. Therefore
 $$
 \boxed{(x,y)=(2,6)\text{ or }(6,2)}.
 $$
+:::
+::::
 
-</div>
+::::problem
+13. Find the vertices and area of the region satisfying
 
-<div class="theorem-box">
+    $$
+    \begin{cases}
+    x\ge 0\\
+    y\ge 0\\
+    x+2y\le 8\\
+    3x+y\le 9
+    \end{cases}
+    $$
 
-### Solution 13
-
+:::solution
 The region is in the first quadrant and below both lines:
 
 $$
@@ -2234,13 +2146,31 @@ So
 $$
 \boxed{\text{vertices }(0,0),(3,0),(2,3),(0,4)\text{ and area }\frac{17}{2}}.
 $$
+:::
+::::
 
-</div>
+::::problem
+14. A matrix transformation sends the point $$(x,y)$$ to
 
-<div class="theorem-box">
+    $$
+    \begin{bmatrix}
+    x'\\
+    y'
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+    2&-1\\
+    1&1
+    \end{bmatrix}
+    \begin{bmatrix}
+    x\\
+    y
+    \end{bmatrix}.
+    $$
 
-### Solution 14
+    Find the original point $$(x,y)$$ that maps to $$(7,5)$$. Then find the image of the line $$y=2x+1$$ under this transformation.
 
+:::solution
 We need
 
 $$
@@ -2303,13 +2233,13 @@ As $$x$$ varies, $$y'$$ varies freely, but $$x'$$ is always $$-1$$. Therefore th
 $$
 \boxed{x'=-1}.
 $$
+:::
+::::
 
-</div>
+::::problem
+15. A small economy has two sectors: food and tools. Producing one unit of food requires $$0.20$$ units of food and $$0.10$$ units of tools. Producing one unit of tools requires $$0.30$$ units of food and $$0.20$$ units of tools. External demand is $$110$$ units of food and $$80$$ units of tools. Let $$F$$ and $$T$$ be the total production levels. Set up and solve the matrix equation for $$F$$ and $$T$$.
 
-<div class="theorem-box">
-
-### Solution 15
-
+:::solution
 The total production must satisfy internal demand plus external demand.
 
 Food production:
@@ -2406,13 +2336,45 @@ So the required production levels are
 $$
 \boxed{F=\frac{11200}{61}\approx 183.61,\qquad T=\frac{7500}{61}\approx 122.95}.
 $$
+:::
+::::
 
-</div>
+::::problem
+16. **Extension (Cayley-Hamilton and Matrix Powers).** Let
 
-<div class="theorem-box">
+    $$
+    A=\begin{bmatrix}a&b\\c&d\end{bmatrix},
+    \qquad
+    \operatorname{tr}(A)=a+d,
+    \qquad
+    \det(A)=ad-bc.
+    $$
 
-### Solution 16
+    $$(A)$$ Prove the Cayley-Hamilton identity
 
+    $$
+    A^2-\operatorname{tr}(A)A+\det(A)I=0.
+    $$
+
+    $$(B)$$ Use part $$(A)$$ to derive the inverse formula for $$A$$ when $$\det(A)\ne 0$$.
+
+    $$(C)$$ Explain why every power $$A^n$$ for $$n\ge 2$$ can be rewritten in the form
+
+    $$
+    A^n=\alpha_n A+\beta_n I
+    $$
+
+    for some constants $$\alpha_n$$ and $$\beta_n$$.
+
+    $$(D)$$ Let
+
+    $$
+    M=\begin{bmatrix}2&1\\1&1\end{bmatrix}.
+    $$
+
+    Use part $$(C)$$ to compute $$M^6$$ without multiplying six matrices directly.
+
+:::solution
 Part $$(A)$$. Compute $$A^2$$:
 
 $$
@@ -2702,5 +2664,5 @@ M^6=
 \end{bmatrix}
 }.
 $$
-
-</div>
+:::
+::::
