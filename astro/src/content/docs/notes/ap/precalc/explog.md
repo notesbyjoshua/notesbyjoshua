@@ -136,9 +136,27 @@ $$
 (2,\infty).
 $$
 
-The graph is shown below (Note that the scale is a bit off, the dashed line is the horizontal asymptote):
+The graph is shown below (the dashed line is the horizontal asymptote):
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Precalc/expgraph1.png" alt="parent functions" loading="lazy" decoding="async" />
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[
+  axis lines=middle, xlabel=$x$, ylabel=$y$,
+  xmin=-2, xmax=7, ymin=-2, ymax=25,
+  xtick={-2,-1,...,7}, ytick={0,5,...,25},
+  grid=both, grid style={gray!18}, major grid style={gray!35},
+  width=12cm, height=9cm, clip=true,
+]
+% horizontal asymptote y = 2
+\addplot[red, dashed, thick, domain=-2:7] {2};
+\addplot[blue, very thick, samples=150, domain=-2:6.3] {0.5*exp((x-3)*ln(4))+2};
+\node[blue, anchor=west] at (axis cs:0.2,15) {$y=\tfrac12(4)^{x-3}+2$};
+\node[red, anchor=south west] at (axis cs:-2,2) {$y=2$};
+\end{axis}
+\end{tikzpicture}
+```
 
 </div>
 
@@ -1626,7 +1644,32 @@ The inverse has domain $$(-\infty,\infty)$$ and range $$(-\infty,4)$$. The graph
 
 The graph of both functions are shown below (green = inverse function):
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Precalc/expgraph2.png" alt="parent functions" loading="lazy" decoding="async" />
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[
+  axis lines=middle, xlabel=$x$, ylabel=$y$,
+  xmin=-16, xmax=12, ymin=-12, ymax=10,
+  xtick={-16,-12,...,12}, ytick={-12,-8,...,8},
+  grid=both, grid style={gray!15}, major grid style={gray!30},
+  width=12cm, height=10cm, clip=true,
+]
+% reflection axis y = x
+\addplot[gray, dotted, thick, domain=-12:10] {x};
+% asymptotes: y = 4 (inverse) and x = 4 (function)
+\addplot[gray!60, dashed, domain=-16:12] {4};
+\draw[gray!60, dashed] (axis cs:4,-12) -- (axis cs:4,10);
+% h(x) = log_4(16 - 4x) - 2
+\addplot[red, very thick, samples=200, domain=-16:3.96] {ln(16-4*x)/ln(4) - 2};
+% inverse: h^{-1}(x) = 4 - 4^{x+1}
+\addplot[green!55!black, very thick, samples=200, domain=-16:1.15] {4 - exp((x+1)*ln(4))};
+\node[red, anchor=west] at (axis cs:-15,1.1) {$h$};
+\node[green!55!black, anchor=south] at (axis cs:-9,4.2) {$h^{-1}$};
+\node[gray, anchor=south west, font=\footnotesize] at (axis cs:6,6) {$y=x$};
+\end{axis}
+\end{tikzpicture}
+```
 
 </div>
 
