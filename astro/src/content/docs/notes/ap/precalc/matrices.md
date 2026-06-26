@@ -2340,7 +2340,9 @@ $$
 ::::
 
 ::::problem
-16. **Extension (Cayley-Hamilton and Matrix Powers).** Let
+16. Extension (Cayley-Hamilton and Matrix Powers).
+
+Let
 
     $$
     A=\begin{bmatrix}a&b\\c&d\end{bmatrix},

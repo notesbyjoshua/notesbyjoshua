@@ -60,6 +60,26 @@ $$
 f(x)=-\frac12x+2.
 $$
 
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[
+  axis lines=middle, xmin=-1, xmax=5, ymin=-2, ymax=6,
+  xtick={0,2,4}, ytick={0,1,2,4},
+  grid=both, grid style={gray!18},
+  width=8.5cm, height=6cm,
+  xlabel=$x$, ylabel=$y$,
+]
+\addplot[gray!70, dashed, domain=-1:5] {2*x-2/3};
+\addplot[blue, very thick, domain=-1:5] {-0.5*x+2};
+\addplot[only marks, mark=*, mark size=1.8pt, orange!85!black] coordinates {(2,1)};
+\node[blue, anchor=west] at (axis cs:2.35,0.8) {$f(x)=-\frac12x+2$};
+\node[gray!70!black, anchor=west] at (axis cs:1.2,4.1) {$6x-3y=2$};
+\end{axis}
+\end{tikzpicture}
+```
+
 </div>
 
 ### Quadratic functions
@@ -117,6 +137,26 @@ f(x)=a(x-h)^{2}+k,
 $$
 
 where the vertex is $$(h,k)$$.
+
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[
+  axis lines=middle, xmin=-4, xmax=4, ymin=-1, ymax=7,
+  xtick={-3,-2,-1,0,1,2,3}, ytick={0,2,4,6},
+  grid=both, grid style={gray!18},
+  width=8cm, height=6cm,
+  xlabel=$x$, ylabel=$y$,
+]
+\addplot[blue, very thick, samples=160, domain=-4:4] {0.65*(x-1)^2+1};
+\addplot[gray!65, dashed] coordinates {(1,-1) (1,7)};
+\addplot[only marks, mark=*, mark size=1.8pt, orange!85!black] coordinates {(1,1)};
+\node[orange!85!black, anchor=west] at (axis cs:1.15,1.15) {vertex $(h,k)$};
+\node[gray!70!black, anchor=west] at (axis cs:1.15,5.8) {$x=h$};
+\end{axis}
+\end{tikzpicture}
+```
 
 </div>
 
@@ -277,7 +317,27 @@ $$
 
 Since $$x=2$$ has multiplicity $$2$$, the graph touches/bounces at $$x=2$$. The end behavior of this function is up & up since the highest degree is even and the leading coefficient is positive. It goes through $$(-6,0)$$ and $$(-1/2,0)$$ while bouncing at $$(2,0)$$. A graph of the polynomial is shown below:
 
-**ADD IMAGE OF GRAPH**
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[
+  axis lines=middle, xmin=-7.2, xmax=3.2, ymin=-170, ymax=260,
+  xtick={-6,-4,-2,0,2}, ytick={-100,0,100,200},
+  grid=both, grid style={gray!18},
+  width=10cm, height=6.8cm,
+  xlabel=$x$, ylabel=$P(x)$,
+]
+\addplot[blue, very thick, samples=260, domain=-6.8:2.6]
+  {2*(x-2)^2*(x+6)*(x+0.5)};
+\addplot[only marks, mark=*, mark size=1.8pt, orange!85!black]
+  coordinates {(-6,0) (-0.5,0) (2,0)};
+\node[orange!85!black, anchor=south west] at (axis cs:-6,0) {$-6$};
+\node[orange!85!black, anchor=north east] at (axis cs:-0.5,0) {$-\frac12$};
+\node[orange!85!black, anchor=south west] at (axis cs:2,0) {bounce at $2$};
+\end{axis}
+\end{tikzpicture}
+```
 
 </div>
 
@@ -474,7 +534,7 @@ the $$x$$-intercepts occur where $$f(x)=0$$ and the denominator is not zero (bas
 
 When solving out rational polynomials, always factor first. If a factor cancels, it creates a **hole** at that place, and the $$y$$-value would be the $$y$$-value of the point if it were on the rational polynomial's graph.
 
-If a denominator factor does not cancel, it creates a **vertical asymptote**, where the values approach $$\pm \infinity$$.
+If a denominator factor does not cancel, it creates a **vertical asymptote**, where the values approach $$\pm \infty$$.
 
 :::warning
 Don't confuse a hole with a vertical asymptote. A factor that cancels leaves a hole at that point, while a denominator factor that does not cancel gives a vertical asymptote.
@@ -504,6 +564,28 @@ $$
 
 Thus the hole is at $$(2,-3).$$
 
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[
+  axis lines=middle, xmin=-3, xmax=6, ymin=-8, ymax=7,
+  xtick={-2,0,2,3,4,6}, ytick={-6,-3,0,3,6},
+  grid=both, grid style={gray!18},
+  width=9cm, height=6.8cm,
+  xlabel=$x$, ylabel=$y$,
+]
+\addplot[gray!65, dashed] coordinates {(3,-8) (3,7)};
+\addplot[gray!65, dashed, domain=-3:6] {1};
+\addplot[blue, very thick, samples=160, domain=-3:2.94] {(x+1)/(x-3)};
+\addplot[blue, very thick, samples=160, domain=3.06:6] {(x+1)/(x-3)};
+\addplot[only marks, mark=o, mark size=2.5pt, orange!85!black, thick] coordinates {(2,-3)};
+\node[gray!65!black, anchor=west] at (axis cs:3.1,5.8) {$x=3$};
+\node[orange!85!black, anchor=east] at (axis cs:1.8,-3.25) {hole};
+\end{axis}
+\end{tikzpicture}
+```
+
 </div>
 
 ### Horizontal asymptotes
@@ -514,7 +596,7 @@ $$
 R(x)=\frac{f(x)}{g(x)},
 $$
 
-a **horizontal asymptote** is the value of which $$y$$ approaches as $$x$$ approaches $$\infinity$$. If $$y$$ approaches $$\pm \infinity$$, it is NOT considered a horizontal asymptote!. To determine horizontal asymptotes, always compare the degree of the numerator and denominator.
+a **horizontal asymptote** is the value of which $$y$$ approaches as $$x$$ approaches $$\infty$$. If $$y$$ approaches $$\pm \infty$$, it is NOT considered a horizontal asymptote!. To determine horizontal asymptotes, always compare the degree of the numerator and denominator.
 
 - If denominator degree is bigger, the horizontal asymptote is $$y=0$$.
 - If degrees are equal, the horizontal asymptote is the ratio of leading coefficients.
@@ -642,6 +724,24 @@ $$
 400\text{ cm}^2.
 $$
 
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[
+  axis lines=middle, xmin=0, xmax=40, ymin=0, ymax=430,
+  xtick={0,10,20,30,40}, ytick={0,100,200,300,400},
+  grid=both, grid style={gray!18},
+  width=9cm, height=6.5cm,
+  xlabel=$x$, ylabel=$A(x)$,
+]
+\addplot[blue, very thick, samples=160, domain=0:40] {40*x-x^2};
+\addplot[only marks, mark=*, mark size=1.8pt, orange!85!black] coordinates {(20,400)};
+\node[orange!85!black, anchor=south] at (axis cs:20,400) {maximum};
+\end{axis}
+\end{tikzpicture}
+```
+
 </div>
 
 <div class="theorem-box">
@@ -712,6 +812,24 @@ x=4.
 $$
 
 This method is useful when the equation can be rewritten as a quadratic in the input and the discriminant tells which output values are possible.
+
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[
+  axis lines=middle, xmin=0, xmax=18, ymin=0, ymax=17,
+  xtick={0,4,8,12,16}, ytick={0,5,10,15},
+  grid=both, grid style={gray!18},
+  width=9cm, height=6.5cm,
+  xlabel=$x$, ylabel=$E(x)$,
+]
+\addplot[blue, very thick, samples=220, domain=0:18] {120*x/(x^2+16)};
+\addplot[only marks, mark=*, mark size=1.8pt, orange!85!black] coordinates {(4,15)};
+\node[orange!85!black, anchor=south west] at (axis cs:4.2,15) {largest at $x=4$};
+\end{axis}
+\end{tikzpicture}
+```
 
 </div>
 

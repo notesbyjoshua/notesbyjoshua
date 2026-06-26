@@ -158,8 +158,8 @@ $$
 \draw[red!75!black, dashed, thick] (-4,-1) -- (4,-1) node[right] {directrix};
 \draw[orange!85!black, thick] (-2,1) -- (2,1);
 \fill (V) circle (2pt) node[below right] {vertex $(h,k)$};
-\fill[red!80!black] (F) circle (2pt) node[above right] {focus $(h,k+p)$};
-\fill (-2,1) circle (1.5pt) node[above left] {latus rectum};
+\fill[red!80!black] (F) circle (2pt) node[anchor=west, xshift=6pt] {focus $(h,k+p)$};
+\fill (-2,1) circle (1.5pt) node[anchor=east, xshift=-4pt, align=center] {latus\\rectum};
 \fill (2,1) circle (1.5pt);
 \draw[<->] (2.35,0) -- (2.35,1) node[midway, right] {$p$};
 \draw[<->] (2.7,0) -- (2.7,-1) node[midway, right] {$p$};
@@ -216,13 +216,15 @@ An ellipse is defined as the set of points the sum of whose distances to two fix
 \draw[->, gray!70] (-4.2,0) -- (4.2,0) node[right] {$x$};
 \draw[->, gray!70] (0,-2.4) -- (0,2.4) node[above] {$y$};
 \draw[blue, very thick] (0,0) ellipse (3 and 1.55);
-\draw[orange!80!black, thick] (-3,0) -- (3,0) node[midway, below] {major axis};
-\draw[green!50!black, thick] (0,-1.55) -- (0,1.55) node[midway, right] {minor axis};
-\fill (0,0) circle (1.6pt) node[below right] {center};
-\fill[red!80!black] (-1.9,0) circle (2pt) node[above] {$F_1$};
-\fill[red!80!black] (1.9,0) circle (2pt) node[above] {$F_2$};
-\fill (-3,0) circle (1.6pt) node[below left] {vertex};
-\fill (3,0) circle (1.6pt) node[below right] {vertex};
+\draw[orange!80!black, thick] (-3,0) -- (3,0);
+\draw[green!50!black, thick] (0,-1.55) -- (0,1.55);
+\node[orange!80!black, anchor=north] at (0,-0.22) {major axis};
+\node[green!50!black, anchor=west] at (0.18,1.05) {minor axis};
+\fill (0,0) circle (1.6pt) node[anchor=north west, xshift=4pt, yshift=-4pt] {center};
+\fill[red!80!black] (-1.9,0) circle (2pt) node[above left] {$F_1$};
+\fill[red!80!black] (1.9,0) circle (2pt) node[above right] {$F_2$};
+\fill (-3,0) circle (1.6pt) node[anchor=north east, xshift=-3pt, yshift=-3pt] {vertex};
+\fill (3,0) circle (1.6pt) node[anchor=north west, xshift=3pt, yshift=-3pt] {vertex};
 \draw[dashed] (-1.9,0) -- (1.45,1.35) -- (1.9,0);
 \node[align=center] at (0,-2.05) {$PF_1+PF_2$ is constant for every point $P$ on the ellipse};
 \end{tikzpicture}
@@ -668,9 +670,13 @@ $$
 \addplot[blue, very thick, samples=160, domain=-6:-3.01] ({x}, {-2/3*sqrt(x^2-9)});
 \addplot[red!75!black, dashed, domain=-6:6] {(2/3)*x};
 \addplot[red!75!black, dashed, domain=-6:6] {-(2/3)*x};
-\addplot[only marks, mark=*, mark size=1.8pt, orange!85!black] coordinates {(-3.606,0) (3.606,0)};
+\draw[gray!70, dashed] (axis cs:-3,-2) rectangle (axis cs:3,2);
+\addplot[only marks, mark=*, mark size=1.8pt, orange!85!black] coordinates {(-3,0) (3,0) (-3.606,0) (3.606,0)};
+\node[orange!85!black, anchor=north] at (axis cs:-3,0) {vertex};
+\node[orange!85!black, anchor=north] at (axis cs:3,0) {vertex};
 \node[orange!85!black, anchor=south] at (axis cs:-3.606,0) {$-\sqrt{13}$};
 \node[orange!85!black, anchor=south] at (axis cs:3.606,0) {$\sqrt{13}$};
+\node[red!75!black, anchor=west] at (axis cs:4,2.85) {$y=\frac23x$};
 \end{axis}
 \end{tikzpicture}
 ```
@@ -1541,18 +1547,20 @@ These angles give the asymptotic directions of the hyperbola.
 \begin{tikzpicture}
 \begin{axis}[
   axis lines=middle, axis equal image,
-  xmin=-2.5, xmax=8, ymin=-6, ymax=6,
-  xtick={-2,0,2,4,6,8}, ytick={-6,-4,-2,0,2,4,6},
+  xmin=-8, xmax=6, ymin=-7, ymax=7,
+  xtick={-8,-6,-4,-2,0,2,4,6}, ytick={-6,-4,-2,0,2,4,6},
   grid=both, grid style={gray!18},
   width=10cm, height=9cm,
   xlabel=$x$, ylabel=$y$,
 ]
-\addplot[blue, very thick, samples=240, domain=-130:130, unbounded coords=jump]
-  ({3*cos(x)/(1+(4/3)*cos(x))}, {3*sin(x)/(1+(4/3)*cos(x))});
-\addplot[red!75!black, dashed, thick] coordinates {(3,-6) (3,6)};
+\addplot[blue, very thick, samples=260, domain=-130:130, unbounded coords=jump]
+  ({4*cos(x)/(1+(4/3)*cos(x))}, {4*sin(x)/(1+(4/3)*cos(x))});
+\addplot[blue, very thick, samples=260, domain=230:490, unbounded coords=jump]
+  ({4*cos(x)/(1+(4/3)*cos(x))}, {4*sin(x)/(1+(4/3)*cos(x))});
+\addplot[red!75!black, dashed, thick] coordinates {(3,-7) (3,7)};
 \addplot[only marks, mark=*, mark size=1.8pt, orange!85!black] coordinates {(0,0)};
-\node[orange!85!black, anchor=north east] at (axis cs:0,0) {focus/pole};
-\node[red!75!black, anchor=south west] at (axis cs:3,4.9) {$x=3$};
+\node[orange!85!black, anchor=south east] at (axis cs:-0.15,0.25) {focus/pole};
+\node[red!75!black, anchor=south west] at (axis cs:3.15,5.8) {$x=3$};
 \end{axis}
 \end{tikzpicture}
 ```
@@ -1989,19 +1997,25 @@ An image of the hyperbola is shown below:
 \begin{tikzpicture}
 \begin{axis}[
   axis lines=middle, axis equal image,
-  xmin=-7, xmax=3, ymin=-2, ymax=8,
-  xtick={-7,-6,...,3}, ytick={-2,0,2,4,6,8},
+  xmin=-10, xmax=6, ymin=-5, ymax=11,
+  xtick={-10,-8,-6,-4,-2,0,2,4,6}, ytick={-4,-2,0,2,4,6,8,10},
   grid=both, grid style={gray!18},
   width=9cm, height=9cm,
   xlabel=$x$, ylabel=$y$,
 ]
-\addplot[blue, very thick, samples=160, domain=5.01:8] ({-2 + (3/2)*sqrt(x^2-25)}, {3+x});
-\addplot[blue, very thick, samples=160, domain=5.01:8] ({-2 - (3/2)*sqrt(x^2-25)}, {3+x});
-\addplot[blue, very thick, samples=160, domain=5.01:8] ({-2 + (3/2)*sqrt(x^2-25)}, {3-x});
-\addplot[blue, very thick, samples=160, domain=5.01:8] ({-2 - (3/2)*sqrt(x^2-25)}, {3-x});
-\addplot[red!75!black, dashed, domain=-7:3] {3 + (5/3)*(x+2)};
-\addplot[red!75!black, dashed, domain=-7:3] {3 - (5/3)*(x+2)};
-\addplot[only marks, mark=*, mark size=1.8pt, orange!85!black] coordinates {(-2,6.606) (-2,-0.606)};
+\addplot[blue, very thick, samples=160, domain=2.01:8] ({-2 + (3/2)*sqrt(x^2-4)}, {3+x});
+\addplot[blue, very thick, samples=160, domain=2.01:8] ({-2 - (3/2)*sqrt(x^2-4)}, {3+x});
+\addplot[blue, very thick, samples=160, domain=-8:-2.01] ({-2 + (3/2)*sqrt(x^2-4)}, {3+x});
+\addplot[blue, very thick, samples=160, domain=-8:-2.01] ({-2 - (3/2)*sqrt(x^2-4)}, {3+x});
+\addplot[red!75!black, dashed, domain=-10:6] {3 + (2/3)*(x+2)};
+\addplot[red!75!black, dashed, domain=-10:6] {3 - (2/3)*(x+2)};
+\draw[gray!70, dashed] (axis cs:-5,1) rectangle (axis cs:1,5);
+\addplot[only marks, mark=*, mark size=1.8pt, orange!85!black] coordinates {(-2,1) (-2,5) (-2,6.606) (-2,-0.606)};
+\node[orange!85!black, anchor=east] at (axis cs:-2.15,1) {vertex};
+\node[orange!85!black, anchor=east] at (axis cs:-2.15,5) {vertex};
+\node[orange!85!black, anchor=west] at (axis cs:-1.85,6.606) {focus};
+\node[orange!85!black, anchor=west] at (axis cs:-1.85,-0.606) {focus};
+\node[red!75!black, anchor=west] at (axis cs:2,5.55) {$y-3=\frac23(x+2)$};
 \end{axis}
 \end{tikzpicture}
 ```

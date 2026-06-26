@@ -350,6 +350,24 @@ $$
 
 but the quadrant of the vector must be considered.
 
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{angles,arrows.meta,quotes}
+\begin{tikzpicture}[>=Stealth, scale=0.9]
+\draw[->, gray!70] (-1,0) -- (5.2,0) node[right] {$x$};
+\draw[->, gray!70] (0,-1) -- (0,3.6) node[above] {$y$};
+\coordinate (O) at (0,0);
+\coordinate (X) at (4,0);
+\coordinate (P) at (4,2.4);
+\draw[very thick, blue, ->] (O) -- (P) node[midway, above left] {$\mathbf v=\langle a,b\rangle$};
+\draw[orange!85!black, thick] (O) -- (4,0) node[midway, below] {$a$};
+\draw[orange!85!black, thick] (4,0) -- (P) node[midway, right] {$b$};
+\draw pic[draw, "$\theta$", angle radius=0.55cm] {angle=X--O--P};
+\draw[dashed, gray!70] (P) -- (4,0);
+\fill (P) circle (2pt) node[above right] {$(a,b)$};
+\end{tikzpicture}
+```
+
 <div class="theorem-box">
 
 **Example.**  A force has magnitude $$6.34$$ Newtons and direction angle $$175^\circ$$. Find the corresponding force vector.
@@ -708,6 +726,28 @@ $$
 0\le x\le 6.
 $$
 
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[
+  axis lines=middle, xmin=-0.5, xmax=7, ymin=-0.5, ymax=2.5,
+  xtick={0,3,6}, ytick={0,1,2},
+  grid=both, grid style={gray!18},
+  width=8.5cm, height=5.8cm,
+  xlabel=$x$, ylabel=$y$,
+]
+\addplot[blue, very thick, samples=120, domain=0:2]
+  ({3*x},{0.5*x^2});
+\addplot[->, orange!85!black, very thick] coordinates {(2.7,0.42) (3.45,0.68)};
+\addplot[only marks, mark=*, mark size=1.6pt, orange!85!black] coordinates {(0,0) (3,0.5) (6,2)};
+\node[orange!85!black, anchor=south east] at (axis cs:0,0) {$t=0$};
+\node[orange!85!black, anchor=south] at (axis cs:3,0.5) {$t=1$};
+\node[orange!85!black, anchor=south west] at (axis cs:6,2) {$t=2$};
+\end{axis}
+\end{tikzpicture}
+```
+
 </div>
 
 ### Trig parametrizations
@@ -820,6 +860,26 @@ where:
 - $$\theta$$ is the angle from the polar axis.
 
 The pole is the origin, and the polar axis is the positive $$x$$-axis. Polar coordinates are very useful when dealing with circular shapes.
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{angles,arrows.meta,quotes}
+\begin{tikzpicture}[>=Stealth, scale=0.95]
+\draw[->, gray!70] (-3.8,0) -- (4.4,0) node[right] {polar axis};
+\draw[->, gray!70] (0,-2.2) -- (0,3.2) node[above] {$y$};
+\coordinate (O) at (0,0);
+\coordinate (X) at (1,0);
+\coordinate (P) at (3,2);
+\coordinate (Q) at (-3,-2);
+\draw[very thick, blue, ->] (O) -- (P) node[midway, above left] {$r$};
+\draw[dashed, red!75!black, ->] (O) -- (Q) node[midway, below right] {$-r$};
+\draw pic[draw, "$\theta$", angle radius=0.65cm] {angle=X--O--P};
+\fill (O) circle (2pt) node[below right] {pole};
+\fill[blue] (P) circle (2pt) node[above right] {$(r,\theta)$};
+\fill[red!75!black] (Q) circle (2pt) node[below left] {$(-r,\theta)$};
+\node[align=center, font=\small] at (-1.65,2.45) {negative radius\\plots opposite};
+\end{tikzpicture}
+```
 
 ### Multiple representations
 
@@ -2654,15 +2714,120 @@ For small positive $$t$$, $$y=-2\sin t$$ is negative, so the curve moves downwar
     $$(D)$$ Graph $$r^2=25\sin(2\theta)$$
 
 :::solution
-This is an Archimedean spiral:
+$$(A)$$ The curve
 
 $$
-r=\frac{2\theta}{\pi}.
+r=3-3\sin\theta
 $$
 
-As $$\theta$$ increases from $$-4\pi$$ to $$4\pi$$, $$r$$ increases from $$-8$$ to $$8$$. Negative $$r$$ values are plotted in the opposite direction from the angle $$\theta$$.
+is a cardioid because it has the form $$r=a-a\sin\theta$$. It opens downward and has a cusp at the pole when $$\theta=\frac{\pi}{2}$$.
 
-**ADD IMAGE HERE**
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[
+  axis lines=middle, axis equal image,
+  xmin=-6.5, xmax=6.5, ymin=-6.5, ymax=2,
+  xtick={-6,-3,0,3,6}, ytick={-6,-3,0},
+  grid=both, grid style={gray!18},
+  width=8.5cm, height=7cm,
+  xlabel=$x$, ylabel=$y$,
+]
+\addplot[blue, very thick, samples=360, domain=0:360]
+  ({(3-3*sin(x))*cos(x)}, {(3-3*sin(x))*sin(x)});
+\addplot[only marks, mark=*, mark size=1.6pt, orange!85!black] coordinates {(0,0) (0,-6)};
+\node[orange!85!black, anchor=south west] at (axis cs:0,0) {cusp};
+\node[orange!85!black, anchor=north] at (axis cs:0,-6) {bottom};
+\end{axis}
+\end{tikzpicture}
+```
+
+$$(B)$$ The curve
+
+$$
+r=2+5\cos\theta
+$$
+
+is a limacon with an inner loop because $$\lvert 2\rvert<\lvert 5\rvert$$. It is symmetric about the polar axis.
+
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[
+  axis lines=middle, axis equal image,
+  xmin=-4, xmax=7.5, ymin=-4.5, ymax=4.5,
+  xtick={-4,-2,0,2,4,6}, ytick={-4,-2,0,2,4},
+  grid=both, grid style={gray!18},
+  width=8.5cm, height=7cm,
+  xlabel=$x$, ylabel=$y$,
+]
+\addplot[blue, very thick, samples=500, domain=0:360]
+  ({(2+5*cos(x))*cos(x)}, {(2+5*cos(x))*sin(x)});
+\addplot[only marks, mark=*, mark size=1.6pt, orange!85!black] coordinates {(7,0) (-3,0)};
+\node[orange!85!black, anchor=south west] at (axis cs:7,0) {$r=7$};
+\node[orange!85!black, anchor=south east] at (axis cs:-3,0) {inner loop};
+\end{axis}
+\end{tikzpicture}
+```
+
+$$(C)$$ The curve
+
+$$
+r=4\sin(3\theta)
+$$
+
+is a rose curve. Since $$3$$ is odd, it has $$3$$ petals.
+
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[
+  axis lines=middle, axis equal image,
+  xmin=-4.5, xmax=4.5, ymin=-4.5, ymax=4.5,
+  xtick={-4,-2,0,2,4}, ytick={-4,-2,0,2,4},
+  grid=both, grid style={gray!18},
+  width=8cm, height=8cm,
+  xlabel=$x$, ylabel=$y$,
+]
+\addplot[blue, very thick, samples=600, domain=0:360]
+  ({(4*sin(3*x))*cos(x)}, {(4*sin(3*x))*sin(x)});
+\node[orange!85!black, anchor=south] at (axis cs:0,4) {3 petals};
+\end{axis}
+\end{tikzpicture}
+```
+
+$$(D)$$ The curve
+
+$$
+r^2=25\sin(2\theta)
+$$
+
+is a lemniscate. Since $$\sin(2\theta)\ge0$$ in Quadrants I and III, its two loops lie along the line $$y=x$$.
+
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[
+  axis lines=middle, axis equal image,
+  xmin=-4.5, xmax=4.5, ymin=-4.5, ymax=4.5,
+  xtick={-4,-2,0,2,4}, ytick={-4,-2,0,2,4},
+  grid=both, grid style={gray!18},
+  width=8cm, height=8cm,
+  xlabel=$x$, ylabel=$y$,
+]
+\addplot[blue, very thick, samples=240, domain=0:90]
+  ({sqrt(25*sin(2*x))*cos(x)}, {sqrt(25*sin(2*x))*sin(x)});
+\addplot[blue, very thick, samples=240, domain=180:270]
+  ({sqrt(25*sin(2*x))*cos(x)}, {sqrt(25*sin(2*x))*sin(x)});
+\node[orange!85!black, anchor=south west] at (axis cs:2.5,2.5) {loop};
+\node[orange!85!black, anchor=north east] at (axis cs:-2.5,-2.5) {loop};
+\end{axis}
+\end{tikzpicture}
+```
 :::
 ::::
 
@@ -2684,7 +2849,30 @@ $$
 
 Both are cardioids. The first opens to the right, and the second opens to the left.
 
-**ADD IMAGE HERE**
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[
+  axis lines=middle, axis equal image,
+  xmin=-4.5, xmax=4.5, ymin=-3, ymax=3,
+  xtick={-4,-2,0,2,4}, ytick={-2,0,2},
+  grid=both, grid style={gray!18},
+  width=8.8cm, height=6.5cm,
+  xlabel=$x$, ylabel=$y$,
+]
+\addplot[blue, very thick, samples=360, domain=0:360]
+  ({(2+2*cos(x))*cos(x)}, {(2+2*cos(x))*sin(x)});
+\addplot[red!75!black, very thick, samples=360, domain=0:360]
+  ({(2-2*cos(x))*cos(x)}, {(2-2*cos(x))*sin(x)});
+\addplot[only marks, mark=*, mark size=1.6pt, orange!85!black] coordinates {(0,2) (0,-2) (0,0)};
+\node[blue, anchor=west] at (axis cs:2.5,1.2) {$2+2\cos\theta$};
+\node[red!75!black, anchor=east] at (axis cs:-2.5,1.2) {$2-2\cos\theta$};
+\node[orange!85!black, anchor=west] at (axis cs:0.15,2) {intersection};
+\node[orange!85!black, anchor=west] at (axis cs:0.15,-2) {intersection};
+\end{axis}
+\end{tikzpicture}
+```
 
 To find intersections with the same angle, set the equations equal:
 

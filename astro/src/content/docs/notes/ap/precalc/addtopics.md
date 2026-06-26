@@ -49,15 +49,21 @@ $$
 You obtain
 
 $$
+\begin{aligned}
 \frac{x^6 + x^5 + 7x^4 + 6x^3 + 2x^2 + 16x - 24}{x^5 + 8x^2}
-= x + 1 + \frac{7x^4 - 2x^3 - 6x^2 + 8x - 24}{x^2(x + 2)(x^2 - 2x + 4)}.
+&= x + 1 \\
+&\quad {}+ \frac{7x^4 - 2x^3 - 6x^2 + 8x - 24}{x^2(x + 2)(x^2 - 2x + 4)}.
+\end{aligned}
 $$
 
 Doing partial fractions on the remainder:
 
 $$
+\begin{aligned}
 \frac{7x^4 - 2x^3 - 6x^2 + 8x - 24}{x^2(x + 2)(x^2 - 2x + 4)}
-= \frac{A}{x} + \frac{B}{x^2} + \frac{C}{x + 2} + \frac{Dx + E}{x^2 - 2x + 4}.
+&= \frac{A}{x} + \frac{B}{x^2} + \frac{C}{x + 2} \\
+&\quad {}+ \frac{Dx + E}{x^2 - 2x + 4}.
+\end{aligned}
 $$
 
 Multiply through by $$x^2(x + 2)(x^2 - 2x + 4)$$:

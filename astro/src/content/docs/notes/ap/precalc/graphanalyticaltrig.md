@@ -42,13 +42,9 @@ the key facts are:
 
 One cycle of sine can be tracked with the five key points:
 
-$$
-\begin{array}{c|ccccc}
-x & 0 & \frac{\pi}{2} & \pi & \frac{3\pi}{2} & 2\pi\\
-\hline
-\sin x & 0 & 1 & 0 & -1 & 0
-\end{array}
-$$
+| $$x$$ | $$0$$ | $$\frac{\pi}{2}$$ | $$\pi$$ | $$\frac{3\pi}{2}$$ | $$2\pi$$ |
+|---|---:|---:|---:|---:|---:|
+| $$\sin x$$ | $$0$$ | $$1$$ | $$0$$ | $$-1$$ | $$0$$ |
 
 The sine graph starts at the midline, reaches a maximum after one fourth of a period, returns to the midline after half a period, reaches a minimum after three fourths of a period, and returns to the midline after one full period.
 
@@ -70,13 +66,9 @@ the key facts are:
 
 One cycle of cosine can be tracked with the five key points:
 
-$$
-\begin{array}{c|ccccc}
-x & 0 & \frac{\pi}{2} & \pi & \frac{3\pi}{2} & 2\pi\\
-\hline
-\cos x & 1 & 0 & -1 & 0 & 1
-\end{array}
-$$
+| $$x$$ | $$0$$ | $$\frac{\pi}{2}$$ | $$\pi$$ | $$\frac{3\pi}{2}$$ | $$2\pi$$ |
+|---|---:|---:|---:|---:|---:|
+| $$\cos x$$ | $$1$$ | $$0$$ | $$-1$$ | $$0$$ | $$1$$ |
 
 The cosine graph starts at a maximum, crosses the midline after one fourth of a period, reaches a minimum after half a period, crosses the midline again after three fourths of a period, and returns to a maximum after one full period.
 
@@ -217,6 +209,11 @@ A graph with many key points is shown below:
   width=12cm, height=7cm, clip=true]
 \addplot[gray, dashed, domain=-2.7:4.3]{1};
 \addplot[blue, very thick, samples=240, domain=-2.7:4.3]{-2*cos(deg(3*(x-pi/4)))+1};
+\addplot[only marks, mark=*, mark size=1.6pt, orange!85!black]
+  coordinates {(0.7854,-1) (1.309,1) (1.833,3) (2.356,1) (2.880,-1)};
+\node[orange!85!black, anchor=north] at (axis cs:0.7854,-1) {start};
+\node[orange!85!black, anchor=south] at (axis cs:1.833,3) {max};
+\node[orange!85!black, anchor=north] at (axis cs:2.880,-1) {end};
 \end{axis}
 \end{tikzpicture}
 ```
@@ -1309,6 +1306,10 @@ A graph with many key points is shown below:
   width=12cm, height=7.5cm, clip=true]
 \addplot[gray, dashed, domain=-1.2:4.3]{1};
 \addplot[blue, very thick, samples=220, domain=-1.2:4.3]{-3*sin(deg(2*(x-pi/6)))+1};
+\addplot[only marks, mark=*, mark size=1.6pt, orange!85!black]
+  coordinates {(0.5236,1) (1.309,-2) (2.094,1) (2.880,4) (3.665,1)};
+\node[orange!85!black, anchor=north] at (axis cs:1.309,-2) {min};
+\node[orange!85!black, anchor=south] at (axis cs:2.880,4) {max};
 \end{axis}
 \end{tikzpicture}
 ```
@@ -1385,6 +1386,11 @@ A graph with many key points is shown below:
   width=12cm, height=7.5cm, clip=true]
 \addplot[gray, dashed, domain=-1.5:7]{3};
 \addplot[blue, very thick, samples=240, domain=-1.5:7]{4*cos(deg(1.2*(x-pi/3)))+3};
+\addplot[only marks, mark=*, mark size=1.6pt, orange!85!black]
+  coordinates {(1.047,7) (2.356,3) (3.665,-1) (4.974,3) (6.283,7)};
+\node[orange!85!black, anchor=south] at (axis cs:1.047,7) {max};
+\node[orange!85!black, anchor=north] at (axis cs:3.665,-1) {min};
+\node[orange!85!black, anchor=south] at (axis cs:6.283,7) {end};
 \end{axis}
 \end{tikzpicture}
 ```
@@ -1506,6 +1512,9 @@ A graph with many key points is shown below:
 \addplot[blue, very thick, samples=120, domain=-0.775:0.252]{2*tan(deg(3*(x+pi/12)))-1};
 \addplot[blue, very thick, samples=120, domain=0.272:1.30]{2*tan(deg(3*(x+pi/12)))-1};
 \addplot[blue, very thick, samples=120, domain=-1.5:-0.796]{2*tan(deg(3*(x+pi/12)))-1};
+\addplot[only marks, mark=*, mark size=1.7pt, orange!85!black] coordinates {(-0.2618,-1) (-0.107,0)};
+\node[orange!85!black, anchor=south east] at (axis cs:-0.2618,-1) {center};
+\node[orange!85!black, anchor=south west] at (axis cs:-0.107,0) {$x$-int};
 \end{axis}
 \end{tikzpicture}
 ```
@@ -1602,12 +1611,22 @@ A graph with many key points is shown below:
 \usepackage{pgfplots}\pgfplotsset{compat=1.16}
 \begin{tikzpicture}
 \begin{axis}[axis lines=middle, xlabel=$x$, ylabel=$y$,
-  xmin=-1, xmax=13.5, ymin=0, ymax=6,
-  xtick={0,3.1416,6.2832,9.4248,12.566}, xticklabels={$0$,$\pi$,$2\pi$,$3\pi$,$4\pi$},
-  ytick={1,3,5}, grid=both, grid style={gray!15}, major grid style={gray!30},
+  xmin=2.7, xmax=16.2, ymin=-2, ymax=8,
+  xtick={3.1416,6.2832,9.4248,12.566,15.708}, xticklabels={$\pi$,$2\pi$,$3\pi$,$4\pi$,$5\pi$},
+  ytick={1,3,5,7}, grid=both, grid style={gray!15}, major grid style={gray!30},
   width=12cm, height=6.5cm, clip=true]
-\addplot[gray, dashed, domain=-1:13.5]{3};
-\addplot[blue, very thick, samples=240, domain=-1:13.5]{-2*cos(deg(0.5*(x-pi)))+3};
+\addplot[gray, dashed, domain=2.7:16.2]{3};
+\addplot[gray!65, thin, samples=240, domain=3.1416:15.708]{-2*cos(deg(0.5*(x-pi)))+3};
+\draw[gray!60, dashed] (axis cs:6.2832,-2) -- (axis cs:6.2832,8);
+\draw[gray!60, dashed] (axis cs:12.566,-2) -- (axis cs:12.566,8);
+\addplot[blue, very thick, samples=160, domain=3.1416:6.21] {-2/(cos(deg(0.5*(x-pi))))+3};
+\addplot[blue, very thick, samples=220, domain=6.36:12.49] {-2/(cos(deg(0.5*(x-pi))))+3};
+\addplot[blue, very thick, samples=160, domain=12.64:15.708] {-2/(cos(deg(0.5*(x-pi))))+3};
+\addplot[only marks, mark=*, mark size=1.7pt, orange!85!black]
+  coordinates {(3.1416,1) (9.4248,5) (15.708,1)};
+\node[orange!85!black, anchor=north] at (axis cs:3.1416,1) {vertex};
+\node[orange!85!black, anchor=south] at (axis cs:9.4248,5) {vertex};
+\node[orange!85!black, anchor=north] at (axis cs:15.708,1) {vertex};
 \end{axis}
 \end{tikzpicture}
 ```
@@ -2026,7 +2045,28 @@ $$
 
 shows that zeros occur whenever either factor is zero. A sketch should mark the eight zeros from $$\cos(4x)=0$$ and the two zeros from $$\cos x=0$$.
 
-**ADD IMAGE OF GRAPH**
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[
+  axis lines=middle, xmin=0, xmax=6.4, ymin=-2.2, ymax=2.2,
+  xtick={0,1.5708,3.1416,4.7124,6.2832},
+  xticklabels={$0$,$\frac{\pi}{2}$,$\pi$,$\frac{3\pi}{2}$,$2\pi$},
+  ytick={-2,-1,0,1,2},
+  grid=both, grid style={gray!18},
+  width=11cm, height=6cm,
+  xlabel=$x$, ylabel=$y$,
+]
+\addplot[blue, very thick, samples=360, domain=0:6.2832] {cos(deg(5*x))+cos(deg(3*x))};
+\addplot[only marks, mark=*, mark size=1.5pt, orange!85!black]
+  coordinates {(0.3927,0) (1.1781,0) (1.5708,0) (1.9635,0) (2.7489,0)
+               (3.5343,0) (4.3197,0) (4.7124,0) (5.1051,0) (5.8905,0)};
+\node[orange!85!black, anchor=south] at (axis cs:1.5708,0) {$\frac{\pi}{2}$};
+\node[orange!85!black, anchor=south] at (axis cs:4.7124,0) {$\frac{3\pi}{2}$};
+\end{axis}
+\end{tikzpicture}
+```
 :::
 ::::
 
@@ -2522,7 +2562,28 @@ $$
 \boxed{(4,9)}.
 $$
 
-**ADD IMAGE OF GRAPH**
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[
+  axis lines=middle, xmin=0, xmax=16, ymin=2, ymax=12,
+  xtick={0,2,4,5,8,11,14,16}, ytick={3,7,9,11},
+  grid=both, grid style={gray!18},
+  width=11cm, height=6.5cm,
+  xlabel=$t$, ylabel=$H(t)$,
+]
+\addplot[gray!65, dashed, domain=0:16] {7};
+\addplot[gray!65, dashed, domain=0:16] {9};
+\addplot[blue, very thick, samples=260, domain=2:14] {4*cos(deg((pi/6)*(x-2)))+7};
+\addplot[only marks, mark=*, mark size=1.7pt, orange!85!black]
+  coordinates {(2,11) (4,9) (5,7) (8,3) (11,7) (14,11)};
+\node[orange!85!black, anchor=south west] at (axis cs:4,9) {first $H=9$};
+\node[orange!85!black, anchor=south] at (axis cs:2,11) {high};
+\node[orange!85!black, anchor=north] at (axis cs:8,3) {low};
+\end{axis}
+\end{tikzpicture}
+```
 :::
 ::::
 

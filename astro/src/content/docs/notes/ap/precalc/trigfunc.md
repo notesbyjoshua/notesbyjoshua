@@ -27,8 +27,8 @@ An angle is in **standard position** if:
 \coordinate (T) at (2.35,2.05);
 \draw[very thick, blue] (O) -- (I) node[below right] {initial side};
 \draw[very thick, red!80!black, ->] (O) -- (T) node[above right] {terminal side};
-\draw[red!70!black, thick, ->] (1.1,0) arc[start angle=0,end angle=41,radius=1.1];
-\node[red!70!black] at (1.35,0.45) {$\theta>0$};
+\draw[red!70!black, thick, ->] (1.0,0) arc[start angle=0,end angle=41,radius=1.0];
+\node[red!70!black, anchor=west] at (1.24,0.82) {$\theta>0$};
 \fill (O) circle (1.5pt) node[below left] {vertex};
 \node[align=center] at (2.8,-0.65) {standard position};
 \end{tikzpicture}
@@ -624,33 +624,28 @@ An image of the unit circle is shown below (with filled in values as described l
 \draw[->, gray!70] (-1.25,0) -- (1.3,0) node[right] {$x$};
 \draw[->, gray!70] (0,-1.25) -- (0,1.3) node[above] {$y$};
 \draw[blue, very thick] (0,0) circle (1);
-\foreach \x/\y/\lab/\pos in {
-1/0/{(1,0)}/right,
-0/1/{(0,1)}/above,
--1/0/{(-1,0)}/left,
-0/-1/{(0,-1)}/below,
-0.866/0.5/{\left(\frac{\sqrt3}{2},\frac12\right)}/above right,
-0.707/0.707/{\left(\frac{\sqrt2}{2},\frac{\sqrt2}{2}\right)}/above right,
-0.5/0.866/{\left(\frac12,\frac{\sqrt3}{2}\right)}/above left,
--0.5/0.866/{\left(-\frac12,\frac{\sqrt3}{2}\right)}/above right,
--0.707/0.707/{\left(-\frac{\sqrt2}{2},\frac{\sqrt2}{2}\right)}/above left,
--0.866/0.5/{\left(-\frac{\sqrt3}{2},\frac12\right)}/above left,
--0.866/-0.5/{\left(-\frac{\sqrt3}{2},-\frac12\right)}/below left,
--0.707/-0.707/{\left(-\frac{\sqrt2}{2},-\frac{\sqrt2}{2}\right)}/below left,
--0.5/-0.866/{\left(-\frac12,-\frac{\sqrt3}{2}\right)}/below right,
-0.5/-0.866/{\left(\frac12,-\frac{\sqrt3}{2}\right)}/below left,
-0.707/-0.707/{\left(\frac{\sqrt2}{2},-\frac{\sqrt2}{2}\right)}/below right,
-0.866/-0.5/{\left(\frac{\sqrt3}{2},-\frac12\right)}/below right}
-{
-  \fill[blue] (\x,\y) circle (0.012);
+\foreach \ang in {0,30,45,60,90,120,135,150,180,210,225,240,270,300,315,330} {
+  \draw[gray!65] ({0.97*cos(\ang)},{0.97*sin(\ang)}) -- ({1.05*cos(\ang)},{1.05*sin(\ang)});
+  \fill[blue] ({cos(\ang)},{sin(\ang)}) circle (0.012);
 }
-\node[above right, font=\scriptsize] at (0.86,0.5) {$30^\circ,\ \frac{\pi}{6}$};
-\node[above, font=\scriptsize] at (0.55,0.78) {$45^\circ,\ \frac{\pi}{4}$};
-\node[left, font=\scriptsize] at (0.45,0.88) {$60^\circ,\ \frac{\pi}{3}$};
-\node[below right, font=\scriptsize] at (1,0) {$0,\ 2\pi$};
-\node[above left, font=\scriptsize] at (0,1) {$90^\circ,\ \frac{\pi}{2}$};
-\node[above right, font=\scriptsize] at (-1,0) {$180^\circ,\ \pi$};
-\node[below left, font=\scriptsize] at (0,-1) {$270^\circ,\ \frac{3\pi}{2}$};
+\foreach \ang/\lab/\anchor in {
+0/{$0,\ 2\pi$}/west,
+30/{$30^\circ,\ \frac{\pi}{6}$}/west,
+45/{$45^\circ,\ \frac{\pi}{4}$}/south west,
+60/{$60^\circ,\ \frac{\pi}{3}$}/south west,
+90/{$90^\circ,\ \frac{\pi}{2}$}/south,
+120/{$120^\circ,\ \frac{2\pi}{3}$}/south east,
+135/{$135^\circ,\ \frac{3\pi}{4}$}/south east,
+150/{$150^\circ,\ \frac{5\pi}{6}$}/east,
+180/{$180^\circ,\ \pi$}/east,
+210/{$210^\circ,\ \frac{7\pi}{6}$}/east,
+225/{$225^\circ,\ \frac{5\pi}{4}$}/north east,
+240/{$240^\circ,\ \frac{4\pi}{3}$}/north east,
+270/{$270^\circ,\ \frac{3\pi}{2}$}/north,
+300/{$300^\circ,\ \frac{5\pi}{3}$}/north west,
+315/{$315^\circ,\ \frac{7\pi}{4}$}/north west,
+330/{$330^\circ,\ \frac{11\pi}{6}$}/west}
+  \node[font=\tiny, anchor=\anchor] at ({1.16*cos(\ang)},{1.16*sin(\ang)}) {\lab};
 \node[align=center, font=\scriptsize] at (0,-1.48) {points on the unit circle have coordinates $(\cos\theta,\sin\theta)$};
 \end{tikzpicture}
 ```
@@ -683,7 +678,7 @@ All coterminal angles will have the same trig values, so usually we define the a
 
 ## Unit circle values
 
-The most common unit circle coordinates are:
+The most common unit circle coordinates are split by half-circle so the values stay readable:
 
 $$
 \begin{array}{c|c|c|c}
@@ -697,7 +692,14 @@ $$
 \frac{2\pi}{3} & 120^\circ & -\frac12 & \frac{\sqrt3}{2}\\
 \frac{3\pi}{4} & 135^\circ & -\frac{\sqrt2}{2} & \frac{\sqrt2}{2}\\
 \frac{5\pi}{6} & 150^\circ & -\frac{\sqrt3}{2} & \frac12\\
-\pi & 180^\circ & -1 & 0\\
+\pi & 180^\circ & -1 & 0
+\end{array}
+$$
+
+$$
+\begin{array}{c|c|c|c}
+\theta & \text{Degrees} & \cos\theta & \sin\theta\\
+\hline
 \frac{7\pi}{6} & 210^\circ & -\frac{\sqrt3}{2} & -\frac12\\
 \frac{5\pi}{4} & 225^\circ & -\frac{\sqrt2}{2} & -\frac{\sqrt2}{2}\\
 \frac{4\pi}{3} & 240^\circ & -\frac12 & -\frac{\sqrt3}{2}\\
@@ -1953,13 +1955,15 @@ $$
    \usepackage{tikz}
    \usetikzlibrary{angles,quotes,calc}
    \begin{tikzpicture}[scale=2.25]
+   \def\c{0.766}
+   \def\s{0.643}
    \coordinate (O) at (0,0);
-   \coordinate (A) at (0.72,0.69);
-   \coordinate (C) at (0.72,0);
-   \coordinate (D) at (1.92,0);
-   \coordinate (B) at (0,1.45);
-   \draw[gray!70, ->] (-1.15,0) -- (2.1,0) node[right] {$x$};
-   \draw[gray!70, ->] (0,-1.15) -- (0,1.6) node[above] {$y$};
+   \coordinate (A) at (\c,\s);
+   \coordinate (C) at (\c,0);
+   \coordinate (D) at ({1/\c},0);
+   \coordinate (B) at (0,{1/\s});
+   \draw[gray!70, ->] (-1.15,0) -- (1.65,0) node[right] {$x$};
+   \draw[gray!70, ->] (0,-1.15) -- (0,1.85) node[above] {$y$};
    \draw[blue, very thick] (O) circle (1);
    \draw[very thick] (O) -- (A);
    \draw[very thick] (A) -- (C);
@@ -1972,9 +1976,9 @@ $$
    \draw ($(A)+(-0.06,0.07)$) -- ($(A)+(0.01,0.13)$) -- ($(A)+(0.07,0.06)$);
    \node[below left] at (O) {$O$};
    \node[above right] at (A) {$A$};
-   \node[below] at (C) {$C$};
-   \node[right] at (D) {$D$};
-   \node[above] at (B) {$B$};
+   \node[below right] at (C) {$C$};
+   \node[below right] at (D) {$D$};
+   \node[left] at (B) {$B$};
    \end{tikzpicture}
    ```
 

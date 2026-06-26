@@ -172,7 +172,7 @@ Knowing these shapes makes it much easier to sketch transformed functions quickl
 \begin{axis}[pf, at={(0cm,0cm)}, title={Linear $x$}, domain=-2:2] \addplot[blue,thick,samples=2]{x}; \end{axis}
 \begin{axis}[pf, at={(4.3cm,0cm)}, title={Quadratic $x^2$}, domain=-2:2] \addplot[blue,thick,samples=40]{x^2}; \end{axis}
 \begin{axis}[pf, at={(8.6cm,0cm)}, title={Cubic $x^3$}, domain=-1.6:1.6] \addplot[blue,thick,samples=40]{x^3}; \end{axis}
-\begin{axis}[pf, at={(12.9cm,0cm)}, title={Absolute $|x|$}, domain=-2:2] \addplot[blue,thick,samples=2]{abs(x)}; \end{axis}
+\begin{axis}[pf, at={(12.9cm,0cm)}, title={Absolute $|x|$}, domain=-2:2] \addplot[blue,thick,samples=81]{abs(x)}; \end{axis}
 \end{tikzpicture}
 ```
 
@@ -816,7 +816,7 @@ A quick map of bijectivity, surjectivity, and injectivity is shown below:
 ```tikz
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta}
-\begin{tikzpicture}[>=Stealth,
+\begin{tikzpicture}[>=Stealth, scale=0.82, transform shape,
   ar/.style={->, thick, gray!40!black, shorten >=3pt, shorten <=3pt},
   lbl/.style={font=\bfseries}]
 % Injection
