@@ -1,12 +1,42 @@
 ---
-// Override of Starlight's <Head> — used purely as a universal mount point
-// (it renders on every page, splash + docs) for the animated "paper canvas"
-// background. The script self-injects a fixed full-viewport <canvas> behind the
-// page content; reduced-motion users keep the static CSS dot-grid instead.
+// Override of Starlight's <Head> — used as a universal mount point (it renders
+// on every page, splash + docs) for the animated "paper canvas" background, and
+// to emit JSON-LD structured data on note pages so search engines understand
+// them as free learning resources / articles.
 import Default from '@astrojs/starlight/components/Head.astro';
+
+const SITE_URL = 'https://notesbyjoshua.github.io';
+const route = (Astro.locals as any).starlightRoute;
+const entry = route?.entry;
+const isNote = Astro.url.pathname.startsWith('/notes/');
+
+let jsonLd: string | null = null;
+if (isNote && entry) {
+  const data = entry.data ?? {};
+  const canonical = new URL(Astro.url.pathname, SITE_URL).href;
+  const lastUpdated = route?.lastUpdated instanceof Date ? route.lastUpdated.toISOString() : undefined;
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': ['LearningResource', 'Article'],
+    name: data.title,
+    headline: data.title,
+    ...(data.description ? { description: data.description } : {}),
+    url: canonical,
+    inLanguage: 'en',
+    isAccessibleForFree: true,
+    learningResourceType: 'Study notes',
+    ...(lastUpdated ? { dateModified: lastUpdated } : {}),
+    author: { '@type': 'Person', name: 'Joshua' },
+    publisher: { '@type': 'Organization', name: 'Notes by Joshua', url: SITE_URL },
+    isPartOf: { '@type': 'WebSite', name: 'Notes by Joshua', url: SITE_URL },
+  };
+  // Escape `<` so a stray "</script>" in a title can't break out of the tag.
+  jsonLd = JSON.stringify(schema).replace(/</g, '\\u003c');
+}
 ---
 
 <Default><slot /></Default>
+{jsonLd && <script type="application/ld+json" is:inline set:html={jsonLd} />}
 
 <script>
   import { mountPaperCanvas } from '../scripts/paper-canvas';
