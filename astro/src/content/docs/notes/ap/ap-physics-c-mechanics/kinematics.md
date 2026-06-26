@@ -96,7 +96,18 @@ $$
 
 Graphs of position, velocity, and acceleration versus time are linked by the same calculus that links the quantities themselves. Reading them well is half of one-dimensional kinematics.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20Mech/kinematics/motion-graphs.png" alt="Position, velocity, and acceleration versus time graphs showing slope and area relationships placeholder" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\pgfplotsset{mg/.style={width=4cm,height=3cm,axis lines=left,xtick=\empty,ytick=\empty,xlabel={$t$}}}
+\begin{axis}[mg,ylabel={$x$},title={position}] \addplot[blue,very thick,domain=0:4]{0.35*x^2}; \end{axis}
+\begin{axis}[mg,at={(4.6cm,0)},ylabel={$v$},title={velocity}] \addplot[blue,very thick,domain=0:4]{0.7*x}; \end{axis}
+\begin{axis}[mg,at={(9.2cm,0)},ylabel={$a$},title={acceleration}] \addplot[blue,very thick,domain=0:4]{1.4}; \end{axis}
+\end{tikzpicture}
+```
+
 
 - **Slopes go down the list.** The slope of an $$x$$-$$t$$ graph at an instant is the velocity, $$v = dx/dt$$. The slope of a $$v$$-$$t$$ graph is the acceleration, $$a = dv/dt$$. A curving $$x$$-$$t$$ graph therefore means nonzero acceleration, and a straight $$x$$-$$t$$ line means constant velocity.
 - **Areas go up the list.** The signed area under a $$v$$-$$t$$ graph between two times is the displacement, $$\Delta x = \int v\, dt$$. The signed area under an $$a$$-$$t$$ graph is the change in velocity, $$\Delta v = \int a\, dt$$. "Signed" matters: area below the axis subtracts.
@@ -314,7 +325,19 @@ The tool $$a = v\,dv/dx$$ is worth remembering: it trades the time variable for 
 
 In 2D, vectors can be broken down into $$x$$- and $$y$$-components. For **projectile motion** with negligible air resistance (meaning you throw something in the air or something is launched), horizontal acceleration is zero and vertical acceleration is $$g$$ downward (again, signs depend on whether you call “up” positive $$y$$ or not). The motions along $$x$$ and $$y$$ are independent except that they share the same time parameter $$t$$.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20Mech/kinematics/projmotion.png" alt="Parabolic projectile trajectory with velocity components labeled placeholder" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw[->] (0,0) -- (7,0) node[right] {$x$}; \draw[->] (0,0) -- (0,3.5) node[above] {$y$};
+\draw[blue, very thick, domain=0:6.4, samples=80] plot (\x,{0.9*\x-0.14*\x*\x});
+\draw[->, red, thick] (0,0) -- (1.4,1.26) node[above] {$v_0$};
+\draw[dashed] (1.4,1.26) -- (1.4,0) node[below] {$v_{0x}$}; \draw[dashed] (1.4,1.26) -- (0,1.26) node[left] {$v_{0y}$};
+\node at (4.6,1.0) {parabolic path};
+\end{tikzpicture}
+```
+
 
 With initial speed $$v_0$$ at launch angle $$\theta$$ above the horizontal,
 
@@ -474,7 +497,18 @@ $$
 \vec{v}_{A/C} = \vec{v}_{A/B} + \vec{v}_{B/C}.
 $$
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20Mech/kinematics/relative-velocity.png" alt="River-crossing relative velocity vector addition diagram placeholder" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw[->, very thick, blue] (0,0) -- (0,2.4) node[above] {$\vec v_{B/W}$};
+\draw[->, very thick, red] (0,2.4) -- (2.2,2.4) node[right] {$\vec v_{W/G}$};
+\draw[->, very thick, purple] (0,0) -- (2.2,2.4) node[midway, below right] {$\vec v_{B/G}$};
+\draw[gray] (-0.6,-0.2) rectangle (3.1,2.9); \node at (1.2,-0.55) {river-crossing vector addition};
+\end{tikzpicture}
+```
+
 
 To visualize, you can draw the velocities as vectors, and do vector addition to get your final result. A useful consistency check is that swapping the subscripts negates the vector, $$\vec{v}_{A/B} = -\vec{v}_{B/A}$$.
 

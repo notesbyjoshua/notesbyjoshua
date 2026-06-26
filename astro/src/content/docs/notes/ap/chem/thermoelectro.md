@@ -726,11 +726,21 @@ $$
 
 $$(D)$$ Electrons are produced at the zinc anode and consumed at the copper cathode, so electrons flow from Zn to Cu through the external circuit. Ions move through the salt bridge to maintain charge balance, but electrons do not travel through the salt bridge.
 
-<div class="placeholder-box">
 
-**Image placeholder:** Galvanic cell diagram with Zn anode, Cu cathode, electron flow from Zn to Cu, and ion flow through the salt bridge.
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw (-4,-1.4) rectangle (-1,1.2); \draw (1,-1.4) rectangle (4,1.2);
+\draw[fill=gray!20] (-3.2,-1.1) rectangle (-2.9,0.9); \node at (-3.05,1.45) {Zn anode};
+\draw[fill=orange!30] (2.9,-1.1) rectangle (3.2,0.9); \node at (3.05,1.45) {Cu cathode};
+\draw[thick] (-3.05,0.9) -- (-3.05,2.2) -- (3.05,2.2) -- (3.05,0.9);
+\draw[->, very thick, blue] (-2.4,2.45) -- (2.4,2.45) node[midway, above] {electron flow};
+\draw[rounded corners, fill=yellow!20] (-1.2,0.8) -- (-0.5,1.45) -- (0.5,1.45) -- (1.2,0.8) -- (0.8,0.65) -- (0.35,1.05) -- (-0.35,1.05) -- (-0.8,0.65) -- cycle;
+\node at (0,1.75) {salt bridge};
+\end{tikzpicture}
+```
 
-</div>
 :::
 ::::
 

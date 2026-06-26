@@ -339,7 +339,17 @@ This is the central subtlety of the topic: $$L$$ is conserved whenever external 
 
 The examples below show both behaviors side by side — pulling mass inward *raises* $$K$$, while objects sticking together *lowers* it.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20Mech/rotationalmomentum/MoIskater.jpg" alt="spinning skater pulling arms in to speed up placeholder" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw[fill=gray!20] (-2,0) circle (0.35); \draw[thick] (-2,-0.35)--(-2,-1.4); \draw[thick] (-3, -0.6)--(-1,-0.6); \node at (-2,-1.8) {large $I$};
+\draw[fill=gray!20] (2,0) circle (0.35); \draw[thick] (2,-0.35)--(2,-1.4); \draw[thick] (1.6,-0.6)--(2.4,-0.6); \node at (2,-1.8) {small $I$, faster $\omega$};
+\draw[->, thick] (-0.8,-0.7) -- (0.8,-0.7);
+\end{tikzpicture}
+```
+
 
 <div class="theorem-box">
 
@@ -509,7 +519,19 @@ $$
 
 Therefore angular momentum about the center is conserved. This is why planets sweep out equal areas in equal times and why orbital speed changes as the distance from the central body changes.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20Mech/rotationalmomentum/keplersecond.jpg" alt="Kepler equal areas swept in equal times along an orbit placeholder" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw[blue, very thick] (0,0) ellipse (3 and 1.6); \fill[orange] (-1.4,0) circle (3pt) node[below] {Sun};
+\fill (1.3,1.45) circle (2pt); \fill (2.8,0.55) circle (2pt); \fill (-2.7,-0.7) circle (2pt); \fill (-1.4,-1.42) circle (2pt);
+\fill[blue!15] (-1.4,0) -- (1.3,1.45) arc[start angle=65,end angle=20,x radius=3,y radius=1.6] -- cycle;
+\fill[red!15] (-1.4,0) -- (-2.7,-0.7) arc[start angle=206,end angle=242,x radius=3,y radius=1.6] -- cycle;
+\node at (0.9,0.75) {equal area}; \node at (-2.2,-0.65) {equal area};
+\end{tikzpicture}
+```
+
 
 <div class="theorem-box">
 

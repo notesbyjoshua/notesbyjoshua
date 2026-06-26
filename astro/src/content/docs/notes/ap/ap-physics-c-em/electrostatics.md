@@ -66,7 +66,18 @@ An **electroscope** uses thin metal leaves (or a similar mechanical indicator) t
 
 **Polarization** is the separation of positive and negative charge within a neutral object when a charged object is brought nearby. A charged object can polarize a neutral insulator or conductor: internal charge shifts so that one side of the material presents a net excess closer to the inducer. For example, a negative balloon near a wall pushes electrons in the wall slightly away, so the nearer surface acts more positive. The balloon and wall can attract even though the wall’s net charge is still zero—attraction without net charge on the neutral object is the usual signature of polarization.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20EM/electrostatics/polarization-balloon-wall.png" alt="Balloon polarization" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw[fill=gray!20] (2,-1.5) rectangle (2.35,1.5); \node[right] at (2.35,1.2) {wall};
+\draw[fill=red!20] (-1,0) circle (0.9); \node at (-1,0) {charged};
+\foreach \y in {-0.8,-0.3,0.2,0.7}{\node[blue] at (1.5,\y) {$-$}; \node[red] at (2.1,\y) {$+$};}
+\draw[->, thick] (-0.1,0) -- (1.3,0) node[midway,above] {attraction};
+\end{tikzpicture}
+```
+
 
 ---
 
@@ -308,7 +319,16 @@ with $$dq$$ replaced by $$\lambda\, dL$$, $$\sigma\, dA$$, or $$\rho\, dV$$ acco
 
 **Proof (on-axis field of a uniformly charged ring).** A ring of radius $$R$$ carries total charge $$Q$$ uniformly. Find the field a distance $$x$$ from the center along the ring's axis.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20EM/electrostatics/ring-on-axis-field.png" alt="Ring electric field derivation" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw[blue, thick] (0,0) ellipse (1.7 and 0.6); \draw[->, thick] (0,0) -- (4,0) node[right] {$x$}; \fill (3,0) circle (2pt) node[below] {point};
+\draw[->, red, thick] (0.9,0.5) -- (3,0); \draw[dashed] (0.9,0.5)--(0,0); \node at (1.8,0.65) {$r$}; \node at (1.7,-0.45) {transverse components cancel};
+\end{tikzpicture}
+```
+
 
 Every charge element $$dq$$ is the same distance
 
@@ -339,7 +359,15 @@ Two checks: at the center ($$x=0$$) the field is zero, as symmetry demands; and 
 
 **Proof (on-axis field of a uniformly charged disk).** A flat disk of radius $$R$$ carries uniform surface charge density $$\sigma$$. Find the field a distance $$x$$ along its axis.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20EM/electrostatics/disk-stack-of-rings.png" alt="Disk is a stack of rings" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw[fill=blue!10] (0,0) ellipse (2.3 and 0.8); \draw[blue!60] (0,0) ellipse (0.5 and 0.18); \draw[blue!60] (0,0) ellipse (1.0 and 0.35); \draw[blue!60] (0,0) ellipse (1.5 and 0.52); \draw[blue!60] (0,0) ellipse (2.0 and 0.7); \node at (0,-1.4) {disk as a stack of charged rings};
+\end{tikzpicture}
+```
+
 
 Treat the disk as a stack of concentric thin rings. A ring of radius $$s$$ and thickness $$ds$$ has area $$dA = 2\pi s\,ds$$, so it carries charge
 
@@ -398,7 +426,15 @@ $$
 
 The field points away from the rod if $$\lambda>0$$ and toward the rod if $$\lambda<0$$.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20EM/electrostatics/rod-field-off-axis.png" alt="Rod electric field" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw[very thick, blue] (-2,0)--(2,0); \fill (0,2) circle (2pt) node[above] {point}; \foreach \x in {-1.5,-0.5,0.5,1.5}{\draw[->, red] (\x,0)--(0,2);} \draw[dashed] (0,0)--(0,2); \node at (2.6,0) {charged rod};
+\end{tikzpicture}
+```
+
 
 </div>
 
@@ -408,7 +444,16 @@ The field points away from the rod if $$\lambda>0$$ and toward the rod if $$\lam
 
 Field lines are a pictorial tool: they leave positive charge, terminate on negative charge, and their spacing indicates field strength (closer lines mean larger $$\lvert \vec{E} \rvert$$). Field lines never cross, because the field at a point has a single direction.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20EM/electrostatics/field-lines-charges.png" alt="Electric field lines" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\fill[red] (-1.6,0) circle (3pt) node[below] {$+$}; \fill[blue] (1.6,0) circle (3pt) node[below] {$-$};
+\foreach \a in {-60,-30,0,30,60}{\draw[->, red!80!black] (-1.45,0.15) .. controls (0,\a/45) .. (1.45,0.15);} \node at (0,-1.6) {field lines start on positive charge and end on negative charge};
+\end{tikzpicture}
+```
+
 
 ---
 
@@ -563,7 +608,15 @@ E(2\pi rL)=\frac{\lambda L}{\varepsilon_0}
 E=\frac{\lambda}{2\pi\varepsilon_0 r}.
 $$
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20EM/electrostatics/gaussian-cylinder-line.png" alt="Line Gaussian cylinder" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw[very thick, blue] (-3,0)--(3,0) node[right] {line charge}; \draw[fill=blue!5] (0,0) ellipse (1.1 and 0.35); \draw[fill=blue!5] (0,2.3) ellipse (1.1 and 0.35); \draw (-1.1,0)--(-1.1,2.3); \draw (1.1,0)--(1.1,2.3); \foreach \x in {-0.8,0,0.8}{\draw[->, red] (\x,1.15)--(\x,2.0);} \node at (2.2,1.1) {Gaussian cylinder};
+\end{tikzpicture}
+```
+
 
 </div>
 
@@ -585,7 +638,15 @@ $$
 E=\frac{\sigma}{2\varepsilon_0}.
 $$
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20EM/electrostatics/gaussian-pillbox-sheet.png" alt="An infinite charged sheet crossed by a short cylindrical pillbox Gaussian surface, showing the uniform field exiting both flat faces perpendicularly and zero flux through the curved side placeholder" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw[very thick] (-3,0)--(3,0) node[right] {charged sheet}; \draw[fill=blue!8] (-0.8,-0.5) rectangle (0.8,0.5); \draw[->, red, thick] (0,0.5)--(0,1.4); \draw[->, red, thick] (0,-0.5)--(0,-1.4); \node at (0,1.75) {$E$ exits}; \node at (0,-1.75) {$E$ exits};
+\end{tikzpicture}
+```
+
 
 </div>
 
@@ -603,7 +664,15 @@ $$
 
 a vector pointing from the negative charge to the positive charge, with magnitude $$p = qd$$ (units $$\text{C}\cdot\text{m}$$). Many neutral molecules (like water) behave as dipoles, and the dipole is the simplest charge distribution with zero net charge but a nonzero field.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20EM/electrostatics/dipole-moment-geometry.png" alt="electric dipoles" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\fill[blue] (-1,0) circle (4pt) node[below] {$-q$}; \fill[red] (1,0) circle (4pt) node[below] {$+q$}; \draw[->, very thick] (-1,0.55)--(1,0.55) node[midway,above] {$\vec p$}; \draw[<->] (-1,-0.55)--(1,-0.55) node[midway,below] {$d$};
+\end{tikzpicture}
+```
+
 
 <div class="theorem-box">
 

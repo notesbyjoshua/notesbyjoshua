@@ -54,11 +54,25 @@ $$
 \text{given quantity} \longrightarrow \text{mol given} \xrightarrow{\text{mole ratio}} \text{mol wanted} \longrightarrow \text{wanted quantity}.
 $$
 
-<div class="placeholder-box">
 
-**Image placeholder:** "Stoichiometry road map" flowchart — boxes for mass, volume of solution, and volume of gas all funneling through a central "moles" hub, crossing the balanced-equation mole ratio, then fanning back out to mass / solution volume / gas volume of the target species.
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\node[draw, rounded corners, fill=blue!8] (mol) at (0,0) {moles};
+\node[draw, rounded corners] (mass1) at (-4,1.6) {mass};
+\node[draw, rounded corners] (sol1) at (-4,0) {solution volume};
+\node[draw, rounded corners] (gas1) at (-4,-1.6) {gas volume};
+\node[draw, rounded corners] (ratio) at (0,-2.4) {balanced-equation mole ratio};
+\node[draw, rounded corners] (mass2) at (4,1.6) {target mass};
+\node[draw, rounded corners] (sol2) at (4,0) {target solution};
+\node[draw, rounded corners] (gas2) at (4,-1.6) {target gas};
+\foreach \a in {mass1,sol1,gas1}{\draw[->, thick] (\a) -- (mol);}
+\draw[->, thick] (mol) -- (ratio);
+\foreach \a in {mass2,sol2,gas2}{\draw[->, thick] (ratio) -- (\a);}
+\end{tikzpicture}
+```
 
-</div>
 
 ### Limiting and excess reactants
 
@@ -115,11 +129,21 @@ $$
 \text{Ag}^+(aq) + \text{Cl}^-(aq) \longrightarrow \text{AgCl}(s)
 $$
 
-<div class="placeholder-box">
 
-**Image placeholder:** Particle-level "before and after" of mixing two clear ionic solutions — free, separated ions floating on the left; the insoluble pair locking together into a solid lattice that settles out on the right while the spectator ions stay dissolved.
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw[rounded corners] (-4,-1.7) rectangle (-0.4,1.7); \node at (-2.2,1.95) {before mixing};
+\draw[rounded corners] (0.4,-1.7) rectangle (4,1.7); \node at (2.2,1.95) {after mixing};
+\foreach \x/\y in {-3.3/0.9,-2.7/-0.5,-1.7/0.5,-1.2/-1.0}{\fill[blue] (\x,\y) circle (2pt);}
+\foreach \x/\y in {-3.0/-1.0,-2.1/1.0,-1.4/-0.2,-0.8/0.9}{\fill[red] (\x,\y) circle (2pt);}
+\foreach \x/\y in {1.0/1.0,1.5/0.2,3.4/0.7,3.0/-1.0}{\fill[gray] (\x,\y) circle (2pt);}
+\foreach \x/\y in {1.7/-1.1,2.0/-1.1,2.3/-1.1,1.85/-0.85,2.15/-0.85}{\fill[blue] (\x,\y) circle (2.2pt); \fill[red] ({\x+0.12},{\y+0.12}) circle (2.2pt);}
+\node[align=center] at (2.2,-1.45) {solid precipitate\\plus spectator ions};
+\end{tikzpicture}
+```
 
-</div>
 
 ---
 
@@ -171,7 +195,14 @@ As usual, you should balance coefficients to make a balanced equation.
 
 In **single-displacement**, an element in its standard state replaces ions of another element in solution (or in a melt). For metals (and hydrogen in acid), activity order decides whether reaction occurs: a metal higher in the **activity series** reduces the cation of a metal below it. Hydrogen’s position marks which metals react with dilute acid to liberate $$\text{H}_2$$.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Chem/chemrxns/metalAS.png" alt="Metal Activity Series" loading="lazy" decoding="async" />
+
+| More active metals | Tend to be oxidized more easily |
+| --- | --- |
+| $$\mathrm{Li, K, Ba, Ca, Na}$$ | strongest reducing metals |
+| $$\mathrm{Mg, Al, Zn, Fe, Ni, Sn, Pb}$$ | can replace ions below them in solution |
+| $$\mathrm{H_2}$$ | reference: metals above can react with acids to form $$\mathrm{H_2}$$ |
+| $$\mathrm{Cu, Ag, Pt, Au}$$ | least active; often remain unoxidized |
+
 
 For halogens, a more reactive halogen displaces the halide ion of a less reactive halogen from solution. Reactivity decreases down the group ($$\text{F}_2 > \text{Cl}_2 > \text{Br}_2 > \text{I}_2$$).
 
@@ -183,11 +214,21 @@ For halogens, a more reactive halogen displaces the halide ion of a less reactiv
 
 The **reducing agent** is the one being oxidized, and the **oxidizing agent** is the one being reduced. Assigning oxidation states to every atom in a formula is the standard bookkeeping method (refer to [Unit 1](/notes/ap/chem/atomicstrucprop/)). Many combustion, single-displacement, and electrochemical processes are redox; they are often slower in the lab than simple precipitation or strong acid–strong base neutralization because covalent bonds must break and form in the elemental or molecular reactants.
 
-<div class="placeholder-box">
 
-**Image placeholder:** Electron-transfer diagram for a simple redox reaction (e.g. $$\text{Zn}+\text{Cu}^{2+}$$) — arrows showing electrons leaving the species being oxidized (reducing agent) and arriving at the species being reduced (oxidizing agent), with oxidation numbers labeled before and after.
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\node (zn) at (-3,0) {$\mathrm{Zn}$};
+\node (zn2) at (-1,0) {$\mathrm{Zn^{2+}}+2e^-$};
+\node (cu) at (1,0) {$\mathrm{Cu^{2+}}+2e^-$};
+\node (cu0) at (3,0) {$\mathrm{Cu}$};
+\draw[->, thick, blue] (zn) -- (zn2) node[midway, above] {oxidation};
+\draw[->, thick, red] (cu) -- (cu0) node[midway, above] {reduction};
+\draw[->, very thick] (-1.0,-0.7) -- (1.0,-0.7) node[midway, below] {electrons transferred};
+\end{tikzpicture}
+```
 
-</div>
 
 ### Assigning oxidation numbers (quick rules)
 

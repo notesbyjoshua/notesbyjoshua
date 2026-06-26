@@ -86,7 +86,20 @@ $$
 
 where $$r_{\perp}$$ is the lever arm, the perpendicular distance from the axis to the line of action of the force. A force applied through the axis produces no torque about that axis.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20Mech/torque/torque.jpg" alt="lever arm r-perp and angle between r and F placeholder" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\fill (0,0) circle (2pt) node[below] {pivot};
+\draw[very thick] (0,0) -- (3,1.2) node[midway, below] {$\vec r$};
+\draw[->, very thick, red] (3,1.2) -- (3,3.2) node[above] {$\vec F$};
+\draw[dashed] (0,0) -- (3,0); \draw[dashed] (3,1.2) -- (0.45,0.18);
+\draw[<->, blue] (0.55,0.22) -- (0.55,1.95) node[midway,left] {$r_\perp$};
+\draw (1.0,0.4) arc[start angle=22,end angle=90,radius=0.7] node[midway,above] {$\theta$};
+\end{tikzpicture}
+```
+
 
 There are two equivalent ways to read $$\tau = rF\sin\theta$$, and switching between them is often the key to a clean solution:
 
@@ -146,7 +159,16 @@ Common results:
 - Thin rod about center: $$I = \frac{1}{12}ML^2$$
 - Thin rod about end: $$I = \frac{1}{3}ML^2$$
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20Mech/torque/MoI.png" alt="common shapes hoop disk rod sphere with moment of inertia values placeholder" loading="lazy" decoding="async" />
+
+| Object and axis | Moment of inertia |
+| --- | ---: |
+| Point mass | $$mr^2$$ |
+| Thin hoop, central axis | $$MR^2$$ |
+| Solid disk/cylinder, central axis | $$\frac12MR^2$$ |
+| Solid sphere, diameter | $$\frac25MR^2$$ |
+| Thin rod, center | $$\frac1{12}ML^2$$ |
+| Thin rod, end | $$\frac13ML^2$$ |
+
 
 <div class="theorem-box">
 
@@ -638,7 +660,20 @@ The point of contact is instantaneously at rest relative to the ground, so stati
 
 A round object released on an incline rolls without slipping if friction is sufficient. We can find its center-of-mass acceleration in general, then specialize to common shapes.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20Mech/torque/rolling-incline.jpg" alt="cylinder rolling down an incline with weight normal and friction placeholder" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw[thick] (-3,-1) -- (3,-1) -- (3,1.2) -- cycle;
+\begin{scope}[shift={(0,0.15)}, rotate=19]
+\draw[fill=gray!20] (0,0) circle (0.55); \draw[->, blue, thick] (0,0.55) -- (0,1.5) node[above] {$N$}; \draw[->, orange, thick] (0,-0.55) -- (-1,-0.55) node[left] {$f$};
+\end{scope}
+\draw[->, red, thick] (0,0.15) -- (0,-1.5) node[below] {$mg$};
+\draw[->, thick] (1.1,0.25) arc[start angle=20,end angle=-250,radius=0.45] node[right] {$\alpha$};
+\end{tikzpicture}
+```
+
 
 <div class="theorem-box">
 

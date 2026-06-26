@@ -26,11 +26,22 @@ the species $$\text{A}^-$$ is the **conjugate base** of $$\text{HA}$$, and $$\te
 
 A key consequence is an **inverse strength relationship**: the stronger an acid, the weaker its conjugate base, and vice versa. A strong acid like $$\text{HCl}$$ ionizes almost completely precisely *because* its conjugate base $$\text{Cl}^-$$ has essentially no tendency to grab a proton back. A weak acid like $$\text{HF}$$ ionizes only slightly because its conjugate base $$\text{F}^-$$ is a reasonably good proton acceptor that pulls the equilibrium back toward the molecular form. This is the qualitative idea behind $$K_a\times K_b=K_w$$ (derived below).
 
-<div class="placeholder-box">
 
-**Image placeholder:** Conjugate acid–base pair diagram showing $$\text{HA}+\text{H}_2\text{O}\rightleftharpoons\text{H}_3\text{O}^++\text{A}^-$$ with the two conjugate pairs (HA/A$$^-$$ and H$$_2$$O/H$$_3$$O$$^+$$) bracketed and arrows indicating which way the proton is transferred.
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\node (ha) at (-3,0.7) {$\mathrm{HA}$};
+\node (w) at (-1,0.7) {$+\mathrm{H_2O}$};
+\node at (0,0.7) {$\rightleftharpoons$};
+\node (h3o) at (1.4,0.7) {$\mathrm{H_3O^+}$};
+\node (a) at (3.2,0.7) {$+\mathrm{A^-}$};
+\draw[<->, blue, thick] (ha) to[bend right=35] node[below] {conjugate pair} (a);
+\draw[<->, red, thick] (w) to[bend left=35] node[above] {conjugate pair} (h3o);
+\draw[->, thick] (-2.6,-0.6) -- (1.3,-0.6) node[midway, below] {proton transfer};
+\end{tikzpicture}
+```
 
-</div>
 
 ### Lewis Theory
 
@@ -56,11 +67,22 @@ For binary acids $$\text{HX}$$, bond polarity and bond strength both matter: acr
 
 For **oxoacids** with the same central atom, more electronegative atoms attached to that center or a higher oxidation state (more terminal oxygens) generally strengthens the acid: those extra electronegative oxygens pull electron density away from the O–H bond and spread out the negative charge of the conjugate base. This is why acid strength rises in the series $$\text{HClO}<\text{HClO}_2<\text{HClO}_3<\text{HClO}_4$$. For **carboxylic acids**, electron-withdrawing groups (such as the chlorines in chloroacetic acids) stabilize the conjugate base and increase $$K_a$$, while the resonance delocalization of the carboxylate anion is what makes carboxylic acids more acidic than alcohols in the first place.
 
-<div class="placeholder-box">
 
-**Image placeholder:** Two-panel acidity-trend chart — (left) binary hydrides showing acidity increasing down a group and across a period on a periodic-table snippet; (right) the $$\text{HClO}_x$$ oxoacid series with the conjugate-base charge shown delocalizing over additional oxygens as strength increases.
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw[step=0.55, gray!35] (0,0) grid (3.3,2.75);
+\draw[->, blue, very thick] (0.3,-0.35) -- (3.0,-0.35) node[midway, below] {acidity increases};
+\draw[->, blue, very thick] (3.65,0.3) -- (3.65,2.45) node[midway, right] {down group};
+\node at (1.65,3.1) {binary hydrides};
+\node[draw, rounded corners] at (7,2.1) {$\mathrm{HClO}$};
+\node[draw, rounded corners] at (7,1.2) {$\mathrm{HClO_2}$};
+\node[draw, rounded corners] at (7,0.3) {$\mathrm{HClO_3}$};
+\draw[->, thick] (8.2,2.1) -- (8.2,0.3) node[midway, right, align=center] {more O atoms\\stabilize base\\stronger acid};
+\end{tikzpicture}
+```
 
-</div>
 
 Acid-base reactions favor formation of the **weaker acid** and **weaker base**. A quick way to predict direction is to compare acid strengths: the side with the larger $$K_a$$ acid tends to react toward the side with the smaller $$K_a$$ acid. In $$\text{p}K_a$$ language, reactions tend to go from lower $$\text{p}K_a$$ acid to higher $$\text{p}K_a$$ acid.
 
@@ -275,23 +297,70 @@ For a weak acid $$\text{HA}$$ titrated with strong base:
 
 For a weak base titrated with strong acid, swap the acid/base roles: the buffer contains $$\text{B}$$ and $$\text{BH}^+$$, the half-equivalence point gives $$\text{pOH} = \text{p}K_b$$ or $$\text{pH} = \text{p}K_a$$ for $$\text{BH}^+$$, and the equivalence point is acidic.
 
-<div class="placeholder-box">
 
-**Image placeholder:** Weak acid–strong base titration curve annotated with the five calculation regions mapped to the table above — initial weak-acid point, the buffer region, the half-equivalence point (labeled $$\text{pH}=\text{p}K_a$$), the equivalence point (labeled $$\text{pH}>7$$), and the excess-strong-base region after equivalence.
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[axis lines=left, width=9cm, height=5.5cm, xmin=0, xmax=50, ymin=0, ymax=14, xlabel={volume base added}, ylabel={pH}, xtick=\empty, ytick={0,7,14}, grid=both, grid style={gray!15}]
+\addplot[blue, very thick, samples=200, domain=0:50] {3 + 8/(1+exp(-0.45*(x-25))) + 0.025*x};
+\addplot[dashed] coordinates {(25,0) (25,14)};
+\addplot[dashed] coordinates {(0,7) (50,7)};
+\node[anchor=south west] at (axis cs:25,8.6) {equivalence point};
+\node[anchor=south] at (axis cs:12.5,5.0) {buffer region};
+\node[anchor=north] at (axis cs:12.5,4.7) {$pH=pK_a$};
+\end{axis}
+\end{tikzpicture}
+```
 
-</div>
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Chem/acidbase/titrationcurve.gif" alt="Titration curves" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[axis lines=left, width=9cm, height=5.5cm, xmin=0, xmax=50, ymin=0, ymax=14, xlabel={volume base added}, ylabel={pH}, xtick=\empty, ytick={0,7,14}, grid=both, grid style={gray!15}]
+\addplot[blue, very thick, samples=200, domain=0:50] {3 + 8/(1+exp(-0.45*(x-25))) + 0.025*x};
+\addplot[dashed] coordinates {(25,0) (25,14)};
+\addplot[dashed] coordinates {(0,7) (50,7)};
+\node[anchor=south west] at (axis cs:25,8.6) {equivalence point};
+\node[anchor=south] at (axis cs:12.5,5.0) {buffer region};
+\node[anchor=north] at (axis cs:12.5,4.7) {$pH=pK_a$};
+\end{axis}
+\end{tikzpicture}
+```
+
 
 If an acid can dissociate more than once, it's titration curve follows a polyprotic titration curve:
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Chem/acidbase/polyprotictitration.jpg" alt="Polyprotic titration curve placeholder" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[axis lines=left, width=9cm, height=5.5cm, xmin=0, xmax=70, ymin=0, ymax=14, xlabel={volume base added}, ylabel={pH}, xtick=\empty, ytick={0,7,14}, grid=both, grid style={gray!15}]
+\addplot[blue, very thick, samples=240, domain=0:70] {2 + 4/(1+exp(-0.35*(x-20))) + 5/(1+exp(-0.35*(x-48))) + 0.015*x};
+\addplot[dashed] coordinates {(20,0) (20,14)};
+\addplot[dashed] coordinates {(48,0) (48,14)};
+\node[anchor=south] at (axis cs:20,9.5) {1st eq.};
+\node[anchor=south] at (axis cs:48,11.5) {2nd eq.};
+\end{axis}
+\end{tikzpicture}
+```
+
 
 ### pH Indicators
 
 **Acid–base indicators** are weak acids or bases whose conjugate forms have different colors. The **endpoint** is where the color change is observed; it should lie near the **equivalence point** of a titration.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Chem/acidbase/phindicator.png" alt="pH Indicators" loading="lazy" decoding="async" />
+
+| Indicator | Approximate transition range | Acid color | Base color |
+| --- | ---: | --- | --- |
+| Methyl orange | $$3.1-4.4$$ | red | yellow |
+| Bromothymol blue | $$6.0-7.6$$ | yellow | blue |
+| Phenolphthalein | $$8.2-10.0$$ | colorless | pink |
+| Universal indicator | broad range | red/orange | green/blue/purple |
+
 
 Choose an indicator whose transition range lies within the steep vertical region of the titration curve. A strong acid-strong base titration has a steep jump around pH $$7$$, so many indicators can work. A weak acid-strong base titration has an equivalence point above $$7$$, so phenolphthalein is often better than methyl orange. A weak base-strong acid titration has an equivalence point below $$7$$, so an acidic-range indicator is usually better.
 
@@ -547,10 +616,21 @@ $$
 
 $$(C)$$ The steep part of the titration curve is where a tiny volume change causes a large pH change, so the color change most closely marks the equivalence point. If the indicator changes color far from that steep region, it will signal the endpoint too early or too late and create systematic error.
 
-<div class="placeholder-box">
 
-**Image placeholder:** Weak acid-strong base titration curve with equivalence point above $$\text{pH}=7$$ and an indicator transition range near the steep region.
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[axis lines=left, width=9cm, height=5.5cm, xmin=0, xmax=50, ymin=0, ymax=14, xlabel={volume base added}, ylabel={pH}, xtick=\empty, ytick={0,7,14}, grid=both, grid style={gray!15}]
+\addplot[blue, very thick, samples=200, domain=0:50] {3 + 8/(1+exp(-0.45*(x-25))) + 0.025*x};
+\addplot[dashed] coordinates {(25,0) (25,14)};
+\addplot[dashed] coordinates {(0,7) (50,7)};
+\node[anchor=south west] at (axis cs:25,8.6) {equivalence point};
+\node[anchor=south] at (axis cs:12.5,5.0) {buffer region};
+\node[anchor=north] at (axis cs:12.5,4.7) {$pH=pK_a$};
+\end{axis}
+\end{tikzpicture}
+```
 
-</div>
 :::
 ::::

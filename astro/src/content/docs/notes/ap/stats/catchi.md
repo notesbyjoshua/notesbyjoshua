@@ -24,7 +24,19 @@ $$
 \sigma = \sqrt{2df}.
 $$
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Stats/catchi/chi-square-distribution.png" alt="Chi-square distribution placeholder" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[axis lines=left,width=8cm,height=5cm,xmin=0,xmax=10,ymin=0,ymax=0.6,xlabel={$\chi^2$},ylabel={density},xtick=\empty,ytick=\empty]
+\addplot[blue,very thick,samples=200,domain=0.01:10]{0.5*x^(2/2)*exp(-x/2)};
+\addplot[red,fill=red!20,domain=6:10,samples=80]{0.5*x^(2/2)*exp(-x/2)} \closedcycle;
+\node[red] at (axis cs:7.5,0.22) {right-tail $p$-value};
+\end{axis}
+\end{tikzpicture}
+```
+
 
 ---
 
@@ -81,7 +93,14 @@ $$
 
 where $$k$$ is the number of categories.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Stats/catchi/goodness-of-fit.png" alt="Goodness of fit table placeholder" loading="lazy" decoding="async" />
+
+| Category | Observed | Expected | Contribution |
+| --- | ---: | ---: | ---: |
+| A | $$O_1$$ | $$E_1$$ | $$\dfrac{(O_1-E_1)^2}{E_1}$$ |
+| B | $$O_2$$ | $$E_2$$ | $$\dfrac{(O_2-E_2)^2}{E_2}$$ |
+| C | $$O_3$$ | $$E_3$$ | $$\dfrac{(O_3-E_3)^2}{E_3}$$ |
+| Total | | | $$\chi^2=\sum\dfrac{(O-E)^2}{E}$$ |
+
 
 ---
 

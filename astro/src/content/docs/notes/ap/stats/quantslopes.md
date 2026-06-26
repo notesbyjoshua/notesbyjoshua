@@ -47,7 +47,17 @@ Use the acronym **LINER**:
 5. **Random**: data come from a random sample or randomized experiment.
 :::
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Stats/quantslopes/regression-residuals.png" alt="Regression residual plots placeholder" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\pgfplotsset{rp/.style={width=4.2cm,height=3.3cm,axis lines=middle,xtick=\empty,ytick=\empty}}
+\begin{axis}[rp,title={good}] \addplot[dashed] coordinates {(0,0)(5,0)}; \addplot[only marks,blue] coordinates{(0.5,0.2)(1,-0.3)(2,0.4)(3,-0.2)(4,0.1)}; \end{axis}
+\begin{axis}[rp,at={(5cm,0)},title={curved}] \addplot[dashed] coordinates {(0,0)(5,0)}; \addplot[only marks,red] coordinates{(0.5,1)(1,0)(2,-1)(3,-0.8)(4,0.9)}; \end{axis}
+\end{tikzpicture}
+```
+
 
 ---
 

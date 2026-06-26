@@ -28,7 +28,19 @@ If both variables are quantitative and the relationship looks roughly linear, we
 
 A **scatterplot** plots each case as a point $$(x, y)$$ in the plane. Choose scales so that all observed $$x$$- and $$y$$-values fit comfortably, and label axes with variable names and units.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Stats/bivardata/scatterplot-patterns.png" alt="Scatterplot patterns placeholder" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[width=10cm,height=5cm,xmin=0,xmax=10,ymin=0,ymax=10,axis lines=left,xlabel={$x$},ylabel={$y$},xtick=\empty,ytick=\empty]
+\addplot[only marks, blue] coordinates {(1,2) (2,2.7) (3,3.6) (4,4.4) (5,5.2) (6,6.4) (7,7.0)};
+\addplot[only marks, red] coordinates {(1,8) (2,7.5) (3,6.2) (4,5.7) (5,4.2) (6,3.3) (7,2.5)};
+\node[blue] at (axis cs:3,8.7) {positive association}; \node[red] at (axis cs:7,1.4) {negative association};
+\end{axis}
+\end{tikzpicture}
+```
+
 
 When you describe a scatterplot, organize your comments around three ideas: **shape**, **direction**, and **strength**.
 
@@ -139,7 +151,19 @@ An outlier in regression is often a point with an unusually large residual: the 
 
 A residual plot graphs residuals (usually on the vertical axis) against either the predicted values $$\hat{y}$$ or the explanatory variable $$x$$. The purpose is to diagnose the fit of a linear model.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Stats/bivardata/residual-plots.png" alt="Residual plots placeholder" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[axis lines=middle,width=9cm,height=5cm,xmin=0,xmax=10,ymin=-3,ymax=3,xlabel={fitted value},ylabel={residual},xtick=\empty,ytick=\empty]
+\addplot[dashed] coordinates {(0,0) (10,0)};
+\addplot[only marks, blue] coordinates {(1,0.6) (2,-0.4) (3,0.2) (4,-0.8) (5,0.5) (6,-0.1) (7,0.7) (8,-0.3)};
+\node at (axis cs:5,2.2) {random scatter means a linear model is reasonable};
+\end{axis}
+\end{tikzpicture}
+```
+
 
 What you hope to see is a formless cloud: points scattered randomly around the horizontal axis at $$\epsilon = 0$$, with roughly constant spread across values of $$x$$ or $$\hat{y}$$.
 

@@ -30,11 +30,22 @@ Key features of the curve:
 - **Raising the temperature** broadens and flattens the curve and shifts the peak to higher energy. The peak height drops, but the tail beyond $$E_a$$ grows dramatically—so a small rise in $$T$$ can sharply increase the fraction of effective collisions.
 - A **catalyst does not move the curve**; instead it lowers $$E_a$$ (shifts the threshold line left), which puts a larger fraction of the *same* distribution above the barrier.
 
-<div class="placeholder-box">
 
-**Image placeholder:** Maxwell–Boltzmann distribution with two temperature curves ($$T_1<T_2$$) on the same axes — the higher-$$T$$ curve flatter and shifted right — plus a vertical line at $$E_a$$ and a second, lower $$E_a$$ line for the catalyzed path, with the shaded "can react" tail areas highlighted.
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[axis lines=left, width=9cm, height=5cm, xmin=0, xmax=8, ymin=0, ymax=0.75, xlabel={molecular speed or energy}, ylabel={fraction}, xtick=\empty, ytick=\empty]
+\addplot[blue, very thick, samples=200, domain=0:8] {0.9*x^2*exp(-1.1*x)};
+\addplot[red, very thick, samples=200, domain=0:8] {0.28*x^2*exp(-0.45*x)};
+\addplot[dashed, thick] coordinates {(4.8,0) (4.8,0.65)};
+\node[blue] at (axis cs:1.7,0.55) {$T_1$};
+\node[red] at (axis cs:4.0,0.42) {$T_2>T_1$};
+\node[anchor=south] at (axis cs:4.8,0.65) {$E_a$};
+\end{axis}
+\end{tikzpicture}
+```
 
-</div>
 
 **Homogeneous catalysis** places the catalyst in the same phase as the reactants (solution catalysis is common). **Heterogeneous catalysis** uses a different phase, often a solid surface where adsorption aligns molecules for reaction. **Acid–base catalysis** is a major special case: $$\text{H}^+$$, $$\text{OH}^-$$, or other acids and bases can protonate or deprotonate substrates, stabilizing transition states and speeding steps without being consumed in the net equation.
 
@@ -148,11 +159,18 @@ Putting it together, here is the standard comparison for a single reactant $$\te
 | First | $$\text{rate}=k[\text{A}]$$ | $$\ln[\text{A}]=\ln[\text{A}]_0-kt$$ | $$\ln[\text{A}]$$ vs $$t$$ | $$-k$$ | $$\text{s}^{-1}$$ | $$\dfrac{0.693}{k}$$ |
 | Second | $$\text{rate}=k[\text{A}]^2$$ | $$\dfrac{1}{[\text{A}]}=\dfrac{1}{[\text{A}]_0}+kt$$ | $$\dfrac{1}{[\text{A}]}$$ vs $$t$$ | $$+k$$ | $$\text{M}^{-1}\cdot\text{s}^{-1}$$ | $$\dfrac{1}{k[\text{A}]_0}$$ |
 
-<div class="placeholder-box">
 
-**Image placeholder:** Three side-by-side concentration–time graphs for zero-, first-, and second-order reactions, each showing which transformed axis ($$[\text{A}]$$, $$\ln[\text{A}]$$, or $$1/[\text{A}]$$) yields the straight line.
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\pgfplotsset{smallplot/.style={width=4cm,height=3.1cm,axis lines=left,xtick=\empty,ytick=\empty,xlabel={time}}}
+\begin{axis}[smallplot,ylabel={$[A]$},title={zero order}] \addplot[blue,very thick,domain=0:4]{4-x}; \end{axis}
+\begin{axis}[smallplot,at={(4.6cm,0)},ylabel={$\ln[A]$},title={first order}] \addplot[blue,very thick,domain=0:4]{4-x}; \end{axis}
+\begin{axis}[smallplot,at={(9.2cm,0)},ylabel={$1/[A]$},title={second order}] \addplot[blue,very thick,domain=0:4]{1+x}; \end{axis}
+\end{tikzpicture}
+```
 
-</div>
 
 ---
 
@@ -254,11 +272,22 @@ $$
 
 A catalyst lowers $$E_{a,\text{fwd}}$$ and $$E_{a,\text{rev}}$$ by about the same amount (same pathway lowering for forward and reverse), so it speeds approach to equilibrium but does not change $$\Delta H$$ or the equilibrium constant at fixed $$T$$.
 
-<div class="placeholder-box">
 
-**Image placeholder:** Single-step reaction coordinate diagram (energy vs. reaction progress) with reactants, a transition-state peak, and products labeled; $$E_{a,\text{fwd}}$$, $$E_{a,\text{rev}}$$, and $$\Delta H$$ marked as vertical gaps, plus a dashed lower-barrier curve showing the catalyzed path.
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[axis lines=left,width=9cm,height=5.5cm,xmin=0,xmax=10,ymin=0,ymax=8,xtick=\empty,ytick=\empty,xlabel={reaction progress},ylabel={energy}]
+\addplot[blue,very thick,samples=160,domain=0:10]{2+4*exp(-0.45*(x-4)^2)-0.08*x};
+\addplot[red,dashed,very thick,samples=160,domain=0:10]{2+2.4*exp(-0.45*(x-4)^2)-0.08*x};
+\addplot[dashed] coordinates {(0.7,2) (4,6)};
+\addplot[dashed] coordinates {(9.3,1.25) (4,6)};
+\node at (axis cs:1,2.4) {reactants}; \node at (axis cs:4,6.5) {TS}; \node at (axis cs:8.8,1.6) {products};
+\node[red] at (axis cs:5.8,3.7) {catalyzed};
+\end{axis}
+\end{tikzpicture}
+```
 
-</div>
 
 ### Multi-step profiles
 
@@ -266,11 +295,20 @@ A reaction coordinate diagram for a **multi-step** mechanism has one "hill" per 
 
 The **tallest peak** corresponds to the step with the largest activation energy—the **rate-determining step**. Reading these diagrams lets you connect the energy picture directly to the mechanism: a high first hill followed by a low second hill means the first step is rate-determining, and the observed rate law should reflect that step's stoichiometry.
 
-<div class="placeholder-box">
 
-**Image placeholder:** Two-step reaction coordinate diagram with two peaks (two transition states) and one intermediate valley between them; the taller peak labeled as the rate-determining step, and the intermediate clearly distinguished from the transition states.
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[axis lines=left,width=9cm,height=5.5cm,xmin=0,xmax=10,ymin=0,ymax=8,xtick=\empty,ytick=\empty,xlabel={reaction progress},ylabel={energy}]
+\addplot[blue,very thick,samples=220,domain=0:10]{2+3.2*exp(-0.7*(x-2.7)^2)+5*exp(-0.7*(x-6.7)^2)-1.1*exp(-0.9*(x-4.6)^2)-0.05*x};
+\node at (axis cs:2.7,5.6) {TS 1}; \node at (axis cs:6.7,7.1) {TS 2};
+\node at (axis cs:4.6,1.9) {intermediate};
+\node[anchor=west] at (axis cs:6.9,6.1) {rate-determining step};
+\end{axis}
+\end{tikzpicture}
+```
 
-</div>
 
 ---
 

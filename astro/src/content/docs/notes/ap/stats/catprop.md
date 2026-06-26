@@ -29,7 +29,16 @@ $$
 
 The **confidence level** describes the long-run capture rate of the method. A 95% confidence interval does not mean there is a 95% probability that the fixed parameter is in this particular interval. It means that if we repeatedly sampled and built intervals the same way, about 95% of those intervals would contain the true parameter.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Stats/catprop/confidence-intervals.png" alt="Confidence interval repeated sampling placeholder" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw[->] (0,0)--(8,0) node[right] {parameter scale}; \draw[very thick, red] (4,-0.35)--(4,3.2) node[above] {true parameter};
+\foreach \y/\a/\b in {0.4/2.7/4.5,0.8/3.2/5.1,1.2/1.8/3.6,1.6/3.8/5.7,2.0/2.5/4.3,2.4/4.2/6.0,2.8/3.0/4.8}{\draw[blue, thick] (\a,\y)--(\b,\y);} \node at (4,-0.9) {most confidence intervals capture the true value};
+\end{tikzpicture}
+```
+
 
 ---
 
@@ -125,7 +134,19 @@ Use $$p_0$$ in the standard error because the test assumes the null hypothesis i
 3. Large counts using the null value: $$np_0 \ge 10$$ and $$n(1-p_0) \ge 10$$.
 :::
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Stats/catprop/p-value-tail.png" alt="p-value tail area placeholder" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[axis lines=left,width=8cm,height=5cm,xmin=-4,xmax=4,ymin=0,ymax=0.45,xlabel={test statistic},ylabel={density},xtick=\empty,ytick=\empty]
+\addplot[blue,very thick,samples=200,domain=-4:4]{1/sqrt(2*pi)*exp(-x^2/2)};
+\addplot[red,fill=red!20,samples=80,domain=1.4:4]{1/sqrt(2*pi)*exp(-x^2/2)} \closedcycle;
+\node[red] at (axis cs:2.4,0.18) {$p$-value};
+\end{axis}
+\end{tikzpicture}
+```
+
 
 ---
 

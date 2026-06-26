@@ -14,7 +14,17 @@ sidebar:
 - The sample space, denoted $$S$$, is the set of all possible outcomes of that experiment. An event is any subset of the sample space (a collection of one or more outcomes). The letter $$S$$ is standard notation; individual outcomes are often written as simple labels or ordered pairs when the experiment has multiple stages.
 - A **tree diagram** lists stages of an experiment as branches. Multiply along a path to get the probability of that path when stages are suitably independent or conditional probabilities are marked on branches; add paths that represent the same event. Tree diagrams keep ordered outcomes visible and help avoid double-counting when the experiment is multistep.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Stats/probandrand/tree-diagram.png" alt="Probability tree diagram placeholder" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\node (s) at (0,0) {start}; \node (a) at (2,1) {$A$}; \node (b) at (2,-1) {$B$}; \node (ag) at (4,1.6) {$A\cap C$}; \node (an) at (4,0.4) {$A\cap C^c$}; \node (bg) at (4,-0.4) {$B\cap C$}; \node (bn) at (4,-1.6) {$B\cap C^c$};
+\draw[->] (s)--(a) node[midway,above] {$P(A)$}; \draw[->] (s)--(b) node[midway,below] {$P(B)$};
+\draw[->] (a)--(ag) node[midway,above] {$P(C|A)$}; \draw[->] (a)--(an); \draw[->] (b)--(bg); \draw[->] (b)--(bn);
+\end{tikzpicture}
+```
+
 
 ---
 
@@ -197,7 +207,19 @@ $$
 P(X=k)=(1-p)^{k-1}p.
 $$
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Stats/probandrand/binomial-geometric.png" alt="Binomial and geometric distributions placeholder" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[ybar,width=9cm,height=5cm,xmin=0,xmax=8,ymin=0,ymax=0.35,xlabel={count},ylabel={probability},xtick={1,2,3,4,5,6,7},ytick=\empty]
+\addplot[fill=blue!35] coordinates {(0,0.08)(1,0.23)(2,0.31)(3,0.22)(4,0.11)(5,0.04)};
+\addplot[fill=red!35] coordinates {(1,0.30)(2,0.21)(3,0.147)(4,0.103)(5,0.072)(6,0.050)(7,0.035)};
+\node[blue] at (axis cs:2,0.33) {binomial}; \node[red] at (axis cs:5.5,0.12) {geometric};
+\end{axis}
+\end{tikzpicture}
+```
+
 
 ## Practice
 

@@ -30,7 +30,15 @@ A conductor has mobile charges. In **electrostatic equilibrium**, the charges ar
 - The electric field just outside a conducting surface is perpendicular to that surface.
 - Charge gathers more densely near sharp points, where the surface curvature is larger.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20EM/condcap/conductor-equilibrium.png" alt="Conductor in electrostatic equilibrium" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw[fill=gray!20] (0,0) circle (1.4); \foreach \a in {20,70,130,200,250,310}{\draw[->, blue, thick] (\a:1.4) -- (\a:2.2);} \node at (0,0) {$E=0$ inside}; \node at (0,-2.5) {excess charge lives on the surface};
+\end{tikzpicture}
+```
+
 
 <div class="theorem-box">
 
@@ -48,7 +56,15 @@ Gauss's law gives $$Q_{\text{enc}}/\varepsilon_0=0$$, so $$Q_{\text{enc}}=0$$. A
 
 **Proof (Field Just Outside a Conductor).** Use a tiny cylindrical Gaussian surface, often called a pillbox, crossing the conductor surface. Let the pillbox have area $$A$$ on each flat face.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20EM/condcap/gaussian-pillbox-surface.png" alt="Conductor's Gaussian pillbox" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw[thick] (-3,0) -- (3,0) node[right] {conductor surface}; \draw[fill=blue!10] (-0.8,-0.3) rectangle (0.8,0.8); \draw[->, red, thick] (0,0.8) -- (0,1.8) node[above] {$E$}; \node at (0,-0.65) {$E=0$}; \node at (0,1.1) {Gaussian pillbox};
+\end{tikzpicture}
+```
+
 
 Inside the conductor,
 
@@ -138,7 +154,16 @@ $$
 
 Edge effects are usually ignored in AP Physics C unless the problem explicitly metnions them.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20EM/condcap/parallel-plate-field-lines.png" alt="Parallel plate capacitors" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw[very thick] (-2,1) -- (2,1); \draw[very thick] (-2,-1) -- (2,-1); \node[right] at (2,1) {$+$}; \node[right] at (2,-1) {$-$};
+\foreach \x in {-1.6,-0.8,0,0.8,1.6}{\draw[->, blue, thick] (\x,0.75) -- (\x,-0.75);} \node at (0,0) {uniform field};
+\end{tikzpicture}
+```
+
 
 <div class="theorem-box">
 
@@ -218,7 +243,16 @@ $$
 
 Series combinations have an equivalent capacitance smaller than any individual capacitor in the chain. Parallel combinations have an equivalent capacitance larger than any individual capacitor in the group.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20EM/condcap/series-vs-parallel-capacitors.png" alt="Schematic comparing capacitors connected in series versus in parallel" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{circuitikz}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw[thick] (-4,1) to[C=$C_1$] (-2.5,1) to[C=$C_2$] (-1,1); \node at (-2.5,1.8) {series};
+\draw[thick] (1,1)--(1.5,1)--(1.5,1.8) to[C=$C_1$] (3.5,1.8)--(3.5,1)--(4,1);
+\draw[thick] (1.5,1)--(1.5,0.2) to[C=$C_2$] (3.5,0.2)--(3.5,1); \node at (2.5,-0.45) {parallel};
+\end{tikzpicture}
+```
+
 
 <div class="theorem-box">
 
@@ -417,7 +451,16 @@ $$
 
 If a charged capacitor is disconnected from a battery, $$Q$$ stays constant when a dielectric is inserted, so $$\Delta V=Q/C$$ decreases. If it remains connected to a battery, $$\Delta V$$ stays constant and additional charge flows onto the plates.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20EM/condcap/dielectric-slab-polarization.png" alt="Dielectrics" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw[very thick] (-3,1.2)--(3,1.2); \draw[very thick] (-3,-1.2)--(3,-1.2); \draw[fill=yellow!20] (-1.2,-1.1) rectangle (1.2,1.1); \node at (0,0) {dielectric};
+\foreach \x in {-0.8,0,0.8}{\draw[->, blue] (\x,0.6)--(\x,-0.6);} \node at (0,-1.7) {polarization reduces the internal field};
+\end{tikzpicture}
+```
+
 
 <div class="theorem-box">
 
@@ -482,7 +525,16 @@ The parallel-plate result is one geometry, but the same method works for any cap
 
 **Proof (Cylindrical Capacitor).** Consider two coaxial conducting cylinders of length $$L$$, inner radius $$a$$ and outer radius $$b$$, with $$L \gg b$$ so end effects are negligible.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20EM/condcap/cylindrical-capacitor-geometry.png" alt="Coaxial cylinders forming a cylindrical capacitor with inner radius a and outer radius b" loading="lazy" decoding="async" /> 
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw[fill=blue!10] (0,0) circle (0.7); \draw[thick] (0,0) circle (2.0); \draw[<->] (0,0)--(0.7,0) node[midway,below] {$a$}; \draw[<->] (0,0)--(2,0) node[midway,above] {$b$};
+\foreach \a in {0,45,...,315}{\draw[->, red] (\a:0.8)--(\a:1.7);} \node at (0,-2.5) {coaxial cylindrical capacitor};
+\end{tikzpicture}
+```
+ 
 
 Put charge $$+Q$$ on the inner cylinder and $$-Q$$ on the outer. By cylindrical symmetry, choose a coaxial Gaussian cylinder of radius $$r$$ (with $$a < r < b$$) and length $$L$$. Only the curved side has flux, so Gauss's law gives
 
@@ -510,7 +562,15 @@ The capacitance grows with length and shrinks as the radius ratio $$b/a$$ increa
 
 **Proof (Spherical Capacitor).** Consider two concentric conducting spheres of radii $$a < b$$, with $$+Q$$ on the inner sphere and $$-Q$$ on the outer shell.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20EM/condcap/spherical-capacitor-geometry.png" alt="Concentric spheres forming a spherical capacitor with inner radius a and outer radius b placeholder" loading="lazy" decoding="async" /> 
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw[fill=blue!10] (0,0) circle (0.8); \draw[thick] (0,0) circle (2.0); \draw[<->] (0,0)--(0.8,0) node[midway,below] {$a$}; \draw[<->] (0,0)--(2,0) node[midway,above] {$b$}; \node at (0,-2.5) {concentric spherical capacitor};
+\end{tikzpicture}
+```
+ 
 
 By spherical symmetry, a Gaussian sphere of radius $$r$$ (with $$a < r < b$$) gives
 

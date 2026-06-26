@@ -48,7 +48,16 @@ $$
 
 Changing flux can come from changing magnetic field strength, changing loop area, changing the angle between field and area vector, or moving a circuit through a nonuniform field.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20EM/eminduction/faraday-changing-flux.png" alt="Faraday's law demo" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw[thick] (0,0) circle (1.2); \foreach \x/\y in {-0.7/0.4,0/0.2,0.7/0.4,-0.4/-0.4,0.4/-0.5}{\node at (\x,\y) {$\times$};}
+\draw[->, blue, thick] (1.4,0) arc[start angle=0,end angle=300,radius=1.4] node[right] {induced current}; \node at (0,-1.8) {changing magnetic flux induces emf};
+\end{tikzpicture}
+```
+
 
 
 <div class="theorem-box">
@@ -129,7 +138,17 @@ The rule of thumb: the induced current always "fights the change." It reinforces
 
 By Lenz's law, the ring's induced current opposes the increase, so the ring acts like a magnet presenting a **north pole** back toward the incoming magnet — like poles repel, so the ring pushes the magnet away. Conversely, if the magnet is pulled away, the flux decreases and the ring presents a **south pole** to attract it, again opposing the motion. In both cases the induced current resists the relative motion, and the work done against that resistance is exactly the electrical energy dissipated in the ring — energy conservation made manifest.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20EM/eminduction/lenz-bar-magnet-ring.png" alt="Lenz's law with a bar magnet" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw[fill=gray!20] (-3,-0.5) rectangle (-1,0.5); \node at (-2,0.15) {N}; \node at (-2,-0.2) {S};
+\draw[->, thick] (-0.8,0)--(0.6,0) node[midway,above] {motion};
+\draw[thick] (2,0) circle (0.8); \draw[->, blue, thick] (2.8,0) arc[start angle=0,end angle=300,radius=0.8]; \node at (2,-1.25) {induced field opposes change};
+\end{tikzpicture}
+```
+
 
 </div>
 
@@ -169,7 +188,17 @@ for moving conductors.
 
 **Example.** A conducting bar of length $$\ell = 0.50\ \text{m}$$ slides without friction at constant speed $$v = 4.0\ \text{m/s}$$ along two horizontal rails separated by $$\ell$$, in a uniform field $$B = 0.80\ \text{T}$$ pointing vertically (perpendicular to the plane of the rails). The rails are connected by a resistor $$R = 2.0\ \Omega$$. Find (a) the motional emf, (b) the induced current, (c) the retarding force on the bar, and (d) the power dissipated, and confirm it equals the mechanical power input.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20EM/eminduction/sliding-bar-rails.png" alt="Sliding conducting bar on two rails" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw[thick] (-3,1)--(3,1); \draw[thick] (-3,-1)--(3,-1); \draw[very thick, blue] (0,-1)--(0,1) node[above] {bar};
+\foreach \x in {-2,-1,1,2}{\node at (\x,0) {$\times$};}
+\draw[->, red, thick] (0.2,0)--(1.5,0) node[right] {$v$}; \draw[->, blue, thick] (-2.5,-1.2)--(-2.5,1.2) node[midway,left] {$I$};
+\end{tikzpicture}
+```
+
 
 **(a) Motional emf.** The bar sweeps out area at rate $$\ell v$$, so the flux changes at rate $$d\Phi_B/dt = B\ell v$$:
 
@@ -239,7 +268,16 @@ $$
 
 The emf oscillates sinusoidally with peak value $$\mathcal{E}_0 = NBA\omega$$ — this is the principle of the AC generator.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20EM/eminduction/ac-generator-rotating-loop.png" alt="Rotating loop AC generator emf" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw[thick, rotate=20] (-1.2,-0.8) rectangle (1.2,0.8); \draw[->, blue, thick] (1.6,0) arc[start angle=0,end angle=300,radius=1.6];
+\foreach \x in {-2.5,-1.5,1.5,2.5}{\draw[->, red] (\x,-1.4)--(\x,1.4);} \node at (0,-2) {$\Phi=BA\cos(\omega t)$, so emf is sinusoidal};
+\end{tikzpicture}
+```
+
 
 
 <div class="theorem-box">
@@ -480,7 +518,18 @@ $$
 
 At the instant a switch changes, an ideal inductor prevents an instantaneous jump in current.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20EM/eminduction/lr-circuit-current-graph.png" alt="LR circuit + current vs time" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[axis lines=left,width=8cm,height=5cm,xmin=0,xmax=6,ymin=0,ymax=1.2,xlabel={$t$},ylabel={$I$},xtick=\empty,ytick=\empty]
+\addplot[blue,very thick,samples=160,domain=0:6]{1-exp(-x)}; \addplot[red,dashed,samples=160,domain=0:6]{exp(-x)};
+\node[blue] at (axis cs:3,0.9) {growth}; \node[red] at (axis cs:1.2,0.45) {decay};
+\end{axis}
+\end{tikzpicture}
+```
+
 
 <div class="theorem-box">
 
@@ -601,7 +650,18 @@ $$
 
 Resistance damps the oscillation by converting electromagnetic energy into thermal energy.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20EM/eminduction/lc-circuit-energy-oscillation.png" alt="LC circuit with charge vs time" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[axis lines=left,width=8.5cm,height=5cm,xmin=0,xmax=6.28,ymin=-1.2,ymax=1.2,xlabel={$t$},ylabel={oscillation},xtick=\empty,ytick=\empty]
+\addplot[blue,very thick,samples=160,domain=0:6.28]{cos(deg(x))}; \addplot[red,dashed,very thick,samples=160,domain=0:6.28]{sin(deg(x))};
+\node[blue] at (axis cs:1,0.9) {$Q$}; \node[red] at (axis cs:2.5,0.9) {$I$};
+\end{axis}
+\end{tikzpicture}
+```
+
 
 <div class="theorem-box">
 

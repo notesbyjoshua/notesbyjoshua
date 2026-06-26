@@ -31,7 +31,16 @@ $$
 
 Conventional current is defined as the direction positive charge would move. In metal wires, the mobile charges are electrons, so electron drift is opposite conventional current.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20EM/circuits/drift-velocity-carriers.png" alt="Current going through wire" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw[thick] (-4,-0.8) rectangle (4,0.8); \draw[->, very thick, blue] (-3.6,0) -- (3.6,0) node[right] {$I$};
+\foreach \x in {-3,-2,-1,0,1,2,3}{\fill[red] (\x,0.25) circle (2pt); \draw[->, red] (\x,0.25) -- (\x-0.45,0.25);} \node at (0,-1.25) {electron drift is opposite conventional current};
+\end{tikzpicture}
+```
+
 
 For a wire with charge-carrier number density $$n$$, charge magnitude $$q$$, cross-sectional area $$A$$, and drift speed $$v_d$$,
 
@@ -219,7 +228,16 @@ $$
 
 Adding a parallel branch lowers the equivalent resistance because it gives charge another path.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20EM/circuits/series-vs-parallel-resistors.png" alt="Schematic comparing resistors in series versus resistors in parallel" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{circuitikz}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw[thick] (-4,1) -- (-3,1) to[R=$R_1$] (-1.5,1) to[R=$R_2$] (0,1) -- (0,1); \node at (-2,1.8) {series};
+\draw[thick] (1,1) -- (1.6,1) -- (1.6,1.8) to[R=$R_1$] (3.6,1.8) -- (3.6,1) -- (4.2,1);
+\draw[thick] (1.6,1) -- (1.6,0.2) to[R=$R_2$] (3.6,0.2) -- (3.6,1); \node at (2.6,-0.45) {parallel};
+\end{tikzpicture}
+```
+
 
 <div class="theorem-box">
 
@@ -259,7 +277,17 @@ $$
 
 **Example.** A $$12\ \text{V}$$ battery (ideal) drives the network below: $$R_1 = 4\ \Omega$$ in series with a parallel combination of $$R_2 = 6\ \Omega$$ and $$R_3 = 3\ \Omega$$. Find the equivalent resistance, the total current from the battery, and the current through and voltage across each resistor.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20EM/circuits/resistor-network-example.png" alt="Picture of circuit #1" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{circuitikz}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw[thick] (0,0) to[battery1,l=$\mathcal E$] (0,2) -- (1.2,2) to[R=$R_1$] (3,2) -- (4,2);
+\draw[thick] (4,2) -- (4,1.2) to[R=$R_2$] (4,0.1) -- (4,0);
+\draw[thick] (4,2) -- (5.4,2) to[R=$R_3$] (5.4,0) -- (4,0) -- (0,0);
+\node at (3,-0.6) {$R_2$ and $R_3$ in parallel, then series with $R_1$};
+\end{tikzpicture}
+```
+
 
 First reduce the parallel pair $$R_2 \parallel R_3$$:
 
@@ -321,7 +349,17 @@ around any closed loop.
 
 **Example.** A two-loop circuit has two batteries. The left branch contains $$\mathcal{E}_1 = 12\ \text{V}$$ in series with $$R_1 = 2\ \Omega$$; the right branch contains $$\mathcal{E}_2 = 6\ \text{V}$$ in series with $$R_2 = 3\ \Omega$$; both branches share a middle resistor $$R_3 = 6\ \Omega$$ that connects the two junctions. Find the current in each branch.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20EM/circuits/kirchhoff-two-loop.png" alt="Picture of circuit #2" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{circuitikz}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw[thick] (0,0) to[battery1,l=$\mathcal E$] (0,3) to[R=$R_1$] (3,3) to[R=$R_2$] (6,3) -- (6,0) to[R=$R_3$] (3,0) to[R=$R_4$] (0,0);
+\draw[thick] (3,3) -- (3,0);
+\draw[->, blue, thick] (1.3,1.7) arc[start angle=160,end angle=-120,radius=0.6] node[left] {$I_1$};
+\draw[->, red, thick] (4.7,1.7) arc[start angle=20,end angle=300,radius=0.6] node[right] {$I_2$};
+\end{tikzpicture}
+```
+
 
 **Label and assume directions.** Let $$I_1$$ flow down the left branch toward the top junction, $$I_2$$ flow down the right branch toward the same junction, and $$I_3$$ flow out of that junction down through the middle resistor. (If a guessed direction is wrong, its current just comes out negative — the algebra self-corrects.)
 
@@ -463,7 +501,15 @@ $$
 
 if positive current is defined in the original charging direction.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20EM/circuits/rc-charging-circuit.png" alt="RC circuit" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{circuitikz}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw[thick] (0,0) to[battery1,l=$\mathcal E$] (0,2.5) to[closing switch] (1.7,2.5) to[R=$R$] (3.5,2.5) to[C=$C$] (3.5,0) -- (0,0);
+\node at (2,-0.6) {charging capacitor};
+\end{tikzpicture}
+```
+
 
 ---
 
@@ -677,7 +723,16 @@ The two limits — **capacitor as a wire at $$t = 0$$, capacitor as an open bran
 
 An ideal ammeter has zero resistance and is placed in series with the element whose current is measured. An ideal voltmeter has infinite resistance and is placed in parallel across the element whose potential difference is measured.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20EM/circuits/ammeter-voltmeter-placement.png" alt="Types of meters" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{circuitikz}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw[thick] (0,0) to[battery1] (0,2) to[ammeter,l=$A$] (2,2) to[R=$R$] (4,2) -- (4,0) -- (0,0);
+\draw[thick] (2,2) -- (2,3) to[voltmeter,l=$V$] (4,3) -- (4,2);
+\node at (2,-0.6) {ammeter in series, voltmeter in parallel};
+\end{tikzpicture}
+```
+
 
 Real meters disturb circuits slightly: an ammeter adds small series resistance, and a voltmeter draws small parallel current.
 

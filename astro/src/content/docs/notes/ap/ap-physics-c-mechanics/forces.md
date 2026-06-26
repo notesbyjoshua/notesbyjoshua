@@ -48,7 +48,19 @@ Third-law forces act on different objects, so they never cancel for one object. 
 
 A **free-body diagram** is a force diagram for one object or one chosen system. It should show only external forces acting on that object/system, not forces the object applies to something else. Forces are treated as vectors and can be composed accordingly.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20Mech/forces/freebodydiagram.png" alt="Free-body diagram of an object showing its external forces as arrows" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw[fill=gray!15] (-0.5,-0.5) rectangle (0.5,0.5); \node at (0,0) {$m$};
+\draw[->, very thick, blue] (0,0.5) -- (0,2) node[above] {$N$};
+\draw[->, very thick, red] (0,-0.5) -- (0,-2) node[below] {$mg$};
+\draw[->, very thick, green!50!black] (0.5,0) -- (2,0) node[right] {$F$};
+\draw[->, very thick, orange!90!black] (-0.5,0) -- (-1.8,0) node[left] {$f$};
+\end{tikzpicture}
+```
+
 
 Good procedure:
 
@@ -227,7 +239,24 @@ $$
 a = g\sin\theta.
 $$
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20Mech/forces/inclinedplane.jpg" alt="Block on an inclined plane with weight resolved into components parallel and perpendicular to the surface" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw[thick] (-3,-1) -- (3,-1) -- (3,1.2) -- cycle;
+\begin{scope}[rotate=19]
+\draw[fill=gray!20] (-0.5,-0.2) rectangle (0.5,0.4); \node at (0,0.1) {$m$};
+\draw[->, very thick, blue] (0,0.4) -- (0,1.7) node[above] {$N$};
+\draw[->, very thick, orange] (-0.5,0.1) -- (-1.6,0.1) node[left] {$f$};
+\end{scope}
+\draw[->, very thick, red] (0,0) -- (0,-2) node[below] {$mg$};
+\draw[dashed, red] (0,0) -- (-0.65,-1.85) node[left] {$mg\sin\theta$};
+\draw[dashed, red] (0,0) -- (1.25,-0.45) node[right] {$mg\cos\theta$};
+\draw (2.2,-1) arc[start angle=0,end angle=19,radius=0.8] node[midway,right] {$\theta$};
+\end{tikzpicture}
+```
+
 
 With friction, decide whether the block is moving or about to move. If it is moving, use kinetic friction. If it is at rest, static friction takes whatever value is needed up to $$\mu_sF_N$$. It is also helpful to use geometry/similar triangles to determine certain angles for vector decompositions. ALWAYS remember your normal force!
 
@@ -319,7 +348,19 @@ The mass and $$g$$ both cancel, which is why this simple tilt test works regardl
 
 For ideal ropes and pulleys, connected objects share related accelerations. A common Atwood machine has two hanging masses connected by a massless string over a frictionless pulley.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20Mech/forces/atwood-machine.png" alt="Atwood machine: two masses connected by a string over a pulley" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw[thick] (0,2) circle (0.55); \draw[thick] (-0.55,2) -- (-0.55,0.2); \draw[thick] (0.55,2) -- (0.55,-0.5);
+\draw[fill=gray!20] (-1.0,-0.6) rectangle (-0.1,0.2); \node at (-0.55,-0.2) {$m_1$};
+\draw[fill=gray!20] (0.1,-1.3) rectangle (1.0,-0.5); \node at (0.55,-0.9) {$m_2$};
+\draw[->, blue, thick] (-0.55,0.2) -- (-0.55,1.1) node[left] {$T$}; \draw[->, red, thick] (-0.55,-0.6) -- (-0.55,-1.5) node[left] {$m_1g$};
+\draw[->, blue, thick] (0.55,-0.5) -- (0.55,0.4) node[right] {$T$}; \draw[->, red, thick] (0.55,-1.3) -- (0.55,-2.2) node[right] {$m_2g$};
+\end{tikzpicture}
+```
+
 
 If $$m_2 > m_1$$, the acceleration magnitude is
 
@@ -469,7 +510,19 @@ $$
 
 There is no special "centripetal force." The phrase describes the net inward force required for circular motion. All forces acting on an object going in uniform circular motion must add up to the centripetal force (as long as the force does not act perpendicular to the vector connecting the object and the center of the circle.).
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20Mech/forces/circmotion.jpg" alt="Free-body diagram for an object in uniform circular motion, with the net force pointing toward the center" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw[blue, thick] (0,0) circle (1.6); \fill (0,0) circle (1.5pt) node[below] {center};
+\fill (1.35,0.85) circle (2pt) node[above right] {$m$};
+\draw[->, very thick, red] (1.35,0.85) -- (0.35,0.2) node[midway, above] {$F_{net}$};
+\draw[->, very thick, blue] (1.35,0.85) -- (0.75,1.8) node[above] {$v$};
+\node at (0,-2.1) {net force points toward the center};
+\end{tikzpicture}
+```
+
 
 Examples:
 
@@ -558,7 +611,18 @@ $$
 
 This is common in vertical circle problems, where gravity has a tangential component except at the top and bottom. Always remember your normal force as it won't always cancel with gravity!
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20Mech/forces/vertcircle.jpg" alt="Ball at the top and bottom of a vertical loop with the forces acting on it shown" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw[blue, thick] (0,0) circle (1.7);
+\fill (0,1.7) circle (2pt) node[above] {top}; \fill (0,-1.7) circle (2pt) node[below] {bottom};
+\draw[->, red, thick] (0,1.7) -- (0,0.7) node[midway,right] {$mg$}; \draw[->, blue, thick] (0,1.7) -- (0,0.2) node[midway,left] {$T$};
+\draw[->, red, thick] (0,-1.7) -- (0,-2.7) node[below] {$mg$}; \draw[->, blue, thick] (0,-1.7) -- (0,-0.5) node[midway,right] {$T$};
+\end{tikzpicture}
+```
+
 
 <div class="theorem-box">
 
@@ -638,7 +702,20 @@ $$
 v = \sqrt{rg\tan\theta}.
 $$
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20Mech/forces/banked.png" alt="Car on a banked curve with the normal force resolved into horizontal and vertical components" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw[thick] (-3,-1) -- (3,0.2); \draw[fill=gray!20, rotate=11] (-0.5,-0.15) rectangle (0.5,0.25); \node at (0,0.35) {car};
+\draw[->, red, thick] (0,0.25) -- (0,-1.4) node[below] {$mg$};
+\draw[->, blue, thick] (0,0.25) -- (-0.45,2.2) node[above] {$N$};
+\draw[dashed, blue] (0,0.25) -- (-0.45,0.25) node[left] {$N\sin\theta$};
+\draw[dashed, blue] (-0.45,0.25) -- (-0.45,2.2) node[midway,left] {$N\cos\theta$};
+\draw (2.1,-0.6) arc[start angle=0,end angle=11,radius=0.8] node[midway,right] {$\theta$};
+\end{tikzpicture}
+```
+
 
 <div class="theorem-box">
 

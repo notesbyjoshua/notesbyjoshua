@@ -48,7 +48,17 @@ Most sampling is biased! For example, most surveys/polls are volunteer samples, 
 
 True physical randomness is hard to achieve: pseudo-random generators have limitations, and implementation mistakes break fairness, but the goal is that **sampling bias** from selection is controlled.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Stats/collectingdata/sampling-methods.png" alt="Sampling methods placeholder" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\node[draw, rounded corners] (pop) at (0,2) {population};
+\node[draw, rounded corners] (srs) at (-4,0.5) {SRS}; \node[draw, rounded corners] (strat) at (-1.3,0.5) {stratified}; \node[draw, rounded corners] (clus) at (1.6,0.5) {cluster}; \node[draw, rounded corners] (sys) at (4,0.5) {systematic};
+\foreach \n in {srs,strat,clus,sys}{\draw[->, thick] (pop)--(\n);} \node[align=center] at (0,-1) {different random designs produce samples from the same population};
+\end{tikzpicture}
+```
+
 
 ---
 
@@ -123,7 +133,19 @@ Note that in rare studies with inanimate objects, they can't be blinded, since t
 
 ## Types of experimental design
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Stats/collectingdata/experimental-designs.png" alt="Experimental designs placeholder" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\node[draw, rounded corners] (units) at (0,2) {experimental units};
+\node[draw, rounded corners] (rand) at (0,0.7) {random assignment};
+\node[draw, rounded corners] (tr1) at (-2,-0.8) {treatment A}; \node[draw, rounded corners] (tr2) at (2,-0.8) {treatment B};
+\node[draw, rounded corners] (comp) at (0,-2.2) {compare responses};
+\draw[->, thick] (units)--(rand); \draw[->, thick] (rand)--(tr1); \draw[->, thick] (rand)--(tr2); \draw[->, thick] (tr1)--(comp); \draw[->, thick] (tr2)--(comp);
+\end{tikzpicture}
+```
+
 
 ### Completely randomized design
 

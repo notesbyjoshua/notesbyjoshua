@@ -55,7 +55,20 @@ $$
 - **Electronegativity**: decreases down, increases across
 - More positive effective nuclear charge usually means electrons are held more tightly
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Chem/atomicstrucprop/periodictrends.png" alt="Periodic trends summary placeholder" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw[step=0.55, gray!35] (0,0) grid (5.5,3.3);
+\foreach \i/\lab in {0/1,1/2,2/3,3/4,4/5,5/6,6/7,7/8,8/9,9/10}{\node[font=\tiny] at (0.275+0.55*\i,3.05) {\lab};}
+\draw[->, very thick, blue] (0.4,-0.45) -- (5.15,-0.45) node[midway, below] {atomic radius decreases};
+\draw[->, very thick, blue] (5.95,0.3) -- (5.95,3.0) node[midway, right, align=center] {ionization energy\\and electronegativity\\increase};
+\draw[->, very thick, red] (5.2,3.65) -- (0.45,3.65) node[midway, above] {atomic radius increases};
+\draw[->, very thick, red] (-0.45,3.0) -- (-0.45,0.3) node[midway, left, align=center] {radius\\increases};
+\end{tikzpicture}
+```
+
 
 ### Photoelectron spectroscopy
 
@@ -63,7 +76,23 @@ $$
 - Higher peaks can mean more electrons in a subshell
 - Peak position tells energy level; peak height/area tracks electron count
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Chem/atomicstrucprop/PES.png" alt="Photoelectron spectroscopy summary placeholder" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[axis lines=left, width=10cm, height=5.5cm, xmin=0, xmax=10, ymin=0, ymax=6, xlabel={binding energy}, ylabel={relative electrons}, xtick=\empty, ytick=\empty, x dir=reverse, grid=both, grid style={gray!15}]
+\addplot[ycomb, very thick, blue, mark=*] coordinates {(9,2) (6.2,2) (2.8,6) (1.1,1)};
+\node[anchor=south] at (axis cs:9,2) {$1s$};
+\node[anchor=south] at (axis cs:6.2,2) {$2s$};
+\node[anchor=south] at (axis cs:2.8,6) {$2p$};
+\node[anchor=south] at (axis cs:1.1,1) {$3s$};
+\node[anchor=north east] at (axis cs:10,0) {core};
+\node[anchor=north west] at (axis cs:0,0) {valence};
+\end{axis}
+\end{tikzpicture}
+```
+
 
 ---
 
@@ -101,7 +130,15 @@ $$
 
 Molecular shape depends on lone pairs.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Chem/compounds/VSEPR.png" alt="VSEPR summary placeholder" loading="lazy" decoding="async" />
+
+| Electron domains | Electron geometry | Common molecular shape | Example |
+| ---: | --- | --- | --- |
+| 2 | linear | linear | $$\mathrm{CO_2}$$ |
+| 3 | trigonal planar | trigonal planar / bent | $$\mathrm{BF_3}$$ / $$\mathrm{SO_2}$$ |
+| 4 | tetrahedral | tetrahedral / trigonal pyramidal / bent | $$\mathrm{CH_4}$$ / $$\mathrm{NH_3}$$ / $$\mathrm{H_2O}$$ |
+| 5 | trigonal bipyramidal | seesaw / T-shaped / linear | $$\mathrm{SF_4}$$ |
+| 6 | octahedral | square pyramidal / square planar | $$\mathrm{BrF_5}$$ / $$\mathrm{XeF_4}$$ |
+
 
 ### Hybridization
 
@@ -205,7 +242,17 @@ $$
 - Usually soluble: sulfates except with $$\text{Ba}^{2+}$$, $$\text{Sr}^{2+}$$, $$\text{Pb}^{2+}$$, often $$\text{Ca}^{2+}$$
 - Usually insoluble: carbonates, phosphates, chromates, sulfides, hydroxides except with Group 1 and $$\text{NH}_4^+$$
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Chem/chemrxns/solubility.jpg" alt="Solubility rules summary placeholder" loading="lazy" decoding="async" />
+
+| Usually soluble | Important exceptions |
+| --- | --- |
+| Group 1 ions and $$\mathrm{NH_4^+}$$ | none commonly tested |
+| Nitrates, acetates, perchlorates | none commonly tested |
+| Chlorides, bromides, iodides | insoluble with $$\mathrm{Ag^+}$$, $$\mathrm{Pb^{2+}}$$, $$\mathrm{Hg_2^{2+}}$$ |
+| Sulfates | insoluble/slightly soluble with $$\mathrm{Ba^{2+}}$$, $$\mathrm{Sr^{2+}}$$, $$\mathrm{Pb^{2+}}$$, $$\mathrm{Ca^{2+}}$$ |
+| Usually insoluble | Important exceptions |
+| Carbonates, phosphates, sulfides | soluble with Group 1 ions or $$\mathrm{NH_4^+}$$ |
+| Hydroxides | soluble with Group 1; $$\mathrm{Ca^{2+}}$$, $$\mathrm{Sr^{2+}}$$, $$\mathrm{Ba^{2+}}$$ are more soluble |
+
 
 ### Oxidation number reminders
 
@@ -461,7 +508,22 @@ $$
 - weak base / strong acid equivalence point below 7
 - half-equivalence point for weak acid/base gives $$\text{pH} = \text{p}K_a$$ or $$\text{pOH} = \text{p}K_b$$
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Chem/acidbase/titrationcurve.gif" alt="Titration curves summary placeholder" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[axis lines=left, width=9cm, height=5.5cm, xmin=0, xmax=50, ymin=0, ymax=14, xlabel={volume base added}, ylabel={pH}, xtick=\empty, ytick={0,7,14}, grid=both, grid style={gray!15}]
+\addplot[blue, very thick, samples=200, domain=0:50] {3 + 8/(1+exp(-0.45*(x-25))) + 0.025*x};
+\addplot[dashed] coordinates {(25,0) (25,14)};
+\addplot[dashed] coordinates {(0,7) (50,7)};
+\node[anchor=south west] at (axis cs:25,8.6) {equivalence point};
+\node[anchor=south] at (axis cs:12.5,5.0) {buffer region};
+\node[anchor=north] at (axis cs:12.5,4.7) {$pH=pK_a$};
+\end{axis}
+\end{tikzpicture}
+```
+
 
 ---
 
@@ -530,7 +592,22 @@ $$
 - oxidation always at anode
 - reduction always at cathode
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Chem/cheatsheet/electrochem-summary.png" alt="Electrochemistry summary placeholder" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\node[draw, rounded corners] (g) at (0,2) {$\Delta G=-nFE$};
+\node[draw, rounded corners, fill=green!8] (sp) at (-3,0.5) {$E>0$, $\Delta G<0$};
+\node[draw, rounded corners, fill=red!8] (non) at (3,0.5) {$E<0$, $\Delta G>0$};
+\node[draw, rounded corners] (galv) at (-3,-1) {galvanic};
+\node[draw, rounded corners] (elec) at (3,-1) {electrolytic};
+\draw[->, thick] (g) -- (sp); \draw[->, thick] (g) -- (non);
+\draw[->, thick] (sp) -- (galv); \draw[->, thick] (non) -- (elec);
+\node at (0,-2) {spontaneous cells produce voltage; nonspontaneous cells need voltage};
+\end{tikzpicture}
+```
+
 
 ---
 

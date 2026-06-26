@@ -110,7 +110,15 @@ A practical algorithm:
 
 Typical pairings of steric number and lone pairs give names such as **linear**, **trigonal planar**, **tetrahedral**, **trigonal bipyramidal**, and **octahedral** for the electron-domain geometry; lone pairs then influence the **molecular geometry** (for example, **bent** instead of **trigonal planar** when one lone pair sits on a central atom with three domains).
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Chem/compounds/VSEPR.png" alt="VSEPR Model" loading="lazy" decoding="async" />
+
+| Electron domains | Electron geometry | Common molecular shape | Example |
+| ---: | --- | --- | --- |
+| 2 | linear | linear | $$\mathrm{CO_2}$$ |
+| 3 | trigonal planar | trigonal planar / bent | $$\mathrm{BF_3}$$ / $$\mathrm{SO_2}$$ |
+| 4 | tetrahedral | tetrahedral / trigonal pyramidal / bent | $$\mathrm{CH_4}$$ / $$\mathrm{NH_3}$$ / $$\mathrm{H_2O}$$ |
+| 5 | trigonal bipyramidal | seesaw / T-shaped / linear | $$\mathrm{SF_4}$$ |
+| 6 | octahedral | square pyramidal / square planar | $$\mathrm{BrF_5}$$ / $$\mathrm{XeF_4}$$ |
+
 
 ---
 
@@ -118,7 +126,15 @@ Typical pairings of steric number and lone pairs give names such as **linear**, 
 
 Atomic orbitals on a bonded atom can mix to form **hybrid orbitals** that are consistent with VESPR. For carbon in many organic molecules, four **sigma** frameworks point toward the corners of a tetrahedron, described by $$\text{sp}^3$$ **hybridization**. $$\text{sp}^2$$ hybrids lie in a plane at $$120^\circ$$ (trigonal planar arrangement); $$\text{sp}$$ hybrids are linear at $$180^\circ$$. In addition, $$\text{sp}^3 d$$ hybridization occurs in trigonal bipyramidal configurations, while $$\text{sp}^3 d^2$$ hybridization occurs in an octahedral configuration.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Chem/compounds/Hybrids.jpeg" alt="Hybridization" loading="lazy" decoding="async" />
+
+| Steric number | Hybridization | Ideal geometry | Approx. angle |
+| ---: | --- | --- | ---: |
+| 2 | $$sp$$ | linear | $$180^\circ$$ |
+| 3 | $$sp^2$$ | trigonal planar | $$120^\circ$$ |
+| 4 | $$sp^3$$ | tetrahedral | $$109.5^\circ$$ |
+| 5 | $$sp^3d$$ | trigonal bipyramidal | $$90^\circ,120^\circ$$ |
+| 6 | $$sp^3d^2$$ | octahedral | $$90^\circ$$ |
+
 
 ---
 
@@ -134,7 +150,21 @@ A **sigma bond** ($$\sigma$$) has electron density concentrated along the *inter
 
 When two atoms approach, the **potential energy** of the system typically drops as attractive interactions dominate, passes through a minimum at an **equilibrium bond length**, and then rises steeply as **nuclear repulsion** dominates at short distance.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Chem/compounds/potenergycurve.jpg" alt="Potential Energy Curve" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[axis lines=left, width=9cm, height=5.5cm, xmin=0.6, xmax=5.5, ymin=-3, ymax=3, xlabel={internuclear distance}, ylabel={potential energy}, xtick=\empty, ytick=\empty]
+\addplot[blue, very thick, samples=200, domain=0.75:5.5] {2/(x^8)-4/(x^4)};
+\addplot[dashed] coordinates {(1.19,-3) (1.19,0)};
+\node[anchor=north] at (axis cs:1.19,-2.7) {bond length};
+\node[anchor=west] at (axis cs:2.0,-1.0) {stable bond};
+\node[anchor=west] at (axis cs:0.8,2.1) {repulsion};
+\end{axis}
+\end{tikzpicture}
+```
+
 
 **Bond energy** is related to the depth of that well. Comparing curves for the same bond order (single vs double vs triple) illustrates why higher **bond order** correlates with shorter, stronger bonds.
 
@@ -189,7 +219,23 @@ For salts with other stoichiometries (e.g. $$\text{MgCl}_2$$, $$\text{Na}_2\text
 
 Qualitatively, larger ion charges and smaller ions (shorter internuclear distances in the lattice) increase $$U_{\text{lattice}}$$, consistent with Coulomb attraction in the lattice and with the trends introduced earlier in this unit. A picture has been added below for illustrative purposes.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Chem/compounds/bornhaber.gif" alt="Born-Haber Cycle" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw[->] (0,0) -- (0,5.2) node[above] {enthalpy};
+\draw[thick] (1,0.6) -- (4,0.6) node[right] {ionic solid};
+\draw[thick] (1,4.5) -- (4,4.5) node[right] {separated gaseous ions};
+\draw[thick] (1,2.0) -- (4,2.0) node[right] {atoms};
+\draw[thick] (1,3.2) -- (4,3.2) node[right] {ions forming};
+\draw[->, blue, thick] (0.8,0.6) -- (0.8,2.0) node[midway,left] {sublimation / bond};
+\draw[->, blue, thick] (0.8,2.0) -- (0.8,3.2) node[midway,left] {ionization};
+\draw[->, blue, thick] (0.8,3.2) -- (0.8,4.5) node[midway,left] {electron affinity};
+\draw[->, red, thick] (4.5,4.5) -- (4.5,0.6) node[midway,right] {lattice energy};
+\end{tikzpicture}
+```
+
 
 ---
 
@@ -313,11 +359,20 @@ $$
 :::solution
 $$(A)$$ In $$\text{CH}_2\text{O}$$, carbon is bonded to two H atoms and double-bonded to O. In $$\text{CH}_3\text{OH}$$, carbon is bonded to three H atoms and single-bonded to O, while O is bonded to H and has two lone pairs.
 
-<div class="placeholder-box">
 
-**Image placeholder:** Lewis structures for $$\text{CH}_2\text{O}$$ and $$\text{CH}_3\text{OH}$$.
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\node at (-2.8,0) {$\mathrm{H_2C=O}$};
+\draw (-3.55,-0.25) -- (-3.15,-0.25); \draw (-3.55,0.25) -- (-3.15,0.25);
+\node at (-3.9,0) {H}; \node at (-2.1,0) {O};
+\node at (2.0,0.45) {$\mathrm{CH_3OH}$};
+\draw (1.45,0.2) -- (2.45,0.2); \node at (1.2,0.2) {C}; \node at (2.7,0.2) {O-H};
+\node[align=center] at (0,-1.0) {Lewis structures show bonding pairs and lone pairs};
+\end{tikzpicture}
+```
 
-</div>
 
 $$(B)$$ The carbon in $$\text{CH}_2\text{O}$$ has three electron domains, so it is
 

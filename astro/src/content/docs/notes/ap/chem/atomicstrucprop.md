@@ -29,7 +29,28 @@ Unit 1 establishes the vocabulary and models used everywhere else in chemistry: 
 - A **pure substance** has fixed composition, meaning only one type of substance makes it up.
 - A **mixture** combines substances without fixed proportion. A **homogeneous mixture** (solution) are uniform on a macroscopic scale, meaning you cannot tell the difference between molecules jsut by looking at it, while a **heterogeneous mixture** does not have this property.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Chem/atomicstrucprop/Matter%20Chart.png" alt="Matter Chart" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\node[draw, rounded corners, fill=blue!7, minimum width=2.7cm, minimum height=0.8cm] (matter) at (0,3) {Matter};
+\node[draw, rounded corners, fill=green!7] (pure) at (-3,1.6) {Pure substance};
+\node[draw, rounded corners, fill=orange!8] (mix) at (3,1.6) {Mixture};
+\node[draw, rounded corners] (el) at (-4.2,0.2) {Element};
+\node[draw, rounded corners] (co) at (-1.8,0.2) {Compound};
+\node[draw, rounded corners] (hom) at (1.8,0.2) {Homogeneous};
+\node[draw, rounded corners] (het) at (4.2,0.2) {Heterogeneous};
+\draw[->, thick] (matter) -- (pure); \draw[->, thick] (matter) -- (mix);
+\draw[->, thick] (pure) -- (el); \draw[->, thick] (pure) -- (co);
+\draw[->, thick] (mix) -- (hom); \draw[->, thick] (mix) -- (het);
+\node[align=center] at (-4.2,-0.8) {one type\\of atom};
+\node[align=center] at (-1.8,-0.8) {fixed ratio\\of elements};
+\node[align=center] at (1.8,-0.8) {uniform\\throughout};
+\node[align=center] at (4.2,-0.8) {nonuniform\\parts};
+\end{tikzpicture}
+```
+
 
 ---
 
@@ -65,7 +86,21 @@ An **ion** is an atom or group of atoms with a net electric charge from gain or 
 
 **Polyatomic ions** are charged covalent units that behave as a single piece in **ionic compounds** due to their lower eneergy state compared to their individual atomic states: for example, nitrate ($$\text{NO}_3^-$$), sulfate ($$\text{SO}_4^{2-}$$), and ammonium ($$\text{NH}_4^+$$) are all good exmamples of polyatomic ions. These are the polyatomic ions you need to memorize for AP Chem:
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Chem/atomicstrucprop/polyions.png" alt="Polyatomic Ions" loading="lazy" decoding="async" />
+
+| Polyatomic ion | Formula | Charge |
+| --- | --- | ---: |
+| Ammonium | $$\mathrm{NH_4^+}$$ | $$+1$$ |
+| Acetate | $$\mathrm{C_2H_3O_2^-}$$ | $$-1$$ |
+| Hydroxide | $$\mathrm{OH^-}$$ | $$-1$$ |
+| Nitrate / nitrite | $$\mathrm{NO_3^-}$$ / $$\mathrm{NO_2^-}$$ | $$-1$$ |
+| Chlorate / chlorite / hypochlorite | $$\mathrm{ClO_3^-}$$ / $$\mathrm{ClO_2^-}$$ / $$\mathrm{ClO^-}$$ | $$-1$$ |
+| Perchlorate | $$\mathrm{ClO_4^-}$$ | $$-1$$ |
+| Carbonate / bicarbonate | $$\mathrm{CO_3^{2-}}$$ / $$\mathrm{HCO_3^-}$$ | $$-2$$ / $$-1$$ |
+| Sulfate / sulfite | $$\mathrm{SO_4^{2-}}$$ / $$\mathrm{SO_3^{2-}}$$ | $$-2$$ |
+| Phosphate / hydrogen phosphate | $$\mathrm{PO_4^{3-}}$$ / $$\mathrm{HPO_4^{2-}}$$ | $$-3$$ / $$-2$$ |
+| Chromate / dichromate | $$\mathrm{CrO_4^{2-}}$$ / $$\mathrm{Cr_2O_7^{2-}}$$ | $$-2$$ |
+| Permanganate | $$\mathrm{MnO_4^-}$$ | $$-1$$ |
+
 
 ---
 
@@ -129,7 +164,19 @@ That yields the empirical formula. **Combustion analysis** problems follow the s
 
 **Mass spectrometry** separates ions by *mass-to-charge ratio* $$\frac{m}{z}$$. A typical spectrum plots *relative abundance* (or detector *intensity*) on the vertical axis against $$\frac{m}{z}$$ on the horizontal axis. For an element, the pattern of peaks reveals isotope masses and their approximate natural abundances; for molecules, *fragmentation* patterns can support structure assignment in advanced work. An example of a mass spectrometer chart is shown below:
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Chem/atomicstrucprop/Mass%20Spectrometry.png" alt="Mass spectrometry chart" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[axis lines=left, width=10cm, height=5.5cm, ymin=0, ymax=110, xmin=18, xmax=32, xlabel={mass-to-charge ratio}, ylabel={relative abundance}, ytick={0,50,100}, xtick={20,22,24,26,28,30}, grid=both, grid style={gray!15}]
+\addplot[ybar, bar width=5pt, fill=blue!35, draw=blue!70!black] coordinates {(20,18) (21,6) (22,42) (24,100) (25,12) (26,35) (28,75) (30,20)};
+\node[anchor=west] at (axis cs:24.3,96) {base peak};
+\node[anchor=west] at (axis cs:28.3,72) {isotope peak};
+\end{axis}
+\end{tikzpicture}
+```
+
 
 ---
 
@@ -266,7 +313,23 @@ but for all purposes, memorizing this equation is not necessary for the AP Chemi
 
 **Photoelectron spectroscopy** (**PES**) measures how much energy must be supplied to remove electrons from subshells in atoms or molecules. Peaks appear at **binding energies** characteristic of each orbital type; relative peak areas (after accounting for ionization cross sections) reflect electron counts in those subshells. An example problem is shown below, feel free to try it out!
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Chem/atomicstrucprop/PES.png" alt="PES chart" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[axis lines=left, width=10cm, height=5.5cm, xmin=0, xmax=10, ymin=0, ymax=6, xlabel={binding energy}, ylabel={relative electrons}, xtick=\empty, ytick=\empty, x dir=reverse, grid=both, grid style={gray!15}]
+\addplot[ycomb, very thick, blue, mark=*] coordinates {(9,2) (6.2,2) (2.8,6) (1.1,1)};
+\node[anchor=south] at (axis cs:9,2) {$1s$};
+\node[anchor=south] at (axis cs:6.2,2) {$2s$};
+\node[anchor=south] at (axis cs:2.8,6) {$2p$};
+\node[anchor=south] at (axis cs:1.1,1) {$3s$};
+\node[anchor=north east] at (axis cs:10,0) {core};
+\node[anchor=north west] at (axis cs:0,0) {valence};
+\end{axis}
+\end{tikzpicture}
+```
+
 
 An important thing to note is that a PES graph shifted to the right indicates less nuclear charge, since it takes less energy to take away those electrons.
 
@@ -282,7 +345,22 @@ $$
 
 a narrow window between **ultraviolet** and **infrared**. Moving toward shorter wavelength corresponds to higher photon energy (**gamma rays** and **X-rays** at the extreme) and longer wavelength to lower energy (**microwave**, **radio**).
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Chem/atomicstrucprop/em.jpg" alt="EM Spectrum" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw[->, thick] (0,0) -- (10,0) node[right] {increasing frequency and energy};
+\draw[<- , thick] (0,-0.45) -- (10,-0.45) node[right] {increasing wavelength};
+\foreach \x/\lab/\col in {0.7/radio/red!20,2.0/microwave/orange!25,3.3/infrared/yellow!30,4.6/visible/green!25,5.9/UV/cyan!25,7.2/X-ray/blue!20,8.6/gamma/purple!20}{
+  \fill[\col] (\x-0.55,0.25) rectangle (\x+0.55,1.1);
+  \draw (\x-0.55,0.25) rectangle (\x+0.55,1.1);
+  \node[rotate=35] at (\x,0.68) {\lab};
+}
+\node at (4.6,1.45) {visible light is a small band};
+\end{tikzpicture}
+```
+
 
 ---
 
@@ -330,7 +408,20 @@ meaning s electrons “see” more of the nucleus and are stabilized relative to
 
 Broad patterns: **atomic radius** increases *down a group* (new shells, more shielding) and decreases *across a period* (rising $$Z_{\text{eff}}$$). **Ionization energy** and **electron affinity** (for representative elements) generally show opposite *horizontal* trends to radius. **Metallic character** decreases across a period and increases down a group. Exceptions, such as the **ionization energy** dip at boron or the **electron affinity** anomaly for nitrogen, appear when subshell structure or pairing changes the cost of removing or adding an electron.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Chem/atomicstrucprop/periodictrends.png" alt="Periodic Trends" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw[step=0.55, gray!35] (0,0) grid (5.5,3.3);
+\foreach \i/\lab in {0/1,1/2,2/3,3/4,4/5,5/6,6/7,7/8,8/9,9/10}{\node[font=\tiny] at (0.275+0.55*\i,3.05) {\lab};}
+\draw[->, very thick, blue] (0.4,-0.45) -- (5.15,-0.45) node[midway, below] {atomic radius decreases};
+\draw[->, very thick, blue] (5.95,0.3) -- (5.95,3.0) node[midway, right, align=center] {ionization energy\\and electronegativity\\increase};
+\draw[->, very thick, red] (5.2,3.65) -- (0.45,3.65) node[midway, above] {atomic radius increases};
+\draw[->, very thick, red] (-0.45,3.0) -- (-0.45,0.3) node[midway, left, align=center] {radius\\increases};
+\end{tikzpicture}
+```
+
 
 ---
 

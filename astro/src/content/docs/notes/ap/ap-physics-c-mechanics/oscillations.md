@@ -264,7 +264,16 @@ $$
 
 Many AP setups attach a mass to more than one spring. Each combination behaves like a single ideal spring with an **effective spring constant** $$k_{\text{eff}}$$, and the period is then $$T=2\pi\sqrt{m/k_{\text{eff}}}$$.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20Mech/oscillations/typessprings.png" alt="springs in series versus parallel attached to a mass placeholder" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw[decorate, decoration={coil,aspect=0.45,segment length=5pt,amplitude=4pt}, thick] (-4,1.2) -- (-2,1.2); \draw[decorate, decoration={coil,aspect=0.45,segment length=5pt,amplitude=4pt}, thick] (-2,1.2) -- (0,1.2); \draw[fill=gray!20] (0,0.8) rectangle (0.8,1.6); \node at (-2,1.8) {series};
+\draw[decorate, decoration={coil,aspect=0.45,segment length=5pt,amplitude=4pt}, thick] (-4,-0.5) -- (-1.5,-0.5); \draw[decorate, decoration={coil,aspect=0.45,segment length=5pt,amplitude=4pt}, thick] (-4,-1.2) -- (-1.5,-1.2); \draw[fill=gray!20] (-1.5,-1.5) rectangle (-0.7,-0.2); \node at (-2.4,-1.85) {parallel};
+\end{tikzpicture}
+```
+
 
 
 <div class="theorem-box">
@@ -559,7 +568,20 @@ A pendulum about one meter long swings with a two-second period, which is why ol
 
 A rigid body swinging about a pivot is a **physical pendulum**. If the center of mass is distance $$d$$ from the pivot,
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20Mech/oscillations/phypen.png" alt="physical pendulum with pivot center of mass distance and restoring torque component placeholder" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\fill (0,2) circle (2pt) node[above] {pivot};
+\draw[thick] (0,2) -- (1,-0.7); \draw[fill=gray!20] (0.65,-1.1) rectangle (1.35,-0.3);
+\fill[red] (1,-0.7) circle (2pt) node[right] {CM};
+\draw[->, red, thick] (1,-0.7) -- (1,-2.1) node[below] {$mg$};
+\draw[dashed] (0,2) -- (0,-1.2); \draw (0,1.1) arc[start angle=-90,end angle=-70,radius=0.9] node[midway,below] {$\theta$};
+\draw[<->] (0.12,1.65) -- (0.9,-0.45) node[midway,right] {$d$};
+\end{tikzpicture}
+```
+
 
 $$
 \tau \approx -mgd\theta.
@@ -711,7 +733,19 @@ The **quality factor** $$Q$$ measures how lightly damped an oscillator is — qu
 
 A driven oscillator has an external periodic force:
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20Mech/oscillations/damping.jpg" alt="steady-state amplitude versus driving frequency resonance peaks for different damping placeholder" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[axis lines=left,width=8.5cm,height=5cm,xmin=0,xmax=5,ymin=0,ymax=5,xlabel={driving frequency},ylabel={amplitude},xtick=\empty,ytick=\empty]
+\addplot[blue,very thick,samples=160,domain=0:5]{4/(1+8*(x-2.2)^2)+0.25};
+\addplot[red,very thick,samples=160,domain=0:5]{2.5/(1+2.2*(x-2.2)^2)+0.25};
+\node[blue] at (axis cs:2.2,4.5) {low damping}; \node[red] at (axis cs:3.6,1.5) {more damping};
+\end{axis}
+\end{tikzpicture}
+```
+
 
 $$
 m\frac{d^2x}{dt^2}+b\frac{dx}{dt}+kx=F_0\cos(\omega_d t).

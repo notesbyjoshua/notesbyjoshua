@@ -24,7 +24,19 @@ $$
 
 The t-distribution is symmetric and bell-shaped like the normal distribution, but it has heavier tails. As degrees of freedom increase, the t-distribution approaches the standard normal distribution.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Stats/quantmeans/t-distribution.png" alt="t distribution placeholder" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[axis lines=left,width=8cm,height=5cm,xmin=-4,xmax=4,ymin=0,ymax=0.42,xlabel={$t$},ylabel={density},xtick=\empty,ytick=\empty]
+\addplot[blue,very thick,samples=200,domain=-4:4]{1/sqrt(2*pi)*exp(-x^2/2)};
+\addplot[red,dashed,very thick,samples=200,domain=-4:4]{0.34/(1+x^2/5)^3};
+\node[blue] at (axis cs:1.6,0.34) {normal}; \node[red] at (axis cs:2.6,0.12) {$t$ has heavier tails};
+\end{axis}
+\end{tikzpicture}
+```
+
 
 ---
 
@@ -153,7 +165,18 @@ $$
 df=n-1.
 $$
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Stats/quantmeans/matched-pairs.png" alt="Matched pairs design placeholder" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\node[draw, rounded corners] (person) at (0,2) {same subject or matched pair};
+\node[draw, rounded corners] (before) at (-2,0.5) {before / treatment 1}; \node[draw, rounded corners] (after) at (2,0.5) {after / treatment 2};
+\node[draw, rounded corners, fill=blue!8] (diff) at (0,-1) {difference};
+\draw[->, thick] (person)--(before); \draw[->, thick] (person)--(after); \draw[->, thick] (before)--(diff); \draw[->, thick] (after)--(diff); \node at (0,-2) {analyze the differences, not two independent samples};
+\end{tikzpicture}
+```
+
 
 ---
 

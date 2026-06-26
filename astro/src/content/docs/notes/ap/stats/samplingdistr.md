@@ -19,7 +19,19 @@ Samples vary, so statistics vary. This is called **sampling variability**. A goo
 
 Larger random samples usually reduce variability, but they do not fix bias caused by bad sampling design.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Stats/samplingdistr/sampling-distribution.png" alt="Sampling distribution placeholder" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[axis lines=left,width=8cm,height=5cm,xmin=0,xmax=10,ymin=0,ymax=0.5,xlabel={sample statistic},ylabel={density},xtick=\empty,ytick=\empty]
+\addplot[blue,very thick,samples=200,domain=0:10]{0.45*exp(-0.5*(x-5)^2)};
+\addplot[dashed] coordinates {(5,0) (5,0.48)};
+\node[anchor=south] at (axis cs:5,0.48) {center at parameter};
+\end{axis}
+\end{tikzpicture}
+```
+
 
 ---
 
@@ -111,7 +123,19 @@ is often enough for mild or moderate skew. If the population is strongly skewed 
 
 If the population itself is normal, then the sampling distribution of $$\bar{x}$$ is normal for any sample size $$n$$.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Stats/samplingdistr/central-limit-theorem.png" alt="Central Limit Theorem placeholder" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[axis lines=left,width=8cm,height=5cm,xmin=-4,xmax=4,ymin=0,ymax=0.45,xlabel={standardized sample mean},ylabel={density},xtick=\empty,ytick=\empty]
+\addplot[gray,dashed,samples=120,domain=-4:4]{0.25*exp(-abs(x))};
+\addplot[blue,very thick,samples=200,domain=-4:4]{1/sqrt(2*pi)*exp(-x^2/2)};
+\node at (axis cs:0,0.42) {as $n$ grows, sampling distribution becomes normal};
+\end{axis}
+\end{tikzpicture}
+```
+
 
 ---
 
@@ -151,7 +175,19 @@ For a normal distribution:
 - About $$99.7\%$$ are within $$3$$ standard deviations.
 :::
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Stats/samplingdistr/normal-curve.png" alt="Normal curve placeholder" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[axis lines=left,width=8cm,height=5cm,xmin=-4,xmax=4,ymin=0,ymax=0.45,xlabel={$z$},ylabel={density},xtick={-3,-2,-1,0,1,2,3},ytick=\empty]
+\addplot[blue,very thick,samples=200,domain=-4:4]{1/sqrt(2*pi)*exp(-x^2/2)};
+\foreach \x in {-3,-2,-1,0,1,2,3}{\addplot[dashed] coordinates {(\x,0) (\x,{1/sqrt(2*pi)*exp(-\x^2/2)})};}
+\node at (axis cs:0,0.42) {68-95-99.7 rule};
+\end{axis}
+\end{tikzpicture}
+```
+
 
 ---
 

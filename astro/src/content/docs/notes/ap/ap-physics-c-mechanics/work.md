@@ -44,13 +44,36 @@ $$
 
 the signed area under the force-position graph.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20Mech/work/forcegraph.png" alt="force versus position graph with shaded area equal to work placeholder" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[axis lines=left,width=8cm,height=5cm,xmin=0,xmax=6,ymin=0,ymax=5,xlabel={$x$},ylabel={$F$},xtick=\empty,ytick=\empty]
+\addplot[fill=blue!20, draw=none] coordinates {(1,0) (1,2) (3,4) (5,1.5) (5,0)} -- cycle;
+\addplot[blue,very thick] coordinates {(1,2) (3,4) (5,1.5)};
+\node at (axis cs:3,1.2) {area = work};
+\end{axis}
+\end{tikzpicture}
+```
+
 
 ### The geometry of the dot product
 
 Since $$W = \vec{F}\cdot\Delta\vec{r} = F\,\Delta r\cos\theta$$, the **sign of the work** is set entirely by the angle $$\theta$$ between the force and the displacement:
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20Mech/work/work-dot-product.png" alt="force vector at angle theta to displacement with parallel component shaded placeholder" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw[->, very thick, blue] (0,0) -- (4,0) node[right] {$\Delta x$};
+\draw[->, very thick, red] (0,0) -- (2.7,1.8) node[above] {$\vec F$};
+\draw[dashed, red] (2.7,1.8) -- (2.7,0) node[below] {$F\cos\theta$};
+\draw (0.9,0) arc[start angle=0,end angle=34,radius=0.9] node[midway,right] {$\theta$};
+\end{tikzpicture}
+```
+
 
 - **Positive work** ($$0\le\theta<90^\circ$$): the force has a component along the motion and speeds the object up (it transfers energy *into* the object). A horizontal push on a sliding box does positive work.
 - **Negative work** ($$90^\circ<\theta\le180^\circ$$): the force opposes the motion and slows the object (it removes energy). Kinetic friction on a sliding box does negative work.
@@ -564,7 +587,19 @@ The clean strategy: spring energy in, friction energy out, kinetic energy is wha
 
 In one-dimensional systems, a graph of $$U(x)$$ contains force information:
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20Mech/work/equilibriumphys.jpg" alt="potential energy curve showing stable and unstable equilibria and turning points placeholder" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[axis lines=middle,width=9cm,height=5cm,xmin=-3,xmax=5,ymin=-1,ymax=6,xlabel={$x$},ylabel={$U$},xtick=\empty,ytick=\empty]
+\addplot[blue,very thick,samples=180,domain=-2.5:4.5]{0.18*(x+1.8)*(x-0.4)^2*(x-3.2)+2.2};
+\addplot[dashed] coordinates {(-3,3.0) (5,3.0)};
+\node at (axis cs:-1.6,1.2) {stable}; \node at (axis cs:2.8,4.4) {unstable}; \node at (axis cs:4.2,3.2) {$E$};
+\end{axis}
+\end{tikzpicture}
+```
+
 
 $$
 F_x = -\frac{dU}{dx}.

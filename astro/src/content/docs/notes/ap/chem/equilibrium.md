@@ -17,11 +17,24 @@ Most reactions we have looked at previously were **irreversible reactions**, or 
 
 The approach to equilibrium has a characteristic shape: starting from pure reactants, the **forward rate** is high (reactant concentrations are large) and the **reverse rate** is zero. As products build up, the forward rate falls and the reverse rate rises until the two are **equal**—from that moment on, concentrations level off and stay flat. Crucially, "equal rates" does *not* mean "equal concentrations"; the leveled-off amounts can be lopsided in either direction depending on $$K$$.
 
-<div class="placeholder-box">
 
-**Image placeholder:** Two stacked graphs sharing a time axis — (top) concentration vs. time showing reactants falling and products rising, both flattening to constant plateaus; (bottom) forward and reverse reaction rates vs. time converging to a single equal value at the moment equilibrium is reached.
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[width=9cm,height=4cm,xmin=0,xmax=8,ymin=0,ymax=5,axis lines=left,xtick=\empty,ytick=\empty,xlabel={time},ylabel={concentration}]
+\addplot[blue,very thick,samples=120,domain=0:8]{1.5+3*exp(-0.55*x)};
+\addplot[red,very thick,samples=120,domain=0:8]{3.7-2.2*exp(-0.55*x)};
+\node[blue] at (axis cs:1.4,3.7) {reactants}; \node[red] at (axis cs:5,3.2) {products};
+\end{axis}
+\begin{axis}[at={(0,-3.8cm)},width=9cm,height=4cm,xmin=0,xmax=8,ymin=0,ymax=5,axis lines=left,xtick=\empty,ytick=\empty,xlabel={time},ylabel={rate}]
+\addplot[blue,very thick,samples=120,domain=0:8]{1.8+2.2*exp(-0.55*x)};
+\addplot[red,very thick,samples=120,domain=0:8]{1.8-1.4*exp(-0.55*x)};
+\node at (axis cs:5.6,1.8) {equal rates};
+\end{axis}
+\end{tikzpicture}
+```
 
-</div>
 
 **Homogeneous** equilibrium means all reacting species are in the same phase (e.g. all gases, or all in one solution). **Heterogeneous** equilibrium includes **pure solids** or **pure liquids** as separate phases; their activities are taken as constant and they are **omitted** from the equilibrium expression (see below).
 
@@ -115,11 +128,19 @@ A useful trick is to line up $$K$$ and $$Q$$ alphabetically (so $$K$$ on the lef
 
 The same logic applies to $$Q_p$$ and $$K_p$$ for gases.
 
-<div class="placeholder-box">
 
-**Image placeholder:** A number line with $$K$$ marked at the center — region where $$Q<K$$ on the left labeled "shifts right, toward products," region where $$Q>K$$ on the right labeled "shifts left, toward reactants," and the point $$Q=K$$ labeled "at equilibrium."
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw[->, thick] (-4,0) -- (4,0) node[right] {$Q$};
+\draw[very thick] (0,-0.25) -- (0,0.25) node[above] {$Q=K$};
+\node[align=center] at (-2,0.7) {$Q<K$\\shift right\\toward products};
+\node[align=center] at (2,0.7) {$Q>K$\\shift left\\toward reactants};
+\draw[->, blue, thick] (-3,-0.7) -- (-0.4,-0.7); \draw[->, red, thick] (3,-0.7) -- (0.4,-0.7);
+\end{tikzpicture}
+```
 
-</div>
 
 A **catalyst** speeds both forward and reverse rates equally, so it **does not change** $$K$$ or the equilibrium position - it only shortens the time needed to reach equilibrium.
 
@@ -185,7 +206,23 @@ Typical stresses:
 
 Since $$K$$ depends on $$T$$, **do not** treat temperature like a simple concentration stress when you need a **numerical** $$K$$: use the correct $$K$$ for the new temperature if given, compute $$K_2$$ from $$K_1$$ with the **van’t Hoff equation** (previous section), or reason qualitatively from $$\Delta H$$.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Chem/equilibrium/lechat.webp" alt="Le Chatelier's Principle" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\node[draw, rounded corners, fill=blue!8] (stress) at (0,2) {stress applied};
+\node[draw, rounded corners, fill=green!8] (shift) at (0,0.7) {system shifts to reduce stress};
+\node[draw, rounded corners] (conc) at (-3,-0.8) {concentration};
+\node[draw, rounded corners] (temp) at (0,-0.8) {temperature};
+\node[draw, rounded corners] (press) at (3,-0.8) {pressure / volume};
+\draw[->, thick] (stress) -- (shift); \draw[->, thick] (shift) -- (conc); \draw[->, thick] (shift) -- (temp); \draw[->, thick] (shift) -- (press);
+\node[align=center] at (-3,-1.8) {consume added species\\or replace removed species};
+\node[align=center] at (0,-1.8) {treat heat like\\reactant or product};
+\node[align=center] at (3,-1.8) {favor fewer or more\\gas moles};
+\end{tikzpicture}
+```
+
 
 ---
 
@@ -217,7 +254,15 @@ $$
 
 i.e. $$x$$ is at most $$5\%$$ of the initial concentration it was subtracted from. If the computed $$x$$ fails this test, the approximation is too rough—go back and solve the **quadratic** exactly (or iterate). As a rough guide, the approximation is usually safe when $$[\text{A}]_0/K \gtrsim 400$$.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Chem/equilibrium/icetable.png" alt="ICE Table" loading="lazy" decoding="async" />
+
+| Step | Reactants | Products |
+| --- | --- | --- |
+| Initial | starting concentrations | starting concentrations |
+| Change | subtract according to stoichiometry | add according to stoichiometry |
+| Equilibrium | initial plus change | initial plus change |
+
+For $$aA+bB\rightleftharpoons cC+dD$$, changes usually look like $$-ax$$, $$-bx$$, $$+cx$$, and $$+dx$$.
+
 
 ---
 
@@ -539,10 +584,19 @@ $$
 
 $$(C)$$ Since $$Q<K$$, the system has too little product relative to equilibrium. It shifts toward products, forming more $$\text{HI}$$ and consuming $$\text{H}_2$$ and $$\text{I}_2$$. The value of $$K$$ does not change during the shift because temperature is not changed.
 
-<div class="placeholder-box">
 
-**Image placeholder:** Particle diagram for $$\text{H}_2+\text{I}_2\rightleftharpoons2\text{HI}$$ showing the mixture shifting toward more $$\text{HI}$$.
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw[rounded corners] (-3,-1.5) rectangle (-0.3,1.5); \node at (-1.65,1.8) {before};
+\draw[rounded corners] (0.3,-1.5) rectangle (3,1.5); \node at (1.65,1.8) {after shift};
+\foreach \x/\y in {-2.5/0.8,-2.1/-0.3,-1.5/0.4,-0.9/-0.9}{\node[blue] at (\x,\y) {$H_2$};}
+\foreach \x/\y in {-2.6/-0.8,-1.8/1.0,-0.9/0.2}{\node[red] at (\x,\y) {$I_2$};}
+\foreach \x/\y in {0.8/1.0,1.4/0.4,2.2/0.9,0.9/-0.6,1.8/-1.0,2.4/-0.2}{\node[purple] at (\x,\y) {$HI$};}
+\node[align=center] at (1.65,-1.85) {more product particles};
+\end{tikzpicture}
+```
 
-</div>
 :::
 ::::

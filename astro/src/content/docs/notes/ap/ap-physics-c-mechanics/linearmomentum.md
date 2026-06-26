@@ -51,7 +51,19 @@ $$
 
 On a force-time graph, impulse is the signed area under the curve. This is the time-domain analog of how work is the area under a force-position graph in [work and energy](/notes/ap/ap-physics-c-mechanics/work/). During a collision, the peak force may be hard to model, but the impulse can often be found from the initial and final momenta, since $$\vec{J}=\Delta\vec{p}$$ does not care about the detailed shape of $$\vec{F}(t)$$.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20Mech/linearmomentum/impulsegraph.png" alt="force-versus-time graph with shaded area equal to impulse placeholder" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[axis lines=left,width=8cm,height=5cm,xmin=0,xmax=6,ymin=0,ymax=5,xlabel={$t$},ylabel={$F$},xtick=\empty,ytick=\empty]
+\addplot[fill=blue!20, draw=none] coordinates {(0.8,0) (0.8,1) (2.5,4) (4.8,1.2) (4.8,0)} -- cycle;
+\addplot[blue,very thick] coordinates {(0.8,1) (2.5,4) (4.8,1.2)};
+\node at (axis cs:2.8,1.0) {area = impulse};
+\end{axis}
+\end{tikzpicture}
+```
+
 
 
 It is also useful to define the **average force** over a collision:
@@ -174,7 +186,19 @@ $$
 
 ## Center of Mass
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20Mech/linearmomentum/CoM.png" alt="center of mass of a system of particles and a continuous body placeholder" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\fill[blue] (-2,0.8) circle (4pt) node[above] {$m_1$}; \fill[blue] (0,-0.6) circle (6pt) node[below] {$m_2$}; \fill[blue] (2,0.5) circle (3pt) node[above] {$m_3$};
+\fill[red] (0.15,0.05) circle (3pt) node[right] {center of mass};
+\draw[dashed] (-2,0.8)--(0.15,0.05)--(0,-0.6); \draw[dashed] (2,0.5)--(0.15,0.05);
+\draw[thick, rounded corners] (3,-1) .. controls (4,-1.8) and (5,1.1) .. (6,0.7) .. controls (5.2,2) and (3.3,1.5) .. (3,-1);
+\fill[red] (4.6,0.4) circle (3pt) node[right] {COM};
+\end{tikzpicture}
+```
+
 
 For discrete particles,
 

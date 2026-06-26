@@ -44,7 +44,15 @@ $$
 
 Since $$\vec{F}_B$$ is always perpendicular to $$\vec{v}$$, it does no work: $$P = \vec{F}_B\cdot\vec{v} = q(\vec{v}\times\vec{B})\cdot\vec{v} = 0$$, since $$\vec{v}\times\vec{B}$$ is perpendicular to $$\vec{v}$$. A magnetic field can change a charge's *direction* but never its *speed*.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20EM/magnetism/right-hand-rule-vxb.png" alt="Right-hand rule of Lorentz force" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw[->, very thick, blue] (0,0)--(2.5,0) node[right] {$\vec v$}; \draw[->, very thick, red] (0,0)--(0,2.2) node[above] {$\vec B$}; \draw[->, very thick, purple] (0,0)--(-1.6,-1.6) node[below left] {$\vec F=q\vec v\times\vec B$}; \node at (0,-2.3) {right-hand-rule vector triad};
+\end{tikzpicture}
+```
+
 
 <div class="theorem-box">
 
@@ -140,7 +148,15 @@ $$
 r=\frac{mv}{\lvert q \rvert B}.
 $$
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20EM/magnetism/velocity-selector-mass-spectrometer.png" alt="Velocity selector with crossed electric and magnetic fields feeding into a mass spectrometer region where isotopes curve on different radii" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw[thick] (-4,1.2)--(1,1.2); \draw[thick] (-4,-1.2)--(1,-1.2); \foreach \x in {-3,-2,-1,0}{\node at (\x,0) {$\times$};} \draw[->, blue, thick] (-4.2,0)--(1.2,0) node[right] {$v$}; \draw[->, red, thick] (-1,0)--(-1,0.9) node[above] {$F_E$}; \draw[->, purple, thick] (-1,0)--(-1,-0.9) node[below] {$F_B$}; \draw[blue, thick] (2,0) arc[start angle=180,end angle=-80,radius=1.2]; \node at (3,-1) {mass spectrometer};
+\end{tikzpicture}
+```
+
 
 <div class="theorem-box">
 
@@ -186,7 +202,15 @@ $$
 
 This force comes from the magnetic forces on the moving charges inside the wire: each carrier feels $$q\vec{v}_d\times\vec{B}$$, and summing over all carriers in a length $$L$$ (with $$I = nqv_d A_{\text{cross}}$$) gives $$\vec{F} = I\vec{L}\times\vec{B}$$.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20EM/magnetism/force-on-current-wire.png" alt="Force on a current-carrying wire in a magnetic field" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw[very thick] (-3,0)--(3,0); \draw[->, blue, thick] (-2,0.2)--(-1,0.2) node[above] {$I$}; \foreach \x in {-2,-1,0,1,2}{\node at (\x,-0.7) {$\times$};} \draw[->, red, thick] (0,0)--(0,1.5) node[above] {$\vec F=I\vec L\times\vec B$};
+\end{tikzpicture}
+```
+
 
 <div class="theorem-box">
 
@@ -276,7 +300,15 @@ $$
 
 The direction follows the right-hand rule: thumb in the direction of conventional current, curled fingers show the magnetic field direction.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20EM/magnetism/right-hand-rule-b-around-wire.png" alt="Right-hand rule for the magnetic field circling a straight current-carrying wire" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\fill (0,0) circle (3pt); \node at (0.35,0.25) {$I$ out}; \foreach \r in {0.6,1.1,1.6}{\draw[->, blue] (\r,0) arc[start angle=0,end angle=300,radius=\r];} \node at (0,-2.1) {magnetic field circles the wire};
+\end{tikzpicture}
+```
+
 
 At the center of a circular loop of radius $$R$$,
 
@@ -418,7 +450,15 @@ matching the Biot–Savart result with far less work — symmetry did the integr
 
 **Proof (Solenoid field from Ampère's law).** An ideal solenoid has $$n$$ turns per unit length carrying current $$I$$, with a uniform axial field inside and (ideally) zero field outside. Choose a rectangular Amperian loop with one side of length $$\ell$$ inside the solenoid parallel to the axis, the opposite side outside, and two short sides crossing the wall.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20EM/magnetism/solenoid-amperian-loop.png" alt="Solenoid with a uniform interior field and a rectangular Amperian loop straddling the wall" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\foreach \x in {-3,-2.4,...,3}{\draw[blue] (\x,0) ellipse (0.28 and 0.9);} \draw[->, red, very thick] (-3.2,0)--(3.2,0) node[right] {$B$}; \draw[green!50!black, thick] (-1.5,-1.2) rectangle (1.5,1.2); \node at (0,1.55) {Amperian loop};
+\end{tikzpicture}
+```
+
 
 Split $$\oint\vec{B}\cdot d\vec{\ell}$$ into the four legs:
 
@@ -480,7 +520,15 @@ $$
 
 Currents in the same direction attract. Currents in opposite directions repel.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20EM/magnetism/parallel-wires-force.png" alt="Two parallel current-carrying wires" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw[very thick] (-1.5,-2)--(-1.5,2); \draw[very thick] (1.5,-2)--(1.5,2); \draw[->, blue] (-1.8,-1.2)--(-1.8,1.2) node[above] {$I_1$}; \draw[->, blue] (1.8,-1.2)--(1.8,1.2) node[above] {$I_2$}; \draw[->, red, thick] (-1.5,0)--(-0.4,0); \draw[->, red, thick] (1.5,0)--(0.4,0); \node at (0,-2.4) {same-direction currents attract};
+\end{tikzpicture}
+```
+
 
 <div class="theorem-box">
 

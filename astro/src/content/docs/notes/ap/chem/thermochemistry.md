@@ -45,11 +45,17 @@ The central move in any calorimetry problem is this sign relationship: the heat 
 
 In both, the apparatus itself absorbs some heat, accounted for by the **calorimeter constant** $$C_{\text{cal}}$$ (energy per kelvin), determined by a calibration run.
 
-<div class="placeholder-box">
 
-**Image placeholder:** Side-by-side cutaway diagrams of a coffee-cup calorimeter (nested foam cups, lid, thermometer, stirrer) labeled "constant pressure, measures $$\Delta H$$" and a bomb calorimeter (sealed steel bomb in a water bath) labeled "constant volume, measures $$\Delta U$$."
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw[rounded corners] (-4,-1.5) rectangle (-1,1.5); \draw (-3.6,1.1)--(-1.4,1.1); \draw[->] (-2.5,2) -- (-2.5,0.2); \node at (-2.5,2.25) {thermometer}; \node[align=center] at (-2.5,-2) {coffee-cup\\constant pressure\\measures $\Delta H$};
+\draw[rounded corners] (1,-1.5) rectangle (4,1.5); \draw[fill=gray!20] (2.1,-0.7) rectangle (2.9,0.7); \draw (1.4,1.1)--(3.6,1.1); \node[align=center] at (2.5,-2) {bomb calorimeter\\constant volume\\measures $\Delta U$};
+\node at (2.5,0) {bomb};
+\end{tikzpicture}
+```
 
-</div>
 
 ---
 
@@ -88,11 +94,18 @@ A full heating curve alternates between **sloped segments** and **flat plateaus*
 
 The vaporization plateau is longer than the fusion plateau for most substances because $$\Delta H_{\text{vap}}>\Delta H_{\text{fus}}$$—separating molecules completely into a gas costs more energy than just loosening them from a fixed lattice into a liquid. To find the total energy to take a substance across several phase regions, add the $$q$$ for every segment and plateau in sequence.
 
-<div class="placeholder-box">
 
-**Image placeholder:** Heating curve for water (temperature vs. heat added) showing the solid-warming slope, the melting plateau at $$0^\circ\text{C}$$, the liquid-warming slope, the boiling plateau at $$100^\circ\text{C}$$, and the gas-warming slope, with each segment annotated with the relevant equation ($$mc\Delta T$$ or $$n\Delta H$$).
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[axis lines=left,width=9cm,height=5.5cm,xmin=0,xmax=10,ymin=-30,ymax=130,xlabel={heat added},ylabel={temperature},xtick=\empty,ytick={0,100},grid=both,grid style={gray!15}]
+\addplot[blue,very thick] coordinates {(0,-20) (2,0) (4,0) (6,100) (8,100) (10,125)};
+\node at (axis cs:1,-12) {$mc\Delta T$}; \node at (axis cs:3,8) {melting}; \node at (axis cs:5,55) {$mc\Delta T$}; \node at (axis cs:7,108) {boiling};
+\end{axis}
+\end{tikzpicture}
+```
 
-</div>
 
 ---
 
@@ -159,11 +172,21 @@ A reliable strategy for combining given equations:
 4. **Sum** the manipulated $$\Delta H$$ values to get $$\Delta H_{\text{target}}$$.
 :::
 
-<div class="placeholder-box">
 
-**Image placeholder:** Hess’s-law energy-level (enthalpy) diagram showing reactants at top or bottom, an alternative two-step path through an intermediate level, and the direct one-step path, illustrating that both routes sum to the same overall $$\Delta H$$.
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw[->] (0,0) -- (0,4.6) node[above] {enthalpy};
+\draw[thick] (1,3.8) -- (3.5,3.8) node[right] {reactants};
+\draw[thick] (1,2.2) -- (3.5,2.2) node[right] {intermediate};
+\draw[thick] (1,0.8) -- (3.5,0.8) node[right] {products};
+\draw[->, blue, thick] (1.2,3.7) -- (1.2,0.9) node[midway,left] {overall $\Delta H$};
+\draw[->, red, thick] (2.5,3.7) -- (2.5,2.3) node[midway,right] {step 1};
+\draw[->, red, thick] (2.8,2.1) -- (2.8,0.9) node[midway,right] {step 2};
+\end{tikzpicture}
+```
 
-</div>
 
 ---
 

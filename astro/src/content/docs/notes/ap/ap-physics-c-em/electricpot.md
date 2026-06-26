@@ -49,7 +49,15 @@ $$
 
 The condition $$i<j$$ counts each pair exactly once. A clean way to see this is to assemble the configuration one charge at a time: bringing in the first charge takes no work (empty space), the second is brought in against the first charge’s field, the third against the field of the first two, and so on. The total work needed equals $$U$$, and because the electrostatic force is conservative, the answer does not depend on the order of assembly.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20EM/electricpot/triangle-charge-assembly.png" alt="Triangle of charges" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\coordinate (A) at (0,2.2); \coordinate (B) at (-2,0); \coordinate (C) at (2,0); \draw[thick] (A)--(B)--(C)--cycle; \fill[red] (A) circle (3pt) node[above] {$q_1$}; \fill[blue] (B) circle (3pt) node[left] {$q_2$}; \fill[green!60!black] (C) circle (3pt) node[right] {$q_3$}; \node at (0,-0.45) {sum pairwise potential energies};
+\end{tikzpicture}
+```
+
 
 <div class="theorem-box">
 
@@ -365,7 +373,19 @@ $$
 E_x = -\frac{dV}{dx}.
 $$
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20EM/electricpot/e-field-as-slope-of-v.png" alt="E is the derivative of V" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[axis lines=middle,width=8cm,height=5cm,xmin=-3,xmax=3,ymin=-2,ymax=5,xlabel={$x$},ylabel={$V$},xtick=\empty,ytick=\empty]
+\addplot[blue,very thick,domain=-2.5:2.5]{0.7*x^2+0.5};
+\addplot[red,thick,domain=-1.5:1.5]{1.4*x+1.2};
+\node at (axis cs:1.5,3.8) {$E_x=-dV/dx$};
+\end{axis}
+\end{tikzpicture}
+```
+
 
 <div class="theorem-box">
 
@@ -399,7 +419,15 @@ This is exactly the on-axis field of a uniformly charged disk obtained the hard 
 
 An **equipotential** is a surface (or curve in 2D diagrams) on which $$V$$ is constant. No work is required to move a charge along an equipotential, because $$\Delta V = 0$$. For that reason, $$\vec{E}$$ is everywhere perpendicular to equipotentials (except where $$\vec{E} = 0$$): a component of $$\vec{E}$$ tangent to the surface would do nonzero work over a small step along the surface, contradicting constant $$V$$.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20EM/electricpot/equipotentiallines.png" alt="equipotential lines" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\foreach \r in {0.7,1.2,1.8,2.5}{\draw[blue] (0,0) circle (\r);} \foreach \a in {0,45,...,315}{\draw[->, red] (\a:0.4)--(\a:2.8);} \fill (0,0) circle (2pt) node[below] {$+q$}; \node at (0,-3.1) {field lines are perpendicular to equipotentials};
+\end{tikzpicture}
+```
+
 
 A clean special case is the **uniform field between two large parallel plates**. The plates themselves are equipotentials, and intermediate equipotentials are evenly spaced planes parallel to them. With the field magnitude $$E$$ and plate separation $$d$$, integrating $$\Delta V = -\int \vec{E}\cdot d\vec{r}$$ along the field direction gives the simple magnitude relation $$\lvert\Delta V\rvert = Ed$$.
 

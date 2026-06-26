@@ -98,7 +98,22 @@ Other methods of separation include distillation (uses differences in boiling po
 
 Temperature (in Kelvin) is proportional to the average translational kinetic energy of ideal-gas molecules, but varies per molecule.  However, the KE can be mapped as a distribution (called the **Maxwell-Boltzmann distribution**). A **Maxwell–Boltzmann** curve plots fraction versus speed or energy. Lighter gases at the same $$T$$ have higher average speed, and raising $$T$$ broadens the curve and increases the fraction with energy above a given activation energy. Note that macroscopic kinetic energy $$\frac{1}{2}mv^2$$ applies to bulk motion; do not confuse it with thermal motion of molecules inside a sample. An example of a Maxwell-Boltzmann distribution can be seen below:
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Chem/submix/maxwellboltzmann.png" alt="Maxwell Boltzmann Distribution" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[axis lines=left, width=9cm, height=5cm, xmin=0, xmax=8, ymin=0, ymax=0.75, xlabel={molecular speed or energy}, ylabel={fraction}, xtick=\empty, ytick=\empty]
+\addplot[blue, very thick, samples=200, domain=0:8] {0.9*x^2*exp(-1.1*x)};
+\addplot[red, very thick, samples=200, domain=0:8] {0.28*x^2*exp(-0.45*x)};
+\addplot[dashed, thick] coordinates {(4.8,0) (4.8,0.65)};
+\node[blue] at (axis cs:1.7,0.55) {$T_1$};
+\node[red] at (axis cs:4.0,0.42) {$T_2>T_1$};
+\node[anchor=south] at (axis cs:4.8,0.65) {$E_a$};
+\end{axis}
+\end{tikzpicture}
+```
+
 
 ---
 
@@ -242,7 +257,25 @@ which equals $$1$$ for an ideal gas (by Ideal Gas Law). $$Z < 1$$ often reflects
 
 **Vapor pressure** is the pressure of vapor in equilibrium with a condensed phase at a given temperature; it rises with $$T$$ and reflects IMF strength (volatile liquids have high vapor pressure at a given $$T$$). A **phase diagram** plots pressure versus temperature; the **triple point** is where solid, liquid, and gas coexist. The **critical point** ends the liquid–vapor boundary; above the critical temperature there is no distinct liquid phase at any pressure.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Chem/submix/phasediagram.jpg" alt="Phase Diagram" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[axis lines=left, width=8.5cm, height=6cm, xmin=0, xmax=8, ymin=0, ymax=8, xlabel={temperature}, ylabel={pressure}, xtick=\empty, ytick=\empty]
+\addplot[blue, very thick] coordinates {(1,1) (3,3)};
+\addplot[blue, very thick] coordinates {(3,3) (7,4.7)};
+\addplot[blue, very thick] coordinates {(3,3) (4.4,7.3)};
+\addplot[only marks, mark=*, mark size=1.7pt] coordinates {(3,3) (7,4.7)};
+\node at (axis cs:1.5,5.8) {solid};
+\node at (axis cs:4.6,5.2) {liquid};
+\node at (axis cs:6,2.0) {gas};
+\node[anchor=west] at (axis cs:3.1,3) {triple point};
+\node[anchor=west] at (axis cs:7,4.7) {critical point};
+\end{axis}
+\end{tikzpicture}
+```
+
 
 ---
 
@@ -502,10 +535,17 @@ $$
 
 $$(C)$$ The $$0.040\ M$$ solution has twice the concentration, so an equal-volume particle diagram should show twice as many colored ions. The volume of the box must stay the same; only the number of solute particles should change.
 
-<div class="placeholder-box">
 
-**Image placeholder:** Equal-volume particle diagrams showing the $$0.040\ M$$ solution with twice as many colored ions as the $$0.020\ M$$ solution.
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw[rounded corners] (-3,-1.4) rectangle (-0.5,1.4); \node at (-1.75,1.75) {$0.020\ M$};
+\draw[rounded corners] (0.5,-1.4) rectangle (3,1.4); \node at (1.75,1.75) {$0.040\ M$};
+\foreach \x/\y in {-2.4/0.6,-1.5/-0.2,-1.0/0.9,-2.1/-0.9}{\fill[blue] (\x,\y) circle (2pt);}
+\foreach \x/\y in {1.0/0.8,1.4/0.1,2.1/0.7,2.6/-0.4,1.1/-0.9,1.8/-0.7,2.4/1.0,2.6/0.2}{\fill[blue] (\x,\y) circle (2pt);}
+\end{tikzpicture}
+```
 
-</div>
 :::
 ::::

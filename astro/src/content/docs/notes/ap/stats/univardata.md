@@ -54,7 +54,15 @@ A **frequency distribution** lists possible values (or classes) of the variable 
 | Category/bin 2 | $$f_2$$ | $$f_2/n$$ | $$f_1+f_2$$ |
 | Category/bin 3 | $$f_3$$ | $$f_3/n$$ | $$f_1+f_2+f_3$$ |
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Stats/univardata/frequency-displays.png" alt="Frequency table and display placeholder" loading="lazy" decoding="async" />
+
+| Display | Best use |
+| --- | --- |
+| Frequency table | exact counts by category or interval |
+| Dotplot | small quantitative data sets |
+| Histogram | distribution shape for many quantitative values |
+| Stemplot | preserves individual values while showing shape |
+| Boxplot | quick comparison of center, spread, and outliers |
+
 
 ---
 
@@ -90,7 +98,17 @@ A **stemplot** splits each number into a **stem** (leading digit or digits) and 
 
 A **histogram** groups quantitative data into intervals (bins), then draws bars whose heights show frequency or relative frequency (or density, in more advanced courses). Bars touch to show that the horizontal axis is a continuous scale (even though data are binned). The shape of a histogram (symmetric, skewed, unimodal, bimodal) can tell you a lot about the data (talked about later).
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Stats/univardata/histogram-shapes.png" alt="Histogram shapes placeholder" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\pgfplotsset{hs/.style={ybar,width=4cm,height=3.2cm,axis lines=left,xtick=\empty,ytick=\empty}}
+\begin{axis}[hs,title={symmetric}] \addplot[fill=blue!30] coordinates{(1,1)(2,3)(3,5)(4,3)(5,1)}; \end{axis}
+\begin{axis}[hs,at={(4.6cm,0)},title={right skew}] \addplot[fill=red!30] coordinates{(1,5)(2,3)(3,2)(4,1)(5,0.5)}; \end{axis}
+\end{tikzpicture}
+```
+
 
 ### Cumulative relative frequency graphs (ogives)
 
@@ -100,7 +118,18 @@ An **ogive** plots **cumulative relative frequency** (from 0 to 1, or 0% to 100%
 
 A **boxplot** (box-and-whisker plot) summarizes a quantitative variable using quartiles and the median. Draw a box from the first quartile $$Q_1$$ to the **third quartile** $$Q_3$$; draw a line inside the box at the **median**. The **interquartile range** is $$IQR = Q_3 - Q_1$$. “Whiskers” typically extend to the most extreme values within **1.5 × IQR** of the quartiles; points beyond that range are plotted individually as outliers. Boxplots are ideal for comparing several groups on the same scale.
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Stats/univardata/boxplot.png" alt="Boxplot placeholder" loading="lazy" decoding="async" />
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw[->] (0,0)--(8,0) node[right] {value};
+\draw[thick] (1.0,0.35)--(2.5,0.35); \draw[thick] (5.5,0.35)--(7.0,0.35);
+\draw[thick, fill=blue!10] (2.5,0) rectangle (5.5,0.7); \draw[very thick] (4.0,0)--(4.0,0.7);
+\foreach \x/\lab in {1/min,2.5/Q1,4/median,5.5/Q3,7/max}{\draw (\x,-0.1)--(\x,0.8); \node[below] at (\x,-0.1) {\lab};}
+\end{tikzpicture}
+```
+
 
 ---
 
