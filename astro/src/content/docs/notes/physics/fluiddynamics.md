@@ -68,7 +68,13 @@ This exponential "barometric formula" is the standard USAPhO compressible-static
 
 ### Pascal's principle and the hydraulic press
 
-**Pascal's principle:** a pressure change applied to an enclosed incompressible fluid is transmitted undiminished to every point. In a hydraulic press, a small piston of area $$A_1$$ and a large piston of area $$A_2$$ share the same fluid pressure, so
+<div class="theorem-box">
+
+**Theorem (Pascal's principle).** A pressure change applied to an enclosed incompressible fluid is transmitted undiminished to every point.
+
+</div>
+
+In a hydraulic press, a small piston of area $$A_1$$ and a large piston of area $$A_2$$ share the same fluid pressure, so
 
 $$
 \frac{F_1}{A_1}=\frac{F_2}{A_2}\quad\Longrightarrow\quad F_2=F_1\frac{A_2}{A_1}.
@@ -204,11 +210,15 @@ Now suppose the fluid moves. We describe flow by the velocity field $$\vec v(\ve
 
 ### The continuity equation
 
-Mass cannot accumulate in a steady flow, so the mass flow rate $$\dot m=\rho A v$$ is the same through every cross-section of a streamtube. For an incompressible fluid ($$\rho$$ constant):
+<div class="theorem-box">
+
+**Theorem (Continuity equation).** Mass cannot accumulate in a steady flow, so the mass flow rate $$\dot m=\rho A v$$ is the same through every cross-section of a streamtube. For an incompressible fluid ($$\rho$$ constant):
 
 $$
 \ A_1 v_1 = A_2 v_2\ \qquad(\text{volume flow rate } Q=Av=\text{const}).
 $$
+
+</div>
 
 Narrow the pipe and the fluid speeds up. This is exact for incompressible steady flow and is half of almost every flow problem.
 
@@ -216,7 +226,11 @@ Narrow the pipe and the fluid speeds up. This is exact for incompressible steady
 
 ## Bernoulli's equation
 
-Bernoulli is energy conservation for a fluid parcel along a streamline, under the assumptions: **steady, incompressible, inviscid flow along a single streamline** (no friction, no energy added/removed).
+Bernoulli is energy conservation for a fluid parcel along a streamline.
+
+:::conditions
+Valid only for **steady, incompressible, inviscid flow along a single streamline** (no friction, no energy added or removed).
+:::
 
 <div class="theorem-box">
 
@@ -244,7 +258,9 @@ $$
 
 Each term is an energy per unit volume: $$p$$ is "flow work," $$\tfrac12\rho v^2$$ is kinetic, $$\rho g y$$ is potential. The headline physics: **where a fluid moves faster, its pressure is lower** (at the same height). That single sentence explains lift, the Venturi meter, the curveball, and why shower curtains billow inward.
 
-> **Caution.** Bernoulli compares two points *on the same streamline* in steady, frictionless, incompressible flow. It does **not** apply across a pump, through a turbulent region, along a viscous boundary layer, or between two points on different streamlines unless the flow is also irrotational. Olympiad traps almost always come from misapplying Bernoulli where one of these assumptions breaks.
+:::warning
+Bernoulli compares two points *on the same streamline* in steady, frictionless, incompressible flow. It does **not** apply across a pump, through a turbulent region, along a viscous boundary layer, or between two points on different streamlines unless the flow is also irrotational. Olympiad traps almost always come from misapplying Bernoulli where one of these assumptions breaks.
+:::
 
 ### Torricelli's law
 
@@ -360,9 +376,11 @@ quadratic in speed, with a drag coefficient $$C_D$$. The crossover in a pipe is 
 
 A quick decision tree for what tool to grab:
 
+:::strategy{title="Choosing a fluids tool"}
 1. **Nothing moves**: Hydrostatics. Use $$p=p_0+\rho g h$$, equal pressure at equal heights in connected fluid, and Archimedes for floating/submerged bodies.
 2. **Whole fluid accelerates/rotates rigidly**: Effective gravity $$\vec g_{\text{eff}}=\vec g-\vec a$$; surfaces $$\perp$$ to it; rotating ⟶ parabolic surface.
 3. **Steady flow, want a speed or pressure**: Continuity ($$Av=$$const) + Bernoulli. Choose two points on one streamline; know what each pressure and speed is (open surfaces are at $$p_{\text{atm}}$$; wide reservoirs are nearly at rest).
 4. **Want a force on/from moving fluid**: Momentum flux $$F=\dot m\,\Delta v$$, not Bernoulli.
 5. **Friction or small slow object matters**: Viscosity: Poiseuille for pipes, Stokes for spheres, Reynolds number to decide the type of flow.
 6. **Don't know the governing law**: Dimensional analysis.
+:::

@@ -8,8 +8,7 @@ Magnetism describes forces on moving charges and currents. Unlike electric field
 
 ---
 
-## Useful Variables
-
+:::variables
 - $$\vec{B}$$ = magnetic field (Units: tesla, $$\text{T}$$)
 - $$q$$ = charge
 - $$\vec{v}$$ = velocity
@@ -17,6 +16,7 @@ Magnetism describes forces on moving charges and currents. Unlike electric field
 - $$L$$ = length of wire in a magnetic field
 - $$\mu_0$$ = permeability of free space = $$4\pi\times10^{-7}\ \text{T}\cdot\text{m/A}$$
 - $$\Phi_B$$ = magnetic flux
+:::
 
 ---
 
@@ -538,8 +538,7 @@ Magnetic flux becomes central in [electromagnetic induction](/notes/ap/ap-physic
 
 ---
 
-## Key equations
-
+:::equations
 | Idea | Equation |
 | --- | --- |
 | Lorentz force | $$\vec{F} = q\vec{E} + q\vec{v}\times\vec{B}$$ |
@@ -560,6 +559,7 @@ Magnetic flux becomes central in [electromagnetic induction](/notes/ap/ap-physic
 | Ampère's law | $$\oint\vec{B}\cdot d\vec{\ell} = \mu_0 I_{\text{enc}}$$ |
 | Force between parallel wires | $$\dfrac{F}{L} = \dfrac{\mu_0 I_1 I_2}{2\pi d}$$ |
 | Magnetic flux | $$\Phi_B = \int\vec{B}\cdot d\vec{A} = BA\cos\theta$$ |
+:::
 
 ## Practice
 

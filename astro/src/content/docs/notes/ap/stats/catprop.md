@@ -138,12 +138,12 @@ $$
 \sqrt{\frac{\hat{p}_1(1-\hat{p}_1)}{n_1}+\frac{\hat{p}_2(1-\hat{p}_2)}{n_2}}.
 $$
 
-Conditions:
-
+:::conditions
 1. Two random samples or random assignment to two groups.
 2. Independence within and between groups.
 3. If sampling without replacement, $$n_1 \le 0.10N_1$$ and $$n_2 \le 0.10N_2$$.
 4. Large counts in both groups: successes and failures are each at least 10.
+:::
 
 Interpret the interval in context: "We are ___% confident that the true difference in population proportions $$p_1-p_2$$ is between ___ and ___."
 
@@ -210,17 +210,20 @@ Calculator output does not replace communication. You still need hypotheses, con
 
 ## Working Checklist
 
+:::checklist
 1. Identify the parameter: $$p$$ or $$p_1-p_2$$.
 2. Choose interval or test.
 3. Check random, independence, and large-count conditions.
 4. Use the correct standard error: null value for tests, sample value for intervals.
 5. Compute the interval or p-value.
 6. Write a conclusion in context.
+:::
 
 ---
 
 ## Key Equations
 
+:::equations
 | Idea | Equation |
 | --- | --- |
 | One-proportion interval | $$\hat{p}\pm z^*\sqrt{\hat{p}(1-\hat{p})/n}$$ |
@@ -228,6 +231,7 @@ Calculator output does not replace communication. You still need hypotheses, con
 | Two-proportion interval | $$(\hat{p}_1-\hat{p}_2)\pm z^*\sqrt{\frac{\hat{p}_1(1-\hat{p}_1)}{n_1}+\frac{\hat{p}_2(1-\hat{p}_2)}{n_2}}$$ |
 | Pooled proportion | $$\hat{p}_c=(x_1+x_2)/(n_1+n_2)$$ |
 | Two-proportion test | $$z=\frac{(\hat{p}_1-\hat{p}_2)}{\sqrt{\hat{p}_c(1-\hat{p}_c)(1/n_1+1/n_2)}}$$ |
+:::
 
 ## Practice
 

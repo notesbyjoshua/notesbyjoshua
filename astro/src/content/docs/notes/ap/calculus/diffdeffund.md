@@ -67,7 +67,11 @@ So the derivative of $$x^2$$ is $$2x$$, matching the power rule.
 
 ## Differentiability vs continuity
 
-If $$f$$ is differentiable at $$a$$, then $$f$$ is continuous at $$a$$.
+<div class="theorem-box">
+
+**Theorem (Differentiability implies continuity).** If $$f$$ is differentiable at $$a$$, then $$f$$ is continuous at $$a$$.
+
+</div>
 
 The converse is false. A function can be continuous but not differentiable because of:
 
@@ -564,7 +568,9 @@ The quotient rule is a product rule combined with the derivative of a reciprocal
 
 ## Common mistakes
 
+:::mistakes
 - Confusing the derivative at a point with the derivative function.
 - Forgetting the product rule and differentiating term-by-term incorrectly.
 - Using the quotient rule with the wrong sign in the numerator.
 - Treating speed and velocity as the same thing.
+:::

@@ -111,11 +111,15 @@ and you round $$n$$ to the nearest integer when the data allows it (subject to m
 
 When a problem gives **mass percentages** (or masses of elements in a sample), treat the sample as a sample of *$$100\ \text{g}$$* so each element’s mass in grams equals its *percent* numerically.
 
+:::strategy{title="Mass percent to empirical formula"}
+
 1. Convert each element’s mass to moles using its molar mass.
 
 2. Divide *every* mole amount by the *smallest* mole amount among the elements.
 
 3. If ratios are not whole numbers within reasonable rounding, multiply all subscripts by a small integer ($$2$$, $$3$$, $$\ldots$$) to clear fractions (e.g. $$1 : 1 : 1.33$$ $$\rightarrow$$ multiply by $$3$$). If you see a ratio that is very hard to convert to integers, you likely did something wrong.
+
+:::
 
 That yields the empirical formula. **Combustion analysis** problems follow the same logic: measured masses of $$\text{CO}_2$$ and $$\text{H}_2\text{O}$$ produced fix the carbon and hydrogen in the original sample; any oxygen is often obtained by difference from the original sample mass if the compound contains only C, H, and O.
 

@@ -98,12 +98,14 @@ $$
 
 The constants control the shape of the graph:
 
+:::key{name="Amplitude, period, phase shift, midline"}
 - $$\lvert A \rvert$$ is the **amplitude**.
 - If $$A<0$$, the graph is reflected over the $$x$$-axis.
 - $$\frac{2\pi}{\lvert B \rvert}$$ is the **period**.
 - $$C$$ is the **phase shift**.
 - $$D$$ is the **vertical shift**, so the midline is $$y=D$$.
 - The range is $$[D-\lvert A \rvert,D+ \lvert A \rvert]$$.
+:::
 
 If the function is written as
 
@@ -135,12 +137,14 @@ All the transformations learned in Unit 4 apply here as well.
 
 To graph one full period:
 
+:::strategy{title="Graphing a transformed sine or cosine"}
 1. Find the amplitude $$\lvert A \rvert$$.
 2. Find the period $$\frac{2\pi}{\lvert B \rvert}$$.
 3. Find the phase shift and starting point.
 4. Divide the period into four equal increments.
 5. Plot the five key points, then apply any reflection and vertical shift.
 6. Repeat your graph for the amount of periods specified.
+:::
 
 The increment between consecutive key points is
 
@@ -938,11 +942,13 @@ $$
 
 A general strategy is:
 
+:::strategy{title="Solving a trigonometric equation"}
 1. Use identities to rewrite the equation using one trig function when possible.
 2. Factor if the equation is quadratic in a trig expression.
 3. Find the reference angle using the unit circle.
 4. Use the interval and quadrant signs to list every solution. Always reject values outside the allowed domain and range!
 5. Check for extraneous solutions if the work involved squaring, dividing by a variable expression, or using reciprocal functions.
+:::
 
 
 <div class="theorem-box">
@@ -1118,17 +1124,9 @@ $$
 \tan(\tan^{-1}x)=x.
 $$
 
-But expressions like
-
-$$
-\sin^{-1}(\sin x)
-$$
-
-do not always equal $$x$$, because the answer must be forced into the range of inverse sine:
-
-$$
-\left[-\frac{\pi}{2},\frac{\pi}{2}\right].
-$$
+:::warning
+Expressions like $$\sin^{-1}(\sin x)$$ do not always equal $$x$$, because the answer must be forced into the range of inverse sine, $$\left[-\frac{\pi}{2},\frac{\pi}{2}\right]$$.
+:::
 
 When evaluating a composition such as
 

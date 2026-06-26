@@ -152,10 +152,12 @@ Because $$H$$ is a state function, the enthalpy change depends only on the initi
 
 A reliable strategy for combining given equations:
 
+:::strategy{title="Combining Hess's-law equations"}
 1. Identify a species that appears in only **one** of the given equations and in the **target**; orient (and if needed, flip) that equation so the species lands on the correct side.
 2. **Scale** each equation so its coefficients match the target, multiplying its $$\Delta H$$ by the same factor.
 3. **Add** the manipulated equations; intermediates that appear on opposite sides should cancel, leaving the target equation.
 4. **Sum** the manipulated $$\Delta H$$ values to get $$\Delta H_{\text{target}}$$.
+:::
 
 <div class="placeholder-box">
 

@@ -129,7 +129,11 @@ $$
 s=r\theta.
 $$
 
-The angle $$\theta$$ must be measured in radians. On your calculator, if you go to **MODE**, you can switch from degrees to radians.
+The angle $$\theta$$ must be measured in radians.
+
+:::warning
+The arc length and sector formulas require $$\theta$$ in radians, not degrees. On your calculator, if you go to **MODE**, you can switch from degrees to radians.
+:::
 
 <div class="theorem-box">
 
@@ -536,14 +540,14 @@ Since sine is the $$y$$-coordinate, it is positive above the $$x$$-axis and nega
 
 The **reference angle** is the acute angle formed by the terminal side of $$\theta$$ and the $$x$$-axis.
 
-For common quadrant angles:
-
+:::strategy{title="Evaluating a trig function of any angle"}
 - If $$\theta$$ is in Quadrant I, the reference angle is $$\theta$$.
 - If $$\theta$$ is in Quadrant II, the reference angle is $$\pi-\theta$$.
 - If $$\theta$$ is in Quadrant III, the reference angle is $$\theta-\pi$$.
 - If $$\theta$$ is in Quadrant IV, the reference angle is $$2\pi-\theta$$.
 
 The reference angle gives the magnitude of the trig value. The quadrant gives the sign.
+:::
 
 <div class="theorem-box">
 
@@ -704,11 +708,11 @@ $$
 
 becomes the most important trigonometric identity because $$x=\cos\theta$$ and $$y=\sin\theta$$:
 
+:::key{name="Pythagorean identity"}
 $$
 \sin^2\theta+\cos^2\theta=1.
 $$
-
-This is called the **Pythagorean identity**.
+:::
 
 Dividing both sides by $$\cos^2\theta$$ gives
 
@@ -788,7 +792,10 @@ $$
 
 ### Proving identities
 
-To prove a trigonometric identity, work on one side of the equation and transform it into the other side. Common strategies include:
+To prove a trigonometric identity, work on one side of the equation and transform it into the other side.
+
+:::strategy{title="Proving trig identities"}
+Common strategies include:
 
 - rewrite everything in terms of sine and cosine,
 - use the Pythagorean identities,
@@ -796,6 +803,7 @@ To prove a trigonometric identity, work on one side of the equation and transfor
 - substitute if necessary,
 - factor,
 - multiply by a conjugate when useful.
+:::
 
 <div class="theorem-box">
 
@@ -1079,7 +1087,9 @@ $$
 
 </div>
 
+:::warning
 REMEMBER to always check for multiple solutions using the trig rules!
+:::
 
 ---
 

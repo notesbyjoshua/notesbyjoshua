@@ -213,6 +213,8 @@ If you get a form that is NOT one of these you cannot do any operation to simpli
 
 ## Squeeze Theorem
 
+<div class="theorem-box">
+
 **Theorem (Squeeze Theorem).** If $$g(x) \le f(x) \le h(x)$$ for all $$x$$ near $$a$$, and
 
 $$
@@ -224,6 +226,8 @@ then
 $$
 \lim_{x \to a} f(x) = L.
 $$
+
+</div>
 
 <div class="theorem-box">
 
@@ -362,7 +366,11 @@ Functions that are continuous on their natural domains include:
 
 ## Intermediate Value Theorem
 
-If $$f$$ is continuous on $$[a,b]$$ and $$N$$ lies between $$f(a)$$ and $$f(b)$$, then there exists some $$c \in (a,b)$$ such that $$f(c) = N$$.
+<div class="theorem-box">
+
+**Theorem (Intermediate Value Theorem).** If $$f$$ is continuous on $$[a,b]$$ and $$N$$ lies between $$f(a)$$ and $$f(b)$$, then there exists some $$c \in (a,b)$$ such that $$f(c) = N$$.
+
+</div>
 
 This theorem guarantees at least one solution, but it does not tell you how many.
 

@@ -109,13 +109,9 @@ a\ge b & 1
 \end{array}
 $$
 
-When using Law of Sines, remember that
-
-$$
-\sin \theta=\sin(180^\circ-\theta),
-$$
-
-so a possible second angle may need to be checked.
+:::warning
+When using the Law of Sines, remember that $$\sin \theta=\sin(180^\circ-\theta)$$, so a possible second angle may need to be checked.
+:::
 
 <div class="theorem-box">
 
@@ -756,11 +752,11 @@ $$
 
 Switching sine and cosine, or making one coefficient negative, can change where the graph starts and which direction it is traced, but the rectangular equation may stay the same.
 
-For trig parametrizations, there are many simple steps to eliminate the parameter:
-
+:::strategy{title="Eliminating the parameter in a trig parametrization"}
 1. Isolate the two trig expressions (e.g. $$\cos t = \frac{x}{a}$$).
-2. Use a version of the Pythagoren Identity (e.g. $$\cos^2 t + \sin^2 t = 1$$) to combine the two equations
+2. Use a version of the Pythagoren Identity (e.g. $$\cos^2 t + \sin^2 t = 1$$) to combine the two equations.
 3. State any domain restrictions on the graph and indicate orientation/direction.
+:::
 
 <div class="theorem-box">
 
@@ -794,13 +790,13 @@ The graph is an ellipse centered at the origin.
 
 ### Graphing parametric equations
 
-To sketch a parametric curve:
-
+:::strategy{title="Sketching a parametric curve"}
 1. Choose values of $$t$$.
 2. Calculate the corresponding $$x$$ and $$y$$ values.
 3. Plot the ordered pairs $$(x,y)$$.
 4. Use arrows to show the direction of motion as $$t$$ increases.
 5. An alternative is to solve for the combined equation and then graph that equation on the **allowed domain** and then draw the direction arrows.
+:::
 
 ---
 
@@ -1188,12 +1184,12 @@ $$
 r=f(\theta).
 $$
 
-To graph one:
-
+:::strategy{title="Graphing a polar curve"}
 1. Make a table of $$\theta$$ and $$r$$ values, and draw a helper $$r$$ vs. $$\theta$$ graph if necessary.
 2. Plot each polar point.
 3. Watch for negative $$r$$ values.
 4. Use symmetry and periodicity to complete the curve.
+:::
 
 However, it is also very helpful to know some of the most common types of polar curves.
 
@@ -1777,19 +1773,9 @@ $$
 
 ### De Moivre's Theorem
 
-If
-
-$$
-z=r(\cos\theta+i\sin\theta),
-$$
-
-then for any positive integer $$n$$,
-
-$$
-z^n=r^n(\cos(n\theta)+i\sin(n\theta)).
-$$
-
-This is **De Moivre's Theorem**.
+:::key{name="De Moivre's Theorem"}
+If $$z=r(\cos\theta+i\sin\theta)$$, then for any positive integer $$n$$, $$z^n=r^n(\cos(n\theta)+i\sin(n\theta))$$.
+:::
 
 <div class="theorem-box">
 

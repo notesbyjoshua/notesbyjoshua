@@ -161,6 +161,29 @@
 	width: auto;
 }
 
+/* --- Build-time TikZ diagrams (see lib/markdown/remark-tikz.mjs) ---
+   Inline SVG compiled from ```tikz blocks. Black ink is rewritten to
+   currentColor upstream, so the figure's text colour drives axes/labels. */
+.sl-markdown-content .tikz-figure {
+	margin: 1.5rem auto;
+	text-align: center;
+	color: var(--sl-color-text);
+}
+.sl-markdown-content .tikz-figure svg {
+	width: auto;
+	max-width: min(34rem, 100%);
+	height: auto;
+}
+.sl-markdown-content .tikz-figure figcaption {
+	margin-top: 0.5rem;
+	font-size: var(--sl-text-sm);
+	color: var(--sl-color-gray-3);
+}
+.sl-markdown-content .tikz-error {
+	border-left: 4px solid #ef4444;
+	background: color-mix(in srgb, #ef4444 8%, var(--sl-color-bg));
+}
+
 /* --- Feedback form embed (Google Form iframe) --- */
 .feedback-form-embed {
 	margin-top: 1.25rem;

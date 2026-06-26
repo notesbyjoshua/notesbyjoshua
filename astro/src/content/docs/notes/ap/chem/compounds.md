@@ -90,6 +90,8 @@ For resonance to be meaningful, the alternative structures must involve the *sam
 
 A practical algorithm:
 
+:::strategy{title="Constructing Lewis structures"}
+
 1. Count total **valence electrons** (adjust for charge on **ions**).
 2. Choose a **central atom**—usually the least electronegative element that is not hydrogen. For only two atoms, there is no unique “center”; place them adjacent.
 3. Connect atoms with **single bonds** first, then distribute remaining electrons as lone pairs to satisfy the **octet rule** (or duet for H) on outer atoms.
@@ -97,6 +99,8 @@ A practical algorithm:
 5. If several arrangements remain, favor the one with **formal charges** closest to zero.
 6. Indicate **resonance** with double-headed arrows between structures.
 7. Put **brackets** around the compound if it has a charge.
+
+:::
 
 ---
 
@@ -140,14 +144,14 @@ These same curves also motivate [reaction coordinates](/notes/ap/chem/kinetics/)
 
 ## The Born–Haber cycle
 
-First, before we begin, here are some important terms:
-
+:::variables
 - $$U_{lattice}$$ = Lattice Energy
 - $$\Delta U$$ = Change in Potential Energy
 - $$\Delta H$$ = Change in Enthalpy
 - $$\Delta H_{\text{ea}}$$ = Enthalpy of Electron Gain
 - $$IE$$ = Ionization Energy
 - $$D_{A-B}$$ = Bond Enthalpy between A and B
+:::
 
 The **Born–Haber cycle** is a **Hess’s law** (See more in [Unit 6](/notes/ap/chem/thermochemistry/)) construction for an **ionic solid**. It expresses the standard enthalpy of formation $$\Delta H_f^\circ$$ of the compound from its **elements in standard states** as a sum of steps that convert those elements into **gas-phase ions** and then let those ions **crystallize**. Any one unknown step (most often **lattice energy**) can be found if the others are known.
 

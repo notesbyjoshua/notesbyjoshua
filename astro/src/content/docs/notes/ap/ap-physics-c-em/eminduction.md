@@ -9,8 +9,7 @@ Electromagnetic induction describes how changing magnetic flux produces electric
 
 ---
 
-## Useful Variables
-
+:::variables
 - $$\Phi_B$$ = magnetic flux (Units: webers, $$\text{Wb} = \text{T}\cdot\text{m}^2$$)
 - $$\mathcal{E}$$ = induced emf (Units: volts, $$\text{V}$$)
 - $$N$$ = number of turns in a coil
@@ -20,6 +19,7 @@ Electromagnetic induction describes how changing magnetic flux produces electric
 - $$u_B$$ = magnetic energy density (Units: $$\text{J/m}^3$$)
 - $$\tau$$ = time constant (Units: seconds, $$\text{s}$$)
 - $$\omega$$ = angular frequency (Units: $$\text{rad/s}$$)
+:::
 
 ---
 
@@ -105,11 +105,11 @@ The negative sign in Faraday's law is **Lenz's law**: the induced current produc
 
 Lenz's law is conservation of energy in disguise. If induced currents helped the flux change instead of opposing it, systems could generate energy from nothing.
 
-To determine induced current direction:
-
+:::strategy{title="Finding induced current direction"}
 1. Identify whether the magnetic flux through the loop is increasing or decreasing.
 2. Decide what magnetic field direction the induced current must create to oppose that change.
 3. Use the right-hand rule for loops to get current direction.
+:::
 
 <div class="theorem-box">
 
@@ -685,8 +685,7 @@ The extra term is the **displacement current** contribution. It lets changing el
 
 ---
 
-## Key equations
-
+:::equations
 | Idea | Equation |
 | --- | --- |
 | Magnetic flux | $$\Phi_B = \int \vec{B}\cdot d\vec{A} = BA\cos\theta$$ |
@@ -705,6 +704,7 @@ The extra term is the **displacement current** contribution. It lets changing el
 | LC angular frequency | $$\omega = \dfrac{1}{\sqrt{LC}}$$ |
 | LC period | $$T = 2\pi\sqrt{LC}$$ |
 | Ampère–Maxwell law | $$\oint \vec{B}\cdot d\vec{\ell} = \mu_0 I_{\text{enc}} + \mu_0\varepsilon_0\dfrac{d\Phi_E}{dt}$$ |
+:::
 
 ## Practice
 

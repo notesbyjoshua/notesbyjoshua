@@ -274,14 +274,14 @@ For a vertical major axis, the same algebra applies after swapping the roles of 
 
 ### Graphing an ellipse
 
-To graph an ellipse in standard form:
-
+:::strategy{title="Graphing an ellipse in standard form"}
 1. Find the center $$(h,k)$$.
 2. Identify the larger denominator. This determines the major axis.
 3. Move $$a$$ units from the center along the major axis to find the vertices.
 4. Move $$b$$ units from the center along the minor axis to find the co-vertices.
 5. Use $$c^2=a^2-b^2$$ to locate the foci along the major axis.
 6. Sketch a smooth oval through the vertices and co-vertices.
+:::
 
 The sum of the distances from any point on the ellipse to the two foci is always
 
@@ -458,14 +458,14 @@ The conjugate hyperbola swaps the roles of the terms (e.g. $$\frac{y^{2}}{a^{2}}
 
 ### Graphing a hyperbola
 
-To graph a hyperbola in standard form:
-
+:::strategy{title="Graphing a hyperbola in standard form"}
 1. Find the center $$(h,k)$$.
 2. Identify the positive term. This tells you whether the transverse axis is horizontal or vertical.
 3. Move $$a$$ units from the center along the transverse axis to find the vertices.
 4. Build the asymptote rectangle using $$a$$ and $$b$$.
 5. Draw the asymptotes through opposite corners of the rectangle.
 6. Sketch the branches opening along the transverse axis.
+:::
 
 For a horizontal hyperbola,
 
@@ -761,11 +761,13 @@ $$
 
 When a problem gives a focus, a directrix, and eccentricity, start from the definition instead of trying to guess the standard form immediately.
 
+:::strategy{title="From focus-directrix data to an equation"}
 1. Write the distance from $$(x,y)$$ to the focus.
 2. Write the perpendicular distance from $$(x,y)$$ to the directrix.
 3. Set $$PF=e\,d(P,\ell)$$.
 4. Square both sides and simplify.
 5. Complete the square if needed.
+:::
 
 <div class="theorem-box">
 
@@ -1018,7 +1020,9 @@ For different types of $$e$$:
 - $$e < 1$$: bounded curve (ellipse), with a focus at the origin (which focus depends on the sign of $$d$$).
 - $$e > 1$$: two branches (hyperbola); values of $$\theta$$ that make $$1 + e\cos\theta = 0$$ (or the corresponding denominator in your chosen form) are asymptotic directions (no finite points). The branch closest to the origin depends on the sign of $$d$$.
 
+:::warning
 Always check your course’s exact convention for $$p$$ and the sign in the denominator so your formulas match the textbook’s figure of the focus and directrix.
+:::
 
 ### Important polar values
 
@@ -1178,15 +1182,16 @@ Depending on which side the directrix is on and whether it is horizontal or vert
 
 ### Reading polar conic equations
 
-To identify a polar conic:
-
+:::strategy{title="Reading polar conic equations"}
 1. Rewrite the denominator so the constant term is $$1$$.
 2. The coefficient of $$\sin\theta$$ or $$\cos\theta$$ is the eccentricity $$e$$.
 3. Use $$e$$ to classify the conic.
 4. Use the numerator $$ed$$ to find $$d$$.
 5. Use the sign and trig function to locate the directrix.
 6. Plug in axis angles to locate useful vertices.
+:::
 
+:::warning
 Be careful when the denominator is not already normalized. For example,
 
 $$
@@ -1200,6 +1205,7 @@ r=\frac{3}{1+\frac12\sin\theta}.
 $$
 
 So $$e=\frac12$$, not $$2$$.
+:::
 
 <div class="theorem-box">
 
@@ -1258,13 +1264,13 @@ $$
 x=r\cos\theta,\qquad y=r\sin\theta,\qquad r^2=x^2+y^2.
 $$
 
-The basic strategy is:
-
+:::strategy{title="Converting polar conics to rectangular form"}
 1. Multiply both sides by the denominator.
 2. Replace $$r\cos\theta$$ with $$x$$ or $$r\sin\theta$$ with $$y$$.
 3. Isolate the remaining $$r$$ term.
 4. Square both sides if needed.
 5. Complete the square.
+:::
 
 <div class="theorem-box">
 

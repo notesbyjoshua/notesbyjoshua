@@ -10,16 +10,22 @@ sidebar:
 
 Visible light is an electromagnetic wave with wavelength $$\lambda \sim 400\text{–}700\text{ nm}$$. This notes pages will separate optics into two parts: geometric optics and wave optics. Whether to treat it as rays or as waves depends on the size $$d$$ of the features it interacts with:
 
+:::conditions
 - $$\lambda \ll d$$: diffraction is negligible, light goes in straight rays — use **geometric optics** (mirrors, lenses, shadows).
 - $$\lambda \sim d$$: bending and interference matter: use **wave optics** (slits, gratings, thin films).
+:::
 
 ## Reflection
 
-At a smooth surface, the **law of reflection** states that the angle of incidence equals the angle of reflection, both measured from the normal, and the incident ray, reflected ray, and normal are coplanar:
+<div class="theorem-box">
+
+**Theorem (Law of reflection).** At a smooth surface, the angle of incidence equals the angle of reflection, both measured from the normal, and the incident ray, reflected ray, and normal are coplanar:
 
 $$
 \theta_i = \theta_r.
 $$
+
+</div>
 
 A **plane mirror** forms a virtual, upright image the same size as the object, located as far behind the mirror as the object is in front. The image is reversed front-to-back (which is why text appears mirror-flipped). Think of it like staring into your standard bathroom mirror.
 
@@ -53,17 +59,29 @@ For perpendicular mirrors ($$\phi=90^\circ$$) this gives $$N=3$$; for $$\phi=60^
 
 ## Refraction and Snell's law
 
-The **index of refraction** of a medium is
+<div class="theorem-box">
+
+**Definition (Index of refraction).** The index of refraction of a medium is
 
 $$
 n = \frac{c}{v},
 $$
 
-the ratio of the speed of light in vacuum to its speed in the medium ($$n \ge 1$$). Crossing a boundary, the ray bends according to **Snell's law**:
+the ratio of the speed of light in vacuum to its speed in the medium ($$n \ge 1$$).
+
+</div>
+
+Crossing a boundary, the ray bends according to **Snell's law**:
+
+<div class="theorem-box">
+
+**Theorem (Snell's law).** At a boundary between media of indices $$n_1$$ and $$n_2$$,
 
 $$
 n_1\sin\theta_1 = n_2\sin\theta_2.
 $$
+
+</div>
 
 Going into a denser medium (larger $$n$$), the ray bends *toward* the normal. Across the boundary the **frequency stays fixed** (it is set by the source), so the wavelength must change:
 
@@ -129,11 +147,17 @@ So the whole sky is compressed into a cone of half-angle $$48.6^\circ$$ (a full 
 
 ## Total internal reflection
 
-When light travels from a denser to a less dense medium ($$n_1 > n_2$$), Snell's law has no solution once $$\theta_2$$ would exceed $$90^\circ$$. Beyond the **critical angle**
+When light travels from a denser to a less dense medium ($$n_1 > n_2$$), Snell's law has no solution once $$\theta_2$$ would exceed $$90^\circ$$.
+
+<div class="theorem-box">
+
+**Definition (Critical angle).** Beyond the critical angle
 
 $$
 \sin\theta_c = \frac{n_2}{n_1},
 $$
+
+</div>
 
 all the light is reflected back — **total internal reflection** (TIR). This is how optical fibers trap light and why a diamond ($$n\approx 2.4$$, so $$\theta_c \approx 24^\circ$$) sparkles. For a water–air boundary $$\theta_c=48.6^\circ$$; for a typical glass ($$n=1.5$$) it is $$\arcsin(1/1.5)=41.8^\circ$$, which is why a $$45^\circ$$ glass prism makes a perfect internal mirror in binoculars.
 
@@ -153,7 +177,11 @@ Numerically, $$\text{NA}=\sqrt{1.50^2-1.48^2}=\sqrt{2.25-2.1904}=\sqrt{0.0596}=0
 
 ## Fermat's principle
 
-The reason behind the laws of reflection and refraction is **Fermat's principle**: light travels between two points along the path that takes a **stationary** (usually minimum) time. This is why light sometimes won't take a straight path from one point to another.
+<div class="theorem-box">
+
+**Theorem (Fermat's principle).** The reason behind the laws of reflection and refraction is that light travels between two points along the path that takes a **stationary** (usually minimum) time. This is why light sometimes won't take a straight path from one point to another.
+
+</div>
 
 <div class="theorem-box">
 
@@ -863,6 +891,7 @@ from the normal. The reflected light is polarized **horizontally** (parallel to 
 
 A quick decision tree for picking the right tool:
 
+:::strategy{title="Choosing the right optics tool"}
 1. **Features much larger than $$\lambda$$ (mirrors, lenses, shadows)**: Geometric optics. Trace rays, apply the law of reflection $$\theta_i=\theta_r$$ and Snell's law $$n_1\sin\theta_1=n_2\sin\theta_2$$. For plane-mirror geometry, reflection-point heights (mirror length $$=H/2$$) and image counts ($$N=360^\circ/\phi-1$$) follow from equal-angle ray tracing.
 2. **Image formation by a mirror or lens**: Use $$\frac{1}{f}=\frac{1}{d_o}+\frac{1}{d_i}$$ with $$m=-\frac{d_i}{d_o}$$, and $$f=R/2$$ for a mirror or the lensmaker's $$\frac{1}{f}=(n-1)\left(\frac{1}{R_1}-\frac{1}{R_2}\right)$$ for a lens. Pin down every sign before plugging in. For multi-element systems, feed each image forward as the next object and multiply magnifications, or multiply **ABCD matrices** ($$B=0$$ images, $$C=-1/f_{\text{eff}}$$). Optical instruments: magnifier $$M=25\text{ cm}/f$$, telescope $$M=-f_o/f_e$$.
 3. **A single curved interface (not a lens)**: Refraction at a spherical surface $$\frac{n_1}{s_o}+\frac{n_2}{s_i}=\frac{n_2-n_1}{R}$$ (real-is-positive; $$R>0$$ when $$C$$ is on the outgoing side) — e.g. the fish-in-a-bowl. Applying it twice *is* the lensmaker's equation.
@@ -872,9 +901,11 @@ A quick decision tree for picking the right tool:
 7. **Single aperture or obstacle spreading light**: Diffraction. Single slit minima $$a\sin\theta=m\lambda$$, central width $$2L\lambda/a$$; grating maxima $$d\sin\theta=m\lambda$$ with resolving power $$R=\lambda/\Delta\lambda=Nm$$. For a small obstacle, use Babinet and treat it as the complementary hole.
 8. **Resolving two close sources through an aperture**: Rayleigh criterion $$\theta_{\min}=1.22\,\lambda/D$$.
 9. **Intensity through polarizers or polarization by reflection**: Malus's law $$I=I_0\cos^2\theta$$ (halve unpolarized light first); a middle polarizer can *increase* transmission by re-projecting the axis (three-polarizer $$\to I_0/8$$); Brewster's angle $$\tan\theta_B=n_2/n_1$$.
+:::
 
 Common traps:
 
+:::mistakes
 - **Sign conventions differ for mirrors, lenses, and single surfaces.** For lenses a real image sits on the *opposite* side from the object ($$d_i>0$$ there); for mirrors a real image is on the *same* side as the object. For the spherical-surface formula, $$R$$ is positive when the center of curvature lies on the outgoing-light side — the fish-bowl sign flip is the classic mistake. Diverging elements have $$f<0$$.
 - **Minimum deviation is symmetric.** The condition $$r_1=r_2=A/2$$ (not some random incidence) is what makes the prism formula valid; don't use it for an arbitrary ray.
 - **The rainbow caustic is a stationary point of deviation, not a single law.** You must set $$dD/di=0$$; the $$42^\circ$$ is where rays *bunch up*, and color order reverses between primary and secondary bows.
@@ -885,3 +916,4 @@ Common traps:
 - **Assuming a polarizer only removes light.** Inserting a polarizer between crossed ones lets light through, because each polarizer re-projects (rotates) the polarization onto its axis.
 - **Assuming interference without coherence.** Fringes require a stable phase relationship; two independent sources won't interfere.
 - **Treating $$\lambda\sim d$$ problems with ray optics (or vice versa).** Decide geometric vs. wave optics from the feature size before choosing equations.
+:::

@@ -96,9 +96,12 @@ $$
 
 Mathematical induction is a great way to prove statements $$P(n)$$ for all integers $$n \ge n_0$$ when you don't know how to derive it.
 
+:::strategy{title="Mathematical induction"}
 1. **Base case**: Verify $$P(n_0)$$ is true.
 2. **Inductive hypothesis**: Assume $$P(k)$$ holds for some $$k \ge n_0$$.
 3. **Inductive step**: Prove $$P(k+1)$$ follows from $$P(k)$$.
+:::
+
 fdf
 If the step needs several earlier cases, use strong induction: assume $$P(n_0),\ldots,P(k)$$ and deduce $$P(k+1)$$.
 
@@ -227,7 +230,9 @@ $$
 
 Then you still have to finish the job by showing the new expression is at least $$B_{k+1}$$.
 
+:::warning
 The most common mistake is stopping too early. It is not enough to use the induction hypothesis; you must land on the exact inequality for $$k+1$$.
+:::
 
 <div class="theorem-box">
 
@@ -314,6 +319,7 @@ So the statement is true for $$k+1$$. By induction, $$2^{n}\ge n^{2}$$ for all i
 
 ## Binomial Theorem
 
+:::key{name="Binomial Theorem"}
 For any nonnegative integer $$n$$,
 
 $$
@@ -321,6 +327,7 @@ $$
 $$
 
 where $$\displaystyle \binom{n}{k} = \frac{n!}{k!(n-k)!}$$ (read as “$$n$$ choose $$k$$”). For $$(a-b)^{n}$$, replace $$b$$ with $$-b$$ in the expansion.
+:::
 
 - Pascal’s triangle: rows give coefficients for $$(a+b)^{n}$$ (Pascal's Triangle starts at Row 0 by convention)
 - Symmetry: $$\binom{n}{k}=\binom{n}{n-k}$$

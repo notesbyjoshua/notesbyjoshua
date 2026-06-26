@@ -126,7 +126,11 @@ $$
 y=\sqrt{f(x)}
 $$
 
-is minimized at $$x=\frac12$$ because the square-root function is increasing, so the smallest legal value of $$f(x)$$ gives the smallest value of $$\sqrt{f(x)}$$. However, you have to be careful and always double-check your work for domain shifts or restrictions, since a function like $$\sqrt{(x-2.5)^2-5}$$ does not have a minimum at $$x=2.5$$ since it is not in the domain! In this case, the minimum are always the zeroes of the quadratic.
+is minimized at $$x=\frac12$$ because the square-root function is increasing, so the smallest legal value of $$f(x)$$ gives the smallest value of $$\sqrt{f(x)}$$.
+
+:::warning
+Always double-check your work for domain shifts or restrictions. A function like $$\sqrt{(x-2.5)^2-5}$$ does not have a minimum at $$x=2.5$$ since it is not in the domain! In this case, the minimum are always the zeroes of the quadratic.
+:::
 
 ---
 
@@ -318,8 +322,9 @@ So these statements all mean the same thing:
 
 ### Rational Root Theorem
 
-The **Rational Root Theorem** helps list possible rational zeros. The Rational Root Theorem states that:
+The **Rational Root Theorem** helps list possible rational zeros.
 
+:::key{name="Rational Root Theorem"}
 If
 
 $$
@@ -333,6 +338,7 @@ p\mid a_0
 \qquad\text{and}\qquad
 q\mid a_n.
 $$
+:::
 
 So possible rational zeros are
 
@@ -470,6 +476,10 @@ When solving out rational polynomials, always factor first. If a factor cancels,
 
 If a denominator factor does not cancel, it creates a **vertical asymptote**, where the values approach $$\pm \infinity$$.
 
+:::warning
+Don't confuse a hole with a vertical asymptote. A factor that cancels leaves a hole at that point, while a denominator factor that does not cancel gives a vertical asymptote.
+:::
+
 <div class="theorem-box">
 
 **Example.** Find the vertical asymptotes and holes of$$R(x)=\frac{(x-2)(x+1)}{(x-2)(x-3)}.$$
@@ -560,6 +570,7 @@ $$
 
 To graph a rational function:
 
+:::checklist
 1. Factor numerator and denominator.
 2. State the domain.
 3. Cancel common factors, but remember holes.
@@ -567,6 +578,7 @@ To graph a rational function:
 5. Find $$x$$- and $$y$$-intercepts.
 6. Find horizontal, slant, or polynomial asymptotes.
 7. Use sign charts and test points to place branches.
+:::
 
 When graphing, always list out these key features! They will make graphing the rational function much easier to do.
 
@@ -578,6 +590,7 @@ An **optimization** problem asks for the input that makes a quantity as large or
 
 The usual workflow is:
 
+:::strategy{title="Solving an optimization problem"}
 1. Decide what quantity you want to maximize or minimize.
 2. Draw a picture if the problem is geometric.
 3. Name variables.
@@ -585,6 +598,7 @@ The usual workflow is:
 5. State the allowed domain from the context.
 6. Find the maximum or minimum using algebra, graphing, or a calculator.
 7. Answer the original question with units and in context.
+:::
 
 <div class="theorem-box">
 

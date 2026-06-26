@@ -10,11 +10,15 @@ This unit is where derivatives become flexible. Instead of only differentiating 
 
 ## Chain rule
 
-If $$y = f(g(x))$$, then
+<div class="theorem-box">
+
+**Theorem (Chain Rule).** If $$y = f(g(x))$$, then
 
 $$
 \frac{dy}{dx} = f'(g(x))g'(x).
 $$
+
+</div>
 
 The outside derivative is evaluated at the inside function, and then multiplied by the derivative of the inside function.
 
@@ -76,13 +80,17 @@ So the tangent line at $$(3,4)$$ has slope $$-\frac34$$.
 
 ## Derivatives of inverse functions
 
-If $$f$$ is differentiable and invertible with $$f'(a) \ne 0$$, then
+<div class="theorem-box">
+
+**Theorem (Inverse Function Derivative).** If $$f$$ is differentiable and invertible with $$f'(a) \ne 0$$, then
 
 $$
 (f^{-1})'(b) = \frac{1}{f'(a)}
 $$
 
 where $$b = f(a)$$.
+
+</div>
 
 Equivalent formula:
 
@@ -191,13 +199,13 @@ Note that $$x^2+1>0$$ for all real $$x$$, so the absolute value is unnecessary h
 
 ## Related rates
 
-Strategy:
-
+:::strategy{title="Related rates"}
 1. Draw and label a diagram.
 2. Write an equation relating the variables.
 3. Differentiate implicitly with respect to time.
 4. Substitute the requested instant.
 5. Keep units consistent.
+:::
 
 > [Image Placeholder: ladder against wall with changing x and y distances]
 
@@ -443,7 +451,9 @@ The domain restriction is part of the meaning. For real-valued inverse sine and 
 
 ## Common mistakes
 
+:::mistakes
 - Forgetting to multiply by the derivative of the inside.
 - Treating $$y$$ as a constant during implicit differentiation.
 - Dropping the factor $$dy/dx$$.
 - Using inverse notation incorrectly: $$\sin^{-1}x$$ means $$\arcsin x$$, not $$1/\sin x$$.
+:::

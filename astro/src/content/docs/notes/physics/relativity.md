@@ -10,7 +10,12 @@ sidebar:
 
 ## Lorentz transformations
 
-Special relativity rests on two postulates: the laws of physics are the same in all inertial frames, and the speed of light $$c$$ is the same in all of them. The price is that space and time become entangled.
+Special relativity rests on two postulates. The price is that space and time become entangled.
+
+:::conditions
+- The laws of physics are the same in all inertial frames.
+- The speed of light $$c$$ is the same in all inertial frames.
+:::
 
 <div class="theorem-box">
 
@@ -123,7 +128,9 @@ Other useful four-vector facts:
 - The inner product of two momenta, $$p_1 \cdot p_2 = m_1 m_2/\sqrt{1 - v^2}$$, depends only on their **relative** speed $$v$$.
 - A system's **center-of-mass frame** is where total $$\mathbf{p} = 0$$; it moves at $$\mathbf{v} = \mathbf{p}c^2/E$$.
 
-> **On pop-science.** The slogan "everything moves through spacetime at speed $$c$$" (from $$u \cdot u = 1$$) is misleading — the minus signs in the inner product break the analogy to ordinary speed. Relativity makes sense *with* math and resists being made sense of without it.
+:::note
+**On pop-science.** The slogan "everything moves through spacetime at speed $$c$$" (from $$u \cdot u = 1$$) is misleading — the minus signs in the inner product break the analogy to ordinary speed. Relativity makes sense *with* math and resists being made sense of without it.
+:::
 
 ## Rapidity and acceleration
 
@@ -137,7 +144,9 @@ The payoff: **rapidities simply add** when you compose collinear boosts, $$\phi_
 
 For a rocket with constant **proper acceleration** $$a_0$$ (felt onboard), the lab-frame acceleration is $$a_0/\gamma^3$$, and the rapidity grows linearly with proper time: $$\phi = a_0\tau/c$$, so $$v = c\tanh(a_0\tau/c)$$. The clean linear growth is exactly the rapidity-addition property at work.
 
-> Because boosts in different directions don't commute, boosting an object around a closed loop induces a net rotation — **Thomas precession** (kinematically, **Wigner rotation**). It's why an orbiting object's spin axis slowly precesses even with no torque in its rest frame.
+:::note
+Because boosts in different directions don't commute, boosting an object around a closed loop induces a net rotation — **Thomas precession** (kinematically, **Wigner rotation**). It's why an orbiting object's spin axis slowly precesses even with no torque in its rest frame.
+:::
 
 ---
 
@@ -231,7 +240,9 @@ $$
 
 A "pure" force keeps the rest mass fixed, which requires $$f \cdot u = 0$$. (Putting a system on a stove changes its mass without changing momentum — a valid four-force, but not a "pure" one.)
 
-> **Avoid "relativistic mass."** Writing $$m_r = \gamma m$$ to get $$E = m_r c^2$$, $$\mathbf{p} = m_r\mathbf{v}$$ breaks down in 2D, since $$\mathbf{F}\not\parallel\mathbf{a}$$ means there's no single mass that recovers $$\mathbf{F}=m\mathbf{a}$$. You'd need separate transverse $$m_\perp = \gamma m$$ and longitudinal $$m_\parallel = \gamma^3 m$$. Just use $$E$$ and $$\mathbf{p}$$.
+:::warning
+**Avoid "relativistic mass."** Writing $$m_r = \gamma m$$ to get $$E = m_r c^2$$, $$\mathbf{p} = m_r\mathbf{v}$$ breaks down in 2D, since $$\mathbf{F}\not\parallel\mathbf{a}$$ means there's no single mass that recovers $$\mathbf{F}=m\mathbf{a}$$. You'd need separate transverse $$m_\perp = \gamma m$$ and longitudinal $$m_\parallel = \gamma^3 m$$. Just use $$E$$ and $$\mathbf{p}$$.
+:::
 
 ### The Lorentz force and circular motion
 
@@ -297,7 +308,9 @@ $$
 
 Consequences: if $$\mathbf{E}\perp\mathbf{B}$$ and $$\lvert E\rvert = c\lvert B\rvert$$ in one frame (a light wave), that holds in all frames. If $$\mathbf{E} = 0$$ but $$\mathbf{B}\neq 0$$ somewhere, no boost can make $$\mathbf{B}$$ vanish there (since $$E^2 - c^2B^2 < 0$$ is invariant).
 
-> **Is magnetism "real"?** Purcell famously shows magnetism *must* exist given Coulomb's law plus relativity: electric forces alone wouldn't transform correctly between frames, and the gap is exactly the magnetic force. But this does **not** mean magnetism is "just an error" or "all electric fields." You can sometimes trade one for the other by changing frames, but in any given frame both are perfectly real — and there are configurations (nonzero invariants) where you can't remove $$\mathbf{B}$$ at all. The lesson is that $$\mathbf{E}$$ and $$\mathbf{B}$$ are as inseparable as space and time.
+:::note
+**Is magnetism "real"?** Purcell famously shows magnetism *must* exist given Coulomb's law plus relativity: electric forces alone wouldn't transform correctly between frames, and the gap is exactly the magnetic force. But this does **not** mean magnetism is "just an error" or "all electric fields." You can sometimes trade one for the other by changing frames, but in any given frame both are perfectly real — and there are configurations (nonzero invariants) where you can't remove $$\mathbf{B}$$ at all. The lesson is that $$\mathbf{E}$$ and $$\mathbf{B}$$ are as inseparable as space and time.
+:::
 
 ### Covariant form
 
@@ -362,6 +375,7 @@ In general relativity gravity *is* spacetime curvature: freely falling objects m
 
 Match the question to the cleanest invariant or transformation before grinding through algebra:
 
+:::strategy{title="Choosing the right relativistic tool"}
 1. **Compare clocks, lengths, or event coordinates between two frames:** write the Lorentz transformation $$t' = \gamma(t - vx/c^2),\ x' = \gamma(x - vt)$$ and read off time dilation (one clock, two times $$\to \Delta t = \gamma\,\Delta\tau$$) or length contraction (two ends, one time $$\to L/\gamma$$). For anything labeled a "paradox," draw the relativity of simultaneity first: the rear clock leads by $$Lv/c^2$$.
 2. **Combine velocities or transform an emission angle:** use velocity addition $$u_x = \dfrac{u_x' + v}{1 + u_x' v/c^2}$$ (with the $$\gamma$$ in $$u_y$$), and aberration $$\cos\theta = \dfrac{\cos\theta_0 + v/c}{1 + (v/c)\cos\theta_0}$$ for light directions and beaming into the $$\sim 1/\gamma$$ cone.
 3. **Collisions, decays, or "find the unknown mass":** go to four-momenta. Conserve the total $$p^\mu = (E, \mathbf{p})$$, then take the norm $$p\cdot p = E^2 - \lvert\mathbf{p}\rvert^2 = m^2$$ in whatever frame is easiest. Work with $$E$$ and $$\mathbf{p}$$, never velocities.
@@ -370,9 +384,9 @@ Match the question to the cleanest invariant or transformation before grinding t
 6. **Accelerated / repeated-boost motion:** switch to rapidity $$\phi = \tanh^{-1}(v/c)$$, which simply adds. Constant proper acceleration gives $$v = c\tanh(a_0\tau/c)$$ and lab acceleration $$a_0/\gamma^3$$.
 7. **Forces or trajectories:** use $$\mathbf{F} = d\mathbf{p}/dt$$ (not $$m\mathbf{a}$$); transverse force drops by $$\gamma$$. For charges, the Lorentz force is a pure three-force, giving $$B = E/qcR$$ for a ring.
 8. **E and B in a moving frame:** transform the fields ($$\mathbf{E}_\parallel,\mathbf{B}_\parallel$$ fixed; $$\mathbf{E}_\perp' = \gamma(\mathbf{E}_\perp + \mathbf{v}\times\mathbf{B}_\perp)$$, etc.), or use the invariants $$\mathbf{E}\cdot\mathbf{B}$$ and $$E^2 - c^2B^2$$ to decide what *can't* be transformed away. For conserved quantities in fields, reach for the canonical momentum $$\mathbf{p} = \gamma m\mathbf{v} + q\mathbf{A}$$.
+:::
 
-**Common traps:**
-
+:::mistakes
 - Asking for the "real" length or time without naming a frame — every such quantity is frame-dependent; only $$m$$, $$p\cdot p$$, the interval $$(\Delta s)^2$$, and $$\mathbf{E}\cdot\mathbf{B}$$, $$E^2-c^2B^2$$ are invariant.
 - Forgetting simultaneity. Time dilation can be mutual precisely because the two frames disagree on which events are simultaneous; nearly every paradox dissolves once the $$Lv/c^2$$ offset is included.
 - Mixing up the directions: lengths *contract* (compared at one time), clocks *dilate* (compared at two times) — they are not symmetric statements.
@@ -380,3 +394,4 @@ Match the question to the cleanest invariant or transformation before grinding t
 - Treating rest mass as conserved. In inelastic processes $$E$$ and $$\mathbf{p}$$ are conserved but $$m$$ is not (a hot box weighs more); compute mass only from the total four-momentum's norm.
 - Adding velocities naively or letting any combination exceed $$c$$; add rapidities instead. Likewise, dropping the $$1/\gamma$$ second-order factor in the Doppler shift.
 - Invoking "relativistic mass" $$\gamma m$$ — it fails in 2D because $$\mathbf{F}\not\parallel\mathbf{a}$$. Stick to $$E$$ and $$\mathbf{p}$$.
+:::

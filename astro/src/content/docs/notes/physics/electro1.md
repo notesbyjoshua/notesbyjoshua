@@ -34,7 +34,9 @@ Charging by contact transfers charge directly. Charging by induction uses an ext
 
 ### Coulomb's law
 
-For point-like charges,
+<div class="theorem-box">
+
+**Theorem (Coulomb's Law).** For point-like charges,
 
 $$
 \vec F = k\frac{q_1q_2}{r^2}\hat r,
@@ -42,7 +44,13 @@ $$
 k=\frac{1}{4\pi\varepsilon_0}.
 $$
 
-The force is repulsive for like charges and attractive for opposite charges. In vector problems, do not only add magnitudes; use components or unit vectors and then apply superposition.
+</div>
+
+The force is repulsive for like charges and attractive for opposite charges.
+
+:::warning
+In vector problems, do not only add magnitudes; use components or unit vectors and then apply superposition.
+:::
 
 ### Electric field
 
@@ -163,11 +171,15 @@ $$
 
 ### Gauss's law
 
-Gauss's law states
+<div class="theorem-box">
+
+**Theorem (Gauss's Law).** The net electric flux through any closed surface equals the enclosed charge over $$\varepsilon_0$$,
 
 $$
 \oint \vec E\cdot d\vec A=\frac{Q_{\text{enc}}}{\varepsilon_0}.
 $$
+
+</div>
 
 It is always true, but it is only easy to use when symmetry makes $$E$$ constant on the useful parts of a Gaussian surface.
 
@@ -235,11 +247,13 @@ A continuous charge distribution is the same argument with the sum replaced by a
 
 </div>
 
+:::tip{title="Matching the Gaussian surface to the symmetry"}
 Good Gaussian surfaces match the symmetry:
 
 - sphere for spherical symmetry,
 - cylinder for infinite line/cylindrical symmetry,
 - pillbox for infinite plane symmetry.
+:::
 
 ### Standard Gaussian results
 
@@ -349,10 +363,12 @@ which lets you relate launch and landing angles of a field line between two char
 
 In a conductor at electrostatic equilibrium, charges have stopped moving macroscopically. Therefore:
 
+:::key{name="Conductor at electrostatic equilibrium"}
 - $$\vec E=0$$ inside the conducting material.
 - Excess charge lies on the conductor's surface.
 - The electric field just outside the surface is perpendicular to the surface.
 - Larger surface charge density means a stronger field just outside.
+:::
 
 If a tangential electric field existed on the surface, free charge would slide along the conductor, so equilibrium would not hold.
 
@@ -495,11 +511,13 @@ The surface of a conductor in equilibrium is itself an equipotential, which is e
 
 A few habits that save the most time on potential problems:
 
+:::tip{title="Potential problem habits"}
 - **Reach for the scalar first.** Potential adds without components, so $$V=k\int dq/r$$ is almost always easier than the field integral. If you ultimately need $$\vec E$$ on a symmetry axis, find $$V$$ and take $$-\nabla V$$ (as in the ring example above).
 - **Look for "constant $$r$$."** If every charge element is equidistant from the field point (e.g. the center of a ring, shell, arc, or hemisphere) the integral collapses to $$V=kQ/r$$ with no work.
 - **If you already have $$\vec E$$, integrate it, don't re-integrate $$dq$$.** Once Gauss's law has given $$\vec E$$, use $$\Delta V=-\int\vec E\cdot d\vec\ell$$ along the simplest path (usually radial, so $$\vec E\cdot d\vec\ell=E\,dr$$).
 - **Choose the reference to kill terms.** Use $$V(\infty)=0$$ for localized charge; for an infinite line or plane pick a convenient finite point and track only differences.
 - **Use continuity of $$V$$ as a free check.** When you stitch together piecewise regions (inside/outside a shell, across a boundary), the pieces must agree in value even where $$\vec E$$ jumps. A mismatch means an algebra error.
+:::
 
 <div class="theorem-box">
 
@@ -675,6 +693,7 @@ and the total induced charge on the grounded sphere is exactly $$q'=-(R/a)q$$.
 
 A short decision tree for which tool to pull off the shelf:
 
+:::strategy{title="Which electrostatics tool to use"}
 1. **A handful of discrete point charges, want force or field:** Coulomb's law $$\vec F=k\dfrac{q_1q_2}{r^2}\hat r$$ with vector superposition $$\vec E_{\text{net}}=\sum_i\vec E_i$$. Resolve into components or use symmetry to kill a direction before adding — never sum magnitudes.
 2. **The distribution has spherical, cylindrical, or planar symmetry:** Gauss's law $$\oint\vec E\cdot d\vec A=\dfrac{Q_{\text{enc}}}{\varepsilon_0}$$ with the matching Gaussian surface (sphere/cylinder/pillbox). Reach for the memorized shell, solid-sphere, line, and sheet ($$E=\sigma/2\varepsilon_0$$) results rather than re-deriving.
 3. **A continuous blob with no useful symmetry:** Integrate. Set $$dq=\lambda\,d\ell$$, $$\sigma\,dA$$, or $$\rho\,dV$$, pick good coordinates, project the surviving component, then integrate $$dE=k\,dq/r^2$$. You may need to do double or even triple integrals.
@@ -682,3 +701,4 @@ A short decision tree for which tool to pull off the shelf:
 5. **You need $$\vec E$$ on a symmetry axis, or any field where the geometry is messy:** Compute the scalar $$V=k\int dq/r$$ first (it adds without components), then take $$\vec E=-\nabla V$$. Watch for the "constant $$r$$" shortcut (ring/shell/arc) that makes the integral trivial.
 6. **A conductor is involved:** Inside, $$\vec E=0$$ and the surface is an equipotential; just outside, $$E=\sigma/\varepsilon_0$$ (perpendicular). For a charge near a grounded plane or sphere, replace the conductor with an image charge that pins the surface to $$V=0$$, then treat it as a point-charge problem.
 7. **You need total stored energy:** Pick the form that matches the symmetry — pairwise sum $$\dfrac{1}{4\pi\varepsilon_0}\sum_{i<j}\dfrac{q_iq_j}{r_{ij}}$$ (excludes self-energy), $$\tfrac12\int V\,dq$$ or "charge it up" $$\int V\,dq$$ (includes it), or the field integral $$\int\tfrac12\varepsilon_0E^2\,dV$$ when no symmetry helps with potentials.
+:::

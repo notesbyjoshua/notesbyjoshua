@@ -44,13 +44,15 @@ Chi-square tests are right-tailed: the p-value is the probability of getting a c
 
 ## Conditions For Chi-Square Tests
 
-Common conditions:
-
+:::conditions
 1. Counts come from a random sample, random assignment, or randomized process.
 2. Observations are independent. If sampling without replacement, check the 10% Condition.
 3. Expected counts are large enough. AP Statistics commonly uses: all expected counts are at least 5.
+:::
 
+:::warning
 Use counts, not proportions or percentages, in the chi-square statistic.
+:::
 
 ---
 
@@ -169,6 +171,7 @@ For two-way tables, store observed counts in a matrix, run the test, and inspect
 
 ## Working Checklist
 
+:::checklist
 1. Identify the test: goodness-of-fit, independence, or homogeneity.
 2. State hypotheses in context.
 3. Calculate expected counts and check conditions.
@@ -176,11 +179,13 @@ For two-way tables, store observed counts in a matrix, run the test, and inspect
 5. Find the right-tail p-value.
 6. Conclude in context.
 7. If significant, describe which categories/cells drive the result.
+:::
 
 ---
 
 ## Key Equations
 
+:::equations
 | Idea | Equation |
 | --- | --- |
 | Chi-square statistic | $$\chi^2=\sum \frac{(O-E)^2}{E}$$ |
@@ -188,6 +193,7 @@ For two-way tables, store observed counts in a matrix, run the test, and inspect
 | Two-way expected count | $$E=\frac{(\text{row total})(\text{column total})}{\text{grand total}}$$ |
 | GOF degrees of freedom | $$df=k-1$$ |
 | Two-way table degrees of freedom | $$df=(r-1)(c-1)$$ |
+:::
 
 ## Practice
 

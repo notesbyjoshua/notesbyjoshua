@@ -143,11 +143,13 @@ $$
 
 ### Empirical Rule
 
+:::key{name="Empirical Rule (68-95-99.7)"}
 For a normal distribution:
 
 - About $$68\%$$ of observations are within $$1$$ standard deviation of the mean.
 - About $$95\%$$ are within $$2$$ standard deviations.
 - About $$99.7\%$$ are within $$3$$ standard deviations.
+:::
 
 <img class="note-img note-img--w480" src="/assets/APs/AP%20Stats/samplingdistr/normal-curve.png" alt="Normal curve placeholder" loading="lazy" decoding="async" />
 
@@ -197,12 +199,14 @@ These probability models connect Unit 4 probability to sampling distributions an
 
 ### Binomial Distribution
 
-A **binomial distribution** counts successes in a fixed number of independent trials. Conditions:
+A **binomial distribution** counts successes in a fixed number of independent trials.
 
+:::conditions
 1. Binary outcomes: success or failure.
 2. Independent trials.
 3. Fixed number of trials $$n$$.
 4. Same probability of success $$p$$ on every trial.
+:::
 
 If $$X \sim \operatorname{Binomial}(n,p)$$, then
 
@@ -236,17 +240,20 @@ $$
 
 ## Working Checklist
 
+:::checklist
 1. Identify the statistic: $$\hat{p}$$, $$\bar{x}$$, a difference, or another statistic.
 2. State the parameter the statistic estimates.
 3. Check randomness and independence.
 4. Check normality conditions if using a normal approximation.
 5. Use the correct mean and standard deviation/standard error.
 6. Standardize with a z-score when needed.
+:::
 
 ---
 
 ## Key Equations
 
+:::equations
 | Idea | Equation |
 | --- | --- |
 | Sample proportion | $$\hat{p} = x/n$$ |
@@ -257,6 +264,7 @@ $$
 | z-score | $$z = (x-\mu)/\sigma$$ |
 | Binomial probability | $$P(X=k)=\binom{n}{k}p^k(1-p)^{n-k}$$ |
 | Geometric probability | $$P(X=k)=(1-p)^{k-1}p$$ |
+:::
 
 ## Practice
 

@@ -195,9 +195,11 @@ This new equation is not random. It is built from equations the solution already
 
 The allowed row operations are:
 
+:::key{name="Elementary row operations"}
 1. Multiply a row by a nonzero constant.
 2. Interchange two rows.
 3. Add a multiple of one row to another row.
+:::
 
 These operations do not change the solution set of the corresponding linear system.
 
@@ -648,6 +650,7 @@ $$
 \det(A)=ad-bc.
 $$
 
+:::key{name="Inverse of a 2×2 matrix"}
 If $$ad-bc\ne 0$$, then
 
 $$
@@ -661,6 +664,7 @@ d & -b\\
 $$
 
 If $$ad-bc=0$$, then the inverse does not exist.
+:::
 
 <div class="theorem-box">
 
@@ -1008,11 +1012,11 @@ Linear systems are predictable: two lines can meet once, never meet, or be the s
 
 The goal is still the same: find all ordered pairs that satisfy every equation. The difference is that the algebra often produces quadratics or higher-degree equations, so there may be multiple solutions.
 
-Common strategies:
-
+:::strategy{title="Nonlinear systems"}
 - Use substitution when one equation is easy to solve for one variable.
 - Use elimination when the nonlinear terms can be canceled.
 - Check all answers, especially after squaring or multiplying by expressions involving variables.
+:::
 
 <div class="theorem-box">
 
@@ -1073,13 +1077,13 @@ Equations usually describe boundaries: lines, circles, parabolas, and so on. Ine
 
 For example, $$y>2x+1$$ means all points above the line $$y=2x+1$$. The line itself is not included because the inequality is strict. In contrast, $$y\ge 2x+1$$ includes the line.
 
-To graph a linear inequality:
-
+:::strategy{title="Graphing a linear inequality"}
 1. Graph the boundary line.
 2. Use a solid line for $$\le$$ or $$\ge$$.
 3. Use a dashed line for $$<$$ or $$>$$.
 4. Shade the side that satisfies the inequality.
 5. Repeat for every inequality; the solution is the overlap.
+:::
 
 <div class="theorem-box">
 

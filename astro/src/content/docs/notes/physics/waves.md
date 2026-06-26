@@ -10,7 +10,11 @@ sidebar:
 
 ## Wave definition
 
-A **wave** is a disturbance that transports energy and momentum through a medium (or through space) without any net transport of matter. The particles of the medium oscillate about fixed equilibrium positions; it is the *pattern* of disturbance that travels.
+<div class="theorem-box">
+
+**Definition (Wave).** A **wave** is a disturbance that transports energy and momentum through a medium (or through space) without any net transport of matter. The particles of the medium oscillate about fixed equilibrium positions; it is the *pattern* of disturbance that travels.
+
+</div>
 
 - In a **transverse** wave the medium oscillates perpendicular to the direction of propagation (a wave on a string, light).
 - In a **longitudinal** wave the medium oscillates along the direction of propagation (sound, compression waves in a spring).
@@ -49,9 +53,15 @@ $$
 
 Both forms satisfy the **wave equation**, the partial differential equation every nondispersive wave obeys:
 
+<div class="theorem-box">
+
+**Theorem (Wave equation).** Every nondispersive wave $$y(x,t)$$ obeys
+
 $$
 \frac{\partial^2 y}{\partial x^2} = \frac{1}{v^2}\frac{\partial^2 y}{\partial t^2}.
 $$
+
+</div>
 
 USAPhO will not require you to solve these types of equations, but it is good to know the general solutions.
 
@@ -97,7 +107,11 @@ $$
 u_y = \frac{\partial y}{\partial t} = -\omega A\cos(kx - \omega t + \phi),
 $$
 
-with maximum magnitude $$\omega A$$. These are completely different quantities — do not confuse them.
+with maximum magnitude $$\omega A$$.
+
+:::warning
+The **wave speed** $$v$$ and the **transverse velocity** $$u_y$$ are completely different quantities — do not confuse them. $$v$$ is how fast the pattern moves; $$u_y$$ is how fast a single point on the string moves up and down.
+:::
 
 ## Waves on a string
 
@@ -157,13 +171,17 @@ The energy is split between **kinetic** energy (transverse motion) and **potenti
 
 ## Superposition and interference
 
-When two or more waves overlap in a linear medium, the net disturbance is the **sum** of the individual disturbances:
+<div class="theorem-box">
+
+**Theorem (Principle of superposition).** When two or more waves overlap in a linear medium, the net disturbance is the **sum** of the individual disturbances:
 
 $$
 y_{\text{net}} = y_1 + y_2 + \cdots
 $$
 
-This **principle of superposition** is what makes interference possible. For two waves of equal amplitude and frequency differing in phase by $$\delta$$,
+</div>
+
+This is what makes interference possible. For two waves of equal amplitude and frequency differing in phase by $$\delta$$,
 
 $$
 y = A\sin(kx-\omega t) + A\sin(kx-\omega t+\delta)
@@ -318,11 +336,15 @@ Musicians tune by listening for the beats to slow to zero.
 
 ## The Doppler effect
 
-When source and observer move relative to the medium, the observed frequency shifts. With all speeds measured relative to the medium,
+<div class="theorem-box">
+
+**Theorem (Doppler effect).** When source and observer move relative to the medium, the observed frequency shifts. With all speeds measured relative to the medium,
 
 $$
 f' = f\,\frac{v \pm v_{\text{obs}}}{v \mp v_{\text{src}}}.
 $$
+
+</div>
 
 The sign rule that never fails: *choose signs so that approach raises the pitch and recession lowers it.* Concretely, the top sign (numerator $$+$$, denominator $$-$$) applies when the motion is *toward* the other party.
 
@@ -414,6 +436,7 @@ There is now a **minimum frequency** $$\omega_0$$: drive the string below it and
 
 Match the situation to the right tool before reaching for algebra:
 
+:::strategy{title="Choosing the right wave tool"}
 1. **A pulse or wave travels through a medium and you want its speed**: use the "restoring force over inertia" template — $$v=\sqrt{T/\mu}$$ on a string, $$v=\sqrt{B/\rho}=\sqrt{\gamma RT/M}$$ for sound, $$v=\sqrt{gD}$$ in shallow water. If the tension (hence speed) varies along the path, integrate $$\tau=\int dx/v(x)$$, as for the hanging rope.
 2. **The medium is confined between boundaries (string or pipe)**: it is a normal-mode problem. Fit half-wavelengths to the boundary conditions — node at a fixed/closed end, antinode at a free/open end — to get $$\lambda_n=2L/n$$, $$f_n=nv/2L$$ for symmetric ends, or the odd-only series $$f_n=(2n-1)v/4L$$ for open–closed.
 3. **Two waves overlap and you want loud/quiet spots**: superpose. Convert any path-length difference to phase via $$\delta=\tfrac{2\pi}{\lambda}\Delta r$$; constructive at $$\Delta r=m\lambda$$, destructive at $$\Delta r=(m+\tfrac12)\lambda$$, net amplitude $$2A\cos\tfrac{\delta}{2}$$.
@@ -422,12 +445,13 @@ Match the situation to the right tool before reaching for algebra:
 6. **A wave hits an interface and you want reflection/transmission**: use impedance $$Z=\mu v=\sqrt{\mu T}$$ with $$r=\dfrac{Z_1-Z_2}{Z_1+Z_2}$$, $$t=\dfrac{2Z_1}{Z_1+Z_2}$$; inversion ($$r<0$$) means a hard/denser boundary, and $$Z_1=Z_2$$ gives zero reflection.
 7. **Intensity, loudness, or how amplitude falls with distance**: spread power over the wavefront, $$I=P/4\pi r^2$$ (so amplitude $$\propto 1/r$$), and convert to decibels with $$\beta=10\log_{10}(I/I_0)$$.
 8. **The medium is dispersive (water waves, springs-loaded string, anything with $$\omega(k)$$ not $$\propto k$$)**: distinguish $$v_p=\omega/k$$ from $$v_g=d\omega/dk$$. Differentiate the dispersion relation for the group (energy/packet) speed, and remember a pulse of width $$\Delta x$$ needs a band $$\Delta k\sim 1/\Delta x$$.
+:::
 
-Common traps:
-
+:::mistakes
 - **Wave speed vs. transverse speed.** $$v$$ is how fast the pattern moves; a point on the string moves at $$u_y=\partial y/\partial t$$ with max $$\omega A$$. They are unrelated quantities.
 - **Pipe-end rules in longitudinal waves.** Track *which* quantity the boundary pins: a hard wall is a displacement node but a pressure antinode; an open end is a pressure node but a displacement antinode. Do not assume "hard = inverted" the way you would for a string.
 - **Open–closed pipe harmonics.** Only odd harmonics exist ($$f_n=(2n-1)v/4L$$); there is no second harmonic — a frequent source of wrong mode spacings.
 - **Doppler sign confusion.** Speeds are measured relative to the *medium*, and source vs. observer motion enter through different parts of the fraction. Sanity-check with "approach raises pitch" rather than memorizing $$\pm$$.
 - **Standing waves carry no net energy.** They are not traveling waves; the kinetic–potential equipartition that holds for a traveling wave fails here, and power does not flow past a node.
 - **Sound speed and pressure.** For an ideal gas $$v$$ depends on temperature, not pressure, since $$P/\rho\propto T$$ — raising the pressure at fixed $$T$$ does nothing.
+:::

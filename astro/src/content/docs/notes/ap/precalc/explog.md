@@ -104,7 +104,9 @@ $$
 y=k.
 $$
 
+:::tip
 A good idea is to always plot a couple of integer points to start with.
+:::
 
 <div class="theorem-box">
 
@@ -409,39 +411,41 @@ The natural logarithm has domain $$(0,\infty)$$, range $$(-\infty,\infty)$$, ver
 
 Logarithm rules come from exponent rules. For $$M>0$$, $$N>0$$, and valid base $$b$$:
 
-- **Product rule**:
+:::key{name="Logarithm properties"}
+**Product rule:**
 
 $$
 \log_b(MN)=\log_b M+\log_b N.
 $$
 
-- **Quotient rule**:
+**Quotient rule:**
 
 $$
 \log_b\left(\frac{M}{N}\right)=\log_b M-\log_b N.
 $$
 
-- **Power rule**:
+**Power rule:**
 
 $$
 \log_b(M^r)=r\log_b M.
 $$
 
-- **Change of base**:
+**Change of base:**
 
 $$
 \log_b M=\frac{log_a M}{log_a b}.
 $$
 
-for some valid base $$a$$. It is often convenient on the calculator to change to base $$10$$ or base $$e$$.
+for some valid base $$a$$.
+:::
 
-These rules only apply when every logarithm is defined. For example, do not split
+It is often convenient on the calculator to change to base $$10$$ or base $$e$$.
 
-$$
-\ln(a+b)
-$$
+These rules only apply when every logarithm is defined.
 
-as $$\ln a+\ln b$$. There is no sum rule for logarithms.
+:::warning
+Do not split $$\ln(a+b)$$ as $$\ln a+\ln b$$. There is no sum rule for logarithms.
+:::
 
 <div class="theorem-box">
 
@@ -558,11 +562,15 @@ $$
 
 There are three common strategies:
 
+:::strategy{title="Solving exponential and logarithmic equations"}
 1. If the bases match, set exponents equal.
 2. If the bases do not match, take logs of both sides.
 3. If logs are involved, rewrite as exponentials or combine logs first.
+:::
 
+:::warning
 Always check domain restrictions when logarithms appear.
+:::
 
 ### Exponential equations
 
@@ -736,7 +744,9 @@ $$
 
 </div>
 
+:::warning
 If the logarithm base is between $$0$$ and $$1$$, remember that the logarithm is decreasing, so inequalities reverse when you compare inputs.
+:::
 
 ---
 

@@ -163,7 +163,9 @@ diverges. The terms shrink to zero, but not fast enough for the sum to stay fini
 
 ## Integral Test
 
-If $$f(x)$$ is positive, continuous, and decreasing for large $$x$$ with $$f(n)=a_n$$, then
+<div class="theorem-box">
+
+**Theorem (Integral Test).** If $$f(x)$$ is positive, continuous, and decreasing for large $$x$$ with $$f(n)=a_n$$, then
 
 $$
 \sum a_n
@@ -176,6 +178,8 @@ $$
 $$
 
 either both converge or both diverge.
+
+</div>
 
 ---
 
@@ -234,10 +238,14 @@ $$
 
 with $$b_n > 0$$.
 
-The Alternating Series Test says the series converges if:
+<div class="theorem-box">
+
+**Theorem (Alternating Series Test).** The series converges if:
 
 - $$b_n$$ decreases eventually,
 - $$b_n \to 0$$.
+
+</div>
 
 <div class="theorem-box">
 
@@ -327,7 +335,9 @@ Since $$L=0<1$$, the Ratio Test guarantees the series converges absolutely. (Thi
 
 ## nth-term test for divergence
 
-If
+<div class="theorem-box">
+
+**Theorem (nth-Term Test for Divergence).** If
 
 $$
 \lim_{n \to \infty} a_n \ne 0
@@ -340,6 +350,8 @@ $$
 $$
 
 diverges.
+
+</div>
 
 <div class="theorem-box">
 
@@ -665,7 +677,9 @@ For AP work, always state the test used and enough hypothesis information to jus
 
 ## Common mistakes
 
+:::mistakes
 - Forgetting that $$a_n \to 0$$ is necessary but not sufficient.
 - Using a convergence test whose hypotheses do not apply.
 - Stopping after finding the radius of convergence without testing endpoints.
 - Mixing up absolute and conditional convergence.
+:::

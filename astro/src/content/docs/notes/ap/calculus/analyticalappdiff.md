@@ -30,11 +30,15 @@ Sign charts are the cleanest way to justify interval behavior.
 
 ## First Derivative Test
 
-If $$f'$$ changes:
+<div class="theorem-box">
+
+**Theorem (First Derivative Test).** If $$f'$$ changes:
 
 - positive to negative at $$c$$: local maximum,
 - negative to positive at $$c$$: local minimum,
 - no sign change: neither.
+
+</div>
 
 <div class="theorem-box">
 
@@ -77,11 +81,15 @@ An inflection point is a point where concavity changes.
 
 ## Second Derivative Test
 
-If $$f'(c)=0$$ and:
+<div class="theorem-box">
+
+**Theorem (Second Derivative Test).** If $$f'(c)=0$$ and:
 
 - $$f''(c)>0$$, then $$f$$ has a local minimum at $$c$$,
 - $$f''(c)<0$$, then $$f$$ has a local maximum at $$c$$,
 - $$f''(c)=0$$, the test is inconclusive.
+
+</div>
 
 <div class="theorem-box">
 
@@ -115,10 +123,12 @@ Since $$f''(2)>0$$, there is a local minimum at $$x=2$$, with $$f(2)=8-24=-16$$.
 
 To find absolute max/min of $$f$$ on $$[a,b]$$:
 
-1. Find critical points inside $$ (a,b) $$.
+:::checklist
+1. Find critical points inside $$(a,b)$$.
 2. Evaluate $$f$$ at each critical point.
 3. Evaluate $$f(a)$$ and $$f(b)$$.
 4. Compare all values.
+:::
 
 <div class="theorem-box">
 
@@ -144,11 +154,15 @@ Comparing the candidate values, the absolute maximum is $$2$$ at $$x=2$$, and th
 
 ## Mean Value Theorem
 
-If $$f$$ is continuous on $$[a,b]$$ and differentiable on $$(a,b)$$, then there exists $$c \in (a,b)$$ such that
+<div class="theorem-box">
+
+**Theorem (Mean Value Theorem).** If $$f$$ is continuous on $$[a,b]$$ and differentiable on $$(a,b)$$, then there exists $$c \in (a,b)$$ such that
 
 $$
 f'(c) = \frac{f(b)-f(a)}{b-a}.
 $$
+
+</div>
 
 Rolle's Theorem is the special case where $$f(a)=f(b)$$.
 
@@ -196,13 +210,13 @@ A solid derivative-based sketch includes:
 
 ## Optimization
 
-Standard process:
-
+:::strategy{title="Optimization"}
 1. Identify the quantity to optimize.
 2. Write it as a function of one variable.
 3. Determine the feasible domain.
 4. Differentiate and find critical points.
 5. Test candidates and interpret.
+:::
 
 <div class="theorem-box">
 
@@ -238,7 +252,9 @@ $$
 
 ## L'Hopital's Rule
 
-If a limit produces $$0/0$$ or $$\infty/\infty$$ and the hypotheses are satisfied, then
+<div class="theorem-box">
+
+**Theorem (L'Hopital's Rule).** If a limit produces $$0/0$$ or $$\infty/\infty$$ and the hypotheses are satisfied, then
 
 $$
 \lim_{x \to a} \frac{f(x)}{g(x)}
@@ -247,6 +263,8 @@ $$
 $$
 
 provided the new limit exists in a usable way.
+
+</div>
 
 <div class="theorem-box">
 
@@ -361,8 +379,10 @@ The Mean Value Theorem says that under the right smoothness conditions, some ins
 
 The hypotheses are essential:
 
+:::conditions
 - continuous on $$[a,b]$$,
 - differentiable on $$(a,b)$$.
+:::
 
 If either hypothesis fails, the theorem may not apply, even if the conclusion happens to be true.
 
@@ -410,7 +430,9 @@ The method works best when the starting guess is close to the root and the deriv
 
 ## Common mistakes
 
+:::mistakes
 - Calling every critical point an extremum.
 - Using the second derivative test when $$f'(c) \ne 0$$.
 - Forgetting endpoints in absolute-extrema problems.
 - Claiming an inflection point from $$f''=0$$ without checking concavity change.
+:::

@@ -20,12 +20,12 @@ If an initial condition is given, such as $$y(1)=5$$, you solve for the constant
 
 A slope field shows small line segments representing $$dy/dx$$ at many points.
 
-To analyze a slope field:
-
+:::strategy{title="Analyzing a slope field"}
 - look for where slopes are zero,
 - look for where slopes are positive/negative,
 - identify equilibrium solutions,
 - sketch a solution curve that follows the segment directions.
+:::
 
 > [Image Placeholder: slope field with equilibrium solution and sample integral curves]
 
@@ -441,7 +441,9 @@ When differentiating, remember that $$y$$ depends on $$x$$. After finding $$d^2y
 
 ## Common mistakes
 
+:::mistakes
 - Separating variables incorrectly.
 - Forgetting the constant of integration.
 - Solving for the constant before using the initial condition carefully.
 - Sketching slope-field solutions that cross each other or violate the displayed slope directions.
+:::

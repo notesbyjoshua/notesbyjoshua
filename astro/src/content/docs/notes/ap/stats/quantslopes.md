@@ -39,11 +39,13 @@ The parameter of interest in AP Statistics is usually $$\beta$$, the true slope 
 
 Use the acronym **LINER**:
 
+:::conditions
 1. **Linear**: scatterplot and residual plot show an approximately linear relationship.
 2. **Independent**: observations are independent; if sampling without replacement, check the 10% Condition.
 3. **Normal**: residuals are approximately normally distributed for each value of $$x$$.
 4. **Equal variance**: vertical spread of residuals is roughly constant across $$x$$.
 5. **Random**: data come from a random sample or randomized experiment.
+:::
 
 <img class="note-img note-img--w480" src="/assets/APs/AP%20Stats/quantslopes/regression-residuals.png" alt="Regression residual plots placeholder" loading="lazy" decoding="async" />
 
@@ -166,6 +168,7 @@ from the regression output.
 
 ## Working Checklist
 
+:::checklist
 1. Identify the explanatory variable $$x$$ and response variable $$y$$.
 2. State the parameter $$\beta$$ in context.
 3. Check LINER conditions using plots and study design.
@@ -173,11 +176,13 @@ from the regression output.
 5. Compute the confidence interval or t-test for slope.
 6. Interpret slope in units of $$y$$ per one unit of $$x$$.
 7. Avoid causal language unless the data come from a randomized experiment.
+:::
 
 ---
 
 ## Key Equations
 
+:::equations
 | Idea | Equation |
 | --- | --- |
 | Population model | $$Y=\alpha+\beta x+\epsilon$$ |
@@ -186,6 +191,7 @@ from the regression output.
 | Confidence interval for slope | $$b\pm t^*SE_b$$ |
 | Test statistic for slope | $$t=(b-0)/SE_b$$ |
 | Degrees of freedom | $$df=n-2$$ |
+:::
 
 ## Practice
 

@@ -141,10 +141,12 @@ $$
 
 **STP** (standard temperature and pressure) is commonly taken as $$0^\circ\text{C}$$ ($$273.15 \text{ K}$$) and $$1 \text{ atm}$$, with  one mole of an ideal gas under those conditions occupies about $$22.4 \text{ L}$$ (Modern IUPAC defines a slightly different standard pressure, but for AP chemistry purposes this is the standard pressure). For the remainder of the unit and AP Chemistry, we will use the following notations, along with their standard units:
 
+:::variables
 - $$P$$ = pressure (in atm, mmHg, torr, kPa, bar, or psi)
 - $$V$$ = volume (L)
 - $$n$$ = number of moles (mol)
 - $$T$$ = temperature (Kelvin)
+:::
 
 ---
 

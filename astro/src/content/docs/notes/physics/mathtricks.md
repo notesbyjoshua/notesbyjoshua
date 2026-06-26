@@ -110,7 +110,11 @@ A vector $$\vec a$$ has components $$\vec a=(a_x,a_y,a_z)=a_x\hat i+a_y\hat j+a_
 
 ### Dot product
 
-**Definition**: The dot product is one way to multiply two vectors, and result in a scalar quantity. The formula is given by: $$\vec a \cdot \vec b = a_x b_x + a_y b_y + a_z b_z$$
+<div class="theorem-box">
+
+**Definition (Dot product).** The dot product is one way to multiply two vectors, and result in a scalar quantity. The formula is given by: $$\vec a \cdot \vec b = a_x b_x + a_y b_y + a_z b_z$$
+
+</div>
 
 **Properties**:
 
@@ -125,13 +129,17 @@ The geometric meaning is **projection**: $$\vec a\cdot\hat b$$ is the component 
 
 ### Cross product
 
-**Definition**: The cross product is one way to multiply two vectors, and result in another vector, whose direction is perpendicular to the first two. You find the direction based on the right-hand rule (as described in AP Physics C). The formula is given by the determinant
+<div class="theorem-box">
+
+**Definition (Cross product).** The cross product is one way to multiply two vectors, and result in another vector, whose direction is perpendicular to the first two. You find the direction based on the right-hand rule (as described in AP Physics C). The formula is given by the determinant
 
 $$
 \vec a\times\vec b=
 \begin{vmatrix}\hat i&\hat j&\hat k\\ a_x&a_y&a_z\\ b_x&b_y&b_z\end{vmatrix}
 =(a_yb_z-a_zb_y)\,\hat i+(a_zb_x-a_xb_z)\,\hat j+(a_xb_y-a_yb_x)\,\hat k.
 $$
+
+</div>
 
 **Properties**:
 
@@ -172,6 +180,7 @@ The meta-skill is **pattern recognition**: rearrange the physics into one of the
 
 Once the physics is set up, the question becomes *which mathematical tool to reach for*. A quick decision tree:
 
+:::strategy{title="Which mathematical tool to reach for"}
 1. **A small parameter appears** (a ratio $$x\ll 1$$, a tiny angle, $$v\ll c$$): linearize with the small-value approximations, leading with $$(1+x)^n\approx 1+nx$$. Factor out the large quantity *first* so the leftover is genuinely small.
 2. **You need the next correction, or are near an equilibrium**: Taylor/Maclaurin expand, $$f(x)=f(0)+f'(0)x+\tfrac12 f''(0)x^2+\cdots$$. For small oscillations keep the quadratic term and read off $$\omega=\sqrt{U''(x_0)/m}$$; otherwise the linear term usually suffices.
 3. **A linear ODE with constant coefficients** (oscillations, AC circuits, driven systems): recognize the standard form. Restoring force linear in displacement gives $$\ddot x=-\omega^2 x$$; a single decay/growth rate gives $$\dot y=-ky$$. Write down the known solution instead of re-deriving it.
@@ -179,12 +188,13 @@ Once the physics is set up, the question becomes *which mathematical tool to rea
 5. **A nonlinear or "rate" ODE**: try separation of variables, $$\int dy/g(y)=\int f(t)\,dt$$, then integrate. Handles nonlinear drag, draining tanks, and most rate problems.
 6. **An integral that looks hopeless**: check symmetry first (an odd integrand on a symmetric interval is zero), then try substitution (spot an inner function whose derivative is present), then integration by parts $$\int u\,dv=uv-\int v\,du$$. Recognize the named forms — Gaussian and Gamma — on sight.
 7. **A quantity with direction**: use the dot product when you want "how much of one vector lies along another" (work, flux, projection); use the cross product when a lever arm or right-hand rule is involved (torque, angular momentum, magnetic force).
+:::
 
-**Common traps:**
-
+:::mistakes
 - Expanding *before* factoring out the large quantity, so the "small" term isn't actually small and the approximation is invalid.
 - Keeping only the linear Taylor term for an oscillation problem — at a potential minimum $$U'(x_0)=0$$, so the quadratic term is the *leading* one and dropping it loses all the physics.
 - Forgetting to take $$\mathrm{Re}(\cdots)$$ at the end of a complex-exponential calculation, or mixing real and complex amplitudes midway.
 - Treating the cross product as commutative: $$\vec b\times\vec a=-\vec a\times\vec b$$, and order matters for the right-hand-rule direction.
 - Reaching for brute-force integration when a symmetry argument or a standard form kills the integral instantly.
 - Misidentifying the ODE pattern — e.g. forcing a separable or nonlinear equation into the $$\ddot x=-\omega^2x$$ mold and quoting a sinusoid that doesn't apply.
+:::

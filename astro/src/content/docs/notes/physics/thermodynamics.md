@@ -10,7 +10,11 @@ This page is written in collaboration with Michael Zhao.
 
 ## Temperature and the Zeroth Law of Thermodynamics
 
-The **Zeroth Law of Thermodynamics** states that if systems $$A$$ and $$B$$ are each in thermal equilibrium with a third system $$C$$, then $$A$$ and $$B$$ are in thermal equilibrium with each other.
+<div class="theorem-box">
+
+**Theorem (Zeroth Law of Thermodynamics).** If systems $$A$$ and $$B$$ are each in thermal equilibrium with a third system $$C$$, then $$A$$ and $$B$$ are in thermal equilibrium with each other.
+
+</div>
 
 This is what lets temperature be a well-defined property: a thermometer (system $$C$$) can be used to compare any two systems. Two systems placed in thermal contact eventually reach the same temperature.
 
@@ -78,11 +82,15 @@ So a gap of about $$11\text{ mm}$$ is needed. Note that we used the installed le
 
 ## The Ideal Gas
 
-The ideal gas law ties together pressure, volume, temperature, and amount of gas:
+<div class="theorem-box">
+
+**Theorem (Ideal Gas Law).** Pressure, volume, temperature, and amount of gas are tied together by
 
 $$
 PV = nRT = Nk_BT.
 $$
+
+</div>
 
 Here
 
@@ -349,13 +357,21 @@ The excess temperature decays exponentially. This is **Newton's Law of Cooling**
 
 ## The First Law of Thermodynamics
 
-Energy is conserved when we count both heat and work:
+<div class="theorem-box">
+
+**Theorem (First Law of Thermodynamics).** Energy is conserved when we count both heat and work:
 
 $$
 \Delta E_{\text{int}} = Q + W.
 $$
 
-In this sign convention, $$Q$$ is the heat added *to* the system and $$W$$ is the work done *on* the system, so both positive $$Q$$ and positive $$W$$ raise the internal energy. (Some texts write $$\Delta E_{\text{int}} = Q - W$$ with $$W$$ as work done *by* the gas; be careful which convention a problem uses.)
+</div>
+
+In this sign convention, $$Q$$ is the heat added *to* the system and $$W$$ is the work done *on* the system, so both positive $$Q$$ and positive $$W$$ raise the internal energy.
+
+:::warning
+Some texts write $$\Delta E_{\text{int}} = Q - W$$ with $$W$$ as work done *by* the gas; be careful which convention a problem uses.
+:::
 
 ### Work done on a gas
 
@@ -558,11 +574,15 @@ Specializing: $$\Delta S = nR\ln(V_f/V_i)$$ for an isothermal process, $$nC_V\ln
 
 To find $$\Delta S$$ for an **irreversible** process (like free expansion), invent any reversible process connecting the same two states and compute $$\Delta S$$ along it — since $$S$$ is a state function, the answer carries over.
 
-The **Second Law of Thermodynamics** states that in a closed system entropy never decreases:
+<div class="theorem-box">
+
+**Theorem (Second Law of Thermodynamics).** In a closed system entropy never decreases:
 
 $$
 \Delta S \ge 0,
 $$
+
+</div>
 
 with equality only for reversible processes. Equivalently, heat flows spontaneously from hot to cold, and energy does not spontaneously concentrate.
 
@@ -608,11 +628,17 @@ $$
 \frac{\lvert Q_H\rvert}{T_H} = \frac{\lvert Q_L\rvert}{T_L}.
 $$
 
-Substituting into the efficiency gives the **Carnot efficiency**
+Substituting into the efficiency gives the result below.
+
+<div class="theorem-box">
+
+**Theorem (Carnot efficiency).** A reversible engine operating between reservoirs at $$T_H$$ and $$T_L$$ has efficiency
 
 $$
 \epsilon = 1 - \frac{T_L}{T_H}.
 $$
+
+</div>
 
 No engine operating between two reservoirs can beat this, because the Carnot cycle is fully reversible — no energy is lost to friction, turbulence, or unrestrained heat conduction.
 
@@ -718,6 +744,7 @@ A "spread out" configuration has higher multiplicity, hence higher entropy, than
 
 Read the process first, then pick the constraint that turns the first law into something solvable:
 
+:::strategy{title="Pick the constraint, then apply the first law"}
 1. **Heating/cooling or a phase change, no gas process**: Stack $$Q = mc\,\Delta T$$ for each temperature change and $$Q = Lm$$ for each phase change, and add (do the stages separately — never melt and warm in one step). For mixtures set $$\sum Q = 0$$.
 2. **Conduction / steady-state heat flow**: Use $$H = kA(T_H - T_L)/L$$, treat layers as thermal resistances $$R = L/k$$ in series (add $$L_i/k_i$$) and areas in parallel; the same $$H$$ flows through every series layer.
 3. **A named gas process**: Apply $$\Delta E_{\text{int}} = Q + W$$ with the matching constraint — isochoric $$W=0$$, isobaric $$W=-p\,\Delta V$$, isothermal $$\Delta E_{\text{int}}=0$$ so $$W=-nRT\ln(V_f/V_i)$$, adiabatic $$Q=0$$ with $$pV^\gamma=\text{const}$$ and $$W=(p_fV_f-p_iV_i)/(\gamma-1)$$. Always $$\Delta E_{\text{int}} = nC_V\Delta T$$.
@@ -725,12 +752,13 @@ Read the process first, then pick the constraint that turns the first law into s
 5. **Kinetic-theory / microscopic quantity**: Use $$\tfrac12 m\langle v^2\rangle = \tfrac32 k_BT$$, $$v_{\text{rms}}=\sqrt{3RT/M}$$ (and the $$v_p:v_{\text{av}}:v_{\text{rms}} = 1:1.128:1.225$$ ratio), $$E_{\text{int}}=\tfrac f2 nRT$$ with the right $$f$$, or mean free path $$\lambda = k_BT/(\sqrt2\,\pi d^2 p)$$.
 6. **Entropy change**: $$\Delta S = \int dQ/T$$; for an ideal gas use $$\Delta S = nC_V\ln(T_f/T_i) + nR\ln(V_f/V_i)$$. For an irreversible process (free expansion), invent any reversible path between the same endpoints.
 7. **Engine, refrigerator, or heat pump**: $$\epsilon = \lvert W\rvert/\lvert Q_H\rvert = 1 - \lvert Q_L\rvert/\lvert Q_H\rvert$$; for the reversible bound use $$\epsilon_{\text{Carnot}} = 1 - T_L/T_H$$, and $$K_L = T_L/(T_H-T_L)$$, $$K_H = T_H/(T_H-T_L) = K_L+1$$.
+:::
 
-**Common traps:**
-
+:::mistakes
 - Sign convention: this page uses $$\Delta E_{\text{int}} = Q + W$$ with $$W$$ done *on* the gas, so gas expansion gives $$W<0$$. Check which convention a problem uses before plugging in.
 - $$Q = nC_V\Delta T$$ only at constant volume and $$Q = nC_p\Delta T$$ only at constant pressure, but $$\Delta E_{\text{int}} = nC_V\Delta T$$ holds for *any* ideal-gas process.
 - Carnot formulas need absolute (Kelvin) temperatures and apply only to a reversible engine between exactly two reservoirs — a Stirling or any real engine falls short of $$1-T_L/T_H$$.
 - Use the right degrees of freedom $$f$$ (3 monatomic, 5 diatomic, 6 nonlinear polyatomic); the wrong $$f$$ corrupts $$C_V$$, $$C_p$$, and $$\gamma$$.
 - Entropy is a state function but $$\int dQ/T$$ only works along a *reversible* path; never integrate it along the actual irreversible process.
 - In thermal-expansion problems a hole gets *larger* when heated, and only the temperature *change* matters — $$^\circ\text{C}$$ and K give the same $$\Delta T$$.
+:::

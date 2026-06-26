@@ -494,7 +494,9 @@ After doing the component work, interpret the result as a vector, speed, distanc
 
 ## Common mistakes
 
+:::mistakes
 - Forgetting that $$dy/dx$$ for parametric or polar curves is a ratio of derivatives.
 - Declaring a vertical tangent whenever the denominator is zero without checking the numerator.
 - Losing track of the interval of parameter values or angles actually tracing the region.
 - Forgetting that polar curves can retrace themselves.
+:::

@@ -501,8 +501,7 @@ So $$n = 2$$ in the mass equation.
 
 ---
 
-## Working checklist
-
+:::checklist
 1. Decide whether the question is about thermodynamics, electrochemistry, or both.
 2. For entropy, compare phases, gas moles, dissolved particles, and temperature.
 3. For Gibbs free energy, keep units consistent: $$\Delta H$$ and $$T\Delta S$$ must match.
@@ -511,14 +510,11 @@ So $$n = 2$$ in the mass equation.
 6. Use reduction potential tables carefully: values are intensive, and tabulated half-reactions are written as reductions.
 7. For nonstandard cells, write $$Q$$ correctly before using the Nernst equation.
 8. For electrolysis, convert current and time into charge, then into moles of electrons.
+:::
 
 ---
 
-## Key equations
-
-Since this unit is very equation-heavy, below is a list of all important equations for this unit:
-
-
+:::equations
 | Idea                                       | Equation                                                                                                                 |
 | ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
 | Entropy of universe                        | $$\Delta S_{\text{universe}} = \Delta S_{\text{system}} + \Delta S_{\text{surroundings}}$$                               |
@@ -534,6 +530,7 @@ Since this unit is very equation-heavy, below is a list of all important equatio
 | Nernst at $$25^\circ\text{C}$$             | $$E_{\text{cell}} = E^\circ_{\text{cell}} - \frac{0.0592}{n}\log Q$$                                                     |
 | Charge                                     | $$q = nF = It$$                                                                                                          |
 | Faraday's law mass form                    | $$m = \frac{MIt}{nF}$$                                                                                                   |
+:::
 
 ---
 

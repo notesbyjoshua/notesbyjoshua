@@ -8,8 +8,7 @@ This unit studies how conductors rearrange charge in electrostatic equilibrium a
 
 ---
 
-## Useful Variables
-
+:::variables
 - $$C$$ = capacitance (Units: farads, $$\text{F}=\text{C/V}$$)
 - $$Q$$ = charge stored on one plate
 - $$V$$ or $$\Delta V$$ = potential difference
@@ -18,6 +17,7 @@ This unit studies how conductors rearrange charge in electrostatic equilibrium a
 - $$A$$ = plate area
 - $$d$$ = plate separation
 - $$\varepsilon_0$$ = permittivity of free space
+:::
 
 ---
 
@@ -25,12 +25,12 @@ This unit studies how conductors rearrange charge in electrostatic equilibrium a
 
 A conductor has mobile charges. In **electrostatic equilibrium**, the charges are no longer drifting, so the electric field inside the conducting material must be zero. If there were a nonzero internal field, free electrons would accelerate and the charge distribution would not be static.
 
-Important consequences:
-
+:::key{name="Conductor in electrostatic equilibrium"}
 - The electric field inside the conducting material is zero.
 - If there are no charges trapped in cavities, any excess charge on an isolated conductor lives on its outer surface.
 - The electric field just outside a conducting surface is perpendicular to that surface.
 - Charge gathers more densely near sharp points, where the surface curvature is larger.
+:::
 
 <img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20EM/condcap/conductor-equilibrium.png" alt="Conductor in electrostatic equilibrium" loading="lazy" decoding="async" />
 
@@ -472,7 +472,13 @@ Of this, $$0.030\ \text{J}$$ is stored in the capacitor and the remaining $$0.03
 
 ## Cylindrical and Spherical Capacitors
 
-The parallel-plate result is one geometry; the same method — find the field with Gauss's law, then integrate to get $$\Delta V$$, then use $$C = Q/\Delta V$$ — works for any capacitor with enough symmetry.
+The parallel-plate result is one geometry, but the same method works for any capacitor with enough symmetry.
+
+:::strategy{title="Capacitance from symmetry"}
+1. Find the field between the conductors with Gauss's law.
+2. Integrate the field to get the potential difference $$\Delta V$$.
+3. Use $$C = Q/\Delta V$$.
+:::
 
 <div class="theorem-box">
 
@@ -580,8 +586,7 @@ $$
 
 ---
 
-## Key equations
-
+:::equations
 | Idea | Equation |
 | --- | --- |
 | Definition of capacitance | $$C = \dfrac{Q}{\Delta V}$$ |
@@ -596,6 +601,7 @@ $$
 | Dielectric-filled capacitor | $$C = \kappa C_0$$ |
 | Field at conductor surface | $$E = \dfrac{\sigma}{\varepsilon_0}$$ |
 | Force between plates | $$F = \dfrac{Q^2}{2\varepsilon_0 A} = \tfrac{1}{2}QE$$ |
+:::
 
 ## Practice
 

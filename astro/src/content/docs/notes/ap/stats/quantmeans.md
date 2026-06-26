@@ -42,11 +42,11 @@ $$
 df = n-1.
 $$
 
-Conditions:
-
+:::conditions
 1. Random sample or random assignment.
 2. Independence: if sampling without replacement, $$n \le 0.10N$$.
 3. Normal/large sample condition: population is approximately normal, or sample size is large enough for the Central Limit Theorem. Check graphs for strong skew and outliers when $$n$$ is small.
+:::
 
 Interpretation: "We are ___% confident that the true population mean ___ is between ___ and ___."
 
@@ -85,12 +85,12 @@ $$
 \sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}.
 $$
 
-Conditions:
-
+:::conditions
 1. Random samples or random assignment.
 2. The two samples/groups are independent.
 3. Independence within each group: $$n_1 \le 0.10N_1$$ and $$n_2 \le 0.10N_2$$ if sampling without replacement.
 4. Normal/large sample condition for each group.
+:::
 
 Degrees of freedom can be found with technology. If doing by hand, use the conservative choice:
 
@@ -117,7 +117,9 @@ $$
 
 Use technology for degrees of freedom unless told otherwise. AP problems often care more about setup, conditions, and conclusion than hand-calculating df.
 
+:::warning
 Do not pool variances unless a problem specifically says to use a pooled two-sample t procedure. Modern AP Statistics generally uses unpooled two-sample t procedures.
+:::
 
 ---
 
@@ -192,17 +194,20 @@ Calculator output should be translated into statistical language: parameter, con
 
 ## Working Checklist
 
+:::checklist
 1. Identify the parameter: $$\mu$$, $$\mu_1-\mu_2$$, or $$\mu_d$$.
 2. Decide whether the samples are independent or paired.
 3. Check random, independence, and normal/large sample conditions.
 4. Use t unless population $$\sigma$$ is known.
 5. Compute the interval or test statistic/p-value.
 6. Conclude in context, including units.
+:::
 
 ---
 
 ## Key Equations
 
+:::equations
 | Idea | Equation |
 | --- | --- |
 | One-sample t interval | $$\bar{x}\pm t^*s/\sqrt{n}$$ |
@@ -211,6 +216,7 @@ Calculator output should be translated into statistical language: parameter, con
 | Two-sample t test | $$t=\frac{(\bar{x}_1-\bar{x}_2)-0}{\sqrt{s_1^2/n_1+s_2^2/n_2}}$$ |
 | Matched pairs interval | $$\bar{d}\pm t^*s_d/\sqrt{n}$$ |
 | Matched pairs test | $$t=(\bar{d}-\mu_{d,0})/(s_d/\sqrt{n})$$ |
+:::
 
 ## Practice
 

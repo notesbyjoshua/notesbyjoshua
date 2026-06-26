@@ -24,11 +24,17 @@ $$
 L(q,\dot q,t)=T-V,
 $$
 
-expressed entirely in terms of the generalized coordinates and their time derivatives. The motion is governed by one **Euler–Lagrange equation per coordinate**:
+expressed entirely in terms of the generalized coordinates and their time derivatives.
+
+<div class="theorem-box">
+
+**Theorem (Euler–Lagrange equations).** The motion is governed by one Euler–Lagrange equation per coordinate:
 
 $$
 \ \frac{d}{dt}\!\left(\frac{\partial L}{\partial \dot q_i}\right)-\frac{\partial L}{\partial q_i}=0\ .
 $$
+
+</div>
 
 Why the *difference* $$T-V$$ rather than the more natural-looking sum? Heuristically, $$\partial L/\partial \dot q_i$$ plays the role of a momentum and $$\partial L/\partial q_i$$ plays the role of a force; for $$L=\tfrac12 m\dot x^2 - V(x)$$ the equation is literally $$\tfrac{d}{dt}(m\dot x) = -V'(x)$$, i.e. $$ma=F$$. The minus sign is exactly what makes the potential act as a restoring "force" $$-\partial V/\partial q$$ while the kinetic term supplies the inertia. The formula derives from the **principle of least action**, which states that any process aims to minimize a quantity called **action**.
 
@@ -58,10 +64,12 @@ For this to vanish for **every** allowed $$\delta q$$, the bracket must be zero 
 
 ### General process
 
+:::strategy{title="Solving with the Lagrangian"}
 1. Pick generalized coordinates that respect the constraints.
 2. Write $$T$$ and $$V$$ in those coordinates; form $$L=T-V$$.
 3. For each coordinate, compute $$\partial L/\partial \dot q_i$$ and $$\partial L/\partial q_i$$ and assemble the Euler–Lagrange equation.
 4. Read off conserved quantities (next section) before grinding through the algebra.
+:::
 
 The hardest step in practice is almost always step 2: getting $$T$$ right when the coordinates are curvilinear or the constraint is moving. The reliable method is to write each particle's Cartesian position in terms of the $$q_i$$, differentiate to get $$\dot x,\dot y,\dot z$$, and then form $$T=\tfrac12 m(\dot x^2+\dot y^2+\dot z^2)$$.
 
@@ -1030,8 +1038,10 @@ i.e. L4/L5 are stable whenever one body is at least $$\sim25$$ times heavier tha
 
 The hardest part of an advanced-mechanics problem is usually choosing the right framework before any algebra. A decision tree:
 
+:::strategy{title="Choosing a framework"}
 1. **Constraints, weird geometry, or you don't want to find constraint forces**: Reach for **Lagrangian mechanics**. Pick generalized coordinates that build the constraints in, write $$L=T-V$$, and *before* expanding the equations look for cyclic coordinates (conserved canonical momenta) and the conserved energy function $$h$$. Half of all "find the equation of motion" and "find the small-oscillation frequency" problems fall to two derivatives this way.
 2. **Two bodies under a central force, or motion in a $$1/r$$ potential / $$1/r^2$$ force**: Reduce to a one-body problem with the reduced mass, then use **conservation of $$E$$ and $$L$$**. Read the *qualitative* behavior off the effective potential $$V_{\text{eff}}=L^2/2\mu r^2+V(r)$$ (circular orbit at its minimum, bound motion between turning points), and get *numbers* from vis-viva and Kepler's laws. Do not integrate the trajectory when energy and angular momentum already pin down what you need.
 3. **Stable equilibrium — "find the frequency of small oscillations"**: Expand the potential to second order: $$\omega=\sqrt{V''(x_0)/m_{\text{eff}}}$$ for one coordinate. For several coupled coordinates, build the mass and stiffness matrices and solve $$\det(\mathbf K-\omega^2\mathbf M)=0$$ for the **normal modes**; exploit symmetry to guess the mode shapes first. Watch for zero-frequency modes — they signal an unconstrained translation or rotation, not an error.
 4. **Spinning, tumbling, or rolling rigid body**: Use $$\vec\tau=d\vec L/dt$$ as a *vector* equation with the inertia tensor. Spin about a principal axis keeps $$\vec L\parallel\vec\omega$$; off-axis spin needs the full tensor and produces bearing torques. For a fast spin under a perpendicular torque, expect **precession** $$\Omega_p=\tau/(L\sin\theta)$$ rather than toppling; for torque-free asymmetric motion, expect **free precession** governed by Euler's equations. Rolling and impact problems usually require the translational law $$\vec F=M\vec a_{\text{cm}}$$ *and* the rotational law together.
 5. **Rotating or accelerating frame natural (a turntable, a co-rotating orbit, Earth's surface)**: Move into that frame and add the pseudo-forces. The position-dependent **centrifugal** term acts like a potential and sets the equilibria; the velocity-dependent **Coriolis** term does no work but bends paths and decides stability. Steady rotation often turns a dynamics problem into a *statics* problem under $$\vec g_{\text{eff}}$$.
+:::

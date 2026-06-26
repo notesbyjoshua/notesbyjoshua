@@ -36,7 +36,9 @@ A **confounding factor** is a third variable tied to both the explanatory variab
 - A **convenience sample** takes units that are easy to reach (the first thirty students in the cafeteria, whoever answers the email). Convenience is cheap; representativeness is not guaranteed.
 - **Volunteer samples** (self-selected samples) attract people who choose to participate. Sensitive topics, strong opinions, or extra time can skew who opts in, so the sample may differ systematically from those who decline.
 
+:::warning
 Most sampling is biased! For example, most surveys/polls are volunteer samples, as with most clinical trials.
+:::
 
 ---
 

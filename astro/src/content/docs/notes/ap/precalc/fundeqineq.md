@@ -249,14 +249,16 @@ $$
 
 we must have $$x\ne 3$$ before doing anything else.
 
-The usual strategy is:
-
+:::strategy{title="Solving rational equations"}
 1. State the restrictions.
 2. Multiply both sides by the least common denominator.
 3. Solve the resulting equation.
 4. Check that no answer violates the restrictions.
+:::
 
+:::warning
 Do not multiply by something like $$x-3$$ without remembering that $$x=3$$ was never allowed. That is how extraneous answers sneak in.
+:::
 
 ### Polynomial equations
 
@@ -390,6 +392,7 @@ $$
 \sqrt{x-5}=x-7.
 $$
 
+:::strategy{title="Solving radical equations"}
 The process is careful, not mysterious:
 
 1. Write the domain restrictions.
@@ -397,8 +400,11 @@ The process is careful, not mysterious:
 3. Raise both sides to the needed power.
 4. Repeat if another radical remains.
 5. Check every candidate in the original equation.
+:::
 
+:::warning
 The check is not optional. Squaring both sides can create answers that solve the squared equation but not the original equation.
+:::
 
 For example, if a step gives
 
@@ -496,13 +502,13 @@ $$
 p(x)>0,\qquad p(x)\le 0,\qquad \text{etc.}
 $$
 
-The standard method is a sign chart:
-
+:::strategy{title="Polynomial inequalities (sign chart)"}
 1. Move everything to one side so the other side is $$0$$.
 2. Factor the polynomial.
 3. Mark the zeros on a number line.
 4. Test one point in each interval, or use sign changes from multiplicity.
 5. Include zeros only when the inequality has $$\le$$ or $$\ge$$.
+:::
 
 Multiplicity matters. A simple root usually changes the sign. An even-multiplicity root touches the axis and does not change the sign.
 
@@ -522,16 +528,18 @@ Typical form: $$\dfrac{P(x)}{Q(x)} > 0$$, $$\ge 0$$, $$< 0$$, or $$\le 0$$ (stri
 
 The method is similar to polynomial inequalities, with one major warning: denominator zeros are never allowed.
 
-The safest process is:
-
+:::strategy{title="Rational inequalities (safest process)"}
 1. Move everything to one side and combine into one fraction.
 2. Factor the numerator and denominator.
 3. Mark zeros of the numerator and denominator on a number line.
 4. Test signs on each interval.
 5. Include numerator zeros only if the inequality allows equality.
 6. Never include denominator zeros.
+:::
 
+:::warning
 Do not multiply both sides by the denominator unless you already know its sign. If the denominator could be positive or negative, multiplying by it may or may not reverse the inequality, which is exactly the problem the sign chart avoids.
+:::
 
 ---
 

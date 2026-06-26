@@ -210,6 +210,8 @@ A **half-reaction** shows only the oxidation or only the reduction part of an el
 
 **Acidic solutions** (common AP setup):
 
+:::checklist
+
 1. Split the net ionic transformation into **oxidation** and **reduction** halves.
 
 2. Balance all atoms **except** O and H.
@@ -221,6 +223,8 @@ A **half-reaction** shows only the oxidation or only the reduction part of an el
 5. Balance **charge** with $$e^-$$ on the correct side.
 
 6. Equalize electrons; add the halves; simplify.
+
+:::
 
 **Basic solution:** either balance as in acid and then add $$\text{OH}^-$$ to **both sides** in pairs that neutralize $$\text{H}^+$$ as water, or balance using $$\text{H}_2\text{O}$$ and $$\text{OH}^-$$ from the start. The final combined equation should contain **no free $$\text{H}^+$$** if the medium is strongly basic.
 

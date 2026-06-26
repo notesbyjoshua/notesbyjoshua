@@ -8,8 +8,7 @@ Circuit analysis translates electric field and potential ideas into networks of 
 
 ---
 
-## Useful Variables
-
+:::variables
 - $$I$$ = current (Units: amperes, $$\text{A}=\text{C/s}$$)
 - $$V$$ or $$\Delta V$$ = potential difference (Units: volts)
 - $$R$$ = resistance (Units: ohms, $$\Omega$$)
@@ -18,6 +17,7 @@ Circuit analysis translates electric field and potential ideas into networks of 
 - $$\rho$$ = resistivity
 - $$C$$ = capacitance
 - $$\tau$$ = time constant
+:::
 
 ---
 
@@ -313,7 +313,11 @@ $$
 
 around any closed loop.
 
-When traversing a resistor in the direction of current, the potential change is $$-IR$$. Traversing against current gives $$+IR$$. Across an ideal battery from negative to positive terminal, the potential change is $$+\mathcal{E}$$.
+:::key{name="Loop-rule sign conventions"}
+- Traversing a resistor in the direction of current: potential change is $$-IR$$.
+- Traversing a resistor against the current: potential change is $$+IR$$.
+- Crossing an ideal battery from the negative to the positive terminal: potential change is $$+\mathcal{E}$$.
+:::
 
 <div class="theorem-box">
 
@@ -681,8 +685,7 @@ Real meters disturb circuits slightly: an ammeter adds small series resistance, 
 
 ---
 
-## Key equations
-
+:::equations
 | Idea | Equation |
 | --- | --- |
 | Current as charge flow | $$I = \dfrac{dQ}{dt}$$ |
@@ -700,6 +703,7 @@ Real meters disturb circuits slightly: an ammeter adds small series resistance, 
 | Charging current | $$I(t) = \dfrac{\mathcal{E}}{R}e^{-t/RC}$$ |
 | Discharging capacitor | $$Q(t) = Q_0 e^{-t/RC}$$ |
 | Discharge half-life | $$t_{1/2} = RC\ln 2$$ |
+:::
 
 ## Practice
 

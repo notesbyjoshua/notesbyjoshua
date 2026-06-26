@@ -16,12 +16,12 @@ The virtual work method is a way to find equilibrium conditions (or the force ne
 
 The magic is that **constraint forces do no virtual work**: normal forces, tensions in inextensible strings, and frictionless contact forces are all perpendicular to the allowed motion (or internal and canceling), so they drop out entirely. You only ever deal with the forces you care about (gravity, applied loads, springs).
 
-The recipe:
-
+:::strategy{title="Virtual work method"}
 1. Identify the **degrees of freedom** and pick a single coordinate $$q$$ that captures the allowed motion (e.g. rectangular, polar, etc.).
 2. Write the positions of every point where a force acts in terms of $$q$$.
 3. Give the system a virtual displacement $$\delta q$$ and compute the total work $$\delta W=\sum_i \vec F_i\cdot\delta\vec r_i$$.
 4. Set $$\delta W=0$$ and solve.
+:::
 
 Equivalently, if the forces are conservative, equilibrium is where the potential energy is stationary: $$dU/dq=0$$.
 
@@ -92,18 +92,20 @@ This converts many dynamics problems into *statics* problems. A block on an acce
 
 Since this whole page is a toolbox, the decision tree is a meta one: when a problem looks ugly, which technique do you reach for first?
 
+:::strategy{title="Which technique to reach for"}
 1. **Asked for an equilibrium force or condition, with messy tensions/normals/constraints**: Virtual work. Pick one coordinate $$q$$, write $$\delta W=\sum_i\vec F_i\cdot\delta\vec r_i=0$$, and the constraint forces drop out — or use $$dU/dq=0$$ if forces are conservative.
 2. **You only need the *form* of the answer, or you're sanity-checking algebra**: Dimensional analysis. Build the unique combination with the right units; e.g. a time from length and gravity can only be $$\sqrt{L/g}$$. Just remember it cannot fix dimensionless constants like the $$2\pi$$.
 3. **Computing a field, force, or integral over a symmetric configuration**: Exploit symmetry. Components mapped to their negatives cancel, and Gauss's/Ampère's law become usable because the field is constant over a chosen surface or loop.
 4. **A shape is "almost" symmetric (a disk with a hole, a sphere with a cavity)**: Superposition — add back the missing piece as negative mass/charge, solve each symmetric part, subtract.
 5. **You have a candidate answer and want to test it (or kill MC options)**: Limiting cases. Send a length, mass, or angle to $$0$$ or $$\infty$$, set two quantities equal, and check units, signs, and directions reduce to something known.
 6. **Dynamics in an accelerating or rotating setting**: Jump into the non-inertial frame. Add the pseudo-force $$-m\vec a_{\text{frame}}$$ (or centrifugal $$m\omega^2 r$$ plus Coriolis), absorb it into an effective gravity $$\vec g_{\text{eff}}=\vec g-\vec a_{\text{frame}}$$, and solve the resulting *statics* problem.
+:::
 
-**Common traps:**
-
+:::mistakes
 - Trusting dimensional analysis for numerical prefactors — it gives the scaling, never the $$2\pi$$ or other dimensionless factors and ratios.
 - Forgetting that virtual work needs the displacement to be *consistent with the constraints*; an arbitrary $$\delta q$$ that violates a constraint reintroduces the forces you tried to eliminate.
 - Claiming a symmetry the setup doesn't actually have — a broken symmetry (off-axis point, non-uniform density) means the "obviously zero" component is not zero.
 - In the superposition trick, mismatching the sign or location of the subtracted piece so it doesn't exactly fill the would-be cavity.
 - In rotating frames, dropping the Coriolis force for *moving* objects, or getting the centrifugal direction (outward) backwards.
 - Reading off a limiting case carelessly: $$0/0$$ or $$\infty-\infty$$ forms need an actual expansion, not a guess.
+:::

@@ -14,11 +14,15 @@ Almost everything we know about a star comes from the light it sends us. A star'
 
 ### Blackbody radiation: Stefan–Boltzmann and Wien
 
-A blackbody at temperature $$T$$ radiates power per unit surface area
+<div class="theorem-box">
+
+**Theorem (Stefan–Boltzmann law).** A blackbody at temperature $$T$$ radiates power per unit surface area
 
 $$
 P=\sigma T^4,\qquad \sigma=5.67\times10^{-8}\ \text{W m}^{-2}\text{K}^{-4}.
 $$
+
+</div>
 
 Multiplying by the star's surface area gives its total radiated power, the **luminosity**:
 
@@ -28,11 +32,15 @@ $$
 
 This one equation ties together the three numbers we most want to know about a star: its size $$R$$, surface temperature $$T$$, and energy output $$L$$. Know any two and you have the third.
 
-The spectrum peaks at a wavelength given by **Wien's displacement law**:
+<div class="theorem-box">
+
+**Theorem (Wien's displacement law).** The spectrum peaks at a wavelength
 
 $$
 \lambda_{\text{peak}}=\frac{b}{T},\qquad b=2.90\times10^{-3}\ \text{m K}.
 $$
+
+</div>
 
 Hot stars peak in the blue/UV and look bluish; cool stars peak in the red. This is why a star's *color* is a direct thermometer.
 
@@ -116,9 +124,15 @@ From the north pole ($$\phi=90^\circ$$) the celestial equator lies on the horizo
 
 A star reaches its greatest altitude when it crosses the **meridian** (the north–south great circle through the zenith) — its **upper culmination** or **transit**. Geometry of the meridian gives the transit altitude directly:
 
+<div class="theorem-box">
+
+**Theorem (Transit altitude).**
+
 $$
 a_{\text{max}}=90^\circ-\lvert\phi-\delta\rvert,
 $$
+
+</div>
 
 with the star transiting on the south side of the zenith if $$\delta<\phi$$ and the north side if $$\delta>\phi$$. A star is **circumpolar** — it never sets, circling the pole all night — when even its *lowest* point stays above the horizon, which happens for
 
@@ -264,7 +278,11 @@ So $$m-M$$ (the "distance modulus") converts directly to distance, and conversel
 
 ### The Hertzsprung–Russell diagram
 
-The Hertzsprung-Russell diagram plots stars' luminosity (or absolute magnitude) against their temperature (or color, or spectral type), with temperature increasing *to the left* by convention, and they do not scatter randomly. Most lie along a diagonal **main sequence** running from hot-luminous (upper left) to cool-dim (lower right); these are stars fusing hydrogen in their cores. Cool but very luminous stars in the upper right must be huge (large $$R$$ in $$L=4\pi R^2\sigma T^4$$) (**giants** and **supergiants**). Hot but dim stars in the lower left must be tiny (**white dwarfs**). The HR diagram is the single most important organizing picture in stellar astrophysics.
+<div class="theorem-box">
+
+**Definition (Hertzsprung–Russell diagram).** The Hertzsprung-Russell diagram plots stars' luminosity (or absolute magnitude) against their temperature (or color, or spectral type), with temperature increasing *to the left* by convention, and they do not scatter randomly. Most lie along a diagonal **main sequence** running from hot-luminous (upper left) to cool-dim (lower right); these are stars fusing hydrogen in their cores. Cool but very luminous stars in the upper right must be huge (large $$R$$ in $$L=4\pi R^2\sigma T^4$$) (**giants** and **supergiants**). Hot but dim stars in the lower left must be tiny (**white dwarfs**). The HR diagram is the single most important organizing picture in stellar astrophysics.
+
+</div>
 
 > **[Image placeholder — HR diagram]** Hertzsprung–Russell diagram: x-axis temperature/spectral type (O→M, hot left), y-axis luminosity in $$L_\odot$$ (log). Mark the main sequence diagonal, the giant/supergiant branch (upper right), and the white-dwarf region (lower left), with lines of constant radius shown as faint diagonals.
 
@@ -375,7 +393,7 @@ We now turn from observing stars to modeling their interiors. The governing idea
 
 ### Hydrostatic equilibrium
 
-Consider a thin spherical shell at radius $$r$$, thickness $$dr$$, with $$m(r)$$ the mass enclosed. Balancing the pressure force against gravity on the shell gives
+Consider a thin spherical shell at radius $$r$$, thickness $$dr$$, with $$m(r)$$ the mass enclosed. Balancing the pressure force against gravity on the shell gives the **equation of hydrostatic equilibrium**:
 
 $$
 \ \frac{dP}{dr}=-\frac{G\,m(r)\,\rho(r)}{r^2}\,
@@ -409,11 +427,15 @@ hot enough for hydrogen fusion. Notice this is just the statement that a proton'
 
 ### The virial theorem
 
-For any self-gravitating system in equilibrium bound by an inverse-square force, the **virial theorem** relates the time-averaged kinetic and potential energies:
+<div class="theorem-box">
+
+**Theorem (Virial theorem).** For any self-gravitating system in equilibrium bound by an inverse-square force, the time-averaged kinetic and potential energies satisfy
 
 $$
 2\langle K\rangle+\langle U\rangle=0.
 $$
+
+</div>
 
 For a star, $$U=-\alpha\,GM^2/R$$ (with $$\alpha$$ an order-unity constant depending on the density profile; $$\alpha=3/5$$ for a uniform sphere) and $$K$$ is the thermal energy of the gas. The consequences are profound:
 
@@ -530,11 +552,17 @@ A white dwarf above the **Chandrasekhar mass** cannot exist. Beyond it the core 
 
 When the collapsing core exceeds the neutron-star limit (the **Tolman–Oppenheimer–Volkoff limit**, roughly $$2\text{–}3\,M_\odot$$), no known pressure can halt it, and the result is a **black hole**: a region where gravity is so strong that not even light escapes.
 
-A surprisingly good estimate of its size comes from the escape-velocity formula. Ask: at what radius does the escape velocity from a mass $$M$$ reach the speed of light? Setting $$v_{\text{esc}}=\sqrt{2GM/r}=c$$ gives the **Schwarzschild radius**
+A surprisingly good estimate of its size comes from the escape-velocity formula. Ask: at what radius does the escape velocity from a mass $$M$$ reach the speed of light? Setting $$v_{\text{esc}}=\sqrt{2GM/r}=c$$ gives the **Schwarzschild radius**:
+
+<div class="theorem-box">
+
+**Theorem (Schwarzschild radius).**
 
 $$
 \ r_s=\frac{2GM}{c^2}
 $$
+
+</div>
 
 Remarkably, this Newtonian heuristic lands on the *exact* answer that general relativity gives for a non-rotating black hole, even though the reasoning (treating light like a slow projectile) is not legitimate. The sphere at $$r_s$$ is the **event horizon** — a one-way surface. Anything that crosses it, including light, cannot return; the horizon is not a physical wall but a boundary in spacetime.
 
@@ -605,9 +633,11 @@ Measuring $$P$$ and $$a$$ gives the *total* mass. The individual masses follow f
 
 Stellar problems reward a small set of reusable moves:
 
+:::strategy{title="Stellar physics problems"}
 1. **Photometry questions** (temperature, size, distance, brightness): reach for $$L=4\pi R^2\sigma T^4$$, $$F=L/4\pi d^2$$, Wien's law, and the magnitude/distance-modulus relations. Watch the backwards, logarithmic magnitude scale.
 2. **Distance questions:** parallax for nearby stars ($$d[\text{pc}]=1/p['']$$); standard candles (known $$M$$) plus the distance modulus for far ones.
 3. **Interior/structure questions:** start from hydrostatic equilibrium and *estimate* with $$P_c\sim GM^2/R^4$$; bring in the ideal-gas law for $$T_c$$ and the virial theorem for energetics.
 4. **Timescale questions:** $$t_{\text{KH}}\sim GM^2/RL$$ (gravitational) versus $$t_{\text{nuc}}\sim\epsilon f Mc^2/L$$ (nuclear); compare them.
 5. **Limits and endpoints:** Eddington luminosity caps brightness; Chandrasekhar mass caps white dwarfs; degeneracy-pressure scaling arguments explain the endpoints.
 6. **Mass measurement:** binary stars + Kepler's third law are the only direct route.
+:::

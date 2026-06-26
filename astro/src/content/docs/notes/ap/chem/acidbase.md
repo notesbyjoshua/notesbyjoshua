@@ -146,13 +146,15 @@ $$
 [\text{H}_3\text{O}^+] = 10^{-\text{pH}}, \qquad [\text{OH}^-] = 10^{-\text{pOH}}.
 $$
 
-### Choosing a pH calculation method
+:::strategy{title="Choosing a pH calculation method"}
 
 1. **Strong acid or strong base only**: use stoichiometric dissociation first, then pH/pOH.
 2. **Weak acid or weak base only**: write $$K_a$$ or $$K_b$$ and use an ICE table.
 3. **Mixture with strong acid/base reaction**: do limiting-reactant stoichiometry first; then decide what remains.
 4. **Weak acid + conjugate base** or **weak base + conjugate acid**: use buffer logic.
 5. **At a titration equivalence point**: identify the salt left behind and analyze its hydrolysis.
+
+:::
 
 ---
 
@@ -301,13 +303,15 @@ The **common ion effect** is the suppression of ionization of a weak electrolyte
 
 ---
 
-## Working checklist
+:::checklist
 
 1. Identify strong vs weak; write the correct net ionic chemistry.
 2. Use $$K_w$$, $$K_a$$, and $$K_b$$ at a consistent temperature; link conjugates with $$K_a K_b = K_w$$.
 3. Use **ICE** tables for weak acids/bases; watch dilution and the **common ion effect**.
 4. Buffers: **Henderson–Hasselbalch equation** or full equilibrium when assumptions fail.
 5. Titrations: stoichiometry first, then equilibrium at the **equivalence point** or **half-equivalence point** for $$\text{p}K_a$$.
+
+:::
 
 ---
 

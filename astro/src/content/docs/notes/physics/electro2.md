@@ -13,11 +13,15 @@ A magnetic field exerts a force on moving charge, and on nothing else: a charge 
 
 ### The Lorentz force
 
-The total electromagnetic force on a point charge $$q$$ moving with velocity $$\vec v$$ in fields $$\vec E$$ and $$\vec B$$ is the **Lorentz force**
+<div class="theorem-box">
+
+**Theorem (Lorentz force).** The total electromagnetic force on a point charge $$q$$ moving with velocity $$\vec v$$ in fields $$\vec E$$ and $$\vec B$$ is
 
 $$
 \vec F=q\left(\vec E+\vec v\times\vec B\right).
 $$
+
+</div>
 
 The electric part $$q\vec E$$ is the familiar push along the field. The magnetic part,
 
@@ -270,11 +274,15 @@ Electric charges at rest produce electric fields; charges in motion — currents
 
 ### The Biot–Savart law
 
-A current element — a length $$d\vec\ell$$ carrying current $$I$$, pointing in the direction of current flow — produces a tiny magnetic field
+<div class="theorem-box">
+
+**Theorem (Biot–Savart law).** A current element — a length $$d\vec\ell$$ carrying current $$I$$, pointing in the direction of current flow — produces a tiny magnetic field
 
 $$
 d\vec B=\frac{\mu_0}{4\pi}\frac{I\,d\vec\ell\times\hat r}{r^2},
 $$
+
+</div>
 
 where $$\hat r$$ points from the current element to the field point, $$r$$ is that distance, and
 
@@ -379,11 +387,15 @@ Far away ($$z\gg a$$) the field collapses to $$B_z\approx\mu_0 I a^2/2z^3\propto
 
 ### Ampère's law
 
-Just as Gauss's law packages Coulomb's $$1/r^2$$ law into a statement about flux through a closed *surface*, Ampère's law packages Biot–Savart into a statement about the circulation of $$\vec B$$ around a closed *loop*:
+<div class="theorem-box">
+
+**Theorem (Ampère's law).** Just as Gauss's law packages Coulomb's $$1/r^2$$ law into a statement about flux through a closed *surface*, Ampère's law packages Biot–Savart into a statement about the circulation of $$\vec B$$ around a closed *loop*:
 
 $$
 \oint\vec B\cdot d\vec\ell=\mu_0 I_{\text{enc}}.
 $$
+
+</div>
 
 Here $$I_{\text{enc}}$$ is the net current threading *any* surface bounded by the loop (the "Amperian loop"). The right-hand rule fixes signs: curl your right hand around the loop in the direction you integrate, and your thumb gives the positive current direction.
 
@@ -636,11 +648,15 @@ The choice of normal direction is yours, but once chosen it fixes the sign conve
 
 ### Faraday's law and Lenz's law
 
-The central experimental fact, discovered by Faraday, is that a changing flux through a circuit drives a current as if a battery had been inserted. The effective EMF is
+<div class="theorem-box">
+
+**Theorem (Faraday's law).** The central experimental fact, discovered by Faraday, is that a changing flux through a circuit drives a current as if a battery had been inserted. The effective EMF is
 
 $$
 \varepsilon=-\frac{d\Phi_B}{dt}.
 $$
+
+</div>
 
 If the loop has $$N$$ turns wound so the same flux threads each, the EMFs add and
 
@@ -1463,6 +1479,7 @@ These energy and momentum relations tie the whole subject together: the same $$\
 
 A decision tree for which tool to reach for:
 
+:::strategy{title="Which electrodynamics tool to reach for"}
 1. **A charge moving in given $$\vec E$$ and $$\vec B$$ fields:** Lorentz force $$\vec F=q(\vec E+\vec v\times\vec B)$$. If only $$\vec B$$ acts, speed is constant (magnetic forces do no work) — expect circular/helical motion with $$r=mv/(qB)$$ and $$\omega_c=qB/m$$. For crossed fields, check the drift $$v=E/B$$ before grinding.
 2. **Find the field produced by a current:** If the geometry is highly symmetric (infinite wire, solenoid, toroid, sheet), use **Ampère's law** $$\oint\vec B\cdot d\vec\ell=\mu_0 I_{\text{enc}}$$ — the magnetic Gauss's law. If not, integrate **Biot–Savart** $$d\vec B=\dfrac{\mu_0}{4\pi}\dfrac{I\,d\vec\ell\times\hat r}{r^2}$$.
 3. **A current loop or small magnet in a field:** Treat it as a dipole $$\vec\mu=I\vec A$$: torque $$\vec\tau=\vec\mu\times\vec B$$, energy $$U=-\vec\mu\cdot\vec B$$, net force only in a *nonuniform* field ($$\vec F=\nabla(\vec\mu\cdot\vec B)$$). Small oscillations about alignment give $$T=2\pi\sqrt{I/(\mu B)}$$.
@@ -1470,9 +1487,9 @@ A decision tree for which tool to reach for:
 5. **A circuit with inductors/capacitors switched on or off:** Transient. Write the KVL loop equation; it is a standard first-order ($$\tau=L/R$$ or $$RC$$) or second-order (LC/RLC) ODE — borrow the solutions and the SHM analogy from [Math Tricks](/notes/physics/mathtricks/).
 6. **A circuit driven at a single frequency $$\omega$$:** AC steady state. Use reactances $$X_L=\omega L$$, $$X_C=1/(\omega C)$$ and impedance $$Z=\sqrt{R^2+(X_L-X_C)^2}$$; resonance at $$\omega_0=1/\sqrt{LC}$$. Average power is $$\bar P=V_{\text{rms}}I_{\text{rms}}\cos\phi$$ — only the resistor dissipates.
 7. **Fields propagating, or a charging capacitor's field:** Maxwell. Remember the displacement-current term $$\varepsilon_0\,d\Phi_E/dt$$ in Ampère–Maxwell; in vacuum the fields travel at $$c=1/\sqrt{\mu_0\varepsilon_0}$$ with $$E=cB$$, carrying intensity $$I=\tfrac12\varepsilon_0 cE_0^2$$ and pressure $$I/c$$ (absorbed) or $$2I/c$$ (reflected).
+:::
 
-**Common traps:**
-
+:::mistakes
 - **Magnetic forces do no work.** $$\vec F=q\vec v\times\vec B\perp\vec v$$, so $$B$$ alone never changes a particle's speed or kinetic energy — it only bends the path. Any speed change traces back to an electric field (including an induced one).
 - **Lenz's law is about opposing the *change*, not the field.** The induced current opposes the change in flux; it can reinforce a *decreasing* field. Get the sign from "which way must induced effects point to fight the change," then sanity-check with energy.
 - **Ampère's law is always true but rarely solvable.** Like Gauss's law, it only yields $$B$$ cheaply when symmetry makes $$\vec B$$ uniform and parallel along the loop; otherwise it is an identity, not a shortcut.
@@ -1480,3 +1497,4 @@ A decision tree for which tool to reach for:
 - **Reactances are frequency-dependent and don't simply add to resistance.** Combine them as $$\sqrt{R^2+(X_L-X_C)^2}$$, not $$R+X_L+X_C$$, and remember $$X_L$$ and $$X_C$$ act in *opposite* phase.
 - **Don't forget the displacement current.** Ampère's law without the $$\varepsilon_0\,d\Phi_E/dt$$ term is inconsistent wherever $$\vec E$$ changes (e.g. between capacitor plates) — and it is the very term that makes electromagnetic waves possible.
 - **RMS vs. peak.** $$V_{\text{rms}}=V_0/\sqrt2$$ for a sinusoid; power formulas use RMS values, and the average of $$\cos^2$$ over a cycle is $$\tfrac12$$.
+:::

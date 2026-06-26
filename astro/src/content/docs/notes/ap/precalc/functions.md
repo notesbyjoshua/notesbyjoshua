@@ -49,12 +49,14 @@ Always keep track of domain restrictions, and the legal domain is everything tha
 
 ### Finding Ranges
 
-The range is often harder than the domain because it asks what output values are possible. Useful strategies include:
+The range is often harder than the domain because it asks what output values are possible.
 
+:::strategy{title="Finding the range"}
 - Graphing the function
 - Rewriting the formula by completing the square
 - finding the inverse function's domain
 - using known parent-function behavior and transformations
+:::
 
 <div class="theorem-box">
 
@@ -639,13 +641,9 @@ $$
 
 So $$f$$ and $$g$$ are inverses.
 
-The notation $$f^{-1}(x)$$ means "the inverse function of $$f$$." It does **not** mean reciprocal. In other words,
-
-$$
-f^{-1}(x)\ne \frac{1}{f(x)}
-$$
-
-in general. The expression $$x^{-1}$$ means $$1/x$$, but $$f^{-1}$$ means an inverse function. Sometimes you will see the inverse written as $$fp$$, but this can be confused with the derivative notation (used in calculus) and is seldom used.
+:::warning
+The notation $$f^{-1}(x)$$ means "the inverse function of $$f$$." It does **not** mean reciprocal. In other words, $$f^{-1}(x)\ne \frac{1}{f(x)}$$ in general. The expression $$x^{-1}$$ means $$1/x$$, but $$f^{-1}$$ means an inverse function. Sometimes you will see the inverse written as $$fp$$, but this can be confused with the derivative notation (used in calculus) and is seldom used.
+:::
 
 <div class="theorem-box">
 
@@ -657,12 +655,12 @@ in general. The expression $$x^{-1}$$ means $$1/x$$, but $$f^{-1}$$ means an inv
 
 ## Finding an Inverse
 
-To find the inverse of a function:
-
+:::strategy{title="Finding an inverse"}
 1. Write $$y=f(x)$$.
 2. Switch $$x$$ and $$y$$.
 3. Solve for $$y$$.
 4. Replace $$y$$ with $$f^{-1}(x)$$.
+:::
 
 It is very improtant to note that the domain of $$f$$ becomes the range of $$f^{-1}$$, and the range of $$f$$ becomes the domain of $$f^{-1}$$.
 

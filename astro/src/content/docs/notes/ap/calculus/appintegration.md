@@ -501,7 +501,9 @@ Convergence means the limiting accumulated value is finite. Divergence means the
 
 ## Common mistakes
 
+:::mistakes
 - Forgetting to split total distance when velocity changes sign.
 - Using top-minus-bottom when the curves cross inside the interval without splitting.
 - Using wrong radii in washer problems.
 - Mixing shell and washer formulas without matching the slice geometry.
+:::

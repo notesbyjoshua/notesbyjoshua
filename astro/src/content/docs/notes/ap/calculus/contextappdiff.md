@@ -411,12 +411,12 @@ The approximation is local. It is meant for small changes near the input where t
 
 Contextual problems often include more variables than you actually need. The goal is to write one equation connecting the changing quantities, then identify which rate the question asks for.
 
-Useful habits:
-
+:::strategy{title="Related quantities"}
 - define every variable before differentiating,
 - record which variables are changing,
 - keep constants as constants,
 - substitute numerical values after differentiating.
+:::
 
 If the independent variable is time, every changing quantity gets a rate such as $$dx/dt$$, $$dV/dt$$, or $$dA/dt$$.
 
@@ -438,7 +438,9 @@ Always identify what the graph represents before interpreting signs, slopes, or 
 
 ## Common mistakes
 
+:::mistakes
 - Reporting velocity when the question asks for speed.
 - Giving a derivative without units.
 - Using the wrong variable as the independent variable.
 - Forgetting to evaluate at the specified time or input.
+:::

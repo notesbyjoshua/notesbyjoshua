@@ -50,11 +50,17 @@ For two fixed ends, the two $$\pi$$ shifts add to $$2\pi$$ and have no net effec
 
 ## The WKB approximation
 
-In quantum mechanics a particle is described by a wavefunction $$\psi(x,t)$$. Momentum and energy obey the **de Broglie relations**
+In quantum mechanics a particle is described by a wavefunction $$\psi(x,t)$$.
+
+<div class="theorem-box">
+
+**Theorem (de Broglie relations).** Momentum and energy obey
 
 $$
 p = \hbar k, \qquad E = \hbar\omega,
 $$
+
+</div>
 
 where $$\hbar$$ is the reduced Planck constant (the exact value, $$\hbar = \frac{h}{2\pi} = 1.05 \cdot 10^{-34} J \cdot s$$ is usually given if necessary). For a nonrelativistic particle in a potential $$V(x)$$,
 
@@ -72,10 +78,12 @@ $$
 
 where the integral runs over one full classical period of the motion, and the extra phase $$\alpha$$ accounts for what happens at the turning points.
 
+:::key{name="Turning-point phase rule"}
 The rule for $$\alpha$$ at the two ends of the motion:
 
 - A **hard wall** (potential jumps to infinity) contributes $$\pi$$ to $$\alpha$$.
 - A **soft turning point** (potential rises smoothly through $$E$$) contributes $$\pi/2$$ to $$\alpha$$.
+:::
 
 So a box with two hard walls has $$\alpha = 2\pi$$ (equivalent to $$\alpha = 0$$), while a smooth potential well like the harmonic oscillator has $$\alpha = \pi$$.
 
@@ -248,11 +256,15 @@ The boundary conditions don't matter for bulk statistical properties — a fact 
 
 ## Heisenberg's Uncertainty Principle
 
-The **Heisenberg uncertainty principle** states that the standard deviations of position and momentum obey
+<div class="theorem-box">
+
+**Theorem (Heisenberg uncertainty principle).** The standard deviations of position and momentum obey
 
 $$
 \Delta x\,\Delta p \ge \frac{\hbar}{2}.
 $$
+
+</div>
 
 The semiclassical limit is just the regime where the required uncertainty is small compared to the scales involved, reached for $$n \gg 1$$.
 
@@ -476,11 +488,15 @@ Since nuclear energies dwarf chemical ones, decay rates are usually insensitive 
 
 ### The radioactive decay law
 
-Radioactive decay is **memoryless**: in any interval $$dt$$ a nucleus has probability $$\lambda\,dt$$ of decaying, regardless of history. The survival probability decays exponentially,
+<div class="theorem-box">
+
+**Theorem (Radioactive decay law).** Radioactive decay is **memoryless**: in any interval $$dt$$ a nucleus has probability $$\lambda\,dt$$ of decaying, regardless of history. The survival probability decays exponentially,
 
 $$
 p(t) = e^{-\lambda t}, \qquad \tau = \frac{1}{\lambda} \;(\text{mean lifetime}).
 $$
+
+</div>
 
 With $$N_0 \gg 1$$ nuclei initially, the number remaining and the **activity** (decay rate) are
 
@@ -597,6 +613,7 @@ The Sun's spectrum is the reverse situation: a hot continuous (blackbody) source
 
 Modern-physics problems usually reduce to "which quantization or conservation rule applies." Match the situation to the right tool:
 
+:::strategy{title="Which quantization or conservation rule applies"}
 1. **A particle is trapped and you want its energy levels:** apply the WKB / Bohr–Sommerfeld rule $$\oint p\,dx = \left(n+\tfrac{\alpha}{2\pi}\right)h$$. Count turning points to fix $$\alpha$$ — $$\pi$$ per hard wall, $$\pi/2$$ per soft turning point — then do the loop integral (box gives $$E_n = n^2h^2/8mL^2$$, oscillator gives $$E_n = \hbar\omega_0(n+\tfrac12)$$).
 2. **Rotational / circular-orbit quantization:** use Bohr's condition $$L = n\hbar$$. For hydrogen, pair it with the Coulomb-centripetal balance $$mv^2/r = e^2/4\pi\epsilon_0 r^2$$ to get $$r_n = a_0 n^2$$ and $$E_n = -13.6\,\text{eV}/n^2$$; transitions emit $$\hbar\omega = E_i - E_f$$.
 3. **An order-of-magnitude estimate of a ground-state energy or size:** use the uncertainty principle $$\Delta x\,\Delta p \ge \hbar/2$$, set $$\Delta p \sim \hbar/\Delta x$$, write $$E(\Delta x)$$ and minimize. The same trick gives spectral linewidths and lifetimes via $$\Delta E\,\Delta t \ge \hbar/2$$.
@@ -605,9 +622,9 @@ Modern-physics problems usually reduce to "which quantization or conservation ru
 6. **How much is left / how fast it decays:** the decay law $$N(t) = N_0 e^{-\lambda t}$$, with $$\tau = 1/\lambda$$ and $$t_{1/2} = \tau\ln 2$$; activity is $$A = \lambda N$$.
 7. **Barrier penetration (alpha decay, fusion):** WKB tunneling, $$\tau \sim \tau_{\text{coll}}\,e^{+2\lvert\mathrm{Im}\,\theta\rvert}$$ with probability $$\sim e^{-\sqrt{E_g/E}}$$ — note the steep dependence of lifetime on energy.
 8. **Nuclear stability / energy release:** the liquid-drop binding energy $$E_B = a_V A - a_S A^{2/3} - a_C Z^2/A^{1/3} - \cdots$$; the peak near iron explains why both fusion (light) and fission (heavy) release energy.
+:::
 
-**Common traps:**
-
+:::mistakes
 - The photoelectric kinetic energy is $$\hbar\omega - E_{\text{bind}}$$, *not* the full photon energy — the work function (binding energy) must be subtracted, and below threshold no electron escapes regardless of intensity.
 - Don't conflate energy and momentum for a photon: $$E = \hbar\omega = pc$$, so $$p = E/c$$ — never $$p^2/2m$$.
 - For the particle in a box $$n$$ starts at $$1$$ (an $$n=0$$ "state at rest" violates uncertainty), while the WKB integer starts at $$0$$; keep the $$\alpha/2\pi$$ offset straight.
@@ -615,3 +632,4 @@ Modern-physics problems usually reduce to "which quantization or conservation ru
 - A *free* electron cannot absorb or emit a single photon ($$e^-+\gamma\to e^-$$ is forbidden); energy and momentum cannot both be conserved without a recoiling atom or nucleus.
 - A free proton does not decay (it is lighter than the neutron); $$n\to p$$ and $$p\to n$$ channels are only favorable *inside* a nucleus, set by the rest-mass balance.
 - Hydrogen-like systems need the reduced mass: positronium uses $$\mu = m_e/2$$, halving the binding energies.
+:::

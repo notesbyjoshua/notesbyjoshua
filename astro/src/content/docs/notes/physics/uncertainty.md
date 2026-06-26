@@ -8,7 +8,9 @@ With every experiment, there will be a source of error, whether you like it or n
 
 A quantity $$x$$ is written $$x\pm\delta x$$, where $$\delta x$$ is the **absolute uncertainty** (same units as $$x$$). The **relative** (or fractional) uncertainty is $$\delta x/x$$, often quoted as a percentage. The central question of error propagation is: if $$f$$ depends on measured quantities $$x,y,\dots$$, how big is $$\delta f$$?
 
-> **A note on the two methods.** There are two conventions. The **worst-case (linear)** method simply adds uncertainties and gives the largest the error could possibly be. The **quadrature (statistical)** method adds them in quadrature (root-sum-of-squares) and is correct when the errors are *independent and random*, since independent errors partly cancel rather than always conspiring. Quadrature is the standard for real lab data; the linear method is a quick conservative bound. Both are shown below — use whichever a problem specifies, defaulting to quadrature. MOST problems require quadrature uncertainty calculations.
+:::note
+**A note on the two methods.** There are two conventions. The **worst-case (linear)** method simply adds uncertainties and gives the largest the error could possibly be. The **quadrature (statistical)** method adds them in quadrature (root-sum-of-squares) and is correct when the errors are *independent and random*, since independent errors partly cancel rather than always conspiring. Quadrature is the standard for real lab data; the linear method is a quick conservative bound. Both are shown below — use whichever a problem specifies, defaulting to quadrature. MOST problems require quadrature uncertainty calculations.
+:::
 
 ---
 
@@ -87,7 +89,7 @@ This recovers everything above. For a single variable $$f(x)$$ it reduces to $$\
 There's no add/multiply rule for $$\sin$$, so use the master formula. First convert the angular uncertainty to radians: $$\delta\theta=0.5^\circ=0.0087\ \text{rad}$$. Then
 
 $$
-\delta f=\left\lvert \frac{d}{d\theta}\sin\theta \right\rvert\delta\theta=lvert \cos\theta \rvert\,\delta\theta=\cos(30^\circ)(0.0087)\approx 0.0076.
+\delta f=\left\lvert \frac{d}{d\theta}\sin\theta \right\rvert\delta\theta=\lvert \cos\theta \rvert\,\delta\theta=\cos(30^\circ)(0.0087)\approx 0.0076.
 $$
 
 So $$f=\sin30^\circ=0.500\pm0.008$$. The derivative-based method handles *any* function — trig, logs, exponentials — where the elementary rules don't apply.
@@ -100,14 +102,16 @@ So $$f=\sin30^\circ=0.500\pm0.008$$. The derivative-based method handles *any* f
 
 A quick decision tree for picking the right propagation rule (default to quadrature unless told otherwise):
 
+:::strategy{title="Picking the right propagation rule"}
 1. **Adding or subtracting measured quantities** ($$f=x\pm y$$): combine **absolute** uncertainties, $$\delta f=\sqrt{(\delta x)^2+(\delta y)^2}$$ (or $$\delta f=\delta x+\delta y$$ worst case). Subtraction never subtracts errors — watch for two nearly-equal numbers blowing up the relative error.
 2. **Multiplying, dividing, or taking powers** ($$f=x^a y^b/z^c$$): combine **relative** uncertainties weighted by exponents, $$\dfrac{\delta f}{f}=\sqrt{\left(a\dfrac{\delta x}{x}\right)^2+\left(b\dfrac{\delta y}{y}\right)^2+\left(c\dfrac{\delta z}{z}\right)^2}$$. For a single power $$f=x^n$$, $$\dfrac{\delta f}{f}=\lvert n\rvert\dfrac{\delta x}{x}$$.
 3. **Any other function** (trig, log, exp, mixed): drop to the **master formula** $$\delta f=\sqrt{\sum_i\left(\dfrac{\partial f}{\partial x_i}\,\delta x_i\right)^2}$$; for one variable, $$\delta f=\lvert f'(x)\rvert\,\delta x$$. Convert angles to radians before differentiating.
 4. **Products and powers, but the algebra is messy:** take logs first — $$\ln f=a\ln x+b\ln y-c\ln z$$ differentiates straight to the weighted relative-error sum.
 5. **One error source dominates** (e.g. an exponent of 2 amplifies it): don't waste effort on the small terms — quadrature suppresses them anyway, since the largest contribution sets the scale. Improve the dominant measurement instead.
 6. **Worst-case vs. quadrature:** use **quadrature** for independent random errors (the lab default), **linear sum** only when a problem asks for the worst case or the errors are correlated.
+:::
 
-**Common traps:**
+:::mistakes
 - Adding **absolute** errors where you should add **relative** ones (or vice versa) — addition/subtraction uses absolute, multiplication/division uses relative.
 - Forgetting the exponent weight: squaring **doubles** relative uncertainty, square root **halves** it; a factor entering as $$T^{-2}$$ contributes $$2\,\delta T/T$$.
 - Trying to subtract uncertainties — they always combine additively, even for $$f=x-y$$.
@@ -115,3 +119,4 @@ A quick decision tree for picking the right propagation rule (default to quadrat
 - Using radians-vs-degrees inconsistently in the master formula; $$\delta\theta$$ must be in radians.
 - Rounding to significant figures too early — carry extra digits through and round only the final $$\delta f$$.
 - Defaulting to the worst-case linear sum when the problem expects quadrature (most do).
+:::

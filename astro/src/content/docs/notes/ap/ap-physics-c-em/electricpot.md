@@ -489,8 +489,7 @@ At the surface ($$r = R$$) this gives $$\dfrac{kQ}{2R}(3 - 1) = \dfrac{kQ}{R}$$,
 
 ---
 
-## Key equations
-
+:::equations
 | Idea | Equation |
 | --- | --- |
 | PE of two point charges | $$U = k\dfrac{Qq}{r}$$ |
@@ -504,6 +503,7 @@ At the surface ($$r = R$$) this gives $$\dfrac{kQ}{2R}(3 - 1) = \dfrac{kQ}{R}$$,
 | Potential energy of a charge | $$U = qV$$ |
 | Work done by the field | $$W = -q\,\Delta V$$ |
 | Electron volt | $$1\ \text{eV} = e(1\ \text{V}) \approx 1.602\times10^{-19}\ \text{J}$$ |
+:::
 
 ## Practice
 

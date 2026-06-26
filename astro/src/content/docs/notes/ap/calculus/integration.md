@@ -133,7 +133,9 @@ Interpretations:
 
 ## Fundamental Theorem of Calculus
 
-If $$F'(x)=f(x)$$, then
+<div class="theorem-box">
+
+**Theorem (Fundamental Theorem of Calculus).** If $$F'(x)=f(x)$$, then
 
 $$
 \int_a^b f(x)\,dx = F(b)-F(a).
@@ -152,6 +154,8 @@ g'(x) = f(x)
 $$
 
 when $$f$$ is continuous.
+
+</div>
 
 <div class="theorem-box">
 
@@ -509,7 +513,9 @@ This is different from the average rate of change. Average value averages output
 
 ## Common mistakes
 
+:::mistakes
 - Forgetting $$+C$$ on indefinite integrals.
 - Using area language when the integral is negative and really means net signed accumulation.
 - Dropping the chain-rule factor in reverse when using substitution.
 - Confusing $$\int_a^b f(x)\,dx$$ with ordinary multiplication.
+:::
