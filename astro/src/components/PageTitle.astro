@@ -29,6 +29,14 @@ const editHref = isNote && filePath ? `/admin/edit?path=${encodeURIComponent(`as
   {isNote && (
     <div class="page-actions">
       <span class="page-meta" id="page-meta" hidden></span>
+      <button class="print-btn" type="button" title="Download or print this note as a PDF" aria-label="Print or save as PDF">
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M6 9V2h12v7" />
+          <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
+          <rect x="6" y="14" width="12" height="8" />
+        </svg>
+        <span class="print-label">PDF</span>
+      </button>
       {editHref && (
         <a class="edit-note-btn" href={editHref} title="Edit this note" aria-label="Edit this note" hidden>
           <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -136,6 +144,12 @@ const editHref = isNote && filePath ? `/admin/edit?path=${encodeURIComponent(`as
     meta.textContent = `${mins} min read`;
     meta.hidden = false;
   }
+
+  // --- Print / Save-as-PDF (note pages, everyone). ---------------------------
+  // The browser print dialog ("Save as PDF" destination) + the @media print
+  // styles in custom.css strip the nav/sidebar/footer so only the note prints.
+  document.querySelector<HTMLButtonElement>('.print-btn')
+    ?.addEventListener('click', () => window.print());
 
   // --- Edit pencil (note pages, admins and assigned writers only). -----------
   const sbEdit = getSupabase();

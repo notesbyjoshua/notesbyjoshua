@@ -778,7 +778,8 @@
 
 .bookmark-btn,
 .readmark-btn,
-.highlight-btn {
+.highlight-btn,
+.print-btn {
 	flex: none;
 	display: inline-flex;
 	align-items: center;
@@ -795,7 +796,8 @@
 
 .bookmark-btn:hover,
 .readmark-btn:hover,
-.highlight-btn:hover {
+.highlight-btn:hover,
+.print-btn:hover {
 	background: var(--sl-color-gray-6);
 }
 
@@ -839,6 +841,62 @@
 .edit-note-btn:hover {
 	background: var(--sl-color-gray-6);
 	border-color: var(--sl-color-text-accent);
+}
+
+/* --- Print / Save-as-PDF -------------------------------------------------- */
+/* Triggered by the "PDF" button (window.print) or the browser's own print.
+   Strips all site chrome so only the note content lands on the page. */
+@media print {
+	/* Site chrome + interactive UI: hidden on paper. */
+	header.header,
+	.sidebar-pane,
+	nav.sidebar,
+	.right-sidebar,
+	.right-sidebar-container,
+	mobile-starlight-toc,
+	starlight-menu-button,
+	.pagination-links,
+	.page-actions,
+	footer,
+	canvas.paper-canvas,
+	.doc-minimap,
+	.reference-sheet-drawer,
+	.solution-toggle {
+		display: none !important;
+	}
+
+	/* Reclaim the full page width once the sidebars are gone. */
+	.main-frame { padding-top: 0 !important; }
+	.main-pane { width: 100% !important; max-width: none !important; }
+	.sl-container,
+	.sl-markdown-content {
+		margin: 0 !important;
+		max-width: none !important;
+		width: 100% !important;
+	}
+
+	/* Force legible black-on-white regardless of light/dark theme (printers
+	   drop background fills by default, which would make dark-theme text vanish). */
+	html, body {
+		background: #fff !important;
+	}
+	body,
+	.sl-markdown-content,
+	.sl-markdown-content :not(.tb-tag) {
+		color: #111 !important;
+	}
+	a { color: #111 !important; text-decoration: none !important; }
+
+	/* Collapsed solution boxes are forced open so the answers print. */
+	.theorem-box[hidden] { display: block !important; }
+
+	/* Keep headings with their content and avoid slicing through boxes/math. */
+	h1, h2, h3, h4, h5, h6 { break-after: avoid-page; }
+	.theorem-box,
+	pre,
+	table,
+	img,
+	.katex-display { break-inside: avoid; }
 }
 
 /* Estimated reading time, shown inline with the action buttons (right of title). */
