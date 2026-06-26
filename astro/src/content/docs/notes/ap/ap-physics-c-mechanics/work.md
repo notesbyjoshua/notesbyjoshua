@@ -6,8 +6,7 @@ sidebar:
 
 ---
 
-## Useful Variables
-
+:::variables
 - $$W$$ = work (Units: joules, $$\text{J}$$)
 - $$K$$ = kinetic energy (Units: $$\text{J}$$)
 - $$U$$ = potential energy (Units: $$\text{J}$$)
@@ -17,6 +16,7 @@ sidebar:
 - $$\vec{r}$$ = position vector
 - $$x$$ = one-dimensional position or displacement
 - $$k$$ = spring constant
+:::
 
 ---
 
@@ -97,11 +97,11 @@ $$
 K = \frac{1}{2}mv^2.
 $$
 
-The **work-energy theorem** says that the net work done on a particle equals the change in kinetic energy:
+<div class="theorem-box">
 
-$$
-W_{\text{net}} = \Delta K.
-$$
+**Theorem (Work-Energy Theorem).** The net work done on a particle equals the change in its kinetic energy, $$W_{\text{net}} = \Delta K$$.
+
+</div>
 
 <div class="theorem-box">
 
@@ -474,7 +474,11 @@ $$
 W_{\text{nc}} = \Delta E_{\text{mech}}.
 $$
 
-Friction usually decreases mechanical energy and converts it into thermal energy, so $$W_f$$ is usually negative for a sliding object. If you forgot the signs of a non-conservative force, just think about if the force would add energy or remove energy from the system (e.g. friction releases heat meaning it removes energy).
+Friction usually decreases mechanical energy and converts it into thermal energy, so $$W_f$$ is usually negative for a sliding object.
+
+:::tip{title="Signs of nonconservative work"}
+If you forgot the sign of a non-conservative force, just think about whether the force would add energy or remove energy from the system (e.g. friction releases heat, meaning it removes energy).
+:::
 
 ### Mechanical energy versus total energy
 
@@ -667,7 +671,7 @@ Equivalently, the engine supplies gravitational potential energy at the rate $$P
 
 ---
 
-## Key equations
+:::equations
 
 | Idea | Equation |
 | --- | --- |
@@ -683,6 +687,7 @@ Equivalently, the engine supplies gravitational potential energy at the rate $$P
 | With nonconservative work | $$K_i + U_i + W_{\text{nc}} = K_f + U_f$$ |
 | Escape speed | $$v_{\text{esc}} = \sqrt{\dfrac{2GM}{R}}$$ |
 | Power | $$P = \dfrac{dW}{dt} = \vec{F}\cdot\vec{v}$$ |
+:::
 
 ## Practice
 

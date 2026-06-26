@@ -6,8 +6,7 @@ sidebar:
 
 ---
 
-## Useful Variables
-
+:::variables
 - $$\vec{F}$$ = force (Units: newtons, $$\text{N} = \text{kg}\cdot\text{m}/\text{s}^2$$)
 - $$m$$ = mass (Units: kilograms, $$\text{kg}$$)
 - $$\vec{a}$$ = acceleration (Units: $$\text{m}/\text{s}^2$$)
@@ -23,6 +22,7 @@ sidebar:
 - $$r$$ = radius of circular path
 - $$v$$ = speed
 - $$\omega$$ = angular speed (Units: $$\text{rad/s}$$)
+:::
 
 ---
 
@@ -30,18 +30,15 @@ sidebar:
 
 In 1687, Newton formulated the three laws of motion. They work extremely well for ordinary macroscopic objects moving much slower than the speed of light. At quantum, relativistic, or very strong-gravity scales, Newtonian mechanics must be replaced or extended, but for AP purposes, Newtonian mechanics suffices.
 
-1. **Newton's First Law**: An object has constant velocity unless acted on by a nonzero net external force. If $$\sum \vec{F} = 0$$, then $$\vec{a} = 0$$.
-2. **Newton's Second Law**: The net external force equals mass times acceleration:
+<div class="theorem-box">
 
-$$
-\sum \vec{F} = m\vec{a}.
-$$
+**Theorem (Newton's Three Laws).**
 
-3. **Newton's Third Law**: If object $$A$$ exerts a force on object $$B$$, then object $$B$$ exerts an equal-magnitude, opposite-direction force on object $$A$$:
+1. **First Law**: An object has constant velocity unless acted on by a nonzero net external force. If $$\sum \vec{F} = 0$$, then $$\vec{a} = 0$$.
+2. **Second Law**: The net external force equals mass times acceleration, $$\sum \vec{F} = m\vec{a}$$.
+3. **Third Law**: If object $$A$$ exerts a force on object $$B$$, then object $$B$$ exerts an equal-magnitude, opposite-direction force on object $$A$$, $$\vec{F}_{A\text{ on }B} = -\vec{F}_{B\text{ on }A}$$.
 
-$$
-\vec{F}_{A\text{ on }B} = -\vec{F}_{B\text{ on }A}.
-$$
+</div>
 
 Third-law forces act on different objects, so they never cancel for one object. They can cancel only when you treat both interacting objects as one system and the force pair becomes internal.
 
@@ -96,7 +93,11 @@ Weight points downward, toward Earth's center. Mass is not weight: mass is an ob
 
 The **normal force** is a contact force **perpendicular** to a surface and opposes gravity. It adjusts to prevent objects from passing through each other, but it is not automatically equal to $$mg$$. For example, on an incline or in an accelerating elevator, the normal force differs from the object's weight. Normally, you need to solve out force equations to get the normal force. The normal force acts along the entire surface of contact but is usually drawn out in the center of the contact plane.
 
-A concrete case where $$F_N \ne mg$$: suppose you push down on a box resting on the floor with an extra downward force $$P$$ at some angle, or simply press straight down. The vertical equation with no vertical acceleration is $$F_N - mg - P = 0$$, so $$F_N = mg + P > mg$$. If instead you pull up on the box with a force $$P$$ (not enough to lift it), then $$F_N = mg - P < mg$$. The normal force only equals $$mg$$ in the special case of a horizontal surface with no other vertical forces and no vertical acceleration. Always get $$F_N$$ from the perpendicular equation, never by assumption, because friction limits like $$\mu_s F_N$$ depend on it.
+A concrete case where $$F_N \ne mg$$: suppose you push down on a box resting on the floor with an extra downward force $$P$$ at some angle, or simply press straight down. The vertical equation with no vertical acceleration is $$F_N - mg - P = 0$$, so $$F_N = mg + P > mg$$. If instead you pull up on the box with a force $$P$$ (not enough to lift it), then $$F_N = mg - P < mg$$. The normal force only equals $$mg$$ in the special case of a horizontal surface with no other vertical forces and no vertical acceleration.
+
+:::warning
+Always get $$F_N$$ from the perpendicular equation, never by assumption, because friction limits like $$\mu_s F_N$$ depend on it.
+:::
 
 ### Tension
 
@@ -152,14 +153,14 @@ for high-speed quadratic drag.
 
 ## Solving Newton's second law problems
 
-The most reliable method is:
-
+:::strategy{title="Newton's second law problems"}
 1. Draw a free-body diagram for each object.
 2. Pick axes that simplify the motion.
 3. Write $$\sum F = ma$$ along each axis.
 4. Connect objects with constraints, such as equal accelerations for an ideal string.
 5. Solve algebraically before substituting numbers.
 6. Check the sign and units of the result.
+:::
 
 For multiple-object systems, you can choose either:
 
@@ -290,9 +291,9 @@ $$
 
 Thus,
 
-$$
-\tan\theta = \mu_s.
-$$
+:::key{name="Maximum angle before sliding"}
+$$\tan\theta_{\max} = \mu_s$$
+:::
 
 This is the maximum angle before sliding for a simple block on a rough incline (rough meaning that there is friction). If external forces or other constraints are present, the slipping condition must be rederived from the free-body diagram.
 
@@ -809,6 +810,7 @@ Internal forces between particles cancel in pairs by Newton's third law when con
 
 ## Working checklist
 
+:::checklist
 1. Choose the system carefully.
 2. Draw a clean free-body diagram.
 3. Pick axes that match the geometry or acceleration.
@@ -818,10 +820,11 @@ Internal forces between particles cancel in pairs by Newton's third law when con
 7. Solve symbolically when possible.
 8. Check limiting cases: frictionless, very large mass, zero angle, or zero acceleration.
 9. For circular motion, point one axis along the radius (toward the center) and set the net radial force equal to $$mv^2/r$$.
+:::
 
 ---
 
-## Key equations
+:::equations
 
 | Idea | Equation |
 | --- | --- |
@@ -841,6 +844,7 @@ Internal forces between particles cancel in pairs by Newton's third law when con
 | Top-of-loop minimum speed | $$v_{\text{top}} = \sqrt{gr}$$ |
 | Terminal velocity (linear drag) | $$v_t = mg/b$$ |
 | Center of mass dynamics | $$\sum \vec{F}_{\text{ext}} = M\vec{a}_{\text{CM}}$$ |
+:::
 
 ## Practice
 

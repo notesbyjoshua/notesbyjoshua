@@ -7,8 +7,7 @@ sidebar:
 
 ---
 
-## Useful Variables
-
+:::variables
 - $$x$$ = displacement from equilibrium
 - $$A$$ = amplitude
 - $$T$$ = period
@@ -17,22 +16,17 @@ sidebar:
 - $$k$$ = spring constant
 - $$m$$ = mass
 - $$\phi$$ = phase constant
+:::
 
 ---
 
 ## Simple Harmonic Motion
 
-A system is in **simple harmonic motion** when its acceleration is proportional to displacement and points toward equilibrium:
+<div class="theorem-box">
 
-$$
-a = -\omega^2 x.
-$$
+**Definition (Simple Harmonic Motion).** A system is in simple harmonic motion when its acceleration is proportional to displacement and points toward equilibrium, $$a = -\omega^2 x$$, equivalently $$\dfrac{d^2x}{dt^2} + \omega^2x = 0$$.
 
-Equivalently,
-
-$$
-\frac{d^2x}{dt^2} + \omega^2x = 0.
-$$
+</div>
 
 The general solution is sinusoidal:
 
@@ -58,7 +52,9 @@ $$
 A=\sqrt{x_0^2+\left(\frac{v_0}{\omega}\right)^2},\qquad \tan\phi=-\frac{v_0}{\omega x_0}.
 $$
 
+:::warning
 When taking the inverse tangent, always check the signs of $$x_0$$ and $$v_0$$ separately to land in the correct quadrant for $$\phi$$.
+:::
 
 <div class="theorem-box">
 
@@ -619,7 +615,11 @@ It is instructive to compare this to a *simple* pendulum of the same length $$L=
 
 ## SHM From a Restoring Force: Floating and Fluid Systems
 
-Not every oscillator is a spring or a pendulum. The general recipe is always the same: displace the system by a small amount, find the net restoring force as a function of displacement, write it as $$F=-(\text{const})\,x$$, and read off $$\omega^2=\text{const}/m$$.
+Not every oscillator is a spring or a pendulum.
+
+:::strategy{title="Finding ω for any oscillator"}
+The general recipe is always the same: displace the system by a small amount, find the net restoring force as a function of displacement, write it as $$F=-(\text{const})\,x$$, and read off $$\omega^2=\text{const}/m$$.
+:::
 
 <div class="theorem-box">
 
@@ -725,7 +725,7 @@ After any initial transient dies away, the system settles into a steady oscillat
 
 ---
 
-## Key equations
+:::equations
 
 | Idea | Equation |
 | --- | --- |
@@ -743,6 +743,7 @@ After any initial transient dies away, the system settles into a steady oscillat
 | Simple pendulum | $$T=2\pi\sqrt{L/g}$$ |
 | Physical pendulum | $$T=2\pi\sqrt{I/(mgd)}$$ |
 | Critical damping | $$b_c=2\sqrt{mk}$$ |
+:::
 
 ## Practice
 

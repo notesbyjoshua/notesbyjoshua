@@ -6,8 +6,7 @@ sidebar:
 
 ---
 
-## Useful Variables
-
+:::variables
 - $$\theta$$ = angular position (Units: radians)
 - $$\omega$$ = angular velocity (Units: $$\text{rad/s}$$)
 - $$\alpha$$ = angular acceleration (Units: $$\text{rad/s}^2$$)
@@ -15,6 +14,7 @@ sidebar:
 - $$I$$ = rotational inertia / moment of inertia (Units: $$\text{kg}\cdot\text{m}^2$$)
 - $$r$$ = distance from rotation axis
 - $$s$$ = arc length
+:::
 
 ---
 
@@ -93,7 +93,9 @@ There are two equivalent ways to read $$\tau = rF\sin\theta$$, and switching bet
 - **Lever arm (perpendicular distance).** Group the trig with $$r$$: $$\tau = F(r\sin\theta) = F\,r_\perp$$. Extend the force's line of action into an infinite line and drop a perpendicular from the axis onto it. That perpendicular distance is the lever arm $$r_\perp$$. Sliding the force back and forth along its own line of action never changes the torque, because the lever arm is unchanged.
 - **Perpendicular component of force.** Group the trig with $$F$$: $$\tau = r(F\sin\theta) = r\,F_\perp$$. Here $$F_\perp = F\sin\theta$$ is the component of the force perpendicular to $$\vec r$$. Only the part of the force that is "across" the radius twists the body; the part along $$\vec r$$ (toward or away from the axis) does nothing.
 
-This is why "force times distance" is a trap: it is only the full torque when the force is perpendicular to $$\vec r$$. When the force is along $$\vec r$$ (radial), $$\sin\theta = 0$$ and the torque vanishes no matter how large the force or the distance.
+:::warning
+"Force times distance" is a trap: it is only the full torque when the force is perpendicular to $$\vec r$$. When the force is along $$\vec r$$ (radial), $$\sin\theta = 0$$ and the torque vanishes no matter how large the force or the distance.
+:::
 
 The direction of torque follows the right-hand rule applied to $$\vec\tau = \vec r\times\vec F$$: point the fingers along $$\vec r$$ (from axis to application point), curl them toward $$\vec F$$, and the thumb gives $$\vec\tau$$. In planar problems the torque vector points either out of or into the page, so we replace the vector bookkeeping with signs: **counterclockwise torques positive, clockwise torques negative**. Pick that sign convention once at the start of a problem and apply it to every torque.
 
@@ -537,12 +539,12 @@ If the object is not accelerating linearly or angularly, both conditions must ho
 
 The standard trick is to **put the pivot at the location of an unknown force**. Since a force exerts zero torque about a point on its own line of action, that unknown drops out of the torque equation entirely, leaving fewer unknowns. Hinge forces and contact forces of unknown direction are the usual targets: pivot at the hinge and you never need to know the hinge force to find everything else. Once the other unknowns are found, the force equations $$\sum F_x = 0$$ and $$\sum F_y = 0$$ recover the hinge force.
 
-A useful procedure for equilibrium problems:
-
+:::strategy{title="Static equilibrium problems"}
 1. Draw a free-body diagram of the extended object, placing each force at its actual point of application (do not collapse the body to a point — location matters for torque).
 2. Pick a sign convention (counterclockwise positive) and a smart pivot, usually at an unknown force.
 3. Write $$\sum\tau = 0$$ about that pivot using lever arms.
 4. Write $$\sum F_x = 0$$ and $$\sum F_y = 0$$ to recover any remaining forces.
+:::
 
 <div class="theorem-box">
 
@@ -718,7 +720,7 @@ If the actual $$\mu_s$$ is smaller than this, the cylinder slips: it then accele
 
 ---
 
-## Key equations
+:::equations
 
 | Idea | Equation |
 | --- | --- |
@@ -732,6 +734,7 @@ If the actual $$\mu_s$$ is smaller than this, the cylinder slips: it then accele
 | Static equilibrium | $$\sum\vec F=0,\quad \sum\tau=0$$ |
 | Rolling constraint | $$v_{\text{cm}}=R\omega,\quad a_{\text{cm}}=R\alpha$$ |
 | Rolling down an incline | $$a=\dfrac{g\sin\theta}{1+I_{\text{cm}}/MR^2}$$ |
+:::
 
 ## Practice
 

@@ -6,14 +6,14 @@ sidebar:
 
 ---
 
-## Useful Variables
-
+:::variables
 - $$\vec{p}$$ = linear momentum (Units: $$\text{kg}\cdot\text{m/s}$$)
 - $$\vec{J}$$ = impulse (Units: $$\text{N}\cdot\text{s}$$)
 - $$\vec{F}_{\text{net}}$$ = net external force
 - $$M$$ = total mass of a system
 - $$\vec{r}_{\text{cm}}$$ = center-of-mass position
 - $$\vec{v}_{\text{cm}}$$ = center-of-mass velocity
+:::
 
 ---
 
@@ -60,7 +60,11 @@ $$
 \vec{F}_{\text{avg}} = \frac{\vec{J}}{\Delta t} = \frac{\Delta \vec{p}}{\Delta t}.
 $$
 
-The average force is the constant force that would deliver the same impulse over the same time. This is why a longer contact time (a "follow-through," an airbag, bent knees on landing) reduces the peak force for a fixed change in momentum.
+The average force is the constant force that would deliver the same impulse over the same time.
+
+:::tip{title="Extend the contact time"}
+A longer contact time (a "follow-through," an airbag, bent knees on landing) reduces the peak force for a fixed change in momentum.
+:::
 
 <div class="theorem-box">
 
@@ -382,7 +386,11 @@ So $$\Delta K = K_f - K_i = -4.3\times10^4\ \text{J}$$ is lost to deformation, h
 
 ## The Ballistic Pendulum
 
-The **ballistic pendulum** is the classic problem that requires *both* momentum and energy, applied to *different stages*. A bullet embeds in a hanging block; the block then swings up. The trick is recognizing that the embedding (a perfectly inelastic collision) conserves momentum but loses energy, while the subsequent swing (no friction, no collision) conserves mechanical energy.
+The **ballistic pendulum** is the classic problem that requires *both* momentum and energy, applied to *different stages*. A bullet embeds in a hanging block; the block then swings up.
+
+:::strategy{title="Ballistic pendulum"}
+The trick is recognizing that the embedding (a perfectly inelastic collision) conserves momentum but loses energy, while the subsequent swing (no friction, no collision) conserves mechanical energy. Analyze each stage with the correct conserved quantity, then combine.
+:::
 
 <div class="theorem-box">
 
@@ -682,7 +690,7 @@ Momentum complements the energy methods of [work and energy](/notes/ap/ap-physic
 
 ---
 
-## Key equations
+:::equations
 
 | Idea | Equation |
 | --- | --- |
@@ -699,6 +707,7 @@ Momentum complements the energy methods of [work and energy](/notes/ap/ap-physic
 | 1D elastic final velocities | $$v_{1f} = \tfrac{m_1-m_2}{m_1+m_2}v_{1i} + \tfrac{2m_2}{m_1+m_2}v_{2i}$$ |
 | Kinetic energy from momentum | $$K = p^2/2m$$ |
 | Rocket equation | $$\Delta v = u\ln(m_0/m_f)$$ |
+:::
 
 ## Practice
 

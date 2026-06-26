@@ -8,8 +8,7 @@ This unit completes the rotation picture by adding rotational energy and angular
 
 ---
 
-## Useful Variables
-
+:::variables
 - $$K_{\text{rot}}$$ = rotational kinetic energy
 - $$L$$ = angular momentum
 - $$I$$ = rotational inertia
@@ -17,6 +16,7 @@ This unit completes the rotation picture by adding rotational energy and angular
 - $$\tau$$ = torque
 - $$W_{\text{rot}}$$ = rotational work
 - $$P$$ = power
+:::
 
 ---
 
@@ -233,7 +233,11 @@ $$
 L = mvr = rp,
 $$
 
-which is *constant in time* even though the particle is not rotating about anything — because $$r\sin\theta$$ stays equal to the fixed lever arm $$r$$. This is a useful sanity check: angular momentum is conserved here because no force (hence no torque) acts. Always state the reference point before quoting an angular momentum; the same motion can have any value of $$L$$, including zero (choose the origin on the line of motion), depending on where you measure from.
+which is *constant in time* even though the particle is not rotating about anything — because $$r\sin\theta$$ stays equal to the fixed lever arm $$r$$. This is a useful sanity check: angular momentum is conserved here because no force (hence no torque) acts.
+
+:::tip{title="State the reference point"}
+Always state the reference point before quoting an angular momentum; the same motion can have any value of $$L$$, including zero (choose the origin on the line of motion), depending on where you measure from.
+:::
 
 ---
 
@@ -327,7 +331,13 @@ $$
 I_i\omega_i = I_f\omega_f.
 $$
 
-If rotational inertia decreases, angular speed increases; if rotational inertia increases, angular speed decreases. Rotational kinetic energy does not have to be conserved during this process because internal work may be done while the mass distribution changes. This is the central subtlety of the topic: $$L$$ is conserved whenever external torque vanishes, but $$K_{\text{rot}}$$ is conserved only when, additionally, no internal work is done and no inelastic merging occurs. The examples below show both behaviors side by side — pulling mass inward *raises* $$K$$, while objects sticking together *lowers* it.
+If rotational inertia decreases, angular speed increases; if rotational inertia increases, angular speed decreases. Rotational kinetic energy does not have to be conserved during this process because internal work may be done while the mass distribution changes.
+
+:::warning
+This is the central subtlety of the topic: $$L$$ is conserved whenever external torque vanishes, but $$K_{\text{rot}}$$ is conserved only when, additionally, no internal work is done and no inelastic merging occurs.
+:::
+
+The examples below show both behaviors side by side — pulling mass inward *raises* $$K$$, while objects sticking together *lowers* it.
 
 <img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20Mech/rotationalmomentum/MoIskater.jpg" alt="spinning skater pulling arms in to speed up placeholder" loading="lazy" decoding="async" />
 
@@ -543,7 +553,7 @@ The comet moves five times slower at aphelion than at perihelion, in exact propo
 
 ---
 
-## Key Equations
+:::equations
 
 | Quantity | Equation |
 |---|---|
@@ -558,6 +568,7 @@ The comet moves five times slower at aphelion than at perihelion, in exact propo
 | Conservation of $$L$$ | $$I_i\omega_i = I_f\omega_f$$ (zero ext. torque) |
 | Angular impulse | $$\displaystyle\int\vec\tau_{\text{ext}}\,dt = \Delta\vec L$$ |
 | Areal velocity (central force) | $$\dfrac{dA}{dt} = \dfrac{L}{2m}$$ |
+:::
 
 ## Practice
 
