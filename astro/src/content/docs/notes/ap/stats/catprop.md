@@ -41,11 +41,11 @@ $$
 \hat{p} \pm z^*\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}.
 $$
 
-Conditions:
-
+:::conditions
 1. Random sample or random assignment.
 2. Independence: if sampling without replacement, $$n \le 0.10N$$.
 3. Large counts: $$n\hat{p} \ge 10$$ and $$n(1-\hat{p}) \ge 10$$.
+:::
 
 Common critical values:
 
@@ -103,7 +103,9 @@ Decision rule:
 - If p-value $$< \alpha$$, reject $$H_0$$.
 - If p-value $$\ge \alpha$$, fail to reject $$H_0$$.
 
+:::warning
 Never say "accept $$H_0$$"; the data may simply not be strong enough to reject it.
+:::
 
 ---
 
@@ -117,11 +119,11 @@ $$
 
 Use $$p_0$$ in the standard error because the test assumes the null hypothesis is true.
 
-Conditions:
-
+:::conditions
 1. Random sample or random assignment.
 2. Independence: if sampling without replacement, $$n \le 0.10N$$.
 3. Large counts using the null value: $$np_0 \ge 10$$ and $$n(1-p_0) \ge 10$$.
+:::
 
 <img class="note-img note-img--w480" src="/assets/APs/AP%20Stats/catprop/p-value-tail.png" alt="p-value tail area placeholder" loading="lazy" decoding="async" />
 

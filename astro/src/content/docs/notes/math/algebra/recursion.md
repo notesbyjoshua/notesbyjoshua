@@ -43,12 +43,14 @@ $$
 a_n=9a_{n-2}.
 $$
 
-In contest math, we often do not need a closed form. Usually it is enough to:
+In contest math, we often do not need a closed form.
 
-- define a sequence clearly,
-- find a recurrence,
-- compute initial values,
-- build a short table until we reach the term we want.
+:::strategy{title="Solving a recurrence in contests"}
+- Define a sequence clearly.
+- Find a recurrence.
+- Compute initial values.
+- Build a short table until you reach the term you want.
+:::
 
 ## Recursive Counting
 
@@ -539,20 +541,11 @@ $$
 a_n=\sum_k F(k,n).
 $$
 
-Instead of attacking $$a_n$$ directly, form the generating function
-
-$$
-A(x)=\sum_{n \ge 0} a_nx^n
-= \sum_{n \ge 0}\sum_k F(k,n)x^n.
-$$
-
-Now switch the order:
-
-$$
-A(x)=\sum_k \sum_{n \ge 0} F(k,n)x^n.
-$$
-
-If the inner sums become recognizable generating functions, the problem becomes much easier.
+:::strategy{title="Snake Oil method"}
+- Instead of attacking $$a_n$$ directly, form the generating function $$A(x)=\sum_{n \ge 0} a_nx^n = \sum_{n \ge 0}\sum_k F(k,n)x^n$$.
+- Switch the order of summation to get $$A(x)=\sum_k \sum_{n \ge 0} F(k,n)x^n$$.
+- If the inner sums become recognizable generating functions, the problem becomes much easier.
+:::
 
 **Example 5.9.** For $$n \ge 0$$, compute
 

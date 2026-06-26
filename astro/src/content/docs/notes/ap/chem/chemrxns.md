@@ -234,15 +234,13 @@ Half-reactions are a very important compenents of **galvanic and electrolytic ce
 
 By convention, the solvent is the component present in greater amount and the solute is the dissolved component (by convention in dilute lab work, the minor component).
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Chem/chemrxns/solubility.jpg" alt="Solubility Rules" loading="lazy" decoding="async" />
-
 ---
 
 ## Factors affecting solubility
 
 **Common-ion effect**: for a sparingly soluble salt in equilibrium with its solid, adding another source of the same cation or anion shifts equilibrium toward solid, lowering molar solubility. (The full equilibrium lecture is in [Unit 7](/notes/ap/chem/equilibrium/).)
 
-Temperature: the effect on solid solubility depends on the sign of enthalpy of solution: many ionic solids become more soluble as $$T$$ rises, but exceptions exist. Gases in liquids almost always become less soluble as $$T$$ rises (molecular kinetic picture: escape from solution is easier when molecules move faster). Pressure has little effect on solid or liquid solutes but strongly affects gas solubility (**Henry’s law** in [Unit 3](/notes/ap/chem/submix/)).
+Temperature: the effect on solid solubility depends on the sign of enthalpy of solution: many ionic solids become more soluble as $$T$$ rises, but exceptions exist. Gases in liquids almost always become less soluble as $$T$$ rises (molecular kinetic picture: escape from solution is easier when molecules move faster). Pressure has little effect on solid or liquid solutes but strongly affects gas solubility (Henry's Law).
 
 ---
 

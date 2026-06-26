@@ -6,8 +6,7 @@ sidebar:
 
 ---
 
-## Useful Variables
-
+:::variables
 - $$V$$ = electric potential, or voltage (Units: volts, $$\text{V} = \text{J/C}$$)
 - $$U$$ = electric potential energy (Units: joules, $$\text{J}$$)
 - $$q$$ = a charge being moved, or a test charge (Units: coulombs, $$\text{C}$$)
@@ -18,6 +17,7 @@ sidebar:
 - $$d$$ = separation or displacement (Units: $$\text{m}$$)
 - $$\text{eV}$$ = electron volt, an energy unit, $$1\ \text{eV} \approx 1.602\times10^{-19}\ \text{J}$$
 - $$e$$ = elementary charge, $$e \approx 1.602\times10^{-19}\ \text{C}$$
+:::
 
 ---
 
@@ -299,7 +299,9 @@ $$
 W_{\text{ext}} = -W_{\text{field}} = q \Delta V.
 $$
 
+:::warning
 Signs matter: a positive charge moving toward lower potential loses potential energy; the field does positive work. Always state whether you mean work by the field or by an external agent.
+:::
 
 <div class="theorem-box">
 

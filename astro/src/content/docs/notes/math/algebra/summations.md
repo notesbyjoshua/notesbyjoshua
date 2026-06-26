@@ -40,12 +40,12 @@ $$
 
 These are the most direct summation techniques, and they appear most often in AMC/AIME problems.
 
-Common moves:
-
+:::strategy{title="Algebraic summation moves"}
 - Look for **telescoping**.
 - Use **partial fractions** when denominators factor.
 - Try to **factor the whole sum**, especially when the summand separates into pieces.
 - Rewrite the expression as a **double sum**, then switch the order.
+:::
 
 ### Telescoping and Partial Fractions
 

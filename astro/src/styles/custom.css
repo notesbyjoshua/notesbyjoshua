@@ -132,6 +132,8 @@
 .sl-markdown-content .callout--checklist  { --cl: #3b82f6; --cl-icon: '✓'; }
 .sl-markdown-content .callout--conditions { --cl: #14b8a6; --cl-icon: '❖'; }
 .sl-markdown-content .callout--equations  { --cl: #6366f1; --cl-icon: '∑'; }
+.sl-markdown-content .callout--strategy   { --cl: #7c3aed; --cl-icon: '◎'; }
+.sl-markdown-content .callout--variables  { --cl: #0891b2; --cl-icon: '𝑥'; }
 .sl-markdown-content .callout--exam       { --cl: #a855f7; --cl-icon: '★'; }
 .sl-markdown-content .callout--key        { --cl: #b84a18; --cl-icon: '🔑'; }
 .sl-markdown-content .callout--summary    { --cl: #64748b; --cl-icon: '▤'; }
@@ -372,6 +374,12 @@
 	gap: 0.35rem 0.75rem;
 	min-width: min(34rem, 70vw);
 	font-size: var(--sl-text-sm);
+}
+
+/* `display: grid` above overrides the `hidden` attribute, so the JS that hides
+   the checkboxes for non-writers had no effect — restore it explicitly. */
+.admin-topic-checks[hidden] {
+	display: none;
 }
 
 .admin-topic-checks label {

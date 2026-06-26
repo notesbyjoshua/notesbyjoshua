@@ -36,6 +36,7 @@ const FIELDED = {
   exam: { attr: 'topic', label: 'On the exam' },
   summary: { attr: 'title', label: 'Summary' },
   tip: { attr: 'title', label: 'Tip' },
+  strategy: { attr: 'title', label: 'Problem-solving strategy' },
 };
 // types with no optional field — label only
 const PLAIN = {
@@ -44,6 +45,7 @@ const PLAIN = {
   checklist: 'Working checklist',
   conditions: 'Conditions',
   equations: 'Key equations',
+  variables: 'Useful variables',
   note: 'Note',
 };
 

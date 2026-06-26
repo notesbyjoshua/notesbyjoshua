@@ -205,19 +205,15 @@ $$
 </div>
 
 
-It is very important to note that if you get a form that is NOT one of these you cannot do any operation to simplify it! For example, if you get the limit is $$\infty/3$$, it is not an indeterminate form!
+:::warning
+If you get a form that is NOT one of these you cannot do any operation to simplify it! For example, if the limit is $$\infty/3$$, it is not an indeterminate form.
+:::
 
 ---
 
 ## Squeeze Theorem
 
-If
-
-$$
-g(x) \le f(x) \le h(x)
-$$
-
-for all $$x$$ near $$a$$, and
+**Theorem (Squeeze Theorem).** If $$g(x) \le f(x) \le h(x)$$ for all $$x$$ near $$a$$, and
 
 $$
 \lim_{x \to a} g(x) = \lim_{x \to a} h(x) = L,
@@ -267,7 +263,11 @@ $$
 \lim_{x \to 0} \frac{\tan x}{x} = 1.
 $$
 
-These are valid only in radians. They are frequently used after rewriting a trig expression into a form that matches one of these limits. It is important to note that $$\cos x$$ is not a part of this because the limit of $$\lim_{x \to 0} \frac{\cos x}{x}$$ can be easily solved by plugging $$0$$ into the expression.
+They are frequently used after rewriting a trig expression into a form that matches one of these limits. It is important to note that $$\cos x$$ is not a part of this because the limit of $$\lim_{x \to 0} \frac{\cos x}{x}$$ can be easily solved by plugging $$0$$ into the expression.
+
+:::conditions
+These two trig limits are valid only when the angle is measured in **radians**.
+:::
 
 <div class="theorem-box">
 

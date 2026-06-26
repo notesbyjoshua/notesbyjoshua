@@ -10,8 +10,7 @@ sidebar:
 
 ---
 
-## Useful Variables
-
+:::variables
 - $$t$$ = time (Units: seconds ($$s$$))
 - $$x$$ or $$s$$ = displacement (Units: meters ($$m$$))
 - $$v$$ = velocity (Units $$\frac{m}{s}$$)
@@ -19,6 +18,7 @@ sidebar:
 - $$g$$ = acceleration due to Earth's gravity = $$9.8 \frac{m}{s^2}$$
 - $$h$$ = height (Units: $$m$$)
 - $$R$$ = range (Units: $$m$$)
+:::
 
 ---
 
@@ -62,7 +62,9 @@ and similarly position from velocity.
 
 Be careful to distinguish **average** and **instantaneous** quantities. Average velocity over an interval is the single constant velocity that would produce the same displacement in the same time; it depends only on the endpoints, $$\bar{v}=\Delta x/\Delta t$$. Instantaneous velocity is the limit of that ratio as the interval shrinks to zero, $$v=dx/dt$$. The two agree only when velocity is constant, or, for the special case of constant acceleration, the average velocity happens to equal the midpoint value $$\frac{1}{2}(v_0+v_f)$$. That coincidence is exactly equation 5 below and does **not** hold when acceleration varies.
 
-Also be careful when taking average speed over a distance of time. Average of two speeds does NOT necessarily mean the average of the whole trip! For example, if you wen $$16$$mph for $$30$$ minutes and then $$4$$mph for $$90$$ minutes your average speed is NOT $$10$$! Always do $$\bar v = \frac{\Delta d}{\Delta t}$$ (You should get $$7$$mph).
+:::warning
+Be careful when taking average speed over an interval. The average of two speeds is NOT necessarily the average speed of the whole trip! For example, if you went $$16$$mph for $$30$$ minutes and then $$4$$mph for $$90$$ minutes your average speed is NOT $$10$$! Always do $$\bar v = \frac{\Delta d}{\Delta t}$$ (You should get $$7$$mph).
+:::
 
 <div class="theorem-box">
 
@@ -133,13 +135,20 @@ So total displacement is $$12 + 2 = 14\ \text{m}$$. Distance traveled adds the m
 
 Many problems use **constant** acceleration $$a$$ (free fall near Earth’s surface is a common case with $$a = -g$$ or $$a = +g$$ depending on axis choice). The following equations (known as the **Big Five** (holy niche bro)) are very useful for these types of problems, since they only require 4 out of the 5 useful variables ($$a$$, $$v_f$$, $$v_0$$, $$\Delta x$$, $$t$$). By convention, we set $$t_0 = 0$$, with $$a$$ being acceleration, $$v_0$$ being initial velocity, $$v_f$$ being final velocity, $$\Delta x$$ being displacement, and $$t$$ being time:
 
+:::key{name="The Big Five"}
 1. Missing $$\Delta x$$: $$v_f = v_0 + at$$
 2. Missing $$v_f$$: $$\Delta x = v_0t + \frac{1}{2}at^2$$
 3. Missing $$v_0$$: $$\Delta x = v_f t - \frac{1}{2}at^2$$
 4. Missing $$t$$: $$v^2 = v_0^2 + 2a\Delta x$$
 5. Missing $$a$$: $$\Delta x = \frac{v_0+v_f}{2}t$$
+:::
 
-These are algebraic consequences of $$a = dv/dt$$ constant and $$v = dx/dt$$. They are only valid for **constant acceleration** (for non-constant acceleration, you need to use other methods). If $$a=0$$, they reduce to the constant-velocity result $$\Delta x=vt$$.
+These are algebraic consequences of $$a = dv/dt$$ constant and $$v = dx/dt$$.
+
+:::conditions
+- Valid only for **constant acceleration** — for non-constant acceleration you need other methods (see below).
+- If $$a=0$$, they reduce to the constant-velocity result $$\Delta x=vt$$.
+:::
 
 <div class="theorem-box">
 
@@ -251,7 +260,9 @@ That proves equation 5.
 
 </div>
 
-Always check that your signs for $$v_0$$, $$v$$, $$a$$, and $$\Delta x$$ match the coordinate system and always be consistent with your definitions (e.g. if you take up as $$+y$$ then gravity has negative acceleration).
+:::tip
+Always check that your signs for $$v_0$$, $$v$$, $$a$$, and $$\Delta x$$ match the coordinate system and stay consistent with your definitions (e.g. if you take up as $$+y$$ then gravity has negative acceleration).
+:::
 
 <div class="theorem-box">
 
@@ -289,16 +300,11 @@ A quick check with equation 5: $$\Delta x = \frac{v_0 + v}{2}t = \frac{25 + 0}{2
 
 The Big Five fail whenever $$a$$ varies, so you fall back on the defining derivatives and choose your integration variable based on what $$a$$ depends on:
 
+:::strategy{title="Non-constant acceleration"}
 - **$$a$$ depends on time, $$a = a(t)$$.** Integrate directly: $$v = v_0 + \int a(t)\, dt$$, then $$x = x_0 + \int v(t)\, dt$$.
-- **$$a$$ depends on position, $$a = a(x)$$.** Time is awkward here, so eliminate it with the chain rule. Writing $$a = dv/dt = (dv/dx)(dx/dt) = v\,dv/dx$$ gives the separable relation
-
-$$
-a(x)\, dx = v\, dv.
-$$
-
-Integrating both sides connects speed to position without ever solving for time, much like how equation 4 was derived.
-
+- **$$a$$ depends on position, $$a = a(x)$$.** Time is awkward here, so eliminate it with the chain rule. Writing $$a = dv/dt = (dv/dx)(dx/dt) = v\,dv/dx$$ gives the separable relation $$a(x)\, dx = v\, dv$$. Integrating both sides connects speed to position without ever solving for time, much like how equation 4 was derived.
 - **$$a$$ depends on velocity, $$a = a(v)$$.** Separate variables in $$dv/dt = a(v)$$ to get $$dt = dv/a(v)$$, or use $$v\,dv/dx = a(v)$$ if you want $$v$$ as a function of $$x$$.
+:::
 
 The tool $$a = v\,dv/dx$$ is worth remembering: it trades the time variable for position whenever time is the inconvenient one to track.
 
@@ -510,8 +516,7 @@ You can find more on the [USAPhO section on mechanics](/notes/physics/advmech/).
 
 ---
 
-## Key equations
-
+:::equations
 | Idea | Equation |
 | --- | --- |
 | Average velocity / acceleration | $$\bar{v} = \dfrac{\Delta x}{\Delta t},\quad \bar{a} = \dfrac{\Delta v}{\Delta t}$$ |
@@ -531,6 +536,7 @@ You can find more on the [USAPhO section on mechanics](/notes/physics/advmech/).
 | Max height (level ground) | $$h = \dfrac{v_0^2\sin^2\theta}{2g}$$ |
 | Time of flight (level ground) | $$T = \dfrac{2v_0\sin\theta}{g}$$ |
 | Relative velocity | $$\vec{v}_{A/C} = \vec{v}_{A/B} + \vec{v}_{B/C}$$ |
+:::
 
 ## Practice
 

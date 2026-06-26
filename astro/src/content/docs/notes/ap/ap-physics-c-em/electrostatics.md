@@ -8,8 +8,7 @@ This unit is the foundation of electricity: how charge produces forces, how we d
 
 ---
 
-## Useful Variables
-
+:::variables
 - $$q$$ = charge (Units: Coulombs (C))
 - $$e$$ = the magnitude charge of an electron/proton = $$1.602 \times 10^{-19} \text{ C}$$
 - $$k$$ = Coulomb's constant = $$8.99 \times 10^9 \text{ N}\cdot\text{m}^2/\text{C}^2$$
@@ -19,6 +18,7 @@ This unit is the foundation of electricity: how charge produces forces, how we d
 - $$\sigma$$ = charge per unit area (Units: $$\frac{C}{m^2}$$)
 - $$\rho$$ = charge per unit volume (Units: $$\frac{C}{m^3}$$)
 - $$\Phi_E$$ = electric flux (Units: $$\frac{N \times m^2}{C}$$)
+:::
 
 ---
 
@@ -692,8 +692,7 @@ Equivalently, work-energy gives the same answer: the field does work $$W = qEd =
 
 ---
 
-## Key equations
-
+:::equations
 | Idea | Equation |
 | --- | --- |
 | Coulomb's law | $$\vec F = \dfrac{1}{4\pi\varepsilon_0}\dfrac{q_1 q_2}{r^2}\hat r$$ |
@@ -711,6 +710,7 @@ Equivalently, work-energy gives the same answer: the field does work $$W = qEd =
 | Dipole moment | $$\vec p = q\vec d$$ |
 | Dipole far field (on axis) | $$E \approx \dfrac{1}{4\pi\varepsilon_0}\dfrac{2p}{r^3}$$ |
 | Torque on a dipole | $$\vec\tau = \vec p \times \vec E,\quad \tau = pE\sin\phi$$ |
+:::
 
 ## Practice
 
