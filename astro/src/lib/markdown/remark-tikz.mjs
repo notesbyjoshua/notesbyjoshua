@@ -50,8 +50,11 @@ function renderSvg(doc) {
 // Compilation is slow (~1–2s each), so cache results on disk by content hash to
 // keep dev rebuilds fast. node_modules/.cache is already gitignored.
 const CACHE_DIR = path.join(process.cwd(), 'node_modules', '.cache', 'remark-tikz');
-const PREAMBLE_RE =
-  /^\s*\\(usepackage|usetikzlibrary|usepgfplotslibrary|pgfplotsset|tikzset|definecolor|pgfplotscreateplotcyclelist)\b/;
+// Everything before the first drawing environment is preamble (\usepackage,
+// \pgfplotsset, \definecolor, …); the rest is the document body. Splitting on the
+// environment — not line-by-line — keeps MULTI-LINE \pgfplotsset{…} definitions
+// intact (line-by-line hoisting would slice them across \begin{document}).
+const BODY_START_RE = /\\begin\{(tikzpicture|circuitikz|axis)\}|\\chemfig/;
 
 // Always available so labels can use \tfrac, \text, \mathbb, … without each
 // block re-declaring them (duplicate \usepackage is harmless in LaTeX).
@@ -59,10 +62,12 @@ const BASE_PREAMBLE = '\\usepackage{amsmath}\n\\usepackage{amssymb}';
 
 function buildDoc(src) {
   if (src.includes('\\begin{document}')) return src;
-  const pre = [];
-  const body = [];
-  for (const line of src.split('\n')) (PREAMBLE_RE.test(line) ? pre : body).push(line);
-  return `${BASE_PREAMBLE}\n${pre.join('\n')}\n\\begin{document}\n${body.join('\n')}\n\\end{document}\n`;
+  const lines = src.split('\n');
+  let idx = lines.findIndex((l) => BODY_START_RE.test(l));
+  if (idx < 0) idx = 0;
+  const pre = lines.slice(0, idx).join('\n');
+  const body = lines.slice(idx).join('\n');
+  return `${BASE_PREAMBLE}\n${pre}\n\\begin{document}\n${body}\n\\end{document}\n`;
 }
 
 function themeSvg(svg) {

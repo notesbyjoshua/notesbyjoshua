@@ -983,7 +983,22 @@ $$
 
 This graph is shown below:
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Precalc/polygraph1.png" alt="parent functions" loading="lazy" decoding="async" />
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[
+  axis lines=middle, xlabel=$x$, ylabel=$y$,
+  xmin=-6, xmax=11, ymin=-2000, ymax=2000,
+  xtick={-5,5,10}, ytick={-1500,-500,500,1500},
+  grid=both, grid style={gray!15}, major grid style={gray!30},
+  width=12cm, height=10cm, clip=true,
+]
+\addplot[red!75!black, very thick, samples=300, domain=-4.55:5.75]
+  {-0.5*(x+4)*(x-1)^2*(x-3)^3};
+\end{axis}
+\end{tikzpicture}
+```
 :::
 ::::
 
@@ -1278,7 +1293,27 @@ $$
 
 The graph is shown below:
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Precalc/ratgraph1.png" alt="parent functions" loading="lazy" decoding="async" />
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[
+  axis lines=middle, xlabel=$x$, ylabel=$y$,
+  xmin=-15, xmax=25, ymin=-12, ymax=26,
+  xtick={-15,-10,-5,5,10,15,20,25}, ytick={-10,-5,5,10,15,20,25},
+  grid=both, grid style={gray!15}, major grid style={gray!30},
+  width=12cm, height=10cm, clip=true,
+]
+% slant asymptote y = x + 2 and vertical asymptote x = 3
+\addplot[blue, dashed, domain=-15:25] {x+2};
+\draw[blue, dashed] (axis cs:3,-12) -- (axis cs:3,26);
+% R(x) = (x-2)(x+1)/(x-3), drawn as two branches around x = 3
+\addplot[red, very thick, samples=200, domain=-15:2.78] {(x-2)*(x+1)/(x-3)};
+\addplot[red, very thick, samples=200, domain=3.24:25] {(x-2)*(x+1)/(x-3)};
+\node[blue, anchor=north west, font=\footnotesize] at (axis cs:14,18) {$y=x+2$};
+\end{axis}
+\end{tikzpicture}
+```
 :::
 ::::
 

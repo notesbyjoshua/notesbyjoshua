@@ -162,7 +162,46 @@ Six parent functions are especially useful to recognize:
 
 Knowing these shapes makes it much easier to sketch transformed functions quickly, and later we will talk about transformations so that most types of problems can be quickly visualized. A chart is shown below, with many of the functions appearing later (exponential, logarithmic, and trig).
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Precalc/parfunc.png" alt="parent functions" loading="lazy" decoding="async" />
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\pgfplotsset{pf/.style={scale only axis, width=2.7cm, height=2cm, axis lines=middle,
+  xtick=\empty, ytick=\empty, enlargelimits=0.12, axis line style={gray!60},
+  anchor=north west, title style={font=\footnotesize, yshift=-2pt}, clip=true}}
+\begin{tikzpicture}
+\begin{axis}[pf, at={(0cm,0cm)}, title={Linear $x$}, domain=-2:2] \addplot[blue,thick,samples=2]{x}; \end{axis}
+\begin{axis}[pf, at={(4.3cm,0cm)}, title={Quadratic $x^2$}, domain=-2:2] \addplot[blue,thick,samples=40]{x^2}; \end{axis}
+\begin{axis}[pf, at={(8.6cm,0cm)}, title={Cubic $x^3$}, domain=-1.6:1.6] \addplot[blue,thick,samples=40]{x^3}; \end{axis}
+\begin{axis}[pf, at={(12.9cm,0cm)}, title={Absolute $|x|$}, domain=-2:2] \addplot[blue,thick,samples=2]{abs(x)}; \end{axis}
+\end{tikzpicture}
+```
+
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\pgfplotsset{pf/.style={scale only axis, width=2.7cm, height=2cm, axis lines=middle,
+  xtick=\empty, ytick=\empty, enlargelimits=0.12, axis line style={gray!60},
+  anchor=north west, title style={font=\footnotesize, yshift=-2pt}, clip=true}}
+\begin{tikzpicture}
+\begin{axis}[pf, at={(0cm,0cm)}, title={Reciprocal $1/x$}, domain=-3:3, restrict y to domain=-4:4, samples=120] \addplot[blue,thick]{1/x}; \end{axis}
+\begin{axis}[pf, at={(4.3cm,0cm)}, title={Exponential $e^x$}, domain=-2:1.6] \addplot[blue,thick,samples=40]{exp(x)}; \end{axis}
+\begin{axis}[pf, at={(8.6cm,0cm)}, title={Logarithmic $\ln x$}, domain=0.12:4, samples=60] \addplot[blue,thick]{ln(x)}; \end{axis}
+\begin{axis}[pf, at={(12.9cm,0cm)}, title={Square root $\sqrt{x}$}, domain=0:4, samples=50] \addplot[blue,thick]{sqrt(x)}; \end{axis}
+\end{tikzpicture}
+```
+
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\pgfplotsset{pf/.style={scale only axis, width=2.7cm, height=2cm, axis lines=middle,
+  xtick=\empty, ytick=\empty, enlargelimits=0.12, axis line style={gray!60},
+  anchor=north west, title style={font=\footnotesize, yshift=-2pt}, clip=true}}
+\begin{tikzpicture}
+\begin{axis}[pf, at={(0cm,0cm)}, title={Sine $\sin x$}, domain=-6.5:6.5, samples=120] \addplot[blue,thick]{sin(deg(x))}; \end{axis}
+\begin{axis}[pf, at={(4.3cm,0cm)}, title={Cosine $\cos x$}, domain=-6.5:6.5, samples=120] \addplot[blue,thick]{cos(deg(x))}; \end{axis}
+\begin{axis}[pf, at={(8.6cm,0cm)}, title={Tangent $\tan x$}, domain=-4.5:4.5, restrict y to domain=-4:4, samples=220] \addplot[blue,thick]{tan(deg(x))}; \end{axis}
+\end{tikzpicture}
+```
 
 ---
 
@@ -772,9 +811,50 @@ $$
 
 Domain restrictions are how we choose one branch when a relation would otherwise give more than one output.
 
-A quick map of bijectivity, surjectivity, and injectivity is shown below (this image only works well in light mode):
+A quick map of bijectivity, surjectivity, and injectivity is shown below:
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Precalc/BIS.png" alt="BIS" loading="lazy" decoding="async" />
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\begin{tikzpicture}[>=Stealth,
+  ar/.style={->, thick, gray!40!black, shorten >=3pt, shorten <=3pt},
+  lbl/.style={font=\bfseries}]
+% Injection
+\begin{scope}[shift={(0,0)}]
+  \node[lbl] at (2,2.2) {Injection (one-to-one)};
+  \draw[gray] (0,0) ellipse (0.8 and 1.6);
+  \draw[gray] (4,0) ellipse (0.8 and 1.6);
+  \foreach \y in {1,0,-1} \fill[orange] (0,\y) circle (2.6pt);
+  \foreach \y in {1.2,0.4,-0.4,-1.2} \fill[green!60!black] (4,\y) circle (2.6pt);
+  \draw[ar] (0,1) -- (4,1.2);
+  \draw[ar] (0,0) -- (4,0.4);
+  \draw[ar] (0,-1) -- (4,-1.2);
+\end{scope}
+% Surjection
+\begin{scope}[shift={(0,-4.6)}]
+  \node[lbl] at (2,2.2) {Surjection (onto)};
+  \draw[gray] (0,0) ellipse (0.8 and 1.6);
+  \draw[gray] (4,0) ellipse (0.8 and 1.6);
+  \foreach \y in {1.2,0.4,-0.4,-1.2} \fill[orange] (0,\y) circle (2.6pt);
+  \foreach \y in {1,0,-1} \fill[green!60!black] (4,\y) circle (2.6pt);
+  \draw[ar] (0,1.2) -- (4,1);
+  \draw[ar] (0,0.4) -- (4,0);
+  \draw[ar] (0,-0.4) -- (4,0);
+  \draw[ar] (0,-1.2) -- (4,-1);
+\end{scope}
+% Bijection
+\begin{scope}[shift={(0,-9.2)}]
+  \node[lbl] at (2,2.2) {Bijection (one-to-one and onto)};
+  \draw[gray] (0,0) ellipse (0.8 and 1.6);
+  \draw[gray] (4,0) ellipse (0.8 and 1.6);
+  \foreach \y in {1,0,-1} \fill[orange] (0,\y) circle (2.6pt);
+  \foreach \y in {1,0,-1} \fill[green!60!black] (4,\y) circle (2.6pt);
+  \draw[ar] (0,1) -- (4,1);
+  \draw[ar] (0,0) -- (4,0);
+  \draw[ar] (0,-1) -- (4,-1);
+\end{scope}
+\end{tikzpicture}
+```
 
 ---
 

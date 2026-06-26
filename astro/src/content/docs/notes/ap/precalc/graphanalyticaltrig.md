@@ -206,7 +206,21 @@ Since $$A<0$$, the cosine graph is reflected over its midline.
 
 A graph with many key points is shown below:
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Precalc/triggraph6.png" alt="parent functions" loading="lazy" decoding="async" />
+```tikz
+\usepackage{pgfplots}\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[axis lines=middle, xlabel=$x$, ylabel=$y$,
+  xmin=-2.7, xmax=4.3, ymin=-2, ymax=4,
+  xtick={-2.0944,-1.0472,0,1.0472,2.0944,3.1416,4.1888},
+  xticklabels={$-\frac{2\pi}{3}$,$-\frac{\pi}{3}$,$0$,$\frac{\pi}{3}$,$\frac{2\pi}{3}$,$\pi$,$\frac{4\pi}{3}$},
+  ytick={-1,1,3}, grid=both, grid style={gray!15}, major grid style={gray!30},
+  width=12cm, height=7cm, clip=true]
+\addplot[gray, dashed, domain=-2.7:4.3]{1};
+\addplot[blue, very thick, samples=240, domain=-2.7:4.3]{-2*cos(deg(3*(x-pi/4)))+1};
+\node[blue, anchor=west, font=\footnotesize] at (axis cs:1.7,3.4) {$-2\cos(3(x-\tfrac{\pi}{4}))+1$};
+\end{axis}
+\end{tikzpicture}
+```
 
 </div>
 
@@ -356,7 +370,26 @@ $$
 
 A graph with many key points is shown below:
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Precalc/triggraph7.png" alt="parent functions" loading="lazy" decoding="async" />
+```tikz
+\usepackage{pgfplots}\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[axis lines=middle, xlabel=$x$, ylabel=$y$,
+  xmin=-2.4, xmax=1.7, ymin=-10, ymax=2,
+  xtick={-0.3927}, xticklabels={$-\frac{\pi}{8}$},
+  ytick={-4}, yticklabels={$-4$}, grid=both, grid style={gray!15}, major grid style={gray!30},
+  width=12cm, height=8cm, clip=true]
+% midline y = -4 and vertical asymptotes x = pi/8 + k pi/2
+\addplot[gray, dashed, domain=-2.4:1.7]{-4};
+\draw[gray!60, dashed] (axis cs:-1.178,-10) -- (axis cs:-1.178,2);
+\draw[gray!60, dashed] (axis cs:0.3927,-10) -- (axis cs:0.3927,2);
+% branches of y = 3 tan(2(x + pi/8)) - 4
+\addplot[blue, very thick, samples=120, domain=-1.16:0.378]{3*tan(deg(2*(x+pi/8)))-4};
+\addplot[blue, very thick, samples=120, domain=-2.36:-1.196]{3*tan(deg(2*(x+pi/8)))-4};
+\addplot[blue, very thick, samples=120, domain=0.41:1.7]{3*tan(deg(2*(x+pi/8)))-4};
+\node[blue, anchor=west, font=\footnotesize] at (axis cs:-2.3,0.8) {$3\tan(2(x+\tfrac{\pi}{8}))-4$};
+\end{axis}
+\end{tikzpicture}
+```
 
 </div>
 
@@ -1268,7 +1301,20 @@ $$
 
 A graph with many key points is shown below:
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Precalc/triggraph1.png" alt="parent functions" loading="lazy" decoding="async" />
+```tikz
+\usepackage{pgfplots}\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[axis lines=middle, xlabel=$x$, ylabel=$y$,
+  xmin=-1.2, xmax=4.3, ymin=-3, ymax=5,
+  xtick={0,0.5236,1.5708,2.618,3.6652}, xticklabels={$0$,$\frac{\pi}{6}$,$\frac{\pi}{2}$,$\frac{5\pi}{6}$,$\frac{7\pi}{6}$},
+  ytick={-2,1,4}, grid=both, grid style={gray!15}, major grid style={gray!30},
+  width=12cm, height=7.5cm, clip=true]
+\addplot[gray, dashed, domain=-1.2:4.3]{1};
+\addplot[blue, very thick, samples=220, domain=-1.2:4.3]{-3*sin(deg(2*(x-pi/6)))+1};
+\node[blue, anchor=south, font=\footnotesize] at (axis cs:2.6,3.2) {$-3\sin(2(x-\tfrac{\pi}{6}))+1$};
+\end{axis}
+\end{tikzpicture}
+```
 :::
 ::::
 
@@ -1332,7 +1378,20 @@ $$
 
 A graph with many key points is shown below:
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Precalc/triggraph2.png" alt="parent functions" loading="lazy" decoding="async" />
+```tikz
+\usepackage{pgfplots}\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[axis lines=middle, xlabel=$x$, ylabel=$y$,
+  xmin=-1.5, xmax=7, ymin=-2, ymax=8,
+  xtick={0,1.0472,3.1416,6.2832}, xticklabels={$0$,$\frac{\pi}{3}$,$\pi$,$2\pi$},
+  ytick={-1,3,7}, grid=both, grid style={gray!15}, major grid style={gray!30},
+  width=12cm, height=7.5cm, clip=true]
+\addplot[gray, dashed, domain=-1.5:7]{3};
+\addplot[blue, very thick, samples=240, domain=-1.5:7]{4*cos(deg(1.2*(x-pi/3)))+3};
+\node[blue, anchor=south, font=\footnotesize] at (axis cs:3.6,7.1) {$4\cos(\tfrac{6}{5}(x-\tfrac{\pi}{3}))+3$};
+\end{axis}
+\end{tikzpicture}
+```
 :::
 ::::
 
@@ -1434,7 +1493,27 @@ The branch should increase from the vertical asymptote $$x=-\frac{\pi}{4}$$ to t
 
 A graph with many key points is shown below:
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Precalc/triggraph3.png" alt="parent functions" loading="lazy" decoding="async" />
+```tikz
+\usepackage{pgfplots}\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[axis lines=middle, xlabel=$x$, ylabel=$y$,
+  xmin=-1.5, xmax=1.5, ymin=-7, ymax=5,
+  xtick={-0.2618}, xticklabels={$-\frac{\pi}{12}$},
+  ytick={-1}, grid=both, grid style={gray!15}, major grid style={gray!30},
+  width=11cm, height=8cm, clip=true]
+% center point (-pi/12, -1) and vertical asymptotes x = pi/12 + k*pi/3
+\addplot[gray, dashed, domain=-1.5:1.5]{-1};
+\draw[gray!60, dashed] (axis cs:-0.7854,-7) -- (axis cs:-0.7854,5);
+\draw[gray!60, dashed] (axis cs:0.2618,-7) -- (axis cs:0.2618,5);
+\draw[gray!60, dashed] (axis cs:1.309,-7) -- (axis cs:1.309,5);
+% branches of y = 2 tan(3(x + pi/12)) - 1
+\addplot[blue, very thick, samples=120, domain=-0.775:0.252]{2*tan(deg(3*(x+pi/12)))-1};
+\addplot[blue, very thick, samples=120, domain=0.272:1.30]{2*tan(deg(3*(x+pi/12)))-1};
+\addplot[blue, very thick, samples=120, domain=-1.5:-0.796]{2*tan(deg(3*(x+pi/12)))-1};
+\node[blue, anchor=south west, font=\footnotesize] at (axis cs:-1.45,3.3) {$2\tan(3(x+\tfrac{\pi}{12}))-1$};
+\end{axis}
+\end{tikzpicture}
+```
 :::
 ::::
 
@@ -1524,7 +1603,20 @@ The secant graph has vertices at $$(\pi,1)$$, $$(3\pi,5)$$, and $$(5\pi,1)$$, wi
 
 A graph with many key points is shown below:
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Precalc/triggraph4.png" alt="parent functions" loading="lazy" decoding="async" />
+```tikz
+\usepackage{pgfplots}\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[axis lines=middle, xlabel=$x$, ylabel=$y$,
+  xmin=-1, xmax=13.5, ymin=0, ymax=6,
+  xtick={0,3.1416,6.2832,9.4248,12.566}, xticklabels={$0$,$\pi$,$2\pi$,$3\pi$,$4\pi$},
+  ytick={1,3,5}, grid=both, grid style={gray!15}, major grid style={gray!30},
+  width=12cm, height=6.5cm, clip=true]
+\addplot[gray, dashed, domain=-1:13.5]{3};
+\addplot[blue, very thick, samples=240, domain=-1:13.5]{-2*cos(deg(0.5*(x-pi)))+3};
+\node[blue, anchor=south, font=\footnotesize] at (axis cs:6.5,5.2) {$-2\cos(\tfrac{1}{2}(x-\pi))+3$};
+\end{axis}
+\end{tikzpicture}
+```
 :::
 ::::
 
@@ -1592,7 +1684,19 @@ The graph of $$y=2\sin^2x-\sin x-1$$ crosses the $$x$$-axis exactly at those val
 
 A graph with many key points is shown below:
 
-<img class="note-img note-img--w480" src="/assets/APs/AP%20Precalc/triggraph5.png" alt="parent functions" loading="lazy" decoding="async" />
+```tikz
+\usepackage{pgfplots}\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[axis lines=middle, xlabel=$x$, ylabel=$y$,
+  xmin=-0.5, xmax=13, ymin=-2, ymax=2.6,
+  xtick={0,3.1416,6.2832,9.4248,12.566}, xticklabels={$0$,$\pi$,$2\pi$,$3\pi$,$4\pi$},
+  ytick={-1,1,2}, grid=both, grid style={gray!15}, major grid style={gray!30},
+  width=12cm, height=6cm, clip=true]
+\addplot[blue, very thick, samples=300, domain=0:12.566]{2*(sin(deg(x)))^2 - sin(deg(x)) - 1};
+\node[blue, anchor=south west, font=\footnotesize] at (axis cs:0.2,2) {$2\sin^2 x-\sin x-1$};
+\end{axis}
+\end{tikzpicture}
+```
 :::
 ::::
 
