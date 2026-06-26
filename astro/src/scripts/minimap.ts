@@ -276,7 +276,10 @@ function setup(): Controller | null {
 			sharpSlot.replaceChildren();
 			labelsEl.replaceChildren();
 			minimap.hidden = true;
-			document.documentElement.classList.remove('has-minimap');
+			// Leave `has-minimap` alone here. It's set before paint by the inline
+			// script in Head.astro; removing it on teardown (e.g. the redundant
+			// boot()/init churn on load) would briefly un-hide the text TOC — the
+			// flash we're avoiding. measureAndSync still drops it if scale <= 0.
 		},
 	};
 
@@ -370,6 +373,12 @@ function setup(): Controller | null {
 }
 
 // ── lifecycle ──
+// The `has-minimap` class (which swaps Starlight's text TOC for the minimap) is
+// set BEFORE paint by a render-blocking inline script in Head.astro, gated to
+// pages that will have a minimap — so the TOC never flashes before this builds.
+// We deliberately don't toggle that class here on a timer (doing so races the
+// inline script and re-introduces the flash); the build only re-affirms it, and
+// measureAndSync drops it if the page genuinely can't fit a minimap.
 let active: Controller | null = null;
 function boot() {
 	active?.destroy();

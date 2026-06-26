@@ -10,6 +10,16 @@ const route = (Astro.locals as any).starlightRoute;
 const entry = route?.entry;
 const isNote = Astro.url.pathname.startsWith('/notes/');
 
+// The desktop minimap replaces Starlight's text TOC, but it's built by JS after
+// load — so without this the default TOC paints first and then gets swapped for
+// the minimap (a visible flash on every navigation). Mirror the minimap's
+// eligibility (≥2 h2/h3 headings) and add `has-minimap` before paint via a
+// render-blocking inline script. The CSS only acts on it at ≥1200px and reverts
+// it under reduced motion, so this is inert on mobile / reduced-motion; minimap.ts
+// then owns the class from there.
+const headings = (route?.headings ?? []) as Array<{ depth: number }>;
+const willHaveMinimap = isNote && headings.filter((h) => h.depth === 2 || h.depth === 3).length >= 2;
+
 let jsonLd: string | null = null;
 if (isNote && entry) {
   const data = entry.data ?? {};
@@ -36,6 +46,7 @@ if (isNote && entry) {
 ---
 
 <Default><slot /></Default>
+{willHaveMinimap && <script is:inline>document.documentElement.classList.add("has-minimap")</script>}
 {jsonLd && <script type="application/ld+json" is:inline set:html={jsonLd} />}
 
 <script>
