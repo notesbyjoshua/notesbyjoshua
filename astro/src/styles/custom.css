@@ -615,6 +615,31 @@
 	background: var(--sl-color-gray-6);
 }
 
+/* Sign-in button: filled accent pill so it's the most prominent thing in the
+   header for signed-out readers (the faint outline version was easy to miss). */
+.ha-signin {
+	background: var(--sl-color-accent);
+	border-color: var(--sl-color-accent);
+	color: #fff;
+	font-weight: 700;
+	box-shadow: 0 2px 10px color-mix(in srgb, var(--sl-color-accent) 45%, transparent);
+}
+.ha-signin:hover {
+	background: var(--sl-color-accent-high);
+	border-color: var(--sl-color-accent-high);
+}
+/* Dark theme's accent is a lighter orange — use dark ink for legible text. */
+:root[data-theme='dark'] .ha-signin {
+	color: #20140b;
+}
+/* White chip behind the multi-colour Google "G" so it stays crisp on the fill. */
+.ha-signin .ha-google {
+	background: #fff;
+	border-radius: 50%;
+	padding: 2px;
+	box-sizing: content-box;
+}
+
 /* These set `display`, which overrides the `hidden` attribute — restore it so
    toggling .hidden actually shows/hides them. */
 .header-account-link[hidden],
