@@ -1,3 +1,13 @@
+## Version control
+
+Commit and push your changes automatically once a task is complete, unless the
+user says otherwise. Don't wait to be asked to commit or push — do it by default.
+
+- Use a clear, descriptive commit message summarizing the change.
+- Push to the current branch (typically `main`) after committing.
+- Skip the automatic commit/push only when the user explicitly asks you not to,
+  or when the work is clearly incomplete / left in a broken state.
+
 ## Development
 
 When starting the dev server, use background mode:
