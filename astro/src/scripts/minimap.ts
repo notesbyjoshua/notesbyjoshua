@@ -223,8 +223,17 @@ function setup(): Controller | null {
 	const abort = new AbortController();
 	const { signal } = abort;
 
-	blurSlot.replaceChildren(buildClone(article));
-	sharpSlot.replaceChildren(buildClone(article));
+	// The clone is a static snapshot, so it must be rebuilt whenever the article's
+	// content height changes — e.g. when a practice "Show solution" toggle reveals
+	// a `[data-solution]` box. Otherwise the geometry (driven by the live article
+	// height) grows while the clone stays short, and the viewport thumb runs past
+	// the end of the rendered preview.
+	const rebuildClones = () => {
+		blurSlot.replaceChildren(buildClone(article));
+		sharpSlot.replaceChildren(buildClone(article));
+	};
+	let clonedHeight = article.scrollHeight;
+	rebuildClones();
 	buildLabels(labelsEl, headings);
 	minimap.removeAttribute('hidden');
 
@@ -280,6 +289,12 @@ function setup(): Controller | null {
 		syncRaf = requestAnimationFrame(() => { syncRaf = 0; syncScroll(); });
 	}
 	function measureAndSync() {
+		// Re-clone when the article's height changed (e.g. a solution was toggled)
+		// so the preview matches the geometry that drives the viewport thumb.
+		if (article!.scrollHeight !== clonedHeight) {
+			rebuildClones();
+			clonedHeight = article!.scrollHeight;
+		}
 		g = measureGeometry(article!, preview!, minimap!);
 		if (g.scale <= 0) {
 			minimap!.hidden = true;
