@@ -1235,7 +1235,6 @@ A graph of the function is shown below:
 ]
 \addplot[blue, very thick, samples=260, domain=0:720]
   ({(x/180)*cos(x)}, {(x/180)*sin(x)});
-\node[blue, anchor=west] at (axis cs:0.75,1.2) {$r=\theta/\pi$};
 \end{axis}
 \end{tikzpicture}
 ```
@@ -1328,7 +1327,6 @@ A graph of the function is shown below:
 ]
 \addplot[blue, very thick, samples=360, domain=0:360]
   ({(2+4*cos(x))*cos(x)}, {(2+4*cos(x))*sin(x)});
-\node[blue, anchor=west] at (axis cs:3.2,2.8) {$r=2+4\cos\theta$};
 \end{axis}
 \end{tikzpicture}
 ```
@@ -1406,7 +1404,6 @@ A graph of the function is shown below:
 ]
 \addplot[blue, very thick, samples=420, domain=0:360]
   ({(4*sin(3*x))*cos(x)}, {(4*sin(3*x))*sin(x)});
-\node[blue, anchor=west] at (axis cs:1.1,3.7) {$r=4\sin(3\theta)$};
 \end{axis}
 \end{tikzpicture}
 ```
@@ -1455,7 +1452,6 @@ A graph of the lemniscate is shown below:
   ({(3*sqrt(sin(2*x)))*cos(x)}, {(3*sqrt(sin(2*x)))*sin(x)});
 \addplot[blue, very thick, samples=220, domain=180:270]
   ({(3*sqrt(sin(2*x)))*cos(x)}, {(3*sqrt(sin(2*x)))*sin(x)});
-\node[blue, anchor=west] at (axis cs:0.6,2.4) {$r^2=9\sin(2\theta)$};
 \end{axis}
 \end{tikzpicture}
 ```

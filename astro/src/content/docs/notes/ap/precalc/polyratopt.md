@@ -1310,7 +1310,6 @@ The graph is shown below:
 % R(x) = (x-2)(x+1)/(x-3), drawn as two branches around x = 3
 \addplot[red, very thick, samples=200, domain=-15:2.78] {(x-2)*(x+1)/(x-3)};
 \addplot[red, very thick, samples=200, domain=3.24:25] {(x-2)*(x+1)/(x-3)};
-\node[blue, anchor=north west, font=\footnotesize] at (axis cs:14,18) {$y=x+2$};
 \end{axis}
 \end{tikzpicture}
 ```

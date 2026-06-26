@@ -217,7 +217,6 @@ A graph with many key points is shown below:
   width=12cm, height=7cm, clip=true]
 \addplot[gray, dashed, domain=-2.7:4.3]{1};
 \addplot[blue, very thick, samples=240, domain=-2.7:4.3]{-2*cos(deg(3*(x-pi/4)))+1};
-\node[blue, anchor=west, font=\footnotesize] at (axis cs:1.7,3.4) {$-2\cos(3(x-\tfrac{\pi}{4}))+1$};
 \end{axis}
 \end{tikzpicture}
 ```
@@ -386,7 +385,6 @@ A graph with many key points is shown below:
 \addplot[blue, very thick, samples=120, domain=-1.16:0.378]{3*tan(deg(2*(x+pi/8)))-4};
 \addplot[blue, very thick, samples=120, domain=-2.36:-1.196]{3*tan(deg(2*(x+pi/8)))-4};
 \addplot[blue, very thick, samples=120, domain=0.41:1.7]{3*tan(deg(2*(x+pi/8)))-4};
-\node[blue, anchor=west, font=\footnotesize] at (axis cs:-2.3,0.8) {$3\tan(2(x+\tfrac{\pi}{8}))-4$};
 \end{axis}
 \end{tikzpicture}
 ```
@@ -1311,7 +1309,6 @@ A graph with many key points is shown below:
   width=12cm, height=7.5cm, clip=true]
 \addplot[gray, dashed, domain=-1.2:4.3]{1};
 \addplot[blue, very thick, samples=220, domain=-1.2:4.3]{-3*sin(deg(2*(x-pi/6)))+1};
-\node[blue, anchor=south, font=\footnotesize] at (axis cs:2.6,3.2) {$-3\sin(2(x-\tfrac{\pi}{6}))+1$};
 \end{axis}
 \end{tikzpicture}
 ```
@@ -1388,7 +1385,6 @@ A graph with many key points is shown below:
   width=12cm, height=7.5cm, clip=true]
 \addplot[gray, dashed, domain=-1.5:7]{3};
 \addplot[blue, very thick, samples=240, domain=-1.5:7]{4*cos(deg(1.2*(x-pi/3)))+3};
-\node[blue, anchor=south, font=\footnotesize] at (axis cs:3.6,7.1) {$4\cos(\tfrac{6}{5}(x-\tfrac{\pi}{3}))+3$};
 \end{axis}
 \end{tikzpicture}
 ```
@@ -1510,7 +1506,6 @@ A graph with many key points is shown below:
 \addplot[blue, very thick, samples=120, domain=-0.775:0.252]{2*tan(deg(3*(x+pi/12)))-1};
 \addplot[blue, very thick, samples=120, domain=0.272:1.30]{2*tan(deg(3*(x+pi/12)))-1};
 \addplot[blue, very thick, samples=120, domain=-1.5:-0.796]{2*tan(deg(3*(x+pi/12)))-1};
-\node[blue, anchor=south west, font=\footnotesize] at (axis cs:-1.45,3.3) {$2\tan(3(x+\tfrac{\pi}{12}))-1$};
 \end{axis}
 \end{tikzpicture}
 ```
@@ -1613,7 +1608,6 @@ A graph with many key points is shown below:
   width=12cm, height=6.5cm, clip=true]
 \addplot[gray, dashed, domain=-1:13.5]{3};
 \addplot[blue, very thick, samples=240, domain=-1:13.5]{-2*cos(deg(0.5*(x-pi)))+3};
-\node[blue, anchor=south, font=\footnotesize] at (axis cs:6.5,5.2) {$-2\cos(\tfrac{1}{2}(x-\pi))+3$};
 \end{axis}
 \end{tikzpicture}
 ```
@@ -1693,7 +1687,6 @@ A graph with many key points is shown below:
   ytick={-1,1,2}, grid=both, grid style={gray!15}, major grid style={gray!30},
   width=12cm, height=6cm, clip=true]
 \addplot[blue, very thick, samples=300, domain=0:12.566]{2*(sin(deg(x)))^2 - sin(deg(x)) - 1};
-\node[blue, anchor=south west, font=\footnotesize] at (axis cs:0.2,2) {$2\sin^2 x-\sin x-1$};
 \end{axis}
 \end{tikzpicture}
 ```

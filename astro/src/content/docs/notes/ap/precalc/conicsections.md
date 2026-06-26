@@ -413,7 +413,6 @@ $$
 \addplot[only marks, mark=*, mark size=1.8pt, red!80!black] coordinates {(-2.236,0) (2.236,0)};
 \node[red!80!black, anchor=south] at (axis cs:-2.236,0) {$(-\sqrt5,0)$};
 \node[red!80!black, anchor=south] at (axis cs:2.236,0) {$(\sqrt5,0)$};
-\node[blue, anchor=west] at (axis cs:1.2,2.25) {$\frac{x^2}{9}+\frac{y^2}{4}=1$};
 \end{axis}
 \end{tikzpicture}
 ```
@@ -554,7 +553,6 @@ The conjugate hyperbola swaps the roles of the terms (e.g. $$\frac{y^{2}}{a^{2}}
 \addplot[only marks, mark=*, mark size=1.8pt, orange!85!black] coordinates {(-3,0) (3,0)};
 \node[orange!85!black, anchor=south] at (axis cs:-3,0) {$F_1$};
 \node[orange!85!black, anchor=south] at (axis cs:3,0) {$F_2$};
-\node[red!70!black, anchor=west] at (axis cs:2.2,2.0) {asymptotes};
 \end{axis}
 \end{tikzpicture}
 ```
@@ -671,7 +669,6 @@ $$
 \addplot[red!75!black, dashed, domain=-6:6] {(2/3)*x};
 \addplot[red!75!black, dashed, domain=-6:6] {-(2/3)*x};
 \addplot[only marks, mark=*, mark size=1.8pt, orange!85!black] coordinates {(-3.606,0) (3.606,0)};
-\node[blue, anchor=west] at (axis cs:1.0,4.3) {$\frac{x^2}{9}-\frac{y^2}{4}=1$};
 \node[orange!85!black, anchor=south] at (axis cs:-3.606,0) {$-\sqrt{13}$};
 \node[orange!85!black, anchor=south] at (axis cs:3.606,0) {$\sqrt{13}$};
 \end{axis}
@@ -1556,7 +1553,6 @@ These angles give the asymptotic directions of the hyperbola.
 \addplot[only marks, mark=*, mark size=1.8pt, orange!85!black] coordinates {(0,0)};
 \node[orange!85!black, anchor=north east] at (axis cs:0,0) {focus/pole};
 \node[red!75!black, anchor=south west] at (axis cs:3,4.9) {$x=3$};
-\node[blue, anchor=west] at (axis cs:3.6,-3.9) {$r=\frac{3}{1+\frac43\cos\theta}$};
 \end{axis}
 \end{tikzpicture}
 ```
@@ -1641,7 +1637,6 @@ The graph of the conic is displayed below:
 \addplot[orange!80!black, thick] coordinates {(0,-2) (6,-2)};
 \addplot[green!50!black, thick] coordinates {(3,-4) (3,0)};
 \addplot[only marks, mark=*, mark size=1.8pt, red!80!black] coordinates {(0.764,-2) (5.236,-2)};
-\node[blue, anchor=west] at (axis cs:1.2,0.75) {$\frac{(x-3)^2}{9}+\frac{(y+2)^2}{4}=1$};
 \end{axis}
 \end{tikzpicture}
 ```
@@ -2007,7 +2002,6 @@ An image of the hyperbola is shown below:
 \addplot[red!75!black, dashed, domain=-7:3] {3 + (5/3)*(x+2)};
 \addplot[red!75!black, dashed, domain=-7:3] {3 - (5/3)*(x+2)};
 \addplot[only marks, mark=*, mark size=1.8pt, orange!85!black] coordinates {(-2,6.606) (-2,-0.606)};
-\node[blue, anchor=west] at (axis cs:-6.7,7.2) {$\frac{(y-3)^2}{25}-\frac{(x+2)^2}{9}=1$};
 \end{axis}
 \end{tikzpicture}
 ```
