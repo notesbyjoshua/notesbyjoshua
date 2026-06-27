@@ -367,6 +367,8 @@ $$
 
 ## Derivatives of common functions
 
+**add proof of trig as an example**
+
 $$
 \frac{d}{dx}(\sin x) = \cos x
 $$
@@ -412,7 +414,7 @@ $$
 \frac{d}{dx}(\cot x)=-\csc^2 x.
 $$
 
-Hyperbolic functions are mostly BC/enrichment, but they sometimes appear in advanced calculus work:
+Hyperbolic functions are less common  but they sometimes appear in advanced calculus work:
 
 $$
 \sinh x=\frac{e^x-e^{-x}}{2},
