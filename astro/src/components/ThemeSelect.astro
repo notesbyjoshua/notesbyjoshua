@@ -1,40 +1,59 @@
 ---
 /*
- * Sun/stars light–dark toggle — overrides Starlight's default <select> theme
- * picker (registered in astro.config.mjs `components.ThemeSelect`).
+ * Theme controls — overrides Starlight's default <select> theme picker
+ * (registered in astro.config.mjs `components.ThemeSelect`).
  *
- * Ported from gxboy12345's fork. It's purely light↔dark (no "auto"), and it
- * integrates with Starlight's own theming rather than fighting it:
+ * The button is a light↔dark toggle that integrates with Starlight's own
+ * theming rather than fighting it:
  *   - reads/writes localStorage['starlight-theme'] (Starlight's key)
  *   - sets document.documentElement.dataset.theme
  * so Starlight's no-FOUC inline ThemeProvider applies the saved choice on load.
  *
- * The animated face (sky gradients, stars, the orbiting "eclipse" knob) is all
- * CSS in handwritten-theme styles below.
+ * The select controls our own visual note theme:
+ *   - reads/writes localStorage['notesbyjoshua-theme']
+ *   - sets document.documentElement.dataset.noteTheme
  */
 ---
 
-<button
-	type="button"
-	class="theme-switch"
-	data-theme-toggle
-	aria-label="Toggle color theme"
-	aria-pressed="false"
->
-	<span class="theme-switch__track" aria-hidden="true">
-		<span class="theme-switch__sky theme-switch__sky--day"></span>
-		<span class="theme-switch__sky theme-switch__sky--night"></span>
-		<span class="theme-switch__stars"></span>
-		<span class="theme-switch__eclipse"></span>
-	</span>
-</button>
+<div class="theme-controls" aria-label="Theme controls">
+	<button
+		type="button"
+		class="theme-switch"
+		data-theme-toggle
+		aria-label="Toggle color theme"
+		aria-pressed="false"
+	>
+		<span class="theme-switch__track" aria-hidden="true">
+			<span class="theme-switch__sky theme-switch__sky--day"></span>
+			<span class="theme-switch__sky theme-switch__sky--night"></span>
+			<span class="theme-switch__stars"></span>
+			<span class="theme-switch__eclipse"></span>
+		</span>
+	</button>
+
+	<label class="visual-theme" aria-label="Visual theme">
+		<span class="sr-only">Visual theme</span>
+		<select class="visual-theme__select" data-visual-theme-select>
+			<option value="handwritten">Handwritten</option>
+			<option value="default">Default</option>
+			<option value="blueprint">Blueprint</option>
+		</select>
+	</label>
+</div>
 
 <script>
 	type Theme = 'light' | 'dark';
+	type VisualTheme = 'handwritten' | 'default' | 'blueprint';
 	const STORAGE_KEY = 'starlight-theme';
+	const VISUAL_THEME_KEY = 'notesbyjoshua-theme';
+	const VISUAL_THEMES = new Set<VisualTheme>(['handwritten', 'default', 'blueprint']);
 
 	const currentTheme = (): Theme =>
 		document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light';
+	const currentVisualTheme = (): VisualTheme => {
+		const theme = document.documentElement.dataset.noteTheme;
+		return VISUAL_THEMES.has(theme as VisualTheme) ? (theme as VisualTheme) : 'handwritten';
+	};
 
 	function applyTheme(theme: Theme) {
 		document.documentElement.dataset.theme = theme;
@@ -49,6 +68,19 @@
 		const dark = currentTheme() === 'dark';
 		btn.setAttribute('aria-pressed', dark ? 'true' : 'false');
 		btn.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+	}
+
+	function applyVisualTheme(theme: VisualTheme) {
+		document.documentElement.dataset.noteTheme = theme;
+		try {
+			localStorage.setItem(VISUAL_THEME_KEY, theme);
+		} catch {
+			/* storage may be unavailable (private mode) — theme still applies for the session */
+		}
+	}
+
+	function syncVisualSelect(select: HTMLSelectElement) {
+		select.value = currentVisualTheme();
 	}
 
 	function bind() {
@@ -69,6 +101,22 @@
 				btn.classList.remove('theme-switch--snap');
 				void btn.offsetWidth;
 				btn.classList.add('theme-switch--snap');
+			});
+		});
+
+		const selects = document.querySelectorAll<HTMLSelectElement>('[data-visual-theme-select]');
+		selects.forEach((select) => {
+			syncVisualSelect(select);
+			if (select.dataset.bound === '1') return;
+			select.dataset.bound = '1';
+
+			select.addEventListener('change', () => {
+				const theme = select.value as VisualTheme;
+				if (!VISUAL_THEMES.has(theme)) return;
+				applyVisualTheme(theme);
+				document
+					.querySelectorAll<HTMLSelectElement>('[data-visual-theme-select]')
+					.forEach(syncVisualSelect);
 			});
 		});
 	}

@@ -824,6 +824,14 @@ function ensureCanvas(): HTMLCanvasElement | null {
 export function initDocCanvasParallax(): void {
   active?.destroy();
   active = null;
+  if (
+    document.documentElement.dataset.noteTheme === 'default'
+    || document.documentElement.dataset.noteTheme === 'blueprint'
+  ) {
+    document.documentElement.classList.remove('paper-canvas-active');
+    document.querySelector<HTMLCanvasElement>(`canvas.${CANVAS_CLASS}`)?.remove();
+    return;
+  }
   // Respect reduced motion: leave the static CSS dot-grid in place instead.
   if (prefersReducedMotion()) {
     document.documentElement.classList.remove('paper-canvas-active');
@@ -843,4 +851,9 @@ export function mountPaperCanvas(): void {
   if (pageLoadBound) return;
   pageLoadBound = true;
   document.addEventListener('astro:page-load', initDocCanvasParallax);
+  const themeObserver = new MutationObserver(initDocCanvasParallax);
+  themeObserver.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ['data-note-theme'],
+  });
 }

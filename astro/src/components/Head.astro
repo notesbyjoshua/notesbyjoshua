@@ -45,6 +45,18 @@ if (isNote && entry) {
 }
 ---
 
+<script is:inline>
+	(() => {
+		const key = 'notesbyjoshua-theme';
+		const allowed = new Set(['handwritten', 'default', 'blueprint']);
+		let theme = 'handwritten';
+		try {
+			const saved = localStorage.getItem(key);
+			if (allowed.has(saved)) theme = saved;
+		} catch {}
+		document.documentElement.dataset.noteTheme = theme;
+	})();
+</script>
 <Default><slot /></Default>
 {willHaveMinimap && <script is:inline>document.documentElement.classList.add("has-minimap")</script>}
 {jsonLd && <script type="application/ld+json" is:inline set:html={jsonLd} />}
