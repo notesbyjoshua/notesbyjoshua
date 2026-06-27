@@ -96,6 +96,16 @@ As a concrete case, a pendulum has $$U(\theta)=mgL(1-\cos\theta)\approx \tfrac12
 
 ---
 
+## Coordinate Systems
+
+### Polar coordinates
+
+### Spherical coordinates
+
+### Cylindrical coordinates
+
+---
+
 ## Vector Algebra
 
 Vectors show up a lot on USAPhO, so it is especially handy to know how to do vector algebra.
@@ -105,8 +115,6 @@ Vectors show up a lot on USAPhO, so it is especially handy to know how to do vec
 ### Notations
 
 A vector $$\vec a$$ has components $$\vec a=(a_x,a_y,a_z)=a_x\hat i+a_y\hat j+a_z\hat k$$, where $$\hat i,\hat j,\hat k$$ are unit vectors along the axes. Its **magnitude** is $$\lvert \vec a \rvert =\sqrt{a_x^2+a_y^2+a_z^2}$$, and the **unit vector** in its direction is $$\hat a=\vec a/ \lvert \vec a \rvert$$. Throughout, $$\theta$$ denotes the angle between the two vectors being combined.
-
----
 
 ### Dot product
 
@@ -124,8 +132,6 @@ A vector $$\vec a$$ has components $$\vec a=(a_x,a_y,a_z)=a_x\hat i+a_y\hat j+a_
 4. If $$\vec a \perp \vec b$$, then $$\vec a \cdot \vec b = 0$$
 
 The geometric meaning is **projection**: $$\vec a\cdot\hat b$$ is the component of $$\vec a$$ along the direction of $$\vec b$$. This is why work is $$W=\vec F\cdot\vec d$$ (only the force component along the displacement does work) and flux is $$\vec E\cdot\vec A$$. Whenever a problem asks "how much of this vector points along that direction," reach for the dot product.
-
----
 
 ### Cross product
 
@@ -149,6 +155,8 @@ $$
 4. The result is perpendicular to *both* inputs, with direction set by the right-hand rule.
 
 The cross product encodes "rotational" or "perpendicular" relationships: torque $$\vec\tau=\vec r\times\vec F$$, angular momentum $$\vec L=\vec r\times\vec p$$, and the magnetic force $$\vec F=q\vec v\times\vec B$$ are all cross products. If a quantity involves a lever arm or a right-hand rule, it is a cross product underneath.
+
+### Triple product and other vector formulas
 
 ---
 

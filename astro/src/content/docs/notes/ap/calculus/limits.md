@@ -206,6 +206,7 @@ Multiply by the conjugate to remove the radical from the numerator:
 $$
 \frac{\sqrt{x+1}-1}{x}=\frac{(\sqrt{x+1}-1)(\sqrt{x+1}+1)}{x(\sqrt{x+1}+1)}=\frac{x}{x(\sqrt{x+1}+1)}=\frac{1}{\sqrt{x+1}+1},\qquad x\ne0.
 $$
+//this part goes out of the page
 
 Now evaluate the simplified limit:
 

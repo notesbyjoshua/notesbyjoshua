@@ -33,7 +33,7 @@ const notes = docs
   <div id="ed-content" hidden>
     <div class="ed-bar">
       <label>
-        Note
+        <span>Note</span>
         <select id="ed-file">
           <option value="">— choose a note —</option>
           {notes.map((n) => <option value={n.path} data-topic-key={n.topicKey}>{n.title} — {n.id}</option>)}
@@ -283,7 +283,8 @@ const notes = docs
 
 <style>
   .ed-bar { display: flex; gap: 0.6rem; align-items: center; flex-wrap: wrap; margin-bottom: 0.75rem; }
-  .ed-bar label { display: flex; gap: 0.4rem; align-items: center; flex: 1; min-width: 0; }
+  .ed-bar label { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 0.4rem; align-items: center; flex: 1; min-width: 0; }
+  .ed-bar label span { line-height: 2.25rem; }
   /* Shared sizing so the select, inputs and buttons are all the same height and line up. */
   .ed-bar select, .ed-bar input, .ed-bar button { height: 2.25rem; box-sizing: border-box; border-radius: 0.3rem; font: inherit; line-height: 1.2; }
   .ed-bar select, .ed-bar input { padding: 0 0.6rem; border: 1px solid var(--sl-color-gray-5); background-color: var(--sl-color-black); color: var(--sl-color-white); }
@@ -299,7 +300,7 @@ const notes = docs
   }
   .ed-save-bar { margin-top: 0.75rem; }
   .ed-save-bar input { flex: 1; min-width: 8rem; }
-  .ed-bar button { padding: 0 0.9rem; border: 1px solid var(--sl-color-accent); background: var(--sl-color-accent); color: var(--sl-color-white); cursor: pointer; }
+  .ed-bar button { display: inline-flex; align-items: center; justify-content: center; padding: 0 0.9rem; border: 1px solid var(--sl-color-accent); background: var(--sl-color-accent); color: var(--sl-color-white); cursor: pointer; }
   .ed-bar button:disabled { opacity: 0.5; cursor: not-allowed; }
   .ed-bar button.ed-secondary { background: transparent; color: var(--sl-color-white); border-color: var(--sl-color-gray-5); }
   .ed-bar button.ed-secondary:hover:not(:disabled) { background: var(--sl-color-gray-6); }

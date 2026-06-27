@@ -277,10 +277,12 @@ Output:
 Purpose: Verify proof/example/solution box formatting.
 
 What to check:
-- The opening tag is `<div class="theorem-box" markdown="1">`.
+- The opening tag is `<div class="theorem-box">`.
 - Every theorem box has a matching `</div>`.
 - Proofs use `**Proof (...).**`.
 - Examples use `**Example.**`.
+- Definitions use `**Definition.**`
+- Theorems use `**Theorem.**`
 - Practice solutions use `### Solution number` inside the theorem box.
 - Boxes have blank lines around important Markdown content so Jekyll renders correctly.
 
