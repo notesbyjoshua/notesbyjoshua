@@ -13,6 +13,11 @@
         writers can be upgraded later from the admin dashboard.
       </p>
 
+      <div class="signup-field">
+        <label for="signup-username">Username</label>
+        <input id="signup-username" type="text" maxlength="40" autocomplete="nickname" placeholder="Your display name" required />
+      </div>
+
       <div class="signup-actions">
         <button id="signup-google" class="account-btn" type="button">Sign up with Google</button>
         <a class="account-btn account-btn--secondary" href="/account/">I already have an account</a>
@@ -37,13 +42,23 @@
   const STATES = ['signup-status', 'signup-signedout', 'signup-signedin', 'signup-disabled'];
   const show = (id: string) => STATES.forEach((s) => (byId(s).hidden = s !== id));
   const sb = getSupabase();
+  const SIGNUP_NAME_KEY = 'notes-pending-signup-name';
 
   byId('signup-google')?.addEventListener('click', async () => {
     const msg = byId('signup-msg');
     const button = byId('signup-google') as HTMLButtonElement;
+    const input = byId('signup-username') as HTMLInputElement;
+    const username = input.value.trim();
     msg.hidden = true;
+    input.setCustomValidity('');
+    if (!username) {
+      input.setCustomValidity('Choose a username before signing up.');
+      input.reportValidity();
+      return;
+    }
     button.disabled = true;
     try {
+      localStorage.setItem(SIGNUP_NAME_KEY, username);
       const { error } = await sb!.auth.signInWithOAuth({
         provider: 'google',
         options: {

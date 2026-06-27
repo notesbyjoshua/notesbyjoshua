@@ -357,6 +357,27 @@
 	font-size: 1.05rem;
 }
 
+.signup-field {
+	max-width: 24rem;
+	margin-top: 1.1rem;
+}
+
+.signup-field label {
+	display: block;
+	margin-bottom: 0.35rem;
+	font-weight: 600;
+}
+
+.signup-field input {
+	width: 100%;
+	padding: 0.5rem 0.65rem;
+	border: 1px solid var(--sl-color-gray-5);
+	border-radius: 0.5rem;
+	background: var(--sl-color-bg);
+	color: var(--sl-color-text);
+	font: inherit;
+}
+
 .profile-bar {
 	width: 16rem;
 	max-width: 100%;
@@ -701,6 +722,12 @@
 	align-items: center;
 }
 
+.ha-auth {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.45rem;
+}
+
 .header-account-link {
 	display: inline-flex;
 	align-items: center;
@@ -750,6 +777,7 @@
 /* These set `display`, which overrides the `hidden` attribute — restore it so
    toggling .hidden actually shows/hides them. */
 .header-account-link[hidden],
+.ha-auth[hidden],
 .header-account-menu[hidden],
 .header-account-menu-wrap[hidden] {
 	display: none;

@@ -94,6 +94,7 @@ const totalNotes = sections.reduce((n, s) => n + s.slugs.length, 0);
   const sb = getSupabase();
   const total = Number(document.querySelector('.account')?.getAttribute('data-total-notes') || 0);
   const pct = (read: number, all: number) => (all ? Math.round((read / all) * 100) : 0);
+  const SIGNUP_NAME_KEY = 'notes-pending-signup-name';
   let uid: string | null = null;
 
   byId('google-signin')?.addEventListener('click', () => {
@@ -177,10 +178,32 @@ const totalNotes = sections.reduce((n, s) => n + s.slugs.length, 0);
     return null;
   }
 
+  async function applyPendingSignupName(profile: any) {
+    if (!sb || !uid) return profile;
+    const pendingName = localStorage.getItem(SIGNUP_NAME_KEY)?.trim();
+    if (!pendingName) return profile;
+    const msg = byId('account-save-msg');
+    try {
+      const { error } = await sb.from('profiles').update({ display_name: pendingName }).eq('id', uid);
+      if (error) throw error;
+      localStorage.removeItem(SIGNUP_NAME_KEY);
+      msg.textContent = 'Account created. Username saved.';
+      msg.hidden = false;
+      setTimeout(() => { msg.hidden = true; }, 3500);
+      return profile ? { ...profile, display_name: pendingName } : profile;
+    } catch (err) {
+      console.error('[account] pending signup name save failed:', err);
+      msg.textContent = 'Account created, but the username could not be saved yet. Try Save again.';
+      msg.hidden = false;
+      return profile;
+    }
+  }
+
   async function loadSignedIn(session: any) {
     uid = session.user.id;
     show('account-signedin');
-    const profile = await loadProfile(session.user);
+    let profile = await loadProfile(session.user);
+    profile = await applyPendingSignupName(profile);
     const email = profile?.email ?? session.user.email ?? '';
     byId('account-email').textContent = email;
     // Only assert a role once we actually read the profile; otherwise leave the

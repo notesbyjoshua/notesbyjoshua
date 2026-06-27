@@ -17,15 +17,18 @@ const totalNotes = countLeaves(notesSidebar as Item[]);
 ---
 
 <div class="header-account" data-total={totalNotes}>
-  <button type="button" class="header-account-link ha-signin" hidden>
-    <svg class="ha-google" viewBox="0 0 18 18" width="15" height="15" aria-hidden="true">
-      <path fill="#4285F4" d="M17.64 9.2c0-.64-.06-1.25-.16-1.84H9v3.48h4.84a4.14 4.14 0 0 1-1.8 2.72v2.26h2.92c1.71-1.57 2.68-3.89 2.68-6.62z"/>
-      <path fill="#34A853" d="M9 18c2.43 0 4.47-.8 5.96-2.18l-2.92-2.26c-.81.54-1.84.86-3.04.86-2.34 0-4.32-1.58-5.03-3.7H.96v2.33A9 9 0 0 0 9 18z"/>
-      <path fill="#FBBC05" d="M3.97 10.72a5.4 5.4 0 0 1 0-3.44V4.95H.96a9 9 0 0 0 0 8.1l3.01-2.33z"/>
-      <path fill="#EA4335" d="M9 3.58c1.32 0 2.5.45 3.44 1.35l2.58-2.58C13.47.9 11.43 0 9 0A9 9 0 0 0 .96 4.95l3.01 2.33C4.68 5.16 6.66 3.58 9 3.58z"/>
-    </svg>
-    <span>Sign in</span>
-  </button>
+  <div class="ha-auth" hidden>
+    <a class="header-account-link ha-signup" href="/signup/">Sign up</a>
+    <button type="button" class="header-account-link ha-signin">
+      <svg class="ha-google" viewBox="0 0 18 18" width="15" height="15" aria-hidden="true">
+        <path fill="#4285F4" d="M17.64 9.2c0-.64-.06-1.25-.16-1.84H9v3.48h4.84a4.14 4.14 0 0 1-1.8 2.72v2.26h2.92c1.71-1.57 2.68-3.89 2.68-6.62z"/>
+        <path fill="#34A853" d="M9 18c2.43 0 4.47-.8 5.96-2.18l-2.92-2.26c-.81.54-1.84.86-3.04.86-2.34 0-4.32-1.58-5.03-3.7H.96v2.33A9 9 0 0 0 9 18z"/>
+        <path fill="#FBBC05" d="M3.97 10.72a5.4 5.4 0 0 1 0-3.44V4.95H.96a9 9 0 0 0 0 8.1l3.01-2.33z"/>
+        <path fill="#EA4335" d="M9 3.58c1.32 0 2.5.45 3.44 1.35l2.58-2.58C13.47.9 11.43 0 9 0A9 9 0 0 0 .96 4.95l3.01 2.33C4.68 5.16 6.66 3.58 9 3.58z"/>
+      </svg>
+      <span>Sign in</span>
+    </button>
+  </div>
 
   <div class="header-account-menu-wrap ha-wrap" hidden>
     <button class="header-account-link ha-toggle" aria-haspopup="true" aria-expanded="false">
@@ -58,6 +61,7 @@ const totalNotes = countLeaves(notesSidebar as Item[]);
   const total = Number(roots[0]?.dataset.total || 0);
 
   function wire(root: HTMLElement) {
+    const auth = root.querySelector<HTMLElement>('.ha-auth')!;
     const signin = root.querySelector<HTMLElement>('.ha-signin')!;
     const wrap = root.querySelector<HTMLElement>('.ha-wrap')!;
     const toggle = root.querySelector<HTMLElement>('.ha-toggle')!;
@@ -99,7 +103,7 @@ const totalNotes = countLeaves(notesSidebar as Item[]);
       try { await sb!.auth.signOut(); } catch (err) { console.error('[header] signout failed:', err); }
       close();
     });
-    return { signin, wrap, toggle, menu, nameEl, avatarEl, dotEl, statsEl, writeEl, adminEl, close };
+    return { auth, signin, wrap, toggle, menu, nameEl, avatarEl, dotEl, statsEl, writeEl, adminEl, close };
   }
 
   if (sb && roots.length) {
@@ -111,7 +115,7 @@ const totalNotes = countLeaves(notesSidebar as Item[]);
       if (s) document.documentElement.classList.toggle('is-writer', !!(s.in && (s.admin || s.writer)));
       for (const i of instances) {
         if (s?.in) {
-          i.signin.hidden = true;
+          i.auth.hidden = true;
           i.wrap.hidden = false;
           i.nameEl.textContent = s.name || 'Account';
           // Show the profile picture if we have one, else the status dot.
@@ -122,12 +126,12 @@ const totalNotes = countLeaves(notesSidebar as Item[]);
           if (typeof s.pct === 'number') { i.statsEl.textContent = `${s.pct}% read`; i.statsEl.hidden = false; }
           else i.statsEl.hidden = true;
         } else if (s) {
-          i.signin.hidden = false;
+          i.auth.hidden = false;
           i.wrap.hidden = true;
           i.close();
         } else {
           // Unknown yet: keep both hidden so we never flash the wrong control.
-          i.signin.hidden = true;
+          i.auth.hidden = true;
           i.wrap.hidden = true;
         }
       }
