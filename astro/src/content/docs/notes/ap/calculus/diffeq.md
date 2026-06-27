@@ -27,7 +27,24 @@ A slope field shows small line segments representing $$dy/dx$$ at many points.
 - sketch a solution curve that follows the segment directions.
 :::
 
-> [Image Placeholder: slope field with equilibrium solution and sample integral curves]
+```tikz
+\usepackage{tikz}
+\begin{tikzpicture}[scale=0.85]
+\draw[->, gray!70] (-3.2,0) -- (3.4,0) node[right] {$x$};
+\draw[->, gray!70] (0,-2.5) -- (0,3) node[above] {$y$};
+\foreach \x in {-3,-2,-1,0,1,2,3} {
+  \foreach \y in {-2,-1,0,1,2} {
+    \pgfmathsetmacro{\m}{0.55*(1-\y)}
+    \pgfmathsetmacro{\ang}{atan(\m)}
+    \draw[gray!65, rotate around={\ang:(\x,\y)}] (\x-0.18,\y) -- (\x+0.18,\y);
+  }
+}
+\draw[red!75!black, thick, dashed] (-3,1) -- (3,1) node[right] {equilibrium $y=1$};
+\draw[blue, very thick, domain=-3:3, samples=80] plot (\x,{1-1.6*exp(-0.55*(\x+3))});
+\draw[blue, very thick, domain=-3:3, samples=80] plot (\x,{1+1.4*exp(-0.55*(\x+3))});
+\node[blue, anchor=west] at (2.2,0.75) {solutions follow slopes};
+\end{tikzpicture}
+```
 
 ---
 
@@ -446,4 +463,27 @@ When differentiating, remember that $$y$$ depends on $$x$$. After finding $$d^2y
 - Forgetting the constant of integration.
 - Solving for the constant before using the initial condition carefully.
 - Sketching slope-field solutions that cross each other or violate the displayed slope directions.
+:::
+
+---
+
+## AP reasoning focus
+
+Differential equation questions often move among four representations:
+
+- a formula for $$dy/dx$$,
+- a slope field,
+- a particular solution through an initial condition,
+- a verbal model of growth, decay, or limiting behavior.
+
+:::strategy{title="Differential equation workflow"}
+1. If asked to verify a solution, substitute both $$y$$ and $$dy/dx$$ into the differential equation.
+2. If asked to solve, check whether variables can be separated.
+3. If an initial condition is given, use it after integrating to find the constant.
+4. If asked about concavity, differentiate $$dy/dx=f(x,y)$$ with respect to $$x$$ and remember that $$y$$ depends on $$x$$.
+5. If using Euler's method, keep a table of $$x_n$$, $$y_n$$, and slope values.
+:::
+
+:::exam{topic="Slope fields"}
+AP questions may ask for reasoning without solving the differential equation. Equilibrium solutions, slope signs, and whether solution curves move toward or away from an equilibrium can often be read directly from the slope field or from $$dy/dx$$.
 :::

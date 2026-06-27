@@ -61,7 +61,27 @@ Common reasons a limit fails to exist:
 - Vertical asymptote with unbounded behavior,
 - Oscillation, such as $$\sin(1/x)$$ near $$x = 0$$.
 
-> [Image Placeholder: left-hand vs right-hand limit examples, including a jump discontinuity]
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[
+  axis lines=middle, xmin=-3, xmax=3, ymin=0, ymax=3,
+  xtick={-2,-1,0,1,2}, ytick={1,2},
+  grid=both, grid style={gray!18},
+  width=8.5cm, height=5.8cm,
+  xlabel=$x$, ylabel=$f(x)$,
+]
+\addplot[blue, very thick, domain=-3:0, samples=2] {1};
+\addplot[blue, very thick, domain=0:3, samples=2] {2};
+\addplot[only marks, mark=o, mark size=2pt, blue, thick] coordinates {(0,1)};
+\addplot[only marks, mark=*, mark size=2pt, blue] coordinates {(0,2)};
+\node[blue, anchor=south east] at (axis cs:-0.15,1) {$\lim_{x\to0^-}f(x)=1$};
+\node[blue, anchor=south west] at (axis cs:0.15,2) {$\lim_{x\to0^+}f(x)=2$};
+\node[orange!85!black, anchor=north] at (axis cs:0,0.35) {jump};
+\end{axis}
+\end{tikzpicture}
+```
 
 <div class="theorem-box">
 
@@ -374,7 +394,30 @@ Functions that are continuous on their natural domains include:
 
 This theorem guarantees at least one solution, but it does not tell you how many.
 
-> [Image Placeholder: continuous curve crossing a horizontal line to illustrate IVT]
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[
+  axis lines=middle, xmin=0, xmax=5.2, ymin=0, ymax=5,
+  xtick={1,2,3,4}, ytick={1,2,3,4},
+  grid=both, grid style={gray!18},
+  width=8.8cm, height=6cm,
+  xlabel=$x$, ylabel=$y$,
+]
+\addplot[blue, very thick, samples=180, domain=0.8:4.6] {0.22*(x-2.2)^3 + 0.55*x + 1.1};
+\addplot[red!75!black, dashed, domain=0.7:4.7] {3};
+\addplot[gray!70, dashed] coordinates {(1,0) (1,1.63)};
+\addplot[gray!70, dashed] coordinates {(4.5,0) (4.5,4.52)};
+\addplot[orange!85!black, dashed] coordinates {(3.21,0) (3.21,3)};
+\addplot[only marks, mark=*, mark size=1.8pt, orange!85!black] coordinates {(3.21,3)};
+\node[red!75!black, anchor=south west] at (axis cs:4.1,3) {$y=N$};
+\node[orange!85!black, anchor=south east] at (axis cs:3.21,3) {$f(c)=N$};
+\node[gray!70!black, anchor=north] at (axis cs:1,0) {$a$};
+\node[gray!70!black, anchor=north] at (axis cs:4.5,0) {$b$};
+\end{axis}
+\end{tikzpicture}
+```
 
 <div class="theorem-box">
 
@@ -417,3 +460,23 @@ $$
 Each secant slope gets closer to $$2$$ as the interval shrinks. This pattern shows how the average rate of change approaches the derivative at $$x=1$$, and for $$f(x)=x^2$$ the derivative is $$f'(x)=2x$$, giving $$f'(1)=2$$. You will learn more about derivatives in the next unit.
 
 </div>
+
+---
+
+## AP reasoning focus
+
+Limit and continuity questions usually test whether you can connect **numerical**, **graphical**, **analytical**, and **verbal** information. A table can suggest a limit, a graph can show one-sided behavior, and algebra can confirm exact values.
+
+When justifying a limit:
+
+:::checklist
+1. State what happens from the left and from the right when direction matters.
+2. Use direct substitution only when the expression is continuous at the input.
+3. If substitution gives $$0/0$$, explain the algebraic simplification before evaluating.
+4. For continuity, check all three pieces: value, limit, and equality.
+5. For IVT, explicitly name the continuous interval and the endpoint values that trap the target output.
+:::
+
+:::exam{topic="Limits and continuity"}
+AP questions often care more about the justification than the arithmetic. For example, saying "by IVT" is not enough unless you also show the function is continuous on the interval and the desired value lies between the endpoint outputs.
+:::

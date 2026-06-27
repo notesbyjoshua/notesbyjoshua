@@ -40,7 +40,27 @@ $$
 \frac{dx}{dt} = 0, \qquad \frac{dy}{dt} \ne 0.
 $$
 
-> [Image Placeholder: parametric curve with tangent vectors and repeated tracing]
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[
+  axis lines=middle, axis equal image,
+  xmin=-3, xmax=3, ymin=-2.2, ymax=2.2,
+  xtick={-2,-1,0,1,2}, ytick={-2,-1,0,1,2},
+  grid=both, grid style={gray!18},
+  width=8.5cm, height=6.5cm,
+  xlabel=$x$, ylabel=$y$,
+]
+\addplot[blue, very thick, samples=260, domain=0:360] ({2*cos(x)},{sin(2*x)});
+\addplot[->, orange!85!black, very thick] coordinates {(1.73,0.87) (1.25,0.99)};
+\addplot[->, orange!85!black, very thick] coordinates {(-1.73,0.87) (-1.25,0.99)};
+\addplot[only marks, mark=*, mark size=1.7pt, blue] coordinates {(1.73,0.87) (-1.73,0.87)};
+\node[orange!85!black, anchor=south] at (axis cs:0,1.4) {direction as $t$ increases};
+\node[blue, anchor=west] at (axis cs:1.55,0.55) {same curve can be traced twice};
+\end{axis}
+\end{tikzpicture}
+```
 
 <div class="theorem-box">
 
@@ -195,7 +215,21 @@ $$
 A = \frac12 \int_a^b [r(\theta)]^2\,d\theta.
 $$
 
-> [Image Placeholder: sector approximation leading to polar area formula]
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\begin{tikzpicture}[>=Stealth, scale=1.05]
+\coordinate (O) at (0,0);
+\draw[->, gray!70] (-0.5,0) -- (4.2,0) node[right] {polar axis};
+\draw[blue, very thick] plot[smooth, domain=20:82, samples=80] ({(2.4+0.45*cos(2*\x))*cos(\x)}, {(2.4+0.45*cos(2*\x))*sin(\x)});
+\draw[orange!30, fill=orange!18] (O) -- ({2.7*cos(36)},{2.7*sin(36)}) arc[start angle=36,end angle=50,radius=2.7] -- cycle;
+\draw[blue!55, thick] (O) -- ({2.7*cos(36)},{2.7*sin(36)});
+\draw[blue!55, thick] (O) -- ({2.7*cos(50)},{2.7*sin(50)});
+\draw[->, red!75!black] (0.65,0) arc[start angle=0,end angle=36,radius=0.65] node[midway, right] {$\theta$};
+\node[orange!85!black] at (2.45,1.65) {tiny sector};
+\node[align=center] at (1.45,2.75) {area $\approx \frac12 r^2\Delta\theta$};
+\end{tikzpicture}
+```
 
 <div class="theorem-box">
 
@@ -499,4 +533,22 @@ After doing the component work, interpret the result as a vector, speed, distanc
 - Declaring a vertical tangent whenever the denominator is zero without checking the numerator.
 - Losing track of the interval of parameter values or angles actually tracing the region.
 - Forgetting that polar curves can retrace themselves.
+:::
+
+---
+
+## AP reasoning focus
+
+BC curve questions often hide familiar single-variable calculus inside a new coordinate system. The idea is still rate, accumulation, and interpretation, but the independent variable may be $$t$$ or $$\theta$$ instead of $$x$$.
+
+:::checklist
+1. For parametric slopes, compute $$dx/dt$$ and $$dy/dt$$ separately before forming $$dy/dx$$.
+2. For parametric concavity, differentiate $$dy/dx$$ with respect to $$t$$ and divide by $$dx/dt$$.
+3. For polar area, square the radius and use $$\frac12\int r^2\,d\theta$$.
+4. For polar intersections, check both same-angle intersections and possible pole intersections.
+5. For vector-valued motion, speed is the magnitude of the velocity vector, not a component.
+:::
+
+:::exam{topic="BC curves"}
+Always state the parameter interval or angle interval being used. The same equation can trace a curve once, multiple times, or only partially depending on the interval.
 :::

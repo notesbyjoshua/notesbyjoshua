@@ -29,7 +29,31 @@ Interpretations:
 - limit of secant slopes,
 - local sensitivity of output to input.
 
-> [Image Placeholder: secant lines approaching a tangent line]
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[
+  axis lines=middle, xmin=-0.4, xmax=3.6, ymin=-0.3, ymax=5.5,
+  xtick={0,1,2,3}, ytick={0,1,2,3,4,5},
+  grid=both, grid style={gray!18},
+  width=8.8cm, height=6.2cm,
+  xlabel=$x$, ylabel=$y$,
+]
+\addplot[blue, very thick, samples=160, domain=0:3.3] {0.5*x^2+0.4};
+\addplot[gray!70, dashed, domain=0.4:3.1] {1.5*x-0.6};
+\addplot[orange!85!black, thick, domain=0.6:3.05] {1.15*x-0.1};
+\addplot[red!75!black, thick, domain=0.7:2.9] {0.85*x+0.2};
+\addplot[only marks, mark=*, mark size=1.8pt, blue] coordinates {(1.5,1.525)};
+\addplot[only marks, mark=*, mark size=1.5pt, gray!70] coordinates {(2.8,4.32)};
+\addplot[only marks, mark=*, mark size=1.5pt, orange!85!black] coordinates {(2.3,3.045)};
+\addplot[only marks, mark=*, mark size=1.5pt, red!75!black] coordinates {(1.9,2.205)};
+\node[gray!70!black, anchor=west] at (axis cs:2.7,3.3) {secants};
+\node[blue, anchor=east] at (axis cs:1.45,1.55) {$x=a$};
+\node[red!75!black, anchor=west] at (axis cs:1.9,1.85) {approach tangent};
+\end{axis}
+\end{tikzpicture}
+```
 
 <div class="theorem-box">
 
@@ -573,4 +597,29 @@ The quotient rule is a product rule combined with the derivative of a reciprocal
 - Forgetting the product rule and differentiating term-by-term incorrectly.
 - Using the quotient rule with the wrong sign in the numerator.
 - Treating speed and velocity as the same thing.
+:::
+
+---
+
+## AP reasoning focus
+
+In this unit, almost every idea has two forms: a **definition form** and a **shortcut form**. The definition form explains what the derivative means, while the shortcut form helps compute efficiently.
+
+For AP-style explanations, be precise about which object you are describing:
+
+- $$f(a)$$ is an output value.
+- $$f'(a)$$ is an instantaneous rate or tangent slope at one input.
+- $$f'(x)$$ is a derivative function.
+- $$f''(a)$$ is the rate at which the rate is changing at one input.
+
+:::exam{topic="Derivative meaning"}
+If a problem asks for interpretation, include units and context. A statement like $$f'(5)=12$$ should become something like "At $$t=5$$ seconds, the quantity is increasing at $$12$$ units per second."
+:::
+
+:::strategy{title="Derivative from limited information"}
+1. From a formula, differentiate symbolically.
+2. From a table, estimate with nearby average rates.
+3. From a graph of $$f$$, estimate slope.
+4. From a graph of $$f'$$, read height.
+5. From verbal context, translate the units before doing computation.
 :::

@@ -75,7 +75,28 @@ The derivative goes positive to negative at $$x=0$$, so $$f$$ has a local maximu
 
 An inflection point is a point where concavity changes.
 
-> [Image Placeholder: graph showing local extrema and inflection points with sign charts]
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[
+  axis lines=middle, xmin=-2.5, xmax=3.5, ymin=-5, ymax=5,
+  xtick={-2,-1,0,1,2,3}, ytick={-4,-2,0,2,4},
+  grid=both, grid style={gray!18},
+  width=9cm, height=6.3cm,
+  xlabel=$x$, ylabel=$f(x)$,
+]
+\addplot[blue, very thick, samples=220, domain=-2.2:3.2] {x^3-3*x^2};
+\addplot[only marks, mark=*, mark size=1.8pt, orange!85!black] coordinates {(0,0) (2,-4) (1,-2)};
+\node[orange!85!black, anchor=south east] at (axis cs:0,0) {local max};
+\node[orange!85!black, anchor=north west] at (axis cs:2,-4) {local min};
+\node[orange!85!black, anchor=south west] at (axis cs:1,-2) {inflection};
+\node[align=center, font=\small] at (axis cs:-1.25,-4.1) {$f'>0$\\$f''<0$};
+\node[align=center, font=\small] at (axis cs:1,-4.1) {$f'<0$\\concavity changes};
+\node[align=center, font=\small] at (axis cs:2.8,2.6) {$f'>0$\\$f''>0$};
+\end{axis}
+\end{tikzpicture}
+```
 
 ---
 
@@ -302,7 +323,28 @@ $$
 x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}.
 $$
 
-> [Image Placeholder: Newton's method tangent-line iteration toward a root]
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[
+  axis lines=middle, xmin=0, xmax=2.4, ymin=-1.2, ymax=3,
+  xtick={0,1,1.5,2}, ytick={-1,0,1,2},
+  grid=both, grid style={gray!18},
+  width=8.5cm, height=6cm,
+  xlabel=$x$, ylabel=$y$,
+]
+\addplot[blue, very thick, samples=180, domain=0:2.3] {x^2-2};
+\addplot[orange!85!black, thick, domain=0.6:2.1] {2*(1.5)*(x-1.5)+(1.5^2-2)};
+\addplot[red!75!black, thick, domain=1.05:1.75] {2*(1.4167)*(x-1.4167)+(1.4167^2-2)};
+\addplot[only marks, mark=*, mark size=1.7pt, orange!85!black] coordinates {(1.5,0.25) (1.4167,0.0069)};
+\addplot[only marks, mark=*, mark size=1.7pt, gray!80] coordinates {(1.4167,0) (1.4142,0)};
+\node[orange!85!black, anchor=south west] at (axis cs:1.5,0.25) {tangent at $x_0$};
+\node[gray!80!black, anchor=north] at (axis cs:1.4167,0) {$x_1$};
+\node[gray!80!black, anchor=north east] at (axis cs:1.4142,0) {root};
+\end{axis}
+\end{tikzpicture}
+```
 
 <div class="theorem-box">
 
@@ -436,3 +478,24 @@ The method works best when the starting guess is close to the root and the deriv
 - Forgetting endpoints in absolute-extrema problems.
 - Claiming an inflection point from $$f''=0$$ without checking concavity change.
 :::
+
+---
+
+## AP reasoning focus
+
+Analytical applications ask you to turn derivative information into a story about the original function. The safest approach is to separate **where candidates occur** from **what those candidates mean**.
+
+:::strategy{title="Function analysis workflow"}
+1. Find the domain first, because endpoints and discontinuities matter.
+2. Find critical numbers from $$f'(x)=0$$ and places where $$f'$$ is undefined.
+3. Build a sign chart for $$f'$$ to determine increasing/decreasing behavior.
+4. Build a sign chart for $$f''$$ to determine concavity.
+5. Use endpoint values and critical values for absolute extrema on closed intervals.
+6. Use derivative sign changes, not just derivative zeros, to justify local extrema.
+:::
+
+:::exam{topic="Justification language"}
+Write conclusions in terms of signs and changes: "$$f$$ has a local maximum at $$x=c$$ because $$f'$$ changes from positive to negative there." This is stronger than saying "$$f'(c)=0$$."
+:::
+
+For optimization, the derivative work is only the middle of the problem. A complete solution should also define variables, state the constraint, state the domain, and answer in the original units.

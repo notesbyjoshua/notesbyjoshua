@@ -139,7 +139,28 @@ Given a graph of a derivative:
 - negative derivative means decreasing,
 - derivative crossing zero may indicate an extremum in the original function.
 
-> [Image Placeholder: contextual graph with slope interpretation at several labeled points]
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[
+  axis lines=middle, xmin=0, xmax=8, ymin=0, ymax=9,
+  xtick={0,2,4,6,8}, ytick={0,2,4,6,8},
+  grid=both, grid style={gray!18},
+  width=9cm, height=6cm,
+  xlabel=$t$, ylabel=$Q(t)$,
+]
+\addplot[blue, very thick, samples=200, domain=0:8] {0.08*(x-4)^3 + 0.25*(x-4)^2 + 4.2};
+\addplot[orange!85!black, thick, domain=0.7:3.2] {-0.62*(x-2)+3.72};
+\addplot[orange!85!black, thick, domain=3.2:5.8] {0.5*(x-4.5)+4.27};
+\addplot[orange!85!black, thick, domain=5.4:7.6] {1.25*(x-6.5)+5.61};
+\addplot[only marks, mark=*, mark size=1.7pt, blue] coordinates {(2,3.72) (4.5,4.27) (6.5,5.61)};
+\node[orange!85!black, anchor=south east] at (axis cs:2,3.72) {negative rate};
+\node[orange!85!black, anchor=south] at (axis cs:4.5,4.27) {small positive rate};
+\node[orange!85!black, anchor=south west] at (axis cs:6.5,5.61) {larger positive rate};
+\end{axis}
+\end{tikzpicture}
+```
 
 ---
 
@@ -443,4 +464,30 @@ Always identify what the graph represents before interpreting signs, slopes, or 
 - Giving a derivative without units.
 - Using the wrong variable as the independent variable.
 - Forgetting to evaluate at the specified time or input.
+:::
+
+---
+
+## AP reasoning focus
+
+Contextual derivative questions are translation problems first and calculus problems second. Before differentiating, decide what each symbol measures and what its derivative would mean.
+
+:::variables
+- Position: $$s(t)$$, usually measured in distance units.
+- Velocity: $$v(t)=s'(t)$$, measured in distance per time.
+- Acceleration: $$a(t)=v'(t)=s''(t)$$, measured in distance per time squared.
+- Rate in/out: positive and negative contributions to a total amount.
+- Marginal cost/revenue/profit: derivative of the corresponding business function.
+:::
+
+When writing interpretations:
+
+- "Increasing" means the derivative is positive.
+- "Decreasing" means the derivative is negative.
+- "Speeding up" means velocity and acceleration have the same sign.
+- "Slowing down" means velocity and acceleration have opposite signs.
+- "Approximately" usually signals linearization or a tangent-line estimate.
+
+:::exam{topic="Context wording"}
+AP free-response scoring usually expects a complete sentence with units. A correct number without context can lose the interpretation point.
 :::

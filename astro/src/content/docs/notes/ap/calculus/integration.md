@@ -77,7 +77,31 @@ Important choices:
 - midpoint sum,
 - trapezoidal approximation.
 
-> [Image Placeholder: left, right, midpoint, and trapezoidal approximations on one graph]
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[
+  axis lines=middle, xmin=0, xmax=4.3, ymin=0, ymax=5.2,
+  xtick={0,1,2,3,4}, ytick={0,1,2,3,4,5},
+  grid=both, grid style={gray!18},
+  width=9cm, height=6.2cm,
+  xlabel=$x$, ylabel=$f(x)$,
+]
+\addplot[blue, very thick, samples=180, domain=0:4] {0.25*x^2+0.6};
+\draw[orange!35, fill=orange!20] (axis cs:0,0) rectangle (axis cs:1,0.85);
+\draw[orange!35, fill=orange!20] (axis cs:1,0) rectangle (axis cs:2,1.6);
+\draw[orange!35, fill=orange!20] (axis cs:2,0) rectangle (axis cs:3,2.85);
+\draw[orange!35, fill=orange!20] (axis cs:3,0) rectangle (axis cs:4,4.6);
+\draw[red!75!black, thick] (axis cs:0,0.6) -- (axis cs:1,0.85);
+\draw[red!75!black, thick] (axis cs:1,0.85) -- (axis cs:2,1.6);
+\draw[red!75!black, thick] (axis cs:2,1.6) -- (axis cs:3,2.85);
+\draw[red!75!black, thick] (axis cs:3,2.85) -- (axis cs:4,4.6);
+\node[orange!85!black, anchor=west] at (axis cs:2.25,4.6) {rectangles};
+\node[red!75!black, anchor=west] at (axis cs:2.6,3.45) {trapezoid tops};
+\end{axis}
+\end{tikzpicture}
+```
 
 <div class="theorem-box">
 
@@ -518,4 +542,32 @@ This is different from the average rate of change. Average value averages output
 - Using area language when the integral is negative and really means net signed accumulation.
 - Dropping the chain-rule factor in reverse when using substitution.
 - Confusing $$\int_a^b f(x)\,dx$$ with ordinary multiplication.
+:::
+
+---
+
+## AP reasoning focus
+
+Integration questions usually ask you to connect a rate, an amount, and an interval. The central idea is:
+
+$$
+\text{new amount}=\text{initial amount}+\text{accumulated change}.
+$$
+
+So if $$A'(t)=r(t)$$, then
+
+$$
+A(b)=A(a)+\int_a^b r(t)\,dt.
+$$
+
+:::checklist
+1. Decide whether the integral represents signed accumulation, total area, displacement, or total distance.
+2. If a rate can be negative, do not call the integral "area" unless the problem asks for geometric area.
+3. For total distance, integrate $$\lvert v(t)\rvert$$ or split where velocity changes sign.
+4. For accumulation functions, use FTC Part 1 before trying to find an antiderivative.
+5. For substitution, change bounds if you rewrite the integral in terms of $$u$$.
+:::
+
+:::exam{topic="Integral interpretation"}
+AP problems often give a table or graph of a rate. You may not have a formula, so be comfortable estimating integrals numerically and explaining whether the estimate is an overestimate or underestimate.
 :::

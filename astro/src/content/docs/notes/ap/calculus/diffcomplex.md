@@ -48,7 +48,27 @@ When a curve is defined by an equation relating $$x$$ and $$y$$, differentiate b
 
 Every time a derivative hits a term involving $$y$$, multiply by $$dy/dx$$ because $$y$$ is changing as $$x$$ changes.
 
-> [Image Placeholder: circle with tangent line showing slope found implicitly]
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[
+  axis lines=middle, axis equal image,
+  xmin=-5.5, xmax=5.5, ymin=-5.5, ymax=5.5,
+  xtick={-5,0,3,5}, ytick={-5,0,4,5},
+  grid=both, grid style={gray!18},
+  width=8cm, height=8cm,
+  xlabel=$x$, ylabel=$y$,
+]
+\addplot[blue, very thick, samples=240, domain=0:360] ({5*cos(x)},{5*sin(x)});
+\addplot[orange!85!black, thick, domain=-1:5.3] {-0.75*(x-3)+4};
+\addplot[gray!70, dashed] coordinates {(0,0) (3,4)};
+\addplot[only marks, mark=*, mark size=1.8pt, blue] coordinates {(3,4)};
+\node[blue, anchor=south west] at (axis cs:3,4) {$(3,4)$};
+\node[orange!85!black, anchor=south east] at (axis cs:1.1,5.4) {tangent slope $-\frac{x}{y}$};
+\end{axis}
+\end{tikzpicture}
+```
 
 <div class="theorem-box">
 
@@ -207,7 +227,22 @@ Note that $$x^2+1>0$$ for all real $$x$$, so the absolute value is unnecessary h
 5. Keep units consistent.
 :::
 
-> [Image Placeholder: ladder against wall with changing x and y distances]
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\begin{tikzpicture}[>=Stealth, scale=0.9]
+\draw[gray!70, thick] (0,0) -- (5.3,0) node[right] {floor};
+\draw[gray!70, thick] (0,0) -- (0,4.6) node[above] {wall};
+\coordinate (A) at (4.2,0);
+\coordinate (B) at (0,3.2);
+\draw[blue, very thick] (A) -- (B) node[midway, above right] {ladder};
+\draw[<->, orange!85!black] (0,-0.35) -- (4.2,-0.35) node[midway, below] {$x(t)$};
+\draw[<->, red!75!black] (-0.35,0) -- (-0.35,3.2) node[midway, left] {$y(t)$};
+\draw[->, orange!85!black, thick] (A) -- ++(0.65,0) node[right] {$\frac{dx}{dt}>0$};
+\draw[->, red!75!black, thick] (B) -- ++(0,-0.65) node[left] {$\frac{dy}{dt}<0$};
+\node[align=center] at (3.4,3.7) {$x^2+y^2=L^2$\\differentiate in $t$};
+\end{tikzpicture}
+```
 
 <div class="theorem-box">
 
@@ -456,4 +491,26 @@ The domain restriction is part of the meaning. For real-valued inverse sine and 
 - Treating $$y$$ as a constant during implicit differentiation.
 - Dropping the factor $$dy/dx$$.
 - Using inverse notation incorrectly: $$\sin^{-1}x$$ means $$\arcsin x$$, not $$1/\sin x$$.
+:::
+
+---
+
+## AP reasoning focus
+
+This unit is about recognizing when the derivative is hidden inside another relationship.
+
+- Chain rule problems hide a changing input inside an outer function.
+- Implicit differentiation hides $$y$$ as a function of $$x$$.
+- Inverse-function problems hide the slope relationship between a function and its inverse.
+- Related rates hide time dependence inside geometry or context.
+
+:::checklist
+1. Identify the outer and inner functions before applying the chain rule.
+2. In implicit equations, attach $$dy/dx$$ to every differentiated $$y$$ term.
+3. In inverse-function questions, match the input/output pair correctly: if $$f(a)=b$$, then $$(f^{-1})'(b)=1/f'(a)$$.
+4. In related rates, do not substitute variable values until after differentiating with respect to time.
+:::
+
+:::exam{topic="Composite and implicit derivatives"}
+AP often mixes rules. A single derivative might require product rule, chain rule, and implicit differentiation in the same line, so write intermediate steps clearly enough that the structure is visible.
 :::

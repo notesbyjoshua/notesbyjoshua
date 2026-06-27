@@ -22,7 +22,27 @@ $$
 \int_c^d [x_{\text{right}}(y)-x_{\text{left}}(y)]\,dy.
 $$
 
-> [Image Placeholder: region between two curves with top-minus-bottom and right-minus-left labeling]
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[
+  axis lines=middle, xmin=-0.2, xmax=1.25, ymin=-0.1, ymax=1.25,
+  xtick={0,0.5,1}, ytick={0,0.5,1},
+  grid=both, grid style={gray!18},
+  width=7.5cm, height=6.5cm,
+  xlabel=$x$, ylabel=$y$,
+]
+\addplot[blue, very thick, domain=0:1, samples=80] {x};
+\addplot[red!75!black, very thick, domain=0:1, samples=80] {x^2};
+\draw[orange!18, fill=orange!18] (axis cs:0.5,0.25) -- (axis cs:0.62,0.3844) -- (axis cs:0.62,0.62) -- (axis cs:0.5,0.5) -- cycle;
+\node[blue, anchor=south west] at (axis cs:0.65,0.65) {top $y=x$};
+\node[red!75!black, anchor=north west] at (axis cs:0.65,0.42) {bottom $y=x^2$};
+\draw[<->, orange!85!black, thick] (axis cs:0.55,0.3025) -- (axis cs:0.55,0.55);
+\node[orange!85!black, anchor=west] at (axis cs:0.57,0.43) {top - bottom};
+\end{axis}
+\end{tikzpicture}
+```
 
 <div class="theorem-box">
 
@@ -209,7 +229,23 @@ $$
 V = \pi \int_a^b \left([R(x)]^2-[r(x)]^2\right)\,dx
 $$
 
-> [Image Placeholder: disk vs washer setup with labeled radii]
+```tikz
+\usepackage{tikz}
+\begin{tikzpicture}[scale=0.9]
+\draw[gray!70, thick, ->] (-0.5,0) -- (6.2,0) node[right] {axis};
+\draw[blue, very thick] (0.5,0) ellipse (0.28 and 1.35);
+\fill[blue!15] (0.5,0) ellipse (0.28 and 1.35);
+\draw[orange!85!black, <->] (0.5,0) -- (0.5,1.35) node[midway, right] {$R$};
+\node[blue] at (0.5,-1.75) {disk};
+\draw[blue, very thick] (3.8,0) ellipse (0.36 and 1.55);
+\fill[blue!15, even odd rule] (3.8,0) ellipse (0.36 and 1.55) (3.8,0) ellipse (0.16 and 0.65);
+\draw[red!75!black, very thick] (3.8,0) ellipse (0.16 and 0.65);
+\draw[orange!85!black, <->] (3.8,0) -- (3.8,1.55) node[midway, right] {$R$};
+\draw[red!75!black, <->] (3.45,0) -- (3.45,0.65) node[midway, left] {$r$};
+\node[blue] at (3.8,-1.95) {washer};
+\node[align=center] at (5.2,1.45) {area\\$\pi R^2-\pi r^2$};
+\end{tikzpicture}
+```
 
 <div class="theorem-box">
 
@@ -507,3 +543,23 @@ Convergence means the limiting accumulated value is finite. Divergence means the
 - Using wrong radii in washer problems.
 - Mixing shell and washer formulas without matching the slice geometry.
 :::
+
+---
+
+## AP reasoning focus
+
+Applications of integration are mostly about choosing the correct tiny piece.
+
+:::strategy{title="Choosing an integral model"}
+1. Area between curves: slice vertically for top minus bottom or horizontally for right minus left.
+2. Volume by cross sections: identify the base interval and write the cross-sectional area $$A(x)$$ or $$A(y)$$.
+3. Washers/disks: radii are perpendicular to the axis of rotation.
+4. Shells: radius is distance to the axis, and height is the length of the slice.
+5. Motion: signed velocity gives displacement, while speed gives total distance.
+:::
+
+:::exam{topic="Set up before evaluate"}
+AP free-response questions often award setup points even when the integral is not evaluated. A correct integral with correct bounds, radii, and slice direction is the main goal.
+:::
+
+When curves cross, split the interval at every intersection point. The expression "top minus bottom" or "right minus left" can change from one subinterval to the next.
