@@ -4,6 +4,8 @@ sidebar:
   order: 4
 ---
 
+# Advanced Mechanics
+
 ---
 
 ## Lagrangian mechanics

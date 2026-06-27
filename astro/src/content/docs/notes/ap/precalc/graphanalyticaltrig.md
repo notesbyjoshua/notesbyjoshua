@@ -4,6 +4,8 @@ sidebar:
   order: 6
 ---
 
+# Unit 8 & 9: Graphs and Analytics of Trig Functions
+
 ---
 
 ## Graphs of sine and cosine

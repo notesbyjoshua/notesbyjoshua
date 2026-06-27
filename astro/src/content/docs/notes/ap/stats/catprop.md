@@ -4,6 +4,10 @@ sidebar:
   order: 6
 ---
 
+# Unit 6: Inference for Categorical Data: Proportions
+
+---
+
 This unit uses sample proportions to estimate and test claims about population proportions. The main statistic is $$\hat{p}$$ for one population, or $$\hat{p}_1-\hat{p}_2$$ for two populations.
 
 ---

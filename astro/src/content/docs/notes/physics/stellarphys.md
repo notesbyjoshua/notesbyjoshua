@@ -4,6 +4,10 @@ sidebar:
   order: 8
 ---
 
+# Stellar Physics
+
+---
+
 > **[Image placeholder — star trails]** A long-exposure star-trail photo, circumpolar arcs about the celestial pole. Mostly decorative for the chapter opener.
 
 ---

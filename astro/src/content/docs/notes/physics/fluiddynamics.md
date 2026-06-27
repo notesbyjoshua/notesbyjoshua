@@ -4,6 +4,8 @@ sidebar:
   order: 5
 ---
 
+# Fluid Dynamics
+
 ---
 
 ## What is a fluid?

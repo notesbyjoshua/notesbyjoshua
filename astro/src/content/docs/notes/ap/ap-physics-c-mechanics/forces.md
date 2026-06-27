@@ -4,6 +4,8 @@ sidebar:
   order: 2
 ---
 
+# Force and Translational Dynamics
+
 ---
 
 :::variables

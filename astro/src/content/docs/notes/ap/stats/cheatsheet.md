@@ -4,6 +4,10 @@ sidebar:
   order: 0
 ---
 
+# AP Statistics Cheat Sheet
+
+---
+
 This page is a high-yield AP Statistics reference for last-minute review. It pulls together vocabulary, conditions, and formulas across Units 1–9 in one scan-friendly layout. On exam day you also have the official [formula sheet and tables](https://apcentral.collegeboard.org/media/pdf/ap-statistics-formula-tables-sheet.pdf)—use this page to remember *when* to apply each idea and how to phrase conclusions in context.
 
 ---

@@ -7,6 +7,10 @@ sidebar:
   order: 2
 ---
 
+# Notes
+
+---
+
 Here are my notes! Feel free to look through them to find what you like 😁!
 
 ## Subjects

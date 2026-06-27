@@ -4,6 +4,10 @@ sidebar:
   order: 9
 ---
 
+# Thermodynamics
+
+---
+
 This page is written in collaboration with Michael Zhao.
 
 ---

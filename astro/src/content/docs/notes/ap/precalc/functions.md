@@ -4,6 +4,8 @@ sidebar:
   order: 2
 ---
 
+# Unit 3: Functions
+
 ---
 
 ## Definition of a Function

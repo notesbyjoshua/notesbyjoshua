@@ -4,6 +4,10 @@ sidebar:
   order: 1
 ---
 
+# Unit 1 & 2: Fundamentals, Equations, and Inequalities
+
+---
+
 ## Definitions
 
 Before we solve anything, we need a shared language for the kinds of numbers that can show up. These sets are nested: every natural number is an integer, every integer is rational, and every rational number is real.

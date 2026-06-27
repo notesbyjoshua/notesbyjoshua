@@ -7,6 +7,10 @@ sidebar:
   order: 3
 ---
 
+# Physics
+
+---
+
 This page is a collection of my physics notes for competition physics. If you are looking for AP material, please click the links to be redirected to the AP section.
 
 ## AP Physics C Material

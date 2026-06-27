@@ -4,6 +4,10 @@ sidebar:
   order: 2
 ---
 
+# Unit 2: Exploring Bivariate Data
+
+---
+
 Unit 1 focused on one variable at a time ([Exploring Univariate Data](/notes/ap/stats/univardata/)). Here we study **bivariate data**: two variables measured on each case, and the patterns that link them.
 
 ---

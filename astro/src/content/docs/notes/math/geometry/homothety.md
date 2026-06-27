@@ -4,3 +4,7 @@ sidebar:
   order: 3
 ---
 
+# Homothety
+
+---
+

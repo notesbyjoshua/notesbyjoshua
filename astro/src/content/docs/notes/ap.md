@@ -6,6 +6,10 @@ sidebar:
   order: 1
 ---
 
+# AP
+
+---
+
 These notes will roughly follow a AP curriculum but might have some extra stuff on it. Note that I will not take every single AP so if something isn't on here please feel free to contribute by contacting me. If you are looking for an AP that is not on this hub, feel free to put in a request in the [Feedback and Requests](/feedback/) section.
 
 ---

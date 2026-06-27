@@ -5,6 +5,8 @@ sidebar:
   order: 7
 ---
 
+# Oscillations
+
 ---
 
 :::variables

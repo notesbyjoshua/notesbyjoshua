@@ -4,6 +4,10 @@ sidebar:
   order: 6
 ---
 
+# Integration and Accumulation of Change
+
+---
+
 Integration reverses differentiation and measures accumulation. It ties together antiderivatives, area, net change, and the Fundamental Theorem of Calculus.
 
 ---

@@ -4,6 +4,10 @@ sidebar:
   order: 7
 ---
 
+# Unit 7: Inference for Quantitative Data: Means
+
+---
+
 This unit uses sample means to estimate and test claims about population means. Because population standard deviations are usually unknown in real studies, AP Statistics emphasizes the **t-distribution**.
 
 ---

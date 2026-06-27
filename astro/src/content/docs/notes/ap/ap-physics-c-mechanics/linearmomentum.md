@@ -4,6 +4,8 @@ sidebar:
   order: 4
 ---
 
+# Linear Momentum and Impulse
+
 ---
 
 :::variables

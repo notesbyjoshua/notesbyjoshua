@@ -4,6 +4,8 @@ sidebar:
   order: 1
 ---
 
+# Limits and Continuity
+
 ---
 
 ## What a limit means

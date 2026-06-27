@@ -4,6 +4,8 @@ sidebar:
   order: 2
 ---
 
+# Electric Potential
+
 ---
 
 :::variables

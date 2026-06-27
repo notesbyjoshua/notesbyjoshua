@@ -4,6 +4,10 @@ sidebar:
   order: 7
 ---
 
+# Differential Equations
+
+---
+
 Differential equations describe how a quantity changes rather than giving the quantity directly. In AP Calculus, the focus is on slope fields, separable equations, logistic models, and interpreting solution behavior.
 
 ---

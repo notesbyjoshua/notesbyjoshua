@@ -5,6 +5,8 @@ sidebar:
   order: 10
 ---
 
+# Unit 13 & 14: Additional Topics in Algebra
+
 ---
 
 ## Introduction to Partial Fractions

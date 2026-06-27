@@ -4,6 +4,10 @@ sidebar:
   order: 10
 ---
 
+# Waves
+
+---
+
 **Yo ts is not done yet please edit and stuff**
 
 ---

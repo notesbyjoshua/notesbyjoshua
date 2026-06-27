@@ -4,6 +4,10 @@ sidebar:
   order: 4
 ---
 
+# Contextual Applications of Differentiation
+
+---
+
 This unit translates derivative ideas into real-world language. The math is usually not harder than earlier differentiation, but the interpretation must be precise.
 
 ---

@@ -6,6 +6,10 @@ sidebar:
   order: 2
 ---
 
+# Math
+
+---
+
 Here you will find notes for AP Precalculus, Calculus AB/BC, and Competition Math. Note that competition math will not include calculus, but is still good to know calculus to excel at competition math.
 
 ---

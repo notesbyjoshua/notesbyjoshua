@@ -4,6 +4,10 @@ sidebar:
   order: 3
 ---
 
+# Differentiation: Composite, Implicit, and Inverse Differentiation
+
+---
+
 This unit is where derivatives become flexible. Instead of only differentiating simple formulas, we learn how derivatives behave under composition, implicit relationships, and inverse functions.
 
 ---

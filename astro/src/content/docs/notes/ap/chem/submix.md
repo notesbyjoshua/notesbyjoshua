@@ -4,6 +4,10 @@ sidebar:
   order: 3
 ---
 
+# Unit 3: Substances and Mixtures
+
+---
+
 This unit connects particle-level structure (bonding within molecules and forces between them) to bulk properties (melting, boiling, solubility, conductivity) and to mixtures, especially solutions and gases. Ideas about polarity from [Unit 2](/notes/ap/chem/compounds/) carry directly into **intermolecular forces** and chromatography; moles and concentration from [Unit 1](/notes/ap/chem/atomicstrucprop/) are key to the gas laws and **colligative properties**.
 
 ---

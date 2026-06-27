@@ -4,6 +4,10 @@ sidebar:
   order: 9
 ---
 
+# Parametric, Polar, and Vector-Valued Functions (BC-only)
+
+---
+
 This BC-only unit generalizes single-variable calculus to curves traced in more flexible ways. Instead of always writing $$y$$ as an explicit function of $$x$$, we let both coordinates depend on a parameter or describe curves through angle and radius.
 
 ---

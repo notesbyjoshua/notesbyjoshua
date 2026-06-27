@@ -4,6 +4,10 @@ sidebar:
   order: 1
 ---
 
+# Unit 1: Atomic Structure and Properties
+
+---
+
 Unit 1 establishes the vocabulary and models used everywhere else in chemistry: how we count and report measurements, how the **periodic table** organizes the elements, how **electrons** occupy **orbitals**, and how atomic-scale structure shows up in macroscopic trends. It also sets up basic definition and rules that you will use for the rest of chemistry.
 
 ---

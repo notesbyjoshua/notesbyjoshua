@@ -4,6 +4,8 @@ sidebar:
   order: 11
 ---
 
+# Optics
+
 ---
 
 ## Introduction to optics
