@@ -4,8 +4,6 @@ sidebar:
   order: 4
 ---
 
-# Unit 4: Chemical Reactions
-
 ---
 
 **Chemical reactions** convert reactants into products by breaking and forming bonds so that atoms are rearranged into new substances. This unit classifies common patterns you will use everywhere on the AP exam—especially with aqueous ions, acids and bases, and **redox**. **Stoichiometry** rests on conservation of mass (balanced equations) and connects to moles and concentration from [Unit 1](/notes/ap/chem/atomicstrucprop/). Polarity, solubility, and solutions tie back to [Unit 3](/notes/ap/chem/submix/).

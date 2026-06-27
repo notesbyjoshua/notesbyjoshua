@@ -4,8 +4,6 @@ sidebar:
   order: 7
 ---
 
-# Unit 10: Additional Topics in Trigonometry (Triangle Laws, Parametric, Polar, and Vectors)
-
 ---
 
 ## Laws of Sines and Cosines

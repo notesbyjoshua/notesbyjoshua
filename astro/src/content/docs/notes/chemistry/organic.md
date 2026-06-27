@@ -4,8 +4,6 @@ sidebar:
   order: 1
 ---
 
-# Organic Chemistry
-
 ---
 
 🚧 *These notes are a work in progress.*

@@ -5,8 +5,6 @@ sidebar:
   order: 9
 ---
 
-# Unit 9: Thermodynamics and Electrochemistry
-
 ---
 
 This unit connects the energy ideas from [Unit 6](/notes/ap/chem/thermochemistry/) and equilibrium ideas from [Unit 7](/notes/ap/chem/equilibrium/) to two big questions: whether a process is thermodynamically favored, and how redox reactions can produce or consume electrical work. You will use entropy, Gibbs free energy, cell potential, the Nernst equation, and Faraday's law to describe spontaneous reactions, galvanic cells, electrolytic cells, and electrochemical applications.

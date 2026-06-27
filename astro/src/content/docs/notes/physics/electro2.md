@@ -5,8 +5,6 @@ sidebar:
   order: 13
 ---
 
-# Magnetism & Electrodynamics
-
 ---
 
 ## Magnetic force and the motion of charges

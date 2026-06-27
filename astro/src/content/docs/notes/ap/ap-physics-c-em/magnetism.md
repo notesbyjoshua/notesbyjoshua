@@ -4,8 +4,6 @@ sidebar:
   order: 5
 ---
 
-# Magnetic Fields and Electromagnetism
-
 ---
 
 Magnetism describes forces on moving charges and currents. Unlike electric fields, magnetic fields do no work on a point charge because the magnetic force is always perpendicular to the charge's velocity. This unit focuses on Lorentz forces, fields produced by currents, and Ampere's law.

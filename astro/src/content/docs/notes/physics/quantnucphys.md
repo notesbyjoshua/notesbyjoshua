@@ -4,8 +4,6 @@ sidebar:
   order: 6
 ---
 
-# Modern Physics
-
 ---
 
 **Yo ts is temp pls add more when get the chance**

@@ -4,6 +4,4 @@ sidebar:
   order: 7
 ---
 
-# Unit 7: Natural Selection
-
 ---

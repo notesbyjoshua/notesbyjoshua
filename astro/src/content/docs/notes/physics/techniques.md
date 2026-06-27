@@ -4,8 +4,6 @@ sidebar:
   order: 3
 ---
 
-# Problem Solving Techniques
-
 ---
 
 In this section, I will describe some very helpful methods/tools you could use on the F=ma/USAPhO, even though it is very rare that they will be seen on the AP exams. These are not new physics — they are *strategies* that turn an intimidating problem into a routine one. The best competitors reach for them automatically: before grinding through force diagrams, ask "is there a shortcut here?"

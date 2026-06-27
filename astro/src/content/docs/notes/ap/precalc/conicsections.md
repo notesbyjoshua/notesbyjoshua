@@ -4,8 +4,6 @@ sidebar:
   order: 9
 ---
 
-# Unit 12: Conic Sections
-
 ---
 
 ## Introduction to conics

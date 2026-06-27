@@ -4,8 +4,6 @@ sidebar:
   order: 12
 ---
 
-# Electrostatics
-
 ---
 
 ## Charges

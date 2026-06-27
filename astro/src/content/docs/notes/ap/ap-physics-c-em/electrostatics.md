@@ -4,8 +4,6 @@ sidebar:
   order: 1
 ---
 
-# Electric Fields and Forces
-
 ---
 
 This unit is the foundation of electricity: how charge produces forces, how we describe those forces with fields, and how symmetry lets us compute fields efficiently. The subject is often called electrostatics when charges are at rest and magnetic effects from motion are absent or treated separately.

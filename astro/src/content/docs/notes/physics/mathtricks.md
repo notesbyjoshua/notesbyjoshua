@@ -4,8 +4,6 @@ sidebar:
   order: 1
 ---
 
-# Math Tricks
-
 ---
 
 ## Common integrals to know

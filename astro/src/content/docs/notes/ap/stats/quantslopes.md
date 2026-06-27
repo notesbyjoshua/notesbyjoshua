@@ -5,8 +5,6 @@ sidebar:
   order: 9
 ---
 
-# Unit 9: Inference for Quantitative Data: Slopes
-
 ---
 
 This unit extends linear regression from [Unit 2](/notes/ap/stats/bivardata/) into inference. Instead of only describing the least-squares line for a sample, we ask whether there is evidence of a linear relationship in the population.

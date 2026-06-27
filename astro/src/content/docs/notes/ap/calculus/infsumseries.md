@@ -5,8 +5,6 @@ sidebar:
   order: 10
 ---
 
-# Infinite Sums and Series (BC-only)
-
 ---
 
 This BC-only unit is about representing functions and numbers through infinitely many terms, and then deciding when those infinite processes make sense.

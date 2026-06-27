@@ -4,8 +4,6 @@ sidebar:
   order: 6
 ---
 
-# Energy and Momentum of Rotating Systems
-
 ---
 
 This unit completes the rotation picture by adding rotational energy and angular momentum. The translational ideas from [work and energy](/notes/ap/ap-physics-c-mechanics/work/) and [linear momentum](/notes/ap/ap-physics-c-mechanics/linearmomentum/) have close angular analogs, but the axis choice matters more than it did before.

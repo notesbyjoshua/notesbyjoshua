@@ -4,8 +4,6 @@ sidebar:
   order: 2
 ---
 
-# Coordination Chemistry
-
 ---
 
 🚧 *These notes are a work in progress.*

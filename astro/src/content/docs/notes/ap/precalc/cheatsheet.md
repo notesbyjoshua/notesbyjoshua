@@ -4,8 +4,6 @@ sidebar:
   order: 0
 ---
 
-# AP Precalculus Cheat Sheet
-
 ---
 
 ## Unit 1 & 2: Fundamentals, Equations, and Inequalities

@@ -5,8 +5,6 @@ sidebar:
   order: 6
 ---
 
-# Electromagnetic Induction
-
 ---
 
 Electromagnetic induction describes how changing magnetic flux produces electric fields and emf. It connects magnetism to circuits and gives the physical basis for generators, transformers, inductors, and electromagnetic waves.

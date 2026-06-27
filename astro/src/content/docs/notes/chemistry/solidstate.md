@@ -5,8 +5,6 @@ sidebar:
   order: 5
 ---
 
-# Solid-State Chemistry
-
 ---
 
 🚧 *These notes are a work in progress.*

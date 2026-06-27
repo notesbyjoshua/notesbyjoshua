@@ -5,8 +5,6 @@ sidebar:
   order: 6
 ---
 
-# Recursion
-
 ---
 
 The heart of recursion is to assume that you know previous elements of a sequence and then find a way to construct the next element in that sequence. Not only will explicit recursion problems appear of the AIME, USAMO, or USAJMO, often counting or combinatoric problems include them as well.

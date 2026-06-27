@@ -4,8 +4,6 @@ sidebar:
   order: 4
 ---
 
-# Circuits
-
 ---
 
 Circuit analysis translates electric field and potential ideas into networks of elements. In AP Physics C, circuits are not just plug-and-chug resistance problems: you should connect current to charge flow, potential difference to energy per charge, and RC behavior to differential equations.

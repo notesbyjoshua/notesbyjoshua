@@ -4,8 +4,6 @@ sidebar:
   order: 4
 ---
 
-# Advanced Kinetics
-
 ---
 
 🚧 *These notes are a work in progress.*

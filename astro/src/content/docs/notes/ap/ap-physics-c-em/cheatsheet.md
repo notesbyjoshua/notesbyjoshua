@@ -4,8 +4,6 @@ sidebar:
   order: 0
 ---
 
-# AP Physics C E&M Cheat Sheet
-
 ---
 
 ## Constants and Common Values

@@ -4,6 +4,4 @@ sidebar:
   order: 5
 ---
 
-# Unit 5: Heredity
-
 ---

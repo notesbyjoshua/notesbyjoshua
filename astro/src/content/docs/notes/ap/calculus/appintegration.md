@@ -4,8 +4,6 @@ sidebar:
   order: 8
 ---
 
-# Applications of Integration
-
 ---
 
 This unit turns integrals into geometry and accumulated quantities. You should be able to move flexibly between signed area, total change, volume, and other physical interpretations.

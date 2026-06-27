@@ -4,8 +4,6 @@ sidebar:
   order: 5
 ---
 
-# Unit 5: Sampling Distributions
-
 ---
 
 This unit explains why statistics from random samples vary and how that variation becomes predictable. A **sampling distribution** is the distribution of a statistic over many possible random samples of the same size from the same population. It is the bridge between descriptive statistics and inference.

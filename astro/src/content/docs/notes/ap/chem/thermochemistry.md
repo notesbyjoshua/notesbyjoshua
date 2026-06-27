@@ -4,8 +4,6 @@ sidebar:
   order: 6
 ---
 
-# Unit 6: Thermochemistry
-
 ---
 
 **Thermochemistry** studies heat flow associated with chemical reactions and physical changes (melting, vaporization, dissolving). It is the chemical face of the **first law of thermodynamics** and sets up **enthalpy** reasoning used again in [equilibrium](/notes/ap/chem/equilibrium/), [acid–base](/notes/ap/chem/acidbase/), and [thermodynamics / electrochemistry](/notes/ap/chem/thermoelectro/). Balanced equations and stoichiometry from [Unit 4](/notes/ap/chem/chemrxns/) carry mole ratios directly into thermochemical calculations.

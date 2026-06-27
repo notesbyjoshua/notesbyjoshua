@@ -4,8 +4,6 @@ sidebar:
   order: 8
 ---
 
-# Unit 8: Inference for Categorical Data: Chi-Square
-
 ---
 
 Chi-square procedures handle categorical data with counts in categories. They compare **observed counts** to **expected counts** and ask whether the differences are larger than random variation would usually produce.

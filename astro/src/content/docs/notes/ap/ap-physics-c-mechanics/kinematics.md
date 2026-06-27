@@ -4,8 +4,6 @@ sidebar:
   order: 1
 ---
 
-# 1D and 2D Kinematics
-
 ---
 
 **Kinematics** describes motion—position, velocity, and acceleration as functions of time—without asking what forces cause that motion. From here on, calculus is assumed: instantaneous rates are derivatives of position or velocity, and changes over an interval can be recovered with integrals when you know how acceleration varies.

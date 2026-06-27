@@ -4,8 +4,6 @@ sidebar:
   order: 2
 ---
 
-# Uncertainty
-
 ---
 
 With every experiment, there will be a source of error, whether you like it or not. Since we aren't perfect, we need to account for the error, which we call uncertainty. A measurement reported without its uncertainty is almost meaningless: "the period is 2.00 s" is a very different claim from "the period is $$2.00\pm0.05$$ s."

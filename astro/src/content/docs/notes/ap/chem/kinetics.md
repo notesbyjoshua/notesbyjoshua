@@ -4,8 +4,6 @@ sidebar:
   order: 5
 ---
 
-# Unit 5: Kinetics
-
 ---
 
 **Chemical kinetics** asks how fast a reaction proceeds and *why* that speed changes with conditions. It is distinct from [thermochemistry](/notes/ap/chem/thermochemistry/) (energy changes and a first look at spontaneity) and from [equilibrium](/notes/ap/chem/equilibrium/) (where a reversible process ends up). Balanced equations from [Unit 4](/notes/ap/chem/chemrxns/) supply stoichiometry; kinetics supplies rates, rate laws, and mechanisms.

@@ -4,8 +4,6 @@ sidebar:
   order: 3
 ---
 
-# Unit 3: Collecting Data
-
 ---
 
 How you collect data decides what you can conclude. This unit separates vocabulary for populations and samples, contrasts experiments with observational studies, names common sources of bias, and introduces standard sampling designs and experimental layouts used on the AP Statistics exam.

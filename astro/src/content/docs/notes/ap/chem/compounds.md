@@ -4,8 +4,6 @@ sidebar:
   order: 2
 ---
 
-# Unit 2: Compound Structure and Properties
-
 ---
 
 This unit connects what atoms are (Unit 1) to how they assemble into **compounds** and what that assembly predicts about structure, bonding, and bulk properties. We will move from qualitative pictures of electrons in bonds to rules for naming and drawing molecules, then to three-dimensional **molecular geometry** and the orbital picture that supports it.

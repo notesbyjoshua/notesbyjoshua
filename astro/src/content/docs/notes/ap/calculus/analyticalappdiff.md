@@ -4,8 +4,6 @@ sidebar:
   order: 5
 ---
 
-# Analytical Applications of Differentiation
-
 ---
 
 This unit uses derivatives to analyze the full shape of a function: where it rises or falls, where it bends, where extrema occur, and how to justify conclusions rigorously.

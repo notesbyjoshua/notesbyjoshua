@@ -4,8 +4,6 @@ sidebar:
   order: 2
 ---
 
-# Differentiation: Definition and Fundamental Properties
-
 ---
 
 Differentiation measures instantaneous change. Conceptually, the derivative is the slope of the tangent line and the best local linear approximation to a function.

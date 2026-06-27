@@ -4,8 +4,6 @@ sidebar:
   order: 3
 ---
 
-# Work, Energy, and Power
-
 ---
 
 :::variables

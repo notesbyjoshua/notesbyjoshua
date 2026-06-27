@@ -4,8 +4,6 @@ sidebar:
   order: 0
 ---
 
-# AP Calculus Cheat Sheet
-
 ---
 
 ## Unit 1: Limits and Continuity

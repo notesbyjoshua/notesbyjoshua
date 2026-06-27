@@ -4,8 +4,6 @@ sidebar:
   order: 8
 ---
 
-# Unit 8: Acid-Base Equilibrium
-
 ---
 
 This unit applies the equilibrium ideas from [Unit 7](/notes/ap/chem/equilibrium/) to proton transfer in water and related solvents. You will classify acids and bases, use $$K_a$$, $$K_b$$, and $$K_w$$, compute pH for strong and weak species, interpret salt solutions, design and analyze buffers, and read titration curves. Nomenclature for common acids appears in [Unit 2](/notes/ap/chem/compounds/); reaction writing and neutralization stoichiometry build on [Unit 4](/notes/ap/chem/chemrxns/).

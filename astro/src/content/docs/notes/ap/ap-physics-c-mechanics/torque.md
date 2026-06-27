@@ -4,8 +4,6 @@ sidebar:
   order: 5
 ---
 
-# Torque and Rotational Dynamics
-
 ---
 
 :::variables

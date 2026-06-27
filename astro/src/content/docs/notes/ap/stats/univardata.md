@@ -4,8 +4,6 @@ sidebar:
   order: 1
 ---
 
-# Unit 1: Exploring Univariate Data
-
 ---
 
 This unit is about **univariate data**: one variable measured on many individuals or cases. Before we graph or summarize anything, we need to know what kind of variable we have, because the right tools depend on whether the variable is categorical or quantitative.

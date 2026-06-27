@@ -4,6 +4,4 @@ sidebar:
   order: 4
 ---
 
-# Unit 4: Cell Communication and Cell Cycle
-
 ---

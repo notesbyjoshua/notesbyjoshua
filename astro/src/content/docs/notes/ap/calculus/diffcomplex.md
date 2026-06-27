@@ -4,8 +4,6 @@ sidebar:
   order: 3
 ---
 
-# Differentiation: Composite, Implicit, and Inverse Differentiation
-
 ---
 
 ## Chain rule

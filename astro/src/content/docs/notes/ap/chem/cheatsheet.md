@@ -4,8 +4,6 @@ sidebar:
   order: 0
 ---
 
-# AP Chemistry Cheat Sheet
-
 ---
 
 ## Constants and Common Values

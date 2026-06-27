@@ -4,8 +4,6 @@ sidebar:
   order: 4
 ---
 
-# Unit 5: Exponential & Logarithmic Functions
-
 ---
 
 ## Exponential functions

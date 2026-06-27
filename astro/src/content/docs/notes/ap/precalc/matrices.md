@@ -4,8 +4,6 @@ sidebar:
   order: 8
 ---
 
-# Unit 11: Matrices and Systems
-
 ---
 
 ## Systems of Linear Equations

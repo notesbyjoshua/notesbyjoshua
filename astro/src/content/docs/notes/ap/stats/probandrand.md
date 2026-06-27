@@ -4,8 +4,6 @@ sidebar:
   order: 4
 ---
 
-# Unit 4: Probability, Random Variables, and Probability Distributions
-
 ---
 
 **Probability** is a number between 0 and 1 that quantifies how likely an **event** is. In AP Statistics you usually interpret it as **long-run relative frequency**: repeat a random process many times, and the fraction of times the event occurs stabilizes near its probability. The rules below describe how to combine and update probabilities in a **sample space** of possible outcomes.

@@ -4,8 +4,6 @@ sidebar:
   order: 7
 ---
 
-# Unit 7: Equilibrium
-
 ---
 
 Unit 7 is about **chemical equilibrium**: the state in a **closed system** where a reversible reaction’s **forward** and **reverse** rates are equal, so **macroscopic** concentrations (or partial pressures) stop changing even though reactants and products are still interconverting at the molecular level. You will write **equilibrium constants** ($$K_c$$, $$K_p$$), compare them to the **reaction quotient** ($$Q$$), use **ICE tables** to compute equilibrium compositions, apply **Le Châtelier’s principle** to predict disturbance responses, and extend the same ideas to **solubility** ($$K_{sp}$$), **precipitation**, and **complex-ion** formation ($$K_f$$). These tools connect directly to **thermodynamics** through **Gibbs free energy** and the **van’t Hoff equation** (how $$K$$ changes with temperature), and to later work on **acids and bases**, where $$K_a$$ and $$K_b$$ are themselves equilibrium constants.

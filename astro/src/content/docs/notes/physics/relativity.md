@@ -4,8 +4,6 @@ sidebar:
   order: 7
 ---
 
-# Relativity
-
 ---
 
 **Yo ts is not done yet please edit and stuff**

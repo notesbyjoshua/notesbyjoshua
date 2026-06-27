@@ -4,8 +4,6 @@ sidebar:
   order: 1
 ---
 
-# Unit 1 & 2: Fundamentals, Equations, and Inequalities
-
 ---
 
 ## Definitions

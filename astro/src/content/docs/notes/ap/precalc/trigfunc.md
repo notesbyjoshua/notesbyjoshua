@@ -4,8 +4,6 @@ sidebar:
   order: 5
 ---
 
-# Unit 6 & 7: Trigonometric Functions
-
 ---
 
 ## Angles definitions

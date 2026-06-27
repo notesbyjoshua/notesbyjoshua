@@ -4,8 +4,6 @@ sidebar:
   order: 3
 ---
 
-# Unit 4 & 13: Polynomial & Rational Functions and Applications to Optimization
-
 ---
 
 ## Basic polynomial families
