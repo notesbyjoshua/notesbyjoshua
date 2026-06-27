@@ -10,7 +10,9 @@ Differentiation measures instantaneous change. Conceptually, the derivative is t
 
 ## Definition of the derivative
 
-The derivative of $$f$$ at $$x$$ is
+<div class="theorem-box">
+
+**Definition.** The derivative of $$f$$ at $$x$$ is
 
 $$
 f'(x) = \lim_{h \to 0} \frac{f(x+h)-f(x)}{h}
@@ -22,7 +24,9 @@ $$
 f'(a) = \lim_{x \to a} \frac{f(x)-f(a)}{x-a}.
 $$
 
-Interpretations:
+</div>
+
+There are many interpretations of the derivative:
 
 - instantaneous rate of change,
 - slope of the tangent line,
@@ -54,6 +58,7 @@ Interpretations:
 \end{axis}
 \end{tikzpicture}
 ```
+//fix image
 
 <div class="theorem-box">
 
@@ -83,26 +88,51 @@ $$
 f'(x)=\lim_{h\to0}(2x+h)=2x.
 $$
 
-So the derivative of $$x^2$$ is $$2x$$, matching the power rule.
+So the derivative of $$x^2$$ is $$2x$$.
 
 </div>
 
----
-
-## Differentiability vs continuity
+### Differentiability
 
 <div class="theorem-box">
 
-**Theorem (Differentiability implies continuity).** If $$f$$ is differentiable at $$a$$, then $$f$$ is continuous at $$a$$.
+**Definition.** A function is said to be "differentiable" on an interval $$[a,b]$$ if it's derivative exists in *all* of its domain.
 
 </div>
 
-The converse is false. A function can be continuous but not differentiable because of:
+The domain of $$f'$$ can be smaller than the domain of $$f$$. Even if $$f(a)$$ exists, the derivative at $$a$$ may fail to exist because the nearby slopes do not settle into one finite value or diverge to infinity.
 
-- corner,
-- cusp,
-- vertical tangent,
-- discontinuity.
+When finding a derivative formula, always ask where that formula is valid. For example,
+
+$$
+f(x)=\sqrt{x}
+$$
+
+has domain $$[0,\infty)$$, but
+
+$$
+f'(x)=\frac{1}{2\sqrt{x}}
+$$
+
+is valid only for $$x>0$$. The original function exists at $$x=0$$, but the tangent there is vertical, so the ordinary derivative is not finite.
+
+<div class="theorem-box">
+
+**Theorem.** If $$f$$ is differentiable at $$a$$, then $$f$$ is continuous at $$a$$. The converse of the statement is false. A function can be continuous but not differentiable because of a corner, cusp, vertical tangent, or discontinuity.
+
+</div>
+
+### One-sided derivatives
+
+At endpoints or corners, one-sided derivatives can be useful:
+
+$$
+f'_+(a)=\lim_{h\to0^+}\frac{f(a+h)-f(a)}{h},
+\qquad
+f'_-(a)=\lim_{h\to0^-}\frac{f(a+h)-f(a)}{h}.
+$$
+
+The derivative $$f'(a)$$ exists only when the left and right derivatives agree, just like limits.
 
 ---
 
@@ -138,46 +168,94 @@ $$
 
 for $$g(x) \ne 0$$.
 
+The theorems can all be proven by just plugging in the parent function into the derivative definition, so I will only show one example proof below.
+
 <div class="theorem-box">
 
-**Why the power rule is true.** Start from the derivative definition:
+**Proof (Product Rule).** Let $$H(x)=f(x) \cdot g(x)$$
+
+Start from the derivative definition:
 
 $$
-\frac{d}{dx}x^n
+\frac{d}{dx}H(x)
 =
-\lim_{h\to0}\frac{(x+h)^n-x^n}{h}.
+\lim_{h\to0}\frac{H(x+h)-H(x)}{h}.
 $$
 
-The binomial expansion begins
+Resubstituting:
 
 $$
-(x+h)^n=x^n+nx^{n-1}h+\text{terms with }h^2,h^3,\ldots
+\frac{d}{dx}H(x)
+=
+\lim_{h\to0}\frac{f(x+h)g(x+h)-f(x)g(x)}{h}.
 $$
 
-After subtracting $$x^n$$ and dividing by $$h$$, the leading surviving term is $$nx^{n-1}$$. All remaining terms still contain a factor of $$h$$, so they vanish as $$h\to0$$.
+Now, do an algebra trick: We can add and then subtract $$f(x+h)g(x)$$ to our expression to factor:
+
+$$
+\frac{d}{dx}H(x)
+=
+\lim_{h\to0}\frac{f(x+h)g(x+h)-f(x+h)g(x)+f(x+h)g(x)-f(x)g(x)}{h}
+=
+\lim_{h\to0}\frac{f(x+h)g(x+h)-f(x+h)g(x)}{h}+\lim_{h\to0}\frac{f(x+h)g(x)-f(x)g(x)}{h}
+$$
+
+and then simplifying we get:
+
+$$
+\frac{d}{dx}H(x)
+=
+\lim_{h\to0}\frac{f(x+h)(g(x+h)-g(x))}{h}+\lim_{h\to0}\frac{(f(x+h)-f(x))g(x)}{h}
+$$
+
+Now split the factors that do not belong to the difference quotients:
+
+$$
+\frac{d}{dx}H(x)
+=
+\lim_{h\to0}f(x+h) \cdot \lim_{h\to0}\frac{(g(x+h)-g(x))}{h}+\lim_{h\to0}g(x) \cdot \lim_{h\to0}\frac{(f(x+h)-f(x))}{h}
+$$
+
+since the limit of a sum is the sum of the limits, and constants with respect to $$h$$ can be factored out.
+
+Because $$f$$ is differentiable at $$x$$, it is also continuous at $$x$$. Therefore
+
+$$
+\lim_{h\to0}f(x+h)=f(x).
+$$
+
+Also,
+
+$$
+\lim_{h\to0}g(x)=g(x),
+$$
+
+because $$g(x)$$ does not depend on $$h$$. The two remaining limits are exactly the derivative definitions for $$g'(x)$$ and $$f'(x)$$:
+
+$$
+\lim_{h\to0}\frac{g(x+h)-g(x)}{h}=g'(x),
+\qquad
+\lim_{h\to0}\frac{f(x+h)-f(x)}{h}=f'(x).
+$$
+
+Substitute these limits back in:
+
+$$
+\frac{d}{dx}H(x)
+=f(x)g'(x)+g(x)f'(x).
+$$
+
+Since multiplication is commutative, this is usually written as
+
+$$
+\boxed{\frac{d}{dx}[f(x)g(x)]=f'(x)g(x)+f(x)g'(x)}.
+$$
 
 </div>
 
 <div class="theorem-box">
 
-**Why the product rule has two terms.** If both factors can change, the new product differs from the old product in two first-order ways:
-
-$$
-(f+\Delta f)(g+\Delta g)-fg
-=g\Delta f+f\Delta g+\Delta f\Delta g.
-$$
-
-The last term is a product of two tiny changes, so it becomes negligible compared with the first-order changes. Dividing by $$\Delta x$$ and taking the limit gives
-
-$$
-(fg)'=f'g+fg'.
-$$
-
-</div>
-
-<div class="theorem-box">
-
-**Example.** Differentiate $$y = x^3 \sin x$$ using the product rule.
+**Example.** Differentiate $$y = x^3 \sin x$$.
 
 Let $$f(x)=x^3$$ and $$g(x)=\sin x$$, so $$f'(x)=3x^2$$ and $$g'(x)=\cos x$$. The product rule gives
 
@@ -197,7 +275,7 @@ So $$y' = 3x^2\sin x + x^3\cos x$$.
 
 <div class="theorem-box">
 
-**Example.** Differentiate $$\displaystyle y = \frac{x^2}{x+1}$$ using the quotient rule.
+**Example.** Differentiate $$\displaystyle y = \frac{x^2}{x+1}$$.
 
 Let $$f(x)=x^2$$ and $$g(x)=x+1$$, so $$f'(x)=2x$$ and $$g'(x)=1$$. The quotient rule gives
 
@@ -600,61 +678,6 @@ The quotient rule is a product rule combined with the derivative of a reciprocal
 :::
 
 ---
-
-## AP reasoning focus
-
-In this unit, almost every idea has two forms: a **definition form** and a **shortcut form**. The definition form explains what the derivative means, while the shortcut form helps compute efficiently.
-
-For AP-style explanations, be precise about which object you are describing:
-
-- $$f(a)$$ is an output value.
-- $$f'(a)$$ is an instantaneous rate or tangent slope at one input.
-- $$f'(x)$$ is a derivative function.
-- $$f''(a)$$ is the rate at which the rate is changing at one input.
-
-:::exam{topic="Derivative meaning"}
-If a problem asks for interpretation, include units and context. A statement like $$f'(5)=12$$ should become something like "At $$t=5$$ seconds, the quantity is increasing at $$12$$ units per second."
-:::
-
-:::strategy{title="Derivative from limited information"}
-1. From a formula, differentiate symbolically.
-2. From a table, estimate with nearby average rates.
-3. From a graph of $$f$$, estimate slope.
-4. From a graph of $$f'$$, read height.
-5. From verbal context, translate the units before doing computation.
-:::
-
----
-
-## Derivative domains
-
-The domain of $$f'$$ can be smaller than the domain of $$f$$. Even if $$f(a)$$ exists, the derivative at $$a$$ may fail to exist because the nearby slopes do not settle into one finite value.
-
-When finding a derivative formula, always ask where that formula is valid. For example,
-
-$$
-f(x)=\sqrt{x}
-$$
-
-has domain $$[0,\infty)$$, but
-
-$$
-f'(x)=\frac{1}{2\sqrt{x}}
-$$
-
-is valid only for $$x>0$$. The original function exists at $$x=0$$, but the tangent there is vertical, so the ordinary derivative is not finite.
-
-### One-sided derivatives
-
-At endpoints or corners, one-sided derivatives can be useful:
-
-$$
-f'_+(a)=\lim_{h\to0^+}\frac{f(a+h)-f(a)}{h},
-\qquad
-f'_-(a)=\lim_{h\to0^-}\frac{f(a+h)-f(a)}{h}.
-$$
-
-The derivative $$f'(a)$$ exists only when the left and right derivatives agree.
 
 ### Derivative notation in context
 
