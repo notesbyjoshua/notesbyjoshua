@@ -673,27 +673,6 @@ The method works best when the starting guess is close to the root and the deriv
 
 ---
 
-## AP reasoning focus
-
-Analytical applications ask you to turn derivative information into a story about the original function. The safest approach is to separate **where candidates occur** from **what those candidates mean**.
-
-:::strategy{title="Function analysis workflow"}
-1. Find the domain first, because endpoints and discontinuities matter.
-2. Find critical numbers from $$f'(x)=0$$ and places where $$f'$$ is undefined.
-3. Build a sign chart for $$f'$$ to determine increasing/decreasing behavior.
-4. Build a sign chart for $$f''$$ to determine concavity.
-5. Use endpoint values and critical values for absolute extrema on closed intervals.
-6. Use derivative sign changes, not just derivative zeros, to justify local extrema.
-:::
-
-:::exam{topic="Justification language"}
-Write conclusions in terms of signs and changes: "$$f$$ has a local maximum at $$x=c$$ because $$f'$$ changes from positive to negative there." This is stronger than saying "$$f'(c)=0$$."
-:::
-
-For optimization, the derivative work is only the middle of the problem. A complete solution should also define variables, state the constraint, state the domain, and answer in the original units.
-
----
-
 ## Closed Interval Method
 
 To find absolute extrema of a continuous function on $$[a,b]$$:
@@ -744,3 +723,24 @@ Optimization problems often fail because the domain is ignored. After writing th
 - denominators cannot be zero.
 
 If the allowed domain is closed, use endpoint comparison. If the domain is open or unbounded, use derivative signs and behavior at the ends.
+
+---
+
+## Tips for the exam
+
+Analytical applications ask you to turn derivative information into a story about the original function. The safest approach is to separate **where candidates occur** from **what those candidates mean**.
+
+:::strategy{title="Function analysis workflow"}
+1. Find the domain first, because endpoints and discontinuities matter.
+2. Find critical numbers from $$f'(x)=0$$ and places where $$f'$$ is undefined.
+3. Build a sign chart for $$f'$$ to determine increasing/decreasing behavior.
+4. Build a sign chart for $$f''$$ to determine concavity.
+5. Use endpoint values and critical values for absolute extrema on closed intervals.
+6. Use derivative sign changes, not just derivative zeros, to justify local extrema.
+:::
+
+:::exam{topic="Justification language"}
+Write conclusions in terms of signs and changes: "$$f$$ has a local maximum at $$x=c$$ because $$f'$$ changes from positive to negative there." This is stronger than saying "$$f'(c)=0$$."
+:::
+
+For optimization, the derivative work is only the middle of the problem. A complete solution should also define variables, state the constraint, state the domain, and answer in the original units.

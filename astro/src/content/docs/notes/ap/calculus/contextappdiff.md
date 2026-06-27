@@ -517,32 +517,6 @@ Always identify what the graph represents before interpreting signs, slopes, or 
 
 ---
 
-## AP reasoning focus
-
-Contextual derivative questions are translation problems first and calculus problems second. Before differentiating, decide what each symbol measures and what its derivative would mean.
-
-:::variables
-- Position: $$s(t)$$, usually measured in distance units.
-- Velocity: $$v(t)=s'(t)$$, measured in distance per time.
-- Acceleration: $$a(t)=v'(t)=s''(t)$$, measured in distance per time squared.
-- Rate in/out: positive and negative contributions to a total amount.
-- Marginal cost/revenue/profit: derivative of the corresponding business function.
-:::
-
-When writing interpretations:
-
-- "Increasing" means the derivative is positive.
-- "Decreasing" means the derivative is negative.
-- "Speeding up" means velocity and acceleration have the same sign.
-- "Slowing down" means velocity and acceleration have opposite signs.
-- "Approximately" usually signals linearization or a tangent-line estimate.
-
-:::exam{topic="Context wording"}
-AP free-response scoring usually expects a complete sentence with units. A correct number without context can lose the interpretation point.
-:::
-
----
-
 ## Differential notation and small changes
 
 If $$y=f(x)$$, then the differential
@@ -641,3 +615,29 @@ $$
 At a production level of $$200$$ items, profit is increasing at about $$8$$ dollars per additional item. This means producing and selling one more item near that level is expected to increase profit by about $$8$$ dollars.
 
 </div>
+
+---
+
+## Tips for the exam
+
+Contextual derivative questions are translation problems first and calculus problems second. Before differentiating, decide what each symbol measures and what its derivative would mean.
+
+:::variables
+- Position: $$s(t)$$, usually measured in distance units.
+- Velocity: $$v(t)=s'(t)$$, measured in distance per time.
+- Acceleration: $$a(t)=v'(t)=s''(t)$$, measured in distance per time squared.
+- Rate in/out: positive and negative contributions to a total amount.
+- Marginal cost/revenue/profit: derivative of the corresponding business function.
+:::
+
+When writing interpretations:
+
+- "Increasing" means the derivative is positive.
+- "Decreasing" means the derivative is negative.
+- "Speeding up" means velocity and acceleration have the same sign.
+- "Slowing down" means velocity and acceleration have opposite signs.
+- "Approximately" usually signals linearization or a tangent-line estimate.
+
+:::exam{topic="Context wording"}
+AP free-response scoring usually expects a complete sentence with units. A correct number without context can lose the interpretation point.
+:::

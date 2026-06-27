@@ -657,28 +657,6 @@ Since $$j(2)>0$$, acceleration is increasing at $$t=2$$.
 
 ---
 
-## AP reasoning focus
-
-This unit is about recognizing when the derivative is hidden inside another relationship.
-
-- Chain rule problems hide a changing input inside an outer function.
-- Implicit differentiation hides $$y$$ as a function of $$x$$.
-- Inverse-function problems hide the slope relationship between a function and its inverse.
-- Related rates hide time dependence inside geometry or context.
-
-:::checklist
-1. Identify the outer and inner functions before applying the chain rule.
-2. In implicit equations, attach $$dy/dx$$ to every differentiated $$y$$ term.
-3. In inverse-function questions, match the input/output pair correctly: if $$f(a)=b$$, then $$(f^{-1})'(b)=1/f'(a)$$.
-4. In related rates, do not substitute variable values until after differentiating with respect to time.
-:::
-
-:::exam{topic="Composite and implicit derivatives"}
-AP often mixes rules. A single derivative might require product rule, chain rule, and implicit differentiation in the same line, so write intermediate steps clearly enough that the structure is visible.
-:::
-
----
-
 ## Logarithmic differentiation in detail
 
 Logarithmic differentiation is useful when a function has products, quotients, powers, or variables in both the base and exponent. The idea is to take the natural logarithm of both sides, use log laws to simplify, and then differentiate implicitly.
@@ -741,3 +719,25 @@ y'=x^x(\ln x+1).
 $$
 
 This pattern is common whenever both the base and exponent contain the variable.
+
+---
+
+## Tips for the exam
+
+This unit is about recognizing when the derivative is hidden inside another relationship.
+
+- Chain rule problems hide a changing input inside an outer function.
+- Implicit differentiation hides $$y$$ as a function of $$x$$.
+- Inverse-function problems hide the slope relationship between a function and its inverse.
+- Related rates hide time dependence inside geometry or context.
+
+:::checklist
+1. Identify the outer and inner functions before applying the chain rule.
+2. In implicit equations, attach $$dy/dx$$ to every differentiated $$y$$ term.
+3. In inverse-function questions, match the input/output pair correctly: if $$f(a)=b$$, then $$(f^{-1})'(b)=1/f'(a)$$.
+4. In related rates, do not substitute variable values until after differentiating with respect to time.
+:::
+
+:::exam{topic="Composite and implicit derivatives"}
+AP often mixes rules. A single derivative might require product rule, chain rule, and implicit differentiation in the same line, so write intermediate steps clearly enough that the structure is visible.
+:::

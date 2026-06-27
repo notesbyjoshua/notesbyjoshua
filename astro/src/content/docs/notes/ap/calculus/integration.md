@@ -606,34 +606,6 @@ This is different from the average rate of change. Average value averages output
 
 ---
 
-## AP reasoning focus
-
-Integration questions usually ask you to connect a rate, an amount, and an interval. The central idea is:
-
-$$
-\text{new amount}=\text{initial amount}+\text{accumulated change}.
-$$
-
-So if $$A'(t)=r(t)$$, then
-
-$$
-A(b)=A(a)+\int_a^b r(t)\,dt.
-$$
-
-:::checklist
-1. Decide whether the integral represents signed accumulation, total area, displacement, or total distance.
-2. If a rate can be negative, do not call the integral "area" unless the problem asks for geometric area.
-3. For total distance, integrate $$\lvert v(t)\rvert$$ or split where velocity changes sign.
-4. For accumulation functions, use FTC Part 1 before trying to find an antiderivative.
-5. For substitution, change bounds if you rewrite the integral in terms of $$u$$.
-:::
-
-:::exam{topic="Integral interpretation"}
-AP problems often give a table or graph of a rate. You may not have a formula, so be comfortable estimating integrals numerically and explaining whether the estimate is an overestimate or underestimate.
-:::
-
----
-
 ## Integration strategy
 
 Antidifferentiation is pattern recognition. A good first pass is:
@@ -1020,3 +992,31 @@ $$
 also converges.
 
 </div>
+
+---
+
+## Tips for the exam
+
+Integration questions usually ask you to connect a rate, an amount, and an interval. The central idea is:
+
+$$
+\text{new amount}=\text{initial amount}+\text{accumulated change}.
+$$
+
+So if $$A'(t)=r(t)$$, then
+
+$$
+A(b)=A(a)+\int_a^b r(t)\,dt.
+$$
+
+:::checklist
+1. Decide whether the integral represents signed accumulation, total area, displacement, or total distance.
+2. If a rate can be negative, do not call the integral "area" unless the problem asks for geometric area.
+3. For total distance, integrate $$\lvert v(t)\rvert$$ or split where velocity changes sign.
+4. For accumulation functions, use FTC Part 1 before trying to find an antiderivative.
+5. For substitution, change bounds if you rewrite the integral in terms of $$u$$.
+:::
+
+:::exam{topic="Integral interpretation"}
+AP problems often give a table or graph of a rate. You may not have a formula, so be comfortable estimating integrals numerically and explaining whether the estimate is an overestimate or underestimate.
+:::

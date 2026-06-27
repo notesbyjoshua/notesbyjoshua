@@ -563,29 +563,6 @@ When differentiating, remember that $$y$$ depends on $$x$$. After finding $$d^2y
 
 ---
 
-## AP reasoning focus
-
-Differential equation questions often move among four representations:
-
-- a formula for $$dy/dx$$,
-- a slope field,
-- a particular solution through an initial condition,
-- a verbal model of growth, decay, or limiting behavior.
-
-:::strategy{title="Differential equation workflow"}
-1. If asked to verify a solution, substitute both $$y$$ and $$dy/dx$$ into the differential equation.
-2. If asked to solve, check whether variables can be separated.
-3. If an initial condition is given, use it after integrating to find the constant.
-4. If asked about concavity, differentiate $$dy/dx=f(x,y)$$ with respect to $$x$$ and remember that $$y$$ depends on $$x$$.
-5. If using Euler's method, keep a table of $$x_n$$, $$y_n$$, and slope values.
-:::
-
-:::exam{topic="Slope fields"}
-AP questions may ask for reasoning without solving the differential equation. Equilibrium solutions, slope signs, and whether solution curves move toward or away from an equilibrium can often be read directly from the slope field or from $$dy/dx$$.
-:::
-
----
-
 ## Intervals of validity
 
 A solution to a differential equation may be valid only on an interval, even if the algebraic expression looks broader. Restrictions can come from:
@@ -636,3 +613,26 @@ P=L.
 $$
 
 The value $$L$$ is the carrying capacity. Growth is fastest when $$P=L/2$$ because the product $$P(1-P/L)$$ is largest halfway between the equilibria.
+
+---
+
+## Tips for the exam
+
+Differential equation questions often move among four representations:
+
+- a formula for $$dy/dx$$,
+- a slope field,
+- a particular solution through an initial condition,
+- a verbal model of growth, decay, or limiting behavior.
+
+:::strategy{title="Differential equation workflow"}
+1. If asked to verify a solution, substitute both $$y$$ and $$dy/dx$$ into the differential equation.
+2. If asked to solve, check whether variables can be separated.
+3. If an initial condition is given, use it after integrating to find the constant.
+4. If asked about concavity, differentiate $$dy/dx=f(x,y)$$ with respect to $$x$$ and remember that $$y$$ depends on $$x$$.
+5. If using Euler's method, keep a table of $$x_n$$, $$y_n$$, and slope values.
+:::
+
+:::exam{topic="Slope fields"}
+AP questions may ask for reasoning without solving the differential equation. Equilibrium solutions, slope signs, and whether solution curves move toward or away from an equilibrium can often be read directly from the slope field or from $$dy/dx$$.
+:::

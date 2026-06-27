@@ -691,24 +691,6 @@ After doing the component work, interpret the result as a vector, speed, distanc
 
 ---
 
-## AP reasoning focus
-
-BC curve questions often hide familiar single-variable calculus inside a new coordinate system. The idea is still rate, accumulation, and interpretation, but the independent variable may be $$t$$ or $$\theta$$ instead of $$x$$.
-
-:::checklist
-1. For parametric slopes, compute $$dx/dt$$ and $$dy/dt$$ separately before forming $$dy/dx$$.
-2. For parametric concavity, differentiate $$dy/dx$$ with respect to $$t$$ and divide by $$dx/dt$$.
-3. For polar area, square the radius and use $$\frac12\int r^2\,d\theta$$.
-4. For polar intersections, check both same-angle intersections and possible pole intersections.
-5. For vector-valued motion, speed is the magnitude of the velocity vector, not a component.
-:::
-
-:::exam{topic="BC curves"}
-Always state the parameter interval or angle interval being used. The same equation can trace a curve once, multiple times, or only partially depending on the interval.
-:::
-
----
-
 ## Area with parametric equations
 
 For a parametric curve
@@ -826,3 +808,21 @@ $$
 $$
 
 This is the same structure as parametric second derivatives, just with $$\theta$$ as the parameter.
+
+---
+
+## Tips for the exam
+
+BC curve questions often hide familiar single-variable calculus inside a new coordinate system. The idea is still rate, accumulation, and interpretation, but the independent variable may be $$t$$ or $$\theta$$ instead of $$x$$.
+
+:::checklist
+1. For parametric slopes, compute $$dx/dt$$ and $$dy/dt$$ separately before forming $$dy/dx$$.
+2. For parametric concavity, differentiate $$dy/dx$$ with respect to $$t$$ and divide by $$dx/dt$$.
+3. For polar area, square the radius and use $$\frac12\int r^2\,d\theta$$.
+4. For polar intersections, check both same-angle intersections and possible pole intersections.
+5. For vector-valued motion, speed is the magnitude of the velocity vector, not a component.
+:::
+
+:::exam{topic="BC curves"}
+Always state the parameter interval or angle interval being used. The same equation can trace a curve once, multiple times, or only partially depending on the interval.
+:::

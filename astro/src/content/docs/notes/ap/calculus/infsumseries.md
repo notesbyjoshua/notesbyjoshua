@@ -886,27 +886,6 @@ For AP work, always state the test used and enough hypothesis information to jus
 
 ---
 
-## AP reasoning focus
-
-Series questions are decision problems. The hard part is usually not algebra; it is choosing a test whose hypotheses match the series.
-
-:::strategy{title="Choosing a convergence test"}
-1. First check whether $$a_n\to0$$. If not, the series diverges.
-2. Look for a geometric series, $$p$$-series, or telescoping pattern before using heavier tests.
-3. Use comparison tests for positive series that resemble simpler known series.
-4. Use the Alternating Series Test only when terms decrease to $$0$$ in absolute value.
-5. Use Ratio Test for factorials, exponentials, and power series.
-6. After finding a radius of convergence, test endpoints separately.
-:::
-
-:::exam{topic="Series justification"}
-AP scoring expects the name of the test and the key evidence. For example, "converges by AST" should include that the terms alternate, decrease in absolute value, and approach $$0$$.
-:::
-
-For Taylor polynomials, remember that approximation and error are linked. A polynomial is useful only when you know where it is centered, what degree it has, and how large the possible remainder could be.
-
----
-
 ## Sequences in more detail
 
 A sequence can converge, diverge to infinity, diverge to negative infinity, or oscillate without approaching one value.
@@ -1010,3 +989,24 @@ $$
 $$
 \frac{1}{1-x}=\sum_{n=0}^{\infty}x^n,\qquad \lvert x\rvert<1.
 $$
+
+---
+
+## Tips for the exam
+
+Series questions are decision problems. The hard part is usually not algebra; it is choosing a test whose hypotheses match the series.
+
+:::strategy{title="Choosing a convergence test"}
+1. First check whether $$a_n\to0$$. If not, the series diverges.
+2. Look for a geometric series, $$p$$-series, or telescoping pattern before using heavier tests.
+3. Use comparison tests for positive series that resemble simpler known series.
+4. Use the Alternating Series Test only when terms decrease to $$0$$ in absolute value.
+5. Use Ratio Test for factorials, exponentials, and power series.
+6. After finding a radius of convergence, test endpoints separately.
+:::
+
+:::exam{topic="Series justification"}
+AP scoring expects the name of the test and the key evidence. For example, "converges by AST" should include that the terms alternate, decrease in absolute value, and approach $$0$$.
+:::
+
+For Taylor polynomials, remember that approximation and error are linked. A polynomial is useful only when you know where it is centered, what degree it has, and how large the possible remainder could be.

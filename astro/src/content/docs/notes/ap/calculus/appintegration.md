@@ -594,26 +594,6 @@ Convergence means the limiting accumulated value is finite. Divergence means the
 
 ---
 
-## AP reasoning focus
-
-Applications of integration are mostly about choosing the correct tiny piece.
-
-:::strategy{title="Choosing an integral model"}
-1. Area between curves: slice vertically for top minus bottom or horizontally for right minus left.
-2. Volume by cross sections: identify the base interval and write the cross-sectional area $$A(x)$$ or $$A(y)$$.
-3. Washers/disks: radii are perpendicular to the axis of rotation.
-4. Shells: radius is distance to the axis, and height is the length of the slice.
-5. Motion: signed velocity gives displacement, while speed gives total distance.
-:::
-
-:::exam{topic="Set up before evaluate"}
-AP free-response questions often award setup points even when the integral is not evaluated. A correct integral with correct bounds, radii, and slice direction is the main goal.
-:::
-
-When curves cross, split the interval at every intersection point. The expression "top minus bottom" or "right minus left" can change from one subinterval to the next.
-
----
-
 ## Work and force
 
 Work is another accumulation idea. If a force $$F(x)$$ moves an object along a line from $$x=a$$ to $$x=b$$, then
@@ -781,3 +761,23 @@ k=\frac12.
 $$
 
 </div>
+
+---
+
+## Tips for the exam
+
+Applications of integration are mostly about choosing the correct tiny piece.
+
+:::strategy{title="Choosing an integral model"}
+1. Area between curves: slice vertically for top minus bottom or horizontally for right minus left.
+2. Volume by cross sections: identify the base interval and write the cross-sectional area $$A(x)$$ or $$A(y)$$.
+3. Washers/disks: radii are perpendicular to the axis of rotation.
+4. Shells: radius is distance to the axis, and height is the length of the slice.
+5. Motion: signed velocity gives displacement, while speed gives total distance.
+:::
+
+:::exam{topic="Set up before evaluate"}
+AP free-response questions often award setup points even when the integral is not evaluated. A correct integral with correct bounds, radii, and slice direction is the main goal.
+:::
+
+When curves cross, split the interval at every intersection point. The expression "top minus bottom" or "right minus left" can change from one subinterval to the next.
