@@ -4,12 +4,6 @@ sidebar:
   order: 2
 ---
 
----
-
-Differentiation measures instantaneous change. Conceptually, the derivative is the slope of the tangent line and the best local linear approximation to a function.
-
----
-
 ## Definition of the derivative
 
 <div class="theorem-box">
@@ -186,13 +180,7 @@ Common visual signs:
 - a vertical tangent has an infinite slope,
 - a discontinuity cannot be differentiable.
 
-A smooth-looking graph is not a proof by itself, but it gives a strong clue about where derivative values may exist.
-
-<div class="theorem-box">
-
-**Theorem.** If $$f$$ is differentiable at $$a$$, then $$f$$ is continuous at $$a$$. The converse of the statement is false.
-
-</div>
+A smooth-looking graph is not a proof by itself, but it gives a strong clue about where derivative values may or may not exist.
 
 ### One-sided derivatives
 
