@@ -1,0 +1,74 @@
+---
+---
+
+<div class="signup" data-signup>
+  <p id="signup-status">Checking your account…</p>
+
+  <div id="signup-signedout" hidden>
+    <div class="signup-panel">
+      <p class="signup-kicker">Create your account</p>
+      <h2>Track notes, save progress, and build your study dashboard.</h2>
+      <p class="signup-copy">
+        Use a Google account to start. New accounts automatically get a visitor profile, and approved
+        writers can be upgraded later from the admin dashboard.
+      </p>
+
+      <div class="signup-actions">
+        <button id="signup-google" class="account-btn" type="button">Sign up with Google</button>
+        <a class="account-btn account-btn--secondary" href="/account/">I already have an account</a>
+      </div>
+
+      <p id="signup-msg" class="profile-save-msg" hidden></p>
+    </div>
+  </div>
+
+  <div id="signup-signedin" hidden>
+    <p>You’re already signed in.</p>
+    <p><a class="account-btn" href="/account/">Open your account</a></p>
+  </div>
+
+  <p id="signup-disabled" hidden>Accounts aren’t configured yet (missing Supabase credentials).</p>
+</div>
+
+<script>
+  import { getSupabase, getCurrentUser } from '../lib/supabase';
+
+  const byId = (id: string) => document.getElementById(id)!;
+  const STATES = ['signup-status', 'signup-signedout', 'signup-signedin', 'signup-disabled'];
+  const show = (id: string) => STATES.forEach((s) => (byId(s).hidden = s !== id));
+  const sb = getSupabase();
+
+  byId('signup-google')?.addEventListener('click', async () => {
+    const msg = byId('signup-msg');
+    const button = byId('signup-google') as HTMLButtonElement;
+    msg.hidden = true;
+    button.disabled = true;
+    try {
+      const { error } = await sb!.auth.signInWithOAuth({
+        provider: 'google',
+        options: {
+          redirectTo: window.location.origin + '/account/?welcome=1',
+          queryParams: { prompt: 'select_account' },
+        },
+      });
+      if (error) throw error;
+    } catch (err) {
+      console.error('[signup] OAuth start failed:', err);
+      msg.textContent = 'Could not start sign-up. Try again in a moment.';
+      msg.hidden = false;
+      button.disabled = false;
+    }
+  });
+
+  if (!sb) {
+    show('signup-disabled');
+  } else {
+    getCurrentUser()
+      .then((user) => show(user ? 'signup-signedin' : 'signup-signedout'))
+      .catch(() => show('signup-signedout'));
+    sb.auth.onAuthStateChange((event, session) => {
+      if (event === 'INITIAL_SESSION') return;
+      show(session?.user ? 'signup-signedin' : 'signup-signedout');
+    });
+  }
+</script>

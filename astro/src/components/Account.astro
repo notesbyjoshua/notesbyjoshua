@@ -24,7 +24,10 @@ const totalNotes = sections.reduce((n, s) => n + s.slugs.length, 0);
 
   <div id="account-signedout" hidden>
     <p>Sign in to track your progress and manage your profile.</p>
-    <button id="google-signin" class="account-btn">Sign in with Google</button>
+    <div class="account-auth-actions">
+      <a class="account-btn" href="/signup/">Create account</a>
+      <button id="google-signin" class="account-btn account-btn--secondary" type="button">Sign in with Google</button>
+    </div>
   </div>
 
   <div id="account-signedin" hidden>

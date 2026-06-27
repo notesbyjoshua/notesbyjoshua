@@ -237,6 +237,7 @@
 .account-btn {
 	display: inline-flex;
 	align-items: center;
+	justify-content: center;
 	gap: 0.5rem;
 	padding: 0.5rem 0.9rem;
 	border: 1px solid var(--sl-color-gray-5);
@@ -246,6 +247,7 @@
 	font: inherit;
 	font-weight: 600;
 	cursor: pointer;
+	text-decoration: none;
 }
 
 .account-btn--secondary {
@@ -260,6 +262,15 @@
 .account-btn[disabled] {
 	opacity: 0.5;
 	cursor: default;
+}
+
+.account-auth-actions,
+.signup-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.6rem;
+	align-items: center;
+	margin-top: 0.75rem;
 }
 
 /* --- Profile page --- */
@@ -313,6 +324,37 @@
 	margin-top: 0.4rem;
 	font-size: var(--sl-text-sm);
 	color: var(--sl-color-text-accent);
+}
+
+/* --- Sign-up page --- */
+.signup {
+	max-width: 42rem;
+}
+
+.signup-panel {
+	padding: 1.25rem 0;
+}
+
+.signup-kicker {
+	margin-bottom: 0.4rem;
+	color: var(--sl-color-text-accent);
+	font-size: var(--sl-text-sm);
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0;
+}
+
+.signup h2 {
+	margin: 0;
+	font-size: clamp(2rem, 5vw, 3rem);
+	line-height: 1.05;
+}
+
+.signup-copy {
+	max-width: 34rem;
+	margin-top: 0.9rem;
+	color: var(--sl-color-gray-2);
+	font-size: 1.05rem;
 }
 
 .profile-bar {
