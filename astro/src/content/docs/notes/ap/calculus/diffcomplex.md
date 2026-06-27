@@ -514,3 +514,68 @@ This unit is about recognizing when the derivative is hidden inside another rela
 :::exam{topic="Composite and implicit derivatives"}
 AP often mixes rules. A single derivative might require product rule, chain rule, and implicit differentiation in the same line, so write intermediate steps clearly enough that the structure is visible.
 :::
+
+---
+
+## Logarithmic differentiation in detail
+
+Logarithmic differentiation is useful when a function has products, quotients, powers, or variables in both the base and exponent. The idea is to take the natural logarithm of both sides, use log laws to simplify, and then differentiate implicitly.
+
+For example, if
+
+$$
+y=(x^2+1)^3\sqrt{x-4},
+$$
+
+then taking logs gives
+
+$$
+\ln y=3\ln(x^2+1)+\frac12\ln(x-4).
+$$
+
+Differentiate both sides:
+
+$$
+\frac{1}{y}\frac{dy}{dx}
+=3\cdot\frac{2x}{x^2+1}+\frac12\cdot\frac{1}{x-4}.
+$$
+
+Then multiply by $$y$$:
+
+$$
+\frac{dy}{dx}
+=(x^2+1)^3\sqrt{x-4}
+\left(\frac{6x}{x^2+1}+\frac{1}{2(x-4)}\right).
+$$
+
+:::warning
+Logarithmic differentiation does not remove the chain rule. It reorganizes the expression so the chain rule is easier to apply.
+:::
+
+### Variable base and variable exponent
+
+Expressions like
+
+$$
+y=x^x
+$$
+
+cannot be handled by the ordinary power rule or ordinary exponential rule alone. Write
+
+$$
+\ln y=x\ln x.
+$$
+
+Then
+
+$$
+\frac{y'}{y}=\ln x+1,
+$$
+
+so
+
+$$
+y'=x^x(\ln x+1).
+$$
+
+This pattern is common whenever both the base and exponent contain the variable.

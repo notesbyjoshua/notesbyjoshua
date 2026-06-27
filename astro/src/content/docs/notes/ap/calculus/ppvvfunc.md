@@ -552,3 +552,73 @@ BC curve questions often hide familiar single-variable calculus inside a new coo
 :::exam{topic="BC curves"}
 Always state the parameter interval or angle interval being used. The same equation can trace a curve once, multiple times, or only partially depending on the interval.
 :::
+
+---
+
+## Area with parametric equations
+
+For a parametric curve
+
+$$
+x=x(t),\qquad y=y(t),
+$$
+
+the area under the curve can be written as
+
+$$
+A=\int y\,dx.
+$$
+
+Since
+
+$$
+dx=x'(t)\,dt,
+$$
+
+we get
+
+$$
+A=\int_{t=a}^{t=b} y(t)x'(t)\,dt.
+$$
+
+The sign depends on the direction of motion. If $$x(t)$$ decreases over the interval, the integral can be negative even when the geometric area is positive.
+
+### Parametric arc length
+
+The arc length formula
+
+$$
+L=\int_a^b\sqrt{[x'(t)]^2+[y'(t)]^2}\,dt
+$$
+
+comes from the distance formula on tiny pieces of the curve:
+
+$$
+ds\approx\sqrt{(dx)^2+(dy)^2}.
+$$
+
+Because $$dx=x'(t)\,dt$$ and $$dy=y'(t)\,dt$$, the speed factor appears inside the integral.
+
+### Polar intersections and tracing
+
+Polar curves require extra care because one point can have many polar representations. When solving intersections, check:
+
+1. same-angle intersections by setting the radii equal,
+2. pole intersections where both curves pass through the origin,
+3. whether the interval traces the whole curve or only part of it.
+
+### Polar arc length
+
+For $$r=f(\theta)$$, arc length is
+
+$$
+L=\int_a^b\sqrt{[r(\theta)]^2+[r'(\theta)]^2}\,d\theta.
+$$
+
+This is the polar version of parametric arc length because
+
+$$
+x=r\cos\theta,\qquad y=r\sin\theta.
+$$
+
+Differentiating those and simplifying gives the expression under the square root.

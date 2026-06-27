@@ -563,3 +563,59 @@ AP free-response questions often award setup points even when the integral is no
 :::
 
 When curves cross, split the interval at every intersection point. The expression "top minus bottom" or "right minus left" can change from one subinterval to the next.
+
+---
+
+## Work and force
+
+Work is another accumulation idea. If a force $$F(x)$$ moves an object along a line from $$x=a$$ to $$x=b$$, then
+
+$$
+W=\int_a^b F(x)\,dx.
+$$
+
+If the force is constant, this reduces to
+
+$$
+W=F(b-a).
+$$
+
+If the force changes with position, the integral adds many tiny pieces of work:
+
+$$
+dW=F(x)\,dx.
+$$
+
+### Springs
+
+Hooke's Law says that the force needed to stretch or compress a spring by $$x$$ units is
+
+$$
+F(x)=kx,
+$$
+
+where $$k$$ is the spring constant. The work needed to stretch the spring from $$x=a$$ to $$x=b$$ is
+
+$$
+W=\int_a^b kx\,dx.
+$$
+
+### Average value in applications
+
+The average value formula
+
+$$
+f_{\text{avg}}=\frac{1}{b-a}\int_a^b f(x)\,dx
+$$
+
+appears in physical contexts too. It gives the constant value that would create the same total accumulation over the interval.
+
+### Solids: cross-section mindset
+
+Every volume method has the same backbone:
+
+$$
+V=\int A(\text{slice})\,d(\text{slice variable}).
+$$
+
+The main challenge is writing $$A$$ correctly. For squares, semicircles, disks, washers, and shells, the geometry of the slice determines the formula before any integration happens.

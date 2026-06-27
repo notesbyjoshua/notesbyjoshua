@@ -499,3 +499,56 @@ Write conclusions in terms of signs and changes: "$$f$$ has a local maximum at $
 :::
 
 For optimization, the derivative work is only the middle of the problem. A complete solution should also define variables, state the constraint, state the domain, and answer in the original units.
+
+---
+
+## Closed Interval Method
+
+To find absolute extrema of a continuous function on $$[a,b]$$:
+
+:::checklist
+1. Verify that the function is continuous on the closed interval.
+2. Find all critical numbers in $$(a,b)$$.
+3. Evaluate $$f$$ at the endpoints and at each critical number.
+4. Compare the output values.
+:::
+
+The largest output is the absolute maximum, and the smallest output is the absolute minimum. Endpoints must be included because absolute extrema can occur at endpoints even though local extrema usually focus on interior points.
+
+### Fermat's Theorem
+
+If $$f$$ has a local extremum at an interior point $$c$$ and $$f'(c)$$ exists, then
+
+$$
+f'(c)=0.
+$$
+
+This theorem explains why critical numbers matter, but it does not say every critical number is an extremum. A sign test or value comparison is still needed.
+
+### Mean Value Theorem conditions
+
+The Mean Value Theorem requires:
+
+:::conditions
+1. $$f$$ is continuous on $$[a,b]$$.
+2. $$f$$ is differentiable on $$(a,b)$$.
+:::
+
+If those conditions hold, then there is some $$c\in(a,b)$$ such that
+
+$$
+f'(c)=\frac{f(b)-f(a)}{b-a}.
+$$
+
+The theorem says that at some instant, the instantaneous rate matches the average rate over the interval.
+
+### Optimization domains
+
+Optimization problems often fail because the domain is ignored. After writing the target function, determine the allowed interval from the context:
+
+- lengths must usually be positive,
+- time may be restricted to a stated interval,
+- square roots require nonnegative radicands,
+- denominators cannot be zero.
+
+If the allowed domain is closed, use endpoint comparison. If the domain is open or unbounded, use derivative signs and behavior at the ends.

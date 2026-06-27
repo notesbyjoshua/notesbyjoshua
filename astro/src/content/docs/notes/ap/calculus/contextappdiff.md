@@ -491,3 +491,58 @@ When writing interpretations:
 :::exam{topic="Context wording"}
 AP free-response scoring usually expects a complete sentence with units. A correct number without context can lose the interpretation point.
 :::
+
+---
+
+## Differential notation and small changes
+
+If $$y=f(x)$$, then the differential
+
+$$
+dy=f'(x)\,dx
+$$
+
+models the approximate change in $$y$$ caused by a small change $$dx$$ in $$x$$. This is the same idea as linearization, written in a compact way:
+
+$$
+\Delta y\approx dy=f'(a)\Delta x.
+$$
+
+The actual change is
+
+$$
+\Delta y=f(a+\Delta x)-f(a),
+$$
+
+while the differential estimate is
+
+$$
+dy=f'(a)\Delta x.
+$$
+
+Differentials are especially useful for error estimates. If a measurement has possible error $$\Delta x$$, then the propagated output error is approximately
+
+$$
+\lvert dy\rvert=\lvert f'(a)\rvert\lvert \Delta x\rvert.
+$$
+
+### Rate in / rate out structure
+
+For accumulation contexts, a total amount changes according to
+
+$$
+\frac{dA}{dt}=\text{rate in}-\text{rate out}.
+$$
+
+If the rate in is bigger than the rate out, $$A$$ increases. If the rate out is bigger, $$A$$ decreases. If they are equal, the amount has an instant where its derivative is zero, though that does not automatically mean an absolute maximum or minimum.
+
+### Marginal analysis language
+
+In business-style applications:
+
+- $$C(x)$$ is cost,
+- $$R(x)$$ is revenue,
+- $$P(x)=R(x)-C(x)$$ is profit,
+- $$C'(x)$$, $$R'(x)$$, and $$P'(x)$$ are marginal cost, revenue, and profit.
+
+For example, $$C'(100)=7$$ means that near $$100$$ items, producing one more item increases cost by about $$7$$ dollars.

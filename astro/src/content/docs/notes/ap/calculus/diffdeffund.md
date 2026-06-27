@@ -623,3 +623,47 @@ If a problem asks for interpretation, include units and context. A statement lik
 4. From a graph of $$f'$$, read height.
 5. From verbal context, translate the units before doing computation.
 :::
+
+---
+
+## Derivative domains
+
+The domain of $$f'$$ can be smaller than the domain of $$f$$. Even if $$f(a)$$ exists, the derivative at $$a$$ may fail to exist because the nearby slopes do not settle into one finite value.
+
+When finding a derivative formula, always ask where that formula is valid. For example,
+
+$$
+f(x)=\sqrt{x}
+$$
+
+has domain $$[0,\infty)$$, but
+
+$$
+f'(x)=\frac{1}{2\sqrt{x}}
+$$
+
+is valid only for $$x>0$$. The original function exists at $$x=0$$, but the tangent there is vertical, so the ordinary derivative is not finite.
+
+### One-sided derivatives
+
+At endpoints or corners, one-sided derivatives can be useful:
+
+$$
+f'_+(a)=\lim_{h\to0^+}\frac{f(a+h)-f(a)}{h},
+\qquad
+f'_-(a)=\lim_{h\to0^-}\frac{f(a+h)-f(a)}{h}.
+$$
+
+The derivative $$f'(a)$$ exists only when the left and right derivatives agree.
+
+### Derivative notation in context
+
+If $$s(t)$$ is position, then $$s'(t)$$ and $$ds/dt$$ both describe velocity. The notation $$ds/dt$$ makes units especially clear because it literally compares a change in position to a change in time.
+
+For a quantity $$Q$$ depending on another quantity $$x$$:
+
+$$
+\frac{dQ}{dx}
+$$
+
+has units of $$Q$$-units per $$x$$-unit. This unit check is one of the fastest ways to catch an interpretation error.

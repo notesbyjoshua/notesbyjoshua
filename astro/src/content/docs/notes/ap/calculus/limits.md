@@ -61,48 +61,46 @@ Common reasons a limit fails to exist:
 - Vertical asymptote with unbounded behavior,
 - Oscillation, such as $$\sin(1/x)$$ near $$x = 0$$.
 
+<div class="theorem-box">
+
+**Example.** Let $$f(x)=\begin{cases}x,&x<0,\\2x+1,&x\ge0.\end{cases}$$ Find the left-hand and right-hand limits as $$x\to0$$.
+
+For $$x<0$$, we have $$f(x)=x$$, so
+
+$$
+\lim_{x\to0^-}f(x)=\lim_{x\to0^-}x=0.
+$$
+
+For $$x\ge0$$, we have $$f(x)=2x+1$$, so
+
+$$
+\lim_{x\to0^+}f(x)=\lim_{x\to0^+}(2x+1)=1.
+$$
+
+Since the left-hand and right-hand limits differ, the two-sided limit does not exist.
+
 ```tikz
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.16}
 \begin{tikzpicture}
 \begin{axis}[
-  axis lines=middle, xmin=-3, xmax=3, ymin=0, ymax=3,
-  xtick={-2,-1,0,1,2}, ytick={1,2},
+  axis lines=middle, xmin=-3, xmax=3, ymin=-3, ymax=7,
+  xtick={-2,-1,0,1,2}, ytick={-2,0,1,3,5,7},
   grid=both, grid style={gray!18},
   width=8.5cm, height=5.8cm,
   xlabel=$x$, ylabel=$f(x)$,
 ]
-\addplot[blue, very thick, domain=-3:0, samples=2] {1};
-\addplot[blue, very thick, domain=0:3, samples=2] {2};
-\addplot[only marks, mark=o, mark size=2pt, blue, thick] coordinates {(0,1)};
-\addplot[only marks, mark=*, mark size=2pt, blue] coordinates {(0,2)};
-\node[blue, anchor=south east] at (axis cs:-0.15,1) {$\lim_{x\to0^-}f(x)=1$};
-\node[blue, anchor=south west] at (axis cs:0.15,2) {$\lim_{x\to0^+}f(x)=2$};
-\node[orange!85!black, anchor=north] at (axis cs:0,0.35) {jump};
+\addplot[blue, very thick, domain=-3:0, samples=2] {x};
+\addplot[blue, very thick, domain=0:3, samples=2] {2*x+1};
+\addplot[only marks, mark=o, mark size=2pt, blue, thick] coordinates {(0,0)};
+\addplot[only marks, mark=*, mark size=2pt, blue] coordinates {(0,1)};
+\node[blue, anchor=north east] at (axis cs:-0.15,0.15) {$\lim_{x\to0^-}f(x)=0$};
+\node[blue, anchor=south west] at (axis cs:0.15,1.15) {$\lim_{x\to0^+}f(x)=1$};
 \end{axis}
 \end{tikzpicture}
 ```
 
-<div class="theorem-box">
-
-**Example.** Let $$f(x)=\begin{cases}1,&x<0,\\2,&x\ge0.\end{cases}$$ Find the left-hand and right-hand limits as $$x\to0$$.
-
-For $$x<0$$, the function is constant at 1, so
-
-$$
-\lim_{x\to0^-}f(x)=1.
-$$
-
-For $$x\ge0$$, the function is constant at 2, so
-
-$$
-\lim_{x\to0^+}f(x)=2.
-$$
-
-Because the left-hand and right-hand limits differ, the two-sided limit does not exist.
-
 </div>
-
 
 ---
 
@@ -158,25 +156,20 @@ A key idea is that the limit might not be exactly at the input value, but the fu
 
 ## Indeterminate forms and algebraic techniques
 
-Direct substitution sometimes gives an indeterminate form, which means the algebraic structure must be simplified before the limit can be found. Common indeterminate forms include:
+Direct substitution sometimes gives an indeterminate form, which means the algebraic structure must be simplified before the limit can be found. Common indeterminate forms include: $$0/0$$, $$\infty/\infty$$, $$0 \cdot \infty$$, $$\infty - \infty$$, $$1^\infty$$, $$0^0$$, and $$\infty^0$$.
 
-- $$0/0$$
-- $$\infty/\infty$$
-- $$0 \cdot \infty$$
-- $$\infty - \infty$$
-- $$1^\infty$$
-- $$0^0$$
-- $$\infty^0$$
+In AP Calculus AB/BC, most of these are handled with algebra or L'Hôpital's Rule (Unit 2).
 
-In AP Calculus AB/BC, most of these are handled with algebra rather than advanced rules.
+:::strategy{title="Solving indeterminate forms"}
+There are many common ways to solve indeterminate forms in limits using algebra:
 
-Common algebraic techniques:
+- Factor and cancel a common factor
+- Multiply by a conjugate when radicals are involved
+- Combine fractions into a single rational expression
+- Use a known trig limit after rewriting the angle
+- Divide by the dominant power of $$x$$ for limits at infinity
+:::
 
-- Factor and cancel a common factor,
-- Multiply by a conjugate when radicals are involved,
-- Combine fractions into a single rational expression,
-- Use a known trig limit after rewriting the angle,
-- Divide by the dominant power of $$x$$ for limits at infinity.
 
 Most AP limit work is about recognizing whether direct substitution works or whether the expression hides competing behavior.
 
@@ -480,3 +473,56 @@ When justifying a limit:
 :::exam{topic="Limits and continuity"}
 AP questions often care more about the justification than the arithmetic. For example, saying "by IVT" is not enough unless you also show the function is continuous on the interval and the desired value lies between the endpoint outputs.
 :::
+
+---
+
+## Formal limit language
+
+Most AP Calculus work does not require a full epsilon-delta proof, but the idea behind one is worth knowing. The statement
+
+$$
+\lim_{x\to a}f(x)=L
+$$
+
+means that every small output tolerance around $$L$$ can be guaranteed by choosing a sufficiently small input window around $$a$$, excluding $$x=a$$ itself.
+
+In symbols, for every $$\varepsilon>0$$, there is a $$\delta>0$$ such that
+
+$$
+0<\lvert x-a\rvert<\delta
+\quad\Longrightarrow\quad
+\lvert f(x)-L\rvert<\varepsilon.
+$$
+
+The AP course usually emphasizes the intuition rather than formal proof: limits are about controlling output closeness by controlling input closeness.
+
+### Infinite limits vs limits at infinity
+
+These two phrases sound similar but mean different things.
+
+- **Infinite limit:** $$x$$ approaches a finite number and $$f(x)$$ grows without bound, such as near a vertical asymptote.
+- **Limit at infinity:** $$x$$ grows without bound and $$f(x)$$ approaches a finite number or grows without bound.
+
+For example,
+
+$$
+\lim_{x\to 0^+}\frac1x=\infty
+$$
+
+is an infinite limit, while
+
+$$
+\lim_{x\to\infty}\frac{x+1}{x}=1
+$$
+
+is a limit at infinity.
+
+### Continuity on intervals
+
+A function is continuous on an open interval if it is continuous at every point in that interval. On a closed interval $$[a,b]$$, continuity means:
+
+- right-continuity at $$a$$,
+- left-continuity at $$b$$,
+- ordinary two-sided continuity for every interior point.
+
+This distinction matters for the Intermediate Value Theorem and Extreme Value Theorem because those theorems require continuity on a closed interval.

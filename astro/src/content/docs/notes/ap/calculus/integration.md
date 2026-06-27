@@ -571,3 +571,76 @@ $$
 :::exam{topic="Integral interpretation"}
 AP problems often give a table or graph of a rate. You may not have a formula, so be comfortable estimating integrals numerically and explaining whether the estimate is an overestimate or underestimate.
 :::
+
+---
+
+## Integration strategy
+
+Antidifferentiation is pattern recognition. A good first pass is:
+
+:::strategy{title="Choosing an integration method"}
+1. Simplify algebraically before choosing a method.
+2. Look for direct antiderivative rules.
+3. If there is a function and a version of its derivative, try substitution.
+4. If there is a product where one factor simplifies when differentiated, try integration by parts.
+5. If there is a rational function, try algebraic division or partial fractions.
+6. If bounds are present, decide whether to change bounds or substitute back.
+:::
+
+### Integration by parts
+
+Integration by parts comes from the product rule:
+
+$$
+\int u\,dv=uv-\int v\,du.
+$$
+
+It is useful for products such as polynomial times exponential, polynomial times trig, or logarithmic functions.
+
+:::tip{title="Choosing $$u$$"}
+A common priority list is logarithmic, inverse trig, algebraic, trig, exponential. This is only a guide, but it helps choose the factor that becomes simpler when differentiated.
+:::
+
+For example, in
+
+$$
+\int x e^x\,dx,
+$$
+
+choose $$u=x$$ and $$dv=e^x\,dx$$. Then $$du=dx$$ and $$v=e^x$$, so
+
+$$
+\int x e^x\,dx=xe^x-\int e^x\,dx=xe^x-e^x+C.
+$$
+
+### Partial fractions
+
+Partial fractions break a rational function into simpler rational pieces. Before using them, make sure the numerator degree is smaller than the denominator degree. If not, divide first.
+
+For a denominator like
+
+$$
+(x-a)(x-b),
+$$
+
+write
+
+$$
+\frac{P(x)}{(x-a)(x-b)}
+=\frac{A}{x-a}+\frac{B}{x-b}.
+$$
+
+Then solve for the constants and integrate each term. This technique appears more in BC than AB, but it connects directly to rational functions from Precalculus.
+
+### Improper integrals
+
+An improper integral is a definite integral that has an infinite interval or an infinite discontinuity. It must be rewritten as a limit.
+
+For example,
+
+$$
+\int_1^\infty \frac{1}{x^2}\,dx
+=\lim_{b\to\infty}\int_1^b\frac{1}{x^2}\,dx.
+$$
+
+The integral **converges** if this limit is finite and **diverges** otherwise.

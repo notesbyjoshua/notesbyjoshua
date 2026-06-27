@@ -487,3 +487,56 @@ Differential equation questions often move among four representations:
 :::exam{topic="Slope fields"}
 AP questions may ask for reasoning without solving the differential equation. Equilibrium solutions, slope signs, and whether solution curves move toward or away from an equilibrium can often be read directly from the slope field or from $$dy/dx$$.
 :::
+
+---
+
+## Intervals of validity
+
+A solution to a differential equation may be valid only on an interval, even if the algebraic expression looks broader. Restrictions can come from:
+
+- division by zero during separation,
+- logarithms introduced while integrating,
+- initial conditions that choose one branch,
+- points where the differential equation itself is undefined.
+
+When solving an initial value problem, the interval of validity is usually the largest interval containing the initial input where the solution and differential equation both make sense.
+
+### Equilibrium solutions
+
+For an autonomous differential equation
+
+$$
+\frac{dy}{dx}=f(y),
+$$
+
+an equilibrium solution occurs when
+
+$$
+f(y)=0.
+$$
+
+At those $$y$$-values, the slope is zero for every $$x$$, so the solution can remain constant.
+
+To classify stability:
+
+- if nearby solutions move toward the equilibrium, it is stable,
+- if nearby solutions move away, it is unstable,
+- if solutions move toward from one side and away from the other, it is semistable.
+
+### Logistic model details
+
+The logistic model
+
+$$
+\frac{dP}{dt}=kP\left(1-\frac{P}{L}\right)
+$$
+
+has two equilibrium solutions:
+
+$$
+P=0
+\qquad\text{and}\qquad
+P=L.
+$$
+
+The value $$L$$ is the carrying capacity. Growth is fastest when $$P=L/2$$ because the product $$P(1-P/L)$$ is largest halfway between the equilibria.

@@ -720,3 +720,109 @@ AP scoring expects the name of the test and the key evidence. For example, "conv
 :::
 
 For Taylor polynomials, remember that approximation and error are linked. A polynomial is useful only when you know where it is centered, what degree it has, and how large the possible remainder could be.
+
+---
+
+## Sequences in more detail
+
+A sequence can converge, diverge to infinity, diverge to negative infinity, or oscillate without approaching one value.
+
+Common tools for sequence limits include:
+
+- comparing growth rates,
+- using known function limits,
+- dividing by the highest power of $$n$$,
+- recognizing geometric behavior,
+- using monotonicity and boundedness.
+
+If a sequence is increasing and bounded above, it converges. If it is decreasing and bounded below, it converges. This is useful when an explicit limit is hard to compute.
+
+### Series as partial sums
+
+A series
+
+$$
+\sum_{n=1}^{\infty}a_n
+$$
+
+is not really an infinite addition performed all at once. It is the limit of partial sums:
+
+$$
+S_N=a_1+a_2+\cdots+a_N.
+$$
+
+The series converges when
+
+$$
+\lim_{N\to\infty}S_N
+$$
+
+exists as a finite number.
+
+### Integral Test conditions
+
+The Integral Test applies when $$a_n=f(n)$$ and $$f$$ is:
+
+:::conditions
+1. positive,
+2. continuous,
+3. decreasing,
+4. defined for sufficiently large $$x$$.
+:::
+
+If those conditions hold, then
+
+$$
+\sum a_n
+$$
+
+and
+
+$$
+\int f(x)\,dx
+$$
+
+either both converge or both diverge.
+
+### Comparison test mindset
+
+Comparison tests are about matching behavior to a known benchmark. For positive series:
+
+- to prove convergence, compare above by a convergent series,
+- to prove divergence, compare below by a divergent series.
+
+Limit Comparison is often cleaner when the terms look like rational expressions or radicals. If
+
+$$
+\lim_{n\to\infty}\frac{a_n}{b_n}=c
+$$
+
+where $$0<c<\infty$$, then $$\sum a_n$$ and $$\sum b_n$$ have the same convergence behavior.
+
+### Taylor series as function representations
+
+A Taylor series centered at $$x=a$$ has the form
+
+$$
+\sum_{n=0}^{\infty}\frac{f^{(n)}(a)}{n!}(x-a)^n.
+$$
+
+The center matters because the coefficients are built from derivative values at that point. A Taylor polynomial is a finite approximation; a Taylor series is the infinite object that may represent the function only inside its interval of convergence.
+
+Common Maclaurin series to recognize:
+
+$$
+e^x=\sum_{n=0}^{\infty}\frac{x^n}{n!},
+$$
+
+$$
+\sin x=\sum_{n=0}^{\infty}(-1)^n\frac{x^{2n+1}}{(2n+1)!},
+$$
+
+$$
+\cos x=\sum_{n=0}^{\infty}(-1)^n\frac{x^{2n}}{(2n)!},
+$$
+
+$$
+\frac{1}{1-x}=\sum_{n=0}^{\infty}x^n,\qquad \lvert x\rvert<1.
+$$
