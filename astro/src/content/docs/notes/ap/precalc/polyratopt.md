@@ -74,8 +74,6 @@ $$
 \addplot[gray!70, dashed, domain=-1:5] {2*x-2/3};
 \addplot[blue, very thick, domain=-1:5] {-0.5*x+2};
 \addplot[only marks, mark=*, mark size=1.8pt, orange!85!black] coordinates {(2,1)};
-\node[blue, anchor=west] at (axis cs:2.35,0.8) {$f(x)=-\frac12x+2$};
-\node[gray!70!black, anchor=west] at (axis cs:1.2,4.1) {$6x-3y=2$};
 \end{axis}
 \end{tikzpicture}
 ```
@@ -152,8 +150,6 @@ where the vertex is $$(h,k)$$.
 \addplot[blue, very thick, samples=160, domain=-4:4] {0.65*(x-1)^2+1};
 \addplot[gray!65, dashed] coordinates {(1,-1) (1,7)};
 \addplot[only marks, mark=*, mark size=1.8pt, orange!85!black] coordinates {(1,1)};
-\node[orange!85!black, anchor=west] at (axis cs:1.15,1.15) {vertex $(h,k)$};
-\node[gray!70!black, anchor=west] at (axis cs:1.15,5.8) {$x=h$};
 \end{axis}
 \end{tikzpicture}
 ```
@@ -332,9 +328,6 @@ Since $$x=2$$ has multiplicity $$2$$, the graph touches/bounces at $$x=2$$. The 
   {2*(x-2)^2*(x+6)*(x+0.5)};
 \addplot[only marks, mark=*, mark size=1.8pt, orange!85!black]
   coordinates {(-6,0) (-0.5,0) (2,0)};
-\node[orange!85!black, anchor=south west] at (axis cs:-6,0) {$-6$};
-\node[orange!85!black, anchor=north east] at (axis cs:-0.5,0) {$-\frac12$};
-\node[orange!85!black, anchor=south west] at (axis cs:2,0) {bounce at $2$};
 \end{axis}
 \end{tikzpicture}
 ```
@@ -580,8 +573,6 @@ Thus the hole is at $$(2,-3).$$
 \addplot[blue, very thick, samples=160, domain=-3:2.94] {(x+1)/(x-3)};
 \addplot[blue, very thick, samples=160, domain=3.06:6] {(x+1)/(x-3)};
 \addplot[only marks, mark=o, mark size=2.5pt, orange!85!black, thick] coordinates {(2,-3)};
-\node[gray!65!black, anchor=west] at (axis cs:3.1,5.8) {$x=3$};
-\node[orange!85!black, anchor=east] at (axis cs:1.8,-3.25) {hole};
 \end{axis}
 \end{tikzpicture}
 ```
@@ -737,7 +728,6 @@ $$
 ]
 \addplot[blue, very thick, samples=160, domain=0:40] {40*x-x^2};
 \addplot[only marks, mark=*, mark size=1.8pt, orange!85!black] coordinates {(20,400)};
-\node[orange!85!black, anchor=south] at (axis cs:20,400) {maximum};
 \end{axis}
 \end{tikzpicture}
 ```
@@ -826,7 +816,6 @@ This method is useful when the equation can be rewritten as a quadratic in the i
 ]
 \addplot[blue, very thick, samples=220, domain=0:18] {120*x/(x^2+16)};
 \addplot[only marks, mark=*, mark size=1.8pt, orange!85!black] coordinates {(4,15)};
-\node[orange!85!black, anchor=south west] at (axis cs:4.2,15) {largest at $x=4$};
 \end{axis}
 \end{tikzpicture}
 ```

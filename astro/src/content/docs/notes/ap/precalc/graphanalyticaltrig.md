@@ -211,9 +211,6 @@ A graph with many key points is shown below:
 \addplot[blue, very thick, samples=240, domain=-2.7:4.3]{-2*cos(deg(3*(x-pi/4)))+1};
 \addplot[only marks, mark=*, mark size=1.6pt, orange!85!black]
   coordinates {(0.7854,-1) (1.309,1) (1.833,3) (2.356,1) (2.880,-1)};
-\node[orange!85!black, anchor=north] at (axis cs:0.7854,-1) {start};
-\node[orange!85!black, anchor=south] at (axis cs:1.833,3) {max};
-\node[orange!85!black, anchor=north] at (axis cs:2.880,-1) {end};
 \end{axis}
 \end{tikzpicture}
 ```
@@ -1308,8 +1305,6 @@ A graph with many key points is shown below:
 \addplot[blue, very thick, samples=220, domain=-1.2:4.3]{-3*sin(deg(2*(x-pi/6)))+1};
 \addplot[only marks, mark=*, mark size=1.6pt, orange!85!black]
   coordinates {(0.5236,1) (1.309,-2) (2.094,1) (2.880,4) (3.665,1)};
-\node[orange!85!black, anchor=north] at (axis cs:1.309,-2) {min};
-\node[orange!85!black, anchor=south] at (axis cs:2.880,4) {max};
 \end{axis}
 \end{tikzpicture}
 ```
@@ -1388,9 +1383,6 @@ A graph with many key points is shown below:
 \addplot[blue, very thick, samples=240, domain=-1.5:7]{4*cos(deg(1.2*(x-pi/3)))+3};
 \addplot[only marks, mark=*, mark size=1.6pt, orange!85!black]
   coordinates {(1.047,7) (2.356,3) (3.665,-1) (4.974,3) (6.283,7)};
-\node[orange!85!black, anchor=south] at (axis cs:1.047,7) {max};
-\node[orange!85!black, anchor=north] at (axis cs:3.665,-1) {min};
-\node[orange!85!black, anchor=south] at (axis cs:6.283,7) {end};
 \end{axis}
 \end{tikzpicture}
 ```
@@ -1513,8 +1505,6 @@ A graph with many key points is shown below:
 \addplot[blue, very thick, samples=120, domain=0.272:1.30]{2*tan(deg(3*(x+pi/12)))-1};
 \addplot[blue, very thick, samples=120, domain=-1.5:-0.796]{2*tan(deg(3*(x+pi/12)))-1};
 \addplot[only marks, mark=*, mark size=1.7pt, orange!85!black] coordinates {(-0.2618,-1) (-0.107,0)};
-\node[orange!85!black, anchor=south east] at (axis cs:-0.2618,-1) {center};
-\node[orange!85!black, anchor=south west] at (axis cs:-0.107,0) {$x$-int};
 \end{axis}
 \end{tikzpicture}
 ```
@@ -1624,9 +1614,6 @@ A graph with many key points is shown below:
 \addplot[blue, very thick, samples=160, domain=12.64:15.708] {-2/(cos(deg(0.5*(x-pi))))+3};
 \addplot[only marks, mark=*, mark size=1.7pt, orange!85!black]
   coordinates {(3.1416,1) (9.4248,5) (15.708,1)};
-\node[orange!85!black, anchor=north] at (axis cs:3.1416,1) {vertex};
-\node[orange!85!black, anchor=south] at (axis cs:9.4248,5) {vertex};
-\node[orange!85!black, anchor=north] at (axis cs:15.708,1) {vertex};
 \end{axis}
 \end{tikzpicture}
 ```
@@ -2062,8 +2049,6 @@ shows that zeros occur whenever either factor is zero. A sketch should mark the 
 \addplot[only marks, mark=*, mark size=1.5pt, orange!85!black]
   coordinates {(0.3927,0) (1.1781,0) (1.5708,0) (1.9635,0) (2.7489,0)
                (3.5343,0) (4.3197,0) (4.7124,0) (5.1051,0) (5.8905,0)};
-\node[orange!85!black, anchor=south] at (axis cs:1.5708,0) {$\frac{\pi}{2}$};
-\node[orange!85!black, anchor=south] at (axis cs:4.7124,0) {$\frac{3\pi}{2}$};
 \end{axis}
 \end{tikzpicture}
 ```
@@ -2578,9 +2563,6 @@ $$
 \addplot[blue, very thick, samples=260, domain=2:14] {4*cos(deg((pi/6)*(x-2)))+7};
 \addplot[only marks, mark=*, mark size=1.7pt, orange!85!black]
   coordinates {(2,11) (4,9) (5,7) (8,3) (11,7) (14,11)};
-\node[orange!85!black, anchor=south west] at (axis cs:4,9) {first $H=9$};
-\node[orange!85!black, anchor=south] at (axis cs:2,11) {high};
-\node[orange!85!black, anchor=north] at (axis cs:8,3) {low};
 \end{axis}
 \end{tikzpicture}
 ```

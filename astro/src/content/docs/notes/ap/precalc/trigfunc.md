@@ -628,24 +628,10 @@ An image of the unit circle is shown below (with filled in values as described l
   \draw[gray!65] ({0.97*cos(\ang)},{0.97*sin(\ang)}) -- ({1.05*cos(\ang)},{1.05*sin(\ang)});
   \fill[blue] ({cos(\ang)},{sin(\ang)}) circle (0.012);
 }
-\foreach \ang/\lab/\anchor in {
-0/{$0,\ 2\pi$}/west,
-30/{$30^\circ,\ \frac{\pi}{6}$}/west,
-45/{$45^\circ,\ \frac{\pi}{4}$}/south west,
-60/{$60^\circ,\ \frac{\pi}{3}$}/south west,
-90/{$90^\circ,\ \frac{\pi}{2}$}/south,
-120/{$120^\circ,\ \frac{2\pi}{3}$}/south east,
-135/{$135^\circ,\ \frac{3\pi}{4}$}/south east,
-150/{$150^\circ,\ \frac{5\pi}{6}$}/east,
-180/{$180^\circ,\ \pi$}/east,
-210/{$210^\circ,\ \frac{7\pi}{6}$}/east,
-225/{$225^\circ,\ \frac{5\pi}{4}$}/north east,
-240/{$240^\circ,\ \frac{4\pi}{3}$}/north east,
-270/{$270^\circ,\ \frac{3\pi}{2}$}/north,
-300/{$300^\circ,\ \frac{5\pi}{3}$}/north west,
-315/{$315^\circ,\ \frac{7\pi}{4}$}/north west,
-330/{$330^\circ,\ \frac{11\pi}{6}$}/west}
-  \node[font=\tiny, anchor=\anchor] at ({1.16*cos(\ang)},{1.16*sin(\ang)}) {\lab};
+\node[font=\scriptsize, anchor=west] at (1.12,0) {$0,\ 2\pi$};
+\node[font=\scriptsize, anchor=south] at (0,1.12) {$\frac{\pi}{2}$};
+\node[font=\scriptsize, anchor=east] at (-1.12,0) {$\pi$};
+\node[font=\scriptsize, anchor=north] at (0,-1.12) {$\frac{3\pi}{2}$};
 \node[align=center, font=\scriptsize] at (0,-1.48) {points on the unit circle have coordinates $(\cos\theta,\sin\theta)$};
 \end{tikzpicture}
 ```
@@ -1764,8 +1750,8 @@ $$
    \draw ($(C)+(0,0.18)$) -- ($(C)+(0.18,0.18)$) -- ($(C)+(0.18,0)$);
    \node[below left] at (O) {$O$};
    \node[below] at (A) {$A$};
-   \node[above left] at (B) {$B$};
-   \node[below] at (C) {$C$};
+   \node[anchor=south east, xshift=-4pt, yshift=4pt] at (B) {$B$};
+   \node[anchor=north east, xshift=-3pt, yshift=-4pt] at (C) {$C$};
    \node[above right] at (D) {$D$};
    \end{tikzpicture}
    ```
@@ -1976,7 +1962,7 @@ $$
    \draw ($(A)+(-0.06,0.07)$) -- ($(A)+(0.01,0.13)$) -- ($(A)+(0.07,0.06)$);
    \node[below left] at (O) {$O$};
    \node[above right] at (A) {$A$};
-   \node[below right] at (C) {$C$};
+   \node[anchor=north, yshift=-5pt] at (C) {$C$};
    \node[below right] at (D) {$D$};
    \node[left] at (B) {$B$};
    \end{tikzpicture}

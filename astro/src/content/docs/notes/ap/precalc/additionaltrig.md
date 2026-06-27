@@ -741,9 +741,6 @@ $$
   ({3*x},{0.5*x^2});
 \addplot[->, orange!85!black, very thick] coordinates {(2.7,0.42) (3.45,0.68)};
 \addplot[only marks, mark=*, mark size=1.6pt, orange!85!black] coordinates {(0,0) (3,0.5) (6,2)};
-\node[orange!85!black, anchor=south east] at (axis cs:0,0) {$t=0$};
-\node[orange!85!black, anchor=south] at (axis cs:3,0.5) {$t=1$};
-\node[orange!85!black, anchor=south west] at (axis cs:6,2) {$t=2$};
 \end{axis}
 \end{tikzpicture}
 ```
@@ -2737,8 +2734,6 @@ is a cardioid because it has the form $$r=a-a\sin\theta$$. It opens downward and
 \addplot[blue, very thick, samples=360, domain=0:360]
   ({(3-3*sin(x))*cos(x)}, {(3-3*sin(x))*sin(x)});
 \addplot[only marks, mark=*, mark size=1.6pt, orange!85!black] coordinates {(0,0) (0,-6)};
-\node[orange!85!black, anchor=south west] at (axis cs:0,0) {cusp};
-\node[orange!85!black, anchor=north] at (axis cs:0,-6) {bottom};
 \end{axis}
 \end{tikzpicture}
 ```
@@ -2766,8 +2761,6 @@ is a limacon with an inner loop because $$\lvert 2\rvert<\lvert 5\rvert$$. It is
 \addplot[blue, very thick, samples=500, domain=0:360]
   ({(2+5*cos(x))*cos(x)}, {(2+5*cos(x))*sin(x)});
 \addplot[only marks, mark=*, mark size=1.6pt, orange!85!black] coordinates {(7,0) (-3,0)};
-\node[orange!85!black, anchor=south west] at (axis cs:7,0) {$r=7$};
-\node[orange!85!black, anchor=south east] at (axis cs:-3,0) {inner loop};
 \end{axis}
 \end{tikzpicture}
 ```
@@ -2794,7 +2787,6 @@ is a rose curve. Since $$3$$ is odd, it has $$3$$ petals.
 ]
 \addplot[blue, very thick, samples=600, domain=0:360]
   ({(4*sin(3*x))*cos(x)}, {(4*sin(3*x))*sin(x)});
-\node[orange!85!black, anchor=south] at (axis cs:0,4) {3 petals};
 \end{axis}
 \end{tikzpicture}
 ```
@@ -2823,8 +2815,6 @@ is a lemniscate. Since $$\sin(2\theta)\ge0$$ in Quadrants I and III, its two loo
   ({sqrt(25*sin(2*x))*cos(x)}, {sqrt(25*sin(2*x))*sin(x)});
 \addplot[blue, very thick, samples=240, domain=180:270]
   ({sqrt(25*sin(2*x))*cos(x)}, {sqrt(25*sin(2*x))*sin(x)});
-\node[orange!85!black, anchor=south west] at (axis cs:2.5,2.5) {loop};
-\node[orange!85!black, anchor=north east] at (axis cs:-2.5,-2.5) {loop};
 \end{axis}
 \end{tikzpicture}
 ```
@@ -2866,10 +2856,6 @@ Both are cardioids. The first opens to the right, and the second opens to the le
 \addplot[red!75!black, very thick, samples=360, domain=0:360]
   ({(2-2*cos(x))*cos(x)}, {(2-2*cos(x))*sin(x)});
 \addplot[only marks, mark=*, mark size=1.6pt, orange!85!black] coordinates {(0,2) (0,-2) (0,0)};
-\node[blue, anchor=west] at (axis cs:2.5,1.2) {$2+2\cos\theta$};
-\node[red!75!black, anchor=east] at (axis cs:-2.5,1.2) {$2-2\cos\theta$};
-\node[orange!85!black, anchor=west] at (axis cs:0.15,2) {intersection};
-\node[orange!85!black, anchor=west] at (axis cs:0.15,-2) {intersection};
 \end{axis}
 \end{tikzpicture}
 ```

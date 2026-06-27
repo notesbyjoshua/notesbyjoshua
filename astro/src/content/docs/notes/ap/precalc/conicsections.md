@@ -413,8 +413,6 @@ $$
 \addplot[orange!80!black, thick] coordinates {(-3,0) (3,0)};
 \addplot[green!50!black, thick] coordinates {(0,-2) (0,2)};
 \addplot[only marks, mark=*, mark size=1.8pt, red!80!black] coordinates {(-2.236,0) (2.236,0)};
-\node[red!80!black, anchor=south] at (axis cs:-2.236,0) {$(-\sqrt5,0)$};
-\node[red!80!black, anchor=south] at (axis cs:2.236,0) {$(\sqrt5,0)$};
 \end{axis}
 \end{tikzpicture}
 ```
@@ -477,10 +475,6 @@ Each focus has its own directrix. The right focus pairs with the right directrix
 \addplot[red!75!black, dashed, thick] coordinates {(-4.025,-2.6) (-4.025,2.6)};
 \addplot[red!75!black, dashed, thick] coordinates {(4.025,-2.6) (4.025,2.6)};
 \addplot[only marks, mark=*, mark size=1.8pt, orange!85!black] coordinates {(-2.236,0) (2.236,0)};
-\node[red!75!black, anchor=south] at (axis cs:-4.025,2.2) {$x=-a/e$};
-\node[red!75!black, anchor=south] at (axis cs:4.025,2.2) {$x=a/e$};
-\node[orange!85!black, anchor=north] at (axis cs:-2.236,0) {$F_1$};
-\node[orange!85!black, anchor=north] at (axis cs:2.236,0) {$F_2$};
 \end{axis}
 \end{tikzpicture}
 ```
@@ -553,8 +547,6 @@ The conjugate hyperbola swaps the roles of the terms (e.g. $$\frac{y^{2}}{a^{2}}
 \addplot[red!70!black, dashed, domain=-5:5] {-0.75*x};
 \addplot[gray!70, dashed] coordinates {(-2,-1.5) (2,-1.5) (2,1.5) (-2,1.5) (-2,-1.5)};
 \addplot[only marks, mark=*, mark size=1.8pt, orange!85!black] coordinates {(-3,0) (3,0)};
-\node[orange!85!black, anchor=south] at (axis cs:-3,0) {$F_1$};
-\node[orange!85!black, anchor=south] at (axis cs:3,0) {$F_2$};
 \end{axis}
 \end{tikzpicture}
 ```
@@ -672,11 +664,6 @@ $$
 \addplot[red!75!black, dashed, domain=-6:6] {-(2/3)*x};
 \draw[gray!70, dashed] (axis cs:-3,-2) rectangle (axis cs:3,2);
 \addplot[only marks, mark=*, mark size=1.8pt, orange!85!black] coordinates {(-3,0) (3,0) (-3.606,0) (3.606,0)};
-\node[orange!85!black, anchor=north] at (axis cs:-3,0) {vertex};
-\node[orange!85!black, anchor=north] at (axis cs:3,0) {vertex};
-\node[orange!85!black, anchor=south] at (axis cs:-3.606,0) {$-\sqrt{13}$};
-\node[orange!85!black, anchor=south] at (axis cs:3.606,0) {$\sqrt{13}$};
-\node[red!75!black, anchor=west] at (axis cs:4,2.85) {$y=\frac23x$};
 \end{axis}
 \end{tikzpicture}
 ```
@@ -746,10 +733,6 @@ $$
 \addplot[red!75!black, dashed, thick] coordinates {(-2.496,-3.8) (-2.496,3.8)};
 \addplot[red!75!black, dashed, thick] coordinates {(2.496,-3.8) (2.496,3.8)};
 \addplot[only marks, mark=*, mark size=1.8pt, orange!85!black] coordinates {(-3.606,0) (3.606,0)};
-\node[red!75!black, anchor=south] at (axis cs:-2.496,3.3) {$x=-a/e$};
-\node[red!75!black, anchor=south] at (axis cs:2.496,3.3) {$x=a/e$};
-\node[orange!85!black, anchor=north] at (axis cs:-3.606,0) {$F_1$};
-\node[orange!85!black, anchor=north] at (axis cs:3.606,0) {$F_2$};
 \end{axis}
 \end{tikzpicture}
 ```
@@ -1559,8 +1542,6 @@ These angles give the asymptotic directions of the hyperbola.
   ({4*cos(x)/(1+(4/3)*cos(x))}, {4*sin(x)/(1+(4/3)*cos(x))});
 \addplot[red!75!black, dashed, thick] coordinates {(3,-7) (3,7)};
 \addplot[only marks, mark=*, mark size=1.8pt, orange!85!black] coordinates {(0,0)};
-\node[orange!85!black, anchor=south east] at (axis cs:-0.15,0.25) {focus/pole};
-\node[red!75!black, anchor=south west] at (axis cs:3.15,5.8) {$x=3$};
 \end{axis}
 \end{tikzpicture}
 ```
@@ -2011,11 +1992,6 @@ An image of the hyperbola is shown below:
 \addplot[red!75!black, dashed, domain=-10:6] {3 - (2/3)*(x+2)};
 \draw[gray!70, dashed] (axis cs:-5,1) rectangle (axis cs:1,5);
 \addplot[only marks, mark=*, mark size=1.8pt, orange!85!black] coordinates {(-2,1) (-2,5) (-2,6.606) (-2,-0.606)};
-\node[orange!85!black, anchor=east] at (axis cs:-2.15,1) {vertex};
-\node[orange!85!black, anchor=east] at (axis cs:-2.15,5) {vertex};
-\node[orange!85!black, anchor=west] at (axis cs:-1.85,6.606) {focus};
-\node[orange!85!black, anchor=west] at (axis cs:-1.85,-0.606) {focus};
-\node[red!75!black, anchor=west] at (axis cs:2,5.55) {$y-3=\frac23(x+2)$};
 \end{axis}
 \end{tikzpicture}
 ```
