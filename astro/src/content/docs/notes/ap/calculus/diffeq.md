@@ -155,6 +155,100 @@ $$
 
 ---
 
+## First-order linear differential equations
+
+A first-order linear differential equation has the form
+
+$$
+\frac{dy}{dx}+P(x)y=Q(x).
+$$
+
+Not every AP Calculus class spends much time on the full integrating-factor method, but recognizing the form is useful because it shows up in modeling. The standard method is to multiply by an integrating factor
+
+$$
+\mu(x)=e^{\int P(x)\,dx}.
+$$
+
+Then the left side becomes the derivative of a product:
+
+$$
+\frac{d}{dx}\bigl[\mu(x)y\bigr]=\mu(x)Q(x).
+$$
+
+After that, integrate both sides and solve for $$y$$.
+
+<div class="theorem-box">
+
+**Example.** Solve
+
+$$
+\frac{dy}{dx}+2y=6
+$$
+
+with $$y(0)=1$$.
+
+Here
+
+$$
+P(x)=2,
+\qquad
+Q(x)=6.
+$$
+
+The integrating factor is
+
+$$
+\mu(x)=e^{\int 2\,dx}=e^{2x}.
+$$
+
+Multiply the differential equation by $$e^{2x}$$:
+
+$$
+e^{2x}\frac{dy}{dx}+2e^{2x}y=6e^{2x}.
+$$
+
+The left side is
+
+$$
+\frac{d}{dx}\left(e^{2x}y\right).
+$$
+
+So
+
+$$
+\frac{d}{dx}\left(e^{2x}y\right)=6e^{2x}.
+$$
+
+Integrate both sides:
+
+$$
+e^{2x}y=3e^{2x}+C.
+$$
+
+Divide by $$e^{2x}$$:
+
+$$
+y=3+Ce^{-2x}.
+$$
+
+Use $$y(0)=1$$:
+
+$$
+1=3+C
+\quad\Longrightarrow\quad
+C=-2.
+$$
+
+Therefore the particular solution is
+
+$$
+y=3-2e^{-2x}.
+$$
+
+</div>
+
+---
+
 ## Exponential growth and decay
 
 If the rate of change is proportional to the amount present:

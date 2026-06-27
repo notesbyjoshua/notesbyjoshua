@@ -406,6 +406,53 @@ $$
 
 tells how velocity is changing. Speed increases when velocity and acceleration point in the same direction, because the velocity value is moving farther from zero. Speed decreases when velocity and acceleration have opposite signs.
 
+For straight-line motion, AP problems often ask for all of the following from one model:
+
+- position at a time,
+- velocity at a time,
+- acceleration at a time,
+- when the particle is at rest,
+- when the particle changes direction,
+- total distance traveled on an interval.
+
+Changing direction requires velocity to change sign, not merely equal zero. A particle can stop for an instant and continue in the same direction.
+
+<div class="theorem-box">
+
+**Example.** A particle moves along a line with velocity
+
+$$
+v(t)=t^2-5t+6
+$$
+
+for $$0\le t\le4$$. Determine when it is moving right, when it is moving left, and whether it changes direction.
+
+Factor the velocity:
+
+$$
+v(t)=t^2-5t+6=(t-2)(t-3).
+$$
+
+The velocity is zero at $$t=2$$ and $$t=3$$. Test intervals:
+
+$$
+v(1)=(1-2)(1-3)=2>0,
+$$
+
+$$
+v(2.5)=(0.5)(-0.5)<0,
+$$
+
+and
+
+$$
+v(3.5)=(1.5)(0.5)>0.
+$$
+
+So the particle moves right on $$(0,2)$$ and $$(3,4)$$, and left on $$(2,3)$$. Since the sign of velocity changes at both $$t=2$$ and $$t=3$$, the particle changes direction at both times.
+
+</div>
+
 ---
 
 ## Linearization in context
@@ -550,3 +597,49 @@ In business-style applications:
 - $$C'(x)$$, $$R'(x)$$, and $$P'(x)$$ are marginal cost, revenue, and profit.
 
 For example, $$C'(100)=7$$ means that near $$100$$ items, producing one more item increases cost by about $$7$$ dollars.
+
+Break-even and optimization language often uses the same functions:
+
+- profit is positive when $$R(x)>C(x)$$,
+- break-even points occur when $$R(x)=C(x)$$,
+- profit is maximized where $$P'(x)=0$$ or at an endpoint of the feasible domain.
+
+<div class="theorem-box">
+
+**Example.** Suppose cost and revenue are modeled by
+
+$$
+C(x)=0.02x^2+4x+300,
+\qquad
+R(x)=20x,
+$$
+
+where $$x$$ is the number of items sold. Find the marginal profit at $$x=200$$ and interpret it.
+
+Profit is revenue minus cost:
+
+$$
+P(x)=R(x)-C(x)=20x-(0.02x^2+4x+300).
+$$
+
+Simplify:
+
+$$
+P(x)=-0.02x^2+16x-300.
+$$
+
+Differentiate:
+
+$$
+P'(x)=-0.04x+16.
+$$
+
+Evaluate at $$x=200$$:
+
+$$
+P'(200)=-0.04(200)+16=8.
+$$
+
+At a production level of $$200$$ items, profit is increasing at about $$8$$ dollars per additional item. This means producing and selling one more item near that level is expected to increase profit by about $$8$$ dollars.
+
+</div>

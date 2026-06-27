@@ -549,6 +549,57 @@ So the true value of $$\sin(0.5)$$ lies within about $$0.00026$$ of the estimate
 
 </div>
 
+Taylor polynomials are used to estimate values of functions when exact computation is inconvenient. The center should be close to the input value whenever possible, because powers of $$x-c$$ become small near the center.
+
+For alternating series, the first omitted term gives a clean error bound. For non-alternating Taylor series, AP BC often uses the Lagrange error bound:
+
+$$
+\lvert R_n(x)\rvert
+\le
+\frac{M}{(n+1)!}\lvert x-c\rvert^{n+1},
+$$
+
+where $$M$$ is an upper bound for $$\lvert f^{(n+1)}(t)\rvert$$ between $$c$$ and $$x$$.
+
+<div class="theorem-box">
+
+**Example.** Use the degree $$3$$ Maclaurin polynomial for $$e^x$$ to estimate $$e^{0.2}$$, and give a Lagrange error bound.
+
+The degree $$3$$ Maclaurin polynomial is
+
+$$
+T_3(x)=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}.
+$$
+
+At $$x=0.2$$,
+
+$$
+T_3(0.2)=1+0.2+\frac{0.2^2}{2}+\frac{0.2^3}{6}.
+$$
+
+Compute:
+
+$$
+T_3(0.2)=1+0.2+0.02+\frac{0.008}{6}
+=1.221333\ldots
+$$
+
+For the error, the next derivative of $$e^x$$ is still $$e^x$$. On $$0\le x\le0.2$$, we can use $$M=e^{0.2}$$, or a simple upper bound such as $$M=2$$. Then
+
+$$
+\lvert R_3(0.2)\rvert
+\le
+\frac{2}{4!}(0.2)^4
+=
+\frac{2}{24}(0.0016)
+=
+0.000133\ldots
+$$
+
+So the estimate is within about $$0.000134$$ of the true value.
+
+</div>
+
 ---
 
 ## Sequence vs series
@@ -682,6 +733,137 @@ When modifying a known series, update both:
 
 - the formula,
 - the interval or radius of convergence.
+
+### Binomial series
+
+The binomial series generalizes powers of $$1+x$$:
+
+$$
+(1+x)^p
+=
+\sum_{n=0}^{\infty}\binom{p}{n}x^n,
+\qquad
+\lvert x\rvert<1,
+$$
+
+where
+
+$$
+\binom{p}{n}
+=
+\frac{p(p-1)(p-2)\cdots(p-n+1)}{n!}.
+$$
+
+The first few terms are
+
+$$
+(1+x)^p
+=
+1+px+\frac{p(p-1)}{2!}x^2+\frac{p(p-1)(p-2)}{3!}x^3+\cdots.
+$$
+
+This is useful for functions like $$\sqrt{1+x}$$ or $$\frac{1}{\sqrt{1-x}}$$.
+
+<div class="theorem-box">
+
+**Example.** Find the first four nonzero terms of the Maclaurin series for $$\sqrt{1+x}$$.
+
+Write
+
+$$
+\sqrt{1+x}=(1+x)^{1/2}.
+$$
+
+Use the binomial series with $$p=\frac12$$:
+
+$$
+(1+x)^{1/2}
+=1+\frac12x+\frac{\frac12(\frac12-1)}{2!}x^2
++\frac{\frac12(\frac12-1)(\frac12-2)}{3!}x^3+\cdots.
+$$
+
+Simplify the coefficients:
+
+$$
+\frac{\frac12(-\frac12)}{2}
+=-\frac18,
+$$
+
+and
+
+$$
+\frac{\frac12(-\frac12)(-\frac32)}{6}
+=\frac{1}{16}.
+$$
+
+Therefore
+
+$$
+\sqrt{1+x}
+=
+1+\frac{x}{2}-\frac{x^2}{8}+\frac{x^3}{16}+\cdots.
+$$
+
+</div>
+
+### Applications of series
+
+Series can be used to:
+
+- approximate function values,
+- estimate definite integrals whose antiderivatives are not elementary,
+- represent functions as power series,
+- solve differential equations through coefficient matching.
+
+<div class="theorem-box">
+
+**Example.** Use a series to approximate
+
+$$
+\int_0^{0.5} e^{-x^2}\,dx
+$$
+
+through the $$x^4$$ term of the integrand.
+
+Start with
+
+$$
+e^{-x^2}=1-x^2+\frac{x^4}{2!}-\frac{x^6}{3!}+\cdots.
+$$
+
+Through the $$x^4$$ term,
+
+$$
+e^{-x^2}\approx 1-x^2+\frac{x^4}{2}.
+$$
+
+Integrate term by term:
+
+$$
+\int_0^{0.5} e^{-x^2}\,dx
+\approx
+\int_0^{0.5}\left(1-x^2+\frac{x^4}{2}\right)\,dx.
+$$
+
+So
+
+$$
+\int_0^{0.5} e^{-x^2}\,dx
+\approx
+\left[x-\frac{x^3}{3}+\frac{x^5}{10}\right]_0^{0.5}.
+$$
+
+Substitute $$0.5$$:
+
+$$
+0.5-\frac{0.5^3}{3}+\frac{0.5^5}{10}
+=
+0.5-\frac{0.125}{3}+\frac{0.03125}{10}
+\approx
+0.46146.
+$$
+
+</div>
 
 ---
 

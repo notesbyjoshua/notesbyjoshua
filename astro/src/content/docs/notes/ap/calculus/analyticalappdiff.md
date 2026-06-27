@@ -199,6 +199,46 @@ Rolle's Theorem is the special case where $$f(a)=f(b)$$.
 
 <div class="theorem-box">
 
+**Example.** Verify Rolle's Theorem for
+
+$$
+f(x)=x^2-4x+3
+$$
+
+on $$[1,3]$$, then find the value of $$c$$.
+
+The function is a polynomial, so it is continuous on $$[1,3]$$ and differentiable on $$(1,3)$$. Check the endpoint values:
+
+$$
+f(1)=1-4+3=0,
+$$
+
+and
+
+$$
+f(3)=9-12+3=0.
+$$
+
+Since $$f(1)=f(3)$$, Rolle's Theorem applies. Differentiate:
+
+$$
+f'(x)=2x-4.
+$$
+
+Set $$f'(c)=0$$:
+
+$$
+2c-4=0
+\quad\Longrightarrow\quad
+c=2.
+$$
+
+The value $$c=2$$ lies in $$(1,3)$$, so it is the point guaranteed by Rolle's Theorem.
+
+</div>
+
+<div class="theorem-box">
+
 **Example.** For $$f(x)=x^2$$ on $$[1,3]$$, find the value $$c$$ guaranteed by the Mean Value Theorem.
 
 The function is a polynomial, so it is continuous on $$[1,3]$$ and differentiable on $$(1,3)$$, and the theorem applies. The average rate of change is
@@ -270,6 +310,67 @@ Since $$A''(x)=-2<0$$, this critical point is a maximum. Then $$y=20-10=10$$, so
 $$
 A(10)=10\cdot10=100\ \text{square meters}.
 $$
+
+</div>
+
+<div class="theorem-box">
+
+**Example.** A rectangular box with a square base and no top must have volume $$500$$ cubic centimeters. Find the dimensions that minimize the surface area.
+
+Let $$x$$ be the side length of the square base and $$h$$ be the height. The volume constraint is
+
+$$
+x^2h=500,
+$$
+
+so
+
+$$
+h=\frac{500}{x^2}.
+$$
+
+The surface area includes the square base and four side rectangles:
+
+$$
+S=x^2+4xh.
+$$
+
+Substitute the constraint:
+
+$$
+S(x)=x^2+4x\left(\frac{500}{x^2}\right)=x^2+\frac{2000}{x},
+\qquad x>0.
+$$
+
+Differentiate:
+
+$$
+S'(x)=2x-\frac{2000}{x^2}.
+$$
+
+Set the derivative equal to zero:
+
+$$
+2x-\frac{2000}{x^2}=0.
+$$
+
+Multiply by $$x^2$$:
+
+$$
+2x^3-2000=0
+\quad\Longrightarrow\quad
+x^3=1000
+\quad\Longrightarrow\quad
+x=10.
+$$
+
+Then
+
+$$
+h=\frac{500}{10^2}=5.
+$$
+
+Because $$S(x)\to\infty$$ as $$x\to0^+$$ and as $$x\to\infty$$, the critical point gives the absolute minimum. The box should have square base side length $$10$$ cm and height $$5$$ cm.
 
 </div>
 
@@ -459,6 +560,95 @@ $$
 It does not apply just because a fraction is present. Check the original form first.
 
 For other indeterminate forms, rewrite before using the rule. For instance, products, differences, and powers may need algebra or logarithms before they become a quotient form.
+
+Common rewrites:
+
+| Original form | Possible rewrite |
+|---|---|
+| $$0\cdot\infty$$ | move one factor to the denominator |
+| $$\infty-\infty$$ | combine into one fraction or rationalize |
+| $$1^\infty,\ 0^0,\ \infty^0$$ | take logs, find the limit of $$\ln y$$, then exponentiate |
+
+<div class="theorem-box">
+
+**Example.** Evaluate
+
+$$
+\lim_{x\to0^+}x\ln x.
+$$
+
+Directly, this has the indeterminate form $$0\cdot(-\infty)$$. Rewrite it as a quotient:
+
+$$
+x\ln x=\frac{\ln x}{1/x}.
+$$
+
+Now the form is $$-\infty/\infty$$, so L'Hopital's Rule applies:
+
+$$
+\lim_{x\to0^+}\frac{\ln x}{1/x}
+=
+\lim_{x\to0^+}\frac{1/x}{-1/x^2}.
+$$
+
+Simplify:
+
+$$
+\frac{1/x}{-1/x^2}=-x.
+$$
+
+Therefore
+
+$$
+\lim_{x\to0^+}x\ln x
+=
+\lim_{x\to0^+}(-x)=0.
+$$
+
+</div>
+
+<div class="theorem-box">
+
+**Example.** Evaluate
+
+$$
+\lim_{x\to0^+}(1+x)^{1/x}.
+$$
+
+Let
+
+$$
+y=(1+x)^{1/x}.
+$$
+
+Take the natural logarithm:
+
+$$
+\ln y=\frac{\ln(1+x)}{x}.
+$$
+
+The right side gives $$0/0$$ as $$x\to0^+$$, so use L'Hopital's Rule:
+
+$$
+\lim_{x\to0^+}\frac{\ln(1+x)}{x}
+=
+\lim_{x\to0^+}\frac{1/(1+x)}{1}
+=1.
+$$
+
+Thus
+
+$$
+\lim_{x\to0^+}\ln y=1.
+$$
+
+Exponentiate to return to $$y$$:
+
+$$
+\lim_{x\to0^+}(1+x)^{1/x}=e^1=e.
+$$
+
+</div>
 
 ---
 

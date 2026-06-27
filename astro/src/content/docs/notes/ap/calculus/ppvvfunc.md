@@ -22,6 +22,40 @@ $$
 
 The same geometric curve can be traced in different ways depending on how $$t$$ changes.
 
+Sometimes you can eliminate the parameter to recover a rectangular equation. This helps identify the shape, but it can lose information about direction, speed, and the parameter interval.
+
+<div class="theorem-box">
+
+**Example.** Eliminate the parameter for
+
+$$
+x=t+1,
+\qquad
+y=t^2-2.
+$$
+
+Solve the first equation for $$t$$:
+
+$$
+t=x-1.
+$$
+
+Substitute into the equation for $$y$$:
+
+$$
+y=(x-1)^2-2.
+$$
+
+So the curve lies on the parabola
+
+$$
+y=(x-1)^2-2.
+$$
+
+The parametric form still gives extra information: as $$t$$ increases, $$x=t+1$$ increases, so the parabola is traced from left to right.
+
+</div>
+
 ---
 
 ## Derivatives for parametric curves
@@ -115,6 +149,52 @@ $$
 =
 \frac{d}{dt}\left(\frac{dy}{dx}\right)\Big/ \frac{dx}{dt}.
 $$
+
+This formula means: first find $$dy/dx$$ as a function of $$t$$, then differentiate that slope with respect to $$t$$, then divide by $$dx/dt$$.
+
+<div class="theorem-box">
+
+**Example.** For
+
+$$
+x=t^2+1,
+\qquad
+y=t^3,
+$$
+
+find $$\dfrac{d^2y}{dx^2}$$.
+
+First compute
+
+$$
+\frac{dx}{dt}=2t,
+\qquad
+\frac{dy}{dt}=3t^2.
+$$
+
+So
+
+$$
+\frac{dy}{dx}=\frac{3t^2}{2t}=\frac{3t}{2}
+$$
+
+for $$t\ne0$$. Differentiate this with respect to $$t$$:
+
+$$
+\frac{d}{dt}\left(\frac{dy}{dx}\right)=\frac{3}{2}.
+$$
+
+Now divide by $$dx/dt=2t$$:
+
+$$
+\frac{d^2y}{dx^2}
+=
+\frac{\frac32}{2t}
+=
+\frac{3}{4t}.
+$$
+
+</div>
 
 ---
 
@@ -293,6 +373,12 @@ $$
 L = \int_a^b \sqrt{[r(\theta)]^2 + [r'(\theta)]^2}\,d\theta.
 $$
 
+Surface area for polar curves is less common, but the setup follows the same radius times arc-length idea. If a polar curve is revolved about an axis, write the distance to the axis as the radius and use the polar arc-length element
+
+$$
+ds=\sqrt{r^2+\left(\frac{dr}{d\theta}\right)^2}\,d\theta.
+$$
+
 ---
 
 ## Vector-valued functions
@@ -323,6 +409,22 @@ $$
 
 gives acceleration.
 
+Vector-valued functions are differentiated and integrated component by component:
+
+$$
+\frac{d}{dt}\langle f(t),g(t),h(t)\rangle
+=
+\langle f'(t),g'(t),h'(t)\rangle,
+$$
+
+and
+
+$$
+\int \langle f(t),g(t),h(t)\rangle\,dt
+=
+\left\langle \int f(t)\,dt,\int g(t)\,dt,\int h(t)\,dt\right\rangle.
+$$
+
 <div class="theorem-box">
 
 **Example.** A particle has position $$\mathbf{r}(t)=\langle t^2,\,t^3\rangle$$. Find the velocity, the acceleration, and the speed at $$t=2$$.
@@ -352,6 +454,56 @@ $$
 $$
 
 So at $$t=2$$ the velocity is $$\langle 4,12\rangle$$, the acceleration is $$\langle 2,12\rangle$$, and the speed is $$4\sqrt{10}$$.
+
+</div>
+
+<div class="theorem-box">
+
+**Example.** A particle has velocity
+
+$$
+\mathbf v(t)=\langle 2t,\ e^t,\ \cos t\rangle
+$$
+
+and initial position
+
+$$
+\mathbf r(0)=\langle 1,0,3\rangle.
+$$
+
+Find $$\mathbf r(t)$$.
+
+Integrate velocity component by component:
+
+$$
+\mathbf r(t)=\left\langle \int 2t\,dt,\int e^t\,dt,\int \cos t\,dt\right\rangle+\mathbf C.
+$$
+
+So
+
+$$
+\mathbf r(t)=\langle t^2,\ e^t,\ \sin t\rangle+\langle C_1,C_2,C_3\rangle.
+$$
+
+Use $$\mathbf r(0)=\langle 1,0,3\rangle$$:
+
+$$
+\mathbf r(0)=\langle 0,\ 1,\ 0\rangle+\langle C_1,C_2,C_3\rangle
+=
+\langle 1,0,3\rangle.
+$$
+
+Thus
+
+$$
+C_1=1,\qquad C_2=-1,\qquad C_3=3.
+$$
+
+Therefore
+
+$$
+\mathbf r(t)=\langle t^2+1,\ e^t-1,\ \sin t+3\rangle.
+$$
 
 </div>
 
@@ -611,6 +763,36 @@ Polar curves require extra care because one point can have many polar representa
 2. pole intersections where both curves pass through the origin,
 3. whether the interval traces the whole curve or only part of it.
 
+### Area bounded by two polar curves
+
+If one polar curve is outside another on $$a\le\theta\le b$$, the area between them is
+
+$$
+A=\frac12\int_a^b \left([r_{\text{outer}}(\theta)]^2-[r_{\text{inner}}(\theta)]^2\right)\,d\theta.
+$$
+
+The outer curve is the one with the larger distance from the pole on that angle interval. If the curves switch, split the integral.
+
+<div class="theorem-box">
+
+**Example.** Set up the area inside $$r=2$$ and outside $$r=1+\cos\theta$$ on the interval where $$2\ge1+\cos\theta$$.
+
+The outer radius is $$2$$ and the inner radius is $$1+\cos\theta$$. The inequality
+
+$$
+2\ge1+\cos\theta
+$$
+
+is true for all $$\theta$$ because $$\cos\theta\le1$$, with equality at $$\theta=0$$. A full tracing interval is $$0\le\theta\le2\pi$$.
+
+So the area setup is
+
+$$
+A=\frac12\int_0^{2\pi}\left[2^2-(1+\cos\theta)^2\right]\,d\theta.
+$$
+
+</div>
+
 ### Polar arc length
 
 For $$r=f(\theta)$$, arc length is
@@ -626,3 +808,23 @@ x=r\cos\theta,\qquad y=r\sin\theta.
 $$
 
 Differentiating those and simplifying gives the expression under the square root.
+
+### Second derivative for polar curves
+
+A polar curve can be treated as parametric with parameter $$\theta$$:
+
+$$
+x=r(\theta)\cos\theta,
+\qquad
+y=r(\theta)\sin\theta.
+$$
+
+After finding $$dy/dx$$, the second derivative is
+
+$$
+\frac{d^2y}{dx^2}
+=
+\frac{d}{d\theta}\left(\frac{dy}{dx}\right)\Big/ \frac{dx}{d\theta}.
+$$
+
+This is the same structure as parametric second derivatives, just with $$\theta$$ as the parameter.

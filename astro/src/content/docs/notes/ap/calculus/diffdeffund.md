@@ -96,7 +96,66 @@ So the derivative of $$x^2$$ is $$2x$$.
 
 </div>
 
-### Differentiability
+### Notation for derivatives
+
+There exists many different notations for derivatives, but the most common ones are:
+
+$$
+f'(x),\qquad y',\qquad \frac{dy}{dx},\qquad \frac{d}{dx}[f(x)].
+$$
+
+They all refer to rate of change, but they emphasize different things. The notation $$f'(a)$$ is a number. The notation $$f'(x)$$ is a function (as long as $$x$$ is the variable). The notation $$dy/dx$$ emphasizes that the derivative compares a tiny change in $$y$$ to a tiny change in $$x$$.
+
+When a problem asks for "the derivative at $$x=a$$," give a value. When it asks for "the derivative of $$f$$," give a formula.
+
+If $$f(x)$$ has units of output and $$x$$ has units of input, then
+
+$$
+f'(x)
+$$
+
+has units
+
+$$
+\frac{\text{output units}}{\text{input units}}.
+$$
+
+For instance, if position is measured in feet and time in seconds, velocity is measured in feet per second. The sign tells direction; the magnitude tells how fast the position is changing.
+
+The Leibniz Notation ($$\frac{dy}{dx}$$) is especially useful for problems that require context. For example, if $$s(t)$$ is position, then $$s'(t)$$ and $$ds/dt$$ both describe velocity. The notation $$ds/dt$$ makes units especially clear because it literally compares a change in position to a change in time.
+
+For a quantity $$Q$$ depending on another quantity $$x$$:
+
+$$
+\frac{dQ}{dx}
+$$
+
+has units of $$Q$$-units per $$x$$-unit. This unit check is one of the fastest ways to catch an interpretation error.
+
+### Why the derivative is a limit
+
+The average rate of change on $$[a,a+h]$$ is
+
+$$
+\frac{f(a+h)-f(a)}{h}.
+$$
+
+This is the slope of a secant line. The derivative asks what happens as the second point moves closer and closer to the first point. If the secant slopes approach one stable value, that value is the tangent slope.
+
+This is why the derivative can be interpreted in several connected ways:
+
+- geometrically, it is slope at an instant;
+- numerically, it is the limiting value of nearby average rates;
+- physically, it is instantaneous velocity when $$f$$ is position;
+- locally, it is the coefficient of the best linear approximation.
+
+<div class="theorem-box">
+
+**Key idea.** Differentiability means the function looks almost linear when you zoom in near the point. Corners and cusps fail because the left and right zoom-in slopes do not settle into the same line or go to infinity.
+
+</div>
+
+### Differentiability from graphs
 
 <div class="theorem-box">
 
@@ -120,9 +179,20 @@ $$
 
 is valid only for $$x>0$$. The original function exists at $$x=0$$, but the tangent there is vertical, so the ordinary derivative is not finite.
 
+From a graph, differentiability fails at places where the tangent slope is not a single finite number.
+
+Common visual signs:
+
+- a corner has two different one-sided slopes,
+- a cusp has slopes that become infinitely steep in opposite directions,
+- a vertical tangent has an infinite slope,
+- a discontinuity cannot be differentiable.
+
+A smooth-looking graph is not a proof by itself, but it gives a strong clue about where derivative values may exist.
+
 <div class="theorem-box">
 
-**Theorem.** If $$f$$ is differentiable at $$a$$, then $$f$$ is continuous at $$a$$. The converse of the statement is false. A function can be continuous but not differentiable because of a corner, cusp, vertical tangent, or discontinuity.
+**Theorem.** If $$f$$ is differentiable at $$a$$, then $$f$$ is continuous at $$a$$. The converse of the statement is false.
 
 </div>
 
@@ -234,7 +304,7 @@ $$
 \lim_{h\to0}g(x)=g(x),
 $$
 
-because $$g(x)$$ does not depend on $$h$$. The two remaining limits are exactly the derivative definitions for $$g'(x)$$ and $$f'(x)$$:
+because $$g(x)$$ does not depend on $$h$$. The two remaining limits are the derivative definitions for $$g'(x)$$ and $$f'(x)$$:
 
 $$
 \lim_{h\to0}\frac{g(x+h)-g(x)}{h}=g'(x),
@@ -335,6 +405,47 @@ $$
 \frac{d}{dx}(\ln x) = \frac{1}{x}
 $$
 
+More generally,
+
+$$
+\frac{d}{dx}(\log_a x)=\frac{1}{x\ln a},
+\qquad a>0,\ a\ne 1.
+$$
+
+The reciprocal trig derivatives are also useful:
+
+$$
+\frac{d}{dx}(\sec x)=\sec x\tan x,
+$$
+
+$$
+\frac{d}{dx}(\csc x)=-\csc x\cot x,
+$$
+
+$$
+\frac{d}{dx}(\cot x)=-\csc^2 x.
+$$
+
+Hyperbolic functions are mostly BC/enrichment, but they sometimes appear in advanced calculus work:
+
+$$
+\sinh x=\frac{e^x-e^{-x}}{2},
+\qquad
+\cosh x=\frac{e^x+e^{-x}}{2}.
+$$
+
+Their main derivatives are:
+
+$$
+\frac{d}{dx}(\sinh x)=\cosh x,
+\qquad
+\frac{d}{dx}(\cosh x)=\sinh x,
+$$
+
+$$
+\frac{d}{dx}(\tanh x)=\operatorname{sech}^2 x.
+$$
+
 <div class="theorem-box">
 
 **Example.** Differentiate $$y = 4e^x - 3\cos x + 2x^5$$.
@@ -355,6 +466,85 @@ $$
 
 </div>
 
+<div class="theorem-box">
+
+**Example.** Differentiate
+
+$$
+y=5\log_2 x-3\sec x+4\sinh x.
+$$
+
+Differentiate term by term:
+
+$$
+\frac{d}{dx}(5\log_2 x)=\frac{5}{x\ln 2},
+$$
+
+$$
+\frac{d}{dx}(-3\sec x)=-3\sec x\tan x,
+$$
+
+and
+
+$$
+\frac{d}{dx}(4\sinh x)=4\cosh x.
+$$
+
+Therefore
+
+$$
+y'=\frac{5}{x\ln 2}-3\sec x\tan x+4\cosh x.
+$$
+
+</div>
+
+---
+
+## Choosing derivative procedures
+
+Most derivative problems are not about one isolated rule. They are about choosing the order in which rules apply.
+
+:::strategy{title="Derivative procedure"}
+1. Simplify obvious algebra first, especially constants and powers.
+2. Identify the outermost operation: sum, product, quotient, power, trig, exponential, or logarithm.
+3. Apply the rule for the outermost operation.
+4. Use the chain rule whenever the input is more than just $$x$$.
+5. Check whether the final expression can be simplified without hiding the structure.
+:::
+
+<div class="theorem-box">
+
+**Example.** Differentiate
+
+$$
+y=\frac{x^2e^x}{\sqrt{x+1}}.
+$$
+
+This can be treated as a quotient, but rewriting the radical as a power makes the product structure easier:
+
+$$
+y=x^2e^x(x+1)^{-1/2}.
+$$
+
+This is a product of three factors. Use the product rule in expanded form:
+
+$$
+y'=(2x)e^x(x+1)^{-1/2}
++x^2(e^x)(x+1)^{-1/2}
++x^2e^x\left(-\frac12\right)(x+1)^{-3/2}.
+$$
+
+Factor the common term $$xe^x(x+1)^{-3/2}$$:
+
+$$
+y'=xe^x(x+1)^{-3/2}
+\left[2(x+1)+x(x+1)-\frac{x}{2}\right].
+$$
+
+This form shows the structure clearly. If desired, it can be combined into one rational expression, but the important part is choosing the rule order correctly.
+
+</div>
+
 ---
 
 ## Tangent and normal lines
@@ -372,30 +562,30 @@ $$
 
 <div class="theorem-box">
 
-**Example.** Find the equation of the tangent line to $$f(x)=x^2+1$$ at $$x=2$$.
+**Example.** Find the equation of the tangent line to $$f(x)=x^3+e^x$$ at $$x=2$$.
 
 First find the point on the curve:
 
 $$
-f(2)=2^2+1=5,
+f(2)=2^3+e^2=8+e^2,
 $$
 
-so the point of tangency is $$(2,5)$$. Next find the slope from the derivative:
+so the point of tangency is $$(2,8+e^2)$$. Next find the slope from the derivative:
 
 $$
-f'(x)=2x,\qquad f'(2)=2(2)=4.
+f'(x)=3x^2+e^x,\qquad f'(2)=3(2)^2+e^2=12+e^2.
 $$
 
-Use point-slope form with slope $$4$$ at $$(2,5)$$:
+Use point-slope form with slope $$4$$ at $$(2,8+e^2)$$:
 
 $$
-y-5 = 4(x-2).
+y-8+e^2 = (12+e^2)(x-2).
 $$
 
 Simplifying gives the tangent line
 
 $$
-y = 4x-3.
+y = (12+e^2)x-(16+3e^2).
 $$
 
 </div>
@@ -406,10 +596,10 @@ $$
 
 The second derivative $$f''(x)$$ measures the rate of change of the first derivative.
 
-Interpretations:
+The second derivative has many useful interpretations:
 
-- concavity in pure math,
-- acceleration in motion when $$f$$ is position.
+- concavity in pure math
+- acceleration  when $$f$$ is position or angular frequency when $$f$$ is potential in physics
 
 You may also see $$f^{(n)}(x)$$ for the $$n$$th derivative.
 
@@ -479,44 +669,6 @@ Both velocity and acceleration are positive at $$t=4$$, so they share the same s
 
 ---
 
-## Local linearity and linearization preview
-
-Near $$x=a$$,
-
-$$
-f(x) \approx f(a) + f'(a)(x-a).
-$$
-
-This linearization is a first-order approximation and becomes useful for estimation and error analysis later.
-
-<div class="theorem-box">
-
-**Example.** Use a linearization near $$x=4$$ to estimate $$\sqrt{4.1}$$.
-
-Let $$f(x)=\sqrt{x}$$, which is easy to evaluate exactly at $$x=4$$. Compute the value and the slope there:
-
-$$
-f(4)=\sqrt{4}=2,\qquad f'(x)=\frac{1}{2\sqrt{x}},\qquad f'(4)=\frac{1}{2\cdot 2}=\frac14.
-$$
-
-Form the linearization centered at $$a=4$$:
-
-$$
-L(x)=f(4)+f'(4)(x-4)=2+\frac14(x-4).
-$$
-
-Evaluate at $$x=4.1$$:
-
-$$
-L(4.1)=2+\frac14(0.1)=2+0.025=2.025.
-$$
-
-So $$\sqrt{4.1}\approx 2.025$$, which is very close to the true value $$2.0248\ldots$$.
-
-</div>
-
----
-
 ## Differentiation from tables
 
 If you only have values of $$f$$, use the difference quotient for an approximate derivative:
@@ -557,140 +709,3 @@ $$
 The symmetric estimate uses points on both sides, so it usually gives a more accurate approximation than a one-sided difference quotient.
 
 </div>
-
----
-
-## Why the derivative is a limit
-
-The average rate of change on $$[a,a+h]$$ is
-
-$$
-\frac{f(a+h)-f(a)}{h}.
-$$
-
-This is the slope of a secant line. The derivative asks what happens as the second point moves closer and closer to the first point. If the secant slopes approach one stable value, that value is the tangent slope.
-
-This is why the derivative can be interpreted in several connected ways:
-
-- geometrically, it is slope at an instant;
-- numerically, it is the limiting value of nearby average rates;
-- physically, it is instantaneous velocity when $$f$$ is position;
-- locally, it is the coefficient of the best linear approximation.
-
-<div class="theorem-box">
-
-**Key idea.** Differentiability means the function looks almost linear when you zoom in near the point. Corners and cusps fail because the left and right zoom-in slopes do not settle into the same line.
-
-</div>
-
----
-
-## Notation for derivatives
-
-AP Calculus uses several derivative notations:
-
-$$
-f'(x),\qquad y',\qquad \frac{dy}{dx},\qquad \frac{d}{dx}[f(x)].
-$$
-
-They all refer to rate of change, but they emphasize different things. The notation $$f'(a)$$ is a number. The notation $$f'(x)$$ is a function. The notation $$dy/dx$$ emphasizes that the derivative compares a tiny change in $$y$$ to a tiny change in $$x$$.
-
-When a problem asks for "the derivative at $$x=a$$," give a value. When it asks for "the derivative of $$f$$," give a formula.
-
----
-
-## Units and derivative meaning
-
-If $$f(x)$$ has units of output and $$x$$ has units of input, then
-
-$$
-f'(x)
-$$
-
-has units
-
-$$
-\frac{\text{output units}}{\text{input units}}.
-$$
-
-For instance, if position is measured in feet and time in seconds, velocity is measured in feet per second. The sign tells direction; the magnitude tells how fast the position is changing.
-
-Second derivatives have units of
-
-$$
-\frac{\text{output units}}{(\text{input units})^2}.
-$$
-
-That is why acceleration is measured in distance per time squared.
-
----
-
-## Local linear behavior
-
-The derivative gives the slope of the tangent line, so near $$x=a$$ the function behaves approximately like
-
-$$
-L(x)=f(a)+f'(a)(x-a).
-$$
-
-The phrase "near $$a$$" matters. Linearization is usually very good for inputs close to $$a$$, but the error can grow as the input moves farther away.
-
-This idea also explains why derivatives are useful for estimation: a small input change $$\Delta x$$ creates an approximate output change
-
-$$
-\Delta y\approx f'(a)\Delta x.
-$$
-
----
-
-## Differentiability from graphs
-
-From a graph, differentiability fails at places where the tangent slope is not a single finite number.
-
-Common visual signs:
-
-- a corner has two different one-sided slopes,
-- a cusp has slopes that become infinitely steep in opposite directions,
-- a vertical tangent has an infinite slope,
-- a discontinuity cannot be differentiable.
-
-A smooth-looking graph is not a proof by itself, but it gives a strong clue about where derivative values may exist.
-
----
-
-## Derivative rule intuition
-
-The power rule says that powers become one degree lower because the most important local change in $$x^n$$ comes from the linear term created by expanding $$(x+h)^n$$.
-
-The product rule has two terms because both factors can change:
-
-$$
-(fg)'=f'g+fg'.
-$$
-
-The quotient rule is a product rule combined with the derivative of a reciprocal. Remember that the denominator is squared because the reciprocal function contributes a negative second power.
-
----
-
-## Common mistakes
-
-:::mistakes
-- Confusing the derivative at a point with the derivative function.
-- Forgetting the product rule and differentiating term-by-term incorrectly.
-- Using the quotient rule with the wrong sign in the numerator.
-- Treating speed and velocity as the same thing.
-:::
-
----
-
-### Derivative notation in context
-
-If $$s(t)$$ is position, then $$s'(t)$$ and $$ds/dt$$ both describe velocity. The notation $$ds/dt$$ makes units especially clear because it literally compares a change in position to a change in time.
-
-For a quantity $$Q$$ depending on another quantity $$x$$:
-
-$$
-\frac{dQ}{dx}
-$$
-
-has units of $$Q$$-units per $$x$$-unit. This unit check is one of the fastest ways to catch an interpretation error.

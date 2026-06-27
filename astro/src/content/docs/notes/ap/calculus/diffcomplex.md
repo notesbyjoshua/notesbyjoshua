@@ -8,10 +8,6 @@ sidebar:
 
 ---
 
-This unit is where derivatives become flexible. Instead of only differentiating simple formulas, we learn how derivatives behave under composition, implicit relationships, and inverse functions.
-
----
-
 ## Chain rule
 
 <div class="theorem-box">
@@ -169,6 +165,22 @@ $$
 \frac{d}{dx}\arctan(u) = \frac{u'}{1+u^2}.
 $$
 
+The remaining common chain-rule forms are:
+
+$$
+\frac{d}{dx}\arccos(u)=-\frac{u'}{\sqrt{1-u^2}},
+$$
+
+$$
+\frac{d}{dx}\operatorname{arcsec}(u)=\frac{u'}{\lvert u\rvert\sqrt{u^2-1}},
+$$
+
+$$
+\frac{d}{dx}\operatorname{arccot}(u)=-\frac{u'}{1+u^2}.
+$$
+
+For AP work, $$\arcsin$$, $$\arccos$$, and $$\arctan$$ are the most common, but the same inverse-function idea explains all of them.
+
 <div class="theorem-box">
 
 **Example.** Differentiate $$y=\arctan(x^2)$$.
@@ -183,6 +195,47 @@ Simplifying the square gives
 
 $$
 \frac{dy}{dx}=\frac{2x}{1+x^4}.
+$$
+
+</div>
+
+<div class="theorem-box">
+
+**Proof (Derivative of $$\arcsin x$$).** Let
+
+$$
+y=\arcsin x.
+$$
+
+This means
+
+$$
+\sin y=x,
+\qquad -\frac{\pi}{2}\le y\le \frac{\pi}{2}.
+$$
+
+Differentiate implicitly with respect to $$x$$:
+
+$$
+\cos y\frac{dy}{dx}=1.
+$$
+
+So
+
+$$
+\frac{dy}{dx}=\frac{1}{\cos y}.
+$$
+
+Since $$\sin y=x$$ and $$y$$ is in the principal range of arcsine, $$\cos y\ge0$$. Using $$\sin^2 y+\cos^2 y=1$$,
+
+$$
+\cos y=\sqrt{1-\sin^2 y}=\sqrt{1-x^2}.
+$$
+
+Therefore
+
+$$
+\frac{d}{dx}\arcsin x=\frac{1}{\sqrt{1-x^2}}.
 $$
 
 </div>
@@ -285,6 +338,55 @@ You should be comfortable stacking rules:
 - trig + chain,
 - inverse trig + chain,
 - exponential/log + chain.
+
+When a derivative contains several layers, work from the outside inward, but keep the inside unchanged until its turn comes. For example,
+
+$$
+y=\sin^4(3x^2-1)
+$$
+
+means
+
+$$
+y=[\sin(3x^2-1)]^4.
+$$
+
+The outside is a fourth power, then sine, then the quadratic input.
+
+<div class="theorem-box">
+
+**Example.** Differentiate
+
+$$
+y=\sin^4(3x^2-1).
+$$
+
+First apply the power rule to the outside:
+
+$$
+y'=4[\sin(3x^2-1)]^3\cdot \frac{d}{dx}[\sin(3x^2-1)].
+$$
+
+Now differentiate the sine layer:
+
+$$
+\frac{d}{dx}[\sin(3x^2-1)]
+=\cos(3x^2-1)\cdot \frac{d}{dx}(3x^2-1).
+$$
+
+Finally,
+
+$$
+\frac{d}{dx}(3x^2-1)=6x.
+$$
+
+Putting the pieces together,
+
+$$
+y'=24x\sin^3(3x^2-1)\cos(3x^2-1).
+$$
+
+</div>
 
 ---
 
@@ -485,6 +587,64 @@ $$
 $$
 
 The domain restriction is part of the meaning. For real-valued inverse sine and inverse cosine derivatives, the expression inside the square root must be positive for the derivative formula to describe an ordinary finite slope.
+
+---
+
+## Higher-order derivatives in applications
+
+Higher derivatives describe repeated rates of change. In motion, if $$s(t)$$ is position, then
+
+$$
+v(t)=s'(t),
+\qquad
+a(t)=s''(t),
+\qquad
+j(t)=s'''(t).
+$$
+
+The third derivative $$j(t)$$ is called jerk in physics because it measures how acceleration changes. AP Calculus usually focuses on position, velocity, and acceleration, but the same derivative idea continues.
+
+For graph analysis, higher derivatives also describe changing shape:
+
+- $$f'(x)$$ tells whether $$f$$ is increasing or decreasing,
+- $$f''(x)$$ tells concavity,
+- $$f'''(x)$$ tells how concavity itself is changing.
+
+<div class="theorem-box">
+
+**Example.** A particle has position
+
+$$
+s(t)=t^4-4t^3+6t^2.
+$$
+
+Find velocity, acceleration, and jerk. Then determine whether the acceleration is increasing at $$t=2$$.
+
+Differentiate repeatedly:
+
+$$
+v(t)=s'(t)=4t^3-12t^2+12t,
+$$
+
+$$
+a(t)=v'(t)=12t^2-24t+12,
+$$
+
+and
+
+$$
+j(t)=a'(t)=24t-24.
+$$
+
+At $$t=2$$,
+
+$$
+j(2)=24(2)-24=24.
+$$
+
+Since $$j(2)>0$$, acceleration is increasing at $$t=2$$.
+
+</div>
 
 ---
 

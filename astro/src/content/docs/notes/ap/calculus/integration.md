@@ -311,6 +311,64 @@ $$
 
 </div>
 
+For definite integrals, there are two clean options:
+
+- change the bounds into $$u$$-bounds and never return to $$x$$,
+- or find an antiderivative in terms of $$x$$ and use the original bounds.
+
+Changing the bounds often keeps the work cleaner.
+
+<div class="theorem-box">
+
+**Example.** Compute
+
+$$
+\int_0^2 2x(x^2+1)^3\,dx.
+$$
+
+Use
+
+$$
+u=x^2+1,
+\qquad
+du=2x\,dx.
+$$
+
+Now change the bounds. When $$x=0$$,
+
+$$
+u=0^2+1=1.
+$$
+
+When $$x=2$$,
+
+$$
+u=2^2+1=5.
+$$
+
+So
+
+$$
+\int_0^2 2x(x^2+1)^3\,dx
+=
+\int_1^5 u^3\,du.
+$$
+
+Evaluate:
+
+$$
+\int_1^5 u^3\,du
+=
+\left[\frac{u^4}{4}\right]_1^5
+=
+\frac{5^4-1^4}{4}
+=
+\frac{624}{4}
+=156.
+$$
+
+</div>
+
 ---
 
 ## Average value of a function
@@ -617,6 +675,46 @@ $$
 \int x e^x\,dx=xe^x-\int e^x\,dx=xe^x-e^x+C.
 $$
 
+<div class="theorem-box">
+
+**Example.** Compute
+
+$$
+\int x\ln x\,dx.
+$$
+
+Choose
+
+$$
+u=\ln x,
+\qquad
+dv=x\,dx.
+$$
+
+Then
+
+$$
+du=\frac{1}{x}\,dx,
+\qquad
+v=\frac{x^2}{2}.
+$$
+
+Apply integration by parts:
+
+$$
+\int x\ln x\,dx
+=\frac{x^2}{2}\ln x-\int \frac{x^2}{2}\cdot\frac{1}{x}\,dx.
+$$
+
+Simplify the remaining integral:
+
+$$
+=\frac{x^2}{2}\ln x-\frac12\int x\,dx
+=\frac{x^2}{2}\ln x-\frac{x^2}{4}+C.
+$$
+
+</div>
+
 ### Partial fractions
 
 Partial fractions break a rational function into simpler rational pieces. Before using them, make sure the numerator degree is smaller than the denominator degree. If not, divide first.
@@ -636,6 +734,212 @@ $$
 
 Then solve for the constants and integrate each term. This technique appears more in BC than AB, but it connects directly to rational functions from Precalculus.
 
+### Trig powers and identities
+
+Integrals involving powers of sine and cosine usually depend on whether one power is odd.
+
+:::strategy{title="Sine and cosine powers"}
+- If the sine power is odd, save one $$\sin x$$ and convert the rest using $$\sin^2x=1-\cos^2x$$.
+- If the cosine power is odd, save one $$\cos x$$ and convert the rest using $$\cos^2x=1-\sin^2x$$.
+- If both powers are even, use power-reduction identities.
+:::
+
+<div class="theorem-box">
+
+**Example.** Compute
+
+$$
+\int \sin^3 x\cos^2 x\,dx.
+$$
+
+Because the sine power is odd, save one sine factor:
+
+$$
+\sin^3x=\sin^2x\sin x.
+$$
+
+Use $$\sin^2x=1-\cos^2x$$:
+
+$$
+\int \sin^3x\cos^2x\,dx
+=
+\int (1-\cos^2x)\cos^2x\sin x\,dx.
+$$
+
+Let
+
+$$
+u=\cos x,
+\qquad
+du=-\sin x\,dx.
+$$
+
+Then
+
+$$
+\int (1-\cos^2x)\cos^2x\sin x\,dx
+=
+-\int (1-u^2)u^2\,du.
+$$
+
+Integrate:
+
+$$
+-\int (u^2-u^4)\,du
+=-\frac{u^3}{3}+\frac{u^5}{5}+C.
+$$
+
+Substitute back:
+
+$$
+\int \sin^3x\cos^2x\,dx
+=-\frac{\cos^3x}{3}+\frac{\cos^5x}{5}+C.
+$$
+
+</div>
+
+### Trig substitution
+
+Trig substitution is useful when radicals contain expressions matching Pythagorean identities.
+
+| Expression | Substitution | Identity used |
+|---|---|---|
+| $$\sqrt{a^2-x^2}$$ | $$x=a\sin\theta$$ | $$1-\sin^2\theta=\cos^2\theta$$ |
+| $$\sqrt{a^2+x^2}$$ | $$x=a\tan\theta$$ | $$1+\tan^2\theta=\sec^2\theta$$ |
+| $$\sqrt{x^2-a^2}$$ | $$x=a\sec\theta$$ | $$\sec^2\theta-1=\tan^2\theta$$ |
+
+This technique is mostly BC/enrichment, but it is one of the standard ways to handle roots that do not simplify by ordinary substitution.
+
+<div class="theorem-box">
+
+**Example.** Compute
+
+$$
+\int \frac{1}{\sqrt{4-x^2}}\,dx.
+$$
+
+The radical matches $$\sqrt{a^2-x^2}$$ with $$a=2$$, so use
+
+$$
+x=2\sin\theta,
+\qquad
+dx=2\cos\theta\,d\theta.
+$$
+
+Then
+
+$$
+\sqrt{4-x^2}
+=
+\sqrt{4-4\sin^2\theta}
+=
+\sqrt{4\cos^2\theta}
+=2\cos\theta
+$$
+
+on the usual substitution interval. The integral becomes
+
+$$
+\int \frac{2\cos\theta}{2\cos\theta}\,d\theta
+=
+\int 1\,d\theta
+=\theta+C.
+$$
+
+Since $$x=2\sin\theta$$,
+
+$$
+\theta=\arcsin\left(\frac{x}{2}\right).
+$$
+
+Therefore
+
+$$
+\int \frac{1}{\sqrt{4-x^2}}\,dx
+=
+\arcsin\left(\frac{x}{2}\right)+C.
+$$
+
+</div>
+
+### Roots, long division, and completing the square
+
+Before using a heavier technique, simplify the integrand:
+
+- Roots may become powers, such as $$\sqrt{x}=x^{1/2}$$.
+- Improper rational functions should use polynomial long division first.
+- Quadratic denominators may need completing the square.
+
+<div class="theorem-box">
+
+**Example.** Compute
+
+$$
+\int \frac{x^2+1}{x+1}\,dx.
+$$
+
+The numerator degree is larger than the denominator degree, so divide:
+
+$$
+\frac{x^2+1}{x+1}=x-1+\frac{2}{x+1}.
+$$
+
+Now integrate term by term:
+
+$$
+\int \frac{x^2+1}{x+1}\,dx
+=
+\int\left(x-1+\frac{2}{x+1}\right)\,dx.
+$$
+
+Therefore
+
+$$
+\int \frac{x^2+1}{x+1}\,dx
+=
+\frac{x^2}{2}-x+2\ln\lvert x+1\rvert+C.
+$$
+
+</div>
+
+<div class="theorem-box">
+
+**Example.** Compute
+
+$$
+\int \frac{1}{x^2+4x+8}\,dx.
+$$
+
+Complete the square in the denominator:
+
+$$
+x^2+4x+8=(x+2)^2+4.
+$$
+
+So
+
+$$
+\int \frac{1}{x^2+4x+8}\,dx
+=
+\int \frac{1}{(x+2)^2+2^2}\,dx.
+$$
+
+Use the inverse tangent pattern:
+
+$$
+\int \frac{1}{u^2+a^2}\,du=\frac{1}{a}\arctan\left(\frac{u}{a}\right)+C.
+$$
+
+With $$u=x+2$$ and $$a=2$$,
+
+$$
+\int \frac{1}{x^2+4x+8}\,dx
+=
+\frac12\arctan\left(\frac{x+2}{2}\right)+C.
+$$
+
+</div>
+
 ### Improper integrals
 
 An improper integral is a definite integral that has an infinite interval or an infinite discontinuity. It must be rewritten as a limit.
@@ -648,3 +952,73 @@ $$
 $$
 
 The integral **converges** if this limit is finite and **diverges** otherwise.
+
+### Comparison Test for improper integrals
+
+For nonnegative functions, comparison works similarly to series.
+
+If $$0\le f(x)\le g(x)$$ for large $$x$$ and
+
+$$
+\int_a^\infty g(x)\,dx
+$$
+
+converges, then
+
+$$
+\int_a^\infty f(x)\,dx
+$$
+
+also converges.
+
+If $$0\le g(x)\le f(x)$$ for large $$x$$ and
+
+$$
+\int_a^\infty g(x)\,dx
+$$
+
+diverges, then
+
+$$
+\int_a^\infty f(x)\,dx
+$$
+
+also diverges.
+
+<div class="theorem-box">
+
+**Example.** Determine whether
+
+$$
+\int_1^\infty \frac{1}{x^2+\sin^2 x}\,dx
+$$
+
+converges.
+
+Since $$\sin^2x\ge0$$,
+
+$$
+x^2+\sin^2x\ge x^2.
+$$
+
+Taking reciprocals reverses the inequality for positive quantities:
+
+$$
+0\le \frac{1}{x^2+\sin^2x}\le \frac{1}{x^2}.
+$$
+
+The comparison integral
+
+$$
+\int_1^\infty \frac{1}{x^2}\,dx
+$$
+
+converges. Therefore, by comparison,
+
+$$
+\int_1^\infty \frac{1}{x^2+\sin^2x}\,dx
+$$
+
+also converges.
+
+</div>

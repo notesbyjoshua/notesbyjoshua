@@ -160,7 +160,7 @@ A key idea is that the limit might not be exactly at the input value, but the fu
 
 Direct substitution sometimes gives an indeterminate form, which means the algebraic structure must be simplified before the limit can be found. Common indeterminate forms include: $$0/0$$, $$\infty/\infty$$, $$0 \cdot \infty$$, $$\infty - \infty$$, $$1^\infty$$, $$0^0$$, and $$\infty^0$$.
 
-In AP Calculus AB/BC, most of these are handled with algebra or L'Hôpital's Rule (Unit 2).
+In AP Calculus AB/BC, most of these are handled with algebra or L'Hôpital's Rule (Unit 4).
 
 :::strategy{title="Solving indeterminate forms"}
 There are many common ways to solve indeterminate forms in limits using algebra:
@@ -304,6 +304,83 @@ As $$x\to0$$, the ratio $$\frac{\sin(5x)}{5x}\to1$$, so the limit equals $$5$$.
 
 ---
 
+## Formal limit definition
+
+For general purposes, the exact formal definition of the limit is not needed, but is good to know. The statement
+
+$$
+\lim_{x\to a}f(x)=L
+$$
+
+means that every small output tolerance around $$L$$ can be guaranteed by choosing a sufficiently small input window around $$a$$, excluding $$x=a$$ itself.
+
+In symbols, for every $$\varepsilon>0$$, there is a $$\delta>0$$ such that
+
+$$
+0<\lvert x-a\rvert<\delta
+\quad\Longrightarrow\quad
+\lvert f(x)-L\rvert<\varepsilon.
+$$
+
+The AP course usually emphasizes the intuition rather than formal proof: limits are about controlling output closeness by controlling input closeness.
+
+The formal definition is also useful for understanding why limit statements are stronger than a graph or table. A table can suggest that the output is approaching $$L$$, but an epsilon-delta proof says that every possible tolerance can be handled.
+
+:::strategy{title="Basic epsilon-delta proof"}
+1. Start with $$\lvert f(x)-L\rvert<\varepsilon$$.
+2. Rewrite it until it is controlled by $$\lvert x-a\rvert$$.
+3. Choose $$\delta$$ small enough to force the desired inequality.
+4. Finish by showing that $$0<\lvert x-a\rvert<\delta$$ implies $$\lvert f(x)-L\rvert<\varepsilon$$.
+:::
+
+<div class="theorem-box">
+
+**Example.** Use the epsilon definition to prove
+
+$$
+\lim_{x\to 3}(2x+1)=7.
+$$
+
+We want to make $$\lvert (2x+1)-7\rvert<\varepsilon$$. Simplify the expression:
+
+$$
+\lvert (2x+1)-7\rvert=\lvert 2x-6\rvert=2\lvert x-3\rvert.
+$$
+
+So it is enough to require
+
+$$
+2\lvert x-3\rvert<\varepsilon,
+$$
+
+which is the same as
+
+$$
+\lvert x-3\rvert<\frac{\varepsilon}{2}.
+$$
+
+Choose
+
+$$
+\delta=\frac{\varepsilon}{2}.
+$$
+
+Then whenever $$0<\lvert x-3\rvert<\delta$$, we have
+
+$$
+\lvert (2x+1)-7\rvert=2\lvert x-3\rvert<2\delta=2\cdot\frac{\varepsilon}{2}=\varepsilon.
+$$
+
+Therefore, by the formal definition,
+
+$$
+\lim_{x\to3}(2x+1)=7.
+$$
+
+</div>
+
+---
+
 ## Limits at infinity and asymptotic behavior
 
 We also study
@@ -320,16 +397,20 @@ For rational functions:
 - If the degrees are equal: the limit is the ratio of leading coefficients,
 - If degree numerator > degree denominator: there is no finite horizontal asymptote (the function may have a slant or oblique asymptote).
 
-A useful asymptotic idea is:
+For other common function families, compare long-run growth:
 
-$$
-\sqrt{x^2 + C} \sim \lvert x \rvert
-$$
+| Function type | Typical end behavior idea |
+|---|---|
+| Polynomial | leading term controls the sign and size |
+| Rational | compare degrees after simplifying |
+| Exponential | exponential growth beats powers and logarithms |
+| Logarithmic | grows slowly and stays below positive powers |
+| Trig | sine and cosine oscillate, so many infinity limits do not exist |
+| Inverse trig | often approaches a horizontal angle value |
 
-(where $$C$$ is a constant)
-
-for large $$\lvert x \rvert$$, but be careful with the sign when $$x \to -\infty$$.
-
+:::tip
+When analyzing infinity, we usually only look at the largest degree for rational/polynomial functions. When you have a combination of different functions combined together, we will usually only look at which function *grows the fastest*, which will be explained more in Unit 2.
+:::
 <div class="theorem-box">
 
 **Example.** Evaluate $$\displaystyle\lim_{x\to\infty} \frac{3x^2+5x}{2x^2-7}$$ and identify the horizontal asymptote.
@@ -349,6 +430,77 @@ $$
 Therefore the horizontal asymptote is $$y=\frac32$$.
 
 </div>
+
+<div class="theorem-box">
+
+**Example.** Evaluate
+
+$$
+\lim_{x\to\infty}\frac{5x^3-2e^x}{x^3+7}.
+$$
+
+The numerator has a polynomial term and an exponential term. As $$x\to\infty$$, the exponential term $$e^x$$ grows faster than any power of $$x$$. The denominator grows like $$x^3$$, so the fraction behaves like
+
+$$
+\frac{-2e^x}{x^3}.
+$$
+
+Since $$e^x/x^3\to\infty$$, the whole expression decreases without bound:
+
+$$
+\lim_{x\to\infty}\frac{5x^3-2e^x}{x^3+7}=-\infty.
+$$
+
+</div>
+
+<div class="theorem-box">
+
+**Example.** Evaluate
+
+$$
+\lim_{x\to\infty}\arctan x.
+$$
+
+The function $$y=\arctan x$$ asks for the angle whose tangent is $$x$$. As $$x$$ becomes very large and positive, that angle approaches the vertical asymptote angle of tangent:
+
+$$
+\frac{\pi}{2}.
+$$
+
+Therefore
+
+$$
+\lim_{x\to\infty}\arctan x=\frac{\pi}{2}.
+$$
+
+Similarly,
+
+$$
+\lim_{x\to-\infty}\arctan x=-\frac{\pi}{2}.
+$$
+
+</div>
+
+### Infinite limits vs limits at infinity
+
+These two phrases sound similar but mean different things.
+
+- **Infinite limit:** $$x$$ approaches a finite number and $$f(x)$$ grows without bound, such as near a vertical asymptote.
+- **Limit at infinity:** $$x$$ grows without bound and $$f(x)$$ approaches a finite number or grows without bound.
+
+For example,
+
+$$
+\lim_{x\to 0^+}\frac1x=\infty
+$$
+
+is an infinite limit, while
+
+$$
+\lim_{x\to\infty}\frac{x+1}{x}=1
+$$
+
+is a limit at infinity.
 
 ---
 
@@ -376,6 +528,48 @@ Functions that are continuous on their natural domains include:
 - Exponential and logarithmic functions on their domains,
 - Trigonometric functions on their domains,
 - Compositions of continuous functions where defined.
+
+For piecewise functions, continuity at the switching point is a limit-matching problem. The left-hand limit, right-hand limit, and actual function value must all agree.
+
+<div class="theorem-box">
+
+**Example.** Find $$k$$ so that
+
+$$
+f(x)=
+\begin{cases}
+x^2+k, & x<2,\\
+3x, & x\ge 2
+\end{cases}
+$$
+
+is continuous at $$x=2$$.
+
+The right-hand value is controlled by the second branch:
+
+$$
+f(2)=3(2)=6.
+$$
+
+The left-hand limit comes from the first branch:
+
+$$
+\lim_{x\to2^-}(x^2+k)=4+k.
+$$
+
+For continuity, the left-hand limit must equal the value:
+
+$$
+4+k=6.
+$$
+
+Thus
+
+$$
+k=2.
+$$
+
+</div>
 
 ---
 
@@ -413,6 +607,7 @@ This theorem guarantees at least one solution, but it does not tell you how many
 \end{axis}
 \end{tikzpicture}
 ```
+// fix the graph
 
 <div class="theorem-box">
 
@@ -455,76 +650,3 @@ $$
 Each secant slope gets closer to $$2$$ as the interval shrinks. This pattern shows how the average rate of change approaches the derivative at $$x=1$$, and for $$f(x)=x^2$$ the derivative is $$f'(x)=2x$$, giving $$f'(1)=2$$. You will learn more about derivatives in the next unit.
 
 </div>
-
----
-
-## AP reasoning focus
-
-Limit and continuity questions usually test whether you can connect **numerical**, **graphical**, **analytical**, and **verbal** information. A table can suggest a limit, a graph can show one-sided behavior, and algebra can confirm exact values.
-
-When justifying a limit:
-
-:::checklist
-1. State what happens from the left and from the right when direction matters.
-2. Use direct substitution only when the expression is continuous at the input.
-3. If substitution gives $$0/0$$, explain the algebraic simplification before evaluating.
-4. For continuity, check all three pieces: value, limit, and equality.
-5. For IVT, explicitly name the continuous interval and the endpoint values that trap the target output.
-:::
-
-:::exam{topic="Limits and continuity"}
-AP questions often care more about the justification than the arithmetic. For example, saying "by IVT" is not enough unless you also show the function is continuous on the interval and the desired value lies between the endpoint outputs.
-:::
-
----
-
-## Formal limit language
-
-Most AP Calculus work does not require a full epsilon-delta proof, but the idea behind one is worth knowing. The statement
-
-$$
-\lim_{x\to a}f(x)=L
-$$
-
-means that every small output tolerance around $$L$$ can be guaranteed by choosing a sufficiently small input window around $$a$$, excluding $$x=a$$ itself.
-
-In symbols, for every $$\varepsilon>0$$, there is a $$\delta>0$$ such that
-
-$$
-0<\lvert x-a\rvert<\delta
-\quad\Longrightarrow\quad
-\lvert f(x)-L\rvert<\varepsilon.
-$$
-
-The AP course usually emphasizes the intuition rather than formal proof: limits are about controlling output closeness by controlling input closeness.
-
-### Infinite limits vs limits at infinity
-
-These two phrases sound similar but mean different things.
-
-- **Infinite limit:** $$x$$ approaches a finite number and $$f(x)$$ grows without bound, such as near a vertical asymptote.
-- **Limit at infinity:** $$x$$ grows without bound and $$f(x)$$ approaches a finite number or grows without bound.
-
-For example,
-
-$$
-\lim_{x\to 0^+}\frac1x=\infty
-$$
-
-is an infinite limit, while
-
-$$
-\lim_{x\to\infty}\frac{x+1}{x}=1
-$$
-
-is a limit at infinity.
-
-### Continuity on intervals
-
-A function is continuous on an open interval if it is continuous at every point in that interval. On a closed interval $$[a,b]$$, continuity means:
-
-- right-continuity at $$a$$,
-- left-continuity at $$b$$,
-- ordinary two-sided continuity for every interior point.
-
-This distinction matters for the Intermediate Value Theorem and Extreme Value Theorem because those theorems require continuity on a closed interval.

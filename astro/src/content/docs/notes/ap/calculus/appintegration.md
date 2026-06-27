@@ -360,6 +360,52 @@ This is useful BC-level enrichment even when not emphasized heavily in every AP 
 
 ---
 
+## Surface area of revolution
+
+Surface area is different from volume: instead of adding cross-sectional areas, it adds thin bands of surface.
+
+If $$y=f(x)\ge0$$ is revolved around the $$x$$-axis on $$[a,b]$$, then the surface area is
+
+$$
+S=2\pi\int_a^b f(x)\sqrt{1+[f'(x)]^2}\,dx.
+$$
+
+If $$x=g(y)\ge0$$ is revolved around the $$y$$-axis on $$[c,d]$$, then
+
+$$
+S=2\pi\int_c^d g(y)\sqrt{1+[g'(y)]^2}\,dy.
+$$
+
+The radius is the distance to the axis of rotation. The square-root factor comes from arc length.
+
+<div class="theorem-box">
+
+**Example.** Set up the surface area integral formed by revolving $$y=\sqrt{x}$$ on $$1\le x\le4$$ about the $$x$$-axis.
+
+The radius is
+
+$$
+r=f(x)=\sqrt{x}.
+$$
+
+The derivative is
+
+$$
+f'(x)=\frac{1}{2\sqrt{x}}.
+$$
+
+So the surface area is
+
+$$
+S=2\pi\int_1^4 \sqrt{x}\sqrt{1+\left(\frac{1}{2\sqrt{x}}\right)^2}\,dx.
+$$
+
+This setup is usually the main AP-style goal. It can be simplified algebraically, but the important structure is radius times arc-length factor.
+
+</div>
+
+---
+
 ## Improper integrals
 
 An integral is improper if:
@@ -623,3 +669,117 @@ V=\int A(\text{slice})\,d(\text{slice variable}).
 $$
 
 The main challenge is writing $$A$$ correctly. For squares, semicircles, disks, washers, and shells, the geometry of the slice determines the formula before any integration happens.
+
+### Non-revolution volumes
+
+Not every volume problem comes from rotating a region. If the cross sections are known, use
+
+$$
+V=\int_a^b A(x)\,dx
+$$
+
+directly, where $$A(x)$$ is the area of a slice perpendicular to the $$x$$-axis.
+
+<div class="theorem-box">
+
+**Example.** A solid has base bounded by $$y=x$$ and $$y=x^2$$ from $$x=0$$ to $$x=1$$. Cross sections perpendicular to the $$x$$-axis are equilateral triangles. Set up the volume integral.
+
+For $$0\le x\le1$$, the top curve is $$y=x$$ and the bottom curve is $$y=x^2$$. The side length of each equilateral triangle is
+
+$$
+s=x-x^2.
+$$
+
+The area of an equilateral triangle with side length $$s$$ is
+
+$$
+A=\frac{\sqrt3}{4}s^2.
+$$
+
+Thus
+
+$$
+A(x)=\frac{\sqrt3}{4}(x-x^2)^2.
+$$
+
+The volume is
+
+$$
+V=\int_0^1 \frac{\sqrt3}{4}(x-x^2)^2\,dx.
+$$
+
+</div>
+
+### Center of mass
+
+For a thin plate with constant density in the plane, the center of mass is the balance point. If a region between $$y=f(x)$$ and $$y=g(x)$$ has area $$A$$, with $$f(x)\ge g(x)$$, then
+
+$$
+\bar{x}=\frac{1}{A}\int_a^b x[f(x)-g(x)]\,dx,
+$$
+
+and
+
+$$
+\bar{y}=\frac{1}{A}\int_a^b \frac{1}{2}\left([f(x)]^2-[g(x)]^2\right)\,dx.
+$$
+
+This is BC/enrichment in many courses, but the idea is still accumulation: moment divided by total amount.
+
+### Probability density functions
+
+A probability density function $$p(x)$$ must satisfy
+
+$$
+p(x)\ge0
+$$
+
+and
+
+$$
+\int_{-\infty}^{\infty}p(x)\,dx=1.
+$$
+
+For a continuous random variable,
+
+$$
+P(a\le X\le b)=\int_a^b p(x)\,dx.
+$$
+
+The mean, or expected value, is
+
+$$
+\mu=\int_{-\infty}^{\infty}x\,p(x)\,dx.
+$$
+
+<div class="theorem-box">
+
+**Example.** Let
+
+$$
+p(x)=kx
+$$
+
+on $$0\le x\le2$$ and $$p(x)=0$$ elsewhere. Find $$k$$ so that $$p$$ is a probability density function.
+
+The total probability must be $$1$$:
+
+$$
+\int_0^2 kx\,dx=1.
+$$
+
+Evaluate:
+
+$$
+k\left[\frac{x^2}{2}\right]_0^2=1
+\quad\Longrightarrow\quad
+2k=1.
+$$
+
+Thus
+
+$$
+k=\frac12.
+$$
+
+</div>
