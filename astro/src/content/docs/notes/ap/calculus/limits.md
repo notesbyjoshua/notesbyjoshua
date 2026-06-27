@@ -4,11 +4,9 @@ sidebar:
   order: 1
 ---
 
----
+## Definition of a Limit
 
-## What a limit means
-
-We write
+A limit is defined as
 
 $$
 \lim_{x \to a} f(x) = L
