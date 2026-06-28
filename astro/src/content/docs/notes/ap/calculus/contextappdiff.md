@@ -93,21 +93,20 @@ Given a graph of a derivative $$f'$$:
   width=9cm, height=6cm,
   xlabel=$t$, ylabel=$Q(t)$,
 ]
-\addplot[blue, very thick, samples=200, domain=0:8] {0.08*(x-4)^3 + 0.25*(x-4)^2 + 4.2};
-\addplot[orange!85!black, thick, domain=0.7:3.2] {-0.62*(x-2)+3.72};
-\addplot[orange!85!black, thick, domain=3.2:5.8] {0.5*(x-4.5)+4.27};
-\addplot[orange!85!black, thick, domain=5.4:7.6] {1.25*(x-6.5)+5.61};
-\addplot[only marks, mark=*, mark size=1.7pt, blue] coordinates {(2,3.72) (4.5,4.27) (6.5,5.61)};
-\node[orange!85!black, anchor=south east] at (axis cs:2,3.72) {negative rate};
-\node[orange!85!black, anchor=south] at (axis cs:4.5,4.27) {small positive rate};
-\node[orange!85!black, anchor=south west] at (axis cs:6.5,5.61) {larger positive rate};
+\addplot[blue, thick, samples=200, domain=0:8] {0.08*(x-4)^3 + 0.25*(x-4)^2 + 4.2};
+\addplot[orange!85!black, thick, domain=2.1:3.9] {-0.26*(x-3)+4.37};
+\addplot[orange!85!black, thick, domain=3.5:5.1] {0.17*(x-4.3)+4.22};
+\addplot[orange!85!black, thick, domain=5.8:6.6] {2.26*(x-6.2)+5.74};
+\addplot[only marks, mark=*, mark size=1.7pt, blue] coordinates {(3,4.37) (4.3,4.22) (6.2,5.74)};
+\node[orange!85!black, anchor=north east] at (axis cs:2.9,3.95) {negative rate};
+\node[orange!85!black, anchor=south] at (axis cs:4.3,4.55) {small positive rate};
+\node[orange!85!black, anchor=south west] at (axis cs:6.2,6.55) {larger positive rate};
 \end{axis}
 \end{tikzpicture}
 ```
-// fix image: the negative/large positive rate points/lines are not on the graph, the small positive rate line goes through the function a bit (the function is a bit too thick)
 
 :::tip
-Problems will often sue and expect certain words:
+Problems will often use and expect certain words:
 
 - increasing means derivative positive,
 - decreasing means derivative negative,
@@ -215,9 +214,181 @@ At $$t=4$$ the velocity is $$+9$$ m/s and the acceleration is $$+12$$ m/s$$^2$$.
 
 ---
 
-## Related rates
+## Applications to business
 
-// add more explanation/lecture and example for this section
+In economics-flavored problems:
+
+- cost function $$C(x)$$,
+- revenue function $$R(x)$$,
+- profit $$P(x) = R(x)-C(x)$$.
+- price or demand function $$p(x)$$, which gives the price per item when $$x$$ items are sold.
+
+Then:
+
+- marginal cost is $$C'(x)$$,
+- marginal revenue is $$R'(x)$$,
+- marginal profit is $$P'(x)$$.
+
+If the price per item depends on the number sold, then revenue is
+
+$$
+R(x)=x\,p(x).
+$$
+
+Profit is always revenue minus cost:
+
+$$
+P(x)=R(x)-C(x).
+$$
+
+Marginal functions are derivatives, so they estimate the effect of one additional item near the current production level. For example, $$C'(100)=7$$ means the 101st item costs about $$7$$ dollars to produce, assuming the model is accurate near $$x=100$$.
+
+:::warning
+Marginal cost is not usually the total cost of producing $$x$$ items. It is the approximate added cost of producing one more item when production is already near $$x$$.
+:::
+
+<div class="theorem-box">
+
+**Example.** The cost of producing $$x$$ items is $$C(x)=0.01x^2+5x+500$$ dollars. Find the marginal cost at a production level of $$x=100$$ items and interpret it.
+
+Marginal cost is the derivative of the cost function:
+
+$$
+C'(x)=0.02x+5.
+$$
+
+Evaluate at $$x=100$$:
+
+$$
+C'(100)=0.02(100)+5=2+5=7\ \text{dollars per item}.
+$$
+
+The marginal cost at $$100$$ items is $$7$$ dollars per item. This means that when production is at $$100$$ items, producing approximately one additional item costs about $$7$$ dollars.
+
+</div>
+
+### Marginal analysis language
+
+In business-style applications:
+
+- $$C(x)$$ is cost,
+- $$R(x)$$ is revenue,
+- $$P(x)=R(x)-C(x)$$ is profit,
+- $$C'(x)$$, $$R'(x)$$, and $$P'(x)$$ are marginal cost, revenue, and profit.
+- $$\overline C(x)=\frac{C(x)}{x}$$ is average cost per item.
+
+For example, $$C'(100)=7$$ means that near $$100$$ items, producing one more item increases cost by about $$7$$ dollars.
+
+The average cost function is useful when a problem asks for cost per item instead of total cost. To minimize average cost, differentiate $$\overline C(x)$$ and look for critical points. A common relationship at an interior minimum is
+
+$$
+C'(x)=\overline C(x),
+$$
+
+which means the marginal cost equals the average cost.
+
+Break-even and optimization language often uses the same functions:
+
+- profit is positive when $$R(x)>C(x)$$,
+- break-even points occur when $$R(x)=C(x)$$,
+- profit is maximized where $$P'(x)=0$$ or at an endpoint of the feasible domain.
+- at an interior profit maximum, $$P'(x)=0$$ means $$R'(x)=C'(x)$$.
+
+:::key{name="Profit condition"}
+When profit is maximized at an interior point and the second derivative/shape confirms a maximum, marginal revenue equals marginal cost:
+
+$$
+R'(x)=C'(x).
+$$
+:::
+
+<div class="theorem-box">
+
+**Example.** Suppose cost and revenue are modeled by
+
+$$
+C(x)=0.02x^2+4x+300,
+\qquad
+R(x)=20x,
+$$
+
+where $$x$$ is the number of items sold. Find the marginal profit at $$x=200$$ and interpret it.
+
+Profit is revenue minus cost:
+
+$$
+P(x)=R(x)-C(x)=20x-(0.02x^2+4x+300).
+$$
+
+Simplify:
+
+$$
+P(x)=-0.02x^2+16x-300.
+$$
+
+Differentiate:
+
+$$
+P'(x)=-0.04x+16.
+$$
+
+Evaluate at $$x=200$$:
+
+$$
+P'(200)=-0.04(200)+16=8.
+$$
+
+At a production level of $$200$$ items, profit is increasing at about $$8$$ dollars per additional item. This means producing and selling one more item near that level is expected to increase profit by about $$8$$ dollars.
+
+</div>
+
+<div class="theorem-box">
+
+**Example.** A company sells $$x$$ items at price $$p(x)=50-0.02x$$ dollars per item, and its cost is $$C(x)=1000+10x$$ dollars. Find the marginal revenue and marginal profit when $$x=500$$.
+
+Revenue is price times quantity:
+
+$$
+R(x)=x(50-0.02x)=50x-0.02x^2.
+$$
+
+Profit is revenue minus cost:
+
+$$
+P(x)=R(x)-C(x)=50x-0.02x^2-(1000+10x).
+$$
+
+Simplify:
+
+$$
+P(x)=40x-0.02x^2-1000.
+$$
+
+Differentiate:
+
+$$
+R'(x)=50-0.04x,
+\qquad
+P'(x)=40-0.04x.
+$$
+
+Evaluate at $$x=500$$:
+
+$$
+R'(500)=50-0.04(500)=30,
+$$
+
+$$
+P'(500)=40-0.04(500)=20.
+$$
+
+At $$500$$ items, revenue is increasing by about $$30$$ dollars per additional item, and profit is increasing by about $$20$$ dollars per additional item.
+
+</div>
+
+---
+
+## Related rates
 
 Related rates problems are mostly about translation. The key source equations usually come from:
 
@@ -227,6 +398,16 @@ Related rates problems are mostly about translation. The key source equations us
 - similar triangles.
 
 If the problem asks how fast a quantity is changing, the final answer should usually be a value of a derivative with units.
+
+The important idea is that every variable depends on time, even if the equation itself does not visibly contain $$t$$. For example, in $$x^2+y^2=L^2$$, the ladder length $$L$$ is constant, but $$x$$ and $$y$$ change as the ladder slides. That is why differentiating gives rate terms:
+
+$$
+\frac{d}{dt}(x^2+y^2)=\frac{d}{dt}(L^2)
+\quad\Longrightarrow\quad
+2x\frac{dx}{dt}+2y\frac{dy}{dt}=0.
+$$
+
+Do not plug in the numerical values before differentiating. The equation must still show how the variables are changing.
 
 :::strategy{title="Related rates"}
 1. Draw and label a diagram.
@@ -238,25 +419,63 @@ If the problem asks how fast a quantity is changing, the final answer should usu
 
 <div class="theorem-box">
 
-**Example.** // write the example based on the image
+**Example.** A $$10$$ ft ladder leans against a wall. The bottom of the ladder is sliding away from the wall at $$2$$ ft/s. When the bottom is $$6$$ ft from the wall, how fast is the top of the ladder sliding down?
 
 ```tikz
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta}
 \begin{tikzpicture}[>=Stealth, scale=0.9]
-\draw[gray!70, thick] (0,0) -- (5.3,0) node[right] {floor};
-\draw[gray!70, thick] (0,0) -- (0,4.6) node[above] {wall};
+\draw[gray!70, thick] (0,0) -- (5.3,0);
+\draw[gray!70, thick] (0,0) -- (0,4.6);
 \coordinate (A) at (4.2,0);
 \coordinate (B) at (0,3.2);
 \draw[blue, very thick] (A) -- (B) node[midway, above right] {ladder};
 \draw[<->, orange!85!black] (0,-0.35) -- (4.2,-0.35) node[midway, below] {$x(t)$};
 \draw[<->, red!75!black] (-0.35,0) -- (-0.35,3.2) node[midway, left] {$y(t)$};
-\draw[->, orange!85!black, thick] (A) -- ++(0.65,0) node[right] {$\frac{dx}{dt}>0$};
-\draw[->, red!75!black, thick] (B) -- ++(0,-0.65) node[left] {$\frac{dy}{dt}<0$};
-\node[align=center] at (3.4,3.7) {$x^2+y^2=L^2$\\differentiate in $t$};
+\draw[->, orange!85!black, thick] (A) -- ++(0.65,0);
+\node[orange!85!black, anchor=west] at (5.0,0.45) {$\frac{dx}{dt}>0$};
+\draw[->, red!75!black, thick] (B) -- ++(0,-0.65);
+\node[red!75!black, anchor=east] at (-0.65,2.6) {$\frac{dy}{dt}<0$};
 \end{tikzpicture}
 ```
-// remove the black labels, and the derivative labels overlap a bit with the arrow/axis.
+
+Let $$x$$ be the distance from the wall to the bottom of the ladder, and let $$y$$ be the height of the top of the ladder. The ladder length is constant, so
+
+$$
+x^2+y^2=10^2.
+$$
+
+At the moment $$x=6$$, find $$y$$:
+
+$$
+6^2+y^2=100
+\quad\Longrightarrow\quad
+y^2=64
+\quad\Longrightarrow\quad
+y=8.
+$$
+
+Differentiate the equation with respect to time:
+
+$$
+2x\frac{dx}{dt}+2y\frac{dy}{dt}=0.
+$$
+
+Substitute $$x=6$$, $$y=8$$, and $$\frac{dx}{dt}=2$$:
+
+$$
+2(6)(2)+2(8)\frac{dy}{dt}=0.
+$$
+
+Solve:
+
+$$
+24+16\frac{dy}{dt}=0
+\quad\Longrightarrow\quad
+\frac{dy}{dt}=-\frac{24}{16}=-\frac32.
+$$
+
+The top of the ladder is sliding down at $$\frac32$$ ft/s.
 
 </div>
 
@@ -448,103 +667,6 @@ Linearization and differentials are very influential not only in calculus, but i
 
 ---
 
-## Applications to business
-
-// please reformat/add stuff to this section according to this lesson: https://tutorial.math.lamar.edu/Classes/CalcI/BusinessApps.aspx 
-
-In economics-flavored problems:
-
-- cost function $$C(x)$$,
-- revenue function $$R(x)$$,
-- profit $$P(x) = R(x)-C(x)$$.
-
-Then:
-
-- marginal cost is $$C'(x)$$,
-- marginal revenue is $$R'(x)$$,
-- marginal profit is $$P'(x)$$.
-
-At large production levels, these are interpreted as approximate change from one additional unit.
-
-<div class="theorem-box">
-
-**Example.** The cost of producing $$x$$ items is $$C(x)=0.01x^2+5x+500$$ dollars. Find the marginal cost at a production level of $$x=100$$ items and interpret it.
-
-Marginal cost is the derivative of the cost function:
-
-$$
-C'(x)=0.02x+5.
-$$
-
-Evaluate at $$x=100$$:
-
-$$
-C'(100)=0.02(100)+5=2+5=7\ \text{dollars per item}.
-$$
-
-The marginal cost at $$100$$ items is $$7$$ dollars per item. This means that when production is at $$100$$ items, producing approximately one additional item costs about $$7$$ dollars.
-
-</div>
-
-### Marginal analysis language
-
-In business-style applications:
-
-- $$C(x)$$ is cost,
-- $$R(x)$$ is revenue,
-- $$P(x)=R(x)-C(x)$$ is profit,
-- $$C'(x)$$, $$R'(x)$$, and $$P'(x)$$ are marginal cost, revenue, and profit.
-
-For example, $$C'(100)=7$$ means that near $$100$$ items, producing one more item increases cost by about $$7$$ dollars.
-
-Break-even and optimization language often uses the same functions:
-
-- profit is positive when $$R(x)>C(x)$$,
-- break-even points occur when $$R(x)=C(x)$$,
-- profit is maximized where $$P'(x)=0$$ or at an endpoint of the feasible domain.
-
-<div class="theorem-box">
-
-**Example.** Suppose cost and revenue are modeled by
-
-$$
-C(x)=0.02x^2+4x+300,
-\qquad
-R(x)=20x,
-$$
-
-where $$x$$ is the number of items sold. Find the marginal profit at $$x=200$$ and interpret it.
-
-Profit is revenue minus cost:
-
-$$
-P(x)=R(x)-C(x)=20x-(0.02x^2+4x+300).
-$$
-
-Simplify:
-
-$$
-P(x)=-0.02x^2+16x-300.
-$$
-
-Differentiate:
-
-$$
-P'(x)=-0.04x+16.
-$$
-
-Evaluate at $$x=200$$:
-
-$$
-P'(200)=-0.04(200)+16=8.
-$$
-
-At a production level of $$200$$ items, profit is increasing at about $$8$$ dollars per additional item. This means producing and selling one more item near that level is expected to increase profit by about $$8$$ dollars.
-
-</div>
-
----
-
 ## L'Hôpital's Rule
 
 Sometimes, you when calculating limits, you get indeterminate forms that cannot be solved using algebra. A very useful way to solve is to use L'Hôpital's rule.
@@ -565,7 +687,35 @@ provided the new limit exists in a usable way.
 
 <div class="theorem-box">
 
-**Proof (L'Hôpital's Rule).** // add proof of L'Hopital's rule
+**Proof (L'Hôpital's Rule).** Here is the idea for the $$0/0$$ case. Suppose $$f(a)=g(a)=0$$, and suppose $$f$$ and $$g$$ satisfy the needed continuity and differentiability conditions near $$a$$, with $$g'(x)\ne0$$.
+
+For $$x\ne a$$, Cauchy's Mean Value Theorem gives a number $$c$$ between $$a$$ and $$x$$ such that
+
+$$
+\frac{f(x)-f(a)}{g(x)-g(a)}
+=
+\frac{f'(c)}{g'(c)}.
+$$
+
+Since $$f(a)=g(a)=0$$, this becomes
+
+$$
+\frac{f(x)}{g(x)}=\frac{f'(c)}{g'(c)}.
+$$
+
+As $$x\to a$$, the point $$c$$ also moves toward $$a$$. If
+
+$$
+\lim_{u\to a}\frac{f'(u)}{g'(u)}=L,
+$$
+
+then
+
+$$
+\lim_{x\to a}\frac{f(x)}{g(x)}=L.
+$$
+
+The $$\infty/\infty$$ case is proved with a similar Cauchy Mean Value Theorem argument, but the hypotheses are more technical.
 
 </div>
 

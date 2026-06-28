@@ -92,16 +92,13 @@ Since the left-hand and right-hand limits differ, the two-sided limit does not e
   width=8.5cm, height=5.8cm,
   xlabel=$x$, ylabel=$f(x)$,
 ]
-\addplot[blue, very thick, domain=-3:0, samples=2] {x};
-\addplot[blue, very thick, domain=0:3, samples=2] {2*x+1};
+\addplot[blue, thick, domain=-3:0, samples=2] {x};
+\addplot[blue, thick, domain=0:3, samples=2] {2*x+1};
 \addplot[only marks, mark=o, mark size=2pt, blue, thick] coordinates {(0,0)};
 \addplot[only marks, mark=*, mark size=2pt, blue] coordinates {(0,1)};
-\node[blue, anchor=north east] at (axis cs:-0.15,0.15) {$\lim_{x\to0^-}f(x)=0$};
-\node[blue, anchor=south west] at (axis cs:0.15,1.15) {$\lim_{x\to0^+}f(x)=1$};
 \end{axis}
 \end{tikzpicture}
 ```
-// the lines are too thick and remove the labels since they overlap with the graph
 
 </div>
 
@@ -209,9 +206,27 @@ Since the discontinuity is a removable discontinuity (a hole), the limit does ex
 Multiply by the conjugate to remove the radical from the numerator:
 
 $$
-\frac{\sqrt{x+1}-1}{x}=\frac{(\sqrt{x+1}-1)(\sqrt{x+1}+1)}{x(\sqrt{x+1}+1)}=\frac{x}{x(\sqrt{x+1}+1)}=\frac{1}{\sqrt{x+1}+1},\qquad x\ne0.
+\frac{\sqrt{x+1}-1}{x}
+=
+\frac{(\sqrt{x+1}-1)(\sqrt{x+1}+1)}{x(\sqrt{x+1}+1)}.
 $$
-// this part goes out of the page, please fix
+
+The numerator becomes a difference of squares:
+
+$$
+(\sqrt{x+1}-1)(\sqrt{x+1}+1)
+=(x+1)-1=x.
+$$
+
+So, for $$x\ne0$$,
+
+$$
+\frac{\sqrt{x+1}-1}{x}
+=
+\frac{x}{x(\sqrt{x+1}+1)}
+=
+\frac{1}{\sqrt{x+1}+1}.
+$$
 
 Now evaluate the simplified limit:
 
@@ -580,9 +595,43 @@ $$
 
 <div class="theorem-box">
 
-**Proof (IVT).** Continuity means the graph cannot jump over a height. If the function starts below $$N$$ and ends above $$N$$, then moving from $$a$$ to $$b$$ forces the output to pass through every intermediate height. A discontinuity could skip the height, but a continuous function cannot.
+**Proof (IVT).** Assume $$f(a)<N<f(b)$$. Define
 
-// make sure the proof uses formal math notation instead of hand-wavy stuff.
+$$
+g(x)=f(x)-N.
+$$
+
+Then $$g$$ is continuous on $$[a,b]$$, and
+
+$$
+g(a)=f(a)-N<0,
+\qquad
+g(b)=f(b)-N>0.
+$$
+
+Let
+
+$$
+S=\{x\in[a,b]\mid g(x)<0\}.
+$$
+
+The set $$S$$ is nonempty because $$a\in S$$, and it is bounded above by $$b$$. Let $$c=\sup S$$. Since $$g$$ is continuous, $$g(c)$$ cannot be negative or positive. If $$g(c)<0$$, then values slightly to the right of $$c$$ would still be negative, contradicting that $$c$$ is the least upper bound. If $$g(c)>0$$, then values slightly to the left of $$c$$ would be positive, contradicting the fact that points of $$S$$ can get arbitrarily close to $$c$$ from the left.
+
+Therefore,
+
+$$
+g(c)=0.
+$$
+
+So
+
+$$
+f(c)-N=0
+\quad\Longrightarrow\quad
+f(c)=N.
+$$
+
+The case $$f(b)<N<f(a)$$ follows by applying the same argument to $$-g(x)$$.
 
 </div>
 
@@ -602,18 +651,17 @@ This theorem guarantees at least one solution, but it does not tell you how many
 ]
 \addplot[blue, very thick, samples=180, domain=0.8:4.6] {0.22*(x-2.2)^3 + 0.55*x + 1.1};
 \addplot[red!75!black, dashed, domain=0.7:4.7] {3};
-\addplot[gray!70, dashed] coordinates {(1,0) (1,1.63)};
-\addplot[gray!70, dashed] coordinates {(4.5,0) (4.5,4.52)};
+\addplot[gray!70, dashed] coordinates {(1,0) (1,1.655)};
+\addplot[gray!70, dashed] coordinates {(4.5,0) (4.5,4.575)};
 \addplot[orange!85!black, dashed] coordinates {(3.21,0) (3.21,3)};
 \addplot[only marks, mark=*, mark size=1.8pt, orange!85!black] coordinates {(3.21,3)};
-\node[red!75!black, anchor=south west] at (axis cs:4.1,3) {$y=N$};
-\node[orange!85!black, anchor=south east] at (axis cs:3.21,3) {$f(c)=N$};
-\node[gray!70!black, anchor=north] at (axis cs:1,0) {$a$};
-\node[gray!70!black, anchor=north] at (axis cs:4.5,0) {$b$};
+\node[red!75!black, anchor=south west] at (axis cs:4.15,3.05) {$y=N$};
+\node[orange!85!black, anchor=south west] at (axis cs:3.28,3.05) {$f(c)=N$};
+\node[gray!70!black, anchor=north] at (axis cs:1,-0.05) {$a$};
+\node[gray!70!black, anchor=north] at (axis cs:4.5,-0.05) {$b$};
 \end{axis}
 \end{tikzpicture}
 ```
-// fix the graph, the labels are not correctly centered
 
 ## Average rate of change (Introduction to derivatives)
 
@@ -651,4 +699,20 @@ Each secant slope gets closer to $$2$$ as the interval shrinks. This pattern sho
 
 </div>
 
-// add a tips for the exam section like the other notes pages
+---
+
+## Tips for the exam
+
+Limit questions are often about deciding which tool is allowed before doing any algebra.
+
+:::checklist
+1. Try direct substitution first.
+2. If substitution gives a finite value, the limit is usually finished.
+3. If substitution gives $$0/0$$, try factoring, conjugates, common denominators, or trig-limit rewrites.
+4. If one-sided limits disagree, the two-sided limit does not exist.
+5. For continuity, check the value, the two-sided limit, and whether they match.
+:::
+
+:::exam{topic="Limit justification"}
+When a question asks you to justify existence, say why both sides approach the same value. When a limit does not exist, name the reason: different one-sided limits, unbounded behavior, or oscillation.
+:::

@@ -2902,14 +2902,49 @@ intersection points.
 
 ::::problem
 13. Martina and Carl are part of a team that is studying weather patterns.
-The team is about to launch a weather balloon to collect data. Martina’s
-rope is 7.8 m long and makes an angle of 36.0° with the ground. Carl’s rope
-is 5.9 m long. Assuming that Martina and Carl form a triangle in a vertical
-plane with the weather balloon, what is the distance between Martina and
-Carl, to the nearest tenth of a metre?
-
+  The team is about to launch a weather balloon to collect data. Martina’s
+  rope is $$7.8$$ meters long and makes an angle of $$36.0\circ$$ with the ground. Carl’s rope
+  is $$5.9$$ meters long. Assuming that Martina and Carl form a triangle in a vertical
+  plane with the weather balloon, what is the distance between Martina and
+  Carl, to the nearest tenth of a meter?
 :::solution
+Let $$d$$ be the distance between Martina and Carl. The triangle has one side of length $$7.8$$ m, one side of length $$5.9$$ m, and the angle at Martina is $$36.0^\circ$$. By the Law of Cosines,
 
+$$
+5.9^2=7.8^2+d^2-2(7.8)(d)\cos(36.0^\circ).
+$$
+
+Move everything to one side:
+
+$$
+d^2-15.6\cos(36.0^\circ)d+(7.8^2-5.9^2)=0.
+$$
+
+Using $$\cos(36.0^\circ)\approx0.8090$$,
+
+$$
+d^2-12.6207d+25.03=0.
+$$
+
+Apply the quadratic formula:
+
+$$
+d=\frac{12.6207\pm\sqrt{12.6207^2-4(25.03)}}{2}.
+$$
+
+This gives
+
+$$
+d\approx10.0
+\qquad\text{or}\qquad
+d\approx2.6.
+$$
+
+So there are two possible distances unless the diagram or context says which side Carl is on:
+
+$$
+\boxed{10.0\text{ m or }2.6\text{ m}}.
+$$
 :::
 ::::
 

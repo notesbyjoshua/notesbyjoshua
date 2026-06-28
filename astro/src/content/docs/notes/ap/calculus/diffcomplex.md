@@ -133,10 +133,14 @@ So the tangent line at $$(3,4)$$ has slope $$-\frac34$$.
 </div>
 
 :::tip
-If you are doing implicit differentiation, differentiate all variables, but when you differentiate a term that includes $$y$$, you need to multiply a $$\frac{dy}{dx}$$ (or $$y'$$) to that term.
-:::
+When differentiating with respect to $$x$$, attach $$dy/dx$$ exactly when the term changes because $$y$$ changes.
 
-// make this tip more clear/concrete
+- $$\frac{d}{dx}(y^2)=2y\frac{dy}{dx}$$
+- $$\frac{d}{dx}(\sin y)=\cos y\frac{dy}{dx}$$
+- $$\frac{d}{dx}(xy)=x\frac{dy}{dx}+y$$
+
+Terms involving only $$x$$, such as $$x^2$$ or $$\sin x$$, do not get an extra $$dy/dx$$.
+:::
 
 ---
 
@@ -222,7 +226,17 @@ $$
 \frac{d}{dx}(\arctan x) = \frac{1}{1+x^2}
 $$
 
-// add the other 3 arc- functions as well
+$$
+\frac{d}{dx}(\operatorname{arcsec} x) = \frac{1}{\lvert x\rvert\sqrt{x^2-1}}
+$$
+
+$$
+\frac{d}{dx}(\operatorname{arccsc} x) = -\frac{1}{\lvert x\rvert\sqrt{x^2-1}}
+$$
+
+$$
+\frac{d}{dx}(\operatorname{arccot} x) = -\frac{1}{1+x^2}
+$$
 
 For AP work, $$\arcsin$$, $$\arccos$$, and $$\arctan$$ are the most common inverse trig fuctions you will see. All six formulas can be proven easily using the inverse formula, so we will only use one proof as an example.
 
@@ -263,7 +277,31 @@ $$
 \frac{d}{dx}\arcsin x=\frac{1}{\sqrt{1-x^2}}.
 $$
 
-// add proof using the inverse formula as method 2.
+**Method 2 (Inverse Function Formula).** Let $$f(y)=\sin y$$, so $$f^{-1}(x)=\arcsin x$$. The inverse derivative formula gives
+
+$$
+(f^{-1})'(x)=\frac{1}{f'(f^{-1}(x))}.
+$$
+
+Since $$f'(y)=\cos y$$,
+
+$$
+\frac{d}{dx}\arcsin x
+=
+\frac{1}{\cos(\arcsin x)}.
+$$
+
+If $$\theta=\arcsin x$$, then $$\sin\theta=x$$ and $$\theta$$ is in the principal range where $$\cos\theta\ge0$$. Therefore
+
+$$
+\cos(\arcsin x)=\sqrt{1-x^2},
+$$
+
+so
+
+$$
+\frac{d}{dx}\arcsin x=\frac{1}{\sqrt{1-x^2}}.
+$$
 
 </div>
 

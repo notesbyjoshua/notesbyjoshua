@@ -43,20 +43,19 @@ There are many interpretations of the derivative:
   xlabel=$x$, ylabel=$y$,
 ]
 \addplot[blue, very thick, samples=160, domain=0:3.3] {0.5*x^2+0.4};
-\addplot[gray!70, dashed, domain=0.4:3.1] {1.5*x-0.6};
-\addplot[orange!85!black, thick, domain=0.6:3.05] {1.15*x-0.1};
-\addplot[red!75!black, thick, domain=0.7:2.9] {0.85*x+0.2};
+\addplot[gray!70, dashed, domain=1.05:2.85] {1.925*x-1.3625};
+\addplot[orange!85!black, thick, domain=0.85:2.45] {1.65*x-0.95};
+\addplot[red!75!black, thick, domain=0.65:2.35] {1.5*x-0.725};
 \addplot[only marks, mark=*, mark size=1.8pt, blue] coordinates {(1.5,1.525)};
-\addplot[only marks, mark=*, mark size=1.5pt, gray!70] coordinates {(2.8,4.32)};
-\addplot[only marks, mark=*, mark size=1.5pt, orange!85!black] coordinates {(2.3,3.045)};
-\addplot[only marks, mark=*, mark size=1.5pt, red!75!black] coordinates {(1.9,2.205)};
-\node[gray!70!black, anchor=west] at (axis cs:2.7,3.3) {secants};
+\addplot[only marks, mark=*, mark size=1.5pt, gray!70] coordinates {(2.6,3.78)};
+\addplot[only marks, mark=*, mark size=1.5pt, orange!85!black] coordinates {(2.1,2.605)};
+\addplot[only marks, mark=*, mark size=1.5pt, red!75!black] coordinates {(1.7,1.845)};
+\node[gray!70!black, anchor=west] at (axis cs:2.65,3.65) {secant};
 \node[blue, anchor=east] at (axis cs:1.45,1.55) {$x=a$};
-\node[red!75!black, anchor=west] at (axis cs:1.9,1.85) {approach tangent};
+\node[red!75!black, anchor=west] at (axis cs:2.0,2.1) {tangent};
 \end{axis}
 \end{tikzpicture}
 ```
-// fix image: too many lines, secant line not even connecting the two dots, etc.
 
 <div class="theorem-box">
 
@@ -241,19 +240,33 @@ Now, do an algebra trick: We can add and then subtract $$f(x+h)g(x)$$ to our exp
 $$
 \frac{d}{dx}H(x)
 =
-\lim_{h\to0}\frac{f(x+h)g(x+h)-f(x+h)g(x)+f(x+h)g(x)-f(x)g(x)}{h}
-=
-\lim_{h\to0}\frac{f(x+h)g(x+h)-f(x+h)g(x)}{h}+\lim_{h\to0}\frac{f(x+h)g(x)-f(x)g(x)}{h}
+\lim_{h\to0}
+\frac{
+f(x+h)g(x+h)-f(x+h)g(x)
++f(x+h)g(x)-f(x)g(x)
+}{h}
 $$
 
-// goes off the page please fix
+Split the fraction into two limits:
+
+$$
+\frac{d}{dx}H(x)
+=
+\lim_{h\to0}\frac{f(x+h)g(x+h)-f(x+h)g(x)}{h}
++
+\lim_{h\to0}\frac{f(x+h)g(x)-f(x)g(x)}{h}.
+$$
 
 and then simplifying we get:
 
 $$
 \frac{d}{dx}H(x)
 =
-\lim_{h\to0}\frac{f(x+h)(g(x+h)-g(x))}{h}+\lim_{h\to0}\frac{(f(x+h)-f(x))g(x)}{h}
+\lim_{h\to0}
+f(x+h)\frac{g(x+h)-g(x)}{h}
++
+\lim_{h\to0}
+g(x)\frac{f(x+h)-f(x)}{h}.
 $$
 
 Now split the factors that do not belong to the difference quotients:
@@ -261,10 +274,12 @@ Now split the factors that do not belong to the difference quotients:
 $$
 \frac{d}{dx}H(x)
 =
-\lim_{h\to0}f(x+h) \cdot \lim_{h\to0}\frac{(g(x+h)-g(x))}{h}+\lim_{h\to0}g(x) \cdot \lim_{h\to0}\frac{(f(x+h)-f(x))}{h}
+\left(\lim_{h\to0}f(x+h)\right)
+\left(\lim_{h\to0}\frac{g(x+h)-g(x)}{h}\right)
++
+\left(\lim_{h\to0}g(x)\right)
+\left(\lim_{h\to0}\frac{f(x+h)-f(x)}{h}\right).
 $$
-
-// goes off the page please fix
 
 since the limit of a sum is the sum of the limits (to see this, use the sum rule for limits), and constants with respect to $$h$$ can be factored out.
 
@@ -387,9 +402,45 @@ $$
 
 All of the trig derivatives can be proved using the derivative definition and the quotient rule.
 
-// please prove one of these as an example (maybe tan x?)
+<div class="theorem-box">
+
+**Proof (Derivative of $$\tan x$$).** Start with the identity
+
+$$
+\tan x=\frac{\sin x}{\cos x}.
+$$
+
+Use the quotient rule:
+
+$$
+\frac{d}{dx}(\tan x)
+=
+\frac{(\cos x)(\cos x)-(\sin x)(-\sin x)}{\cos^2 x}.
+$$
+
+Simplify the numerator:
+
+$$
+\frac{d}{dx}(\tan x)
+=
+\frac{\cos^2 x+\sin^2 x}{\cos^2 x}
+=
+\frac{1}{\cos^2 x}
+=
+\sec^2 x.
+$$
+
+</div>
 
 ### Derivatives of exponential and logarithmic functions
+
+Exponential functions are special because their rate of change is proportional to their current value. For $$a^x$$, the derivative is some constant multiple of $$a^x$$:
+
+$$
+\frac{d}{dx}(a^x)=a^x\ln a.
+$$
+
+The base $$e$$ is the unique positive base where that constant is $$1$$. In other words, $$e^x$$ is the exponential function whose derivative is exactly itself. Logarithm derivatives come from the fact that logarithms are inverse functions of exponentials.
 
 $$
 \frac{d}{dx}(e^x) = e^x
@@ -407,8 +458,6 @@ $$
 \frac{d}{dx}(\log_a x)=\frac{1}{x\ln a},
 \qquad a>0,\ a\ne 1.
 $$
-
-// try to introduce this section more, including how we get e. maybe look at this: https://tutorial.math.lamar.edu/Classes/CalcI/DiffExpLogFcns.aspx
 
 ### Derivatives of hyperbolic functions
 
@@ -432,7 +481,17 @@ $$
 \frac{d}{dx}(\tanh x)=\operatorname{sech}^2 x.
 $$
 
-// add all 6 hyperbolic functions' derivatives
+$$
+\frac{d}{dx}(\operatorname{sech} x)=-\operatorname{sech} x\tanh x,
+$$
+
+$$
+\frac{d}{dx}(\operatorname{csch} x)=-\operatorname{csch} x\coth x,
+$$
+
+$$
+\frac{d}{dx}(\coth x)=-\operatorname{csch}^2 x.
+$$
 
 Since all of the hyperbolic functions can be defined in terms of exponentials, the derivative formula is just repeated derivatives of exponentials. The proofs are left to the reader as an exercise.
 
@@ -464,17 +523,23 @@ $$
 y=5\log_2 x \cdot 3\sec x+4\sinh x.
 $$
 
-Differentiate term by term:
+This is a product plus one hyperbolic term. First rewrite the product with the constant out front:
 
 $$
-\frac{d}{dx}(5\log_2 x)=\frac{5}{x\ln 2},
+y=15(\log_2 x)(\sec x)+4\sinh x.
 $$
 
+Use the product rule on $$(\log_2 x)(\sec x)$$:
+
 $$
-\frac{d}{dx}(-3\sec x)=-3\sec x\tan x,
+\frac{d}{dx}\left[(\log_2 x)(\sec x)\right]
+=
+\frac{1}{x\ln 2}\sec x
++
+(\log_2 x)\sec x\tan x.
 $$
 
-and
+Also,
 
 $$
 \frac{d}{dx}(4\sinh x)=4\cosh x.
@@ -483,10 +548,8 @@ $$
 Therefore
 
 $$
-y'=\frac{5}{x\ln 2}-3\sec x\tan x+4\cosh x.
+y'=15\left(\frac{\sec x}{x\ln 2}+(\log_2 x)\sec x\tan x\right)+4\cosh x.
 $$
-
-// please edit the solution based on the updated question
 
 </div>
 
@@ -518,6 +581,8 @@ $$
 y=x^2e^x(x+1)^{-1/2}.
 $$
 
+This rewrite uses the exponent rule $$\sqrt{x+1}=(x+1)^{1/2}$$, so dividing by $$\sqrt{x+1}$$ is the same as multiplying by $$(x+1)^{-1/2}$$. Now the function is a product of three factors instead of a quotient with a radical.
+
 This is a product of three factors. Use the product rule in expanded form:
 
 $$
@@ -525,8 +590,6 @@ y'=(2x)e^x(x+1)^{-1/2}
 +x^2(e^x)(x+1)^{-1/2}
 +x^2e^x\left(-\frac12\right)(x+1)^{-3/2}.
 $$
-
-// explain how you got expanded form because the notes page does not teach that. either that or change the solution
 
 Factor the common term $$xe^x(x+1)^{-3/2}$$:
 
@@ -570,10 +633,10 @@ $$
 f'(x)=3x^2+e^x,\qquad f'(2)=3(2)^2+e^2=12+e^2.
 $$
 
-Use point-slope form with slope $$4$$ at $$(2,8+e^2)$$:
+Use point-slope form with slope $$12+e^2$$ at $$(2,8+e^2)$$:
 
 $$
-y-8+e^2 = (12+e^2)(x-2).
+y-(8+e^2) = (12+e^2)(x-2).
 $$
 
 Simplifying gives the tangent line
@@ -615,7 +678,18 @@ $$
 
 </div>
 
-// add a section on alternate notation for higher order derivatives
+### Alternate notation for higher-order derivatives
+
+Higher derivatives have several common notations. If $$y=f(x)$$, then:
+
+| Order | Prime notation | Leibniz notation | Function notation |
+|---|---|---|---|
+| First | $$y'$$ | $$\frac{dy}{dx}$$ | $$f'(x)$$ |
+| Second | $$y''$$ | $$\frac{d^2y}{dx^2}$$ | $$f''(x)$$ |
+| Third | $$y'''$$ | $$\frac{d^3y}{dx^3}$$ | $$f'''(x)$$ |
+| $$n$$th | $$y^{(n)}$$ | $$\frac{d^ny}{dx^n}$$ | $$f^{(n)}(x)$$ |
+
+The notation $$\frac{d^2y}{dx^2}$$ means "differentiate $$y$$ with respect to $$x$$ twice." It does not mean a fraction where $$dx$$ is squared in the usual algebraic sense.
 
 ---
 
@@ -660,4 +734,20 @@ The symmetric estimate uses points on both sides, so it usually gives a more acc
 
 </div>
 
-// add a tips for the exam section like the other notes pages
+---
+
+## Tips for the exam
+
+Most derivative questions are rule-recognition questions with algebra mixed in. The safest way to work is to identify the outer structure before differentiating.
+
+:::checklist
+1. Simplify constants and obvious powers first.
+2. Decide whether the main operation is a sum, product, quotient, composition, or implicit relationship.
+3. Write one intermediate derivative step before simplifying.
+4. Keep domain restrictions in mind for roots, logarithms, quotients, inverse trig, and tangent/normal line slopes.
+5. Attach units when the derivative comes from a context.
+:::
+
+:::exam{topic="Derivative notation"}
+AP questions may switch among $$f'(x)$$, $$y'$$, $$dy/dx$$, $$d^2y/dx^2$$, and verbal phrases like "rate of change." Translate the notation before choosing a rule.
+:::

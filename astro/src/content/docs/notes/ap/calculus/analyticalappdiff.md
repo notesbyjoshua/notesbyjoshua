@@ -33,7 +33,47 @@ Rolle's Theorem is the same idea when the average rate is zero. If a smooth func
 
 <div class="theorem-box">
 
-**Proof (MVT).** // add a formal proof here
+**Proof (MVT).** Define the secant-line function through the endpoints:
+
+$$
+L(x)=f(a)+\frac{f(b)-f(a)}{b-a}(x-a).
+$$
+
+Now define
+
+$$
+g(x)=f(x)-L(x).
+$$
+
+Because $$f$$ and $$L$$ are continuous on $$[a,b]$$ and differentiable on $$(a,b)$$, so is $$g$$. Also,
+
+$$
+g(a)=f(a)-L(a)=0,
+$$
+
+and
+
+$$
+g(b)=f(b)-L(b)=0.
+$$
+
+By Rolle's Theorem, there is some $$c\in(a,b)$$ such that $$g'(c)=0$$. Since
+
+$$
+g'(x)=f'(x)-\frac{f(b)-f(a)}{b-a},
+$$
+
+we get
+
+$$
+0=f'(c)-\frac{f(b)-f(a)}{b-a}.
+$$
+
+Therefore,
+
+$$
+f'(c)=\frac{f(b)-f(a)}{b-a}.
+$$
 
 </div>
 
@@ -101,11 +141,25 @@ The value $$c=2$$ lies in $$(1,3)$$, so it is the value guaranteed by the theore
 
 ## Extreme Value Theorem (EVT) and critical points
 
-// add an explanation of EVT
+The Extreme Value Theorem guarantees that a continuous function on a closed interval has both an absolute maximum and an absolute minimum.
 
 <div class="theorem-box">
 
-**Definition.** A critical point of $$f$$ is a point where at a point where $$x=c$$:
+**Theorem (Extreme Value Theorem).** If $$f$$ is continuous on $$[a,b]$$, then there are numbers $$m$$ and $$M$$ in $$[a,b]$$ such that
+
+$$
+f(m)\le f(x)\le f(M)
+$$
+
+for every $$x$$ in $$[a,b]$$.
+
+</div>
+
+The two conditions matter. The interval must be closed, so endpoints are included, and the function must be continuous, so it cannot jump over or miss its highest or lowest value. EVT tells you the extrema exist; it does not tell you where they are. Critical points and endpoints are how you find the candidates.
+
+<div class="theorem-box">
+
+**Definition.** A critical point of $$f$$ occurs at $$x=c$$ when:
 
 - $$f'(c) = 0$$, or
 - $$f'(c)$$ does not exist,
@@ -179,61 +233,21 @@ When justifying an absolute maximum or minimum, compare function values, not der
 
 ---
 
-## Increasing and decreasing
+## Graphical meaning of derivatives
+
+When looking at a function, its first derivative can tell you a lot about the direction:
 
 - $$f'(x) > 0$$ on an interval implies $$f$$ is increasing there.
 - $$f'(x) < 0$$ on an interval implies $$f$$ is decreasing there.
 
 Sign charts are the cleanest way to justify interval behavior.
 
----
+When looking at a function, its second derivative can tell you a lot about the shape:
 
-## First Derivative Test
+- $$f''(x)>0$$, then $$f'(x)$$ is increasing. The graph of $$f$$ bends upward (concave up) because its slopes are becoming more positive or less negative.
+- $$f''(x)<0$$, then $$f'(x)$$ is decreasing. The graph of $$f$$ bends downward (concave down) because its slopes are becoming less positive or more negative.
 
-<div class="theorem-box">
-
-**Theorem (First Derivative Test).** If $$f'$$ changes:
-
-- positive to negative at $$c$$: local maximum,
-- negative to positive at $$c$$: local minimum,
-- no sign change: neither.
-
-</div>
-
-<div class="theorem-box">
-
-**Why the First Derivative Test works.** A positive derivative means the function is increasing, and a negative derivative means the function is decreasing. If $$f'$$ changes from positive to negative, the graph rises into $$c$$ and falls after $$c$$, so $$c$$ is a local maximum. If $$f'$$ changes from negative to positive, the graph falls into $$c$$ and rises after $$c$$, so $$c$$ is a local minimum.
-
-</div>
-
-<div class="theorem-box">
-
-**Example.** Find and classify the critical points of $$f(x)=x^3-3x^2$$.
-
-Differentiate and factor:
-
-$$
-f'(x)=3x^2-6x=3x(x-2).
-$$
-
-So $$f'(x)=0$$ at $$x=0$$ and $$x=2$$. Test the sign of $$f'$$ on each interval:
-
-$$
-f'(-1)=3(-1)(-3)=9>0,\qquad f'(1)=3(1)(-1)=-3<0,\qquad f'(3)=3(3)(1)=9>0.
-$$
-
-The derivative goes positive to negative at $$x=0$$, so $$f$$ has a local maximum there, with $$f(0)=0$$. The derivative goes negative to positive at $$x=2$$, so $$f$$ has a local minimum there, with $$f(2)=8-12=-4$$.
-
-</div>
-
----
-
-## Concavity and second derivative
-
-- $$f''(x) > 0$$ means $$f$$ is concave up.
-- $$f''(x) < 0$$ means $$f$$ is concave down.
-
-An inflection point is a point where concavity changes.
+An inflection point is a point where concavity changes. The equation $$f''(x)=0$$ only gives a possible location; you still need to check that the concavity actually changes.
 
 ```tikz
 \usepackage{pgfplots}
@@ -260,7 +274,55 @@ An inflection point is a point where concavity changes.
 
 ---
 
-## Second Derivative Test
+## The First Derivative Test
+
+A very useful test to find local extrema is the First Derivative Test. At points where $$f'(x)=0$$ (critical points), we can use this test to see if there is a local minimum, local maximum, or neither.
+
+<div class="theorem-box">
+
+**Theorem (First Derivative Test).** If $$f'$$ changes:
+
+- positive to negative at $$c$$: local maximum,
+- negative to positive at $$c$$: local minimum,
+- no sign change: neither.
+
+</div>
+
+<div class="theorem-box">
+
+**Proof (First Derivative Test).** Suppose $$f'$$ changes from positive to negative at $$c$$. Then $$f$$ is increasing just to the left of $$c$$ and decreasing just to the right of $$c$$. So values near $$c$$ on the left rise toward $$f(c)$$, and values near $$c$$ on the right fall away from $$f(c)$$. This makes $$f(c)$$ a local maximum.
+
+If $$f'$$ changes from negative to positive, the same reasoning reverses: $$f$$ decreases into $$c$$ and increases after $$c$$, so $$f(c)$$ is a local minimum.
+
+If $$f'$$ does not change sign, then $$f$$ keeps increasing on both sides or keeps decreasing on both sides. In that case, $$c$$ is not a local extremum.
+
+</div>
+
+<div class="theorem-box">
+
+**Example.** Find and classify the critical points of $$f(x)=x^3-3x^2$$.
+
+Differentiate and factor:
+
+$$
+f'(x)=3x^2-6x=3x(x-2).
+$$
+
+So $$f'(x)=0$$ at $$x=0$$ and $$x=2$$. Test the sign of $$f'$$ on each interval:
+
+$$
+f'(-1)=3(-1)(-3)=9>0,\qquad f'(1)=3(1)(-1)=-3<0,\qquad f'(3)=3(3)(1)=9>0.
+$$
+
+The derivative goes positive to negative at $$x=0$$, so $$f$$ has a local maximum there, with $$f(0)=0$$. The derivative goes negative to positive at $$x=2$$, so $$f$$ has a local minimum there, with $$f(2)=8-12=-4$$.
+
+</div>
+
+---
+
+## The Second Derivative Test
+
+The Second Derivative Test is an alternate way of finding minima and maxima.
 
 <div class="theorem-box">
 
@@ -298,6 +360,19 @@ Since $$f''(2)>0$$, there is a local minimum at $$x=2$$, with $$f(2)=8-24=-16$$.
 
 </div>
 
+### Choosing between the tests
+
+The First Derivative Test is usually more reliable because it checks what the function is actually doing on both sides of the critical point. It works for critical points where $$f'(c)=0$$ and for critical points where $$f'(c)$$ does not exist, as long as you can test signs around $$c$$.
+
+The Second Derivative Test is faster when it applies, but it has two limits:
+
+- it only applies when $$f'(c)=0$$,
+- if $$f''(c)=0$$, the test gives no conclusion.
+
+:::tip{title="Derivative test choice"}
+Use the First Derivative Test when a sign chart is already natural or when $$f'$$ is undefined at the critical point. Use the Second Derivative Test when $$f''(c)$$ is easy to compute and clearly positive or negative.
+:::
+
 ---
 
 ## Curve sketching framework
@@ -312,9 +387,39 @@ A solid derivative-based sketch includes:
 - inflection points,
 - end behavior.
 
+You do not need a perfect drawing at first. The goal is to collect enough structure that the graph has the correct shape. Start with the domain and discontinuities, then use derivatives to decide how the graph moves.
+
+:::checklist
+1. Find the domain and any vertical asymptotes or holes.
+2. Find intercepts if they are easy.
+3. Use $$f'$$ to make increasing/decreasing intervals.
+4. Use $$f''$$ to make concavity intervals.
+5. Mark local extrema and inflection points.
+6. Add end behavior or horizontal/slant asymptotes.
+:::
+
+:::warning
+A critical point is only a candidate. Do not label it a maximum or minimum until a derivative sign change, second derivative test, or value comparison supports it.
+:::
+
 ---
 
 ## Optimization
+
+Optimization problems mix modeling with calculus. The derivative only works after the quantity being optimized is written as a one-variable function. The main goal of most optimization problems is to find a local/absolute minima (e.g. minimizing time) or a local/absolute maxima (e.g. maximizing profit).
+
+The domain is part of the model. A critical point outside the feasible domain does not answer the contextual question.
+
+For closed feasible intervals, compare endpoint and critical-point values. For open or unbounded domains, use derivative sign changes or limiting behavior to justify the optimum.
+
+Optimization problems often fail because the domain is ignored. After writing the target function, determine the allowed interval from the context:
+
+- lengths must usually be positive,
+- time may be restricted to a stated interval,
+- square roots require nonnegative radicands,
+- denominators cannot be zero.
+
+If the allowed domain is closed, use endpoint comparison. If the domain is open or unbounded, use derivative signs and behavior at the ends.
 
 :::strategy{title="Optimization"}
 1. Identify the quantity to optimize.
@@ -415,110 +520,186 @@ Because $$S(x)\to\infty$$ as $$x\to0^+$$ and as $$x\to\infty$$, the critical poi
 
 </div>
 
+### Optimization strategy details
+
+The hardest part of optimization is usually building the one-variable function. A good setup keeps three pieces separate:
+
+- the target quantity, which is what you want to maximize or minimize,
+- the constraint equation, which connects the variables,
+- the feasible domain, which says what values make sense in the context.
+
+If the target quantity has two variables, use the constraint to solve for one variable and substitute. After that, the calculus part is standard: differentiate, find critical points, and test candidates.
+
+:::mistakes
+- Optimizing the constraint instead of the target quantity.
+- Forgetting endpoints on a closed interval.
+- Ignoring domain restrictions like positive lengths or nonzero denominators.
+- Reporting only the critical value of the variable instead of answering the original question.
+:::
+
 ---
 
 ## Linearization and Newton's method
 
-Linearization:
+As a reminder, linearization is the process of estimating the value of a function using its derivative:
 
 $$
 L(x) = f(a)+f'(a)(x-a).
 $$
 
-Newton's method for approximating roots:
+Using linearization, we can approximate the roots of a function using Newton's method (also known as the Newton-Raphson method) for approximating roots. Newton's method uses tangent lines to approximate roots. Starting from $$x_n$$, the tangent line to $$f$$ at $$x_n$$ crosses the $$x$$-axis at
 
 $$
-x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}.
+x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)}.
 $$
+
+$$x_n$$ represents the $$n$$th iteration, where you keep using your previous attempts to estimate the root. The first number always starts out as a guess, as any number, after many iterations, will get closer and closer to the real root. However, the method works best when the starting guess is close to the root and the derivative is not near zero. If the tangent line is nearly horizontal, the next approximation can jump far away.
+
+<div class="theorem-box">
+
+**Theorem (Newton's Method).** To approximate a root of $$f(x)=0$$, start with a guess $$x_n$$ and repeatedly use
+
+$$
+x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)}.
+$$
+
+</div>
+
+<div class="theorem-box">
+
+**Proof (Newton's Method Formula).** The linearization of $$f$$ at $$x_n$$ is
+
+$$
+L(x)=f(x_n)+f'(x_n)(x-x_n).
+$$
+
+Newton's method uses the root of this tangent line as the next guess, so set $$L(x)=0$$:
+
+$$
+0=f(x_n)+f'(x_n)(x-x_n).
+$$
+
+Solve for $$x$$:
+
+$$
+f'(x_n)(x-x_n)=-f(x_n),
+$$
+
+$$
+x-x_n=-\frac{f(x_n)}{f'(x_n)}.
+$$
+
+Therefore,
+
+$$
+x=x_n-\frac{f(x_n)}{f'(x_n)}.
+$$
+
+This new $$x$$-value is called $$x_{n+1}$$.
+
+</div>
 
 ```tikz
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.16}
 \begin{tikzpicture}
 \begin{axis}[
-  axis lines=middle, xmin=0, xmax=2.4, ymin=-1.2, ymax=3,
-  xtick={0,1,1.5,2}, ytick={-1,0,1,2},
+  axis lines=middle, xmin=0.5, xmax=2.7, ymin=-1.5, ymax=5,
+  xtick={1,1.4,2.2}, ytick={-1,0,2,4},
   grid=both, grid style={gray!18},
-  width=8.5cm, height=6cm,
+  width=8.8cm, height=6cm,
   xlabel=$x$, ylabel=$y$,
 ]
-\addplot[blue, very thick, samples=180, domain=0:2.3] {x^2-2};
-\addplot[orange!85!black, thick, domain=0.6:2.1] {2*(1.5)*(x-1.5)+(1.5^2-2)};
-\addplot[red!75!black, thick, domain=1.05:1.75] {2*(1.4167)*(x-1.4167)+(1.4167^2-2)};
-\addplot[only marks, mark=*, mark size=1.7pt, orange!85!black] coordinates {(1.5,0.25) (1.4167,0.0069)};
-\addplot[only marks, mark=*, mark size=1.7pt, gray!80] coordinates {(1.4167,0) (1.4142,0)};
-\node[orange!85!black, anchor=south west] at (axis cs:1.5,0.25) {tangent at $x_0$};
-\node[gray!80!black, anchor=north] at (axis cs:1.4167,0) {$x_1$};
-\node[gray!80!black, anchor=north east] at (axis cs:1.4142,0) {root};
+\addplot[blue, thick, samples=180, domain=0.55:2.55] {x^2-2};
+\addplot[orange!85!black, thick, domain=1.0:2.45] {4.4*(x-2.2)+2.84};
+\addplot[red!75!black, thick, domain=1.15:2.0] {2.76*(x-1.4773)+0.1822};
+\addplot[gray!70, dashed] coordinates {(2.2,0) (2.2,2.84)};
+\addplot[gray!70, dashed] coordinates {(1.5545,0) (1.5545,0.4165)};
+\addplot[gray!70, dashed] coordinates {(1.4113,0) (1.4113,-0.0082)};
+\addplot[only marks, mark=*, mark size=1.7pt, orange!85!black] coordinates {(2.2,2.84) (1.5545,0) (1.4773,0.1822) (1.4113,0)};
+\node[orange!85!black, anchor=south west] at (axis cs:2.15,3.05) {$x_0$};
+\node[gray!80!black, anchor=north] at (axis cs:1.5545,0) {$x_1$};
+\node[red!75!black, anchor=south east] at (axis cs:1.4773,0.35) {$x_1$ tangent};
+\node[gray!80!black, anchor=north east] at (axis cs:1.4113,0) {$x_2$};
 \end{axis}
 \end{tikzpicture}
 ```
 
 <div class="theorem-box">
 
-**Example.** Use one step of Newton's method to approximate $$\sqrt{2}$$, starting from $$x_0=1$$.
+**Example.** Use Newton's method to approximate $$\sqrt2$$ by solving $$x^2-2=0$$, starting with $$x_0=1.5$$.
 
-A root of $$f(x)=x^2-2$$ is $$\sqrt{2}$$. Here $$f'(x)=2x$$, so
-
-$$
-f(x_0)=1^2-2=-1,\qquad f'(x_0)=2(1)=2.
-$$
-
-Apply the iteration:
+Let
 
 $$
-x_1=x_0-\frac{f(x_0)}{f'(x_0)}=1-\frac{-1}{2}=1.5.
+f(x)=x^2-2,
+\qquad
+f'(x)=2x.
 $$
 
-So the first iteration gives $$x_1=1.5$$, already close to the true value $$\sqrt{2}\approx1.41421$$.
+The Newton update is
+
+$$
+x_{n+1}=x_n-\frac{x_n^2-2}{2x_n}.
+$$
+
+Starting with $$x_0=1.5$$:
+
+$$
+x_1=1.5-\frac{1.5^2-2}{2(1.5)}
+=1.5-\frac{0.25}{3}
+\approx1.4167.
+$$
+
+Apply the formula again:
+
+$$
+x_2=1.4167-\frac{1.4167^2-2}{2(1.4167)}
+\approx1.4142.
+$$
+
+So $$\sqrt2\approx1.4142$$.
 
 </div>
 
----
+<div class="theorem-box">
 
-## Concavity as rate behavior
+**Example.** Use Newton's method to approximate a solution of $$\cos x=x$$, starting with $$x_0=1$$.
 
-Concavity describes how the slope changes.
-
-If $$f''(x)>0$$, then $$f'(x)$$ is increasing. The graph of $$f$$ bends upward because its slopes are becoming more positive or less negative.
-
-If $$f''(x)<0$$, then $$f'(x)$$ is decreasing. The graph bends downward because its slopes are becoming less positive or more negative.
-
-An inflection point requires a change in concavity. The equation $$f''(x)=0$$ only gives a possible location.
-
----
-
-## Optimization structure
-
-Optimization problems mix modeling with calculus. The derivative only works after the quantity being optimized is written as a one-variable function.
-
-The domain is part of the model. A critical point outside the feasible domain does not answer the contextual question.
-
-For closed feasible intervals, compare endpoint and critical-point values. For open or unbounded domains, use derivative sign changes or limiting behavior to justify the optimum.
-
----
-
-## Newton's method intuition
-
-Newton's method uses tangent lines to approximate roots. Starting from $$x_n$$, the tangent line to $$f$$ at $$x_n$$ crosses the $$x$$-axis at
+Write the equation as a root problem:
 
 $$
-x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)}.
+f(x)=\cos x-x.
 $$
 
-The method works best when the starting guess is close to the root and the derivative is not near zero. If the tangent line is nearly horizontal, the next approximation can jump far away.
+Then
 
+$$
+f'(x)=-\sin x-1.
+$$
 
-### Optimization domains
+Newton's method gives
 
-Optimization problems often fail because the domain is ignored. After writing the target function, determine the allowed interval from the context:
+$$
+x_{n+1}=x_n-\frac{\cos x_n-x_n}{-\sin x_n-1}.
+$$
 
-- lengths must usually be positive,
-- time may be restricted to a stated interval,
-- square roots require nonnegative radicands,
-- denominators cannot be zero.
+Starting with $$x_0=1$$:
 
-If the allowed domain is closed, use endpoint comparison. If the domain is open or unbounded, use derivative signs and behavior at the ends.
+$$
+x_1=1-\frac{\cos(1)-1}{-\sin(1)-1}\approx0.7504.
+$$
+
+One more iteration gives
+
+$$
+x_2=0.7504-\frac{\cos(0.7504)-0.7504}{-\sin(0.7504)-1}\approx0.7391.
+$$
+
+So the solution is approximately $$x\approx0.7391$$.
+
+</div>
+
 
 ---
 
