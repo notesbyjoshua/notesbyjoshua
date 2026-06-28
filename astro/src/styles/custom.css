@@ -1035,11 +1035,18 @@
 	background: var(--sl-color-bg);
 	color: var(--sl-color-text-accent);
 	cursor: pointer;
+	text-decoration: none;
+}
+
+.edit-note-btn:visited {
+	color: var(--sl-color-text-accent);
 }
 
 .edit-note-btn:hover {
 	background: var(--sl-color-gray-6);
 	border-color: var(--sl-color-text-accent);
+	color: var(--sl-color-text-accent);
+	text-decoration: none;
 }
 
 /* --- Print / Save-as-PDF -------------------------------------------------- */

@@ -423,7 +423,7 @@ a.site-title {
 	flex-shrink: 0;
 }
 
-.visual-theme::after {
+.visual-theme__button::after {
 	content: '';
 	position: absolute;
 	top: 50%;
@@ -437,7 +437,8 @@ a.site-title {
 	opacity: 0.72;
 }
 
-.visual-theme__select {
+.visual-theme__button {
+	position: relative;
 	max-width: 8rem;
 	min-height: 2.15rem;
 	padding: 0.3rem 1.55rem 0.3rem 0.75rem;
@@ -447,13 +448,51 @@ a.site-title {
 	color: var(--sl-color-text);
 	font: 600 var(--sl-text-sm) / 1 var(--font-ui, var(--sl-font));
 	cursor: pointer;
-	appearance: none;
 	box-shadow: 0 4px 14px color-mix(in srgb, var(--sl-color-text) 8%, transparent);
+	white-space: nowrap;
 }
 
-.visual-theme__select:focus-visible {
+.visual-theme__menu {
+	position: absolute;
+	top: calc(100% + 0.35rem);
+	right: 0;
+	z-index: 30;
+	min-width: 9.5rem;
+	padding: 0.3rem;
+	border: 1px solid color-mix(in srgb, var(--sl-color-gray-5) 88%, var(--sl-color-text));
+	border-radius: 0.55rem;
+	background: color-mix(in srgb, var(--sl-color-bg-nav) 96%, var(--sl-color-bg));
+	box-shadow: 0 12px 28px color-mix(in srgb, #000 20%, transparent);
+}
+
+.visual-theme__menu[hidden] {
+	display: none;
+}
+
+.visual-theme__menu button {
+	display: block;
+	width: 100%;
+	padding: 0.45rem 0.6rem;
+	border: 0;
+	border-radius: 0.35rem;
+	background: transparent;
+	color: var(--sl-color-text);
+	font: 600 var(--sl-text-sm) / 1.2 var(--font-ui, var(--sl-font));
+	text-align: left;
+	cursor: pointer;
+}
+
+.visual-theme__menu button:hover,
+.visual-theme__menu button:focus-visible,
+.visual-theme__menu button.is-selected {
+	background: color-mix(in srgb, var(--sl-color-accent) 14%, transparent);
+	color: var(--sl-color-text-accent);
+}
+
+.visual-theme__button:focus-visible,
+.visual-theme__menu button:focus-visible {
 	outline: 2px solid var(--sl-color-accent);
-	outline-offset: 3px;
+	outline-offset: 2px;
 }
 
 @media (max-width: 50rem) {
@@ -461,7 +500,7 @@ a.site-title {
 		gap: 0.35rem;
 	}
 
-	.visual-theme__select {
+	.visual-theme__button {
 		max-width: 6.6rem;
 	}
 }
@@ -830,17 +869,23 @@ a.site-title {
 }
 
 :root[data-note-theme='nebula'] .visual-theme__select,
+:root[data-note-theme='nebula'] .visual-theme__button,
+:root[data-note-theme='nebula'] .visual-theme__menu,
 :root[data-note-theme='nebula'] .theme-switch__track,
 :root[data-note-theme='nebula'] .header-account-link,
 :root[data-note-theme='nebula'] .print-btn,
+:root[data-note-theme='nebula'] .edit-note-btn,
 :root[data-note-theme='nebula'] .bookmark-btn,
 :root[data-note-theme='nebula'] .readmark-btn,
 :root[data-note-theme='nebula'] .highlight-btn,
 :root[data-note-theme='nebula'] .cheatsheet-btn,
 :root[data-note-theme='classic'] .visual-theme__select,
+:root[data-note-theme='classic'] .visual-theme__button,
+:root[data-note-theme='classic'] .visual-theme__menu,
 :root[data-note-theme='classic'] .theme-switch__track,
 :root[data-note-theme='classic'] .header-account-link,
 :root[data-note-theme='classic'] .print-btn,
+:root[data-note-theme='classic'] .edit-note-btn,
 :root[data-note-theme='classic'] .bookmark-btn,
 :root[data-note-theme='classic'] .readmark-btn,
 :root[data-note-theme='classic'] .highlight-btn,

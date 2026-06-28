@@ -66,6 +66,10 @@ proof/example here (refer to section below for guidance)
 The page title comes from the front-matter `title` — don't add a separate `#`
 heading in the body. Start sections at `##`.
 
+Do not add an appendix section when expanding notes unless it is explicitly
+requested. Put new explanations, examples, formulas, and practice directly into
+the relevant content sections where students will naturally use them.
+
 ---
 
 ## Math

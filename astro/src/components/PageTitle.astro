@@ -66,7 +66,7 @@ const editHref = isNote && filePath ? `/admin/edit?path=${encodeURIComponent(`as
 {isPracticeSubject && <PracticeFilters />}
 
 <script>
-  import { canEditNotePath, getSupabase } from '../lib/supabase';
+  import { canEditNotePath, getCurrentUser, getSupabase, type SessionUser } from '../lib/supabase';
   import { initPractice } from '../lib/practice';
 
   // --- Practice boxes: "Show solution" on each box; "Grade" button on FRQs. --
@@ -156,14 +156,18 @@ const editHref = isNote && filePath ? `/admin/edit?path=${encodeURIComponent(`as
   const editBtn = document.querySelector<HTMLAnchorElement>('.edit-note-btn');
   if (sbEdit && editBtn) {
     const editPath = new URL(editBtn.href).searchParams.get('path') ?? '';
-    sbEdit.auth.onAuthStateChange(async (_event, session) => {
-      if (!session?.user) { editBtn.hidden = true; return; }
+    const syncEditButton = async (user: SessionUser | null) => {
+      if (!user) { editBtn.hidden = true; return; }
       try {
-        editBtn.hidden = !(await canEditNotePath(editPath, session.user));
+        editBtn.hidden = !(await canEditNotePath(editPath, user));
       } catch (err) {
         // Transient role-read failure: leave the pencil hidden (fail closed).
         editBtn.hidden = true;
       }
+    };
+    getCurrentUser().then(syncEditButton).catch(() => { editBtn.hidden = true; });
+    sbEdit.auth.onAuthStateChange(async (_event, session) => {
+      syncEditButton(session?.user ?? null);
     });
   }
 

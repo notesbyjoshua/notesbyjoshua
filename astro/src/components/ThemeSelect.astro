@@ -31,15 +31,24 @@
 		</span>
 	</button>
 
-	<label class="visual-theme" aria-label="Visual theme">
-		<span class="sr-only">Visual theme</span>
-		<select class="visual-theme__select" data-visual-theme-select>
-			<option value="handwritten">Handwritten</option>
-			<option value="focus">Focus</option>
-			<option value="blueprint">Blueprint</option>
-			<option value="nebula">Nebula</option>
-		</select>
-	</label>
+	<div class="visual-theme" data-visual-theme-control>
+		<button
+			type="button"
+			class="visual-theme__button"
+			data-visual-theme-toggle
+			aria-haspopup="listbox"
+			aria-expanded="false"
+		>
+			<span class="sr-only">Visual theme</span>
+			<span data-visual-theme-label>Handwritten</span>
+		</button>
+		<div class="visual-theme__menu" data-visual-theme-menu role="listbox" aria-label="Visual theme" hidden>
+			<button type="button" role="option" data-visual-theme-option value="handwritten">Handwritten</button>
+			<button type="button" role="option" data-visual-theme-option value="focus">Focus</button>
+			<button type="button" role="option" data-visual-theme-option value="blueprint">Blueprint</button>
+			<button type="button" role="option" data-visual-theme-option value="nebula">Nebula</button>
+		</div>
+	</div>
 </div>
 
 <script>
@@ -48,6 +57,12 @@
 	const STORAGE_KEY = 'starlight-theme';
 	const VISUAL_THEME_KEY = 'notesbyjoshua-theme';
 	const VISUAL_THEMES = new Set<VisualTheme>(['handwritten', 'focus', 'blueprint', 'nebula']);
+	const VISUAL_THEME_LABELS: Record<VisualTheme, string> = {
+		handwritten: 'Handwritten',
+		focus: 'Focus',
+		blueprint: 'Blueprint',
+		nebula: 'Nebula',
+	};
 
 	const currentTheme = (): Theme =>
 		document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light';
@@ -82,8 +97,23 @@
 		}
 	}
 
-	function syncVisualSelect(select: HTMLSelectElement) {
-		select.value = currentVisualTheme();
+	function closeVisualMenus(except?: HTMLElement) {
+		document.querySelectorAll<HTMLElement>('[data-visual-theme-control]').forEach((control) => {
+			if (control === except) return;
+			control.querySelector<HTMLElement>('[data-visual-theme-menu]')!.hidden = true;
+			control.querySelector<HTMLButtonElement>('[data-visual-theme-toggle]')!.setAttribute('aria-expanded', 'false');
+		});
+	}
+
+	function syncVisualControl(control: HTMLElement) {
+		const theme = currentVisualTheme();
+		const label = control.querySelector<HTMLElement>('[data-visual-theme-label]')!;
+		label.textContent = VISUAL_THEME_LABELS[theme];
+		control.querySelectorAll<HTMLButtonElement>('[data-visual-theme-option]').forEach((option) => {
+			const selected = option.value === theme;
+			option.setAttribute('aria-selected', String(selected));
+			option.classList.toggle('is-selected', selected);
+		});
 	}
 
 	function bind() {
@@ -107,24 +137,42 @@
 			});
 		});
 
-		const selects = document.querySelectorAll<HTMLSelectElement>('[data-visual-theme-select]');
-		selects.forEach((select) => {
-			syncVisualSelect(select);
-			if (select.dataset.bound === '1') return;
-			select.dataset.bound = '1';
+		const controls = document.querySelectorAll<HTMLElement>('[data-visual-theme-control]');
+		controls.forEach((control) => {
+			syncVisualControl(control);
+			if (control.dataset.bound === '1') return;
+			control.dataset.bound = '1';
 
-			select.addEventListener('change', () => {
-				const theme = select.value as VisualTheme;
-				if (!VISUAL_THEMES.has(theme)) return;
-				applyVisualTheme(theme);
-				document
-					.querySelectorAll<HTMLSelectElement>('[data-visual-theme-select]')
-					.forEach(syncVisualSelect);
+			const toggle = control.querySelector<HTMLButtonElement>('[data-visual-theme-toggle]')!;
+			const menu = control.querySelector<HTMLElement>('[data-visual-theme-menu]')!;
+
+			toggle.addEventListener('click', (event) => {
+				event.stopPropagation();
+				const opening = menu.hidden;
+				closeVisualMenus(control);
+				menu.hidden = !opening;
+				toggle.setAttribute('aria-expanded', String(opening));
+			});
+
+			menu.querySelectorAll<HTMLButtonElement>('[data-visual-theme-option]').forEach((option) => {
+				option.addEventListener('click', () => {
+					const theme = option.value as VisualTheme;
+					if (!VISUAL_THEMES.has(theme)) return;
+					applyVisualTheme(theme);
+					document.querySelectorAll<HTMLElement>('[data-visual-theme-control]').forEach(syncVisualControl);
+					menu.hidden = true;
+					toggle.setAttribute('aria-expanded', 'false');
+					toggle.focus();
+				});
 			});
 		});
 	}
 
 	bind();
+	document.addEventListener('click', () => closeVisualMenus());
+	document.addEventListener('keydown', (event) => {
+		if (event.key === 'Escape') closeVisualMenus();
+	});
 	// Re-bind after Starlight's view-transition navigations.
 	document.addEventListener('astro:page-load', bind);
 </script>
