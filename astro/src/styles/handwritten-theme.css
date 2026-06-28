@@ -466,7 +466,9 @@ a.site-title {
 	}
 }
 
-/* Clean theme: a quieter, Starlight-like reading mode. */
+/* Focus theme: a quieter, Starlight-like reading mode. */
+:root[data-note-theme='focus'],
+:root[data-note-theme='focus'] ::backdrop,
 :root[data-note-theme='clean'],
 :root[data-note-theme='clean'] ::backdrop,
 :root[data-note-theme='default'],
@@ -498,6 +500,8 @@ a.site-title {
 	--sl-color-bg-inline-code: #1e293b;
 }
 
+:root[data-note-theme='focus'][data-theme='light'],
+:root[data-note-theme='focus'][data-theme='light'] ::backdrop,
 :root[data-note-theme='clean'][data-theme='light'],
 :root[data-note-theme='clean'][data-theme='light'] ::backdrop,
 :root[data-note-theme='default'][data-theme='light'],
@@ -524,11 +528,23 @@ a.site-title {
 	--sl-color-bg-inline-code: #f1f5f9;
 }
 
+:root[data-note-theme='focus'] body::before,
 :root[data-note-theme='clean'] body::before,
 :root[data-note-theme='default'] body::before {
 	content: none;
 }
 
+:root[data-note-theme='focus'] .sl-markdown-content,
+:root[data-note-theme='focus'] .sl-markdown-content h1,
+:root[data-note-theme='focus'] .sl-markdown-content h2,
+:root[data-note-theme='focus'] .sl-markdown-content h3,
+:root[data-note-theme='focus'] .sl-markdown-content h4,
+:root[data-note-theme='focus'] .sl-markdown-content h5,
+:root[data-note-theme='focus'] .sl-markdown-content h6,
+:root[data-note-theme='focus'] .content-panel h1,
+:root[data-note-theme='focus'] h1#_top,
+:root[data-note-theme='focus'] .site-title,
+:root[data-note-theme='focus'] a.site-title,
 :root[data-note-theme='clean'] .sl-markdown-content,
 :root[data-note-theme='clean'] .sl-markdown-content h1,
 :root[data-note-theme='clean'] .sl-markdown-content h2,
@@ -555,6 +571,7 @@ a.site-title {
 	letter-spacing: 0;
 }
 
+:root[data-note-theme='focus'] .sl-markdown-content,
 :root[data-note-theme='clean'] .sl-markdown-content,
 :root[data-note-theme='default'] .sl-markdown-content {
 	font-size: 1rem;
@@ -658,9 +675,11 @@ a.site-title {
 	font-weight: 700;
 }
 
-/* Astro Classic theme: adapted from HiDeoo's MIT-licensed
+/* Nebula theme: adapted from HiDeoo's MIT-licensed
    starlight-theme-vintage, with local tweaks so it can live inside our runtime
    theme picker instead of taking over Starlight as a plugin. */
+:root[data-note-theme='nebula'],
+:root[data-note-theme='nebula'] ::backdrop,
 :root[data-note-theme='classic'],
 :root[data-note-theme='classic'] ::backdrop {
 	--font-ui: 'Inter', ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
@@ -699,6 +718,8 @@ a.site-title {
 	--classic-ui-accent-alt: var(--sl-color-accent-high);
 }
 
+:root[data-note-theme='nebula'][data-theme='light'],
+:root[data-note-theme='nebula'][data-theme='light'] ::backdrop,
 :root[data-note-theme='classic'][data-theme='light'],
 :root[data-note-theme='classic'][data-theme='light'] ::backdrop {
 	--sl-color-white: oklch(0.2045 0.0142 294);
@@ -731,6 +752,7 @@ a.site-title {
 	--classic-ui-accent-alt: var(--sl-color-accent-high);
 }
 
+:root[data-note-theme='nebula'] body::before,
 :root[data-note-theme='classic'] body::before {
 	background:
 		linear-gradient(
@@ -741,6 +763,17 @@ a.site-title {
 		);
 }
 
+:root[data-note-theme='nebula'] .sl-markdown-content,
+:root[data-note-theme='nebula'] .sl-markdown-content h1,
+:root[data-note-theme='nebula'] .sl-markdown-content h2,
+:root[data-note-theme='nebula'] .sl-markdown-content h3,
+:root[data-note-theme='nebula'] .sl-markdown-content h4,
+:root[data-note-theme='nebula'] .sl-markdown-content h5,
+:root[data-note-theme='nebula'] .sl-markdown-content h6,
+:root[data-note-theme='nebula'] .content-panel h1,
+:root[data-note-theme='nebula'] h1#_top,
+:root[data-note-theme='nebula'] .site-title,
+:root[data-note-theme='nebula'] a.site-title,
 :root[data-note-theme='classic'] .sl-markdown-content,
 :root[data-note-theme='classic'] .sl-markdown-content h1,
 :root[data-note-theme='classic'] .sl-markdown-content h2,
@@ -756,26 +789,37 @@ a.site-title {
 	letter-spacing: 0;
 }
 
+:root[data-note-theme='nebula'] .sl-markdown-content,
 :root[data-note-theme='classic'] .sl-markdown-content {
 	font-size: 1rem;
 }
 
+:root[data-note-theme='nebula'] .site-title,
+:root[data-note-theme='nebula'] a.site-title,
 :root[data-note-theme='classic'] .site-title,
 :root[data-note-theme='classic'] a.site-title {
 	color: var(--classic-ui-accent-alt);
 	font-size: var(--sl-text-3xl);
 }
 
+:root[data-note-theme='nebula'] .header.header,
 :root[data-note-theme='classic'] .header.header {
 	border-bottom: 0;
 }
 
+:root[data-note-theme='nebula'] .sidebar-pane,
+:root[data-note-theme='nebula'] .right-sidebar-panel,
+:root[data-note-theme='nebula'] .content-panel,
 :root[data-note-theme='classic'] .sidebar-pane,
 :root[data-note-theme='classic'] .right-sidebar-panel,
 :root[data-note-theme='classic'] .content-panel {
 	background: transparent;
 }
 
+:root[data-note-theme='nebula'] .sl-markdown-content .theorem-box,
+:root[data-note-theme='nebula'] .sl-markdown-content .callout,
+:root[data-note-theme='nebula'] .ref-sheet__panel,
+:root[data-note-theme='nebula'] .header-account-menu,
 :root[data-note-theme='classic'] .sl-markdown-content .theorem-box,
 :root[data-note-theme='classic'] .sl-markdown-content .callout,
 :root[data-note-theme='classic'] .ref-sheet__panel,
@@ -785,6 +829,14 @@ a.site-title {
 	box-shadow: none;
 }
 
+:root[data-note-theme='nebula'] .visual-theme__select,
+:root[data-note-theme='nebula'] .theme-switch__track,
+:root[data-note-theme='nebula'] .header-account-link,
+:root[data-note-theme='nebula'] .print-btn,
+:root[data-note-theme='nebula'] .bookmark-btn,
+:root[data-note-theme='nebula'] .readmark-btn,
+:root[data-note-theme='nebula'] .highlight-btn,
+:root[data-note-theme='nebula'] .cheatsheet-btn,
 :root[data-note-theme='classic'] .visual-theme__select,
 :root[data-note-theme='classic'] .theme-switch__track,
 :root[data-note-theme='classic'] .header-account-link,

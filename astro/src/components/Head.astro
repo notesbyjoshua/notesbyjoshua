@@ -48,11 +48,12 @@ if (isNote && entry) {
 <script is:inline>
 	(() => {
 		const key = 'notesbyjoshua-theme';
-		const allowed = new Set(['handwritten', 'clean', 'blueprint', 'classic']);
+		const allowed = new Set(['handwritten', 'focus', 'blueprint', 'nebula']);
 		let theme = 'handwritten';
 		try {
 			const saved = localStorage.getItem(key);
-			if (saved === 'default') theme = 'clean';
+			if (saved === 'default' || saved === 'clean') theme = 'focus';
+			else if (saved === 'classic') theme = 'nebula';
 			else if (allowed.has(saved)) theme = saved;
 		} catch {}
 		document.documentElement.dataset.noteTheme = theme;
