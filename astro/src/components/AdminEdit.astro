@@ -114,6 +114,13 @@ const notes = docs
     resultEl.className = 'ed-result' + (kind ? ` ed-${kind}` : '');
   }
 
+  function describeEditorError(message: string) {
+    if (/admins?\s+only/i.test(message)) {
+      return 'the editor function needs to be redeployed so writer permissions are recognized';
+    }
+    return message;
+  }
+
   function refreshSaveState() {
     const dirty = srcEl.value !== loadedContent;
     saveBtn.disabled = !fileSel.value || !dirty || !pwEl.value;
@@ -176,7 +183,7 @@ const notes = docs
       setResult(data.exists ? '' : 'New file (does not exist yet).', '');
       refreshSaveState();
     } catch (err: any) {
-      setResult(`Load failed: ${err.message}`, 'err');
+      setResult(`Load failed: ${describeEditorError(err.message)}`, 'err');
     }
   }
 
@@ -203,7 +210,7 @@ const notes = docs
       msgEl.value = '';
       refreshSaveState();
     } catch (err: any) {
-      setResult(`Save failed: ${err.message}`, 'err');
+      setResult(`Save failed: ${describeEditorError(err.message)}`, 'err');
       refreshSaveState();
     }
   }
