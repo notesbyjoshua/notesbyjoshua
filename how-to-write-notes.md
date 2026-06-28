@@ -26,8 +26,6 @@ sidebar:
   order: 1            # position within its sidebar group (optional: label, prev, next)
 ---
 
----
-
 ## Header 1
 
 content content content
@@ -58,22 +56,8 @@ proof/example here (refer to section below for guidance)
 
 ## Practice
 
-1. question
-2. question
-
-...
-
----
-
-## Solutions
-
-<div class="theorem-box">
-
-### Solution 1
-
-solution here
-
-</div>
+1. question/solution
+2. question/solution
 
 ...
 

@@ -6,13 +6,17 @@ sidebar:
 
 ## Definition of a Limit
 
-A limit is defined as
+<div class="theorem-box">
+
+**Definition.** A limit is defined as
 
 $$
 \lim_{x \to a} f(x) = L
 $$
 
 if we can make $$f(x)$$ as close to $$L$$ as we want by taking $$x$$ sufficiently close to $$a$$, with $$x \ne a$$.
+
+</div>
 
 This is about nearby behavior, not direct substitution. It is possible for:
 
@@ -97,6 +101,7 @@ Since the left-hand and right-hand limits differ, the two-sided limit does not e
 \end{axis}
 \end{tikzpicture}
 ```
+// the lines are too thick and remove the labels since they overlap with the graph
 
 </div>
 
@@ -126,6 +131,14 @@ For polynomials and rational functions, direct substitution works whenever the d
 
 <div class="theorem-box">
 
+**Proof (Limit Laws).** A limit statement means the function values can be forced arbitrarily close to a target value. If $$f(x)$$ is close to $$L$$ and $$g(x)$$ is close to $$M$$, then their sum is close to $$L + M$$, their product is close to $$LM$$, and their quotient is close to $$L/M$$ as long as $$M \ne 0$$.
+
+A key idea is that the limit might not be exactly at the input value, but the function values can get arbitrarily close to the target. In AP Calculus, we often think of the small error as $$\varepsilon$$, which becomes negligible when the limit exists.
+
+</div>
+
+<div class="theorem-box">
+
 **Example.** Suppose $$\lim_{x\to 2}f(x)=3$$ and $$\lim_{x\to 2}g(x)=-1$$. Find
 
 $$
@@ -139,14 +152,6 @@ $$
 $$
 
 Therefore the limit equals $$\frac{7}{9}$$.
-
-</div>
-
-<div class="theorem-box">
-
-**Proof (Limit Laws).** A limit statement means the function values can be forced arbitrarily close to a target value. If $$f(x)$$ is close to $$L$$ and $$g(x)$$ is close to $$M$$, then their sum is close to $$L + M$$, their product is close to $$LM$$, and their quotient is close to $$L/M$$ as long as $$M \ne 0$$.
-
-A key idea is that the limit might not be exactly at the input value, but the function values can get arbitrarily close to the target. In AP Calculus, we often think of the small error as $$\varepsilon$$, which becomes negligible when the limit exists.
 
 </div>
 
@@ -193,7 +198,7 @@ $$
 \lim_{x\to3}(x+3)=6.
 $$
 
-This is a classic removable-indeterminate limit: the original expression is undefined at 3, but the nearby behavior is well defined.
+Since the discontinuity is a removable discontinuity (a hole), the limit does existsince both sides approach the same value at $$x=3$$.
 
 </div>
 
@@ -206,7 +211,7 @@ Multiply by the conjugate to remove the radical from the numerator:
 $$
 \frac{\sqrt{x+1}-1}{x}=\frac{(\sqrt{x+1}-1)(\sqrt{x+1}+1)}{x(\sqrt{x+1}+1)}=\frac{x}{x(\sqrt{x+1}+1)}=\frac{1}{\sqrt{x+1}+1},\qquad x\ne0.
 $$
-//this part goes out of the page
+// this part goes out of the page, please fix
 
 Now evaluate the simplified limit:
 
@@ -257,7 +262,7 @@ $$
 -\lvert x\rvert \le x\sin\frac{1}{x} \le \lvert x\rvert.
 $$
 
-Since both outer bounds tend to 0 as $$x\to0$$, the Squeeze Theorem gives
+Since both outer bounds tend to $$0$$ as $$x\to0$$, the Squeeze Theorem gives
 
 $$
 \lim_{x\to0}x\sin\frac{1}{x}=0.
@@ -269,7 +274,7 @@ $$
 
 ## Important trig limits
 
-Two core limits that appear often are:
+Two key trig limits that appear often are:
 
 $$
 \lim_{x \to 0} \frac{\sin x}{x} = 1,
@@ -418,13 +423,15 @@ $$
 \frac{3x^2+5x}{2x^2-7}=\frac{3+5/x}{2-7/x^2}.
 $$
 
-As $$x\to\infty$$, the terms $$5/x$$ and $$7/x^2$$ vanish, leaving the limit
+As $$x\to\infty$$, the terms $$5/x$$ and $$7/x^2$$ vanish (go to $$0$$), leaving the limit
 
 $$
 \frac{3}{2}.
 $$
 
 Therefore the horizontal asymptote is $$y=\frac32$$.
+
+You can learn more about end behavior for rational functions in AP Precalculus.
 
 </div>
 
@@ -503,7 +510,9 @@ is a limit at infinity.
 
 ## Continuity
 
-A function is continuous at $$x = a$$ when:
+<div class="theorem-box">
+
+A function is said to be *continuous* at $$x = a$$ when:
 
 1. $$f(a)$$ exists,
 2. $$\lim_{x \to a} f(x)$$ exists,
@@ -511,20 +520,14 @@ A function is continuous at $$x = a$$ when:
 
 Continuity means the nearby behavior of the function matches the value at the point.
 
-Types of discontinuities:
+</div>
 
-- Removable: a hole, often fixable by redefining one point,
-- Jump: left and right limits differ,
-- Infinite: a vertical asymptote,
-- Oscillatory: no single nearby trend.
+A break in continuity is called a discontinuity, and can come in many types. For example,
 
-Functions that are continuous on their natural domains include:
-
-- Polynomials,
-- Rational functions where the denominator is nonzero,
-- Exponential and logarithmic functions on their domains,
-- Trigonometric functions on their domains,
-- Compositions of continuous functions where defined.
+- Holes: One missing point in the graph
+- Jumps: Left and right limits differ
+- Infinite discontinuity: a vertical asymptote
+- Oscillatory discontinuity: no single nearby trend
 
 For piecewise functions, continuity at the switching point is a limit-matching problem. The left-hand limit, right-hand limit, and actual function value must all agree.
 
@@ -542,7 +545,7 @@ $$
 
 is continuous at $$x=2$$.
 
-The right-hand value is controlled by the second branch:
+The right-hand value is controlled by the second branch (since it is fixed):
 
 $$
 f(2)=3(2)=6.
@@ -578,6 +581,15 @@ $$
 
 </div>
 
+<div class="theorem-box">
+
+**Proof (IVT).** Continuity means the graph cannot jump over a height. If the function starts below $$N$$ and ends above $$N$$, then moving from $$a$$ to $$b$$ forces the output to pass through every intermediate height. A discontinuity could skip the height, but a continuous function cannot.
+
+// make sure the proof uses formal math notation instead of hand-wavy stuff.
+
+</div>
+
+
 This theorem guarantees at least one solution, but it does not tell you how many.
 
 ```tikz
@@ -604,13 +616,7 @@ This theorem guarantees at least one solution, but it does not tell you how many
 \end{axis}
 \end{tikzpicture}
 ```
-// fix the graph
-
-<div class="theorem-box">
-
-**Proof (IVT).** Continuity means the graph cannot jump over a height. If the function starts below $$N$$ and ends above $$N$$, then moving from $$a$$ to $$b$$ forces the output to pass through every intermediate height. A discontinuity could skip the height, but a continuous function cannot.
-
-</div>
+// fix the graph, the labels are not correctly centered
 
 ## Average rate of change (Introduction to derivatives)
 
@@ -620,7 +626,7 @@ $$
 \frac{f(b) - f(a)}{b-a}
 $$
 
-This is also the slope of the secant line. The derivative will be the limit of this expression as the interval shrinks toward a single point. This will be explored more in Unit 2.
+This is also the slope of the secant line (the line connecting the two endpoints). The derivative will be the limit of this expression as the interval shrinks toward a single point. This will be explored more in Unit 2.
 
 <div class="theorem-box">
 
@@ -647,3 +653,5 @@ $$
 Each secant slope gets closer to $$2$$ as the interval shrinks. This pattern shows how the average rate of change approaches the derivative at $$x=1$$, and for $$f(x)=x^2$$ the derivative is $$f'(x)=2x$$, giving $$f'(1)=2$$. You will learn more about derivatives in the next unit.
 
 </div>
+
+// add a tips for the exam section like the other notes pages

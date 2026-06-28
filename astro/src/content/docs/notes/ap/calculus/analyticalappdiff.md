@@ -374,44 +374,6 @@ Because $$S(x)\to\infty$$ as $$x\to0^+$$ and as $$x\to\infty$$, the critical poi
 
 ---
 
-## L'Hopital's Rule
-
-<div class="theorem-box">
-
-**Theorem (L'Hopital's Rule).** If a limit produces $$0/0$$ or $$\infty/\infty$$ and the hypotheses are satisfied, then
-
-$$
-\lim_{x \to a} \frac{f(x)}{g(x)}
-=
-\lim_{x \to a} \frac{f'(x)}{g'(x)}
-$$
-
-provided the new limit exists in a usable way.
-
-</div>
-
-<div class="theorem-box">
-
-**Example.** Evaluate $$\displaystyle\lim_{x\to0}\frac{e^x-1}{x}.$$
-
-Direct substitution gives $$\frac{e^0-1}{0}=\frac{0}{0}$$, an indeterminate form, so L'Hopital's Rule applies. Differentiate the numerator and denominator separately:
-
-$$
-\lim_{x\to0}\frac{e^x-1}{x}=\lim_{x\to0}\frac{e^x}{1}.
-$$
-
-Now substitution works:
-
-$$
-\lim_{x\to0}\frac{e^x}{1}=e^0=1.
-$$
-
-So the limit equals $$1$$.
-
-</div>
-
----
-
 ## Linearization and Newton's method
 
 Linearization:

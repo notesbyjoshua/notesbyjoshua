@@ -4,8 +4,6 @@ sidebar:
   order: 3
 ---
 
----
-
 ## Chain rule
 
 <div class="theorem-box">
@@ -19,6 +17,50 @@ $$
 </div>
 
 The outside derivative is evaluated at the inside function, and then multiplied by the derivative of the inside function.
+
+### Chain rule intuition
+
+The chain rule is about layered change. If $$x$$ changes, then the inside function $$g(x)$$ changes first. That change then causes the outside function $$f(g(x))$$ to change.
+
+Symbolically,
+
+$$
+\frac{dy}{dx}
+=
+\frac{dy}{du}\cdot\frac{du}{dx}.
+$$
+
+This notation is not just a cancellation trick. It reminds you that a composite function changes through an intermediate variable.
+
+AP problems often hide the chain rule inside:
+
+- powers of expressions,
+- trig functions with nontrivial angles,
+- exponentials with nontrivial exponents,
+- logarithms of expressions,
+- inverse trig functions with expressions inside.
+
+Whenever you differentiate an outside function, pause and ask what the inside function is.
+
+<div class="theorem-box">
+
+**Proof (Chain rule).** Let $$u=g(x)$$ and $$y=f(u)$$. A small change in $$x$$ creates a small change in $$u$$, and that creates a small change in $$y$$. The ratio can be split as
+
+$$
+\frac{\Delta y}{\Delta x}
+=
+\frac{\Delta y}{\Delta u}\cdot\frac{\Delta u}{\Delta x}.
+$$
+
+As $$\Delta x\to0$$, the intermediate change $$\Delta u\to0$$ for a differentiable inside function. The two ratios approach $$f'(u)$$ and $$g'(x)$$, so
+
+$$
+\frac{dy}{dx}=f'(g(x))g'(x).
+$$
+
+</div>
+
+---
 
 <div class="theorem-box">
 
@@ -42,9 +84,33 @@ $$
 
 ## Implicit differentiation
 
-When a curve is defined by an equation relating $$x$$ and $$y$$, differentiate both sides with respect to $$x$$ and remember that $$y$$ depends on $$x$$.
+When a curve is defined by an equation relating $$x$$ and $$y$$, differentiate both sides with respect to $$x$$ and remember that $$y$$ depends on $$x$$. Every time a derivative hits a term involving $$y$$, multiply by $$dy/dx$$ because $$y$$ is changing as $$x$$ changes.
 
-Every time a derivative hits a term involving $$y$$, multiply by $$dy/dx$$ because $$y$$ is changing as $$x$$ changes.
+Implicit equations describe a relationship rather than a solved function. The variable $$y$$ still depends on $$x$$, even if the equation does not say so explicitly. Implicit differentiation is especially useful when solving for $$y$$ would be messy or impossible. It also lets you find slopes on curves that are not functions globally, such as circles, ellipses, and many algebraic curves.
+
+<div class="theorem-box">
+
+**Example.** Find the slope of the tangent line of the circle $$x^2+y^2=25$$ at the point $$(3,4)$$.
+
+Differentiate both sides with respect to $$x$$, remembering that $$y$$ depends on $$x$$:
+
+$$
+2x+2y\frac{dy}{dx}=0.
+$$
+
+Solve for $$\frac{dy}{dx}$$:
+
+$$
+\frac{dy}{dx}=-\frac{x}{y}.
+$$
+
+Now substitute the point $$(3,4)$$:
+
+$$
+\frac{dy}{dx}\Big|_{(3,4)}=-\frac{3}{4}.
+$$
+
+So the tangent line at $$(3,4)$$ has slope $$-\frac34$$.
 
 ```tikz
 \usepackage{pgfplots}
@@ -68,31 +134,13 @@ Every time a derivative hits a term involving $$y$$, multiply by $$dy/dx$$ becau
 \end{tikzpicture}
 ```
 
-<div class="theorem-box">
-
-**Example.** Find $$\frac{dy}{dx}$$ for the circle $$x^2+y^2=25$$, then find the slope of the tangent line at the point $$(3,4)$$.
-
-Differentiate both sides with respect to $$x$$, remembering that $$y$$ depends on $$x$$:
-
-$$
-2x+2y\frac{dy}{dx}=0.
-$$
-
-Solve for $$\frac{dy}{dx}$$:
-
-$$
-\frac{dy}{dx}=-\frac{x}{y}.
-$$
-
-Now substitute the point $$(3,4)$$:
-
-$$
-\frac{dy}{dx}\Big|_{(3,4)}=-\frac{3}{4}.
-$$
-
-So the tangent line at $$(3,4)$$ has slope $$-\frac34$$.
-
 </div>
+
+:::tip
+If you are doing implicit differentiation, differentiate all variables, but when you differentiate a term that includes $$y$$, you need to multiply a $$\frac{dy}{dx}$$ (or $$y'$$) to that term.
+:::
+
+// make this tip more clear/concrete
 
 ---
 
@@ -108,13 +156,19 @@ $$
 
 where $$b = f(a)$$.
 
-</div>
-
 Equivalent formula:
 
 $$
 (f^{-1})'(x) = \frac{1}{f'(f^{-1}(x))}.
 $$
+
+</div>
+
+<div class="theorem-box">
+
+**Proof (Inverse Function Derivative).** // add proof to the formula
+
+</div>
 
 <div class="theorem-box">
 
@@ -156,54 +210,15 @@ $$
 \frac{d}{dx}(\arctan x) = \frac{1}{1+x^2}
 $$
 
-Chain-rule forms:
+// add the other 3 arc- functions as well
 
-$$
-\frac{d}{dx}\arcsin(u) = \frac{u'}{\sqrt{1-u^2}}, \qquad
-\frac{d}{dx}\arctan(u) = \frac{u'}{1+u^2}.
-$$
-
-The remaining common chain-rule forms are:
-
-$$
-\frac{d}{dx}\arccos(u)=-\frac{u'}{\sqrt{1-u^2}},
-$$
-
-$$
-\frac{d}{dx}\operatorname{arcsec}(u)=\frac{u'}{\lvert u\rvert\sqrt{u^2-1}},
-$$
-
-$$
-\frac{d}{dx}\operatorname{arccot}(u)=-\frac{u'}{1+u^2}.
-$$
-
-For AP work, $$\arcsin$$, $$\arccos$$, and $$\arctan$$ are the most common, but the same inverse-function idea explains all of them.
+For AP work, $$\arcsin$$, $$\arccos$$, and $$\arctan$$ are the most common inverse trig fuctions you will see. All six formulas can be proven easily using the inverse formula, so we will only use one proof as an example.
 
 <div class="theorem-box">
 
-**Example.** Differentiate $$y=\arctan(x^2)$$.
+**Proof (Derivative of $$\arcsin x$$).** 
 
-Use the chain-rule form with inside function $$u=x^2$$, so $$u'=2x$$:
-
-$$
-\frac{dy}{dx}=\frac{u'}{1+u^2}=\frac{2x}{1+(x^2)^2}.
-$$
-
-Simplifying the square gives
-
-$$
-\frac{dy}{dx}=\frac{2x}{1+x^4}.
-$$
-
-</div>
-
-<div class="theorem-box">
-
-**Proof (Derivative of $$\arcsin x$$).** Let
-
-$$
-y=\arcsin x.
-$$
+**Method 1 (Implicit Differentiation).** Let $$y=\arcsin x.$$
 
 This means
 
@@ -236,237 +251,25 @@ $$
 \frac{d}{dx}\arcsin x=\frac{1}{\sqrt{1-x^2}}.
 $$
 
-</div>
-
----
-
-## Exponential and logarithmic differentiation
-
-Useful rules:
-
-$$
-\frac{d}{dx} e^{u(x)} = e^{u(x)}u'(x)
-$$
-
-$$
-\frac{d}{dx} \ln(\lvert u(x) \rvert) = \frac{u'(x)}{u(x)}
-$$
-
-Logarithmic differentiation is especially helpful when powers and products are mixed or when both base and exponent contain variables.
-
-When the variable appears in both the base and the exponent, take the logarithm of both sides first, use logarithm rules to simplify, and then differentiate implicitly.
-
-<div class="theorem-box">
-
-**Example.** Differentiate $$y=\ln(x^2+1)$$.
-
-Use the rule $$\frac{d}{dx}\ln(u)=\frac{u'}{u}$$ with inside function $$u=x^2+1$$, so $$u'=2x$$:
-
-$$
-\frac{dy}{dx}=\frac{u'}{u}=\frac{2x}{x^2+1}.
-$$
-
-Note that $$x^2+1>0$$ for all real $$x$$, so the absolute value is unnecessary here.
+// add proof using the inverse formula as method 2.
 
 </div>
 
----
-
-## Related rates
-
-:::strategy{title="Related rates"}
-1. Draw and label a diagram.
-2. Write an equation relating the variables.
-3. Differentiate implicitly with respect to time.
-4. Substitute the requested instant.
-5. Keep units consistent.
-:::
-
-```tikz
-\usepackage{tikz}
-\usetikzlibrary{arrows.meta}
-\begin{tikzpicture}[>=Stealth, scale=0.9]
-\draw[gray!70, thick] (0,0) -- (5.3,0) node[right] {floor};
-\draw[gray!70, thick] (0,0) -- (0,4.6) node[above] {wall};
-\coordinate (A) at (4.2,0);
-\coordinate (B) at (0,3.2);
-\draw[blue, very thick] (A) -- (B) node[midway, above right] {ladder};
-\draw[<->, orange!85!black] (0,-0.35) -- (4.2,-0.35) node[midway, below] {$x(t)$};
-\draw[<->, red!75!black] (-0.35,0) -- (-0.35,3.2) node[midway, left] {$y(t)$};
-\draw[->, orange!85!black, thick] (A) -- ++(0.65,0) node[right] {$\frac{dx}{dt}>0$};
-\draw[->, red!75!black, thick] (B) -- ++(0,-0.65) node[left] {$\frac{dy}{dt}<0$};
-\node[align=center] at (3.4,3.7) {$x^2+y^2=L^2$\\differentiate in $t$};
-\end{tikzpicture}
-```
-
 <div class="theorem-box">
 
-**Example.** The radius of a circle is increasing at a rate of $$2\ \text{cm/s}$$. How fast is the area increasing at the instant the radius is $$5\ \text{cm}$$?
+**Example.** Differentiate $$y=\arctan(x^2)$$.
 
-The area of a circle relates to its radius by
-
-$$
-A=\pi r^2.
-$$
-
-Both $$A$$ and $$r$$ change with time, so differentiate implicitly with respect to $$t$$:
+Use the chain-rule form with inside function $$u=x^2$$, so $$u'=2x$$:
 
 $$
-\frac{dA}{dt}=2\pi r\frac{dr}{dt}.
+\frac{dy}{dx}=\frac{u'}{1+u^2}=\frac{2x}{1+(x^2)^2}.
 $$
 
-Substitute the given instant, $$r=5\ \text{cm}$$ and $$\frac{dr}{dt}=2\ \text{cm/s}$$:
+Simplifying the square gives
 
 $$
-\frac{dA}{dt}=2\pi(5)(2)=20\pi\ \text{cm}^2/\text{s}.
+\frac{dy}{dx}=\frac{2x}{1+x^4}.
 $$
-
-So the area is increasing at $$20\pi\approx62.8\ \text{cm}^2/\text{s}$$.
-
-</div>
-
----
-
-## Advanced chain-rule patterns
-
-You should be comfortable stacking rules:
-
-- product + chain,
-- quotient + chain,
-- trig + chain,
-- inverse trig + chain,
-- exponential/log + chain.
-
-When a derivative contains several layers, work from the outside inward, but keep the inside unchanged until its turn comes. For example,
-
-$$
-y=\sin^4(3x^2-1)
-$$
-
-means
-
-$$
-y=[\sin(3x^2-1)]^4.
-$$
-
-The outside is a fourth power, then sine, then the quadratic input.
-
-<div class="theorem-box">
-
-**Example.** Differentiate
-
-$$
-y=\sin^4(3x^2-1).
-$$
-
-First apply the power rule to the outside:
-
-$$
-y'=4[\sin(3x^2-1)]^3\cdot \frac{d}{dx}[\sin(3x^2-1)].
-$$
-
-Now differentiate the sine layer:
-
-$$
-\frac{d}{dx}[\sin(3x^2-1)]
-=\cos(3x^2-1)\cdot \frac{d}{dx}(3x^2-1).
-$$
-
-Finally,
-
-$$
-\frac{d}{dx}(3x^2-1)=6x.
-$$
-
-Putting the pieces together,
-
-$$
-y'=24x\sin^3(3x^2-1)\cos(3x^2-1).
-$$
-
-</div>
-
----
-
-## Parametric preview
-
-Later, if
-
-$$
-x = f(t), \qquad y = g(t),
-$$
-
-then
-
-$$
-\frac{dy}{dx} = \frac{dy/dt}{dx/dt}
-$$
-
-when $$dx/dt \ne 0$$. This is the parametric analogue of the chain rule.
-
----
-
-## Chain rule intuition
-
-The chain rule is about layered change. If $$x$$ changes, then the inside function $$g(x)$$ changes first. That change then causes the outside function $$f(g(x))$$ to change.
-
-Symbolically,
-
-$$
-\frac{dy}{dx}
-=
-\frac{dy}{du}\cdot\frac{du}{dx}.
-$$
-
-This notation is not just a cancellation trick. It reminds you that a composite function changes through an intermediate variable.
-
-AP problems often hide the chain rule inside:
-
-- powers of expressions,
-- trig functions with nontrivial angles,
-- exponentials with nontrivial exponents,
-- logarithms of expressions,
-- inverse trig functions with expressions inside.
-
-Whenever you differentiate an outside function, pause and ask what the inside function is.
-
-<div class="theorem-box">
-
-**Why the chain rule is true.** Let $$u=g(x)$$ and $$y=f(u)$$. A small change in $$x$$ creates a small change in $$u$$, and that creates a small change in $$y$$. The ratio can be split as
-
-$$
-\frac{\Delta y}{\Delta x}
-=
-\frac{\Delta y}{\Delta u}\cdot\frac{\Delta u}{\Delta x}.
-$$
-
-As $$\Delta x\to0$$, the intermediate change $$\Delta u\to0$$ for a differentiable inside function. The two ratios approach $$f'(u)$$ and $$g'(x)$$, so
-
-$$
-\frac{dy}{dx}=f'(g(x))g'(x).
-$$
-
-</div>
-
----
-
-## Implicit differentiation intuition
-
-Implicit equations describe a relationship rather than a solved function. The variable $$y$$ still depends on $$x$$, even if the equation does not say so explicitly.
-
-That is why
-
-$$
-\frac{d}{dx}(y^2)=2y\frac{dy}{dx}.
-$$
-
-The derivative of the outside power is $$2y$$, and the derivative of the inside variable $$y$$ is $$dy/dx$$.
-
-Implicit differentiation is especially useful when solving for $$y$$ would be messy or impossible. It also lets you find slopes on curves that are not functions globally, such as circles, ellipses, and many algebraic curves.
-
-<div class="theorem-box">
-
-**AP language.** In an implicit derivative, the final answer may contain both $$x$$ and $$y$$. To find a numerical slope at a point, substitute both coordinates after differentiating.
 
 </div>
 
@@ -509,6 +312,39 @@ $$
 ---
 
 ## Logarithmic differentiation
+
+Logarithmic differentiation is useful when a function has products, quotients, powers, or variables in both the base and exponent. The idea is to take the natural logarithm of both sides, use log laws to simplify, and then differentiate implicitly.
+
+For example, if
+
+$$
+y=(x^2+1)^3\sqrt{x-4},
+$$
+
+then taking logs gives
+
+$$
+\ln y=3\ln(x^2+1)+\frac12\ln(x-4).
+$$
+
+Differentiate both sides:
+
+$$
+\frac{1}{y}\frac{dy}{dx}
+=3\cdot\frac{2x}{x^2+1}+\frac12\cdot\frac{1}{x-4}.
+$$
+
+Then multiply by $$y$$:
+
+$$
+\frac{dy}{dx}
+=(x^2+1)^3\sqrt{x-4}
+\left(\frac{6x}{x^2+1}+\frac{1}{2(x-4)}\right).
+$$
+
+:::warning
+Logarithmic differentiation does not remove the chain rule. It reorganizes the expression so the chain rule is easier to apply.
+:::
 
 Logarithmic differentiation is a strategy, not a new derivative rule. It works because logarithms turn complicated multiplication, division, and powers into simpler operations:
 
@@ -557,168 +393,6 @@ $$
 $$
 
 </div>
-
----
-
-## Related rates as implicit differentiation
-
-Related rates are implicit differentiation with time as the independent variable. The equation relates quantities, and each quantity may be changing with respect to time.
-
-If a length $$x$$ depends on time, then differentiating $$x^2$$ with respect to $$t$$ gives
-
-$$
-\frac{d}{dt}(x^2)=2x\frac{dx}{dt}.
-$$
-
-The variable value and the rate value are different pieces of information. Substitute them after differentiating so the equation still represents rates.
-
----
-
-## Calculator and exact form expectations
-
-AP problems often accept exact forms unless a decimal approximation is requested. For inverse trig derivatives, keep radicals and rational expressions organized:
-
-$$
-\frac{d}{dx}\arcsin(u)
-=
-\frac{u'}{\sqrt{1-u^2}}.
-$$
-
-The domain restriction is part of the meaning. For real-valued inverse sine and inverse cosine derivatives, the expression inside the square root must be positive for the derivative formula to describe an ordinary finite slope.
-
----
-
-## Higher-order derivatives in applications
-
-Higher derivatives describe repeated rates of change. In motion, if $$s(t)$$ is position, then
-
-$$
-v(t)=s'(t),
-\qquad
-a(t)=s''(t),
-\qquad
-j(t)=s'''(t).
-$$
-
-The third derivative $$j(t)$$ is called jerk in physics because it measures how acceleration changes. AP Calculus usually focuses on position, velocity, and acceleration, but the same derivative idea continues.
-
-For graph analysis, higher derivatives also describe changing shape:
-
-- $$f'(x)$$ tells whether $$f$$ is increasing or decreasing,
-- $$f''(x)$$ tells concavity,
-- $$f'''(x)$$ tells how concavity itself is changing.
-
-<div class="theorem-box">
-
-**Example.** A particle has position
-
-$$
-s(t)=t^4-4t^3+6t^2.
-$$
-
-Find velocity, acceleration, and jerk. Then determine whether the acceleration is increasing at $$t=2$$.
-
-Differentiate repeatedly:
-
-$$
-v(t)=s'(t)=4t^3-12t^2+12t,
-$$
-
-$$
-a(t)=v'(t)=12t^2-24t+12,
-$$
-
-and
-
-$$
-j(t)=a'(t)=24t-24.
-$$
-
-At $$t=2$$,
-
-$$
-j(2)=24(2)-24=24.
-$$
-
-Since $$j(2)>0$$, acceleration is increasing at $$t=2$$.
-
-</div>
-
----
-
-## Common mistakes
-
-:::mistakes
-- Forgetting to multiply by the derivative of the inside.
-- Treating $$y$$ as a constant during implicit differentiation.
-- Dropping the factor $$dy/dx$$.
-- Using inverse notation incorrectly: $$\sin^{-1}x$$ means $$\arcsin x$$, not $$1/\sin x$$.
-:::
-
----
-
-## Logarithmic differentiation in detail
-
-Logarithmic differentiation is useful when a function has products, quotients, powers, or variables in both the base and exponent. The idea is to take the natural logarithm of both sides, use log laws to simplify, and then differentiate implicitly.
-
-For example, if
-
-$$
-y=(x^2+1)^3\sqrt{x-4},
-$$
-
-then taking logs gives
-
-$$
-\ln y=3\ln(x^2+1)+\frac12\ln(x-4).
-$$
-
-Differentiate both sides:
-
-$$
-\frac{1}{y}\frac{dy}{dx}
-=3\cdot\frac{2x}{x^2+1}+\frac12\cdot\frac{1}{x-4}.
-$$
-
-Then multiply by $$y$$:
-
-$$
-\frac{dy}{dx}
-=(x^2+1)^3\sqrt{x-4}
-\left(\frac{6x}{x^2+1}+\frac{1}{2(x-4)}\right).
-$$
-
-:::warning
-Logarithmic differentiation does not remove the chain rule. It reorganizes the expression so the chain rule is easier to apply.
-:::
-
-### Variable base and variable exponent
-
-Expressions like
-
-$$
-y=x^x
-$$
-
-cannot be handled by the ordinary power rule or ordinary exponential rule alone. Write
-
-$$
-\ln y=x\ln x.
-$$
-
-Then
-
-$$
-\frac{y'}{y}=\ln x+1,
-$$
-
-so
-
-$$
-y'=x^x(\ln x+1).
-$$
-
-This pattern is common whenever both the base and exponent contain the variable.
 
 ---
 

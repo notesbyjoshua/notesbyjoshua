@@ -6,10 +6,6 @@ sidebar:
 
 ---
 
-This unit translates derivative ideas into real-world language. The math is usually not harder than earlier differentiation, but the interpretation must be precise.
-
----
-
 ## Rates of change in context
 
 If $$Q(t)$$ is a quantity depending on time, then:
@@ -17,50 +13,115 @@ If $$Q(t)$$ is a quantity depending on time, then:
 - $$Q'(t)$$ is the instantaneous rate of change of $$Q$$,
 - units of $$Q'(t)$$ are units of $$Q$$ per unit of $$t$$.
 
-Always interpret both sign and units.
+Always interpret both sign and units and give sufficient context if necessary.
 
----
-
-## Average vs instantaneous rate
-
-Average rate on $$[a,b]$$:
+Many contextual problems also distinguish between average and instantaneous rates of change. The average rate on $$[a,b]$$ is the slop of the secant line:
 
 $$
 \frac{Q(b)-Q(a)}{b-a}
-$$
+$$,
 
-Instantaneous rate at $$t=a$$:
+while the instantaneous rate at $$t=a$$ is the derivative:
 
 $$
 Q'(a).
 $$
 
----
+If you are trying to figure out a mean or average, use average rate of change, but if you are trying to find your speed or rate of change at a specific moment, use derivatives.
 
-## Position, velocity, acceleration
+### Contextual interpretation the derivative
 
-If position is $$s(t)$$, then
+A derivative value is not just a number. A complete interpretation usually needs:
 
-$$
-v(t) = s'(t), \qquad a(t) = v'(t) = s''(t).
-$$
+- the quantity changing,
+- the input value or time,
+- the direction of change if the sign matters,
+- correct units.
 
-Interpret carefully:
-
-- $$v(t) > 0$$ means motion in the positive direction,
-- $$v(t) < 0$$ means motion in the negative direction,
-- speed is $$\lvert v(t) \rvert$$.
-
-Speed increasing:
-
-- $$v(t) > 0$$ and $$a(t) > 0$$, or
-- $$v(t) < 0$$ and $$a(t) < 0$$.
+If $$H(t)$$ is height in meters and $$H'(3)=-2$$, then at $$t=3$$ the height is decreasing at $$2$$ meters per unit of time. The negative sign means the height is going down; the magnitude $$2$$ describes the speed of that change.
 
 <div class="theorem-box">
 
-**Why same signs mean speed increases.** Speed is $$\lvert v(t)\rvert$$, so it measures how far velocity is from $$0$$. If $$v>0$$ and $$a=v'>0$$, then velocity is positive and getting larger, so $$\lvert v\rvert$$ increases. If $$v<0$$ and $$a<0$$, then velocity is negative and becoming more negative, so it is moving farther from $$0$$, and $$\lvert v\rvert$$ also increases.
+**Example.** Let $$P(t)$$ be the number of fish in a lake, where $$t$$ is measured in years. Write a full sentence interpreting the statement $$P'(5)=40$$.
 
-When velocity and acceleration have opposite signs, velocity moves closer to $$0$$, so speed decreases.
+The quantity changing is the fish population, measured in fish; the input is time in years; the sign is positive, so the population is growing; and the units of the derivative are fish per year. A complete interpretation is:
+
+At time $$t=5$$ years, the fish population is increasing at a rate of $$40$$ fish per year.
+
+Notice that this is a rate, not a total: it does not say there are $$40$$ fish, but rather that the population is growing by about $$40$$ fish for each additional year near $$t=5$$.
+
+</div>
+
+---
+
+## Straight line motion
+
+A lot of the contextual problems for AP Calculus regard physics and straight line motion. We denote position as $$s(t)$$ or $$x(t)$$, velocity as $$v(t)$$, and acceleration as $$a(t)$$.
+
+For motion on a line, position, velocity, acceleration, and speed are related but not interchangeable.
+
+Velocity:
+
+$$
+v(t)=s'(t)
+$$
+
+includes direction. Speed:
+
+$$
+\lvert v(t)\rvert
+$$
+
+does not include direction.
+
+Acceleration:
+
+$$
+a(t)=v'(t)
+$$
+
+tells how velocity is changing. Speed increases when velocity and acceleration point in the same direction, because the velocity value is moving farther from zero. Speed decreases when velocity and acceleration have opposite signs.
+
+For straight-line motion, AP problems often ask for all of the following from one model:
+
+- position at a time,
+- velocity at a time,
+- acceleration at a time,
+- when the particle is at rest,
+- when the particle changes direction,
+- total distance traveled on an interval.
+
+Changing direction requires velocity to change sign, not merely equal zero. A particle can stop for an instant and continue in the same direction.
+
+<div class="theorem-box">
+
+**Example.** A particle moves along a line with velocity $$v(t)=t^2-5t+6$$
+
+for $$0\le t\le4$$. Determine when it is moving right, when it is moving left, and whether it changes direction.
+
+Factor the velocity:
+
+$$
+v(t)=t^2-5t+6=(t-2)(t-3).
+$$
+
+The velocity is zero at $$t=2$$ and $$t=3$$. Test intervals:
+
+$$
+v(1)=(1-2)(1-3)=2>0,
+$$
+
+$$
+v(2.5)=(0.5)(-0.5)<0,
+$$
+
+and
+
+$$
+v(3.5)=(1.5)(0.5)>0.
+$$
+
+So the particle moves right on $$(0,2)$$ and $$(3,4)$$, and left on $$(2,3)$$. Since the sign of velocity changes at both $$t=2$$ and $$t=3$$, the particle changes direction at both times.
 
 </div>
 
@@ -85,42 +146,6 @@ a(4)=6(4)-12=12\ \text{m/s}^2.
 $$
 
 At $$t=4$$ the velocity is $$+9$$ m/s and the acceleration is $$+12$$ m/s$$^2$$. Because velocity and acceleration have the same sign, the velocity is moving farther from zero, so the particle is speeding up.
-
-</div>
-
----
-
-## Rate in, rate out, and accumulation
-
-If a quantity changes because something enters and leaves, then:
-
-$$
-\text{net change rate} = \text{rate in} - \text{rate out}.
-$$
-
-If $$R(t)$$ is the rate entering a tank and $$L(t)$$ is the rate leaving, then:
-
-$$
-V'(t) = R(t) - L(t).
-$$
-
-<div class="theorem-box">
-
-**Example.** Water enters a tank at a constant rate $$R(t)=8$$ gallons per minute, and leaves at a rate $$L(t)=t$$ gallons per minute, where $$t$$ is in minutes. Find $$V'(10)$$ and state whether the volume is rising or falling at that instant.
-
-The net rate of change of volume is the rate in minus the rate out:
-
-$$
-V'(t)=R(t)-L(t)=8-t.
-$$
-
-Evaluate at $$t=10$$:
-
-$$
-V'(10)=8-10=-2\ \text{gallons per minute}.
-$$
-
-At $$t=10$$ minutes the volume is changing at $$-2$$ gallons per minute. The negative sign means more water is leaving than entering, so the volume is falling at that instant.
 
 </div>
 
@@ -163,10 +188,23 @@ Given a graph of a derivative:
 \end{axis}
 \end{tikzpicture}
 ```
+// fix image: the negative/large positive rate points/lines are not on the graph, the small positive rate line goes through the function a bit (the function is a bit too thick)
+
+:::tip
+Problems will often sue and expect certain words:
+
+- increasing means derivative positive,
+- decreasing means derivative negative,
+- at what rate means derivative value,
+- how fast often means magnitude, but read carefully,
+- changing more rapidly compares derivative magnitudes or second derivatives depending on context.
+:::
 
 ---
 
-## Related rates in context
+## Related rates
+
+// add more explanation/lecture and example for this section
 
 Related rates problems are mostly about translation. The key source equations usually come from:
 
@@ -176,6 +214,38 @@ Related rates problems are mostly about translation. The key source equations us
 - similar triangles.
 
 If the problem asks how fast a quantity is changing, the final answer should usually be a value of a derivative with units.
+
+:::strategy{title="Related rates"}
+1. Draw and label a diagram.
+2. Write an equation relating the variables.
+3. Differentiate implicitly with respect to time.
+4. Substitute the requested instant.
+5. Keep units consistent.
+:::
+
+<div class="theorem-box">
+
+**Example.** // write the example based on the image
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\begin{tikzpicture}[>=Stealth, scale=0.9]
+\draw[gray!70, thick] (0,0) -- (5.3,0) node[right] {floor};
+\draw[gray!70, thick] (0,0) -- (0,4.6) node[above] {wall};
+\coordinate (A) at (4.2,0);
+\coordinate (B) at (0,3.2);
+\draw[blue, very thick] (A) -- (B) node[midway, above right] {ladder};
+\draw[<->, orange!85!black] (0,-0.35) -- (4.2,-0.35) node[midway, below] {$x(t)$};
+\draw[<->, red!75!black] (-0.35,0) -- (-0.35,3.2) node[midway, left] {$y(t)$};
+\draw[->, orange!85!black, thick] (A) -- ++(0.65,0) node[right] {$\frac{dx}{dt}>0$};
+\draw[->, red!75!black, thick] (B) -- ++(0,-0.65) node[left] {$\frac{dy}{dt}<0$};
+\node[align=center] at (3.4,3.7) {$x^2+y^2=L^2$\\differentiate in $t$};
+\end{tikzpicture}
+```
+// remove the black labels, and the derivative labels overlap a bit with the arrow/axis.
+
+</div>
 
 <div class="theorem-box">
 
@@ -209,6 +279,52 @@ When the radius is $$5$$ cm, it is increasing at about $$0.318$$ centimeters per
 
 </div>
 
+### Rate in, rate out, and accumulation
+
+If a quantity changes because something enters and leaves, then:
+
+$$
+\text{net change rate} = \text{rate in} - \text{rate out}.
+$$
+
+If $$R(t)$$ is the rate entering a tank and $$L(t)$$ is the rate leaving, then:
+
+$$
+V'(t) = R(t) - L(t).
+$$
+
+<div class="theorem-box">
+
+**Example.** Water enters a tank at a constant rate $$R(t)=8$$ gallons per minute, and leaves at a rate $$L(t)=t$$ gallons per minute, where $$t$$ is in minutes. Find $$V'(10)$$ and state whether the volume is rising or falling at that instant.
+
+The net rate of change of volume is the rate in minus the rate out:
+
+$$
+V'(t)=R(t)-L(t)=8-t.
+$$
+
+Evaluate at $$t=10$$:
+
+$$
+V'(10)=8-10=-2\ \text{gallons per minute}.
+$$
+
+At $$t=10$$ minutes the volume is changing at $$-2$$ gallons per minute. The negative sign means more water is leaving than entering, so the volume is falling at that instant.
+
+</div>
+
+### Related rates as implicit differentiation
+
+Related rates are implicit differentiation with time as the independent variable. The equation relates quantities, and each quantity may be changing with respect to time.
+
+If a length $$x$$ depends on time, then differentiating $$x^2$$ with respect to $$t$$ gives
+
+$$
+\frac{d}{dt}(x^2)=2x\frac{dx}{dt}.
+$$
+
+The variable value and the rate value are different pieces of information. Substitute them after differentiating so the equation still represents rates.
+
 ---
 
 ## Linearization and differentials
@@ -231,7 +347,7 @@ If a measured input has small error $$dx$$, then the output error is approximate
 
 <div class="theorem-box">
 
-**Why linearization works.** Differentiability at $$a$$ means
+**Proof (Linearization).** Differentiability at $$a$$ means
 
 $$
 f'(a)=\lim_{x\to a}\frac{f(x)-f(a)}{x-a}.
@@ -279,7 +395,9 @@ So $$\sqrt{27}\approx 5.2$$. The true value is about $$5.196$$, so the linear es
 
 ---
 
-## Marginal analysis
+## Applications of derivatives to business
+
+// please reformat/add stuff to this section according to this lesson: https://tutorial.math.lamar.edu/Classes/CalcI/BusinessApps.aspx 
 
 In economics-flavored problems:
 
@@ -314,250 +432,6 @@ $$
 The marginal cost at $$100$$ items is $$7$$ dollars per item. This means that when production is at $$100$$ items, producing approximately one additional item costs about $$7$$ dollars.
 
 </div>
-
----
-
-## Common contextual verbs
-
-- increasing means derivative positive,
-- decreasing means derivative negative,
-- at what rate means derivative value,
-- how fast often means magnitude, but read carefully,
-- changing more rapidly compares derivative magnitudes or second derivatives depending on context.
-
----
-
-## Reading derivative statements in words
-
-A derivative value is not just a number. A complete interpretation usually needs:
-
-- the quantity changing,
-- the input value or time,
-- the direction of change if the sign matters,
-- correct units.
-
-If $$H(t)$$ is height in meters and $$H'(3)=-2$$, then at $$t=3$$ the height is decreasing at $$2$$ meters per unit of time. The negative sign means the height is going down; the magnitude $$2$$ describes the speed of that change.
-
-<div class="theorem-box">
-
-**Example.** Let $$P(t)$$ be the number of fish in a lake, where $$t$$ is measured in years. Write a full sentence interpreting the statement $$P'(5)=40$$.
-
-The quantity changing is the fish population, measured in fish; the input is time in years; the sign is positive, so the population is growing; and the units of the derivative are fish per year. A complete interpretation is:
-
-At time $$t=5$$ years, the fish population is increasing at a rate of $$40$$ fish per year.
-
-Notice that this is a rate, not a total: it does not say there are $$40$$ fish, but rather that the population is growing by about $$40$$ fish for each additional year near $$t=5$$.
-
-</div>
-
-<div class="theorem-box">
-
-**AP language.** "At time $$t=a$$, the quantity is changing at a rate of ..." is usually safer than saying only "the derivative is ..."
-
-</div>
-
----
-
-## Derivatives of units
-
-Units help you check whether your answer makes sense.
-
-If a function measures gallons and the input is minutes, the derivative measures gallons per minute. If that derivative is integrated over minutes, the result returns to gallons.
-
-This creates a useful loop:
-
-$$
-\text{quantity}
-\xrightarrow{\text{differentiate}}
-\text{rate}
-\xrightarrow{\text{integrate}}
-\text{change in quantity}.
-$$
-
-When a problem involves a rate in and a rate out, the sign of the net rate tells whether the total amount is increasing or decreasing.
-
----
-
-## Motion interpretation
-
-For motion on a line, position, velocity, acceleration, and speed are related but not interchangeable.
-
-Velocity:
-
-$$
-v(t)=s'(t)
-$$
-
-includes direction. Speed:
-
-$$
-\lvert v(t)\rvert
-$$
-
-does not include direction.
-
-Acceleration:
-
-$$
-a(t)=v'(t)
-$$
-
-tells how velocity is changing. Speed increases when velocity and acceleration point in the same direction, because the velocity value is moving farther from zero. Speed decreases when velocity and acceleration have opposite signs.
-
-For straight-line motion, AP problems often ask for all of the following from one model:
-
-- position at a time,
-- velocity at a time,
-- acceleration at a time,
-- when the particle is at rest,
-- when the particle changes direction,
-- total distance traveled on an interval.
-
-Changing direction requires velocity to change sign, not merely equal zero. A particle can stop for an instant and continue in the same direction.
-
-<div class="theorem-box">
-
-**Example.** A particle moves along a line with velocity
-
-$$
-v(t)=t^2-5t+6
-$$
-
-for $$0\le t\le4$$. Determine when it is moving right, when it is moving left, and whether it changes direction.
-
-Factor the velocity:
-
-$$
-v(t)=t^2-5t+6=(t-2)(t-3).
-$$
-
-The velocity is zero at $$t=2$$ and $$t=3$$. Test intervals:
-
-$$
-v(1)=(1-2)(1-3)=2>0,
-$$
-
-$$
-v(2.5)=(0.5)(-0.5)<0,
-$$
-
-and
-
-$$
-v(3.5)=(1.5)(0.5)>0.
-$$
-
-So the particle moves right on $$(0,2)$$ and $$(3,4)$$, and left on $$(2,3)$$. Since the sign of velocity changes at both $$t=2$$ and $$t=3$$, the particle changes direction at both times.
-
-</div>
-
----
-
-## Linearization in context
-
-Linearization is an estimate of output near a known input:
-
-$$
-f(a+\Delta x)\approx f(a)+f'(a)\Delta x.
-$$
-
-In context, this means a small input change produces an approximate output change:
-
-$$
-\Delta f\approx f'(a)\Delta x.
-$$
-
-This is the same idea behind differentials:
-
-$$
-dy=f'(x)\,dx.
-$$
-
-The approximation is local. It is meant for small changes near the input where the derivative was measured.
-
----
-
-## Related quantities and hidden variables
-
-Contextual problems often include more variables than you actually need. The goal is to write one equation connecting the changing quantities, then identify which rate the question asks for.
-
-:::strategy{title="Related quantities"}
-- define every variable before differentiating,
-- record which variables are changing,
-- keep constants as constants,
-- substitute numerical values after differentiating.
-:::
-
-If the independent variable is time, every changing quantity gets a rate such as $$dx/dt$$, $$dV/dt$$, or $$dA/dt$$.
-
----
-
-## Justifying answers from graphs
-
-When using a graph of $$f$$, slope describes $$f'$$. When using a graph of $$f'$$, height describes the rate of change of $$f$$.
-
-That distinction is one of the biggest AP traps:
-
-- graph of position: slope is velocity;
-- graph of velocity: height is velocity and slope is acceleration;
-- graph of acceleration: height is acceleration.
-
-Always identify what the graph represents before interpreting signs, slopes, or areas.
-
----
-
-## Common mistakes
-
-:::mistakes
-- Reporting velocity when the question asks for speed.
-- Giving a derivative without units.
-- Using the wrong variable as the independent variable.
-- Forgetting to evaluate at the specified time or input.
-:::
-
----
-
-## Differential notation and small changes
-
-If $$y=f(x)$$, then the differential
-
-$$
-dy=f'(x)\,dx
-$$
-
-models the approximate change in $$y$$ caused by a small change $$dx$$ in $$x$$. This is the same idea as linearization, written in a compact way:
-
-$$
-\Delta y\approx dy=f'(a)\Delta x.
-$$
-
-The actual change is
-
-$$
-\Delta y=f(a+\Delta x)-f(a),
-$$
-
-while the differential estimate is
-
-$$
-dy=f'(a)\Delta x.
-$$
-
-Differentials are especially useful for error estimates. If a measurement has possible error $$\Delta x$$, then the propagated output error is approximately
-
-$$
-\lvert dy\rvert=\lvert f'(a)\rvert\lvert \Delta x\rvert.
-$$
-
-### Rate in / rate out structure
-
-For accumulation contexts, a total amount changes according to
-
-$$
-\frac{dA}{dt}=\text{rate in}-\text{rate out}.
-$$
-
-If the rate in is bigger than the rate out, $$A$$ increases. If the rate out is bigger, $$A$$ decreases. If they are equal, the amount has an instant where its derivative is zero, though that does not automatically mean an absolute maximum or minimum.
 
 ### Marginal analysis language
 
@@ -617,6 +491,149 @@ At a production level of $$200$$ items, profit is increasing at about $$8$$ doll
 </div>
 
 ---
+
+## Linearization in context
+
+Linearization is an estimate of output near a known input:
+
+$$
+f(a+\Delta x)\approx f(a)+f'(a)\Delta x.
+$$
+
+In context, this means a small input change produces an approximate output change:
+
+$$
+\Delta f\approx f'(a)\Delta x.
+$$
+
+This is the same idea behind differentials:
+
+$$
+dy=f'(x)\,dx.
+$$
+
+The approximation is local. It is meant for small changes near the input where the derivative was measured.
+
+---
+
+## Related quantities and hidden variables
+
+Contextual problems often include more variables than you actually need. The goal is to write one equation connecting the changing quantities, then identify which rate the question asks for.
+
+:::strategy{title="Related quantities"}
+- define every variable before differentiating,
+- record which variables are changing,
+- keep constants as constants,
+- substitute numerical values after differentiating.
+:::
+
+If the independent variable is time, every changing quantity gets a rate such as $$dx/dt$$, $$dV/dt$$, or $$dA/dt$$.
+
+---
+
+## Justifying answers from graphs
+
+When using a graph of $$f$$, slope describes $$f'$$. When using a graph of $$f'$$, height describes the rate of change of $$f$$.
+
+That distinction is one of the biggest AP traps:
+
+- graph of position: slope is velocity;
+- graph of velocity: height is velocity and slope is acceleration;
+- graph of acceleration: height is acceleration.
+
+Always identify what the graph represents before interpreting signs, slopes, or areas.
+
+---
+
+## Differential notation and small changes
+
+If $$y=f(x)$$, then the differential
+
+$$
+dy=f'(x)\,dx
+$$
+
+models the approximate change in $$y$$ caused by a small change $$dx$$ in $$x$$. This is the same idea as linearization, written in a compact way:
+
+$$
+\Delta y\approx dy=f'(a)\Delta x.
+$$
+
+The actual change is
+
+$$
+\Delta y=f(a+\Delta x)-f(a),
+$$
+
+while the differential estimate is
+
+$$
+dy=f'(a)\Delta x.
+$$
+
+Differentials are especially useful for error estimates. If a measurement has possible error $$\Delta x$$, then the propagated output error is approximately
+
+$$
+\lvert dy\rvert=\lvert f'(a)\rvert\lvert \Delta x\rvert.
+$$
+
+### Rate in / rate out structure
+
+For accumulation contexts, a total amount changes according to
+
+$$
+\frac{dA}{dt}=\text{rate in}-\text{rate out}.
+$$
+
+If the rate in is bigger than the rate out, $$A$$ increases. If the rate out is bigger, $$A$$ decreases. If they are equal, the amount has an instant where its derivative is zero, though that does not automatically mean an absolute maximum or minimum.
+
+---
+
+## L'Hôpital's Rule
+
+Sometimes, you when calculating limits, you get indeterminate forms that cannot be solved using algebra. A very useful way to solve is to use L'Hôpital's rule.
+
+<div class="theorem-box">
+
+**Theorem (L'Hôpital's Rule).** If a limit produces $$0/0$$ or $$\infty/\infty$$ and the hypotheses are satisfied, then
+
+$$
+\lim_{x \to a} \frac{f(x)}{g(x)}
+=
+\lim_{x \to a} \frac{f'(x)}{g'(x)}
+$$
+
+provided the new limit exists in a usable way.
+
+</div>
+
+<div class="theorem-box">
+
+**Proof (L'Hôpital's Rule).** // add proof of L'Hopital's rule
+
+</div>
+
+If one round of L'Hôpital's cancellations doesn't get rid of the indeterminate forms, you can always continuing applying it until you get an example!
+
+<div class="theorem-box">
+
+**Example.** Evaluate $$\displaystyle\lim_{x\to0}\frac{e^x-1}{x}.$$
+
+Direct substitution gives $$\frac{e^0-1}{0}=\frac{0}{0}$$, an indeterminate form, so L'Hopital's Rule applies. Differentiate the numerator and denominator separately:
+
+$$
+\lim_{x\to0}\frac{e^x-1}{x}=\lim_{x\to0}\frac{e^x}{1}.
+$$
+
+Now substitution works:
+
+$$
+\lim_{x\to0}\frac{e^x}{1}=e^0=1.
+$$
+
+So the limit equals $$1$$.
+
+</div>
 
 ## Tips for the exam
 

@@ -8,7 +8,7 @@ sidebar:
 
 <div class="theorem-box">
 
-**Definition.** The derivative of $$f$$ at $$x$$ is
+**Definition.** The derivative of $$f$$ at $$x$$ is defined as
 
 $$
 f'(x) = \lim_{h \to 0} \frac{f(x+h)-f(x)}{h}
@@ -19,6 +19,8 @@ Equivalently,
 $$
 f'(a) = \lim_{x \to a} \frac{f(x)-f(a)}{x-a}.
 $$
+
+for the derivative at $$x=a$$.
 
 </div>
 
@@ -54,7 +56,7 @@ There are many interpretations of the derivative:
 \end{axis}
 \end{tikzpicture}
 ```
-//fix image
+// fix image: too many lines, secant line not even connecting the two dots, etc.
 
 <div class="theorem-box">
 
@@ -100,11 +102,7 @@ They all refer to rate of change, but they emphasize different things. The notat
 
 When a problem asks for "the derivative at $$x=a$$," give a value. When it asks for "the derivative of $$f$$," give a formula.
 
-If $$f(x)$$ has units of output and $$x$$ has units of input, then
-
-$$
-f'(x)
-$$
+If $$f(x)$$ has units of output and $$x$$ has units of input, then $$f'(x)$$
 
 has units
 
@@ -140,12 +138,6 @@ This is why the derivative can be interpreted in several connected ways:
 - numerically, it is the limiting value of nearby average rates;
 - physically, it is instantaneous velocity when $$f$$ is position;
 - locally, it is the coefficient of the best linear approximation.
-
-<div class="theorem-box">
-
-**Key idea.** Differentiability means the function looks almost linear when you zoom in near the point. Corners and cusps fail because the left and right zoom-in slopes do not settle into the same line or go to infinity.
-
-</div>
 
 ### Differentiability from graphs
 
@@ -260,6 +252,8 @@ $$
 \lim_{h\to0}\frac{f(x+h)g(x+h)-f(x+h)g(x)}{h}+\lim_{h\to0}\frac{f(x+h)g(x)-f(x)g(x)}{h}
 $$
 
+// goes off the page please fix
+
 and then simplifying we get:
 
 $$
@@ -276,7 +270,9 @@ $$
 \lim_{h\to0}f(x+h) \cdot \lim_{h\to0}\frac{(g(x+h)-g(x))}{h}+\lim_{h\to0}g(x) \cdot \lim_{h\to0}\frac{(f(x+h)-f(x))}{h}
 $$
 
-since the limit of a sum is the sum of the limits, and constants with respect to $$h$$ can be factored out.
+// goes off the page please fix
+
+since the limit of a sum is the sum of the limits (to see this, use the sum rule for limits), and constants with respect to $$h$$ can be factored out.
 
 Because $$f$$ is differentiable at $$x$$, it is also continuous at $$x$$. Therefore
 
@@ -308,8 +304,10 @@ $$
 Since multiplication is commutative, this is usually written as
 
 $$
-\boxed{\frac{d}{dx}[f(x)g(x)]=f'(x)g(x)+f(x)g'(x)}.
+\frac{d}{dx}[f(x)g(x)]=f'(x)g(x)+f(x)g'(x).
 $$
+
+Note that if you have more than two functions, the procedure is the same, giving you a result where you sum up the multiplicative terms between one derivative and the other functions for each derivative.
 
 </div>
 
@@ -367,7 +365,7 @@ $$
 
 ## Derivatives of common functions
 
-**add proof of trig as an example**
+### Derivatives of trig functions
 
 $$
 \frac{d}{dx}(\sin x) = \cos x
@@ -382,27 +380,6 @@ $$
 $$
 
 $$
-\frac{d}{dx}(e^x) = e^x
-$$
-
-$$
-\frac{d}{dx}(a^x) = a^x \ln a
-$$
-
-$$
-\frac{d}{dx}(\ln x) = \frac{1}{x}
-$$
-
-More generally,
-
-$$
-\frac{d}{dx}(\log_a x)=\frac{1}{x\ln a},
-\qquad a>0,\ a\ne 1.
-$$
-
-The reciprocal trig derivatives are also useful:
-
-$$
 \frac{d}{dx}(\sec x)=\sec x\tan x,
 $$
 
@@ -414,7 +391,34 @@ $$
 \frac{d}{dx}(\cot x)=-\csc^2 x.
 $$
 
-Hyperbolic functions are less common  but they sometimes appear in advanced calculus work:
+All of the trig derivatives can be proved using the derivative definition and the quotient rule.
+
+// please prove one of these as an example (maybe tan x?)
+
+### Derivatives of exponential and logarithmic functions
+
+$$
+\frac{d}{dx}(e^x) = e^x
+$$
+
+$$
+\frac{d}{dx}(a^x) = a^x \ln a
+$$
+
+$$
+\frac{d}{dx}(\ln x) = \frac{1}{x}
+$$
+
+$$
+\frac{d}{dx}(\log_a x)=\frac{1}{x\ln a},
+\qquad a>0,\ a\ne 1.
+$$
+
+// try to introduce this section more, including how we get e. maybe look at this: https://tutorial.math.lamar.edu/Classes/CalcI/DiffExpLogFcns.aspx
+
+### Derivatives of hyperbolic functions
+
+As a reminder, we define
 
 $$
 \sinh x=\frac{e^x-e^{-x}}{2},
@@ -422,7 +426,7 @@ $$
 \cosh x=\frac{e^x+e^{-x}}{2}.
 $$
 
-Their main derivatives are:
+The other hyperbolic functions are defined similarly (e.g. $$\tanh x = \frac{\sinh x}{\cosh x}$$). Their main derivatives are:
 
 $$
 \frac{d}{dx}(\sinh x)=\cosh x,
@@ -433,6 +437,10 @@ $$
 $$
 \frac{d}{dx}(\tanh x)=\operatorname{sech}^2 x.
 $$
+
+// add all 6 hyperbolic functions' derivatives
+
+Since all of the hyperbolic functions can be defined in terms of exponentials, the derivative formula is just repeated derivatives of exponentials. The proofs are left to the reader as an exercise.
 
 <div class="theorem-box">
 
@@ -459,7 +467,7 @@ $$
 **Example.** Differentiate
 
 $$
-y=5\log_2 x-3\sec x+4\sinh x.
+y=5\log_2 x \cdot 3\sec x+4\sinh x.
 $$
 
 Differentiate term by term:
@@ -483,6 +491,8 @@ Therefore
 $$
 y'=\frac{5}{x\ln 2}-3\sec x\tan x+4\cosh x.
 $$
+
+// please edit the solution based on the updated question
 
 </div>
 
@@ -521,6 +531,8 @@ y'=(2x)e^x(x+1)^{-1/2}
 +x^2(e^x)(x+1)^{-1/2}
 +x^2e^x\left(-\frac12\right)(x+1)^{-3/2}.
 $$
+
+// explain how you got expanded form because the notes page does not teach that. either that or change the solution
 
 Factor the common term $$xe^x(x+1)^{-3/2}$$:
 
@@ -586,8 +598,8 @@ The second derivative $$f''(x)$$ measures the rate of change of the first deriva
 
 The second derivative has many useful interpretations:
 
-- concavity in pure math
-- acceleration  when $$f$$ is position or angular frequency when $$f$$ is potential in physics
+- concavity (whether a graph is opening up or down) in pure math
+- acceleration when $$f$$ is position or angular frequency when $$f$$ is potential in physics
 
 You may also see $$f^{(n)}(x)$$ for the $$n$$th derivative.
 
@@ -609,11 +621,13 @@ $$
 
 </div>
 
+// add a section on alternate notation for higher order derivatives
+
 ---
 
 ## Motion along a line
 
-If $$s(t)$$ is position, then:
+If $$s(t)$$ is position, $$v(t)$$ is velocity, and $$a(t)$$ is acceleration, then:
 
 $$
 v(t) = s'(t)
@@ -623,7 +637,7 @@ $$
 a(t) = v'(t) = s''(t)
 $$
 
-Velocity includes sign and direction; speed is $$\lvert v(t) \rvert$$.
+Velocity includes sign and direction; speed is defined as $$\lvert v(t) \rvert$$.
 
 When velocity and acceleration have the same sign, speed is increasing. When signs differ, speed is decreasing.
 
@@ -697,3 +711,5 @@ $$
 The symmetric estimate uses points on both sides, so it usually gives a more accurate approximation than a one-sided difference quotient.
 
 </div>
+
+// add a tips for the exam section like the other notes pages

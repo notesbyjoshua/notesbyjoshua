@@ -855,6 +855,7 @@ A quick map of bijectivity, surjectivity, and injectivity is shown below:
 \end{scope}
 \end{tikzpicture}
 ```
+// make way smaller, may put it horizontally instead
 
 ---
 
