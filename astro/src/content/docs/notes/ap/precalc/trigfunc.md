@@ -1860,8 +1860,43 @@ $$
 13. Prove the identity: $$\frac{1}{\cos\theta\sin^2\theta}=\sec\theta+\csc\theta\cot\theta.$$
 
 :::solution
+Prove the identity:
 
-coming soon
+$$\frac{1}{\cos\theta\sin^2\theta}=\sec\theta+\csc\theta\cot\theta.$$
+
+Start with the right side:
+
+$$\sec\theta+\csc\theta\cot\theta$$
+
+Rewrite everything in terms of sine and cosine:
+
+$$=\frac{1}{\cos\theta}+\frac{1}{\sin\theta}\cdot\frac{\cos\theta}{\sin\theta}$$
+
+Simplify:
+
+$$=\frac{1}{\cos\theta}+\frac{\cos\theta}{\sin^2\theta}$$
+
+Find a common denominator:
+
+$$=\frac{\sin^2\theta}{\cos\theta\sin^2\theta}+\frac{\cos^2\theta}{\cos\theta\sin^2\theta}$$
+
+Combine:
+
+$$=\frac{\sin^2\theta+\cos^2\theta}{\cos\theta\sin^2\theta}$$
+
+Use the identity:
+
+$$\sin^2\theta+\cos^2\theta=1$$
+
+So:
+
+$$=\frac{1}{\cos\theta\sin^2\theta}$$
+
+Therefore,
+
+$$\frac{1}{\cos\theta\sin^2\theta}=\sec\theta+\csc\theta\cot\theta.$$
+
+
 :::
 ::::
 
