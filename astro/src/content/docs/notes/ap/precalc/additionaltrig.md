@@ -2901,73 +2901,15 @@ intersection points.
 ::::
 
 ::::problem
-13. Suppose you have an octagon centered at the origin with one vertex at $$P_1=2\sqrt2$$.
-    $$(A)$$ Find a vertex in the third quadrant and a vertex in the fourth quadrant.
-    $$(B)$$ Without finding all of the vertices calculate $$P_1+P_2+\cdots+P_8$$
-    $$(C)$$ Without finding all of the vertices calculate $$P_1P_2\cdots P_8$$.
+13. Martina and Carl are part of a team that is studying weather patterns.
+The team is about to launch a weather balloon to collect data. Martina’s
+rope is 7.8 m long and makes an angle of 36.0° with the ground. Carl’s rope
+is 5.9 m long. Assuming that Martina and Carl form a triangle in a vertical
+plane with the weather balloon, what is the distance between Martina and
+Carl, to the nearest tenth of a metre?
 
 :::solution
-For part (A), the resulting octagon is regular, so consecutive vertices differ by an angle of
 
-$$
-\frac{2\pi}{8}=\frac{\pi}{4}.
-$$
-
-Since
-
-$$
-P_1=2\sqrt2,
-$$
-
-the first vertex lies on the positive real axis with magnitude $$2\sqrt2$$. The vertices in the third and fourth quadrants can be found by rotating by multiples of $$45^\circ$$.
-
-A third-quadrant vertex occurs at angle $$225^\circ$$:
-
-$$
-2\sqrt2(\cos225^\circ+i\sin225^\circ)=-2-2i.
-$$
-
-A fourth-quadrant vertex occurs at angle $$315^\circ$$:
-
-$$
-2\sqrt2(\cos315^\circ+i\sin315^\circ)=2-2i.
-$$
-
-For part (B), for a regular polygon centered at the origin, the vertices balance evenly around the circle, so
-
-$$
-P_1+P_2+\cdots+P_8=0.
-$$
-
-For part (C), for the product $$P_1P_2\cdots P_8$$, multiply magnitudes and add angles. The magnitude is
-
-$$
-(2\sqrt2)^8=4096.
-$$
-
-The eight angles are
-
-$$
-0^\circ,45^\circ,90^\circ,135^\circ,180^\circ,225^\circ,270^\circ,315^\circ,
-$$
-
-whose sum is
-
-$$
-1260^\circ.
-$$
-
-Since $$1260^\circ$$ is coterminal with $$180^\circ$$,
-
-$$
-P_1P_2\cdots P_8=4096(\cos180^\circ+i\sin180^\circ).
-$$
-
-Therefore,
-
-$$
-P_1P_2\cdots P_8=-4096.
-$$
 :::
 ::::
 
