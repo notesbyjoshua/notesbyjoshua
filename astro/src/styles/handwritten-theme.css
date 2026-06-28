@@ -752,6 +752,7 @@ a.site-title {
 	--classic-page-top: var(--sl-color-gray-6);
 	--classic-page-bottom: var(--sl-color-black);
 	--classic-ui-bg: oklch(0.2029 0.0357 294);
+	--classic-popup-bg: oklch(0.2029 0.0357 294);
 	--classic-ui-border: oklch(0.3422 0.0532 294);
 	--classic-ui-accent: oklch(0.5351 0.2523 294 / 0.4);
 	--classic-ui-accent-alt: var(--sl-color-accent-high);
@@ -786,6 +787,7 @@ a.site-title {
 	--classic-page-top: var(--sl-color-gray-6);
 	--classic-page-bottom: var(--sl-color-black);
 	--classic-ui-bg: oklch(0.9374 0.0233 306);
+	--classic-popup-bg: oklch(0.982 0.006 306);
 	--classic-ui-border: oklch(0.81646 0.0627 306);
 	--classic-ui-accent: oklch(0.5351 0.2523 294 / 0.1);
 	--classic-ui-accent-alt: var(--sl-color-accent-high);
@@ -870,7 +872,6 @@ a.site-title {
 
 :root[data-note-theme='nebula'] .visual-theme__select,
 :root[data-note-theme='nebula'] .visual-theme__button,
-:root[data-note-theme='nebula'] .visual-theme__menu,
 :root[data-note-theme='nebula'] .theme-switch__track,
 :root[data-note-theme='nebula'] .header-account-link,
 :root[data-note-theme='nebula'] .print-btn,
@@ -881,7 +882,6 @@ a.site-title {
 :root[data-note-theme='nebula'] .cheatsheet-btn,
 :root[data-note-theme='classic'] .visual-theme__select,
 :root[data-note-theme='classic'] .visual-theme__button,
-:root[data-note-theme='classic'] .visual-theme__menu,
 :root[data-note-theme='classic'] .theme-switch__track,
 :root[data-note-theme='classic'] .header-account-link,
 :root[data-note-theme='classic'] .print-btn,
@@ -893,4 +893,18 @@ a.site-title {
 	border-color: var(--sl-color-hairline-light);
 	background: var(--sl-color-hairline-light);
 	box-shadow: none;
+}
+
+:root[data-note-theme='nebula'] :is(select, .visual-theme__menu, .header-account-menu),
+:root[data-note-theme='classic'] :is(select, .visual-theme__menu, .header-account-menu) {
+	border-color: var(--classic-ui-border);
+	background-color: var(--classic-popup-bg);
+	color: var(--sl-color-text);
+	box-shadow: 0 12px 28px color-mix(in srgb, #000 24%, transparent);
+}
+
+:root[data-note-theme='nebula'] :is(select, .visual-theme__menu) option,
+:root[data-note-theme='classic'] :is(select, .visual-theme__menu) option {
+	background-color: var(--classic-popup-bg);
+	color: var(--sl-color-text);
 }
