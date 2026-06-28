@@ -466,7 +466,9 @@ a.site-title {
 	}
 }
 
-/* Clean default theme: a quieter, Starlight-like reading mode. */
+/* Clean theme: a quieter, Starlight-like reading mode. */
+:root[data-note-theme='clean'],
+:root[data-note-theme='clean'] ::backdrop,
 :root[data-note-theme='default'],
 :root[data-note-theme='default'] ::backdrop {
 	--font-ui: 'Inter', ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
@@ -496,6 +498,8 @@ a.site-title {
 	--sl-color-bg-inline-code: #1e293b;
 }
 
+:root[data-note-theme='clean'][data-theme='light'],
+:root[data-note-theme='clean'][data-theme='light'] ::backdrop,
 :root[data-note-theme='default'][data-theme='light'],
 :root[data-note-theme='default'][data-theme='light'] ::backdrop {
 	--sl-color-white: #0f172a;
@@ -520,10 +524,22 @@ a.site-title {
 	--sl-color-bg-inline-code: #f1f5f9;
 }
 
+:root[data-note-theme='clean'] body::before,
 :root[data-note-theme='default'] body::before {
 	content: none;
 }
 
+:root[data-note-theme='clean'] .sl-markdown-content,
+:root[data-note-theme='clean'] .sl-markdown-content h1,
+:root[data-note-theme='clean'] .sl-markdown-content h2,
+:root[data-note-theme='clean'] .sl-markdown-content h3,
+:root[data-note-theme='clean'] .sl-markdown-content h4,
+:root[data-note-theme='clean'] .sl-markdown-content h5,
+:root[data-note-theme='clean'] .sl-markdown-content h6,
+:root[data-note-theme='clean'] .content-panel h1,
+:root[data-note-theme='clean'] h1#_top,
+:root[data-note-theme='clean'] .site-title,
+:root[data-note-theme='clean'] a.site-title,
 :root[data-note-theme='default'] .sl-markdown-content,
 :root[data-note-theme='default'] .sl-markdown-content h1,
 :root[data-note-theme='default'] .sl-markdown-content h2,
@@ -539,6 +555,7 @@ a.site-title {
 	letter-spacing: 0;
 }
 
+:root[data-note-theme='clean'] .sl-markdown-content,
 :root[data-note-theme='default'] .sl-markdown-content {
 	font-size: 1rem;
 }
@@ -639,4 +656,144 @@ a.site-title {
 :root[data-note-theme='blueprint'] .sl-markdown-content h6 {
 	font-family: var(--font-display);
 	font-weight: 700;
+}
+
+/* Astro Classic theme: adapted from HiDeoo's MIT-licensed
+   starlight-theme-vintage, with local tweaks so it can live inside our runtime
+   theme picker instead of taking over Starlight as a plugin. */
+:root[data-note-theme='classic'],
+:root[data-note-theme='classic'] ::backdrop {
+	--font-ui: 'Inter', ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+		'Helvetica Neue', Helvetica, Arial, sans-serif;
+	--font-prose: var(--font-ui);
+	--font-display: var(--font-ui);
+	--sl-font: var(--font-ui);
+	--sl-nav-height: 6rem;
+
+	--sl-color-white: oklch(0.9156 0.0097 294);
+	--sl-color-gray-1: oklch(0.8724 0.0148 294);
+	--sl-color-gray-2: oklch(0.8292 0.0199 294);
+	--sl-color-gray-3: oklch(0.7407 0.0307 294);
+	--sl-color-gray-4: oklch(0.8494 0.0178 294 / 0.6);
+	--sl-color-gray-5: oklch(0.958 0.0048 294 / 0.4);
+	--sl-color-gray-6: oklch(0.2784 0.048 294);
+	--sl-color-black: oklch(0.203 0.0322 294);
+
+	--sl-color-accent-low: oklch(0.7306 0.1783 47 / 0.05);
+	--sl-color-accent: oklch(0.7306 0.1783 47);
+	--sl-color-accent-high: var(--sl-color-accent);
+
+	--sl-color-text: var(--sl-color-gray-2);
+	--sl-color-text-accent: var(--sl-color-accent-high);
+	--sl-color-bg: var(--sl-color-black);
+	--sl-color-bg-nav: var(--sl-color-gray-6);
+	--sl-color-bg-sidebar: transparent;
+	--sl-color-bg-inline-code: oklch(1 0 0 / 0.086);
+	--sl-color-hairline-light: oklch(0.958 0.0048 294 / 0.1);
+
+	--classic-page-top: var(--sl-color-gray-6);
+	--classic-page-bottom: var(--sl-color-black);
+	--classic-ui-bg: oklch(0.2029 0.0357 294);
+	--classic-ui-border: oklch(0.3422 0.0532 294);
+	--classic-ui-accent: oklch(0.5351 0.2523 294 / 0.4);
+	--classic-ui-accent-alt: var(--sl-color-accent-high);
+}
+
+:root[data-note-theme='classic'][data-theme='light'],
+:root[data-note-theme='classic'][data-theme='light'] ::backdrop {
+	--sl-color-white: oklch(0.2045 0.0142 294);
+	--sl-color-gray-1: oklch(0.2975 0.02515 294);
+	--sl-color-gray-2: oklch(0.3905 0.0361 294);
+	--sl-color-gray-3: oklch(0.475 0.0459 294);
+	--sl-color-gray-4: oklch(0.50505 0.1491 294 / 0.25);
+	--sl-color-gray-5: oklch(0.5351 0.2523 294 / 0.3);
+	--sl-color-gray-6: oklch(0.9361 0.0192 294);
+	--sl-color-gray-7: oklch(0.9663 0.01045 294);
+	--sl-color-black: oklch(0.9965 0.0017 294);
+
+	--sl-color-accent-low: oklch(0.4945 0.1912 350 / 0.08);
+	--sl-color-accent: oklch(0.4945 0.1912 350);
+	--sl-color-accent-high: oklch(0.6354 0.2108 41);
+
+	--sl-color-text: var(--sl-color-gray-2);
+	--sl-color-text-accent: var(--sl-color-accent-high);
+	--sl-color-bg: var(--sl-color-black);
+	--sl-color-bg-nav: var(--sl-color-gray-6);
+	--sl-color-bg-sidebar: transparent;
+	--sl-color-bg-inline-code: var(--sl-color-hairline-light);
+	--sl-color-hairline-light: var(--classic-ui-accent);
+
+	--classic-page-top: var(--sl-color-gray-6);
+	--classic-page-bottom: var(--sl-color-black);
+	--classic-ui-bg: oklch(0.9374 0.0233 306);
+	--classic-ui-border: oklch(0.81646 0.0627 306);
+	--classic-ui-accent: oklch(0.5351 0.2523 294 / 0.1);
+	--classic-ui-accent-alt: var(--sl-color-accent-high);
+}
+
+:root[data-note-theme='classic'] body::before {
+	background:
+		linear-gradient(
+			180deg,
+			var(--classic-page-top),
+			var(--classic-page-top) calc(var(--sl-nav-height) + var(--sl-mobile-toc-height, 0px)),
+			var(--classic-page-bottom)
+		);
+}
+
+:root[data-note-theme='classic'] .sl-markdown-content,
+:root[data-note-theme='classic'] .sl-markdown-content h1,
+:root[data-note-theme='classic'] .sl-markdown-content h2,
+:root[data-note-theme='classic'] .sl-markdown-content h3,
+:root[data-note-theme='classic'] .sl-markdown-content h4,
+:root[data-note-theme='classic'] .sl-markdown-content h5,
+:root[data-note-theme='classic'] .sl-markdown-content h6,
+:root[data-note-theme='classic'] .content-panel h1,
+:root[data-note-theme='classic'] h1#_top,
+:root[data-note-theme='classic'] .site-title,
+:root[data-note-theme='classic'] a.site-title {
+	font-family: var(--font-ui);
+	letter-spacing: 0;
+}
+
+:root[data-note-theme='classic'] .sl-markdown-content {
+	font-size: 1rem;
+}
+
+:root[data-note-theme='classic'] .site-title,
+:root[data-note-theme='classic'] a.site-title {
+	color: var(--classic-ui-accent-alt);
+	font-size: var(--sl-text-3xl);
+}
+
+:root[data-note-theme='classic'] .header.header {
+	border-bottom: 0;
+}
+
+:root[data-note-theme='classic'] .sidebar-pane,
+:root[data-note-theme='classic'] .right-sidebar-panel,
+:root[data-note-theme='classic'] .content-panel {
+	background: transparent;
+}
+
+:root[data-note-theme='classic'] .sl-markdown-content .theorem-box,
+:root[data-note-theme='classic'] .sl-markdown-content .callout,
+:root[data-note-theme='classic'] .ref-sheet__panel,
+:root[data-note-theme='classic'] .header-account-menu {
+	border-color: var(--classic-ui-border);
+	background: color-mix(in srgb, var(--classic-ui-bg) 86%, transparent);
+	box-shadow: none;
+}
+
+:root[data-note-theme='classic'] .visual-theme__select,
+:root[data-note-theme='classic'] .theme-switch__track,
+:root[data-note-theme='classic'] .header-account-link,
+:root[data-note-theme='classic'] .print-btn,
+:root[data-note-theme='classic'] .bookmark-btn,
+:root[data-note-theme='classic'] .readmark-btn,
+:root[data-note-theme='classic'] .highlight-btn,
+:root[data-note-theme='classic'] .cheatsheet-btn {
+	border-color: var(--sl-color-hairline-light);
+	background: var(--sl-color-hairline-light);
+	box-shadow: none;
 }

@@ -825,8 +825,10 @@ export function initDocCanvasParallax(): void {
   active?.destroy();
   active = null;
   if (
-    document.documentElement.dataset.noteTheme === 'default'
+    document.documentElement.dataset.noteTheme === 'clean'
+    || document.documentElement.dataset.noteTheme === 'default'
     || document.documentElement.dataset.noteTheme === 'blueprint'
+    || document.documentElement.dataset.noteTheme === 'classic'
   ) {
     document.documentElement.classList.remove('paper-canvas-active');
     document.querySelector<HTMLCanvasElement>(`canvas.${CANVAS_CLASS}`)?.remove();

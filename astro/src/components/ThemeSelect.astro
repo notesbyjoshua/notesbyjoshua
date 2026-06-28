@@ -35,23 +35,25 @@
 		<span class="sr-only">Visual theme</span>
 		<select class="visual-theme__select" data-visual-theme-select>
 			<option value="handwritten">Handwritten</option>
-			<option value="default">Default</option>
+			<option value="clean">Clean</option>
 			<option value="blueprint">Blueprint</option>
+			<option value="classic">Astro Classic</option>
 		</select>
 	</label>
 </div>
 
 <script>
 	type Theme = 'light' | 'dark';
-	type VisualTheme = 'handwritten' | 'default' | 'blueprint';
+	type VisualTheme = 'handwritten' | 'clean' | 'blueprint' | 'classic';
 	const STORAGE_KEY = 'starlight-theme';
 	const VISUAL_THEME_KEY = 'notesbyjoshua-theme';
-	const VISUAL_THEMES = new Set<VisualTheme>(['handwritten', 'default', 'blueprint']);
+	const VISUAL_THEMES = new Set<VisualTheme>(['handwritten', 'clean', 'blueprint', 'classic']);
 
 	const currentTheme = (): Theme =>
 		document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light';
 	const currentVisualTheme = (): VisualTheme => {
 		const theme = document.documentElement.dataset.noteTheme;
+		if (theme === 'default') return 'clean';
 		return VISUAL_THEMES.has(theme as VisualTheme) ? (theme as VisualTheme) : 'handwritten';
 	};
 
