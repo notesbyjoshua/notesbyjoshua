@@ -1857,80 +1857,11 @@ $$
 ::::
 
 ::::problem
-13. Prove the identity: $$1-\frac{\sin^2\theta}{1+\cot\theta}-\frac{\cos^2\theta}{1+\tan\theta}=\sin\theta\cos\theta.$$
+13. Prove the identity: $$\frac{1}{\cos\theta\sin^2\theta}=\sec\theta+\csc\theta\cot\theta.$$
 
 :::solution
-Start with the left-hand side:
 
-$$
-1-\frac{\sin^2\theta}{1+\cot\theta}-\frac{\cos^2\theta}{1+\tan\theta}.
-$$
-
-Rewrite cotangent and tangent using sine and cosine:
-
-$$
-1-\frac{\sin^2\theta}{1+\frac{\cos\theta}{\sin\theta}}-\frac{\cos^2\theta}{1+\frac{\sin\theta}{\cos\theta}}.
-$$
-
-Simplify the denominators:
-
-$$
-1+\frac{\cos\theta}{\sin\theta}=\frac{\sin\theta+\cos\theta}{\sin\theta}
-$$
-
-and
-
-$$
-1+\frac{\sin\theta}{\cos\theta}=\frac{\sin\theta+\cos\theta}{\cos\theta}.
-$$
-
-So the expression becomes
-
-$$
-1-\frac{\sin^3\theta}{\sin\theta+\cos\theta}-\frac{\cos^3\theta}{\sin\theta+\cos\theta}.
-$$
-
-Combine the fractions:
-
-$$
-1-\frac{\sin^3\theta+\cos^3\theta}{\sin\theta+\cos\theta}.
-$$
-
-Use the sum of cubes formula:
-
-$$
-a^3+b^3=(a+b)(a^2-ab+b^2).
-$$
-
-Then
-
-$$
-\sin^3\theta+\cos^3\theta=(\sin\theta+\cos\theta)(\sin^2\theta-\sin\theta\cos\theta+\cos^2\theta).
-$$
-
-Cancel the common factor:
-
-$$
-1-(\sin^2\theta-\sin\theta\cos\theta+\cos^2\theta).
-$$
-
-Since
-
-$$
-\sin^2\theta+\cos^2\theta=1,
-$$
-
-this becomes
-
-$$
-1-(1-\sin\theta\cos\theta)=\sin\theta\cos\theta.
-$$
-
-Therefore,
-
-$$
-\boxed{1-\frac{\sin^2\theta}{1+\cot\theta}-\frac{\cos^2\theta}{1+\tan\theta}=\sin\theta\cos\theta}.
-$$
+coming soon
 :::
 ::::
 
