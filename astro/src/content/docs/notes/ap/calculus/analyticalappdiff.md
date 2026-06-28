@@ -4,20 +4,178 @@ sidebar:
   order: 5
 ---
 
+## Mean Value Theorem (MVT) and Rolle's Theorem
+
+<div class="theorem-box">
+
+**Theorem (Mean Value Theorem).** If $$f$$ is continuous on $$[a,b]$$ and differentiable on $$(a,b)$$, then there exists $$c \in (a,b)$$ such that
+
+$$
+f'(c) = \frac{f(b)-f(a)}{b-a}.
+$$
+
+**Rolle's Theorem** is the special case where $$f(a)=f(b)$$.
+
+</div>
+
+The Mean Value Theorem says that under the right smoothness conditions, some instantaneous rate equals the average rate over the interval.
+
+The hypotheses are essential:
+
+:::conditions
+- continuous on $$[a,b]$$,
+- differentiable on $$(a,b)$$.
+:::
+
+If either hypothesis fails, the theorem may not apply, even if the conclusion happens to be true.
+
+Rolle's Theorem is the same idea when the average rate is zero. If a smooth function starts and ends at the same height, then somewhere in between it has a horizontal tangent.
+
+<div class="theorem-box">
+
+**Proof (MVT).** // add a formal proof here
+
+</div>
+
+<div class="theorem-box">
+
+**Example.** Verify Rolle's Theorem for
+
+$$
+f(x)=x^2-4x+3
+$$
+
+on $$[1,3]$$, then find the value of $$c$$.
+
+The function is a polynomial, so it is continuous on $$[1,3]$$ and differentiable on $$(1,3)$$. Check the endpoint values:
+
+$$
+f(1)=1-4+3=0,
+$$
+
+and
+
+$$
+f(3)=9-12+3=0.
+$$
+
+Since $$f(1)=f(3)$$, Rolle's Theorem applies. Differentiate:
+
+$$
+f'(x)=2x-4.
+$$
+
+Set $$f'(c)=0$$:
+
+$$
+2c-4=0
+\quad\Longrightarrow\quad
+c=2.
+$$
+
+The value $$c=2$$ lies in $$(1,3)$$, so it is the point guaranteed by Rolle's Theorem.
+
+</div>
+
+<div class="theorem-box">
+
+**Example.** For $$f(x)=x^2$$ on $$[1,3]$$, find the value $$c$$ guaranteed by the Mean Value Theorem.
+
+The function is a polynomial, so it is continuous on $$[1,3]$$ and differentiable on $$(1,3)$$, and the theorem applies. The average rate of change is
+
+$$
+\frac{f(3)-f(1)}{3-1}=\frac{9-1}{2}=4.
+$$
+
+Since $$f'(x)=2x$$, set the instantaneous rate equal to the average rate:
+
+$$
+2c=4\quad\Longrightarrow\quad c=2.
+$$
+
+The value $$c=2$$ lies in $$(1,3)$$, so it is the value guaranteed by the theorem.
+
+</div>
+
 ---
 
-This unit uses derivatives to analyze the full shape of a function: where it rises or falls, where it bends, where extrema occur, and how to justify conclusions rigorously.
+## Extreme Value Theorem (EVT) and critical points
 
----
+// add an explanation of EVT
 
-## Critical points
+<div class="theorem-box">
 
-A critical point of $$f$$ occurs at $$x=c$$ where:
+**Definition.** A critical point of $$f$$ is a point where at a point where $$x=c$$:
 
 - $$f'(c) = 0$$, or
 - $$f'(c)$$ does not exist,
 
 provided $$c$$ is in the domain of $$f$$.
+
+</div>
+
+### Absolute extrema on a closed interval
+
+<div class="theorem-box">
+
+**Definition.** The absolute extrema of an interval $$[a,b]$$ is defined as the point $$x=c$$ where
+
+- $$f(c)$$ is at a maximum (for absolute maxima),
+- $$f(c)$$ is at a minimum (for absolute minima).
+
+</div>
+
+To find absolute max/min (extrema) of $$f$$ on $$[a,b]$$:
+
+:::checklist
+1. Find critical points inside $$(a,b)$$.
+2. Evaluate $$f$$ at each critical point.
+3. Evaluate $$f(a)$$ and $$f(b)$$.
+4. Compare all values to find the extrema.
+:::
+
+The largest output is the absolute maximum, and the smallest output is the absolute minimum. Endpoints must be included because absolute extrema can occur at endpoints even though local extrema usually focus on interior points.
+
+<div class="theorem-box">
+
+**Example.** Find the absolute maximum and minimum of $$f(x)=x^3-3x$$ on $$[0,2]$$.
+
+Differentiate to locate interior critical points:
+
+$$
+f'(x)=3x^2-3=3(x^2-1),
+$$
+
+so $$f'(x)=0$$ at $$x=\pm1$$. Only $$x=1$$ lies inside $$(0,2)$$. Evaluate $$f$$ at this critical point and at both endpoints:
+
+$$
+f(0)=0,\qquad f(1)=1-3=-2,\qquad f(2)=8-6=2.
+$$
+
+Comparing the candidate values, the absolute maximum is $$2$$ at $$x=2$$, and the absolute minimum is $$-2$$ at $$x=1$$.
+
+</div>
+
+### Local/relative extrema and Fermat's Theorem
+
+If $$f$$ has a local extremum at an interior point $$c$$ and $$f'(c)$$ exists, then
+
+$$
+f'(c)=0.
+$$
+
+This theorem explains why critical numbers matter, but it does not say every critical number is an extremum. A sign test or value comparison is still needed.
+
+For local extrema, critical points are candidates. For absolute extrema on a closed interval, endpoints are also candidates.
+
+That distinction matters:
+
+- endpoints can be absolute extrema,
+- endpoints are not local extrema under the usual AP definition,
+- interior critical points may or may not be extrema.
+
+When justifying an absolute maximum or minimum, compare function values, not derivative values.
+
 
 ---
 
@@ -137,121 +295,6 @@ f''(2)=12>0,\qquad f''(-2)=-12<0.
 $$
 
 Since $$f''(2)>0$$, there is a local minimum at $$x=2$$, with $$f(2)=8-24=-16$$. Since $$f''(-2)<0$$, there is a local maximum at $$x=-2$$, with $$f(-2)=-8+24=16$$.
-
-</div>
-
----
-
-## Absolute extrema on a closed interval
-
-To find absolute max/min of $$f$$ on $$[a,b]$$:
-
-:::checklist
-1. Find critical points inside $$(a,b)$$.
-2. Evaluate $$f$$ at each critical point.
-3. Evaluate $$f(a)$$ and $$f(b)$$.
-4. Compare all values.
-:::
-
-<div class="theorem-box">
-
-**Example.** Find the absolute maximum and minimum of $$f(x)=x^3-3x$$ on $$[0,2]$$.
-
-Differentiate to locate interior critical points:
-
-$$
-f'(x)=3x^2-3=3(x^2-1),
-$$
-
-so $$f'(x)=0$$ at $$x=\pm1$$. Only $$x=1$$ lies inside $$(0,2)$$. Evaluate $$f$$ at this critical point and at both endpoints:
-
-$$
-f(0)=0,\qquad f(1)=1-3=-2,\qquad f(2)=8-6=2.
-$$
-
-Comparing the candidate values, the absolute maximum is $$2$$ at $$x=2$$, and the absolute minimum is $$-2$$ at $$x=1$$.
-
-</div>
-
----
-
-## Mean Value Theorem
-
-<div class="theorem-box">
-
-**Theorem (Mean Value Theorem).** If $$f$$ is continuous on $$[a,b]$$ and differentiable on $$(a,b)$$, then there exists $$c \in (a,b)$$ such that
-
-$$
-f'(c) = \frac{f(b)-f(a)}{b-a}.
-$$
-
-</div>
-
-Rolle's Theorem is the special case where $$f(a)=f(b)$$.
-
-<div class="theorem-box">
-
-**Why MVT is true.** Draw the secant line from $$(a,f(a))$$ to $$(b,f(b))$$. Subtract that line from the function to create a new function whose endpoint values are equal. Rolle's Theorem says this new function has a horizontal tangent somewhere inside the interval. At that point, the original function's tangent slope equals the secant slope.
-
-</div>
-
-<div class="theorem-box">
-
-**Example.** Verify Rolle's Theorem for
-
-$$
-f(x)=x^2-4x+3
-$$
-
-on $$[1,3]$$, then find the value of $$c$$.
-
-The function is a polynomial, so it is continuous on $$[1,3]$$ and differentiable on $$(1,3)$$. Check the endpoint values:
-
-$$
-f(1)=1-4+3=0,
-$$
-
-and
-
-$$
-f(3)=9-12+3=0.
-$$
-
-Since $$f(1)=f(3)$$, Rolle's Theorem applies. Differentiate:
-
-$$
-f'(x)=2x-4.
-$$
-
-Set $$f'(c)=0$$:
-
-$$
-2c-4=0
-\quad\Longrightarrow\quad
-c=2.
-$$
-
-The value $$c=2$$ lies in $$(1,3)$$, so it is the point guaranteed by Rolle's Theorem.
-
-</div>
-
-<div class="theorem-box">
-
-**Example.** For $$f(x)=x^2$$ on $$[1,3]$$, find the value $$c$$ guaranteed by the Mean Value Theorem.
-
-The function is a polynomial, so it is continuous on $$[1,3]$$ and differentiable on $$(1,3)$$, and the theorem applies. The average rate of change is
-
-$$
-\frac{f(3)-f(1)}{3-1}=\frac{9-1}{2}=4.
-$$
-
-Since $$f'(x)=2x$$, set the instantaneous rate equal to the average rate:
-
-$$
-2c=4\quad\Longrightarrow\quad c=2.
-$$
-
-The value $$c=2$$ lies in $$(1,3)$$, so it is the value guaranteed by the theorem.
 
 </div>
 
@@ -452,22 +495,6 @@ This is why sign charts are more than bookkeeping. They translate derivative inf
 
 ---
 
-## Critical points and candidates
-
-Critical points occur where $$f'(c)=0$$ or $$f'(c)$$ does not exist, as long as $$c$$ is in the domain of $$f$$.
-
-For local extrema, critical points are candidates. For absolute extrema on a closed interval, endpoints are also candidates.
-
-That distinction matters:
-
-- endpoints can be absolute extrema,
-- endpoints are not local extrema under the usual AP definition,
-- interior critical points may or may not be extrema.
-
-When justifying an absolute maximum or minimum, compare function values, not derivative values.
-
----
-
 ## Concavity as rate behavior
 
 Concavity describes how the slope changes.
@@ -477,23 +504,6 @@ If $$f''(x)>0$$, then $$f'(x)$$ is increasing. The graph of $$f$$ bends upward b
 If $$f''(x)<0$$, then $$f'(x)$$ is decreasing. The graph bends downward because its slopes are becoming less positive or more negative.
 
 An inflection point requires a change in concavity. The equation $$f''(x)=0$$ only gives a possible location.
-
----
-
-## The Mean Value Theorem in words
-
-The Mean Value Theorem says that under the right smoothness conditions, some instantaneous rate equals the average rate over the interval.
-
-The hypotheses are essential:
-
-:::conditions
-- continuous on $$[a,b]$$,
-- differentiable on $$(a,b)$$.
-:::
-
-If either hypothesis fails, the theorem may not apply, even if the conclusion happens to be true.
-
-Rolle's Theorem is the same idea when the average rate is zero. If a smooth function starts and ends at the same height, then somewhere in between it has a horizontal tangent.
 
 ---
 
@@ -507,111 +517,6 @@ For closed feasible intervals, compare endpoint and critical-point values. For o
 
 ---
 
-## L'Hopital's Rule carefully
-
-L'Hopital's Rule applies to limits that produce
-
-$$
-\frac{0}{0}
-\quad\text{or}\quad
-\frac{\infty}{\infty}.
-$$
-
-It does not apply just because a fraction is present. Check the original form first.
-
-For other indeterminate forms, rewrite before using the rule. For instance, products, differences, and powers may need algebra or logarithms before they become a quotient form.
-
-Common rewrites:
-
-| Original form | Possible rewrite |
-|---|---|
-| $$0\cdot\infty$$ | move one factor to the denominator |
-| $$\infty-\infty$$ | combine into one fraction or rationalize |
-| $$1^\infty,\ 0^0,\ \infty^0$$ | take logs, find the limit of $$\ln y$$, then exponentiate |
-
-<div class="theorem-box">
-
-**Example.** Evaluate
-
-$$
-\lim_{x\to0^+}x\ln x.
-$$
-
-Directly, this has the indeterminate form $$0\cdot(-\infty)$$. Rewrite it as a quotient:
-
-$$
-x\ln x=\frac{\ln x}{1/x}.
-$$
-
-Now the form is $$-\infty/\infty$$, so L'Hopital's Rule applies:
-
-$$
-\lim_{x\to0^+}\frac{\ln x}{1/x}
-=
-\lim_{x\to0^+}\frac{1/x}{-1/x^2}.
-$$
-
-Simplify:
-
-$$
-\frac{1/x}{-1/x^2}=-x.
-$$
-
-Therefore
-
-$$
-\lim_{x\to0^+}x\ln x
-=
-\lim_{x\to0^+}(-x)=0.
-$$
-
-</div>
-
-<div class="theorem-box">
-
-**Example.** Evaluate
-
-$$
-\lim_{x\to0^+}(1+x)^{1/x}.
-$$
-
-Let
-
-$$
-y=(1+x)^{1/x}.
-$$
-
-Take the natural logarithm:
-
-$$
-\ln y=\frac{\ln(1+x)}{x}.
-$$
-
-The right side gives $$0/0$$ as $$x\to0^+$$, so use L'Hopital's Rule:
-
-$$
-\lim_{x\to0^+}\frac{\ln(1+x)}{x}
-=
-\lim_{x\to0^+}\frac{1/(1+x)}{1}
-=1.
-$$
-
-Thus
-
-$$
-\lim_{x\to0^+}\ln y=1.
-$$
-
-Exponentiate to return to $$y$$:
-
-$$
-\lim_{x\to0^+}(1+x)^{1/x}=e^1=e.
-$$
-
-</div>
-
----
-
 ## Newton's method intuition
 
 Newton's method uses tangent lines to approximate roots. Starting from $$x_n$$, the tangent line to $$f$$ at $$x_n$$ crosses the $$x$$-axis at
@@ -622,58 +527,6 @@ $$
 
 The method works best when the starting guess is close to the root and the derivative is not near zero. If the tangent line is nearly horizontal, the next approximation can jump far away.
 
----
-
-## Common mistakes
-
-:::mistakes
-- Calling every critical point an extremum.
-- Using the second derivative test when $$f'(c) \ne 0$$.
-- Forgetting endpoints in absolute-extrema problems.
-- Claiming an inflection point from $$f''=0$$ without checking concavity change.
-:::
-
----
-
-## Closed Interval Method
-
-To find absolute extrema of a continuous function on $$[a,b]$$:
-
-:::checklist
-1. Verify that the function is continuous on the closed interval.
-2. Find all critical numbers in $$(a,b)$$.
-3. Evaluate $$f$$ at the endpoints and at each critical number.
-4. Compare the output values.
-:::
-
-The largest output is the absolute maximum, and the smallest output is the absolute minimum. Endpoints must be included because absolute extrema can occur at endpoints even though local extrema usually focus on interior points.
-
-### Fermat's Theorem
-
-If $$f$$ has a local extremum at an interior point $$c$$ and $$f'(c)$$ exists, then
-
-$$
-f'(c)=0.
-$$
-
-This theorem explains why critical numbers matter, but it does not say every critical number is an extremum. A sign test or value comparison is still needed.
-
-### Mean Value Theorem conditions
-
-The Mean Value Theorem requires:
-
-:::conditions
-1. $$f$$ is continuous on $$[a,b]$$.
-2. $$f$$ is differentiable on $$(a,b)$$.
-:::
-
-If those conditions hold, then there is some $$c\in(a,b)$$ such that
-
-$$
-f'(c)=\frac{f(b)-f(a)}{b-a}.
-$$
-
-The theorem says that at some instant, the instantaneous rate matches the average rate over the interval.
 
 ### Optimization domains
 

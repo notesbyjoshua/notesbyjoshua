@@ -52,6 +52,70 @@ Notice that this is a rate, not a total: it does not say there are $$40$$ fish, 
 
 </div>
 
+### Related quantities and hidden variables
+
+Contextual problems often include more variables than you actually need. The goal is to write one equation connecting the changing quantities, then identify which rate the question asks for.
+
+:::strategy{title="Related quantities"}
+- define every variable before differentiating,
+- record which variables are changing,
+- keep constants as constants,
+- substitute numerical values after differentiating.
+:::
+
+If the independent variable is time, every changing quantity gets a rate such as $$dx/dt$$, $$dV/dt$$, or $$dA/dt$$.
+
+---
+
+## Interpreting graphs in context
+
+Given a graph of a function $$f$$:
+
+- slope describes the derivative $$f'$$,
+- steep positive slope means rapid increase,
+- slope near zero means little short-term change,
+- concavity tells whether the rate itself is increasing or decreasing.
+
+Given a graph of a derivative $$f'$$:
+
+- positive derivative means original function is increasing,
+- negative derivative means decreasing,
+- derivative crossing zero may indicate an extremum in the original function.
+
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[
+  axis lines=middle, xmin=0, xmax=8, ymin=0, ymax=9,
+  xtick={0,2,4,6,8}, ytick={0,2,4,6,8},
+  grid=both, grid style={gray!18},
+  width=9cm, height=6cm,
+  xlabel=$t$, ylabel=$Q(t)$,
+]
+\addplot[blue, very thick, samples=200, domain=0:8] {0.08*(x-4)^3 + 0.25*(x-4)^2 + 4.2};
+\addplot[orange!85!black, thick, domain=0.7:3.2] {-0.62*(x-2)+3.72};
+\addplot[orange!85!black, thick, domain=3.2:5.8] {0.5*(x-4.5)+4.27};
+\addplot[orange!85!black, thick, domain=5.4:7.6] {1.25*(x-6.5)+5.61};
+\addplot[only marks, mark=*, mark size=1.7pt, blue] coordinates {(2,3.72) (4.5,4.27) (6.5,5.61)};
+\node[orange!85!black, anchor=south east] at (axis cs:2,3.72) {negative rate};
+\node[orange!85!black, anchor=south] at (axis cs:4.5,4.27) {small positive rate};
+\node[orange!85!black, anchor=south west] at (axis cs:6.5,5.61) {larger positive rate};
+\end{axis}
+\end{tikzpicture}
+```
+// fix image: the negative/large positive rate points/lines are not on the graph, the small positive rate line goes through the function a bit (the function is a bit too thick)
+
+:::tip
+Problems will often sue and expect certain words:
+
+- increasing means derivative positive,
+- decreasing means derivative negative,
+- at what rate means derivative value,
+- how fast often means magnitude, but read carefully,
+- changing more rapidly compares derivative magnitudes or second derivatives depending on context.
+:::
+
 ---
 
 ## Straight line motion
@@ -148,57 +212,6 @@ $$
 At $$t=4$$ the velocity is $$+9$$ m/s and the acceleration is $$+12$$ m/s$$^2$$. Because velocity and acceleration have the same sign, the velocity is moving farther from zero, so the particle is speeding up.
 
 </div>
-
----
-
-## Interpreting graphs in context
-
-Given a graph of a function:
-
-- slope tells rate of change,
-- steep positive slope means rapid increase,
-- slope near zero means little short-term change,
-- concavity tells whether the rate itself is increasing or decreasing.
-
-Given a graph of a derivative:
-
-- positive derivative means original function is increasing,
-- negative derivative means decreasing,
-- derivative crossing zero may indicate an extremum in the original function.
-
-```tikz
-\usepackage{pgfplots}
-\pgfplotsset{compat=1.16}
-\begin{tikzpicture}
-\begin{axis}[
-  axis lines=middle, xmin=0, xmax=8, ymin=0, ymax=9,
-  xtick={0,2,4,6,8}, ytick={0,2,4,6,8},
-  grid=both, grid style={gray!18},
-  width=9cm, height=6cm,
-  xlabel=$t$, ylabel=$Q(t)$,
-]
-\addplot[blue, very thick, samples=200, domain=0:8] {0.08*(x-4)^3 + 0.25*(x-4)^2 + 4.2};
-\addplot[orange!85!black, thick, domain=0.7:3.2] {-0.62*(x-2)+3.72};
-\addplot[orange!85!black, thick, domain=3.2:5.8] {0.5*(x-4.5)+4.27};
-\addplot[orange!85!black, thick, domain=5.4:7.6] {1.25*(x-6.5)+5.61};
-\addplot[only marks, mark=*, mark size=1.7pt, blue] coordinates {(2,3.72) (4.5,4.27) (6.5,5.61)};
-\node[orange!85!black, anchor=south east] at (axis cs:2,3.72) {negative rate};
-\node[orange!85!black, anchor=south] at (axis cs:4.5,4.27) {small positive rate};
-\node[orange!85!black, anchor=south west] at (axis cs:6.5,5.61) {larger positive rate};
-\end{axis}
-\end{tikzpicture}
-```
-// fix image: the negative/large positive rate points/lines are not on the graph, the small positive rate line goes through the function a bit (the function is a bit too thick)
-
-:::tip
-Problems will often sue and expect certain words:
-
-- increasing means derivative positive,
-- decreasing means derivative negative,
-- at what rate means derivative value,
-- how fast often means magnitude, but read carefully,
-- changing more rapidly compares derivative magnitudes or second derivatives depending on context.
-:::
 
 ---
 
@@ -393,9 +406,49 @@ So $$\sqrt{27}\approx 5.2$$. The true value is about $$5.196$$, so the linear es
 
 </div>
 
+### Differential notation and small changes
+
+<div class="theorem-box">
+
+If $$y=f(x)$$, then the differential is defined as
+
+$$
+dy=f'(x)\,dx
+$$.
+
+This is equivalent to $$f'(x)=\frac{dy}{dx}$$, combining two well known derivative notations.
+
+</div>
+
+The differential models the approximate change in $$y$$ caused by a infinitesimal small change $$dx$$ in $$x$$. This is the same idea as linearization, written in a compact way:
+
+$$
+\Delta y\approx dy=f'(a)\Delta x.
+$$
+
+The actual change is
+
+$$
+\Delta y=f(a+\Delta x)-f(a),
+$$
+
+while the differential estimate is
+
+$$
+dy=f'(a)\Delta x.
+$$
+
+Differentials are especially useful for error estimates. If a measurement has possible error $$\Delta x$$, then the propagated output error is approximately
+
+$$
+\lvert dy\rvert=\lvert f'(a)\rvert\lvert \Delta x\rvert.
+$$
+
+Linearization and differentials are very influential not only in calculus, but in other fields as well like physics.
+
 ---
 
-## Applications of derivatives to business
+## Applications to business
 
 // please reformat/add stuff to this section according to this lesson: https://tutorial.math.lamar.edu/Classes/CalcI/BusinessApps.aspx 
 
@@ -492,103 +545,6 @@ At a production level of $$200$$ items, profit is increasing at about $$8$$ doll
 
 ---
 
-## Linearization in context
-
-Linearization is an estimate of output near a known input:
-
-$$
-f(a+\Delta x)\approx f(a)+f'(a)\Delta x.
-$$
-
-In context, this means a small input change produces an approximate output change:
-
-$$
-\Delta f\approx f'(a)\Delta x.
-$$
-
-This is the same idea behind differentials:
-
-$$
-dy=f'(x)\,dx.
-$$
-
-The approximation is local. It is meant for small changes near the input where the derivative was measured.
-
----
-
-## Related quantities and hidden variables
-
-Contextual problems often include more variables than you actually need. The goal is to write one equation connecting the changing quantities, then identify which rate the question asks for.
-
-:::strategy{title="Related quantities"}
-- define every variable before differentiating,
-- record which variables are changing,
-- keep constants as constants,
-- substitute numerical values after differentiating.
-:::
-
-If the independent variable is time, every changing quantity gets a rate such as $$dx/dt$$, $$dV/dt$$, or $$dA/dt$$.
-
----
-
-## Justifying answers from graphs
-
-When using a graph of $$f$$, slope describes $$f'$$. When using a graph of $$f'$$, height describes the rate of change of $$f$$.
-
-That distinction is one of the biggest AP traps:
-
-- graph of position: slope is velocity;
-- graph of velocity: height is velocity and slope is acceleration;
-- graph of acceleration: height is acceleration.
-
-Always identify what the graph represents before interpreting signs, slopes, or areas.
-
----
-
-## Differential notation and small changes
-
-If $$y=f(x)$$, then the differential
-
-$$
-dy=f'(x)\,dx
-$$
-
-models the approximate change in $$y$$ caused by a small change $$dx$$ in $$x$$. This is the same idea as linearization, written in a compact way:
-
-$$
-\Delta y\approx dy=f'(a)\Delta x.
-$$
-
-The actual change is
-
-$$
-\Delta y=f(a+\Delta x)-f(a),
-$$
-
-while the differential estimate is
-
-$$
-dy=f'(a)\Delta x.
-$$
-
-Differentials are especially useful for error estimates. If a measurement has possible error $$\Delta x$$, then the propagated output error is approximately
-
-$$
-\lvert dy\rvert=\lvert f'(a)\rvert\lvert \Delta x\rvert.
-$$
-
-### Rate in / rate out structure
-
-For accumulation contexts, a total amount changes according to
-
-$$
-\frac{dA}{dt}=\text{rate in}-\text{rate out}.
-$$
-
-If the rate in is bigger than the rate out, $$A$$ increases. If the rate out is bigger, $$A$$ decreases. If they are equal, the amount has an instant where its derivative is zero, though that does not automatically mean an absolute maximum or minimum.
-
----
-
 ## L'Hôpital's Rule
 
 Sometimes, you when calculating limits, you get indeterminate forms that cannot be solved using algebra. A very useful way to solve is to use L'Hôpital's rule.
@@ -632,6 +588,99 @@ $$
 $$
 
 So the limit equals $$1$$.
+
+</div>
+
+It is important to note that L'Hôpital's Rule applies to limits that produce
+
+$$
+\frac{0}{0}
+\quad\text{or}\quad
+\frac{\infty}{\infty}.
+$$
+
+It does not apply just because a fraction is present. Check the original form first.
+
+For other indeterminate forms, rewrite before using the rule. For instance, products, differences, and powers may need algebra or logarithms before they become a quotient form.
+
+Common rewrites:
+
+| Original form | Possible rewrite |
+|---|---|
+| $$0\cdot\infty$$ | move one factor to the denominator |
+| $$\infty-\infty$$ | combine into one fraction or rationalize |
+| $$1^\infty,\ 0^0,\ \infty^0$$ | take logs, find the limit of $$\ln y$$, then exponentiate |
+
+<div class="theorem-box">
+
+**Example.** Evaluate $$\lim_{x\to0^+}x\ln x.$$
+
+Directly, this has the indeterminate form $$0\cdot(-\infty)$$. Rewrite it as a quotient:
+
+$$
+x\ln x=\frac{\ln x}{1/x}.
+$$
+
+Now the form is $$-\infty/\infty$$, so L'Hopital's Rule applies:
+
+$$
+\lim_{x\to0^+}\frac{\ln x}{1/x}
+=
+\lim_{x\to0^+}\frac{1/x}{-1/x^2}.
+$$
+
+Simplify:
+
+$$
+\frac{1/x}{-1/x^2}=-x.
+$$
+
+Therefore
+
+$$
+\lim_{x\to0^+}x\ln x
+=
+\lim_{x\to0^+}(-x)=0.
+$$
+
+</div>
+
+<div class="theorem-box">
+
+**Example.** Evaluate $$\lim_{x\to0^+}(1+x)^{1/x}.$$
+
+Let
+
+$$
+y=(1+x)^{1/x}.
+$$
+
+Take the natural logarithm:
+
+$$
+\ln y=\frac{\ln(1+x)}{x}.
+$$
+
+The right side gives $$0/0$$ as $$x\to0^+$$, so use L'Hopital's Rule:
+
+$$
+\lim_{x\to0^+}\frac{\ln(1+x)}{x}
+=
+\lim_{x\to0^+}\frac{1/(1+x)}{1}
+=1.
+$$
+
+Thus
+
+$$
+\lim_{x\to0^+}\ln y=1.
+$$
+
+Exponentiate to return to $$y$$:
+
+$$
+\lim_{x\to0^+}(1+x)^{1/x}=e^1=e.
+$$
 
 </div>
 
