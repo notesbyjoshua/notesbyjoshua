@@ -13,10 +13,131 @@ head:
 
 import { Card, CardGrid, Pills, ProfileCard, Callout } from '../../components/mdx';
 
-A reference for **writers and admins**: every block you can use when writing
-notes, with the markup that produces it. It mirrors the live styling, so use it
-as a copy-paste reference. For prose conventions (math, proofs, example tags),
-see `how-to-write-notes.md` in the repo.
+A practical guide for **writers and admins**. Use this page when you are writing
+or editing notes: it covers the basic Markdown you need, the note structure we
+use, and every special block available on the site. It mirrors the live styling,
+so you can copy the markup here and adapt it.
+
+The repo source of truth is `how-to-write-notes.md`; this page turns those rules
+into a writer-friendly reference.
+
+---
+
+## Quick start
+
+Every notes page is a Markdown file in `astro/src/content/docs/notes/`. A normal
+unit page should start with front matter, then go straight into the first real
+section.
+
+```markdown
+---
+title: "Page title"
+sidebar:
+  order: 1
+---
+
+## First Topic
+
+Write the explanation here. Start with the idea before using formulas heavily.
+
+<div class="theorem-box">
+
+**Example.** A short problem statement that ends with what to find.
+
+Show the work here.
+
+</div>
+
+---
+
+## Practice
+
+1. Practice question here.
+2. Another practice question here.
+```
+
+The page title comes from `title:` in the front matter. Do not add a separate
+`# Page title` heading in the body. Start normal sections with `##`.
+
+Do not add an appendix unless someone explicitly asks for one. Put new formulas,
+examples, explanations, and practice directly into the section where a student
+would use them.
+
+---
+
+## Markdown basics
+
+Markdown is plain text with small symbols that turn into formatted content.
+
+```markdown
+## Big Section
+
+### Smaller Section
+
+This is a paragraph. Leave a blank line between paragraphs.
+
+- Bullet point
+- Another bullet point
+
+1. Numbered step
+2. Another numbered step
+
+**Bold important words.** Use *italics* for light emphasis.
+
+[Link text](/notes/ap/calculus/limits/)
+```
+
+For lists, start each item with words before a formula. A bullet that begins
+with only math can render awkwardly.
+
+```markdown
+- WRONG: $$R = 8.314\ \text{J/(mol K)}$$
+- Ideal gas constant: $$R = 8.314\ \text{J/(mol K)}$$
+```
+
+Use `---` to separate large sections when it helps the page scan cleanly. Leave
+a blank line before and after section dividers, headings, theorem boxes, callout
+blocks, and images.
+
+---
+
+## Math
+
+Use `$$...$$` for all math, including inline math. The notes site renders math
+with KaTeX.
+
+```markdown
+Inline math looks like $$f'(x)$$ inside a sentence.
+
+Display math gets its own lines:
+
+$$
+\frac{d}{dx}\sin x = \cos x
+$$
+```
+
+Keep delimiters balanced: every `$$`, `{`, `\left`, and `\begin{...}` needs a
+matching close. For absolute value, use `\lvert` and `\rvert` instead of plain
+vertical bars, since bare `|` can confuse Markdown tables.
+
+```markdown
+$$
+\lvert x - 3 \rvert < 5
+$$
+```
+
+---
+
+## Images
+
+Use plain `/assets/...` paths. Include useful alt text, and keep the standard
+classes so images size consistently.
+
+```markdown
+<img class="note-img note-img--w480" src="/assets/Images/og-card.png" alt="Example figure" loading="lazy" decoding="async" />
+```
+
+Only add image placeholders when the diagram would materially help the note.
 
 ---
 
@@ -90,10 +211,11 @@ the stoichiometric coefficients.
 
 ---
 
-## Theorem boxes (legacy, still supported)
+## Theorem boxes
 
 Authored as `<div class="theorem-box">` with a bold lead-in. Colour-coded by the
-lead-in word. Follow the format as close as you can.
+lead-in word. Leave a blank line after the opening tag and before the closing
+tag.
 
 <div class="theorem-box">
 
@@ -108,8 +230,8 @@ stoichiometric coefficient.
 
 </div>
 
-Examples now take a **broad-subject tag** in parentheses — the topic, not a
-hyper-specific title (write `**Example (Finding rate laws).**`):
+Examples should use a plain `**Example.**` lead-in. Make the problem statement
+end with what the student is trying to find or derive.
 
 <div class="theorem-box">
 
@@ -119,6 +241,8 @@ triples. Find the order in $$A$$.
 The rate is first order in $$A$$, so rate $$= k[A]$$.
 
 </div>
+
+Proofs should name what they are proving in parentheses.
 
 <div class="theorem-box">
 
@@ -130,6 +254,34 @@ $$\frac{d[A]}{dt} = -k[A]$$ and integrating gives $$\ln[A]_t = \ln[A]_0 - kt$$.
 ---
 
 ## Practice blocks
+
+For normal notes, practice problems can be a numbered list. When you include
+solutions, put each solution in a theorem box with a `### Solution` heading.
+
+```markdown
+## Practice
+
+1. What is the pH of a $$1.0\times10^{-3}\ \text{M}$$ HCl solution?
+
+---
+
+## Solutions
+
+<div class="theorem-box">
+
+### Solution 1
+
+Strong acid means $$[\text{H}^+] = 1.0\times10^{-3}$$, so:
+
+$$
+\boxed{\text{pH} = 3}.
+$$
+
+</div>
+```
+
+The nested problem/solution block below is also available for richer interactive
+practice pages.
 
 ::::problem
 1. What is the pH of a $$1.0\times10^{-3}\ \text{M}$$ HCl solution?
@@ -174,3 +326,17 @@ $$
 $$
 
 <img class="note-img note-img--w480" src="/assets/Images/og-card.png" alt="Example figure" loading="lazy" decoding="async" />
+
+---
+
+## Automated checks
+
+Before committing, run the note checker from `astro/`:
+
+```sh
+npm run check:notes
+```
+
+The checker catches the mechanical issues that most often break notes:
+unclosed math, missing front matter, unbalanced `<div>` tags, leftover
+`markdown="1"`, old `relative_url` image paths, and bare `|` in math.
