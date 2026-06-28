@@ -15,11 +15,11 @@ If $$Q(t)$$ is a quantity depending on time, then:
 
 Always interpret both sign and units and give sufficient context if necessary.
 
-Many contextual problems also distinguish between average and instantaneous rates of change. The average rate on $$[a,b]$$ is the slop of the secant line:
+Many contextual problems also distinguish between average and instantaneous rates of change. The average rate on $$[a,b]$$ is the slope of the secant line:
 
 $$
-\frac{Q(b)-Q(a)}{b-a}
-$$,
+\frac{Q(b)-Q(a)}{b-a},
+$$
 
 while the instantaneous rate at $$t=a$$ is the derivative:
 
