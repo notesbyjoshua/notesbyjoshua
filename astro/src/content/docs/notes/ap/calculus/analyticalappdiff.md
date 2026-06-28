@@ -476,25 +476,6 @@ So the first iteration gives $$x_1=1.5$$, already close to the true value $$\sqr
 
 ---
 
-## Function analysis as a sign story
-
-Most of this unit is about reading signs:
-
-- the sign of $$f'$$ tells whether $$f$$ is increasing or decreasing,
-- the sign of $$f''$$ tells whether $$f'$$ is increasing or decreasing,
-- a sign change in $$f'$$ identifies local extrema,
-- a sign change in $$f''$$ identifies changes in concavity.
-
-This is why sign charts are more than bookkeeping. They translate derivative information into graph behavior.
-
-<div class="theorem-box">
-
-**Key idea.** A zero of $$f'$$ is only a candidate for an extremum. The behavior around that point decides what actually happens.
-
-</div>
-
----
-
 ## Concavity as rate behavior
 
 Concavity describes how the slope changes.

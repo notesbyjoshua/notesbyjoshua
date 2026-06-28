@@ -410,9 +410,6 @@ For other common function families, compare long-run growth:
 | Trig | sine and cosine oscillate, so many infinity limits do not exist |
 | Inverse trig | often approaches a horizontal angle value |
 
-:::tip
-When analyzing infinity, we usually only look at the largest degree for rational/polynomial functions. When you have a combination of different functions combined together, we will usually only look at which function *grows the fastest*, which will be explained more in Unit 2.
-:::
 <div class="theorem-box">
 
 **Example.** Evaluate $$\displaystyle\lim_{x\to\infty} \frac{3x^2+5x}{2x^2-7}$$ and identify the horizontal asymptote.

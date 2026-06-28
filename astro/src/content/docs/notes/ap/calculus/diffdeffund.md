@@ -114,13 +114,7 @@ For instance, if position is measured in feet and time in seconds, velocity is m
 
 The Leibniz Notation ($$\frac{dy}{dx}$$) is especially useful for problems that require context. For example, if $$s(t)$$ is position, then $$s'(t)$$ and $$ds/dt$$ both describe velocity. The notation $$ds/dt$$ makes units especially clear because it literally compares a change in position to a change in time.
 
-For a quantity $$Q$$ depending on another quantity $$x$$:
-
-$$
-\frac{dQ}{dx}
-$$
-
-has units of $$Q$$-units per $$x$$-unit. This unit check is one of the fastest ways to catch an interpretation error.
+For a quantity $$Q$$ depending on another quantity $$x$$: $$\frac{dQ}{dx}$$ has units of $$Q$$-units per $$x$$-unit. This unit check is one of the fastest ways to catch an interpretation error.
 
 ### Why the derivative is a limit
 
@@ -143,7 +137,7 @@ This is why the derivative can be interpreted in several connected ways:
 
 <div class="theorem-box">
 
-**Definition.** A function is said to be "differentiable" on an interval $$[a,b]$$ if it's derivative exists in *all* of its domain.
+**Definition.** A function is said to be *differentiable* on an interval $$[a,b]$$ if it's derivative exists in *all* of its domain.
 
 </div>
 
@@ -622,52 +616,6 @@ $$
 </div>
 
 // add a section on alternate notation for higher order derivatives
-
----
-
-## Motion along a line
-
-If $$s(t)$$ is position, $$v(t)$$ is velocity, and $$a(t)$$ is acceleration, then:
-
-$$
-v(t) = s'(t)
-$$
-
-$$
-a(t) = v'(t) = s''(t)
-$$
-
-Velocity includes sign and direction; speed is defined as $$\lvert v(t) \rvert$$.
-
-When velocity and acceleration have the same sign, speed is increasing. When signs differ, speed is decreasing.
-
-<div class="theorem-box">
-
-**Example.** A particle moves with position $$s(t)=t^3-6t^2+9t$$ (in meters, $$t$$ in seconds). Find $$v(t)$$ and $$a(t)$$, and determine whether the speed is increasing at $$t=4$$.
-
-Differentiate the position to get velocity, then differentiate again for acceleration:
-
-$$
-v(t)=s'(t)=3t^2-12t+9,
-$$
-
-$$
-a(t)=v'(t)=6t-12.
-$$
-
-Evaluate both at $$t=4$$:
-
-$$
-v(4)=3(16)-12(4)+9 = 48-48+9 = 9,
-$$
-
-$$
-a(4)=6(4)-12 = 12.
-$$
-
-Both velocity and acceleration are positive at $$t=4$$, so they share the same sign. Therefore the speed is increasing at $$t=4$$.
-
-</div>
 
 ---
 

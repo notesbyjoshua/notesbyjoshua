@@ -18,8 +18,6 @@ $$
 
 The outside derivative is evaluated at the inside function, and then multiplied by the derivative of the inside function.
 
-### Chain rule intuition
-
 The chain rule is about layered change. If $$x$$ changes, then the inside function $$g(x)$$ changes first. That change then causes the outside function $$f(g(x))$$ to change.
 
 Symbolically,
@@ -59,8 +57,6 @@ $$
 $$
 
 </div>
-
----
 
 <div class="theorem-box">
 
@@ -166,7 +162,23 @@ $$
 
 <div class="theorem-box">
 
-**Proof (Inverse Function Derivative).** // add proof to the formula
+**Proof (Inverse Function Derivative).** If $$y=f(x)$$ and $$x=f^{-1}(y)$$, then composing the functions gives
+
+$$
+f(f^{-1}(x))=x.
+$$
+
+Differentiate both sides:
+
+$$
+f'(f^{-1}(x))(f^{-1})'(x)=1.
+$$
+
+Solving for the inverse derivative gives
+
+$$
+(f^{-1})'(x)=\frac{1}{f'(f^{-1}(x))}.
+$$
 
 </div>
 
@@ -269,42 +281,6 @@ Simplifying the square gives
 
 $$
 \frac{dy}{dx}=\frac{2x}{1+x^4}.
-$$
-
-</div>
-
----
-
-## Inverse function derivative intuition
-
-Inverse functions undo each other. If $$f(a)=b$$, then $$f^{-1}(b)=a$$.
-
-The graph of an inverse is the reflection of the original graph across $$y=x$$. Reflection swaps horizontal and vertical change, so slopes become reciprocals:
-
-$$
-(f^{-1})'(b)=\frac{1}{f'(a)}.
-$$
-
-This formula only works when the original slope is nonzero. If $$f'(a)=0$$, the inverse graph would have a vertical tangent at the reflected point.
-
-<div class="theorem-box">
-
-**Why inverse slopes are reciprocals.** If $$y=f(x)$$ and $$x=f^{-1}(y)$$, then composing the functions gives
-
-$$
-f(f^{-1}(x))=x.
-$$
-
-Differentiate both sides:
-
-$$
-f'(f^{-1}(x))(f^{-1})'(x)=1.
-$$
-
-Solving for the inverse derivative gives
-
-$$
-(f^{-1})'(x)=\frac{1}{f'(f^{-1}(x))}.
 $$
 
 </div>
