@@ -85,6 +85,31 @@ Keep these balanced or the page silently breaks: `$$` delimiters, `{ }`,
 `\left`/`\right`, and `\begin{env}`/`\end{env}`. Use `$$…$$`, never LaTeX's
 `\( … \)` or `\[ … \]` (remark-math won't render those).
 
+### KaTeX punctuation and compatibility
+
+These notes render with KaTeX, so write math using KaTeX-compatible LaTeX.
+Do not assume every MathJax command or old LaTeX habit will render correctly.
+
+For display math, put sentence punctuation **inside** the `$$...$$` block, not
+after the closing delimiter. Punctuation after a display block can break KaTeX
+rendering in these notes.
+
+Correct:
+
+``` markdown
+$$
+f'(x)=2x.
+$$
+```
+
+Incorrect:
+
+``` markdown
+$$
+f'(x)=2x
+$$.
+```
+
 ---
 
 ## Theorem boxes
