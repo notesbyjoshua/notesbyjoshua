@@ -66,4 +66,4 @@ This page was made by Joshua Bie.
 
 Major Contributors:
 - Garret Morberg-Nguyen (Inspiration for the theme and many key features, including the AI grader and highlighting)
-- Michael Zhao (Helped write some of the physics notes)
+- Alexander Ahn (Helped write some of the precalc notes)
