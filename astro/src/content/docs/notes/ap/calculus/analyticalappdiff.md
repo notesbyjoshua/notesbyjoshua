@@ -617,24 +617,25 @@ This new $$x$$-value is called $$x_{n+1}$$.
 \pgfplotsset{compat=1.16}
 \begin{tikzpicture}
 \begin{axis}[
-  axis lines=middle, xmin=1.1, xmax=1.75, ymin=-0.15, ymax=0.45,
-  xtick={1.4,1.4167,1.5}, ytick={0,0.25},
+  axis lines=middle, xmin=0.2, xmax=2.8, ymin=-1.3, ymax=5.2,
+  xtick={1,1.545,2.2}, ytick={0,2,4},
   grid=both, grid style={gray!18},
-  width=8.8cm, height=6cm,
+  width=9cm, height=6.2cm,
   xlabel=$x$, ylabel=$y$,
 ]
-\addplot[blue, thick, samples=180, domain=1.1:1.75] {x^2-2};
-\addplot[orange!85!black, thick, domain=1.25:1.68] {3*(x-1.5)+0.25};
-\addplot[red!75!black, thick, domain=1.34:1.5] {2.8334*(x-1.4167)+0.00694};
-\addplot[gray!70, dashed] coordinates {(1.5,0) (1.5,0.25)};
-\addplot[gray!70, dashed] coordinates {(1.4167,0) (1.4167,0.00694)};
-\addplot[only marks, mark=*, mark size=1.8pt, orange!85!black] coordinates {(1.5,0.25)};
-\addplot[only marks, mark=*, mark size=1.8pt, red!75!black] coordinates {(1.4167,0.00694)};
-\addplot[only marks, mark=*, mark size=1.6pt, gray!80] coordinates {(1.4167,0) (1.4142,0)};
-\node[orange!85!black, anchor=south west] at (axis cs:1.5,0.25) {tangent at $x_0$};
-\node[gray!80!black, anchor=north] at (axis cs:1.4167,0) {$x_1$};
-\node[red!75!black, anchor=south east] at (axis cs:1.4167,0.00694) {tangent at $x_1$};
-\node[gray!80!black, anchor=north east] at (axis cs:1.4142,0) {$x_2$};
+\addplot[blue, thick, samples=220, domain=0.25:2.65] {x^2-2};
+\addplot[orange!85!black, thick, domain=1.05:2.55] {4.4*(x-2.2)+2.84};
+\addplot[red!75!black, thick, domain=1.2:1.95] {3.109*(x-1.5455)+0.3884};
+\addplot[gray!70, dashed] coordinates {(2.2,0) (2.2,2.84)};
+\addplot[gray!70, dashed] coordinates {(1.5545,0) (1.5545,0.4165)};
+\addplot[gray!70, dashed] coordinates {(1.4207,0) (1.4207,0.0184)};
+\addplot[only marks, mark=*, mark size=1.8pt, orange!85!black] coordinates {(2.2,2.84)};
+\addplot[only marks, mark=*, mark size=1.8pt, red!75!black] coordinates {(1.5455,0.3884)};
+\addplot[only marks, mark=*, mark size=1.6pt, gray!80] coordinates {(1.5545,0) (1.4207,0)};
+\node[orange!85!black, anchor=south west] at (axis cs:2.05,3.2) {tangent at $x_0$};
+\node[gray!80!black, anchor=north] at (axis cs:1.5545,0) {$x_1$};
+\node[red!75!black, anchor=south east] at (axis cs:1.55,0.62) {tangent at $x_1$};
+\node[gray!80!black, anchor=north east] at (axis cs:1.4207,0) {$x_2$};
 \end{axis}
 \end{tikzpicture}
 ```

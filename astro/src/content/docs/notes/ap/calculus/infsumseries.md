@@ -5,10 +5,6 @@ sidebar:
   order: 10
 ---
 
-This BC-only unit is about representing functions and numbers through infinitely many terms, and then deciding when those infinite processes make sense.
-
----
-
 ## Sequences
 
 A sequence is a function whose domain is the positive integers:
@@ -37,29 +33,15 @@ Common tools for sequence limits include:
 - recognizing geometric behavior,
 - using monotonicity and boundedness.
 
-If a sequence is increasing and bounded above, it converges. If it is decreasing and bounded below, it converges. This is useful when an explicit limit is hard to compute.
+If a sequence is increasing and bounded above, it converges. If it is decreasing and bounded below, it converges. This is useful when an explicit limit is hard to compute. To review sequences, you can check out [Unit 13/14](/notes/ap/precalc/additionaltrig/) of AP Precalculus.
 
 ---
 
 ## Infinite series
 
-A sequence is a list of terms. A series is the sum of those terms.
+A sequence is a list of terms. A series is the sum of those terms. Again, you can review more in [Unit 13/14](/notes/ap/precalc/additionaltrig/) of AP Precalculus.
 
-The sequence question is:
-
-$$
-\text{Do the terms }a_n\text{ approach a value?}
-$$
-
-The series question is:
-
-$$
-\text{Do the partial sums }S_N\text{ approach a value?}
-$$
-
-These are related but not the same. A series can only converge if its terms approach zero, but terms approaching zero do not guarantee that the infinite sum converges.
-
-A series is the sum
+An infinite series is the sum
 
 $$
 \sum_{n=1}^{\infty} a_n.
@@ -71,13 +53,13 @@ $$
 S_N = \sum_{n=1}^{N} a_n.
 $$
 
-The series converges when
+The series *converges* when
 
 $$
 \lim_{N\to\infty}S_N
 $$
 
-exists as a finite number.
+exists as a finite number. Otherwise, the series *diverges*.
 
 ---
 
@@ -115,13 +97,220 @@ $$
 S_N-S_{N-1}=a_N.
 $$
 
-So the terms must approach $$0$$. If they do not, the partial sums cannot settle to one finite value.
+So the terms must approach $$0$$. If they do not, the partial sums cannot settle to one finite value, and thus, the infinite series diverges.
 
 </div>
 
 <div class="theorem-box">
 
 **Key idea.** The nth-term test can only prove divergence. It never proves convergence.
+
+</div>
+
+<div class="theorem-box">
+
+**Example.** Use the nth-term test to determine whether $$\sum_{n=1}^{\infty}\frac{3n+1}{2n-5}$$ converges or diverges.
+
+Look at the terms:
+
+$$
+a_n=\frac{3n+1}{2n-5}.
+$$
+
+Divide numerator and denominator by $$n$$:
+
+$$
+\lim_{n\to\infty}\frac{3n+1}{2n-5}
+=
+\lim_{n\to\infty}\frac{3+\frac1n}{2-\frac5n}
+=
+\frac32.
+$$
+
+Since the terms do not approach $$0$$, the series diverges by the nth-term test.
+
+</div>
+
+---
+
+## Geometric series
+
+The infinite series (known as a geometric series)
+
+$$
+\sum_{n=0}^{\infty} ar^n
+$$
+
+converges when $$\lvert r \rvert < 1$$ and then
+
+$$
+\sum_{n=0}^{\infty} ar^n = \frac{a}{1-r}.
+$$
+
+<div class="theorem-box">
+
+**Proof (Geometric series formula).** Let
+
+$$
+S_N=a+ar+ar^2+\cdots+ar^N.
+$$
+
+Multiplying by $$r$$ gives
+
+$$
+rS_N=ar+ar^2+\cdots+ar^{N+1}.
+$$
+
+Subtracting cancels the middle terms:
+
+$$
+S_N-rS_N=a-ar^{N+1}.
+$$
+
+So
+
+$$
+S_N=\frac{a(1-r^{N+1})}{1-r}.
+$$
+
+If $$\lvert r\rvert<1$$, then $$r^{N+1}\to0$$, leaving
+
+$$
+\frac{a}{1-r}.
+$$
+
+</div>
+
+<div class="theorem-box">
+
+**Example.** Does the series $$\displaystyle\sum_{n=0}^{\infty} 3\left(\tfrac{1}{4}\right)^n$$ converge? If so, evaluate it out.
+
+This is geometric with first term $$a=3$$ and ratio $$r=\tfrac14$$. Since $$\lvert r \rvert=\tfrac14<1$$, the series converges and we may apply the formula:
+
+$$
+\sum_{n=0}^{\infty} 3\left(\tfrac{1}{4}\right)^n = \frac{a}{1-r} = \frac{3}{1-\tfrac14} = \frac{3}{\tfrac34}.
+$$
+
+Simplifying,
+
+$$
+\frac{3}{\tfrac34} = 3\cdot\frac{4}{3} = 4.
+$$
+
+So the sum is $$4$$.
+
+</div>
+
+---
+
+## Harmonic and p-series
+
+<div class="theorem-box">
+
+**Definition.** A *p-series* is defined as
+
+$$
+\sum_{n=1}^{\infty} \frac{1}{n^p}
+$$
+
+for some positive integer $$p$$. The p-series wil only converges if and only if $$p>1$$.
+
+The *harmonic series* is a special case of the $$p$$-series with $$p=1$$:
+
+$$
+\sum_{n=1}^{\infty} \frac{1}{n}.
+$$
+
+</div>
+
+The proof of the $$p$$-series converge requires techniques talked about later in this lesson.
+
+<div class="theorem-box">
+
+**Example.** Classify each series as convergent or divergent:
+
+$$
+\sum_{n=1}^{\infty}\frac{1}{n^2},\qquad \sum_{n=1}^{\infty}\frac{1}{\sqrt{n}}.
+$$
+
+Each is a p-series, so we only need to read off $$p$$ and compare it to $$1$$.
+
+For the first series, the denominator is $$n^2$$, so $$p=2$$. Since $$p=2>1$$, the series
+
+$$
+\sum_{n=1}^{\infty}\frac{1}{n^2}
+$$
+
+converges.
+
+For the second series, $$\frac{1}{\sqrt{n}}=\frac{1}{n^{1/2}}$$, so $$p=\tfrac12$$. Since $$p=\tfrac12\le1$$, the series
+
+$$
+\sum_{n=1}^{\infty}\frac{1}{\sqrt{n}}
+$$
+
+diverges. The terms shrink to zero, but not fast enough for the sum to stay finite.
+
+</div>
+
+Note that while $$p$$-series are easy to determine convergence, it is really hard to find the value for a convergent series. If you are curious, you can research the Riemann zeta function.
+
+---
+
+## Integral Test
+
+The Integral Test applies when $$a_n=f(n)$$ and $$f$$ is:
+
+:::conditions
+1. positive,
+2. continuous,
+3. decreasing,
+4. defined for sufficiently large $$x$$.
+:::
+
+<div class="theorem-box">
+
+**Theorem (Integral Test).** If $$f(x)$$ is positive, continuous, and decreasing for large $$x$$ with $$f(n)=a_n$$, then
+
+$$
+\sum a_n
+$$
+
+and
+
+$$
+\int f(x)\,dx
+$$
+
+either both converge or both diverge.
+
+</div>
+
+<div class="theorem-box">
+
+**Proof (Integral Test).** Suppose $$f$$ is positive, continuous, and decreasing, with $$f(n)=a_n$$. On each interval $$[n,n+1]$$, the decreasing condition gives
+
+$$
+f(n+1)\le f(x)\le f(n).
+$$
+
+Integrating over that interval gives
+
+$$
+f(n+1)\le \int_n^{n+1}f(x)\,dx\le f(n).
+$$
+
+Adding these inequalities from $$n=1$$ to $$n=N$$ gives comparison bounds between partial sums and integrals:
+
+$$
+\sum_{n=2}^{N+1}a_n
+\le
+\int_1^{N+1}f(x)\,dx
+\le
+\sum_{n=1}^{N}a_n.
+$$
+
+These inequalities show that the positive series and the improper integral control each other up to a finite first term. Therefore, if one has a finite limit, so does the other; if one grows without bound, so does the other.
 
 </div>
 
@@ -175,69 +364,71 @@ diverges.
 
 ---
 
-## Geometric series
+## Comparison tests
 
-$$
-\sum_{n=0}^{\infty} ar^n
-$$
+Comparison tests are about matching behavior to a known benchmark. For positive series:
 
-converges when $$\lvert r \rvert < 1$$ and then
+- to prove convergence, compare above by a convergent series,
+- to prove divergence, compare below by a divergent series.
 
-$$
-\sum_{n=0}^{\infty} ar^n = \frac{a}{1-r}.
-$$
+There are two types of comparisons: direct comparison, and limit comparison.
 
 <div class="theorem-box">
 
-**Proof (Geometric series formula).** Let
+**Theorem (Direct comparison test).**
+
+- If $$0 \le a_n \le b_n$$ and $$\sum b_n$$ converges, then $$\sum a_n$$ converges,
+- If $$0 \le b_n \le a_n$$ and $$\sum b_n$$ diverges, then $$\sum a_n$$ diverges.
+
+**Theorem (Limit comparison test).** If
 
 $$
-S_N=a+ar+ar^2+\cdots+ar^N.
+\lim_{n \to \infty} \frac{a_n}{b_n} = c
 $$
 
-Multiplying by $$r$$ gives
+with $$0<c<\infty$$, then $$\sum a_n$$ and $$\sum b_n$$ behave the same.
+
+</div>
+
+Limit comparison is often cleaner when the terms look like rational expressions or radicals, where it is hard to see if all the terms are greater/less than the desired function.
+
+<div class="theorem-box">
+
+**Proof (Comparison tests).** For direct comparison, assume $$0\le a_n\le b_n$$. If $$\sum b_n$$ converges, then its partial sums are bounded above. Since
 
 $$
-rS_N=ar+ar^2+\cdots+ar^{N+1}.
+0\le \sum_{n=1}^{N}a_n\le \sum_{n=1}^{N}b_n,
 $$
 
-Subtracting cancels the middle terms:
+the partial sums of $$\sum a_n$$ are increasing and bounded, so $$\sum a_n$$ converges. The divergence part is the same idea reversed: if $$0\le b_n\le a_n$$ and $$\sum b_n$$ diverges, then the larger partial sums $$\sum a_n$$ must also grow without bound.
+
+For limit comparison, if
 
 $$
-S_N-rS_N=a-ar^{N+1}.
+\lim_{n\to\infty}\frac{a_n}{b_n}=c
 $$
 
-So
-
-$$
-S_N=\frac{a(1-r^{N+1})}{1-r}.
-$$
-
-If $$\lvert r\rvert<1$$, then $$r^{N+1}\to0$$, leaving
-
-$$
-\frac{a}{1-r}.
-$$
+with $$0<c<\infty$$, then for large $$n$$ the ratio $$a_n/b_n$$ is trapped between two positive constants. That means $$a_n$$ is eventually between constant multiples of $$b_n$$, so direct comparison makes the two series have the same convergence behavior.
 
 </div>
 
 <div class="theorem-box">
 
-**Example.** Find the sum of $$\displaystyle\sum_{n=0}^{\infty} 3\left(\tfrac{1}{4}\right)^n.$$
+**Example.** Determine whether $$\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2+1}$$ converges.
 
-This is geometric with first term $$a=3$$ and ratio $$r=\tfrac14$$. Since $$\lvert r \rvert=\tfrac14<1$$, the series converges and we may apply the formula:
-
-$$
-\sum_{n=0}^{\infty} 3\left(\tfrac{1}{4}\right)^n = \frac{a}{1-r} = \frac{3}{1-\tfrac14} = \frac{3}{\tfrac34}.
-$$
-
-Simplifying,
+The terms are positive, and for every $$n\ge1$$ we have $$n^2+1>n^2$$, so
 
 $$
-\frac{3}{\tfrac34} = 3\cdot\frac{4}{3} = 4.
+0 \le \frac{1}{n^2+1} \le \frac{1}{n^2}.
 $$
 
-So the sum is $$4$$.
+The benchmark series $$\sum \frac{1}{n^2}$$ is a p-series with $$p=2>1$$, so it converges. By direct comparison, the smaller positive series converges as well:
+
+$$
+\sum_{n=1}^{\infty}\frac{1}{n^2+1}
+$$
+
+converges.
 
 </div>
 
@@ -277,131 +468,6 @@ Since the limit is a positive finite number and $$\sum \frac1n$$ diverges, the g
 
 ---
 
-## Harmonic and p-series
-
-The harmonic series
-
-$$
-\sum_{n=1}^{\infty} \frac{1}{n}
-$$
-
-diverges.
-
-The p-series
-
-$$
-\sum_{n=1}^{\infty} \frac{1}{n^p}
-$$
-
-converges if and only if $$p>1$$.
-
-<div class="theorem-box">
-
-**Example.** Classify each series as convergent or divergent:
-
-$$
-\sum_{n=1}^{\infty}\frac{1}{n^2},\qquad \sum_{n=1}^{\infty}\frac{1}{\sqrt{n}}.
-$$
-
-Each is a p-series, so we only need to read off $$p$$ and compare it to $$1$$.
-
-For the first series, the denominator is $$n^2$$, so $$p=2$$. Since $$p=2>1$$, the series
-
-$$
-\sum_{n=1}^{\infty}\frac{1}{n^2}
-$$
-
-converges.
-
-For the second series, $$\frac{1}{\sqrt{n}}=\frac{1}{n^{1/2}}$$, so $$p=\tfrac12$$. Since $$p=\tfrac12\le1$$, the series
-
-$$
-\sum_{n=1}^{\infty}\frac{1}{\sqrt{n}}
-$$
-
-diverges. The terms shrink to zero, but not fast enough for the sum to stay finite.
-
-</div>
-
----
-
-## Integral Test
-
-The Integral Test applies when $$a_n=f(n)$$ and $$f$$ is:
-
-:::conditions
-1. positive,
-2. continuous,
-3. decreasing,
-4. defined for sufficiently large $$x$$.
-:::
-
-<div class="theorem-box">
-
-**Theorem (Integral Test).** If $$f(x)$$ is positive, continuous, and decreasing for large $$x$$ with $$f(n)=a_n$$, then
-
-$$
-\sum a_n
-$$
-
-and
-
-$$
-\int f(x)\,dx
-$$
-
-either both converge or both diverge.
-
-</div>
-
----
-
-## Comparison tests
-
-Comparison tests are about matching behavior to a known benchmark. For positive series:
-
-- to prove convergence, compare above by a convergent series,
-- to prove divergence, compare below by a divergent series.
-
-Direct comparison:
-
-- if $$0 \le a_n \le b_n$$ and $$\sum b_n$$ converges, then $$\sum a_n$$ converges,
-- if $$0 \le b_n \le a_n$$ and $$\sum b_n$$ diverges, then $$\sum a_n$$ diverges.
-
-Limit comparison:
-
-If
-
-$$
-\lim_{n \to \infty} \frac{a_n}{b_n} = c
-$$
-
-with $$0<c<\infty$$, then $$\sum a_n$$ and $$\sum b_n$$ behave the same.
-
-Limit Comparison is often cleaner when the terms look like rational expressions or radicals.
-
-<div class="theorem-box">
-
-**Example.** Determine whether $$\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2+1}$$ converges.
-
-The terms are positive, and for every $$n\ge1$$ we have $$n^2+1>n^2$$, so
-
-$$
-0 \le \frac{1}{n^2+1} \le \frac{1}{n^2}.
-$$
-
-The benchmark series $$\sum \frac{1}{n^2}$$ is a p-series with $$p=2>1$$, so it converges. By direct comparison, the smaller positive series converges as well:
-
-$$
-\sum_{n=1}^{\infty}\frac{1}{n^2+1}
-$$
-
-converges.
-
-</div>
-
----
-
 ## Alternating series
 
 An alternating series often has the form
@@ -420,10 +486,54 @@ with $$b_n > 0$$.
 
 <div class="theorem-box">
 
+For positive-term series, convergence is about whether the sum of positive amounts stays finite. For alternating series, positive and negative terms can cancel. That creates two levels of convergence.
+
+If
+
+$$
+\sum \lvert a_n \rvert
+$$
+
+converges, then $$\sum a_n$$ converges absolutely.
+
+If $$\sum a_n$$ converges but $$\sum \lvert a_n \rvert$$ diverges, the convergence is conditional.
+
+Absolute convergence is stronger. If a series converges absolutely, it converges.
+
 **Theorem (Alternating Series Test).** The series converges if:
 
 - $$b_n$$ decreases eventually,
 - $$b_n \to 0$$.
+
+</div>
+
+<div class="theorem-box">
+
+**Proof (Alternating Series Test).** Consider an alternating series
+
+$$
+b_1-b_2+b_3-b_4+\cdots
+$$
+
+where $$b_n>0$$, $$b_n$$ decreases, and $$b_n\to0$$. The even partial sums increase:
+
+$$
+S_2\le S_4\le S_6\le\cdots,
+$$
+
+because each pair added after $$S_2$$ has the form $$b_{2k+1}-b_{2k+2}\ge0$$. The odd partial sums decrease:
+
+$$
+S_1\ge S_3\ge S_5\ge\cdots,
+$$
+
+because each pair added after $$S_1$$ has the form $$-b_{2k}+b_{2k+1}\le0$$. Also, every even partial sum is below every odd partial sum, and the gap between neighboring odd and even partial sums is one term:
+
+$$
+S_{2k+1}-S_{2k}=b_{2k+1}\to0.
+$$
+
+So the even and odd partial sums squeeze toward the same limit, meaning the alternating series converges.
 
 </div>
 
@@ -457,7 +567,7 @@ $$
 \lvert R_n\rvert\le b_{n+1}.
 $$
 
-This works because the partial sums trap the true value from alternating sides, and each new term makes the trap smaller.
+This works because the partial sums trap the true value from alternating sides, and each new term makes the trap smaller, and thus the "trap" can be modeled as the next term in the series.
 
 <div class="theorem-box">
 
@@ -485,47 +595,77 @@ $$
 
 ---
 
-## Absolute vs conditional convergence
-
-For positive-term series, convergence is about whether the sum of positive amounts stays finite. For alternating series, positive and negative terms can cancel. That creates two levels of convergence.
-
-If
-
-$$
-\sum \lvert a_n \rvert
-$$
-
-converges, then $$\sum a_n$$ converges absolutely.
-
-If $$\sum a_n$$ converges but $$\sum \lvert a_n \rvert$$ diverges, the convergence is conditional.
-
-Absolute convergence is stronger. If a series converges absolutely, it converges.
-
----
-
 ## Ratio and root tests
 
-Ratio Test:
+<div class="theorem-box">
+
+**Theorem (Ratio Test).** Define a variable $$L$$ such that
 
 $$
-L = \lim_{n \to \infty} \left\lvert\frac{a_{n+1}}{a_n}\right\rvert
+L = \lim_{n \to \infty} \left\lvert\frac{a_{n+1}}{a_n}\right\rvert.
 $$
-
-Root Test:
-
-$$
-L = \lim_{n \to \infty} \sqrt[n]{\lvert a_n \rvert}
-$$
-
-In either test:
 
 - if $$L<1$$, converge absolutely,
 - if $$L>1$$ or infinite, diverge,
 - if $$L=1$$, inconclusive.
 
+</div>
+
 <div class="theorem-box">
 
-**Example.** Use the Ratio Test on $$\displaystyle\sum_{n=0}^{\infty}\frac{2^n}{n!}.$$
+**Proof (Ratio Test).** If
+
+$$
+\lim_{n\to\infty}\left\lvert\frac{a_{n+1}}{a_n}\right\rvert=L<1,
+$$
+
+then for some number $$r$$ with $$L<r<1$$, the ratio is eventually less than $$r$$. That means the tail of $$\sum \lvert a_n\rvert$$ is bounded by a geometric series with ratio $$r$$, so the series converges absolutely.
+
+If $$L>1$$, then eventually $$\lvert a_{n+1}\rvert>\lvert a_n\rvert$$ often enough that the terms cannot approach $$0$$. Therefore the original series diverges by the nth-term test. When $$L=1$$, both convergent and divergent examples are possible, so the test is inconclusive.
+
+</div>
+
+<div class="theorem-box">
+
+**Theorem (Root Test).** Define a variable $$L$$ such that
+
+$$
+L = \lim_{n \to \infty} \sqrt[n]{\lvert a_n \rvert}
+$$
+
+- if $$L<1$$, converge absolutely,
+- if $$L>1$$ or infinite, diverge,
+- if $$L=1$$, inconclusive.
+
+</div>
+
+<div class="theorem-box">
+
+**Proof (Root Test).** If
+
+$$
+\lim_{n\to\infty}\sqrt[n]{\lvert a_n\rvert}=L<1,
+$$
+
+then for some $$r$$ with $$L<r<1$$, the terms eventually satisfy
+
+$$
+\sqrt[n]{\lvert a_n\rvert}\le r.
+$$
+
+Raising both sides to the $$n$$th power gives
+
+$$
+\lvert a_n\rvert\le r^n.
+$$
+
+The tail is bounded by a convergent geometric series, so $$\sum a_n$$ converges absolutely. If $$L>1$$, then eventually $$\sqrt[n]{\lvert a_n\rvert}>1$$, so $$\lvert a_n\rvert>1$$ and the terms do not approach $$0$$. Thus the series diverges. If $$L=1$$, the test is inconclusive.
+
+</div>
+
+<div class="theorem-box">
+
+**Example.** Determine if $$\displaystyle\sum_{n=0}^{\infty}\frac{2^n}{n!}$$ converges.
 
 Here $$a_n=\dfrac{2^n}{n!}$$. Form the ratio of consecutive terms:
 
@@ -545,56 +685,25 @@ $$
 L=\lim_{n\to\infty}\frac{2}{n+1}=0.
 $$
 
-Since $$L=0<1$$, the Ratio Test guarantees the series converges absolutely. (This is the Maclaurin series for $$e^x$$ evaluated at $$x=2$$, so it sums to $$e^2$$.)
+Since $$L=0<1$$, the Ratio Test guarantees the series converges absolutely. (This is the Maclaurin series for $$e^x$$ evaluated at $$x=2$$, so it sums to $$e^2$$. We will learn about this later.)
 
 </div>
 
 ---
 
-## Choosing a convergence test
-
-Series tests are tools for different patterns.
-
-Use geometric series when terms are built from a constant ratio. Use p-series when the series resembles
-
-$$
-\sum\frac{1}{n^p}.
-$$
-
-Use comparison when the terms are positive and resemble a known benchmark. Use limit comparison when the dominant long-run behavior is easier to compare than strict inequalities.
-
-Use the integral test when the terms come from a positive, continuous, decreasing function that is easy to integrate.
-
-Use the alternating series test when signs alternate and the magnitudes decrease to zero.
-
-Use the ratio test for factorials, exponentials, and many power series. Use the root test when the entire term is raised to the $$n$$th power.
-
-:::strategy{title="Choosing a convergence test"}
-1. First check whether $$a_n\to0$$. If not, the series diverges.
-2. Look for a geometric series, $$p$$-series, or telescoping pattern before using heavier tests.
-3. Use comparison tests for positive series that resemble simpler known series.
-4. Use the Alternating Series Test only when terms decrease to $$0$$ in absolute value.
-5. Use Ratio Test for factorials, exponentials, and power series.
-6. After finding a radius of convergence, test endpoints separately.
-:::
-
----
-
-## Power series
-
-A power series is like an infinite polynomial:
-
-$$
-\sum_{n=0}^{\infty} a_n(x-c)^n.
-$$
-
-Inside its interval of convergence, it behaves nicely:
-
-- it can be differentiated term by term,
-- it can be integrated term by term,
-- the center $$c$$ acts like the anchor point for the expansion.
+## Radius and intervals of convergence
 
 The radius of convergence comes from the long-run behavior of the coefficients. The endpoints need separate testing because the ratio or root test usually becomes inconclusive there.
+
+For a power series centered at $$c$$, the interval of convergence is always centered at $$c$$. The radius $$R$$ measures how far left and right the series converges before it starts diverging. The endpoints are special because the test used to find $$R$$ usually gives $$L=1$$ there, so each endpoint becomes its own ordinary series problem.
+
+:::checklist
+1. Use the Ratio Test or Root Test on the absolute value of the general term.
+2. Solve the inequality $$L<1$$ to find the open interval of convergence.
+3. Read the radius $$R$$ from the distance between the center and either side of that interval.
+4. Substitute each endpoint into the original series and test it separately.
+5. Write the final interval using brackets only for endpoints that converge.
+:::
 
 There is a radius of convergence $$R$$:
 
@@ -650,13 +759,52 @@ $$
 
 </div>
 
+---
+
+## Choosing a convergence test
+
+Series tests are tools for different patterns.
+
+:::strategy{title="Choosing a convergence test"}
+1. First check whether $$a_n\to0$$. If not, the series diverges.
+2. Look for a geometric series, $$p$$-series, or telescoping pattern (cancellation) before using heavier tests.
+3. Use comparison tests for positive series that resemble simpler known series.
+4. Use the Alternating Series Test only when terms decrease to $$0$$ in absolute value.
+5. Use Ratio Test for factorials, exponentials, and power series.
+6. After finding a radius of convergence, test endpoints separately.
+:::
+
+---
+
+## Power series
+
+A power series is like an infinite polynomial:
+
+$$
+\sum_{n=0}^{\infty} a_n(x-c)^n.
+$$
+
+Inside its interval of convergence, it behaves nicely:
+
+- it can be differentiated term by term,
+- it can be integrated term by term,
+- the center $$c$$ acts like the anchor point for the expansion.
+
+Power series are most often used to approximate functions, especially rational, trigonometric, exponential, or logarithmic functions.
+
 ### Differentiating and integrating power series
 
-Inside the interval of convergence, a power series can be differentiated or integrated term by term. This is useful for building new series from old ones.
+Inside the interval of convergence, a power series can be differentiated or integrated term by term.
+
+This is allowed because power series behave like polynomials inside their interval of convergence. On any smaller closed interval inside the radius of convergence, the series converges uniformly, which means the infinite sum is well-behaved enough that limits, derivatives, and integrals can be handled term by term. For AP purposes, the main rule is:
+
+:::key{name="Power series operations"}
+Inside the interval of convergence, power series may be differentiated and integrated term by term. The radius of convergence stays the same, but endpoints must be checked again.
+:::
 
 <div class="theorem-box">
 
-**Example.** Use the geometric series to find a power series for $$\frac{1}{(1-x)^2}$$.
+**Example.** Find a power series for $$\frac{1}{(1-x)^2}$$.
 
 Start with
 
@@ -682,17 +830,21 @@ The interval of convergence remains $$\lvert x\rvert<1$$ before checking endpoin
 
 ## Taylor and Maclaurin series
 
-Taylor series build a function from derivative information at one center point. The terms are chosen so that the polynomial matches the function's value, slope, concavity, and higher-order derivative behavior at the center.
+Taylor series is a power series that build a function from derivative information at one center point. The terms are chosen so that the polynomial matches the function's value, slope, concavity, and higher-order derivative behavior at the center.
 
-The Taylor series of $$f$$ centered at $$c$$ is
+<div class="theorem-box">
+
+**Definition.** The *Taylor series* of $$f$$ centered at $$c$$ is defined as
 
 $$
 \sum_{n=0}^{\infty} \frac{f^{(n)}(c)}{n!}(x-c)^n.
 $$
 
-Maclaurin series is the special case $$c=0$$.
+*Maclaurin series* is the special case $$c=0$$.
 
-The Taylor polynomial $$T_n(x)$$ is a finite approximation. The Taylor series is the infinite version. A function equals its Taylor series only where the series converges to the function, not merely where the series converges.
+</div>
+
+A function equals its Taylor series only where the series converges to the function, not merely where the series converges.
 
 <div class="theorem-box">
 
@@ -716,7 +868,11 @@ $$
 
 </div>
 
-Core series to memorize:
+:::note
+You may wonder the difference between Taylor and Maclaurin series, since when the terms increas to infinity, the functions effectively become the same. However, for most practical purposes, you only have a finite amount of terms to work with, and approximating about a point that is not $$x=0$$ will induce a lot of error in your calculations compared to a Taylor series centered about the correct point. However, most problems will only ask for the Maclaurin series since it is less tedious.
+:::
+
+Useful Maclaurin series to memorize:
 
 $$
 \frac{1}{1-x} = \sum_{n=0}^{\infty} x^n, \qquad \lvert x \rvert<1
@@ -734,9 +890,11 @@ $$
 \cos x = \sum_{n=0}^{\infty} (-1)^n \frac{x^{2n}}{(2n)!}
 $$
 
+Note that these are Maclaurin series, meaning that the approximations are centered at $$x=0$$.
+
 <div class="theorem-box">
 
-**Example.** Find the Maclaurin series for $$e^{-x^2}$$ by substitution.
+**Example.** Find the Maclaurin series for $$e^{-x^2}$$.
 
 Start from the known series
 
@@ -760,9 +918,7 @@ Because the original series converges for all $$u$$, this one converges for all 
 
 </div>
 
----
-
-## Taylor polynomial and error
+### Taylor polynomial and error
 
 The $$n$$th Taylor polynomial is the finite truncation:
 
@@ -770,7 +926,41 @@ $$
 T_n(x) = \sum_{k=0}^{n} \frac{f^{(k)}(c)}{k!}(x-c)^k.
 $$
 
-For alternating Maclaurin series with decreasing term magnitudes, the truncation error is at most the first omitted term in absolute value.
+Taylor polynomials are used to estimate values of functions when exact computation is inconvenient. The center should be close to the input value whenever possible, because powers of $$x-c$$ become small near the center. For alternating series, the first omitted term gives a clean error bound (since like before, the other terms will slowly make the error less). For non-alternating Taylor series, we often uses the Lagrange error bound:
+
+$$
+\lvert R_n(x)\rvert
+\le
+\frac{M}{(n+1)!}\lvert x-c\rvert^{n+1},
+$$
+
+where $$M$$ is an upper bound for $$\lvert f^{(n+1)}(t)\rvert$$ between $$c$$ and $$x$$.
+
+<div class="theorem-box">
+
+**Proof (Lagrange error bound idea).** Taylor's Theorem says the error after the degree $$n$$ Taylor polynomial can be written as
+
+$$
+R_n(x)=\frac{f^{(n+1)}(\xi)}{(n+1)!}(x-c)^{n+1}
+$$
+
+for some number $$\xi$$ between $$c$$ and $$x$$. If $$M$$ is an upper bound for $$\lvert f^{(n+1)}(t)\rvert$$ on that interval, then
+
+$$
+\lvert f^{(n+1)}(\xi)\rvert\le M.
+$$
+
+Taking absolute values of the remainder formula gives
+
+$$
+\lvert R_n(x)\rvert
+=
+\left\lvert\frac{f^{(n+1)}(\xi)}{(n+1)!}(x-c)^{n+1}\right\rvert
+\le
+\frac{M}{(n+1)!}\lvert x-c\rvert^{n+1}.
+$$
+
+</div>
 
 <div class="theorem-box">
 
@@ -791,18 +981,6 @@ $$
 So the true value of $$\sin(0.5)$$ lies within about $$0.00026$$ of the estimate. (The actual value is $$\sin(0.5)\approx0.479426$$, comfortably inside that bound.)
 
 </div>
-
-Taylor polynomials are used to estimate values of functions when exact computation is inconvenient. The center should be close to the input value whenever possible, because powers of $$x-c$$ become small near the center.
-
-For alternating series, the first omitted term gives a clean error bound. For non-alternating Taylor series, AP BC often uses the Lagrange error bound:
-
-$$
-\lvert R_n(x)\rvert
-\le
-\frac{M}{(n+1)!}\lvert x-c\rvert^{n+1},
-$$
-
-where $$M$$ is an upper bound for $$\lvert f^{(n+1)}(t)\rvert$$ between $$c$$ and $$x$$.
 
 <div class="theorem-box">
 
@@ -873,7 +1051,31 @@ $$
 1+px+\frac{p(p-1)}{2!}x^2+\frac{p(p-1)(p-2)}{3!}x^3+\cdots.
 $$
 
-This is useful for functions like $$\sqrt{1+x}$$ or $$\frac{1}{\sqrt{1-x}}$$.
+<div class="theorem-box">
+
+**Proof (Binomial series coefficients).** Suppose
+
+$$
+(1+x)^p=a_0+a_1x+a_2x^2+a_3x^3+\cdots.
+$$
+
+At $$x=0$$, the left side equals $$1$$, so $$a_0=1$$. Differentiate:
+
+$$
+p(1+x)^{p-1}=a_1+2a_2x+3a_3x^2+\cdots.
+$$
+
+Setting $$x=0$$ gives $$a_1=p$$. Differentiating repeatedly gives the pattern
+
+$$
+a_n=\frac{p(p-1)(p-2)\cdots(p-n+1)}{n!}.
+$$
+
+Substituting these coefficients into the power series gives the binomial series.
+
+</div>
+
+Binomial series can be used for any $$(x+a)^n$$ (including roots, which are just fractional powers) and just require the binomial theorem ([Unit 13/14](/notes/ap/precalc/addtopics/) of AP Precalculus)
 
 <div class="theorem-box">
 
@@ -924,7 +1126,7 @@ $$
 Series can be used to:
 
 - approximate function values,
-- estimate definite integrals whose antiderivatives are not elementary,
+- estimate definite integrals whose antiderivatives are not elementary (meaning they can't be solved using algebraic functions like trig or exponents),
 - represent functions as power series,
 - solve differential equations through coefficient matching.
 
@@ -977,27 +1179,6 @@ $$
 $$
 
 </div>
-
----
-
-## Series notation habits
-
-Indexing is flexible, but consistency matters. If a series starts at $$n=0$$, the first term uses $$n=0$$. If it starts at $$n=1$$, the first term uses $$n=1$$.
-
-Factorials grow quickly, which is why they appear in Taylor series for functions like $$e^x$$, $$\sin x$$, and $$\cos x$$. The factorial in the denominator balances the higher derivatives and powers.
-
-For AP work, always state the test used and enough hypothesis information to justify it.
-
----
-
-## Common mistakes
-
-:::mistakes
-- Forgetting that $$a_n \to 0$$ is necessary but not sufficient.
-- Using a convergence test whose hypotheses do not apply.
-- Stopping after finding the radius of convergence without testing endpoints.
-- Mixing up absolute and conditional convergence.
-:::
 
 ---
 

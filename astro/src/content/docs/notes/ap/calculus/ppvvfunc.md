@@ -4,10 +4,6 @@ sidebar:
   order: 9
 ---
 
-This BC-only unit generalizes single-variable calculus to curves traced in more flexible ways. Instead of always writing $$y$$ as an explicit function of $$x$$, we let both coordinates depend on a parameter or describe curves through angle and radius.
-
----
-
 ## Parametric equations
 
 A parametric curve is given by
@@ -16,7 +12,7 @@ $$
 x = f(t), \qquad y = g(t).
 $$
 
-The same geometric curve can be traced in different ways depending on how $$t$$ changes. The parameter $$t$$ often represents time, but it does not have to.
+The same geometric curve can be traced in different ways depending on how $$t$$ changes. The parameter $$t$$ often represents time, but it does not have to. You can review more of parametric functions in [Unit 10](/notes/ap/precalc/additionaltrig/) of AP Precalculus.
 
 This means a parametric curve has two layers:
 
@@ -53,13 +49,33 @@ $$
 y=(x-1)^2-2.
 $$
 
-The parametric form still gives extra information: as $$t$$ increases, $$x=t+1$$ increases, so the parabola is traced from left to right.
+The parametric form still gives extra information: as $$t$$ increases, $$x=t+1$$ increases, so the parabola is traced from left to right. Thus, it is always important to always note your endpoints and direction when drawing parametric curves.
+
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[
+  axis lines=middle, axis equal image,
+  xmin=-3, xmax=3, ymin=-2.2, ymax=2.2,
+  xtick={-2,-1,0,1,2}, ytick={-2,-1,0,1,2},
+  grid=both, grid style={gray!18},
+  width=8.5cm, height=6.5cm,
+  xlabel=$x$, ylabel=$y$,
+]
+\addplot[blue, very thick, samples=260, domain=0:360] ({2*cos(x)},{sin(2*x)});
+\addplot[->, orange!85!black, very thick] coordinates {(1.73,0.87) (1.38,1.22)};
+\addplot[->, orange!85!black, very thick] coordinates {(-1.73,-0.87) (-2.08,-0.52)};
+\addplot[only marks, mark=*, mark size=1.7pt, blue] coordinates {(1.73,0.87) (-1.73,-0.87)};
+\node[orange!85!black, anchor=south] at (axis cs:0,1.4) {direction as $t$ increases};
+\node[blue, anchor=west] at (axis cs:0,-1.4) {same curve can be traced twice};
+\end{axis}
+\end{tikzpicture}
+```
 
 </div>
 
----
-
-## Derivatives for parametric curves
+### Derivatives for parametric curves
 
 If $$dx/dt \ne 0$$, then
 
@@ -80,28 +96,6 @@ $$
 $$
 
 If both derivatives are zero, the test is inconclusive because the particle may be stopped, changing direction, or passing through a more complicated point.
-
-```tikz
-\usepackage{pgfplots}
-\pgfplotsset{compat=1.16}
-\begin{tikzpicture}
-\begin{axis}[
-  axis lines=middle, axis equal image,
-  xmin=-3, xmax=3, ymin=-2.2, ymax=2.2,
-  xtick={-2,-1,0,1,2}, ytick={-2,-1,0,1,2},
-  grid=both, grid style={gray!18},
-  width=8.5cm, height=6.5cm,
-  xlabel=$x$, ylabel=$y$,
-]
-\addplot[blue, very thick, samples=260, domain=0:360] ({2*cos(x)},{sin(2*x)});
-\addplot[->, orange!85!black, very thick] coordinates {(1.73,0.87) (1.25,0.99)};
-\addplot[->, orange!85!black, very thick] coordinates {(-1.73,0.87) (-1.25,0.99)};
-\addplot[only marks, mark=*, mark size=1.7pt, blue] coordinates {(1.73,0.87) (-1.73,0.87)};
-\node[orange!85!black, anchor=south] at (axis cs:0,1.4) {direction as $t$ increases};
-\node[blue, anchor=west] at (axis cs:1.55,0.55) {same curve can be traced twice};
-\end{axis}
-\end{tikzpicture}
-```
 
 <div class="theorem-box">
 
@@ -177,17 +171,37 @@ So the slope of the curve at $$t=2$$ is $$\frac{9}{4}$$.
 
 </div>
 
----
+### Second derivative for parametric curves
 
-## Second derivative for parametric curves
+The second derivative for a parametric curve can be modeled as:
 
 $$
 \frac{d^2y}{dx^2}
 =
-\frac{d}{dt}\left(\frac{dy}{dx}\right)\Big/ \frac{dx}{dt}.
+\frac{\frac{d}{dt} (\frac{dy}{dx})}{\frac{dx}{dt}}
 $$
 
 This formula means: first find $$dy/dx$$ as a function of $$t$$, then differentiate that slope with respect to $$t$$, then divide by $$dx/dt$$.
+
+<div class="theorem-box">
+
+**Proof (Parametric second derivative formula).** The first derivative $$dy/dx$$ is itself a function of the parameter $$t$$. To find the derivative of this slope with respect to $$x$$, use the same parametric derivative idea:
+
+$$
+\frac{d}{dx}\left(\frac{dy}{dx}\right)
+=
+\frac{\frac{d}{dt}\left(\frac{dy}{dx}\right)}{\frac{dx}{dt}}.
+$$
+
+The left side is exactly $$\frac{d^2y}{dx^2}$$, so
+
+$$
+\frac{d^2y}{dx^2}
+=
+\frac{\frac{d}{dt}\left(\frac{dy}{dx}\right)}{\frac{dx}{dt}}.
+$$
+
+</div>
 
 <div class="theorem-box">
 
@@ -233,9 +247,7 @@ $$
 
 </div>
 
----
-
-## Area with parametric equations
+### Area with parametric equations
 
 For a parametric curve
 
@@ -295,9 +307,7 @@ $$
 
 </div>
 
----
-
-## Speed and arc length
+### Speed and arc length
 
 For a particle moving with position
 
@@ -317,13 +327,7 @@ $$
 L = \int_a^b \sqrt{[x'(t)]^2 + [y'(t)]^2}\,dt.
 $$
 
-This formula comes from the distance formula on tiny pieces of the curve:
-
-$$
-ds\approx\sqrt{(dx)^2+(dy)^2}.
-$$
-
-Because $$dx=x'(t)\,dt$$ and $$dy=y'(t)\,dt$$, the speed factor appears inside the integral. Integrating speed gives distance traveled, which is different from displacement.
+Since $$dx=x'(t)\,dt$$ and $$dy=y'(t)\,dt$$, the speed factor appears inside the integral. Integrating speed gives distance traveled, which is different from displacement.
 
 <div class="theorem-box">
 
@@ -371,23 +375,19 @@ $$
 
 ## Polar coordinates
 
-Connections to rectangular coordinates:
+As a reminder, polar coordinates involve mapping a point using it's radius from the origin $$r$$ and angle from the positive $$x$$-axis $$\tehta$$. For a point $$(x,y)$$:
 
 $$
 x = r\cos\theta, \qquad y = r\sin\theta
 $$
 
 $$
-r^2 = x^2 + y^2.
+r^2 = x^2 + y^2, \qquad \theta = \tan^{-1}(\frac{y}{x})
 $$
 
-Different polar pairs can describe the same point because adding $$2\pi$$ to $$\theta$$ changes nothing and negative $$r$$ reflects through the origin.
+Different polar pairs can describe the same point because adding $$2\pi$$ to $$\theta$$ changes nothing and negative $$r$$ reflects through the origin. If $$r$$ is negative, the point is plotted in the opposite direction from the angle. You can learn more about polar coordinates in [Unit 10](/notes/ap/precalc/additionaltrig/) of AP Precalculus.
 
-The radius tells distance from the pole, and the angle tells direction. If $$r$$ is negative, the point is plotted in the opposite direction from the angle.
-
----
-
-## Slope in polar form
+### Slope in polar form
 
 For a polar curve $$r=f(\theta)$$, convert mentally to parametric form:
 
@@ -414,6 +414,53 @@ $$
 {r'(\theta)\cos\theta - r(\theta)\sin\theta}.
 $$
 
+The second version is more useful when the curve isn't easily written in rectangular form, while the first form is more useful for most curves.
+
+<div class="theorem-box">
+
+**Proof (Polar slope formulas).** A polar curve $$r=f(\theta)$$ can be rewritten parametrically using $$\theta$$ as the parameter:
+
+$$
+x=r\cos\theta,
+\qquad
+y=r\sin\theta.
+$$
+
+For the first form, use the parametric slope formula:
+
+$$
+\frac{dy}{dx}
+=
+\frac{dy/d\theta}{dx/d\theta}.
+$$
+
+This proves the compact formula. To get the expanded formula, differentiate $$x=r\cos\theta$$ and $$y=r\sin\theta$$ with respect to $$\theta$$. Since $$r$$ depends on $$\theta$$, use the product rule:
+
+$$
+\frac{dy}{d\theta}
+=
+r'(\theta)\sin\theta+r(\theta)\cos\theta,
+$$
+
+and
+
+$$
+\frac{dx}{d\theta}
+=
+r'(\theta)\cos\theta-r(\theta)\sin\theta.
+$$
+
+Therefore,
+
+$$
+\frac{dy}{dx}
+=
+\frac{r'(\theta)\sin\theta+r(\theta)\cos\theta}
+{r'(\theta)\cos\theta-r(\theta)\sin\theta}.
+$$
+
+</div>
+
 ### Second derivative for polar curves
 
 A polar curve can be treated as parametric with parameter $$\theta$$. After finding $$dy/dx$$, the second derivative is
@@ -421,7 +468,7 @@ A polar curve can be treated as parametric with parameter $$\theta$$. After find
 $$
 \frac{d^2y}{dx^2}
 =
-\frac{d}{d\theta}\left(\frac{dy}{dx}\right)\Big/ \frac{dx}{d\theta}.
+\frac{\frac{d}{d\theta} (\frac{dy}{dx})}{\frac{dx}{d\theta}}
 $$
 
 This is the same structure as parametric second derivatives, just with $$\theta$$ as the parameter.
@@ -467,9 +514,7 @@ So the tangent line is horizontal at that point.
 
 </div>
 
----
-
-## Area in polar coordinates
+### Area in polar coordinates
 
 Polar area comes from adding thin sectors. A sector with radius $$r$$ and tiny angle width $$d\theta$$ has area approximately $$\frac12 r^2\,d\theta$$.
 
@@ -481,15 +526,7 @@ $$
 
 If a curve is traced more than once over an interval, the integral counts the repeated tracing. Choose angle bounds that trace the intended region exactly once whenever possible.
 
-### Polar intersections and tracing
-
-Polar curves require extra care because one point can have many polar representations. When solving intersections, check:
-
-1. same-angle intersections by setting the radii equal,
-2. pole intersections where both curves pass through the origin,
-3. whether the interval traces the whole curve or only part of it.
-
-### Area bounded by two polar curves
+### Area bounded by polar curves
 
 If one polar curve is outside another on $$a\le\theta\le b$$, the area between them is
 
@@ -497,29 +534,27 @@ $$
 A=\frac12\int_a^b \left([r_{\text{outer}}(\theta)]^2-[r_{\text{inner}}(\theta)]^2\right)\,d\theta.
 $$
 
-The outer curve is the one with the larger distance from the pole on that angle interval. If the curves switch, split the integral.
+The outer curve is the one with the larger distance from the pole on that angle interval (if you are just trying to solve for the area enclosed by one polar curve, just set the inner curve to $$0$$). If the curves switch, split the integral.
 
-```tikz
-\usepackage{tikz}
-\usetikzlibrary{arrows.meta}
-\begin{tikzpicture}[>=Stealth, scale=1.05]
-\coordinate (O) at (0,0);
-\draw[->, gray!70] (-0.5,0) -- (4.2,0) node[right] {polar axis};
-\draw[blue, very thick] plot[smooth, domain=20:82, samples=80] ({(2.4+0.45*cos(2*\x))*cos(\x)}, {(2.4+0.45*cos(2*\x))*sin(\x)});
-\draw[orange!30, fill=orange!18] (O) -- ({2.7*cos(36)},{2.7*sin(36)}) arc[start angle=36,end angle=50,radius=2.7] -- cycle;
-\draw[blue!55, thick] (O) -- ({2.7*cos(36)},{2.7*sin(36)});
-\draw[blue!55, thick] (O) -- ({2.7*cos(50)},{2.7*sin(50)});
-\draw[->, red!75!black] (0.65,0) arc[start angle=0,end angle=36,radius=0.65] node[midway, right] {$\theta$};
-\node[orange!85!black] at (2.45,1.65) {tiny sector};
-\node[align=center] at (1.45,2.75) {area $\approx \frac12 r^2\Delta\theta$};
-\end{tikzpicture}
-```
+Polar curves require extra care because one point can have many polar representations. When solving intersections, check:
+
+1. same-angle intersections by setting the radii equal,
+2. pole intersections where both curves pass through the origin,
+3. whether the interval traces the whole curve or only part of it.
 
 <div class="theorem-box">
 
 **Proof (Polar area formula).** A tiny polar slice looks like a circular sector. A sector with radius $$r$$ and angle $$\Delta\theta$$ has area approximately
 
 $$
+\frac12 r^2\Delta\theta.
+$$
+
+This comes from the ordinary sector-area formula. A full circle has angle $$2\pi$$ and area $$\pi r^2$$. A sector with angle $$\Delta\theta$$ is the fraction $$\frac{\Delta\theta}{2\pi}$$ of the full circle, so its area is
+
+$$
+\frac{\Delta\theta}{2\pi}\cdot \pi r^2
+=
 \frac12 r^2\Delta\theta.
 $$
 
@@ -536,6 +571,24 @@ $$
 $$
 
 </div>
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\begin{tikzpicture}[>=Stealth, scale=1.05]
+\coordinate (O) at (0,0);
+\draw[->, gray!70] (-3.2,0) -- (3.8,0) node[right] {polar axis};
+\draw[->, gray!70] (0,-2.2) -- (0,3.2);
+\draw[orange!25, fill=orange!18] (O) -- ({(2+cos(35))*cos(35)},{(2+cos(35))*sin(35)})
+  plot[smooth, domain=35:55, samples=30] ({(2+cos(\x))*cos(\x)}, {(2+cos(\x))*sin(\x)}) -- cycle;
+\draw[blue, very thick] plot[smooth, domain=0:360, samples=240] ({(2+cos(\x))*cos(\x)}, {(2+cos(\x))*sin(\x)});
+\draw[blue!55, thick] (O) -- ({(2+cos(35))*cos(35)},{(2+cos(35))*sin(35)});
+\draw[blue!55, thick] (O) -- ({(2+cos(55))*cos(55)},{(2+cos(55))*sin(55)});
+\draw[->, red!75!black] (0.65,0) arc[start angle=0,end angle=35,radius=0.65] node[midway, right] {$\theta$};
+\node[orange!85!black] at (1.85,1.55) {sector slice};
+\node[align=center] at (0.2,2.75) {area $\approx \frac12 r^2\Delta\theta$};
+\end{tikzpicture}
+```
 
 <div class="theorem-box">
 
@@ -581,11 +634,37 @@ $$
 A=\frac12\int_0^{2\pi}\left[2^2-(1+\cos\theta)^2\right]\,d\theta.
 $$
 
+Expand the integrand:
+
+$$
+A=\frac12\int_0^{2\pi}\left(4-1-2\cos\theta-\cos^2\theta\right)\,d\theta.
+$$
+
+So
+
+$$
+A=\frac12\int_0^{2\pi}\left(3-2\cos\theta-\cos^2\theta\right)\,d\theta.
+$$
+
+Over $$0\le\theta\le2\pi$$,
+
+$$
+\int_0^{2\pi}3\,d\theta=6\pi,
+\qquad
+\int_0^{2\pi}2\cos\theta\,d\theta=0,
+\qquad
+\int_0^{2\pi}\cos^2\theta\,d\theta=\pi.
+$$
+
+Therefore,
+
+$$
+A=\frac12(6\pi-\pi)=\frac{5\pi}{2}.
+$$
+
 </div>
 
----
-
-## Arc length in polar form
+### Arc length in polar form
 
 If $$r=f(\theta)$$, then arc length is
 
@@ -595,11 +674,38 @@ $$
 
 This is the polar version of parametric arc length because $$x=r\cos\theta$$ and $$y=r\sin\theta$$. Differentiating those and simplifying gives the expression under the square root.
 
-Surface area for polar curves is less common, but the setup follows the same radius times arc-length idea. If a polar curve is revolved about an axis, write the distance to the axis as the radius and use the polar arc-length element
+<div class="theorem-box">
+
+**Example.** Find the arc length of $$r=2\cos\theta$$ on $$0\le\theta\le\frac{\pi}{2}$$.
+
+First compute
 
 $$
-ds=\sqrt{r^2+\left(\frac{dr}{d\theta}\right)^2}\,d\theta.
+r'(\theta)=-2\sin\theta.
 $$
+
+Use the polar arc length formula:
+
+$$
+L=\int_0^{\pi/2}\sqrt{(2\cos\theta)^2+(-2\sin\theta)^2}\,d\theta.
+$$
+
+Simplify inside the square root:
+
+$$
+(2\cos\theta)^2+(-2\sin\theta)^2
+=
+4\cos^2\theta+4\sin^2\theta
+=4.
+$$
+
+Thus
+
+$$
+L=\int_0^{\pi/2}2\,d\theta=\pi.
+$$
+
+</div>
 
 ---
 
@@ -652,6 +758,48 @@ $$
 =
 \left\langle \int f(t)\,dt,\int g(t)\,dt,\int h(t)\,dt\right\rangle.
 $$
+
+<div class="theorem-box">
+
+**Proof (Componentwise vector calculus).** Two vectors are equal exactly when their corresponding components are equal. If
+
+$$
+\mathbf r(t)=\langle f(t),g(t),h(t)\rangle,
+$$
+
+then the derivative is defined by the vector limit
+
+$$
+\mathbf r'(t)=\lim_{\Delta t\to0}\frac{\mathbf r(t+\Delta t)-\mathbf r(t)}{\Delta t}.
+$$
+
+Substitute the components:
+
+$$
+\frac{\mathbf r(t+\Delta t)-\mathbf r(t)}{\Delta t}
+=
+\left\langle
+\frac{f(t+\Delta t)-f(t)}{\Delta t},
+\frac{g(t+\Delta t)-g(t)}{\Delta t},
+\frac{h(t+\Delta t)-h(t)}{\Delta t}
+\right\rangle.
+$$
+
+Taking the limit gives
+
+$$
+\mathbf r'(t)=\langle f'(t),g'(t),h'(t)\rangle.
+$$
+
+Integration works component by component because antiderivatives are checked by differentiating. If
+
+$$
+\mathbf R(t)=\left\langle \int f(t)\,dt,\int g(t)\,dt,\int h(t)\,dt\right\rangle,
+$$
+
+then $$\mathbf R'(t)=\langle f(t),g(t),h(t)\rangle$$, so $$\mathbf R$$ is an antiderivative of $$\mathbf r$$.
+
+</div>
 
 <div class="theorem-box">
 
@@ -772,17 +920,6 @@ $$
 $$
 
 </div>
-
----
-
-## Common mistakes
-
-:::mistakes
-- Forgetting that $$dy/dx$$ for parametric or polar curves is a ratio of derivatives.
-- Declaring a vertical tangent whenever the denominator is zero without checking the numerator.
-- Losing track of the interval of parameter values or angles actually tracing the region.
-- Forgetting that polar curves can retrace themselves.
-:::
 
 ---
 

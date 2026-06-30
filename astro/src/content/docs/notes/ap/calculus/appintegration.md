@@ -130,19 +130,23 @@ So the displacement is $$-3$$ while the total distance is $$\frac{23}{3}$$, conf
 
 ## Areas between curves
 
-Area between curves is still an accumulation problem. Instead of adding rectangles from the $$x$$-axis to one curve, each thin rectangle measures the distance between two curves.
+Area between curves is still an accumulation problem. Instead of adding rectangles from the $$x$$-axis to one curve, each thin rectangle measures the distance between two curves, and integrates the function of the distances.
 
-For vertical slices,
-
-$$
-A=\int_a^b [\text{top}-\text{bottom}]\,dx.
-$$
-
-For horizontal slices,
+For vertical slices, if $$f(x)$$ is the top function and $$g(x)$$ is the bottom function (in terms of $$y$$ location):
 
 $$
-A=\int_c^d [\text{right}-\text{left}]\,dy.
+A=\int_a^b f(x) - g(x) \,dx.
 $$
+
+For horizontal slices, if $$h(y)$$ is the right function and $$j(y)$$ is the left function (in terms of $$x$$ location)
+
+$$
+A=\int_c^d h(y) - j(y) \,dy.
+$$
+
+:::warning
+Do not assume the first function listed is on top. Test a point or inspect the graph. If the curves cross, split the interval at the crossing.
+:::
 
 The subtraction order is chosen so each slice length is nonnegative.
 
@@ -153,32 +157,6 @@ The subtraction order is chosen so each slice length is nonnegative.
 4. Write top minus bottom for $$dx$$, or right minus left for $$dy$$.
 5. Split the integral if the top/bottom or right/left relationship changes.
 :::
-
-:::warning
-Do not assume the first function listed is on top. Test a point or inspect the graph. If the curves cross, split the interval at the crossing.
-:::
-
-```tikz
-\usepackage{pgfplots}
-\pgfplotsset{compat=1.16}
-\begin{tikzpicture}
-\begin{axis}[
-  axis lines=middle, xmin=-0.2, xmax=1.25, ymin=-0.1, ymax=1.25,
-  xtick={0,0.5,1}, ytick={0,0.5,1},
-  grid=both, grid style={gray!18},
-  width=7.5cm, height=6.5cm,
-  xlabel=$x$, ylabel=$y$,
-]
-\addplot[blue, very thick, domain=0:1, samples=80] {x};
-\addplot[red!75!black, very thick, domain=0:1, samples=80] {x^2};
-\draw[orange!18, fill=orange!18] (axis cs:0.5,0.25) -- (axis cs:0.62,0.3844) -- (axis cs:0.62,0.62) -- (axis cs:0.5,0.5) -- cycle;
-\node[blue, anchor=south west] at (axis cs:0.65,0.65) {top $y=x$};
-\node[red!75!black, anchor=north west] at (axis cs:0.65,0.42) {bottom $y=x^2$};
-\draw[<->, orange!85!black, thick] (axis cs:0.55,0.3025) -- (axis cs:0.55,0.55);
-\node[orange!85!black, anchor=west] at (axis cs:0.57,0.43) {top - bottom};
-\end{axis}
-\end{tikzpicture}
-```
 
 <div class="theorem-box">
 
@@ -207,6 +185,27 @@ A=\left[\frac{x^2}{2}-\frac{x^3}{3}\right]_0^1
 =
 \frac16.
 $$
+
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[
+  axis lines=middle, xmin=-0.2, xmax=1.25, ymin=-0.1, ymax=1.25,
+  xtick={0,0.5,1}, ytick={0,0.5,1},
+  grid=both, grid style={gray!18},
+  width=7.5cm, height=6.5cm,
+  xlabel=$x$, ylabel=$y$,
+]
+\addplot[blue, very thick, domain=0:1, samples=80] {x};
+\addplot[red!75!black, very thick, domain=0:1, samples=80] {x^2};
+\draw[orange!18, fill=orange!18] (axis cs:0.55,0.3025) -- (axis cs:0.58,0.3364) -- (axis cs:0.58,0.58) -- (axis cs:0.55,0.55) -- cycle;
+\node[blue, anchor=south west] at (axis cs:0.25,0.65) {top $y=x$};
+\node[red!75!black, anchor=north west] at (axis cs:0.65,0.42) {bottom $y=x^2$};
+\draw[<->, orange!85!black, thick] (axis cs:0.565,0.319) -- (axis cs:0.565,0.565);
+\end{axis}
+\end{tikzpicture}
+```
 
 </div>
 
@@ -262,6 +261,22 @@ $$
 
 Common cross sections include squares, rectangles, semicircles, and equilateral triangles.
 
+```tikz
+\usepackage{tikz}
+\begin{tikzpicture}[scale=0.9]
+\draw[->, gray!70] (-0.3,0) -- (5.2,0) node[right] {$x$};
+\draw[->, gray!70] (0,-0.2) -- (0,2.9) node[above] {$y$};
+\draw[blue, very thick] plot[smooth] coordinates {(0,0) (1,0.7) (2,1.2) (3,1.45) (4,1.65)};
+\draw[red!75!black, very thick] plot[smooth] coordinates {(0,0) (1,0.2) (2,0.35) (3,0.45) (4,0.5)};
+\foreach \x/\top/\bot in {1/0.7/0.2,2/1.2/0.35,3/1.45/0.45,4/1.65/0.5} {
+  \draw[orange!85!black, thick] (\x,\bot) -- (\x,\top);
+  \draw[orange!30, fill=orange!15] (\x,\top) -- ++(0.45,0.28) -- ++(0,-{\top-\bot}) -- (\x,\bot) -- cycle;
+}
+\node[blue] at (3.3,2.15) {base region};
+\node[orange!85!black, align=center] at (5.0,1.35) {cross sections\\perpendicular to $x$};
+\end{tikzpicture}
+```
+
 <div class="theorem-box">
 
 **Example.** A solid has base bounded by $$y=x$$ and $$y=x^2$$ for $$0\le x\le1$$. Cross sections perpendicular to the $$x$$-axis are squares. Find the volume.
@@ -312,7 +327,24 @@ $$
 V=\pi\int_a^b \left([R(x)]^2-[r(x)]^2\right)\,dx.
 $$
 
-Here $$R$$ is the outer radius and $$r$$ is the inner radius. Both radii are distances to the axis of rotation.
+Here $$R$$ is the outer radius and $$r$$ is the inner radius. Both radii are distances to the axis of rotation. The formulas in the integrand is just the standard area formula for a circle with the functions as the radius.
+
+```tikz
+\usepackage{tikz}
+\begin{tikzpicture}[scale=0.9]
+\draw[gray!70, thick, ->] (-0.6,0) -- (6.4,0) node[right] {axis};
+\fill[blue!15] (0.8,0) ellipse (0.32 and 1.2);
+\draw[blue, very thick] (0.8,0) ellipse (0.32 and 1.2);
+\draw[orange!85!black, <->] (0.8,0) -- (0.8,1.2) node[midway, right] {$R$};
+\node[blue] at (0.8,-1.65) {disk};
+\fill[blue!15, even odd rule] (4,0) ellipse (0.42 and 1.35) (4,0) ellipse (0.18 and 0.55);
+\draw[blue, very thick] (4,0) ellipse (0.42 and 1.35);
+\draw[red!75!black, very thick] (4,0) ellipse (0.18 and 0.55);
+\draw[orange!85!black, <->] (4,0) -- (4,1.35) node[midway, right] {$R$};
+\draw[red!75!black, <->] (3.65,0) -- (3.65,0.55) node[midway, left] {$r$};
+\node[blue] at (4,-1.8) {washer};
+\end{tikzpicture}
+```
 
 <div class="theorem-box">
 
@@ -350,6 +382,20 @@ $$
 
 Shells are often cleaner when washers would require solving for inverse functions or splitting the region.
 
+```tikz
+\usepackage{tikz}
+\begin{tikzpicture}[scale=0.9]
+\draw[gray!70, thick, ->] (-0.5,0) -- (5.6,0) node[right] {axis};
+\draw[blue, very thick] (2.8,0) ellipse (0.55 and 1.55);
+\draw[blue!50, thick] (2.5,-1.55) -- (2.5,1.55);
+\draw[blue!50, thick] (3.1,-1.55) -- (3.1,1.55);
+\draw[orange!85!black, <->] (0,0.25) -- (2.8,0.25) node[midway, above] {radius};
+\draw[red!75!black, <->] (3.55,-1.55) -- (3.55,1.55) node[midway, right] {height};
+\draw[gray!60, <->] (2.5,-1.85) -- (3.1,-1.85) node[midway, below] {thickness};
+\node[blue] at (2.8,2.0) {thin cylindrical shell};
+\end{tikzpicture}
+```
+
 <div class="theorem-box">
 
 **Example.** Find the volume formed by revolving the region under $$y=x^2$$ from $$x=0$$ to $$x=2$$ about the $$y$$-axis using shells.
@@ -374,9 +420,9 @@ $$
 
 ---
 
-## Arc length
+## Arc length (BC-only)
 
-Suppose you wanted to find the length traveled along a graph from point $$a$$ to point $$b$$. If you zoom in far enough, each tiny part of a smooth curve looks almost like a straight line. Arc length adds those tiny straight-line distances.
+Suppose you wanted to find the length traveled along a graph from point $$a$$ to point $$b$$. If you zoom in far enough, each tiny part of a smooth curve looks almost like a straight line (linearization). Arc length adds those tiny straight-line distances.
 
 For one tiny piece of curve, the horizontal change is $$dx$$ and the vertical change is $$dy$$. By the Pythagorean theorem,
 
@@ -438,7 +484,7 @@ $$
 
 ---
 
-## Surface area of revolution
+## Surface area of revolution (BC-only)
 
 Surface area is different from volume: instead of adding cross-sectional areas, it adds thin bands of surface.
 

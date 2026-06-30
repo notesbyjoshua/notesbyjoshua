@@ -194,7 +194,7 @@ $$
 \lim_{n\to\infty}\sum_{i=1}^{n} f(x_i^*)\Delta x,
 $$
 
-as the width of the largest subinterval approaches $$0$$, assuming this limit exists.
+as the width of the largest subinterval approaches $$0$$, assuming this limit exists. $$f(x)$$ is called the integrand, and $$dx$$ is "integrating with respect to $$x$$".
 
 </div>
 

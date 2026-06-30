@@ -43,16 +43,13 @@ There are many interpretations of the derivative:
   xlabel=$x$, ylabel=$y$,
 ]
 \addplot[blue, very thick, samples=160, domain=0:3.3] {0.5*x^2+0.4};
-\addplot[gray!70, dashed, domain=1.05:2.85] {1.925*x-1.3625};
-\addplot[orange!85!black, thick, domain=0.85:2.45] {1.65*x-0.95};
-\addplot[red!75!black, thick, domain=0.65:2.35] {1.5*x-0.725};
+\addplot[gray!70, dashed, thick, domain=0.95:2.75] {1.925*x-1.3625};
+\addplot[orange!85!black, thick, domain=0.75:2.45] {1.5*x-0.725};
 \addplot[only marks, mark=*, mark size=1.8pt, blue] coordinates {(1.5,1.525)};
 \addplot[only marks, mark=*, mark size=1.5pt, gray!70] coordinates {(2.6,3.78)};
-\addplot[only marks, mark=*, mark size=1.5pt, orange!85!black] coordinates {(2.1,2.605)};
-\addplot[only marks, mark=*, mark size=1.5pt, red!75!black] coordinates {(1.7,1.845)};
-\node[gray!70!black, anchor=west] at (axis cs:2.65,3.65) {secant};
+\node[gray!70!black, anchor=west] at (axis cs:2.55,3.45) {secant};
 \node[blue, anchor=east] at (axis cs:1.45,1.55) {$x=a$};
-\node[red!75!black, anchor=west] at (axis cs:2.0,2.1) {tangent};
+\node[orange!85!black, anchor=west] at (axis cs:2.05,2.35) {tangent};
 \end{axis}
 \end{tikzpicture}
 ```
@@ -377,7 +374,7 @@ $$
 \frac{d}{dx}(\cot x)=-\csc^2 x.
 $$
 
-All of the trig derivatives can be proved using the derivative definition and the quotient rule, so we will only use one example.
+All of the trig derivatives can be proved using the derivative definition and the quotient rule, so we will only use a couple examples.
 
 <div class="theorem-box">
 
@@ -723,7 +720,7 @@ The second derivative has many useful interpretations:
 - concavity (whether a graph is opening up or down) in pure math
 - acceleration when $$f$$ is position or angular frequency when $$f$$ is potential in physics
 
-You may also see $$f^{(n)}(x)$$ for the $$n$$th derivative.
+You may also see $$f^{(n)}(x)$$ for the $$n$$th derivative. Basically, higher order derivatives just means take the derivative of a function $$n$$ times.
 
 <div class="theorem-box">
 

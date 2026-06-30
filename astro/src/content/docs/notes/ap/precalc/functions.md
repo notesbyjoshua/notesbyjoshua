@@ -816,9 +816,9 @@ A quick map of bijectivity, surjectivity, and injectivity is shown below:
 ```tikz
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta}
-\begin{tikzpicture}[>=Stealth, scale=0.82, transform shape,
-  ar/.style={->, thick, gray!40!black, shorten >=3pt, shorten <=3pt},
-  lbl/.style={font=\bfseries}]
+\begin{tikzpicture}[>=Stealth, scale=0.55, transform shape,
+  ar/.style={->, thick, gray!40!black, shorten >=2pt, shorten <=2pt},
+  lbl/.style={font=\bfseries\small}]
 % Injection
 \begin{scope}[shift={(0,0)}]
   \node[lbl] at (2,2.2) {Injection (one-to-one)};
@@ -831,7 +831,7 @@ A quick map of bijectivity, surjectivity, and injectivity is shown below:
   \draw[ar] (0,-1) -- (4,-1.2);
 \end{scope}
 % Surjection
-\begin{scope}[shift={(0,-4.6)}]
+\begin{scope}[shift={(6.6,0)}]
   \node[lbl] at (2,2.2) {Surjection (onto)};
   \draw[gray] (0,0) ellipse (0.8 and 1.6);
   \draw[gray] (4,0) ellipse (0.8 and 1.6);
@@ -843,7 +843,7 @@ A quick map of bijectivity, surjectivity, and injectivity is shown below:
   \draw[ar] (0,-1.2) -- (4,-1);
 \end{scope}
 % Bijection
-\begin{scope}[shift={(0,-9.2)}]
+\begin{scope}[shift={(13.2,0)}]
   \node[lbl] at (2,2.2) {Bijection (one-to-one and onto)};
   \draw[gray] (0,0) ellipse (0.8 and 1.6);
   \draw[gray] (4,0) ellipse (0.8 and 1.6);
@@ -855,7 +855,6 @@ A quick map of bijectivity, surjectivity, and injectivity is shown below:
 \end{scope}
 \end{tikzpicture}
 ```
-// make way smaller, may put it horizontally instead
 
 ---
 
