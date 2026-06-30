@@ -311,10 +311,19 @@ $$
 
 So $$f'(x)=0$$ at $$x=0$$ and $$x=2$$. Test the sign of $$f'$$ on each interval:
 
+Test one point in each interval:
+
 $$
-f'(-1)=3(-1)(-3)=9>0,\qquad f'(1)=3(1)(-1)=-3<0,\qquad f'(3)=3(3)(1)=9>0.
+f'(-1)=3(-1)(-3)=9>0.
 $$
-// goes off the page
+
+$$
+f'(1)=3(1)(-1)=-3<0.
+$$
+
+$$
+f'(3)=3(3)(1)=9>0.
+$$
 
 The derivative goes positive to negative at $$x=0$$, so $$f$$ has a local maximum there, with $$f(0)=0$$. The derivative goes negative to positive at $$x=2$$, so $$f$$ has a local minimum there, with $$f(2)=8-12=-4$$.
 
@@ -608,27 +617,27 @@ This new $$x$$-value is called $$x_{n+1}$$.
 \pgfplotsset{compat=1.16}
 \begin{tikzpicture}
 \begin{axis}[
-  axis lines=middle, xmin=0.5, xmax=2.7, ymin=-1.5, ymax=5,
-  xtick={1,1.4,2.2}, ytick={-1,0,2,4},
+  axis lines=middle, xmin=1.1, xmax=1.75, ymin=-0.15, ymax=0.45,
+  xtick={1.4,1.4167,1.5}, ytick={0,0.25},
   grid=both, grid style={gray!18},
   width=8.8cm, height=6cm,
   xlabel=$x$, ylabel=$y$,
 ]
-\addplot[blue, thick, samples=180, domain=0.55:2.55] {x^2-2};
-\addplot[orange!85!black, thick, domain=1.0:2.45] {4.4*(x-2.2)+2.84};
-\addplot[red!75!black, thick, domain=1.15:2.0] {2.76*(x-1.4773)+0.1822};
-\addplot[gray!70, dashed] coordinates {(2.2,0) (2.2,2.84)};
-\addplot[gray!70, dashed] coordinates {(1.5545,0) (1.5545,0.4165)};
-\addplot[gray!70, dashed] coordinates {(1.4113,0) (1.4113,-0.0082)};
-\addplot[only marks, mark=*, mark size=1.7pt, orange!85!black] coordinates {(2.2,2.84) (1.5545,0) (1.4773,0.1822) (1.4113,0)};
-\node[orange!85!black, anchor=south west] at (axis cs:2.15,3.05) {$x_0$};
-\node[gray!80!black, anchor=north] at (axis cs:1.5545,0) {$x_1$};
-\node[red!75!black, anchor=south east] at (axis cs:1.4773,0.35) {$x_1$ tangent};
-\node[gray!80!black, anchor=north east] at (axis cs:1.4113,0) {$x_2$};
+\addplot[blue, thick, samples=180, domain=1.1:1.75] {x^2-2};
+\addplot[orange!85!black, thick, domain=1.25:1.68] {3*(x-1.5)+0.25};
+\addplot[red!75!black, thick, domain=1.34:1.5] {2.8334*(x-1.4167)+0.00694};
+\addplot[gray!70, dashed] coordinates {(1.5,0) (1.5,0.25)};
+\addplot[gray!70, dashed] coordinates {(1.4167,0) (1.4167,0.00694)};
+\addplot[only marks, mark=*, mark size=1.8pt, orange!85!black] coordinates {(1.5,0.25)};
+\addplot[only marks, mark=*, mark size=1.8pt, red!75!black] coordinates {(1.4167,0.00694)};
+\addplot[only marks, mark=*, mark size=1.6pt, gray!80] coordinates {(1.4167,0) (1.4142,0)};
+\node[orange!85!black, anchor=south west] at (axis cs:1.5,0.25) {tangent at $x_0$};
+\node[gray!80!black, anchor=north] at (axis cs:1.4167,0) {$x_1$};
+\node[red!75!black, anchor=south east] at (axis cs:1.4167,0.00694) {tangent at $x_1$};
+\node[gray!80!black, anchor=north east] at (axis cs:1.4142,0) {$x_2$};
 \end{axis}
 \end{tikzpicture}
 ```
-//only do two iterations (x_1 and x_2 (to be consistent with the nth iteration, where the first one is the one where you estimate) and the actual tangent line), and make sure the x_2 label is on the second dot not on the intersection between x_1 tangency line and the x-axis
 
 <div class="theorem-box">
 

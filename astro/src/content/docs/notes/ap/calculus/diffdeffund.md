@@ -252,57 +252,32 @@ Split the fraction into two limits:
 $$
 \frac{d}{dx}H(x)
 =
-\lim_{h\to0}\frac{f(x+h)g(x+h)-f(x+h)g(x)}{h}
+\lim_{h\to0}f(x+h)\frac{g(x+h)-g(x)}{h}
 +
-\lim_{h\to0}\frac{f(x+h)g(x)-f(x)g(x)}{h}.
+\lim_{h\to0}g(x)\frac{f(x+h)-f(x)}{h}.
 $$
-// goes out of the equation box please fix (too long)
 
-and then simplifying we get:
+Now split off the limits that become derivative definitions:
 
 $$
 \frac{d}{dx}H(x)
 =
-\lim_{h\to0}
-f(x+h)\frac{g(x+h)-g(x)}{h}
-+
-\lim_{h\to0}
-g(x)\frac{f(x+h)-f(x)}{h}.
+\left(\lim_{h\to0}f(x+h)\right)g'(x)
++g(x)f'(x).
 $$
 
-Now split the factors that do not belong to the difference quotients:
-
-$$
-\frac{d}{dx}H(x)
-=
-\left(\lim_{h\to0}f(x+h)\right)
-\left(\lim_{h\to0}\frac{g(x+h)-g(x)}{h}\right)
-+
-\left(\lim_{h\to0}g(x)\right)
-\left(\lim_{h\to0}\frac{f(x+h)-f(x)}{h}\right).
-$$
-// goes out of the equation box please fix (too long)
-
-since the limit of a sum is the sum of the limits (to see this, use the sum rule for limits), and constants with respect to $$h$$ can be factored out.
-
-Because $$f$$ is differentiable at $$x$$, it is also continuous at $$x$$. Therefore
-
-$$
-\lim_{h\to0}f(x+h)=f(x).
-$$
-
-Also,
-
-$$
-\lim_{h\to0}g(x)=g(x),
-$$
-
-because $$g(x)$$ does not depend on $$h$$. The two remaining limits are the derivative definitions for $$g'(x)$$ and $$f'(x)$$:
+This uses the sum rule for limits and the fact that $$g(x)$$ is constant with respect to $$h$$.
 
 $$
 \lim_{h\to0}\frac{g(x+h)-g(x)}{h}=g'(x),
 \qquad
 \lim_{h\to0}\frac{f(x+h)-f(x)}{h}=f'(x).
+$$
+
+Because $$f$$ is differentiable at $$x$$, it is also continuous at $$x$$. Therefore
+
+$$
+\lim_{h\to0}f(x+h)=f(x).
 $$
 
 Substitute these limits back in:
@@ -406,6 +381,56 @@ All of the trig derivatives can be proved using the derivative definition and th
 
 <div class="theorem-box">
 
+**Proof (Derivatives of $$\sin x$$ and $$\cos x$$).** For sine, start with the derivative definition:
+
+$$
+\frac{d}{dx}(\sin x)
+=
+\lim_{h\to0}\frac{\sin(x+h)-\sin x}{h}.
+$$
+
+Use $$\sin(x+h)=\sin x\cos h+\cos x\sin h$$:
+
+$$
+\frac{\sin(x+h)-\sin x}{h}
+=
+\sin x\frac{\cos h-1}{h}
++\cos x\frac{\sin h}{h}.
+$$
+
+Since
+
+$$
+\lim_{h\to0}\frac{\sin h}{h}=1,
+\qquad
+\lim_{h\to0}\frac{\cos h-1}{h}=0,
+$$
+
+we get
+
+$$
+\frac{d}{dx}(\sin x)=\cos x.
+$$
+
+For cosine, use $$\cos(x+h)=\cos x\cos h-\sin x\sin h$$:
+
+$$
+\frac{\cos(x+h)-\cos x}{h}
+=
+\cos x\frac{\cos h-1}{h}
+-\sin x\frac{\sin h}{h}.
+$$
+
+Taking the same two standard trig limits gives
+
+$$
+\frac{d}{dx}(\cos x)=-\sin x.
+$$
+
+</div>
+
+<div class="theorem-box">
+
 **Proof (Derivative of $$\tan x$$).** Start with the identity
 
 $$
@@ -433,7 +458,6 @@ $$
 $$
 
 </div>
-// for the proof above include the proofs of the derivatives of sine and cosine also as a lead in.
 
 ### Derivatives of exponential and logarithmic functions
 
@@ -461,7 +485,44 @@ $$
 \frac{d}{dx}(\log_a x)=\frac{1}{x\ln a},
 \qquad a>0,\ a\ne 1.
 $$
-//give an example proof or smth about the general exponential/log formulas
+
+<div class="theorem-box">
+
+**Proof (General exponential and logarithm derivatives).** Rewrite a general exponential using base $$e$$:
+
+$$
+a^x=e^{x\ln a}.
+$$
+
+Then the chain rule gives
+
+$$
+\frac{d}{dx}(a^x)
+=
+\frac{d}{dx}\left(e^{x\ln a}\right)
+=
+e^{x\ln a}\ln a
+=
+a^x\ln a.
+$$
+
+For logarithms, use change of base:
+
+$$
+\log_a x=\frac{\ln x}{\ln a}.
+$$
+
+Since $$\ln a$$ is constant,
+
+$$
+\frac{d}{dx}(\log_a x)
+=
+\frac{1}{\ln a}\cdot\frac{1}{x}
+=
+\frac{1}{x\ln a}.
+$$
+
+</div>
 
 ### Derivatives of hyperbolic functions
 

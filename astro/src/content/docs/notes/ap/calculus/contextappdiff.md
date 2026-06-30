@@ -94,17 +94,16 @@ Given a graph of a derivative $$f'$$:
   xlabel=$t$, ylabel=$Q(t)$,
 ]
 \addplot[blue, thick, samples=200, domain=0:8] {0.08*(x-4)^3 + 0.25*(x-4)^2 + 4.2};
-\addplot[orange!85!black, thick, domain=2.1:3.9] {-0.26*(x-3)+4.37};
+\addplot[orange!85!black, thick, domain=1.3:3.2] {-0.74*(x-2.2)+4.02};
 \addplot[orange!85!black, thick, domain=3.5:5.1] {0.17*(x-4.3)+4.22};
-\addplot[orange!85!black, thick, domain=5.8:6.6] {2.26*(x-6.2)+5.74};
-\addplot[only marks, mark=*, mark size=1.7pt, blue] coordinates {(3,4.37) (4.3,4.22) (6.2,5.74)};
-\node[orange!85!black, anchor=north east] at (axis cs:2.9,3.95) {negative rate};
+\addplot[orange!85!black, thick, domain=5.25:7.15] {2.26*(x-6.2)+5.74};
+\addplot[only marks, mark=*, mark size=1.7pt, blue] coordinates {(2.2,4.02) (4.3,4.22) (6.2,5.74)};
+\node[orange!85!black, anchor=north east] at (axis cs:2.1,3.45) {steeper negative rate};
 \node[orange!85!black, anchor=south] at (axis cs:4.3,4.55) {small positive rate};
-\node[orange!85!black, anchor=south west] at (axis cs:6.2,6.55) {larger positive rate};
+\node[orange!85!black, anchor=south west] at (axis cs:5.55,7.75) {larger positive rate};
 \end{axis}
 \end{tikzpicture}
 ```
-// large positive change isn't on the graph, negative change needs to be steeper for more contrast
 
 :::tip
 Problems will often use and expect certain words:

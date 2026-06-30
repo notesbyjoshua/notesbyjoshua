@@ -4,50 +4,6 @@ sidebar:
   order: 8
 ---
 
-## Accumulation and net change
-
-If $$R(t)$$ is a rate, then
-
-$$
-\int_a^b R(t)\,dt
-$$
-
-gives net change over $$[a,b]$$.
-
-So if $$P'(t)=R(t)$$, then
-
-$$
-P(b)-P(a)=\int_a^b R(t)\,dt.
-$$
-
-<div class="theorem-box">
-
-**Example.** Water enters a tank at rate $$R(t)=6+2t$$ gallons per minute for $$0\le t\le4$$. How much water enters during the first $$4$$ minutes?
-
-The rate is in gallons per minute, so integrating the rate gives gallons:
-
-$$
-\int_0^4 (6+2t)\,dt.
-$$
-
-Evaluate:
-
-$$
-\int_0^4 (6+2t)\,dt
-=
-\left[6t+t^2\right]_0^4
-=
-24+16
-=
-40.
-$$
-
-So $$40$$ gallons enter the tank.
-
-</div>
-
----
-
 ## Average value of a function
 
 The average value of $$f$$ on $$[a,b]$$ is the constant height that would produce the same signed area over the interval:
@@ -82,7 +38,7 @@ The average value is $$3$$: a constant height of $$3$$ would enclose the same ar
 
 ---
 
-## Distance vs displacement
+## Straight line motion and integration
 
 If velocity is $$v(t)$$, then:
 
@@ -94,9 +50,33 @@ $$
 \text{total distance} = \int_a^b \lvert v(t) \rvert\,dt
 $$
 
-Split total distance at sign changes of $$v(t)$$. Displacement keeps direction. Total distance counts all movement as positive.
+Note that displacement is your net change (signed area), meaning if you traveled around the Earth and traveled back to where you started you have $$0$$ displacement. However, distance measures your total travel, meaning that it is geometric area.
 
-If acceleration is given, integrate acceleration to get change in velocity. If velocity is given, integrate velocity to get change in position.
+If acceleration is given, integrate acceleration to get change in velocity. If velocity is given, integrate velocity to get change in position. This is just the Fundamental Theorem of Calculus in motion language:
+
+$$
+\int_a^b v(t)\,dt=s(b)-s(a),
+$$
+
+because $$v(t)=s'(t)$$. Similarly,
+
+$$
+\int_a^b a(t)\,dt=v(b)-v(a),
+$$
+
+because $$a(t)=v'(t)$$.
+
+So integration does not directly give the final position or final velocity unless you also know an initial value:
+
+$$
+s(b)=s(a)+\int_a^b v(t)\,dt,
+$$
+
+and
+
+$$
+v(b)=v(a)+\int_a^b a(t)\,dt.
+$$
 
 <div class="theorem-box">
 
@@ -148,135 +128,35 @@ So the displacement is $$-3$$ while the total distance is $$\frac{23}{3}$$, conf
 
 ---
 
-## Work and force
+## Areas between curves
 
-Work is another accumulation idea. If a force $$F(x)$$ moves an object along a line from $$x=a$$ to $$x=b$$, then
+Area between curves is still an accumulation problem. Instead of adding rectangles from the $$x$$-axis to one curve, each thin rectangle measures the distance between two curves.
 
-$$
-W=\int_a^b F(x)\,dx.
-$$
-
-If the force is constant, this reduces to
+For vertical slices,
 
 $$
-W=F(b-a).
+A=\int_a^b [\text{top}-\text{bottom}]\,dx.
 $$
 
-If the force changes with position, the integral adds many tiny pieces of work:
+For horizontal slices,
 
 $$
-dW=F(x)\,dx.
+A=\int_c^d [\text{right}-\text{left}]\,dy.
 $$
 
-### Springs
+The subtraction order is chosen so each slice length is nonnegative.
 
-Hooke's Law says that the force needed to stretch or compress a spring by $$x$$ units is
+:::strategy{title="Area between curves"}
+1. Sketch or reason about the region.
+2. Find intersection points to determine bounds.
+3. Decide whether vertical or horizontal slices describe the region more cleanly.
+4. Write top minus bottom for $$dx$$, or right minus left for $$dy$$.
+5. Split the integral if the top/bottom or right/left relationship changes.
+:::
 
-$$
-F(x)=kx,
-$$
-
-where $$k$$ is the spring constant. The work needed to stretch the spring from $$x=a$$ to $$x=b$$ is
-
-$$
-W=\int_a^b kx\,dx.
-$$
-
-<div class="theorem-box">
-
-**Example.** A spring requires $$12$$ pounds of force to stretch it $$3$$ inches from its natural length. How much work is required to stretch it from $$1$$ inch to $$3$$ inches?
-
-Hooke's Law gives $$F(x)=kx$$. Use the force information to find $$k$$:
-
-$$
-12=k(3)
-\quad\Longrightarrow\quad
-k=4.
-$$
-
-The work from $$x=1$$ to $$x=3$$ is
-
-$$
-W=\int_1^3 4x\,dx.
-$$
-
-Evaluate:
-
-$$
-W=\left[2x^2\right]_1^3
-=18-2
-=16.
-$$
-
-The work is $$16$$ inch-pounds.
-
-</div>
-
----
-
-## Choosing a slicing direction
-
-Applications of integration usually begin with a geometric slice.
-
-Vertical slices use $$dx$$ and usually compare top minus bottom:
-
-$$
-\int_a^b [\text{top}-\text{bottom}]\,dx.
-$$
-
-Horizontal slices use $$dy$$ and usually compare right minus left:
-
-$$
-\int_c^d [\text{right}-\text{left}]\,dy.
-$$
-
-The correct choice depends on which direction makes the region easiest to describe without unnecessary splitting.
-
-<div class="theorem-box">
-
-**Key idea.** Draw the slice first, then write the formula. The slice tells you the width, height, radius, or cross-sectional area.
-
-</div>
-
-<div class="theorem-box">
-
-**Example.** Set up the area between $$y=x^2$$ and $$y=2x$$ on $$0\le x\le3$$.
-
-First find where the curves cross:
-
-$$
-x^2=2x
-\quad\Longrightarrow\quad
-x(x-2)=0.
-$$
-
-They meet at $$x=0$$ and $$x=2$$. On $$[0,2]$$, $$2x$$ is above $$x^2$$. On $$[2,3]$$, $$x^2$$ is above $$2x$$. Therefore the area must be split:
-
-$$
-A=\int_0^2 (2x-x^2)\,dx+\int_2^3 (x^2-2x)\,dx.
-$$
-
-The main point is the setup: the top and bottom functions switch at $$x=2$$.
-
-</div>
-
----
-
-## Area between curves
-
-Area between curves is geometric area, so it must be nonnegative. If the curves cross, the "top" and "bottom" functions may switch. Split the interval at intersection points so the subtraction matches the geometry on each piece.
-
-If $$f(x) \ge g(x)$$ on $$[a,b]$$, then the area between the curves is
-
-$$
-\int_a^b [f(x)-g(x)]\,dx.
-$$
-
-For horizontal slicing with respect to $$y$$:
-
-$$
-\int_c^d [x_{\text{right}}(y)-x_{\text{left}}(y)]\,dy.
-$$
+:::warning
+Do not assume the first function listed is on top. Test a point or inspect the graph. If the curves cross, split the interval at the crossing.
+:::
 
 ```tikz
 \usepackage{pgfplots}
@@ -302,305 +182,193 @@ $$
 
 <div class="theorem-box">
 
-**Example.** Find the area of the region between $$y=x$$ and $$y=x^2$$.
+**Example.** Find the area enclosed by $$y=x$$ and $$y=x^2$$.
 
-First locate the intersection points by setting the curves equal:
-
-$$
-x=x^2 \;\Longrightarrow\; x^2-x=0 \;\Longrightarrow\; x(x-1)=0,
-$$
-
-so the curves meet at $$x=0$$ and $$x=1$$. On the interval $$[0,1]$$ the line lies above the parabola, since for example at $$x=\tfrac12$$ we have $$x=\tfrac12 > \tfrac14 = x^2$$. So the top function is $$f(x)=x$$ and the bottom is $$g(x)=x^2$$.
-
-The area is then
+First find the intersection points:
 
 $$
-\int_0^1 (x-x^2)\,dx
-= \left[\frac{x^2}{2}-\frac{x^3}{3}\right]_0^1
-= \frac12-\frac13
-= \frac16.
+x=x^2
+\quad\Longrightarrow\quad
+x(x-1)=0.
 $$
 
-So the enclosed area is $$\frac16$$.
+So the curves meet at $$x=0$$ and $$x=1$$. On $$[0,1]$$, the line $$y=x$$ is above $$y=x^2$$. Therefore
+
+$$
+A=\int_0^1 (x-x^2)\,dx.
+$$
+
+Evaluate:
+
+$$
+A=\left[\frac{x^2}{2}-\frac{x^3}{3}\right]_0^1
+=
+\frac12-\frac13
+=
+\frac16.
+$$
+
+</div>
+
+<div class="theorem-box">
+
+**Example.** Find the area of the region bounded by $$x=y^2$$ and $$x=2-y$$.
+
+These equations are easier to compare using horizontal slices because both are already written as $$x$$ in terms of $$y$$. Find intersections:
+
+$$
+y^2=2-y
+\quad\Longrightarrow\quad
+y^2+y-2=0
+\quad\Longrightarrow\quad
+(y+2)(y-1)=0.
+$$
+
+So $$y=-2$$ and $$y=1$$. On this interval, the right curve is $$x=2-y$$ and the left curve is $$x=y^2$$. The area is
+
+$$
+A=\int_{-2}^{1}\left[(2-y)-y^2\right]\,dy.
+$$
+
+Evaluate:
+
+$$
+A=\left[2y-\frac{y^2}{2}-\frac{y^3}{3}\right]_{-2}^{1}
+=
+\frac{9}{2}.
+$$
 
 </div>
 
 ---
 
-## Volume by cross sections
+## Calculating volumes
 
-If cross-sectional area perpendicular to the axis is $$A(x)$$, then volume is
-
-$$
-V = \int_a^b A(x)\,dx.
-$$
-
-Common cross sections:
-
-- squares,
-- rectangles,
-- semicircles,
-- equilateral triangles.
-
-Common area formulas:
+Volume problems use the same slicing idea as area problems, but each slice has area instead of length. The general structure is
 
 $$
-\text{square: } A=s^2,
+V=\int A(\text{slice})\,d(\text{slice variable}).
 $$
 
-$$
-\text{semicircle: } A=\frac12\pi r^2,
-$$
+The main work is deciding what the cross-sectional area $$A$$ is.
+
+### Volumes with known cross sections
+
+If a solid has cross-sectional area $$A(x)$$ perpendicular to the $$x$$-axis, then
 
 $$
-\text{equilateral triangle: } A=\frac{\sqrt3}{4}s^2.
+V=\int_a^b A(x)\,dx.
 $$
 
-The base region determines the side length, diameter, radius, or height needed for the cross-sectional area formula.
+Common cross sections include squares, rectangles, semicircles, and equilateral triangles.
 
 <div class="theorem-box">
 
-**Why cross-section volume works.** Slice the solid into very thin slabs. A slab near $$x$$ has approximate volume
+**Example.** A solid has base bounded by $$y=x$$ and $$y=x^2$$ for $$0\le x\le1$$. Cross sections perpendicular to the $$x$$-axis are squares. Find the volume.
 
-$$
-A(x)\Delta x.
-$$
-
-Adding all slabs gives a Riemann sum. As the slabs become thinner, the sum approaches
-
-$$
-\int_a^b A(x)\,dx.
-$$
-
-</div>
-
-<div class="theorem-box">
-
-**Example.** A solid has its base in the $$xy$$-plane bounded by $$y=\sqrt{x}$$, the $$x$$-axis, and the line $$x=4$$. Every cross section perpendicular to the $$x$$-axis is a square. Find the volume.
-
-At a given $$x$$, the base region runs from $$y=0$$ up to $$y=\sqrt{x}$$, so the side length of the square cross section is
-
-$$
-s=\sqrt{x}.
-$$
-
-The cross-sectional area is therefore
-
-$$
-A(x)=s^2=(\sqrt{x})^2=x.
-$$
-
-Integrating from $$x=0$$ to $$x=4$$ gives
-
-$$
-V=\int_0^4 x\,dx
-= \left[\frac{x^2}{2}\right]_0^4
-= \frac{16}{2}
-= 8.
-$$
-
-So the volume is $$8$$.
-
-</div>
-
-<div class="theorem-box">
-
-**Example.** A solid has base bounded by $$y=x$$ and $$y=x^2$$ from $$x=0$$ to $$x=1$$. Cross sections perpendicular to the $$x$$-axis are equilateral triangles. Set up the volume integral.
-
-For $$0\le x\le1$$, the top curve is $$y=x$$ and the bottom curve is $$y=x^2$$. The side length of each equilateral triangle is
+The side length of each square is top minus bottom:
 
 $$
 s=x-x^2.
 $$
 
-The area of an equilateral triangle with side length $$s$$ is
+So the cross-sectional area is
 
 $$
-A=\frac{\sqrt3}{4}s^2.
+A(x)=s^2=(x-x^2)^2.
 $$
 
-Thus
+Therefore
 
 $$
-A(x)=\frac{\sqrt3}{4}(x-x^2)^2.
+V=\int_0^1 (x-x^2)^2\,dx.
 $$
 
-The volume is
+Expand and integrate:
 
 $$
-V=\int_0^1 \frac{\sqrt3}{4}(x-x^2)^2\,dx.
+V=\int_0^1 (x^2-2x^3+x^4)\,dx
+=
+\left[\frac{x^3}{3}-\frac{x^4}{2}+\frac{x^5}{5}\right]_0^1
+=
+\frac{1}{30}.
 $$
 
 </div>
 
----
+### Disk and washer methods
 
-## Disk and washer methods
-
-Washers and disks come from slices perpendicular to the axis of rotation.
+When a region is revolved around an axis, a slice perpendicular to the axis forms a disk or washer.
 
 Disk method:
 
 $$
-V = \pi \int_a^b [R(x)]^2\,dx
+V=\pi\int_a^b [R(x)]^2\,dx.
 $$
 
 Washer method:
 
 $$
-V = \pi \int_a^b \left([R(x)]^2-[r(x)]^2\right)\,dx
+V=\pi\int_a^b \left([R(x)]^2-[r(x)]^2\right)\,dx.
 $$
 
-```tikz
-\usepackage{tikz}
-\begin{tikzpicture}[scale=0.9]
-\draw[gray!70, thick, ->] (-0.5,0) -- (6.2,0) node[right] {axis};
-\draw[blue, very thick] (0.5,0) ellipse (0.28 and 1.35);
-\fill[blue!15] (0.5,0) ellipse (0.28 and 1.35);
-\draw[orange!85!black, <->] (0.5,0) -- (0.5,1.35) node[midway, right] {$R$};
-\node[blue] at (0.5,-1.75) {disk};
-\draw[blue, very thick] (3.8,0) ellipse (0.36 and 1.55);
-\fill[blue!15, even odd rule] (3.8,0) ellipse (0.36 and 1.55) (3.8,0) ellipse (0.16 and 0.65);
-\draw[red!75!black, very thick] (3.8,0) ellipse (0.16 and 0.65);
-\draw[orange!85!black, <->] (3.8,0) -- (3.8,1.55) node[midway, right] {$R$};
-\draw[red!75!black, <->] (3.45,0) -- (3.45,0.65) node[midway, left] {$r$};
-\node[blue] at (3.8,-1.95) {washer};
-\node[align=center] at (5.2,1.45) {area\\$\pi R^2-\pi r^2$};
-\end{tikzpicture}
-```
+Here $$R$$ is the outer radius and $$r$$ is the inner radius. Both radii are distances to the axis of rotation.
 
 <div class="theorem-box">
 
-**Why washers use squared radii.** A washer is a large disk with a smaller disk removed. The cross-sectional area is therefore
+**Example.** Find the volume formed by revolving the region between $$y=\sqrt{x}$$ and the $$x$$-axis on $$[0,4]$$ about the $$x$$-axis.
+
+The radius is $$R(x)=\sqrt{x}$$. There is no hole, so this is a disk problem:
 
 $$
-\pi R^2-\pi r^2=\pi(R^2-r^2).
+V=\pi\int_0^4(\sqrt{x})^2\,dx
+=
+\pi\int_0^4x\,dx.
 $$
 
-Integrating these cross-sectional areas stacks the washers into the full solid.
-
-</div>
-
-<div class="theorem-box">
-
-**Example.** Find the volume of the solid formed by revolving the region under $$y=\sqrt{x}$$ on $$[0,4]$$ about the $$x$$-axis.
-
-A vertical slice perpendicular to the $$x$$-axis sweeps out a disk whose radius is the height of the curve,
+Evaluate:
 
 $$
-R(x)=\sqrt{x}.
-$$
-
-Using the disk method,
-
-$$
-V=\pi\int_0^4 [R(x)]^2\,dx
-=\pi\int_0^4 (\sqrt{x})^2\,dx
-=\pi\int_0^4 x\,dx.
-$$
-
-Evaluating the integral,
-
-$$
-V=\pi\left[\frac{x^2}{2}\right]_0^4
-=\pi\cdot\frac{16}{2}
-=8\pi.
-$$
-
-So the volume of the solid of revolution is $$8\pi$$.
-
-</div>
-
-<div class="theorem-box">
-
-**Example.** Set up the volume formed by revolving the region between $$y=4$$ and $$y=x^2$$ about the $$x$$-axis.
-
-The curves meet when
-
-$$
-x^2=4,
-$$
-
-so
-
-$$
-x=-2
-\qquad\text{and}\qquad
-x=2.
-$$
-
-A vertical slice rotated around the $$x$$-axis forms a washer. The outer radius is the distance from the axis to $$y=4$$:
-
-$$
-R(x)=4.
-$$
-
-The inner radius is the distance from the axis to $$y=x^2$$:
-
-$$
-r(x)=x^2.
-$$
-
-Thus the volume is
-
-$$
-V=\pi\int_{-2}^{2}\left(4^2-(x^2)^2\right)\,dx.
+V=\pi\left[\frac{x^2}{2}\right]_0^4=8\pi.
 $$
 
 </div>
 
----
+### Cylindrical shells
 
-## Volume by cylindrical shells
-
-Shells come from slices parallel to the axis of rotation.
+Shells come from slices parallel to the axis of rotation. A thin shell has approximate volume
 
 $$
-V = 2\pi \int_a^b (\text{radius})(\text{height})\,dx.
+dV=2\pi(\text{radius})(\text{height})(\text{thickness}).
 $$
 
-Shell method is often simpler when washers would require solving for inverse functions or splitting many pieces.
+Thus
+
+$$
+V=2\pi\int_a^b(\text{radius})(\text{height})\,d(\text{slice variable}).
+$$
+
+Shells are often cleaner when washers would require solving for inverse functions or splitting the region.
 
 <div class="theorem-box">
 
-**Why shells use $$2\pi rh$$.** A thin vertical slice rotated around an axis sweeps out a thin cylindrical shell. The shell's circumference is $$2\pi r$$, its height is $$h$$, and its thickness is $$\Delta x$$. So its volume is approximately
+**Example.** Find the volume formed by revolving the region under $$y=x^2$$ from $$x=0$$ to $$x=2$$ about the $$y$$-axis using shells.
+
+A vertical slice has radius $$x$$ and height $$x^2$$. Therefore
 
 $$
-(2\pi r)(h)\Delta x.
+V=2\pi\int_0^2 x(x^2)\,dx
+=
+2\pi\int_0^2 x^3\,dx.
 $$
 
-Adding the shells and taking the limit gives the shell integral.
-
-</div>
-
-<div class="theorem-box">
-
-**Example.** Find the volume generated by revolving the region bounded by $$y=x^2$$, the $$x$$-axis, and $$x=2$$ about the $$y$$-axis, using cylindrical shells.
-
-A vertical slice at position $$x$$ has radius equal to its distance from the $$y$$-axis, namely $$x$$, and height equal to the curve,
-
-$$
-\text{radius}=x,\qquad \text{height}=x^2.
-$$
-
-The shell formula gives
-
-$$
-V=2\pi\int_0^2 (\text{radius})(\text{height})\,dx
-=2\pi\int_0^2 x\cdot x^2\,dx
-=2\pi\int_0^2 x^3\,dx.
-$$
-
-Evaluating,
+Evaluate:
 
 $$
 V=2\pi\left[\frac{x^4}{4}\right]_0^2
-=2\pi\cdot\frac{16}{4}
-=2\pi\cdot 4
-=8\pi.
+=
+8\pi.
 $$
-
-So the volume is $$8\pi$$.
 
 </div>
 
@@ -608,7 +376,9 @@ So the volume is $$8\pi$$.
 
 ## Arc length
 
-Arc length adds tiny straight-line distances along a curve. For $$y=f(x)$$,
+Suppose you wanted to find the length traveled along a graph from point $$a$$ to point $$b$$. If you zoom in far enough, each tiny part of a smooth curve looks almost like a straight line. Arc length adds those tiny straight-line distances.
+
+For one tiny piece of curve, the horizontal change is $$dx$$ and the vertical change is $$dy$$. By the Pythagorean theorem,
 
 $$
 dL\approx \sqrt{(dx)^2+(dy)^2}.
@@ -632,7 +402,39 @@ $$
 L = \int_a^b \sqrt{1+[f'(x)]^2}\,dx.
 $$
 
-This is useful BC-level enrichment even when not emphasized heavily in every AP class.
+<div class="theorem-box">
+
+**Example.** Find the arc length of $$y=\frac{2}{3}x^{3/2}$$ on $$0\le x\le3$$.
+
+Differentiate:
+
+$$
+y'=\sqrt{x}.
+$$
+
+Then
+
+$$
+L=\int_0^3 \sqrt{1+(\sqrt{x})^2}\,dx
+=
+\int_0^3 \sqrt{1+x}\,dx.
+$$
+
+Use $$u=1+x$$, so $$du=dx$$. The bounds change from $$x=0$$ to $$u=1$$ and from $$x=3$$ to $$u=4$$:
+
+$$
+L=\int_1^4 u^{1/2}\,du
+=
+\left[\frac{2}{3}u^{3/2}\right]_1^4.
+$$
+
+So
+
+$$
+L=\frac{2}{3}(8-1)=\frac{14}{3}.
+$$
+
+</div>
 
 ---
 
@@ -654,9 +456,21 @@ $$
 
 The radius is the distance to the axis of rotation. The square-root factor comes from arc length.
 
+The formula comes from approximating the surface with many thin bands. A tiny piece of curve has length $$ds$$. When that tiny piece rotates around an axis, it sweeps out a thin band whose circumference is $$2\pi r$$ and whose width along the surface is approximately $$ds$$. So
+
+$$
+dS\approx 2\pi r\,ds.
+$$
+
+For $$y=f(x)$$ revolved around the $$x$$-axis, $$r=f(x)$$ and
+
+$$
+ds=\sqrt{1+[f'(x)]^2}\,dx.
+$$
+
 <div class="theorem-box">
 
-**Example.** Set up the surface area integral formed by revolving $$y=\sqrt{x}$$ on $$1\le x\le4$$ about the $$x$$-axis.
+**Example.** Set up and solve the surface area integral formed by revolving $$y=\sqrt{x}$$ on $$1\le x\le4$$ about the $$x$$-axis.
 
 The radius is
 
@@ -676,82 +490,45 @@ $$
 S=2\pi\int_1^4 \sqrt{x}\sqrt{1+\left(\frac{1}{2\sqrt{x}}\right)^2}\,dx.
 $$
 
-This setup is usually the main AP-style goal. It can be simplified algebraically, but the important structure is radius times arc-length factor.
-
-</div>
-
----
-
-## Improper integrals
-
-Improper integrals are always limits. Infinite intervals are handled by letting an endpoint move without bound. Infinite discontinuities are handled by approaching the problematic point from the correct side.
-
-Convergence means the limiting accumulated value is finite. Divergence means the accumulated value does not settle to a finite number.
-
-An integral is improper if:
-
-- an interval is infinite, or
-- the integrand is unbounded.
-
-Interpret through limits, for example:
+Simplify the integrand:
 
 $$
-\int_1^\infty \frac{1}{x^2}\,dx
+\sqrt{x}\sqrt{1+\frac{1}{4x}}
 =
-\lim_{b \to \infty} \int_1^b \frac{1}{x^2}\,dx.
+\sqrt{x}\sqrt{\frac{4x+1}{4x}}
+=
+\frac12\sqrt{4x+1}.
 $$
 
-<div class="theorem-box">
-
-**Example.** Evaluate $$\displaystyle\int_1^\infty \frac{1}{x^2}\,dx.$$
-
-Because the interval is infinite, rewrite the integral as a limit with a finite upper endpoint $$b$$:
+Thus
 
 $$
-\int_1^\infty \frac{1}{x^2}\,dx
-=\lim_{b\to\infty}\int_1^b x^{-2}\,dx.
+S=2\pi\int_1^4 \frac12\sqrt{4x+1}\,dx
+=
+\pi\int_1^4 \sqrt{4x+1}\,dx.
 $$
 
-Compute the inner integral using $$\int x^{-2}\,dx=-x^{-1}$$:
+Let $$u=4x+1$$, so $$du=4\,dx$$. When $$x=1$$, $$u=5$$. When $$x=4$$, $$u=17$$. Therefore
 
 $$
-\int_1^b x^{-2}\,dx
-=\left[-\frac1x\right]_1^b
-=-\frac1b+1
-=1-\frac1b.
+S=\frac{\pi}{4}\int_5^{17}u^{1/2}\,du
+=
+\frac{\pi}{4}\left[\frac{2}{3}u^{3/2}\right]_5^{17}.
 $$
 
-Now take the limit:
+So
 
 $$
-\lim_{b\to\infty}\left(1-\frac1b\right)=1.
+S=\frac{\pi}{6}\left(17^{3/2}-5^{3/2}\right)
+=
+\frac{\pi}{6}(17\sqrt{17}-5\sqrt5).
 $$
-
-The limit is finite, so the improper integral converges and its value is $$1$$.
 
 </div>
 
 ---
 
-## Center of mass
-
-For a thin plate with constant density in the plane, the center of mass is the balance point. If a region between $$y=f(x)$$ and $$y=g(x)$$ has area $$A$$, with $$f(x)\ge g(x)$$, then
-
-$$
-\bar{x}=\frac{1}{A}\int_a^b x[f(x)-g(x)]\,dx,
-$$
-
-and
-
-$$
-\bar{y}=\frac{1}{A}\int_a^b \frac{1}{2}\left([f(x)]^2-[g(x)]^2\right)\,dx.
-$$
-
-This is BC/enrichment in many courses, but the idea is still accumulation: moment divided by total amount.
-
----
-
-## Probability density functions
+## Applications to statistics: Probability density functions
 
 A probability density function $$p(x)$$ must satisfy
 
@@ -808,17 +585,6 @@ k=\frac12.
 $$
 
 </div>
-
----
-
-## Common mistakes
-
-:::mistakes
-- Forgetting to split total distance when velocity changes sign.
-- Using top-minus-bottom when the curves cross inside the interval without splitting.
-- Using wrong radii in washer problems.
-- Mixing shell and washer formulas without matching the slice geometry.
-:::
 
 ---
 

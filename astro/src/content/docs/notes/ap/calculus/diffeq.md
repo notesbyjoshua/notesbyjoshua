@@ -5,9 +5,16 @@ sidebar:
 ---
 
 ## Introduction to differential equations
-// write a better intro to diff. equations (like why we care about it)
 
- A differential equation usually does not tell you the value of a function directly, but rather, it tells you how the function changes.
+A differential equation usually does not tell you the value of a function directly. Instead, it tells you how the function changes. That is why differential equations show up whenever the important information is a rate: population growth, cooling, radioactive decay, motion, spread of a disease, charging a capacitor, or any situation where the future depends on the current state.
+
+For example, saying
+
+$$
+\frac{dP}{dt}=0.2P
+$$
+
+does not give the population $$P(t)$$ immediately. It says the population grows at a rate proportional to how much population is already present. Solving the differential equation turns that rate rule into an actual population model.
 
 For
 
@@ -17,7 +24,15 @@ $$
 
 the slope at a point depends on the coordinates of that point. A solution curve is a function whose tangent slope matches the differential equation everywhere it passes through.
 
-This is why slope fields are useful: they show the local direction a solution must follow before you solve anything symbolically.
+However, a solution to a differential equation may be valid only on an interval, even if the algebraic expression looks broader. Restrictions can come from:
+
+- division by zero during separation,
+- logarithms introduced while integrating,
+- initial conditions that choose one branch,
+- points where the differential equation itself is undefined.
+
+When solving an initial value problem, the interval of validity is usually the largest interval containing the initial input where the solution and differential equation both make sense.
+
 
 ---
 
@@ -26,6 +41,8 @@ This is why slope fields are useful: they show the local direction a solution mu
 A slope field shows small line segments representing $$dy/dx$$ at many points.
 
 In a slope field, each small segment represents the slope assigned by the differential equation at that point. Solution curves should follow the little segments smoothly. They should not cross each other for the same initial value problem because one input-output point should determine one local direction.
+
+To sketch a solution curve through an initial condition, start at the given point and move in the direction of the nearby line segments. Do not connect the segments with sharp corners; the solution should be a smooth curve whose tangent direction matches the field. You can reason about the solution without solving the differential equation by asking where slopes are positive, negative, zero, steep, or shallow.
 
 :::strategy{title="Analyzing a slope field"}
 - look for where slopes are zero,
@@ -42,30 +59,26 @@ In a slope field, each small segment represents the slope assigned by the differ
 \draw[->, gray!70] (0,-2.5) -- (0,3) node[above] {$y$};
 \foreach \x in {-3,-2,-1,0,1,2,3} {
   \foreach \y in {-2,-1,0,1,2} {
-    \pgfmathsetmacro{\m}{0.55*(1-\y)}
+    \pgfmathsetmacro{\m}{0.7*(1-\y)}
     \pgfmathsetmacro{\ang}{atan(\m)}
     \draw[gray!65, rotate around={\ang:(\x,\y)}] (\x-0.18,\y) -- (\x+0.18,\y);
   }
 }
 \draw[red!75!black, thick, dashed] (-3,1) -- (3,1) node[right] {equilibrium $y=1$};
-\draw[blue, very thick, domain=-3:3, samples=80] plot (\x,{1-1.6*exp(-0.55*(\x+3))});
-\draw[blue, very thick, domain=-3:3, samples=80] plot (\x,{1+1.4*exp(-0.55*(\x+3))});
-\node[blue, anchor=west] at (2.2,0.75) {solutions follow slopes};
+\draw[blue, very thick, domain=-3:3, samples=100] plot (\x,{1-1.6*exp(-0.7*(\x+3))});
+\draw[blue, very thick, domain=-3:3, samples=100] plot (\x,{1+1.4*exp(-0.7*(\x+3))});
+\node[blue, anchor=west] at (2.2,0.45) {solutions follow slopes};
 \end{tikzpicture}
 ```
 
 ---
 
-## Euler's method
+## Euler's method (BC-only)
 
 Euler's method is repeated linear approximation. At each step, use the current slope to move forward:
 
 $$
-\text{new }y
-=
-\text{old }y
-+
-(\text{step size})(\text{slope at old point}).
+y_{new} = y_{old} + (\text{step size})(\text{slope at old point}).
 $$
 
 Starting from $$(x_0,y_0)$$ with step size $$h$$:
@@ -87,6 +100,20 @@ x_{n+1}=x_n+h.
 $$
 
 The approximation improves when the step size is smaller, but AP questions usually care more about setting up the method correctly than about perfect numerical accuracy.
+
+Euler's method is like repeatedly using a tangent line for a short time. At $$(x_n,y_n)$$, the differential equation gives the slope $$f(x_n,y_n)$$. If the step size is $$h$$, then the tangent-line estimate says
+
+$$
+\Delta y\approx h\cdot f(x_n,y_n).
+$$
+
+So the next point is
+
+$$
+(x_{n+1},y_{n+1})=(x_n+h,\ y_n+h f(x_n,y_n)).
+$$
+
+The important detail is that each step uses the slope at the **old** point, not at the new point. After taking the step, you recalculate the slope using the new estimated point.
 
 <div class="theorem-box">
 
@@ -143,6 +170,20 @@ and integrate both sides.
 
 The constant of integration belongs after integration, and an initial condition turns the general solution into a particular solution.
 
+A **general solution** contains an arbitrary constant and represents a whole family of possible solution curves. A **particular solution** uses an initial condition to choose exactly one curve from that family.
+
+For example, after separating variables you might get
+
+$$
+y^2=x^2+C.
+$$
+
+That is a general solution because different values of $$C$$ give different curves. If the problem also says $$y(0)=2$$, then you substitute that point to find $$C=4$$, giving the particular solution
+
+$$
+y=\sqrt{x^2+4}.
+$$
+
 :::warning
 When separating variables, do not divide by an expression that could be zero without thinking about it. Dividing by $$y$$, $$y-1$$, or another factor can accidentally lose an equilibrium solution.
 :::
@@ -185,19 +226,6 @@ $$
 
 ---
 
-## Intervals of validity
-
-A solution to a differential equation may be valid only on an interval, even if the algebraic expression looks broader. Restrictions can come from:
-
-- division by zero during separation,
-- logarithms introduced while integrating,
-- initial conditions that choose one branch,
-- points where the differential equation itself is undefined.
-
-When solving an initial value problem, the interval of validity is usually the largest interval containing the initial input where the solution and differential equation both make sense.
-
----
-
 ## First-order linear differential equations
 
 A first-order linear differential equation has the form
@@ -206,7 +234,7 @@ $$
 \frac{dy}{dx}+P(x)y=Q(x).
 $$
 
-Not every AP Calculus class spends much time on the full integrating-factor method, but recognizing the form is useful because it shows up in modeling. The standard method is to multiply by an integrating factor
+The standard method of solving is to multiply by an integrating factor
 
 $$
 \mu(x)=e^{\int P(x)\,dx}.
@@ -292,6 +320,94 @@ $$
 
 ---
 
+## Second derivative from a differential equation
+
+If
+
+$$
+\frac{dy}{dx} = f(x,y),
+$$
+
+then
+
+$$
+\frac{d^2y}{dx^2}
+$$
+
+often comes from differentiating implicitly:
+
+$$
+\frac{d^2y}{dx^2}
+=
+\frac{d}{dx}[f(x,y)].
+$$
+
+This helps determine concavity of solution curves.
+
+---
+
+## Concavity of solution curves
+
+For a differential equation, concavity often comes from differentiating the slope expression.
+
+If
+
+$$
+\frac{dy}{dx}=f(x,y),
+$$
+
+then
+
+$$
+\frac{d^2y}{dx^2}
+=
+\frac{d}{dx}[f(x,y)].
+$$
+
+When differentiating, remember that $$y$$ depends on $$x$$. After finding $$d^2y/dx^2$$, use its sign to describe whether solution curves are concave up or concave down.
+
+<div class="theorem-box">
+
+**Example.** For solutions of
+
+$$
+\frac{dy}{dx}=x-y,
+$$
+
+find $$\frac{d^2y}{dx^2}$$ in terms of $$x$$ and $$y$$, then determine the concavity at the point $$(2,1)$$.
+
+Differentiate both sides with respect to $$x$$:
+
+$$
+\frac{d^2y}{dx^2}
+=
+\frac{d}{dx}(x-y).
+$$
+
+Since $$y$$ depends on $$x$$,
+
+$$
+\frac{d^2y}{dx^2}=1-\frac{dy}{dx}.
+$$
+
+Substitute $$\frac{dy}{dx}=x-y$$:
+
+$$
+\frac{d^2y}{dx^2}=1-(x-y)=1-x+y.
+$$
+
+At $$(2,1)$$,
+
+$$
+\frac{d^2y}{dx^2}=1-2+1=0.
+$$
+
+The solution curve has zero second derivative at that point, so this test alone says the curve is momentarily neither concave up nor concave down there.
+
+</div>
+
+---
+
 ## Exponential growth and decay
 
 If the rate of change is proportional to the amount present:
@@ -308,7 +424,7 @@ $$
 
 <div class="theorem-box">
 
-**Why proportional growth gives exponentials.** If
+**Proof (Exponential model equation).** If
 
 $$
 \frac{dy}{dt}=ky,
@@ -422,7 +538,7 @@ Solutions move away from $$y=0$$, so $$y=0$$ is unstable. Solutions move toward 
 
 ---
 
-## Logistic differential equation
+## Logistic differential equation (BC-only)
 
 The logistic model is
 
@@ -475,105 +591,6 @@ $$
 So the population grows fastest, at $$50$$ individuals per unit time, when it reaches $$1000$$.
 
 </div>
-
----
-
-## Second derivative from a differential equation
-
-If
-
-$$
-\frac{dy}{dx} = f(x,y),
-$$
-
-then
-
-$$
-\frac{d^2y}{dx^2}
-$$
-
-often comes from differentiating implicitly:
-
-$$
-\frac{d^2y}{dx^2}
-=
-\frac{d}{dx}[f(x,y)].
-$$
-
-This helps determine concavity of solution curves.
-
----
-
-## Concavity of solution curves
-
-For a differential equation, concavity often comes from differentiating the slope expression.
-
-If
-
-$$
-\frac{dy}{dx}=f(x,y),
-$$
-
-then
-
-$$
-\frac{d^2y}{dx^2}
-=
-\frac{d}{dx}[f(x,y)].
-$$
-
-When differentiating, remember that $$y$$ depends on $$x$$. After finding $$d^2y/dx^2$$, use its sign to describe whether solution curves are concave up or concave down.
-
-<div class="theorem-box">
-
-**Example.** For solutions of
-
-$$
-\frac{dy}{dx}=x-y,
-$$
-
-find $$\frac{d^2y}{dx^2}$$ in terms of $$x$$ and $$y$$, then determine the concavity at the point $$(2,1)$$.
-
-Differentiate both sides with respect to $$x$$:
-
-$$
-\frac{d^2y}{dx^2}
-=
-\frac{d}{dx}(x-y).
-$$
-
-Since $$y$$ depends on $$x$$,
-
-$$
-\frac{d^2y}{dx^2}=1-\frac{dy}{dx}.
-$$
-
-Substitute $$\frac{dy}{dx}=x-y$$:
-
-$$
-\frac{d^2y}{dx^2}=1-(x-y)=1-x+y.
-$$
-
-At $$(2,1)$$,
-
-$$
-\frac{d^2y}{dx^2}=1-2+1=0.
-$$
-
-The solution curve has zero second derivative at that point, so this test alone says the curve is momentarily neither concave up nor concave down there.
-
-</div>
-
----
-
-## Common mistakes
-
-:::mistakes
-- Separating variables incorrectly.
-- Forgetting the constant of integration.
-- Solving for the constant before using the initial condition carefully.
-- Sketching slope-field solutions that cross each other or violate the displayed slope directions.
-:::
 
 ---
 

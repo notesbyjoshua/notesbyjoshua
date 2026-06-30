@@ -6,78 +6,165 @@ sidebar:
 
 ## Riemann sums
 
-// expand this section, starting with a better lead in
+Integration begins with a simple idea: if a region is too curved to measure with one familiar geometry formula, approximate it with many simple shapes. A Riemann sum approximates accumulated change by cutting an interval into small pieces and adding rectangle areas.
 
-Suppose we wanted to find the area under a graph (commonly known as area under the curve). To approximate the area of $$f(x)$$ on $$[a,b]$$, divide the interval into subintervals and draw rectangles to approximate the area:
-
-$$
-\sum_{i=1}^n f(x_i^*)\Delta x
-$$
-
-where
+Suppose we want the signed area under $$f(x)$$ on $$[a,b]$$. Divide the interval into $$n$$ subintervals of equal width
 
 $$
 \Delta x = \frac{b-a}{n}.
 $$
 
-There are three types of Riemann sums: left, right, and midpoint.
+Choose one sample point $$x_i^*$$ in each subinterval. The rectangle on that subinterval has height $$f(x_i^*)$$ and width $$\Delta x$$, so the total approximation is
 
-// do like an explanation of each type, adding 1 example per
+$$
+\sum_{i=1}^n f(x_i^*)\Delta x.
+$$
+
+The sample point determines the type of Riemann sum.
+
+### Left Riemann sums
+
+A left Riemann sum uses the left endpoint of each subinterval. On an increasing function, left sums usually underestimate because each rectangle uses the smaller height from its interval.
+
+<div class="theorem-box">
+
+**Example.** Approximate $$\int_0^2 x^2\,dx$$ with a left Riemann sum using $$n=4$$.
+
+The width is
+
+$$
+\Delta x=\frac{2-0}{4}=0.5.
+$$
+
+The left endpoints are $$0,0.5,1,1.5$$, so
+
+$$
+L_4=0.5\left[f(0)+f(0.5)+f(1)+f(1.5)\right].
+$$
+
+Since $$f(x)=x^2$$,
+
+$$
+L_4=0.5(0+0.25+1+2.25)=1.75.
+$$
+
+</div>
+
+### Right Riemann sums
+
+A right Riemann sum uses the right endpoint of each subinterval. On an increasing function, right sums usually overestimate because each rectangle uses the larger height from its interval.
+
+<div class="theorem-box">
+
+**Example.** Approximate $$\int_0^2 x^2\,dx$$ with a right Riemann sum using $$n=4$$.
+
+The right endpoints are $$0.5,1,1.5,2$$, so
+
+$$
+R_4=0.5\left[f(0.5)+f(1)+f(1.5)+f(2)\right].
+$$
+
+Evaluate:
+
+$$
+R_4=0.5(0.25+1+2.25+4)=3.75.
+$$
+
+</div>
+
+### Midpoint Riemann sums
+
+A midpoint Riemann sum uses the center of each subinterval. Midpoint sums often give a better estimate than left or right sums with the same number of intervals because the rectangle height is chosen from the middle.
+
+<div class="theorem-box">
+
+**Example.** Approximate $$\int_0^2 x^2\,dx$$ with a midpoint Riemann sum using $$n=4$$.
+
+The subintervals are $$[0,0.5]$$, $$[0.5,1]$$, $$[1,1.5]$$, and $$[1.5,2]$$. Their midpoints are $$0.25,0.75,1.25,1.75$$. Thus
+
+$$
+M_4=0.5\left[f(0.25)+f(0.75)+f(1.25)+f(1.75)\right].
+$$
+
+Compute:
+
+$$
+M_4=0.5(0.0625+0.5625+1.5625+3.0625)=2.625.
+$$
+
+</div>
 
 ```tikz
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.16}
 \begin{tikzpicture}
-\begin{axis}[
-  axis lines=middle, xmin=0, xmax=4.3, ymin=0, ymax=5.2,
-  xtick={0,1,2,3,4}, ytick={0,1,2,3,4,5},
-  grid=both, grid style={gray!18},
-  width=9cm, height=6.2cm,
-  xlabel=$x$, ylabel=$f(x)$,
-]
-\addplot[blue, very thick, samples=180, domain=0:4] {0.25*x^2+0.6};
-\draw[orange!35, fill=orange!20] (axis cs:0,0) rectangle (axis cs:1,0.85);
-\draw[orange!35, fill=orange!20] (axis cs:1,0) rectangle (axis cs:2,1.6);
-\draw[orange!35, fill=orange!20] (axis cs:2,0) rectangle (axis cs:3,2.85);
-\draw[orange!35, fill=orange!20] (axis cs:3,0) rectangle (axis cs:4,4.6);
-\draw[red!75!black, thick] (axis cs:0,0.6) -- (axis cs:1,0.85);
-\draw[red!75!black, thick] (axis cs:1,0.85) -- (axis cs:2,1.6);
-\draw[red!75!black, thick] (axis cs:2,1.6) -- (axis cs:3,2.85);
-\draw[red!75!black, thick] (axis cs:3,2.85) -- (axis cs:4,4.6);
-\node[orange!85!black, anchor=west] at (axis cs:2.25,4.6) {rectangles};
-\node[red!75!black, anchor=west] at (axis cs:2.6,3.45) {trapezoid tops};
+\pgfplotsset{rs/.style={scale only axis, width=4.4cm, height=3.2cm, axis lines=middle,
+  xmin=0, xmax=2.2, ymin=0, ymax=4.5, xtick={0,1,2}, ytick={0,2,4},
+  grid=both, grid style={gray!15}, xlabel=$x$, ylabel=$f(x)$}}
+\begin{axis}[rs, at={(0cm,0cm)}, title={Left}]
+\addplot[blue, thick, samples=80, domain=0:2] {x^2};
+\draw[orange!30, fill=orange!18] (axis cs:0,0) rectangle (axis cs:0.5,0);
+\draw[orange!30, fill=orange!18] (axis cs:0.5,0) rectangle (axis cs:1,0.25);
+\draw[orange!30, fill=orange!18] (axis cs:1,0) rectangle (axis cs:1.5,1);
+\draw[orange!30, fill=orange!18] (axis cs:1.5,0) rectangle (axis cs:2,2.25);
+\end{axis}
+\begin{axis}[rs, at={(5.1cm,0cm)}, title={Right}]
+\addplot[blue, thick, samples=80, domain=0:2] {x^2};
+\draw[orange!30, fill=orange!18] (axis cs:0,0) rectangle (axis cs:0.5,0.25);
+\draw[orange!30, fill=orange!18] (axis cs:0.5,0) rectangle (axis cs:1,1);
+\draw[orange!30, fill=orange!18] (axis cs:1,0) rectangle (axis cs:1.5,2.25);
+\draw[orange!30, fill=orange!18] (axis cs:1.5,0) rectangle (axis cs:2,4);
+\end{axis}
+\begin{axis}[rs, at={(10.2cm,0cm)}, title={Midpoint}]
+\addplot[blue, thick, samples=80, domain=0:2] {x^2};
+\draw[orange!30, fill=orange!18] (axis cs:0,0) rectangle (axis cs:0.5,0.0625);
+\draw[orange!30, fill=orange!18] (axis cs:0.5,0) rectangle (axis cs:1,0.5625);
+\draw[orange!30, fill=orange!18] (axis cs:1,0) rectangle (axis cs:1.5,1.5625);
+\draw[orange!30, fill=orange!18] (axis cs:1.5,0) rectangle (axis cs:2,3.0625);
 \end{axis}
 \end{tikzpicture}
 ```
-// instead of trapezoidal tops, have a smooth function and then a graph for every type of Riemann sum
+
+### Trapezoidal Riemann sums
+
+The trapezoidal rule uses trapezoids instead of rectangles. On each subinterval, connect the two endpoint heights with a straight segment. The area of one trapezoid is
+
+$$
+\frac{1}{2}(\text{width})(\text{left height}+\text{right height}).
+$$
+
+For equal spacing $$\Delta x$$,
+
+$$
+\int_a^b f(x)\,dx
+\approx
+\frac{\Delta x}{2}
+\left[y_0+2y_1+2y_2+\cdots+2y_{n-1}+y_n\right].
+$$
 
 <div class="theorem-box">
 
-**Example.** Approximate the accumulation of $$f(x)=x^2$$ on $$[0,2]$$ using a right Riemann sum with $$n=4$$.
+**Example.** Approximate $$\int_0^2 x^2\,dx$$ with the trapezoidal rule using $$n=4$$.
 
-First find the width of each subinterval:
-
-$$
-\Delta x = \frac{b-a}{n} = \frac{2-0}{4} = 0.5.
-$$
-
-The right endpoints are $$x=0.5,\,1,\,1.5,\,2$$. Evaluate $$f$$ at each:
+The nodes are $$0,0.5,1,1.5,2$$, and the heights are
 
 $$
-f(0.5)=0.25,\quad f(1)=1,\quad f(1.5)=2.25,\quad f(2)=4.
+0,\quad 0.25,\quad 1,\quad 2.25,\quad 4.
 $$
 
-Sum the heights and multiply by the width:
+So
 
 $$
-\bigl(0.25+1+2.25+4\bigr)(0.5) = (7.5)(0.5) = 3.75.
+T_4=\frac{0.5}{2}\left[0+2(0.25)+2(1)+2(2.25)+4\right].
 $$
 
-So the right Riemann sum is $$3.75$$. Since $$f$$ is increasing, this overestimates the true value $$\int_0^2 x^2\,dx = \tfrac{8}{3}\approx 2.67$$.
+This gives
+
+$$
+T_4=0.25(11)=2.75.
+$$
 
 </div>
-
-// add a section on trapezoidal riemann sums
 
 ### Riemann sums from data
 
@@ -99,7 +186,15 @@ Although Riemann sums are a great way to approximate the area under the curve, y
 
 <div class="theorem-box">
 
-**Definition.** // add definition of definite integral
+**Definition.** The definite integral of $$f$$ from $$a$$ to $$b$$ is the limit of Riemann sums:
+
+$$
+\int_a^b f(x)\,dx
+=
+\lim_{n\to\infty}\sum_{i=1}^{n} f(x_i^*)\Delta x,
+$$
+
+as the width of the largest subinterval approaches $$0$$, assuming this limit exists.
 
 </div>
 
@@ -116,7 +211,9 @@ Geometric area is always nonnegative, meaning that you add up the magnitudes of 
 
 ### The Fundamental Theorem of Calculus
 
-// add a good lead connecting area definition of definite integrals and FTC
+The definite integral is defined as a limiting area process, but computing a limit of Riemann sums every time would be painful. The Fundamental Theorem of Calculus gives the shortcut: if you can find an antiderivative, then a definite integral can be evaluated by subtracting endpoint values.
+
+The theorem also explains why derivatives and integrals are inverse processes. Derivatives measure instantaneous change; integrals add up accumulated change.
 
 <div class="theorem-box">
 
@@ -144,36 +241,47 @@ when $$f$$ is continuous.
 
 <div class="theorem-box">
 
-**Proof (Fundamental Theorem of Calculus).** // write out a pretty formal proof of FTC
+**Proof (Fundamental Theorem of Calculus).** Let
+
+$$
+G(x)=\int_a^x f(t)\,dt.
+$$
+
+To find $$G'(x)$$, use the derivative definition:
+
+$$
+G'(x)=\lim_{h\to0}\frac{G(x+h)-G(x)}{h}.
+$$
+
+Substitute the definition of $$G$$:
+
+$$
+G(x+h)-G(x)
+=
+\int_a^{x+h}f(t)\,dt-\int_a^x f(t)\,dt
+=
+\int_x^{x+h}f(t)\,dt.
+$$
+
+Thus
+
+$$
+G'(x)=\lim_{h\to0}\frac{1}{h}\int_x^{x+h}f(t)\,dt.
+$$
+
+If $$f$$ is continuous, then on a very small interval from $$x$$ to $$x+h$$, the average value of $$f$$ approaches $$f(x)$$. Therefore
+
+$$
+G'(x)=f(x).
+$$
+
+Now suppose $$F'(x)=f(x)$$. Since $$G'(x)=f(x)$$ too, the functions $$F$$ and $$G$$ differ only by a constant. Using total change,
+
+$$
+\int_a^b f(x)\,dx=G(b)-G(a)=F(b)-F(a).
+$$
 
 </div>
-
-The Fundamental Theorem of Calculus connects two ideas that initially look separate:
-
-- derivatives measure instantaneous change,
-- integrals measure accumulated change.
-
-If $$F'(x)=f(x)$$, then
-
-$$
-\int_a^b f(x)\,dx=F(b)-F(a).
-$$
-
-So integrating a rate gives the change in the original quantity. Think of definite integrals like differentials: for each $$dx$$ (width), the function changes $$dy$$ (area), so summing up the $$dx$$ rectangles multiplified by $$f(x)$$ (height) gives the total area under the curve.
-
-The accumulation version says that if
-
-$$
-A(x)=\int_a^x f(t)\,dt,
-$$
-
-then
-
-$$
-A'(x)=f(x).
-$$
-
-The upper limit controls where the accumulation stops, so changing $$x$$ changes the accumulated area.
 
 <div class="theorem-box">
 
@@ -215,10 +323,66 @@ $$
 (\text{units of }f)(\text{units of }x).
 $$
 
-// explain this section (FTC section as a whole) a bit more, and reorganize so it's less repetitive and makes sense
+For example, if $$r(t)$$ is measured in gallons per minute and $$t$$ is measured in minutes, then
+
+$$
+\int_a^b r(t)\,dt
+$$
+
+is measured in gallons. The integral does not give a rate anymore; it gives the accumulated amount caused by that rate over the interval.
 
 ### Solving definite integrals
-// add this part please
+
+To solve a definite integral using the Fundamental Theorem:
+
+:::checklist
+1. Find an antiderivative $$F$$ of the integrand.
+2. Evaluate $$F(b)$$ and $$F(a)$$.
+3. Subtract in the order upper minus lower: $$F(b)-F(a)$$.
+4. Interpret the sign if the integral represents signed area or net change.
+:::
+
+<div class="theorem-box">
+
+**Example.** Evaluate
+
+$$
+\int_1^4 \left(3x^2-2x\right)\,dx.
+$$
+
+An antiderivative is
+
+$$
+F(x)=x^3-x^2.
+$$
+
+Apply the Fundamental Theorem:
+
+$$
+\int_1^4 \left(3x^2-2x\right)\,dx
+=
+F(4)-F(1).
+$$
+
+Compute:
+
+$$
+F(4)=4^3-4^2=64-16=48,
+$$
+
+and
+
+$$
+F(1)=1^3-1^2=0.
+$$
+
+Therefore
+
+$$
+\int_1^4 \left(3x^2-2x\right)\,dx=48.
+$$
+
+</div>
 
 ### Integrals with variable limits
 
@@ -236,7 +400,48 @@ $$
 
 This is can be thought of as the chain rule for FTC.
 
-// add proof of the chain rule of FTC
+<div class="theorem-box">
+
+**Proof (Chain rule form of FTC).** Define
+
+$$
+A(x)=\int_a^x f(t)\,dt.
+$$
+
+By the Fundamental Theorem,
+
+$$
+A'(x)=f(x).
+$$
+
+If the upper limit is $$v(x)$$, then
+
+$$
+\int_a^{v(x)}f(t)\,dt=A(v(x)).
+$$
+
+Differentiate using the chain rule:
+
+$$
+\frac{d}{dx}A(v(x))=A'(v(x))v'(x)=f(v(x))v'(x).
+$$
+
+For a lower limit $$u(x)$$, rewrite
+
+$$
+\int_{u(x)}^{v(x)}f(t)\,dt
+=
+\int_a^{v(x)}f(t)\,dt-\int_a^{u(x)}f(t)\,dt.
+$$
+
+Differentiate both pieces:
+
+$$
+\frac{d}{dx}\int_{u(x)}^{v(x)}f(t)\,dt
+=f(v(x))v'(x)-f(u(x))u'(x).
+$$
+
+</div>
 
 <div class="theorem-box">
 
@@ -279,7 +484,27 @@ $$
 </div>
 
 Note that antiderivatives have no bounds. Instead of finding a value, the antiderivative finds a function whose derivative calculates to the original function.
-// add more detail on indefinite integrals and kind of illustrate the difference between it and definite integrals, also why we need +C and stuff like that
+
+This is the key difference:
+
+- A **definite integral** has bounds and returns a number.
+- An **indefinite integral** has no bounds and returns a family of functions.
+
+The $$+C$$ is necessary because derivatives lose constant information. For example,
+
+$$
+\frac{d}{dx}(x^2)=2x,
+\qquad
+\frac{d}{dx}(x^2+5)=2x,
+\qquad
+\frac{d}{dx}(x^2-11)=2x.
+$$
+
+So when reversing the derivative of $$2x$$, all of those possibilities must be included:
+
+$$
+\int 2x\,dx=x^2+C.
+$$
 
 <div class="theorem-box">
 
@@ -313,7 +538,69 @@ The $$+C$$ is required because every constant has derivative zero, so the antide
 ## Integration strategies
 
 Integration is a game of pattern recognition and choosing smart methods. This section presents some of the most useful and widely used integration techniques.
-// add a section on integrals of odd and even functions where you see fit
+
+### Integrals of odd and even functions
+
+Symmetry can make some definite integrals much faster, especially on intervals of the form $$[-a,a]$$.
+
+- An even function satisfies $$f(-x)=f(x)$$. Its graph is symmetric across the $$y$$-axis.
+- An odd function satisfies $$f(-x)=-f(x)$$. Its graph is symmetric about the origin.
+
+On a symmetric interval,
+
+$$
+\int_{-a}^{a} f(x)\,dx=2\int_0^a f(x)\,dx
+$$
+
+for even functions, and
+
+$$
+\int_{-a}^{a} f(x)\,dx=0
+$$
+
+for odd functions.
+
+<div class="theorem-box">
+
+**Example.** Evaluate
+
+$$
+\int_{-2}^{2}(x^3+4x)\,dx.
+$$
+
+The function $$x^3+4x$$ is odd because
+
+$$
+(-x)^3+4(-x)=-(x^3+4x).
+$$
+
+Since the interval is symmetric,
+
+$$
+\int_{-2}^{2}(x^3+4x)\,dx=0.
+$$
+
+</div>
+
+<div class="theorem-box">
+
+**Example.** Rewrite
+
+$$
+\int_{-3}^{3}(x^2+1)\,dx
+$$
+
+using symmetry.
+
+The function $$x^2+1$$ is even, so
+
+$$
+\int_{-3}^{3}(x^2+1)\,dx
+=
+2\int_0^3(x^2+1)\,dx.
+$$
+
+</div>
 
 ### U-substitution
 
@@ -682,7 +969,44 @@ $$
 $$
 
 </div>
-// add the tabular method for IBP somewhere in this section
+
+The tabular method is a faster way to organize repeated integration by parts when one factor eventually differentiates to $$0$$, such as a polynomial.
+
+<div class="theorem-box">
+
+**Example.** Use the tabular method to compute
+
+$$
+\int x^2e^x\,dx.
+$$
+
+Differentiate $$x^2$$ repeatedly and integrate $$e^x$$ repeatedly:
+
+$$
+\begin{array}{c|c|c}
+\text{sign} & D & I \\\hline
++ & x^2 & e^x \\
+- & 2x & e^x \\
++ & 2 & e^x \\
+- & 0 & e^x
+\end{array}
+$$
+
+Multiply diagonally with alternating signs:
+
+$$
+\int x^2e^x\,dx
+=
+x^2e^x-2xe^x+2e^x+C.
+$$
+
+Factor if desired:
+
+$$
+\int x^2e^x\,dx=e^x(x^2-2x+2)+C.
+$$
+
+</div>
 
 ### Partial fractions (BC-only)
 
@@ -703,23 +1027,135 @@ $$
 
 Then solve for the constants and integrate each term. For more details, you can look at [Unit 13](/notes/ap/precalc/addtopics/) of AP Precalculus for a reminder of how to solve partial fractions.
 
-// add an example of using partial fractions
+<div class="theorem-box">
+
+**Example.** Compute
+
+$$
+\int \frac{5x+1}{x^2-x-2}\,dx.
+$$
+
+Factor the denominator:
+
+$$
+x^2-x-2=(x-2)(x+1).
+$$
+
+Set up partial fractions:
+
+$$
+\frac{5x+1}{(x-2)(x+1)}
+=
+\frac{A}{x-2}+\frac{B}{x+1}.
+$$
+
+Multiply through by $$(x-2)(x+1)$$:
+
+$$
+5x+1=A(x+1)+B(x-2).
+$$
+
+Use convenient values. If $$x=2$$, then
+
+$$
+11=3A
+\quad\Longrightarrow\quad
+A=\frac{11}{3}.
+$$
+
+If $$x=-1$$, then
+
+$$
+-4=-3B
+\quad\Longrightarrow\quad
+B=\frac{4}{3}.
+$$
+
+Therefore
+
+$$
+\int \frac{5x+1}{x^2-x-2}\,dx
+=
+\int\left(\frac{11/3}{x-2}+\frac{4/3}{x+1}\right)\,dx.
+$$
+
+So
+
+$$
+\int \frac{5x+1}{x^2-x-2}\,dx
+=
+\frac{11}{3}\ln\lvert x-2\rvert+\frac{4}{3}\ln\lvert x+1\rvert+C.
+$$
+
+</div>
 
 ---
 
 ## Improper integrals (BC-only)
-// please write more in this section
 
-An improper integral is a definite integral that has an infinite interval (endpoint at $$\pm \infty$$) or an infinite discontinuity (e.g. a vertical asymptote). It must be rewritten as a limit.
+<div class="theorem-box">
 
-For example,
+An *improper integral* is a definite integral where ordinary endpoint evaluation does not make sense. This happens in two main ways:
+
+- the interval is infinite, such as $$[1,\infty)$$,
+- the integrand becomes unbounded, such as $$1/x$$ near $$x=0$$.
+
+Improper integrals are not evaluated by simply plugging in infinity or plugging in a vertical asymptote. They must be rewritten as limits.
+
+</div>
+
+For an infinite interval,
 
 $$
 \int_1^\infty \frac{1}{x^2}\,dx
 =\lim_{b\to\infty}\int_1^b\frac{1}{x^2}\,dx.
 $$
 
-The integral **converges** if this limit is finite and **diverges** otherwise.
+For an infinite discontinuity inside the interval, split at the discontinuity. For example,
+
+$$
+\int_0^1 \frac{1}{\sqrt{x}}\,dx
+=
+\lim_{a\to0^+}\int_a^1 \frac{1}{\sqrt{x}}\,dx.
+$$
+
+The integral **converges** if the limit is finite and **diverges** otherwise. If an improper integral has two problematic endpoints or an interior discontinuity, every required limit must converge.
+
+Convergence means the limiting accumulated value is finite. Divergence means the accumulated value does not settle to a finite number.
+
+:::warning
+Never cross a vertical asymptote inside an integral without splitting the interval. If $$f$$ is undefined at $$c$$ inside $$[a,b]$$, rewrite the integral as two one-sided improper integrals.
+:::
+
+<div class="theorem-box">
+
+**Example.** Evaluate $$\displaystyle\int_1^\infty \frac{1}{x^2}\,dx.$$
+
+Because the interval is infinite, rewrite the integral as a limit with a finite upper endpoint $$b$$:
+
+$$
+\int_1^\infty \frac{1}{x^2}\,dx
+=\lim_{b\to\infty}\int_1^b x^{-2}\,dx.
+$$
+
+Compute the inner integral using $$\int x^{-2}\,dx=-x^{-1}$$:
+
+$$
+\int_1^b x^{-2}\,dx
+=\left[-\frac1x\right]_1^b
+=-\frac1b+1
+=1-\frac1b.
+$$
+
+Now take the limit:
+
+$$
+\lim_{b\to\infty}\left(1-\frac1b\right)=1.
+$$
+
+The limit is finite, so the improper integral converges and its value is $$1$$.
+
+</div>
 
 ### Comparison Test for improper integrals
 
