@@ -149,6 +149,11 @@ When writing proofs, always follow this format:
 </div>
 ```
 
+Use the word `Proof` in the lead-in. Do not title proof boxes with
+`**Why ...**`, `**Why this works.**`, or similar labels. If the box is explaining
+why a formula or theorem is true, it is still a proof box and should start with
+`**Proof (topic).**`.
+
 NEVER box the final identity!
 
 ### Examples

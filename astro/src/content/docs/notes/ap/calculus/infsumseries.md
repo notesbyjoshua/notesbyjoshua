@@ -103,7 +103,7 @@ diverges.
 
 <div class="theorem-box">
 
-**Why the nth-term test works.** If an infinite series converges to a finite sum, then the partial sums
+**Proof (nth-term test for divergence).** If an infinite series converges to a finite sum, then the partial sums
 
 $$
 S_N=a_1+a_2+\cdots+a_N
@@ -189,7 +189,7 @@ $$
 
 <div class="theorem-box">
 
-**Why the geometric sum formula works.** Let
+**Proof (Geometric series formula).** Let
 
 $$
 S_N=a+ar+ar^2+\cdots+ar^N.
@@ -696,7 +696,7 @@ The Taylor polynomial $$T_n(x)$$ is a finite approximation. The Taylor series is
 
 <div class="theorem-box">
 
-**Why Taylor coefficients look like this.** Suppose a polynomial centered at $$c$$ has the form
+**Proof (Taylor coefficient formula).** Suppose a polynomial centered at $$c$$ has the form
 
 $$
 P(x)=a_0+a_1(x-c)+a_2(x-c)^2+\cdots.

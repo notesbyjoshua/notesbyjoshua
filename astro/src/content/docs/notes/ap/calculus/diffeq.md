@@ -556,7 +556,7 @@ Behavior:
 
 <div class="theorem-box">
 
-**Why logistic growth slows down.** The factor
+**Proof (Logistic growth behavior).** The factor
 
 $$
 1-\frac{y}{L}

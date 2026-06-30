@@ -105,15 +105,49 @@ If both derivatives are zero, the test is inconclusive because the particle may 
 
 <div class="theorem-box">
 
-**Why parametric slope is a ratio.** Along a parametric curve, both $$x$$ and $$y$$ change as $$t$$ changes. The slope compares vertical change to horizontal change:
+**Proof (Derivative of parametric functions).** Suppose
+
+$$
+x=f(t)
+\qquad
+\text{and}
+\qquad
+y=g(t).
+$$
+
+If $$x=f(t)$$ is locally invertible near the value of $$t$$ we care about, then we can think of $$t$$ as a function of $$x$$. In other words, $$t=f^{-1}(x)$$ locally, and
+
+$$
+y=g(t)=g(f^{-1}(x)).
+$$
+
+Differentiate with respect to $$x$$ using the chain rule:
+
+$$
+\frac{dy}{dx}
+=
+\frac{dy}{dt}\cdot\frac{dt}{dx}.
+$$
+
+Since
+
+$$
+\frac{dx}{dt}\cdot\frac{dt}{dx}=1,
+$$
+
+we have
+
+$$
+\frac{dt}{dx}=\frac{1}{dx/dt}
+$$
+
+as long as $$dx/dt\ne0$$. Therefore
 
 $$
 \frac{dy}{dx}
 =
 \frac{dy/dt}{dx/dt}.
 $$
-
-This is the chain rule rearranged: if $$y$$ changes with $$t$$ and $$x$$ changes with $$t$$, then the rate of $$y$$ with respect to $$x$$ is the rate of $$y$$ with respect to $$t$$ divided by the rate of $$x$$ with respect to $$t$$.
 
 </div>
 
@@ -483,7 +517,7 @@ The outer curve is the one with the larger distance from the pole on that angle 
 
 <div class="theorem-box">
 
-**Why polar area has the factor $$\frac12$$.** A tiny polar slice looks like a circular sector. A sector with radius $$r$$ and angle $$\Delta\theta$$ has area approximately
+**Proof (Polar area formula).** A tiny polar slice looks like a circular sector. A sector with radius $$r$$ and angle $$\Delta\theta$$ has area approximately
 
 $$
 \frac12 r^2\Delta\theta.
