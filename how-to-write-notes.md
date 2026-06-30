@@ -70,6 +70,25 @@ Do not add an appendix section when expanding notes unless it is explicitly
 requested. Put new explanations, examples, formulas, and practice directly into
 the relevant content sections where students will naturally use them.
 
+### Structure and repetition
+
+When editing or expanding notes, aim for a clean lesson structure, not a literal
+preservation of every existing heading. You may reorganize sections, rename
+headings, delete redundant headings, and merge repeated sections when that makes
+the page clearer.
+
+Preserve useful explanations, examples, formulas, and the student's voice, but
+do not keep duplicated material just because it is already there. If two sections
+teach the same idea, combine them into one stronger section with better depth,
+flow, examples, and transitions.
+
+Prefer:
+
+- one complete section over two shallow repeated sections,
+- a clear sequence of ideas over strict attachment to the current outline,
+- deleting placeholder or duplicate headers when their content is merged
+  elsewhere.
+
 ---
 
 ## Math

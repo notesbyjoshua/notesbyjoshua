@@ -4,9 +4,19 @@ sidebar:
   order: 7
 ---
 
----
+## Introduction to differential equations
 
-Differential equations describe how a quantity changes rather than giving the quantity directly. In AP Calculus, the focus is on slope fields, separable equations, logistic models, and interpreting solution behavior.
+A differential equation usually does not tell you the value of a function directly. It tells you how the function changes.
+
+For
+
+$$
+\frac{dy}{dx}=f(x,y),
+$$
+
+the slope at a point depends on the coordinates of that point. A solution curve is a function whose tangent slope matches the differential equation everywhere it passes through.
+
+This is why slope fields are useful: they show the local direction a solution must follow before you solve anything symbolically.
 
 ---
 
@@ -16,15 +26,64 @@ A differential equation relates a function and its derivatives. A **general solu
 
 If an initial condition is given, such as $$y(1)=5$$, you solve for the constant to get the particular solution.
 
+<div class="theorem-box">
+
+**Example.** Verify that $$y=Ce^{2x}$$ is a general solution of $$\frac{dy}{dx}=2y$$.
+
+Differentiate the proposed solution:
+
+$$
+\frac{dy}{dx}=2Ce^{2x}.
+$$
+
+Since $$y=Ce^{2x}$$, the right side of the differential equation is
+
+$$
+2y=2Ce^{2x}.
+$$
+
+The derivative matches the right side, so $$y=Ce^{2x}$$ satisfies the differential equation for any constant $$C$$.
+
+</div>
+
+<div class="theorem-box">
+
+**Example.** The general solution of a differential equation is $$y=Cx^2+1$$. Find the particular solution satisfying $$y(3)=19$$.
+
+Use the initial condition:
+
+$$
+19=C(3)^2+1.
+$$
+
+Then
+
+$$
+18=9C
+\quad\Longrightarrow\quad
+C=2.
+$$
+
+So the particular solution is
+
+$$
+y=2x^2+1.
+$$
+
+</div>
+
 ---
 
 ## Slope fields
 
 A slope field shows small line segments representing $$dy/dx$$ at many points.
 
+In a slope field, each small segment represents the slope assigned by the differential equation at that point. Solution curves should follow the little segments smoothly. They should not cross each other for the same initial value problem because one input-output point should determine one local direction.
+
 :::strategy{title="Analyzing a slope field"}
 - look for where slopes are zero,
 - look for where slopes are positive/negative,
+- notice rows or columns where slopes repeat,
 - identify equilibrium solutions,
 - sketch a solution curve that follows the segment directions.
 :::
@@ -52,10 +111,20 @@ A slope field shows small line segments representing $$dy/dx$$ at many points.
 
 ## Euler's method
 
+Euler's method is repeated linear approximation. At each step, use the current slope to move forward:
+
+$$
+\text{new }y
+=
+\text{old }y
++
+(\text{step size})(\text{slope at old point}).
+$$
+
 Starting from $$(x_0,y_0)$$ with step size $$h$$:
 
 $$
-y_{n+1} = y_n + h f(x_n,y_n)
+y_{n+1} = y_n + h f(x_n,y_n),
 $$
 
 where
@@ -63,6 +132,14 @@ where
 $$
 \frac{dy}{dx} = f(x,y).
 $$
+
+Also keep track of the input:
+
+$$
+x_{n+1}=x_n+h.
+$$
+
+The approximation improves when the step size is smaller, but AP questions usually care more about setting up the method correctly than about perfect numerical accuracy.
 
 <div class="theorem-box">
 
@@ -101,6 +178,8 @@ So Euler's method gives the approximation $$y(1)\approx 2.5$$.
 
 ## Separable differential equations
 
+A separable equation has the variables separated into an $$x$$ part and a $$y$$ part.
+
 If
 
 $$
@@ -114,6 +193,12 @@ $$
 $$
 
 and integrate both sides.
+
+The constant of integration belongs after integration, and an initial condition turns the general solution into a particular solution.
+
+:::warning
+When separating variables, do not divide by an expression that could be zero without thinking about it. Dividing by $$y$$, $$y-1$$, or another factor can accidentally lose an equilibrium solution.
+:::
 
 <div class="theorem-box">
 
@@ -150,6 +235,19 @@ y = \sqrt{x^2 + 4}.
 $$
 
 </div>
+
+---
+
+## Intervals of validity
+
+A solution to a differential equation may be valid only on an interval, even if the algebraic expression looks broader. Restrictions can come from:
+
+- division by zero during separation,
+- logarithms introduced while integrating,
+- initial conditions that choose one branch,
+- points where the differential equation itself is undefined.
+
+When solving an initial value problem, the interval of validity is usually the largest interval containing the initial input where the solution and differential equation both make sense.
 
 ---
 
@@ -319,6 +417,64 @@ So $$10$$ grams remain. This matches the intuition that $$15$$ years is exactly 
 
 ---
 
+## Equilibrium solutions and stability
+
+Equilibrium solutions are constant solutions where $$dy/dx = 0$$. For an autonomous differential equation
+
+$$
+\frac{dy}{dx}=f(y),
+$$
+
+an equilibrium solution occurs when
+
+$$
+f(y)=0.
+$$
+
+At those $$y$$-values, the slope is zero for every $$x$$, so the solution can remain constant.
+
+Stability:
+
+- stable if nearby solutions move toward it,
+- unstable if nearby solutions move away,
+- semistable if nearby solutions move toward it from one side and away from it on the other.
+
+For autonomous equations $$dy/dx = f(y)$$, a sign chart on $$f(y)$$ is an efficient way to classify equilibria.
+
+<div class="theorem-box">
+
+**Example.** Classify the equilibrium solutions of
+
+$$
+\frac{dy}{dx}=y(4-y).
+$$
+
+Set the right side equal to zero:
+
+$$
+y(4-y)=0.
+$$
+
+Thus the equilibrium solutions are
+
+$$
+y=0
+\qquad\text{and}\qquad
+y=4.
+$$
+
+Test the sign of $$y(4-y)$$ on the intervals determined by $$0$$ and $$4$$:
+
+- If $$y<0$$, then $$y(4-y)<0$$, so solutions move downward.
+- If $$0<y<4$$, then $$y(4-y)>0$$, so solutions move upward.
+- If $$y>4$$, then $$y(4-y)<0$$, so solutions move downward.
+
+Solutions move away from $$y=0$$, so $$y=0$$ is unstable. Solutions move toward $$y=4$$ from both sides, so $$y=4$$ is stable.
+
+</div>
+
+---
+
 ## Logistic differential equation
 
 The logistic model is
@@ -375,19 +531,6 @@ So the population grows fastest, at $$50$$ individuals per unit time, when it re
 
 ---
 
-## Equilibrium solutions and stability
-
-Equilibrium solutions are constant solutions where $$dy/dx = 0$$.
-
-Stability:
-
-- stable if nearby solutions move toward it,
-- unstable if nearby solutions move away.
-
-For autonomous equations $$dy/dx = f(y)$$, a sign chart on $$f(y)$$ is an efficient way to classify equilibria.
-
----
-
 ## Second derivative from a differential equation
 
 If
@@ -414,122 +557,6 @@ This helps determine concavity of solution curves.
 
 ---
 
-## What differential equations describe
-
-A differential equation usually does not tell you the value of a function directly. It tells you how the function changes.
-
-For
-
-$$
-\frac{dy}{dx}=f(x,y),
-$$
-
-the slope at a point depends on the coordinates of that point. A solution curve is a function whose tangent slope matches the differential equation everywhere it passes through.
-
-This is why slope fields are useful: they show the local direction a solution must follow before you solve anything symbolically.
-
----
-
-## Slope fields as visual solutions
-
-In a slope field, each small segment represents the slope assigned by the differential equation at that point.
-
-Useful things to notice:
-
-- rows or columns where slopes repeat,
-- places where slopes are zero,
-- regions where slopes are positive or negative,
-- equilibrium solutions,
-- whether solution curves appear to move toward or away from equilibria.
-
-Solution curves should follow the little segments smoothly. They should not cross each other for the same initial value problem because one input-output point should determine one local direction.
-
----
-
-## Euler's method intuition
-
-Euler's method is repeated linear approximation. At each step, use the current slope to move forward:
-
-$$
-\text{new }y
-=
-\text{old }y
-+
-(\text{step size})(\text{slope at old point}).
-$$
-
-The approximation improves when the step size is smaller, but AP questions usually care more about setting up the method correctly than about perfect numerical accuracy.
-
-Keep track of both coordinates:
-
-$$
-x_{n+1}=x_n+h,
-$$
-
-$$
-y_{n+1}=y_n+h f(x_n,y_n).
-$$
-
----
-
-## Separating variables carefully
-
-A separable equation has the variables separated into an $$x$$ part and a $$y$$ part:
-
-$$
-\frac{dy}{dx}=g(x)h(y).
-$$
-
-The goal is to move all $$y$$ factors with $$dy$$ and all $$x$$ factors with $$dx$$:
-
-$$
-\frac{1}{h(y)}\,dy=g(x)\,dx.
-$$
-
-Then integrate both sides. The constant of integration belongs after integration, and an initial condition turns the general solution into a particular solution.
-
----
-
-## Exponential models
-
-The model
-
-$$
-\frac{dy}{dt}=ky
-$$
-
-means the rate of change is proportional to the current amount.
-
-If $$k>0$$, the quantity grows. If $$k<0$$, the quantity decays. The solution has the form
-
-$$
-y=Ce^{kt}.
-$$
-
-The constant $$C$$ is the initial amount when $$t=0$$, assuming the model starts at $$t=0$$.
-
----
-
-## Logistic model behavior
-
-The logistic equation
-
-$$
-\frac{dy}{dt}=ky\left(1-\frac{y}{L}\right)
-$$
-
-adds a limiting capacity. The factor $$y$$ makes growth proportional to the current population, while the factor
-
-$$
-1-\frac{y}{L}
-$$
-
-slows growth as $$y$$ approaches $$L$$.
-
-The equilibrium solutions are $$y=0$$ and $$y=L$$. For positive populations below $$L$$, solutions increase toward $$L$$. Growth is fastest when $$y=L/2$$ because that is where the logistic rate is largest.
-
----
-
 ## Concavity of solution curves
 
 For a differential equation, concavity often comes from differentiating the slope expression.
@@ -550,6 +577,46 @@ $$
 
 When differentiating, remember that $$y$$ depends on $$x$$. After finding $$d^2y/dx^2$$, use its sign to describe whether solution curves are concave up or concave down.
 
+<div class="theorem-box">
+
+**Example.** For solutions of
+
+$$
+\frac{dy}{dx}=x-y,
+$$
+
+find $$\frac{d^2y}{dx^2}$$ in terms of $$x$$ and $$y$$, then determine the concavity at the point $$(2,1)$$.
+
+Differentiate both sides with respect to $$x$$:
+
+$$
+\frac{d^2y}{dx^2}
+=
+\frac{d}{dx}(x-y).
+$$
+
+Since $$y$$ depends on $$x$$,
+
+$$
+\frac{d^2y}{dx^2}=1-\frac{dy}{dx}.
+$$
+
+Substitute $$\frac{dy}{dx}=x-y$$:
+
+$$
+\frac{d^2y}{dx^2}=1-(x-y)=1-x+y.
+$$
+
+At $$(2,1)$$,
+
+$$
+\frac{d^2y}{dx^2}=1-2+1=0.
+$$
+
+The solution curve has zero second derivative at that point, so this test alone says the curve is momentarily neither concave up nor concave down there.
+
+</div>
+
 ---
 
 ## Common mistakes
@@ -560,59 +627,6 @@ When differentiating, remember that $$y$$ depends on $$x$$. After finding $$d^2y
 - Solving for the constant before using the initial condition carefully.
 - Sketching slope-field solutions that cross each other or violate the displayed slope directions.
 :::
-
----
-
-## Intervals of validity
-
-A solution to a differential equation may be valid only on an interval, even if the algebraic expression looks broader. Restrictions can come from:
-
-- division by zero during separation,
-- logarithms introduced while integrating,
-- initial conditions that choose one branch,
-- points where the differential equation itself is undefined.
-
-When solving an initial value problem, the interval of validity is usually the largest interval containing the initial input where the solution and differential equation both make sense.
-
-### Equilibrium solutions
-
-For an autonomous differential equation
-
-$$
-\frac{dy}{dx}=f(y),
-$$
-
-an equilibrium solution occurs when
-
-$$
-f(y)=0.
-$$
-
-At those $$y$$-values, the slope is zero for every $$x$$, so the solution can remain constant.
-
-To classify stability:
-
-- if nearby solutions move toward the equilibrium, it is stable,
-- if nearby solutions move away, it is unstable,
-- if solutions move toward from one side and away from the other, it is semistable.
-
-### Logistic model details
-
-The logistic model
-
-$$
-\frac{dP}{dt}=kP\left(1-\frac{P}{L}\right)
-$$
-
-has two equilibrium solutions:
-
-$$
-P=0
-\qquad\text{and}\qquad
-P=L.
-$$
-
-The value $$L$$ is the carrying capacity. Growth is fastest when $$P=L/2$$ because the product $$P(1-P/L)$$ is largest halfway between the equilibria.
 
 ---
 

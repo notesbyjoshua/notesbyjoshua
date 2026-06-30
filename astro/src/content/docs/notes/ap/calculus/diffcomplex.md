@@ -18,6 +18,24 @@ $$
 
 The outside derivative is evaluated at the inside function, and then multiplied by the derivative of the inside function.
 
+<div class="theorem-box">
+
+**Proof (Chain rule).** Let $$u=g(x)$$ and $$y=f(u)$$. A small change in $$x$$ creates a small change in $$u$$, and that creates a small change in $$y$$. The ratio can be split as
+
+$$
+\frac{\Delta y}{\Delta x}
+=
+\frac{\Delta y}{\Delta u}\cdot\frac{\Delta u}{\Delta x}.
+$$
+
+As $$\Delta x\to0$$, the intermediate change $$\Delta u\to0$$ for a differentiable inside function. The two ratios approach $$f'(u)$$ and $$g'(x)$$, so
+
+$$
+\frac{dy}{dx}=f'(g(x))g'(x).
+$$
+
+</div>
+
 The chain rule is about layered change. If $$x$$ changes, then the inside function $$g(x)$$ changes first. That change then causes the outside function $$f(g(x))$$ to change.
 
 Symbolically,
@@ -39,24 +57,6 @@ AP problems often hide the chain rule inside:
 - inverse trig functions with expressions inside.
 
 Whenever you differentiate an outside function, pause and ask what the inside function is.
-
-<div class="theorem-box">
-
-**Proof (Chain rule).** Let $$u=g(x)$$ and $$y=f(u)$$. A small change in $$x$$ creates a small change in $$u$$, and that creates a small change in $$y$$. The ratio can be split as
-
-$$
-\frac{\Delta y}{\Delta x}
-=
-\frac{\Delta y}{\Delta u}\cdot\frac{\Delta u}{\Delta x}.
-$$
-
-As $$\Delta x\to0$$, the intermediate change $$\Delta u\to0$$ for a differentiable inside function. The two ratios approach $$f'(u)$$ and $$g'(x)$$, so
-
-$$
-\frac{dy}{dx}=f'(g(x))g'(x).
-$$
-
-</div>
 
 <div class="theorem-box">
 
@@ -88,26 +88,6 @@ Implicit equations describe a relationship rather than a solved function. The va
 
 **Example.** Find the slope of the tangent line of the circle $$x^2+y^2=25$$ at the point $$(3,4)$$.
 
-Differentiate both sides with respect to $$x$$, remembering that $$y$$ depends on $$x$$:
-
-$$
-2x+2y\frac{dy}{dx}=0.
-$$
-
-Solve for $$\frac{dy}{dx}$$:
-
-$$
-\frac{dy}{dx}=-\frac{x}{y}.
-$$
-
-Now substitute the point $$(3,4)$$:
-
-$$
-\frac{dy}{dx}\Big|_{(3,4)}=-\frac{3}{4}.
-$$
-
-So the tangent line at $$(3,4)$$ has slope $$-\frac34$$.
-
 ```tikz
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.16}
@@ -130,10 +110,30 @@ So the tangent line at $$(3,4)$$ has slope $$-\frac34$$.
 \end{tikzpicture}
 ```
 
+Differentiate both sides with respect to $$x$$, remembering that $$y$$ depends on $$x$$:
+
+$$
+2x+2y\frac{dy}{dx}=0.
+$$
+
+Solve for $$\frac{dy}{dx}$$:
+
+$$
+\frac{dy}{dx}=-\frac{x}{y}.
+$$
+
+Now substitute the point $$(3,4)$$:
+
+$$
+\frac{dy}{dx}\Big|_{(3,4)}=-\frac{3}{4}.
+$$
+
+So the tangent line at $$(3,4)$$ has slope $$-\frac34$$.
+
 </div>
 
 :::tip
-When differentiating with respect to $$x$$, attach $$dy/dx$$ exactly when the term changes because $$y$$ changes.
+When differentiating with respect to $$x$$, attach $$dy/dx$$ exactly when the term you are differentiating includes $$y$$. Another way to think about it is that you are differentiating $$y$$, so any term with $$y$$ will have to include a $$\frac{dy}{dx}$$ (or $$y'$$) term.
 
 - $$\frac{d}{dx}(y^2)=2y\frac{dy}{dx}$$
 - $$\frac{d}{dx}(\sin y)=\cos y\frac{dy}{dx}$$

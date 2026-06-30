@@ -256,6 +256,7 @@ $$
 +
 \lim_{h\to0}\frac{f(x+h)g(x)-f(x)g(x)}{h}.
 $$
+// goes out of the equation box please fix (too long)
 
 and then simplifying we get:
 
@@ -280,6 +281,7 @@ $$
 \left(\lim_{h\to0}g(x)\right)
 \left(\lim_{h\to0}\frac{f(x+h)-f(x)}{h}\right).
 $$
+// goes out of the equation box please fix (too long)
 
 since the limit of a sum is the sum of the limits (to see this, use the sum rule for limits), and constants with respect to $$h$$ can be factored out.
 
@@ -400,7 +402,7 @@ $$
 \frac{d}{dx}(\cot x)=-\csc^2 x.
 $$
 
-All of the trig derivatives can be proved using the derivative definition and the quotient rule.
+All of the trig derivatives can be proved using the derivative definition and the quotient rule, so we will only use one example.
 
 <div class="theorem-box">
 
@@ -431,6 +433,7 @@ $$
 $$
 
 </div>
+// for the proof above include the proofs of the derivatives of sine and cosine also as a lead in.
 
 ### Derivatives of exponential and logarithmic functions
 
@@ -458,6 +461,7 @@ $$
 \frac{d}{dx}(\log_a x)=\frac{1}{x\ln a},
 \qquad a>0,\ a\ne 1.
 $$
+//give an example proof or smth about the general exponential/log formulas
 
 ### Derivatives of hyperbolic functions
 

@@ -104,6 +104,7 @@ Given a graph of a derivative $$f'$$:
 \end{axis}
 \end{tikzpicture}
 ```
+// large positive change isn't on the graph, negative change needs to be steeper for more contrast
 
 :::tip
 Problems will often use and expect certain words:
@@ -123,19 +124,17 @@ A lot of the contextual problems for AP Calculus regard physics and straight lin
 
 For motion on a line, position, velocity, acceleration, and speed are related but not interchangeable.
 
-Velocity:
+Velocity is a *vector*, which means it includes direction:
 
 $$
 v(t)=s'(t)
 $$
 
-includes direction. Speed:
+Speed is a *scalar* meaning it is the magnitude of velocity and does not include direction:
 
 $$
 \lvert v(t)\rvert
 $$
-
-does not include direction.
 
 Acceleration:
 
@@ -214,60 +213,7 @@ At $$t=4$$ the velocity is $$+9$$ m/s and the acceleration is $$+12$$ m/s$$^2$$.
 
 ---
 
-## Applications to business
-
-In economics-flavored problems:
-
-- cost function $$C(x)$$,
-- revenue function $$R(x)$$,
-- profit $$P(x) = R(x)-C(x)$$.
-- price or demand function $$p(x)$$, which gives the price per item when $$x$$ items are sold.
-
-Then:
-
-- marginal cost is $$C'(x)$$,
-- marginal revenue is $$R'(x)$$,
-- marginal profit is $$P'(x)$$.
-
-If the price per item depends on the number sold, then revenue is
-
-$$
-R(x)=x\,p(x).
-$$
-
-Profit is always revenue minus cost:
-
-$$
-P(x)=R(x)-C(x).
-$$
-
-Marginal functions are derivatives, so they estimate the effect of one additional item near the current production level. For example, $$C'(100)=7$$ means the 101st item costs about $$7$$ dollars to produce, assuming the model is accurate near $$x=100$$.
-
-:::warning
-Marginal cost is not usually the total cost of producing $$x$$ items. It is the approximate added cost of producing one more item when production is already near $$x$$.
-:::
-
-<div class="theorem-box">
-
-**Example.** The cost of producing $$x$$ items is $$C(x)=0.01x^2+5x+500$$ dollars. Find the marginal cost at a production level of $$x=100$$ items and interpret it.
-
-Marginal cost is the derivative of the cost function:
-
-$$
-C'(x)=0.02x+5.
-$$
-
-Evaluate at $$x=100$$:
-
-$$
-C'(100)=0.02(100)+5=2+5=7\ \text{dollars per item}.
-$$
-
-The marginal cost at $$100$$ items is $$7$$ dollars per item. This means that when production is at $$100$$ items, producing approximately one additional item costs about $$7$$ dollars.
-
-</div>
-
-### Marginal analysis language
+## Marginal analysis and economics
 
 In business-style applications:
 
@@ -390,7 +336,7 @@ At $$500$$ items, revenue is increasing by about $$30$$ dollars per additional i
 
 ## Related rates
 
-Related rates problems are mostly about translation. The key source equations usually come from:
+Related rates problems are mostly about translation, where two quantities are moving in a related way. The key source equations usually come from:
 
 - Pythagorean theorem,
 - volume formulas,
@@ -399,7 +345,7 @@ Related rates problems are mostly about translation. The key source equations us
 
 If the problem asks how fast a quantity is changing, the final answer should usually be a value of a derivative with units.
 
-The important idea is that every variable depends on time, even if the equation itself does not visibly contain $$t$$. For example, in $$x^2+y^2=L^2$$, the ladder length $$L$$ is constant, but $$x$$ and $$y$$ change as the ladder slides. That is why differentiating gives rate terms:
+Related rates is just an application of implicit differentiation with time as the dThe important idea is that every variable depends on time, even if the equation itself does not visibly contain $$t$$ (unless the problem specifically says otherwise). For example, in $$x^2+y^2=L^2$$, the ladder length $$L$$ is constant, but $$x$$ and $$y$$ change as the ladder slides. That is why differentiating gives rate terms:
 
 $$
 \frac{d}{dt}(x^2+y^2)=\frac{d}{dt}(L^2)
@@ -545,37 +491,17 @@ At $$t=10$$ minutes the volume is changing at $$-2$$ gallons per minute. The neg
 
 </div>
 
-### Related rates as implicit differentiation
-
-Related rates are implicit differentiation with time as the independent variable. The equation relates quantities, and each quantity may be changing with respect to time.
-
-If a length $$x$$ depends on time, then differentiating $$x^2$$ with respect to $$t$$ gives
-
-$$
-\frac{d}{dt}(x^2)=2x\frac{dx}{dt}.
-$$
-
-The variable value and the rate value are different pieces of information. Substitute them after differentiating so the equation still represents rates.
-
 ---
 
-## Linearization and differentials
+## Linearization
 
-Near $$x=a$$,
-
-$$
-L(x) = f(a) + f'(a)(x-a)
-$$
-
-approximates $$f(x)$$.
-
-Differentials use the same idea:
+Sometimes, we can use derivatives to estimate functions. Let $$L(x)$$ be the estimated value of $$f(x)$$. Near $$x=a$$ define $$L(x)$$ as,
 
 $$
-dy = f'(x)\,dx.
+L(x) = f(a) + f'(a)(x-a).
 $$
 
-If a measured input has small error $$dx$$, then the output error is approximately $$dy$$.
+For small changes in the input value (as long as the value stays enar $$a$$), $$L(x)$$ basically equals $$f(x)$$ for all intensive purposes. Scientists (especiallty physicists) and mathematicians use the process of linearization to simplify hard equations into much simpler ones.
 
 <div class="theorem-box">
 
@@ -596,6 +522,8 @@ Multiplying by $$x-a$$ gives
 $$
 f(x)\approx f(a)+f'(a)(x-a).
 $$
+
+It is important to note that linearization only works for small deviations from $$a$$, as the line will eventually diverge from the function as the difference increases.
 
 </div>
 
@@ -629,13 +557,13 @@ So $$\sqrt{27}\approx 5.2$$. The true value is about $$5.196$$, so the linear es
 
 <div class="theorem-box">
 
-If $$y=f(x)$$, then the differential is defined as
+**Definition.** If $$y=f(x)$$, then the *differential* is defined as
 
 $$
-dy=f'(x)\,dx
-$$.
+dy=f'(x)\,dx.
+$$
 
-This is equivalent to $$f'(x)=\frac{dy}{dx}$$, combining two well known derivative notations.
+This is equivalent to $$f'(x)=\frac{dy}{dx}$$, combining two well known derivative notations (Think of it like treating $$dy$$ and $$dx$$ as variables).
 
 </div>
 

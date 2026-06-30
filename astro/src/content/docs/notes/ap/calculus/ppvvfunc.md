@@ -4,8 +4,6 @@ sidebar:
   order: 9
 ---
 
----
-
 This BC-only unit generalizes single-variable calculus to curves traced in more flexible ways. Instead of always writing $$y$$ as an explicit function of $$x$$, we let both coordinates depend on a parameter or describe curves through angle and radius.
 
 ---
@@ -18,7 +16,12 @@ $$
 x = f(t), \qquad y = g(t).
 $$
 
-The same geometric curve can be traced in different ways depending on how $$t$$ changes.
+The same geometric curve can be traced in different ways depending on how $$t$$ changes. The parameter $$t$$ often represents time, but it does not have to.
+
+This means a parametric curve has two layers:
+
+- the geometric path,
+- the motion along that path.
 
 Sometimes you can eliminate the parameter to recover a rectangular equation. This helps identify the shape, but it can lose information about direction, speed, and the parameter interval.
 
@@ -75,6 +78,8 @@ Vertical tangent:
 $$
 \frac{dx}{dt} = 0, \qquad \frac{dy}{dt} \ne 0.
 $$
+
+If both derivatives are zero, the test is inconclusive because the particle may be stopped, changing direction, or passing through a more complicated point.
 
 ```tikz
 \usepackage{pgfplots}
@@ -196,6 +201,68 @@ $$
 
 ---
 
+## Area with parametric equations
+
+For a parametric curve
+
+$$
+x=x(t),\qquad y=y(t),
+$$
+
+the area under the curve can be written as
+
+$$
+A=\int y\,dx.
+$$
+
+Since
+
+$$
+dx=x'(t)\,dt,
+$$
+
+we get
+
+$$
+A=\int_{t=a}^{t=b} y(t)x'(t)\,dt.
+$$
+
+The sign depends on the direction of motion. If $$x(t)$$ decreases over the interval, the integral can be negative even when the geometric area is positive.
+
+<div class="theorem-box">
+
+**Example.** Find the area under the parametric curve $$x=t^2$$, $$y=t+1$$ for $$0\le t\le2$$.
+
+Use
+
+$$
+A=\int y\,dx.
+$$
+
+Since $$dx=x'(t)\,dt$$ and $$x'(t)=2t$$,
+
+$$
+A=\int_0^2 (t+1)(2t)\,dt.
+$$
+
+Expand:
+
+$$
+A=\int_0^2 (2t^2+2t)\,dt.
+$$
+
+Evaluate:
+
+$$
+A=\left[\frac{2t^3}{3}+t^2\right]_0^2
+=\frac{16}{3}+4
+=\frac{28}{3}.
+$$
+
+</div>
+
+---
+
 ## Speed and arc length
 
 For a particle moving with position
@@ -215,6 +282,14 @@ Arc length from $$t=a$$ to $$t=b$$:
 $$
 L = \int_a^b \sqrt{[x'(t)]^2 + [y'(t)]^2}\,dt.
 $$
+
+This formula comes from the distance formula on tiny pieces of the curve:
+
+$$
+ds\approx\sqrt{(dx)^2+(dy)^2}.
+$$
+
+Because $$dx=x'(t)\,dt$$ and $$dy=y'(t)\,dt$$, the speed factor appears inside the integral. Integrating speed gives distance traveled, which is different from displacement.
 
 <div class="theorem-box">
 
@@ -274,9 +349,27 @@ $$
 
 Different polar pairs can describe the same point because adding $$2\pi$$ to $$\theta$$ changes nothing and negative $$r$$ reflects through the origin.
 
+The radius tells distance from the pole, and the angle tells direction. If $$r$$ is negative, the point is plotted in the opposite direction from the angle.
+
 ---
 
 ## Slope in polar form
+
+For a polar curve $$r=f(\theta)$$, convert mentally to parametric form:
+
+$$
+x=r\cos\theta,\qquad y=r\sin\theta.
+$$
+
+Then
+
+$$
+\frac{dy}{dx}
+=
+\frac{dy/d\theta}{dx/d\theta}.
+$$
+
+That is where the polar slope formula comes from. The numerator describes vertical change with respect to angle, and the denominator describes horizontal change with respect to angle.
 
 If $$r=f(\theta)$$, then
 
@@ -287,15 +380,90 @@ $$
 {r'(\theta)\cos\theta - r(\theta)\sin\theta}.
 $$
 
+### Second derivative for polar curves
+
+A polar curve can be treated as parametric with parameter $$\theta$$. After finding $$dy/dx$$, the second derivative is
+
+$$
+\frac{d^2y}{dx^2}
+=
+\frac{d}{d\theta}\left(\frac{dy}{dx}\right)\Big/ \frac{dx}{d\theta}.
+$$
+
+This is the same structure as parametric second derivatives, just with $$\theta$$ as the parameter.
+
+<div class="theorem-box">
+
+**Example.** Find the slope of the polar curve $$r=2\cos\theta$$ at $$\theta=\frac{\pi}{4}$$.
+
+First compute
+
+$$
+r'(\theta)=-2\sin\theta.
+$$
+
+Use the polar slope formula:
+
+$$
+\frac{dy}{dx}
+=
+\frac{r'\sin\theta+r\cos\theta}{r'\cos\theta-r\sin\theta}.
+$$
+
+At $$\theta=\frac{\pi}{4}$$,
+
+$$
+r=2\cos\frac{\pi}{4}=\sqrt2,
+\qquad
+r'=-2\sin\frac{\pi}{4}=-\sqrt2.
+$$
+
+Substitute:
+
+$$
+\frac{dy}{dx}
+=
+\frac{(-\sqrt2)(\frac{\sqrt2}{2})+(\sqrt2)(\frac{\sqrt2}{2})}{(-\sqrt2)(\frac{\sqrt2}{2})-(\sqrt2)(\frac{\sqrt2}{2})}
+=
+\frac{-1+1}{-1-1}
+=0.
+$$
+
+So the tangent line is horizontal at that point.
+
+</div>
+
 ---
 
 ## Area in polar coordinates
+
+Polar area comes from adding thin sectors. A sector with radius $$r$$ and tiny angle width $$d\theta$$ has area approximately $$\frac12 r^2\,d\theta$$.
 
 Area swept from $$\theta=a$$ to $$\theta=b$$:
 
 $$
 A = \frac12 \int_a^b [r(\theta)]^2\,d\theta.
 $$
+
+If a curve is traced more than once over an interval, the integral counts the repeated tracing. Choose angle bounds that trace the intended region exactly once whenever possible.
+
+### Polar intersections and tracing
+
+Polar curves require extra care because one point can have many polar representations. When solving intersections, check:
+
+1. same-angle intersections by setting the radii equal,
+2. pole intersections where both curves pass through the origin,
+3. whether the interval traces the whole curve or only part of it.
+
+### Area bounded by two polar curves
+
+If one polar curve is outside another on $$a\le\theta\le b$$, the area between them is
+
+$$
+A=\frac12\int_a^b \left([r_{\text{outer}}(\theta)]^2-[r_{\text{inner}}(\theta)]^2\right)\,d\theta.
+$$
+
+The outer curve is the one with the larger distance from the pole on that angle interval. If the curves switch, split the integral.
 
 ```tikz
 \usepackage{tikz}
@@ -361,6 +529,26 @@ So the enclosed area is $$\pi$$. This matches the fact that $$r=2\sin\theta$$ is
 
 </div>
 
+<div class="theorem-box">
+
+**Example.** Set up the area inside $$r=2$$ and outside $$r=1+\cos\theta$$ on the interval where $$2\ge1+\cos\theta$$.
+
+The outer radius is $$2$$ and the inner radius is $$1+\cos\theta$$. The inequality
+
+$$
+2\ge1+\cos\theta
+$$
+
+is true for all $$\theta$$ because $$\cos\theta\le1$$, with equality at $$\theta=0$$. A full tracing interval is $$0\le\theta\le2\pi$$.
+
+So the area setup is
+
+$$
+A=\frac12\int_0^{2\pi}\left[2^2-(1+\cos\theta)^2\right]\,d\theta.
+$$
+
+</div>
+
 ---
 
 ## Arc length in polar form
@@ -370,6 +558,8 @@ If $$r=f(\theta)$$, then arc length is
 $$
 L = \int_a^b \sqrt{[r(\theta)]^2 + [r'(\theta)]^2}\,d\theta.
 $$
+
+This is the polar version of parametric arc length because $$x=r\cos\theta$$ and $$y=r\sin\theta$$. Differentiating those and simplifying gives the expression under the square root.
 
 Surface area for polar curves is less common, but the setup follows the same radius times arc-length idea. If a polar curve is revolved about an axis, write the distance to the axis as the radius and use the polar arc-length element
 
@@ -399,13 +589,19 @@ $$
 \mathbf{r}'(t)
 $$
 
-gives velocity and
+gives velocity,
 
 $$
 \mathbf{r}''(t)
 $$
 
-gives acceleration.
+gives acceleration, and speed is the magnitude of velocity:
+
+$$
+\lvert\mathbf v(t)\rvert.
+$$
+
+The direction of motion is given by the velocity vector, while acceleration describes how the velocity vector changes.
 
 Vector-valued functions are differentiated and integrated component by component:
 
@@ -505,178 +701,43 @@ $$
 
 </div>
 
----
+<div class="theorem-box">
 
-## Parametric curves as motion
+**Example.** A particle has velocity $$\mathbf v(t)=\langle 3t^2,4\rangle$$ for $$0\le t\le2$$. Find its displacement vector and total distance traveled.
 
-Parametric equations describe a curve by telling where a point is at each parameter value:
-
-$$
-x=f(t),\qquad y=g(t).
-$$
-
-The parameter $$t$$ often represents time, but it does not have to. The same set of points can be traced at different speeds or in different directions depending on the parametrization.
-
-This means a parametric curve has two layers:
-
-- the geometric path,
-- the motion along that path.
-
-AP questions may ask about either one.
-
----
-
-## Tangents and direction
-
-The derivative
+The displacement vector is the integral of velocity:
 
 $$
-\frac{dy}{dx}=\frac{dy/dt}{dx/dt}
-$$
-
-compares vertical change to horizontal change along the parametric motion.
-
-A horizontal tangent occurs when vertical motion is momentarily zero while horizontal motion is not:
-
-$$
-\frac{dy}{dt}=0,\qquad \frac{dx}{dt}\ne0.
-$$
-
-A vertical tangent occurs when horizontal motion is momentarily zero while vertical motion is not:
-
-$$
-\frac{dx}{dt}=0,\qquad \frac{dy}{dt}\ne0.
-$$
-
-If both derivatives are zero, the test is inconclusive because the particle may be stopped, changing direction, or passing through a more complicated point.
-
----
-
-## Parametric accumulation
-
-For parametric motion,
-
-$$
-\langle x'(t),y'(t)\rangle
-$$
-
-is the velocity vector. Its magnitude is speed:
-
-$$
-\sqrt{[x'(t)]^2+[y'(t)]^2}.
-$$
-
-Integrating speed gives distance traveled:
-
-$$
-\int_a^b \sqrt{[x'(t)]^2+[y'(t)]^2}\,dt.
-$$
-
-This is different from displacement, which compares only the starting and ending position vectors.
-
----
-
-## Polar coordinates intuition
-
-In polar coordinates, a point is located by radius and angle:
-
-$$
-(r,\theta).
-$$
-
-The radius tells distance from the pole, and the angle tells direction. If $$r$$ is negative, the point is plotted in the opposite direction from the angle.
-
-Because angles can differ by multiples of $$2\pi$$, polar representations are not unique. The same point can have many coordinate pairs.
-
----
-
-## Polar slopes
-
-For a polar curve $$r=f(\theta)$$, convert mentally to parametric form:
-
-$$
-x=r\cos\theta,\qquad y=r\sin\theta.
-$$
-
-Then
-
-$$
-\frac{dy}{dx}
+\int_0^2 \langle 3t^2,4\rangle\,dt
 =
-\frac{dy/d\theta}{dx/d\theta}.
+\left\langle \int_0^2 3t^2\,dt,\int_0^2 4\,dt\right\rangle.
 $$
 
-That is where the polar slope formula comes from. The numerator describes vertical change with respect to angle, and the denominator describes horizontal change with respect to angle.
-
----
-
-## Polar area
-
-Polar area comes from adding thin sectors. A sector with radius $$r$$ and tiny angle width $$d\theta$$ has area approximately
+Evaluate component by component:
 
 $$
-\frac12 r^2\,d\theta.
-$$
-
-Adding these sectors gives
-
-$$
-A=\frac12\int_a^b [r(\theta)]^2\,d\theta.
-$$
-
-If a curve is traced more than once over an interval, the integral counts the repeated tracing. Choose angle bounds that trace the intended region exactly once whenever possible.
-
----
-
-## Vector-valued motion
-
-For
-
-$$
-\mathbf r(t)=\langle x(t),y(t)\rangle,
-$$
-
-velocity is
-
-$$
-\mathbf v(t)=\mathbf r'(t),
-$$
-
-and acceleration is
-
-$$
-\mathbf a(t)=\mathbf r''(t).
-$$
-
-Speed is the magnitude of velocity:
-
-$$
-\lvert\mathbf v(t)\rvert.
-$$
-
-The direction of motion is given by the velocity vector, while acceleration describes how the velocity vector changes.
-
----
-
-## Component thinking
-
-Vector calculus in AP BC is mostly ordinary single-variable calculus applied component by component:
-
-$$
-\frac{d}{dt}\langle f(t),g(t)\rangle
+\left\langle \left[t^3\right]_0^2,\left[4t\right]_0^2\right\rangle
 =
-\langle f'(t),g'(t)\rangle.
+\langle 8,8\rangle.
 $$
 
-Similarly,
+For total distance, integrate speed:
 
 $$
-\int \langle f(t),g(t)\rangle\,dt
+\int_0^2 \lvert \mathbf v(t)\rvert\,dt
 =
-\left\langle\int f(t)\,dt,\int g(t)\,dt\right\rangle.
+\int_0^2 \sqrt{(3t^2)^2+4^2}\,dt
+=
+\int_0^2 \sqrt{9t^4+16}\,dt.
 $$
 
-After doing the component work, interpret the result as a vector, speed, distance, slope, or position depending on the question.
+This distance integral does not simplify nicely with basic antiderivatives, so the AP-style answer may be the correct setup:
+
+$$
+\text{distance}=\int_0^2 \sqrt{9t^4+16}\,dt.
+$$
+
+</div>
 
 ---
 
@@ -688,126 +749,6 @@ After doing the component work, interpret the result as a vector, speed, distanc
 - Losing track of the interval of parameter values or angles actually tracing the region.
 - Forgetting that polar curves can retrace themselves.
 :::
-
----
-
-## Area with parametric equations
-
-For a parametric curve
-
-$$
-x=x(t),\qquad y=y(t),
-$$
-
-the area under the curve can be written as
-
-$$
-A=\int y\,dx.
-$$
-
-Since
-
-$$
-dx=x'(t)\,dt,
-$$
-
-we get
-
-$$
-A=\int_{t=a}^{t=b} y(t)x'(t)\,dt.
-$$
-
-The sign depends on the direction of motion. If $$x(t)$$ decreases over the interval, the integral can be negative even when the geometric area is positive.
-
-### Parametric arc length
-
-The arc length formula
-
-$$
-L=\int_a^b\sqrt{[x'(t)]^2+[y'(t)]^2}\,dt
-$$
-
-comes from the distance formula on tiny pieces of the curve:
-
-$$
-ds\approx\sqrt{(dx)^2+(dy)^2}.
-$$
-
-Because $$dx=x'(t)\,dt$$ and $$dy=y'(t)\,dt$$, the speed factor appears inside the integral.
-
-### Polar intersections and tracing
-
-Polar curves require extra care because one point can have many polar representations. When solving intersections, check:
-
-1. same-angle intersections by setting the radii equal,
-2. pole intersections where both curves pass through the origin,
-3. whether the interval traces the whole curve or only part of it.
-
-### Area bounded by two polar curves
-
-If one polar curve is outside another on $$a\le\theta\le b$$, the area between them is
-
-$$
-A=\frac12\int_a^b \left([r_{\text{outer}}(\theta)]^2-[r_{\text{inner}}(\theta)]^2\right)\,d\theta.
-$$
-
-The outer curve is the one with the larger distance from the pole on that angle interval. If the curves switch, split the integral.
-
-<div class="theorem-box">
-
-**Example.** Set up the area inside $$r=2$$ and outside $$r=1+\cos\theta$$ on the interval where $$2\ge1+\cos\theta$$.
-
-The outer radius is $$2$$ and the inner radius is $$1+\cos\theta$$. The inequality
-
-$$
-2\ge1+\cos\theta
-$$
-
-is true for all $$\theta$$ because $$\cos\theta\le1$$, with equality at $$\theta=0$$. A full tracing interval is $$0\le\theta\le2\pi$$.
-
-So the area setup is
-
-$$
-A=\frac12\int_0^{2\pi}\left[2^2-(1+\cos\theta)^2\right]\,d\theta.
-$$
-
-</div>
-
-### Polar arc length
-
-For $$r=f(\theta)$$, arc length is
-
-$$
-L=\int_a^b\sqrt{[r(\theta)]^2+[r'(\theta)]^2}\,d\theta.
-$$
-
-This is the polar version of parametric arc length because
-
-$$
-x=r\cos\theta,\qquad y=r\sin\theta.
-$$
-
-Differentiating those and simplifying gives the expression under the square root.
-
-### Second derivative for polar curves
-
-A polar curve can be treated as parametric with parameter $$\theta$$:
-
-$$
-x=r(\theta)\cos\theta,
-\qquad
-y=r(\theta)\sin\theta.
-$$
-
-After finding $$dy/dx$$, the second derivative is
-
-$$
-\frac{d^2y}{dx^2}
-=
-\frac{d}{d\theta}\left(\frac{dy}{dx}\right)\Big/ \frac{dx}{d\theta}.
-$$
-
-This is the same structure as parametric second derivatives, just with $$\theta$$ as the parameter.
 
 ---
 

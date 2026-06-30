@@ -4,63 +4,11 @@ sidebar:
   order: 6
 ---
 
----
-
-Integration reverses differentiation and measures accumulation. It ties together antiderivatives, area, net change, and the Fundamental Theorem of Calculus.
-
----
-
-## Antiderivatives
-
-An antiderivative of $$f$$ is any function $$F$$ such that
-
-$$
-F'(x) = f(x).
-$$
-
-Core antiderivative patterns:
-
-$$
-\int x^n\,dx = \frac{x^{n+1}}{n+1} + C, \qquad n \ne -1
-$$
-
-$$
-\int \frac{1}{x}\,dx = \ln(\lvert x \rvert) + C
-$$
-
-$$
-\int e^x\,dx = e^x + C
-$$
-
-$$
-\int \cos x\,dx = \sin x + C
-$$
-
-<div class="theorem-box">
-
-**Example.** Compute $$\displaystyle\int \bigl(3x^2+4x\bigr)\,dx.$$
-
-Apply the reverse power rule to each term, raising the exponent by one and dividing:
-
-$$
-\int 3x^2\,dx = x^3, \qquad \int 4x\,dx = 2x^2.
-$$
-
-Combining the pieces and adding the constant of integration gives
-
-$$
-\int \bigl(3x^2+4x\bigr)\,dx = x^3 + 2x^2 + C.
-$$
-
-The $$+C$$ is required because every constant has derivative zero, so the antiderivative is only determined up to a constant.
-
-</div>
-
----
-
 ## Riemann sums
 
-To approximate the accumulation of $$f(x)$$ on $$[a,b]$$, divide the interval into subintervals and sum:
+// expand this section, starting with a better lead in
+
+Suppose we wanted to find the area under a graph (commonly known as area under the curve). To approximate the area of $$f(x)$$ on $$[a,b]$$, divide the interval into subintervals and draw rectangles to approximate the area:
 
 $$
 \sum_{i=1}^n f(x_i^*)\Delta x
@@ -72,12 +20,9 @@ $$
 \Delta x = \frac{b-a}{n}.
 $$
 
-Important choices:
+There are three types of Riemann sums: left, right, and midpoint.
 
-- left Riemann sum,
-- right Riemann sum,
-- midpoint sum,
-- trapezoidal approximation.
+// do like an explanation of each type, adding 1 example per
 
 ```tikz
 \usepackage{pgfplots}
@@ -104,6 +49,7 @@ Important choices:
 \end{axis}
 \end{tikzpicture}
 ```
+// instead of trapezoidal tops, have a smooth function and then a graph for every type of Riemann sum
 
 <div class="theorem-box">
 
@@ -131,37 +77,50 @@ So the right Riemann sum is $$3.75$$. Since $$f$$ is increasing, this overestima
 
 </div>
 
+// add a section on trapezoidal riemann sums
+
+### Riemann sums from data
+
+With table data, the width of each subinterval matters. Equal spacing is convenient, but AP tables often use unequal intervals.
+
+For left and right sums, multiply each function value by the width of its interval. For trapezoids, each interval contributes
+
+$$
+\frac{1}{2}(\text{width})(\text{left height}+\text{right height}).
+$$
+
+If the function is increasing, a left sum underestimates and a right sum overestimates. If the function is decreasing, the reverse is true. Concavity controls whether trapezoids or midpoints tend to overestimate or underestimate.
+
 ---
 
-## Definite integral
+## Definite integrals
 
-The definite integral is the limit of Riemann sums:
-
-$$
-\int_a^b f(x)\,dx
-=
-\lim_{n \to \infty} \sum_{i=1}^n f(x_i^*)\Delta x.
-$$
-
-Interpretations:
-
-- signed area under a curve,
-- net accumulation,
-- total change when integrating a rate.
+Although Riemann sums are a great way to approximate the area under the curve, you always end of over- or underestimating the actual area. One way to fix this is to shrink the width of the rectangles used to an infinitesimally small value $$dx$$ (basically $$0$$) so that the height of each rectangle represents the actual height. We define a function called the definite integral to model this limit.
 
 <div class="theorem-box">
 
-**Why Riemann sums become area.** Each term $$f(x_i^*)\Delta x$$ is the area of a thin rectangle. With wide rectangles, the approximation is rough. As the widths shrink toward $$0$$, the rectangles follow the curve more closely. If the limiting sum stabilizes, that stable value is the definite integral.
+**Definition.** // add definition of definite integral
 
 </div>
 
----
+Since the definite integral basically represents the signed area under the curve, we often use definite integrals instead of Riemann sums to calculate area.
 
-## Fundamental Theorem of Calculus
+### Signed area vs geometric area
+
+An important distinction between definite integrals pure area is the difference between signed and geometric area. The definite integral gives signed area:
+
+- area above the $$x$$-axis contributes positively,
+- area below the $$x$$-axis contributes negatively.
+
+Geometric area is always nonnegative, meaning that you add up the magnitudes of all of the areas.
+
+### The Fundamental Theorem of Calculus
+
+// add a good lead connecting area definition of definite integrals and FTC
 
 <div class="theorem-box">
 
-**Theorem (Fundamental Theorem of Calculus).** If $$F'(x)=f(x)$$, then
+**Theorem (Fundamental Theorem of Calculus).** If for some functions $$F(x)$$ and $$f(x)$$, $$F'(x)=f(x)$$, then
 
 $$
 \int_a^b f(x)\,dx = F(b)-F(a).
@@ -185,33 +144,36 @@ when $$f$$ is continuous.
 
 <div class="theorem-box">
 
-**Why FTC Part 1 is true.** Let
-
-$$
-g(x)=\int_a^x f(t)\,dt.
-$$
-
-Changing $$x$$ by a small amount $$h$$ adds a thin strip of accumulated area:
-
-$$
-g(x+h)-g(x)=\int_x^{x+h}f(t)\,dt.
-$$
-
-For small $$h$$, this strip is approximately $$f(x)h$$. Dividing by $$h$$ gives approximately $$f(x)$$, and taking the limit gives $$g'(x)=f(x)$$.
+**Proof (Fundamental Theorem of Calculus).** // write out a pretty formal proof of FTC
 
 </div>
 
-<div class="theorem-box">
+The Fundamental Theorem of Calculus connects two ideas that initially look separate:
 
-**Why FTC Part 2 is true.** If $$F'(x)=f(x)$$, then integrating $$f$$ adds up all the tiny changes in $$F$$. The tiny changes telescope into one total change:
+- derivatives measure instantaneous change,
+- integrals measure accumulated change.
+
+If $$F'(x)=f(x)$$, then
 
 $$
 \int_a^b f(x)\,dx=F(b)-F(a).
 $$
 
-So the definite integral of a rate of change equals the net change in the original quantity.
+So integrating a rate gives the change in the original quantity. Think of definite integrals like differentials: for each $$dx$$ (width), the function changes $$dy$$ (area), so summing up the $$dx$$ rectangles multiplified by $$f(x)$$ (height) gives the total area under the curve.
 
-</div>
+The accumulation version says that if
+
+$$
+A(x)=\int_a^x f(t)\,dt,
+$$
+
+then
+
+$$
+A'(x)=f(x).
+$$
+
+The upper limit controls where the accumulation stops, so changing $$x$$ changes the accumulated area.
 
 <div class="theorem-box">
 
@@ -233,9 +195,32 @@ So the definite integral equals $$9$$.
 
 </div>
 
----
+### Integration as accumulation
 
-## Integrals with variable limits
+An integral adds up tiny pieces. If $$f(x)$$ is a rate, then
+
+$$
+f(x)\,dx
+$$
+
+represents a tiny amount of accumulated change caused by that rate. Adding all of those tiny pieces from $$a$$ to $$b$$ gives
+
+$$
+\int_a^b f(x)\,dx.
+$$
+
+This is why the units of a definite integral are
+
+$$
+(\text{units of }f)(\text{units of }x).
+$$
+
+// explain this section (FTC section as a whole) a bit more, and reorganize so it's less repetitive and makes sense
+
+### Solving definite integrals
+// add this part please
+
+### Integrals with variable limits
 
 If
 
@@ -248,6 +233,10 @@ then
 $$
 G'(x) = f(v(x))v'(x) - f(u(x))u'(x).
 $$
+
+This is can be thought of as the chain rule for FTC.
+
+// add proof of the chain rule of FTC
 
 <div class="theorem-box">
 
@@ -271,7 +260,62 @@ The lower limit contributes nothing because its derivative is zero.
 
 ---
 
-## u-substitution
+## Antiderivatives and the indefinite integral
+
+<div class="theorem-box">
+
+**Definition.** An antiderivative of $$f$$ is any function $$F$$ such that
+
+$$
+F'(x) = f(x).
+$$
+
+However, antiderivatives are more commonly known as *indefinite integrals*. Another way to represent the antiderivative is using the integral sign:
+
+$$
+F(x) = \int f(x) dx.
+$$
+
+</div>
+
+Note that antiderivatives have no bounds. Instead of finding a value, the antiderivative finds a function whose derivative calculates to the original function.
+// add more detail on indefinite integrals and kind of illustrate the difference between it and definite integrals
+
+<div class="theorem-box">
+
+**Example.** Compute $$\displaystyle\int \bigl(3x^2+4x\bigr)\,dx.$$
+
+Apply the reverse power rule to each term, raising the exponent by one and dividing:
+
+$$
+\int 3x^2\,dx = x^3, \qquad \int 4x\,dx = 2x^2.
+$$
+
+Combining the pieces and adding the constant of integration gives
+
+$$
+\int \bigl(3x^2+4x\bigr)\,dx = x^3 + 2x^2 + C.
+$$
+
+The $$+C$$ is required because every constant has derivative zero, so the antiderivative is only determined up to a constant.
+
+</div>
+
+:::mistakes
+- Forgetting $$+C$$ on indefinite integrals.
+- Using area language when the integral is negative and really means net signed accumulation.
+- Dropping the chain-rule factor in reverse when using substitution.
+- Confusing $$\int_a^b f(x)\,dx$$ with ordinary multiplication.
+:::
+
+---
+
+## Integration strategies
+
+Integration is a game of pattern recognition and choosing smart methods. This section presents some of the most useful and widely used integration techniques.
+// add a section on integrals of odd and even functions where you see fit
+
+### U-substitution
 
 If part of the integrand is the derivative of another part, let
 
@@ -289,7 +333,7 @@ $$
 
 **Example.** Compute $$\displaystyle\int 2x\bigl(x^2+1\bigr)^3\,dx.$$
 
-The factor $$2x$$ is exactly the derivative of $$x^2+1$$, which suggests the substitution
+The factor $$2x$$ is the derivative of $$x^2+1$$, which suggests the substitution
 
 $$
 u = x^2+1, \qquad du = 2x\,dx.
@@ -363,471 +407,6 @@ $$
 =
 \frac{624}{4}
 =156.
-$$
-
-</div>
-
----
-
-## Average value of a function
-
-On $$[a,b]$$:
-
-$$
-f_{\text{avg}} = \frac{1}{b-a}\int_a^b f(x)\,dx.
-$$
-
-<div class="theorem-box">
-
-**Example.** Find the average value of $$f(x)=x^2$$ on $$[0,3]$$.
-
-Apply the average value formula with $$a=0$$ and $$b=3$$:
-
-$$
-f_{\text{avg}} = \frac{1}{3-0}\int_0^3 x^2\,dx.
-$$
-
-The definite integral was computed earlier as $$\int_0^3 x^2\,dx = 9$$, so
-
-$$
-f_{\text{avg}} = \frac{1}{3}\cdot 9 = 3.
-$$
-
-The average value is $$3$$: a constant height of $$3$$ would enclose the same area over $$[0,3]$$ as the curve does.
-
-</div>
-
----
-
-## Accumulation functions
-
-If
-
-$$
-A(x) = \int_a^x f(t)\,dt,
-$$
-
-then:
-
-- $$A'(x)=f(x)$$,
-- $$A$$ increases where $$f>0$$,
-- $$A$$ decreases where $$f<0$$,
-- critical points of $$A$$ occur where $$f=0$$ or undefined.
-
----
-
-## Numerical integration
-
-If exact antiderivatives are unavailable, use:
-
-- midpoint rule,
-- trapezoidal rule,
-- left/right sums.
-
-Trapezoidal rule with equal spacing $$\Delta x$$:
-
-$$
-\int_a^b f(x)\,dx \approx \frac{\Delta x}{2}
-\left[y_0 + 2y_1 + 2y_2 + \cdots + 2y_{n-1} + y_n\right].
-$$
-
-<div class="theorem-box">
-
-**Example.** Approximate $$\displaystyle\int_0^2 x^2\,dx$$ using the trapezoidal rule with $$n=4$$.
-
-The spacing is $$\Delta x = \tfrac{2-0}{4} = 0.5$$, giving nodes $$x=0,\,0.5,\,1,\,1.5,\,2$$ with heights
-
-$$
-y_0=0,\quad y_1=0.25,\quad y_2=1,\quad y_3=2.25,\quad y_4=4.
-$$
-
-Apply the trapezoidal formula, doubling every interior height:
-
-$$
-\int_0^2 x^2\,dx \approx \frac{0.5}{2}\bigl[0 + 2(0.25) + 2(1) + 2(2.25) + 4\bigr].
-$$
-
-Simplify the bracket and multiply:
-
-$$
-\frac{0.5}{2}\bigl[0 + 0.5 + 2 + 4.5 + 4\bigr] = (0.25)(11) = 2.75.
-$$
-
-The trapezoidal estimate is $$2.75$$, slightly above the exact value $$\tfrac{8}{3}\approx 2.67$$ because $$x^2$$ is concave up.
-
-</div>
-
----
-
-## Integration as accumulation
-
-An integral adds up tiny pieces. If $$f(x)$$ is a rate, then
-
-$$
-f(x)\,dx
-$$
-
-represents a tiny amount of accumulated change. Adding all of those tiny pieces from $$a$$ to $$b$$ gives
-
-$$
-\int_a^b f(x)\,dx.
-$$
-
-This is why the units of a definite integral are
-
-$$
-(\text{units of }f)(\text{units of }x).
-$$
-
-If $$f$$ is measured in gallons per minute and $$x$$ is measured in minutes, the integral is measured in gallons.
-
----
-
-## Signed area vs geometric area
-
-The definite integral gives signed area:
-
-- area above the $$x$$-axis contributes positively,
-- area below the $$x$$-axis contributes negatively.
-
-Geometric area is always nonnegative, so it may require
-
-$$
-\int_a^b \lvert f(x)\rvert\,dx
-$$
-
-or splitting at zeros of $$f$$.
-
-<div class="theorem-box">
-
-**Key idea.** Net change allows positive and negative accumulation to cancel. Total amount does not.
-
-</div>
-
----
-
-## The Fundamental Theorem as a bridge
-
-The Fundamental Theorem of Calculus connects two ideas that initially look separate:
-
-- derivatives measure instantaneous change,
-- integrals measure accumulated change.
-
-If $$F'(x)=f(x)$$, then
-
-$$
-\int_a^b f(x)\,dx=F(b)-F(a).
-$$
-
-So integrating a rate gives the change in the original quantity.
-
-The accumulation version says that if
-
-$$
-A(x)=\int_a^x f(t)\,dt,
-$$
-
-then
-
-$$
-A'(x)=f(x).
-$$
-
-The upper limit controls where the accumulation stops, so changing $$x$$ changes the accumulated area.
-
----
-
-## Variable-limit integrals
-
-For
-
-$$
-G(x)=\int_{u(x)}^{v(x)} f(t)\,dt,
-$$
-
-the upper limit contributes positively and the lower limit contributes negatively:
-
-$$
-G'(x)=f(v(x))v'(x)-f(u(x))u'(x).
-$$
-
-This is a chain-rule version of the Fundamental Theorem. The derivative of each limit must be included.
-
----
-
-## Choosing an antiderivative strategy
-
-Basic antiderivatives come from reversing derivative rules. A good first scan:
-
-- powers use the reverse power rule,
-- $$1/x$$ gives $$\ln\lvert x\rvert$$,
-- exponentials stay exponential,
-- trig functions reverse according to derivative pairs,
-- chain-rule patterns suggest $$u$$-substitution.
-
-Substitution works when one part of the integrand is the derivative of another part, possibly up to a constant factor.
-
----
-
-## Riemann sums from tables
-
-With table data, the width of each subinterval matters. Equal spacing is convenient, but AP tables often use unequal intervals.
-
-For left and right sums, multiply each function value by the width of its interval. For trapezoids, each interval contributes
-
-$$
-\frac{1}{2}(\text{width})(\text{left height}+\text{right height}).
-$$
-
-If the function is increasing, a left sum underestimates and a right sum overestimates. If the function is decreasing, the reverse is true. Concavity controls whether trapezoids or midpoints tend to overestimate or underestimate.
-
----
-
-## Average value intuition
-
-The average value of $$f$$ on $$[a,b]$$ is the constant height that would produce the same signed area over the interval:
-
-$$
-f_{\text{avg}}=\frac{1}{b-a}\int_a^b f(x)\,dx.
-$$
-
-This is different from the average rate of change. Average value averages outputs; average rate of change compares endpoint outputs.
-
----
-
-## Common mistakes
-
-:::mistakes
-- Forgetting $$+C$$ on indefinite integrals.
-- Using area language when the integral is negative and really means net signed accumulation.
-- Dropping the chain-rule factor in reverse when using substitution.
-- Confusing $$\int_a^b f(x)\,dx$$ with ordinary multiplication.
-:::
-
----
-
-## Integration strategy
-
-Antidifferentiation is pattern recognition. A good first pass is:
-
-:::strategy{title="Choosing an integration method"}
-1. Simplify algebraically before choosing a method.
-2. Look for direct antiderivative rules.
-3. If there is a function and a version of its derivative, try substitution.
-4. If there is a product where one factor simplifies when differentiated, try integration by parts.
-5. If there is a rational function, try algebraic division or partial fractions.
-6. If bounds are present, decide whether to change bounds or substitute back.
-:::
-
-### Integration by parts
-
-Integration by parts comes from the product rule:
-
-$$
-\int u\,dv=uv-\int v\,du.
-$$
-
-It is useful for products such as polynomial times exponential, polynomial times trig, or logarithmic functions.
-
-:::tip{title="Choosing $$u$$"}
-A common priority list is logarithmic, inverse trig, algebraic, trig, exponential. This is only a guide, but it helps choose the factor that becomes simpler when differentiated.
-:::
-
-For example, in
-
-$$
-\int x e^x\,dx,
-$$
-
-choose $$u=x$$ and $$dv=e^x\,dx$$. Then $$du=dx$$ and $$v=e^x$$, so
-
-$$
-\int x e^x\,dx=xe^x-\int e^x\,dx=xe^x-e^x+C.
-$$
-
-<div class="theorem-box">
-
-**Example.** Compute
-
-$$
-\int x\ln x\,dx.
-$$
-
-Choose
-
-$$
-u=\ln x,
-\qquad
-dv=x\,dx.
-$$
-
-Then
-
-$$
-du=\frac{1}{x}\,dx,
-\qquad
-v=\frac{x^2}{2}.
-$$
-
-Apply integration by parts:
-
-$$
-\int x\ln x\,dx
-=\frac{x^2}{2}\ln x-\int \frac{x^2}{2}\cdot\frac{1}{x}\,dx.
-$$
-
-Simplify the remaining integral:
-
-$$
-=\frac{x^2}{2}\ln x-\frac12\int x\,dx
-=\frac{x^2}{2}\ln x-\frac{x^2}{4}+C.
-$$
-
-</div>
-
-### Partial fractions
-
-Partial fractions break a rational function into simpler rational pieces. Before using them, make sure the numerator degree is smaller than the denominator degree. If not, divide first.
-
-For a denominator like
-
-$$
-(x-a)(x-b),
-$$
-
-write
-
-$$
-\frac{P(x)}{(x-a)(x-b)}
-=\frac{A}{x-a}+\frac{B}{x-b}.
-$$
-
-Then solve for the constants and integrate each term. This technique appears more in BC than AB, but it connects directly to rational functions from Precalculus.
-
-### Trig powers and identities
-
-Integrals involving powers of sine and cosine usually depend on whether one power is odd.
-
-:::strategy{title="Sine and cosine powers"}
-- If the sine power is odd, save one $$\sin x$$ and convert the rest using $$\sin^2x=1-\cos^2x$$.
-- If the cosine power is odd, save one $$\cos x$$ and convert the rest using $$\cos^2x=1-\sin^2x$$.
-- If both powers are even, use power-reduction identities.
-:::
-
-<div class="theorem-box">
-
-**Example.** Compute
-
-$$
-\int \sin^3 x\cos^2 x\,dx.
-$$
-
-Because the sine power is odd, save one sine factor:
-
-$$
-\sin^3x=\sin^2x\sin x.
-$$
-
-Use $$\sin^2x=1-\cos^2x$$:
-
-$$
-\int \sin^3x\cos^2x\,dx
-=
-\int (1-\cos^2x)\cos^2x\sin x\,dx.
-$$
-
-Let
-
-$$
-u=\cos x,
-\qquad
-du=-\sin x\,dx.
-$$
-
-Then
-
-$$
-\int (1-\cos^2x)\cos^2x\sin x\,dx
-=
--\int (1-u^2)u^2\,du.
-$$
-
-Integrate:
-
-$$
--\int (u^2-u^4)\,du
-=-\frac{u^3}{3}+\frac{u^5}{5}+C.
-$$
-
-Substitute back:
-
-$$
-\int \sin^3x\cos^2x\,dx
-=-\frac{\cos^3x}{3}+\frac{\cos^5x}{5}+C.
-$$
-
-</div>
-
-### Trig substitution
-
-Trig substitution is useful when radicals contain expressions matching Pythagorean identities.
-
-| Expression | Substitution | Identity used |
-|---|---|---|
-| $$\sqrt{a^2-x^2}$$ | $$x=a\sin\theta$$ | $$1-\sin^2\theta=\cos^2\theta$$ |
-| $$\sqrt{a^2+x^2}$$ | $$x=a\tan\theta$$ | $$1+\tan^2\theta=\sec^2\theta$$ |
-| $$\sqrt{x^2-a^2}$$ | $$x=a\sec\theta$$ | $$\sec^2\theta-1=\tan^2\theta$$ |
-
-This technique is mostly BC/enrichment, but it is one of the standard ways to handle roots that do not simplify by ordinary substitution.
-
-<div class="theorem-box">
-
-**Example.** Compute
-
-$$
-\int \frac{1}{\sqrt{4-x^2}}\,dx.
-$$
-
-The radical matches $$\sqrt{a^2-x^2}$$ with $$a=2$$, so use
-
-$$
-x=2\sin\theta,
-\qquad
-dx=2\cos\theta\,d\theta.
-$$
-
-Then
-
-$$
-\sqrt{4-x^2}
-=
-\sqrt{4-4\sin^2\theta}
-=
-\sqrt{4\cos^2\theta}
-=2\cos\theta
-$$
-
-on the usual substitution interval. The integral becomes
-
-$$
-\int \frac{2\cos\theta}{2\cos\theta}\,d\theta
-=
-\int 1\,d\theta
-=\theta+C.
-$$
-
-Since $$x=2\sin\theta$$,
-
-$$
-\theta=\arcsin\left(\frac{x}{2}\right).
-$$
-
-Therefore
-
-$$
-\int \frac{1}{\sqrt{4-x^2}}\,dx
-=
-\arcsin\left(\frac{x}{2}\right)+C.
 $$
 
 </div>
@@ -910,9 +489,228 @@ $$
 
 </div>
 
-### Improper integrals
+### Trig powers and identities
 
-An improper integral is a definite integral that has an infinite interval or an infinite discontinuity. It must be rewritten as a limit.
+Integrals involving powers of sine and cosine usually depend on whether one power is odd.
+
+:::strategy{title="Sine and cosine powers"}
+- If the sine power is odd, save one $$\sin x$$ and convert the rest using $$\sin^2x=1-\cos^2x$$.
+- If the cosine power is odd, save one $$\cos x$$ and convert the rest using $$\cos^2x=1-\sin^2x$$.
+- If both powers are even, use power-reduction identities (if you need a reminder to what they are, check out [Unit 8/9](/notes/ap/precalc/graphanalyticaltrig/) of AP Precalculus.)
+:::
+
+<div class="theorem-box">
+
+**Example.** Compute
+
+$$
+\int \sin^3 x\cos^2 x\,dx.
+$$
+
+Because the sine power is odd, save one sine factor:
+
+$$
+\sin^3x=\sin^2x\sin x.
+$$
+
+Use $$\sin^2x=1-\cos^2x$$:
+
+$$
+\int \sin^3x\cos^2x\,dx
+=
+\int (1-\cos^2x)\cos^2x\sin x\,dx.
+$$
+
+Let
+
+$$
+u=\cos x,
+\qquad
+du=-\sin x\,dx.
+$$
+
+Then
+
+$$
+\int (1-\cos^2x)\cos^2x\sin x\,dx
+=
+-\int (1-u^2)u^2\,du.
+$$
+
+Integrate:
+
+$$
+-\int (u^2-u^4)\,du
+=-\frac{u^3}{3}+\frac{u^5}{5}+C.
+$$
+
+Substitute back:
+
+$$
+\int \sin^3x\cos^2x\,dx
+=-\frac{\cos^3x}{3}+\frac{\cos^5x}{5}+C.
+$$
+
+</div>
+
+### Trig substitution
+
+Trig substitution is useful when radicals contain expressions matching Pythagorean identities.
+
+| Expression | Substitution | Identity used |
+|---|---|---|
+| $$\sqrt{a^2-x^2}$$ | $$x=a\sin\theta$$ | $$1-\sin^2\theta=\cos^2\theta$$ |
+| $$\sqrt{a^2+x^2}$$ | $$x=a\tan\theta$$ | $$1+\tan^2\theta=\sec^2\theta$$ |
+| $$\sqrt{x^2-a^2}$$ | $$x=a\sec\theta$$ | $$\sec^2\theta-1=\tan^2\theta$$ |
+
+This technique should be immediately used when you see something that resembles Pythagorean theorem, like square roots with $$x^2$$ in them.
+
+<div class="theorem-box">
+
+**Example.** Compute
+
+$$
+\int \frac{1}{\sqrt{4-x^2}}\,dx.
+$$
+
+The radical matches $$\sqrt{a^2-x^2}$$ with $$a=2$$, so use
+
+$$
+x=2\sin\theta,
+\qquad
+dx=2\cos\theta\,d\theta.
+$$
+
+Then
+
+$$
+\sqrt{4-x^2}
+=
+\sqrt{4-4\sin^2\theta}
+=
+\sqrt{4\cos^2\theta}
+=2\cos\theta
+$$
+
+on the usual substitution interval. The integral becomes
+
+$$
+\int \frac{2\cos\theta}{2\cos\theta}\,d\theta
+=
+\int 1\,d\theta
+=\theta+C.
+$$
+
+Since $$x=2\sin\theta$$,
+
+$$
+\theta=\arcsin\left(\frac{x}{2}\right).
+$$
+
+Therefore
+
+$$
+\int \frac{1}{\sqrt{4-x^2}}\,dx
+=
+\arcsin\left(\frac{x}{2}\right)+C.
+$$
+
+</div>
+
+### Integration by parts (BC-only)
+
+Integration by parts comes from the product rule:
+
+$$
+\int u\,dv=uv-\int v\,du.
+$$
+
+It is useful for products such as polynomial times exponential, polynomial times trig, or logarithmic functions.
+
+:::tip{title="Choosing u"}
+A common priority list is **L**ogarithmic, **I**nverse trig, **A**lgebraic, **T**rig, **E**xponential (**LIATE**). This is only a guide, but it helps choose the factor that becomes simpler when differentiated.
+:::
+
+For example, in
+
+$$
+\int x e^x\,dx,
+$$
+
+choose $$u=x$$ and $$dv=e^x\,dx$$. Then $$du=dx$$ and $$v=e^x$$, so
+
+$$
+\int x e^x\,dx=xe^x-\int e^x\,dx=xe^x-e^x+C.
+$$
+
+<div class="theorem-box">
+
+**Example.** Compute
+
+$$
+\int x\ln x\,dx.
+$$
+
+Choose
+
+$$
+u=\ln x,
+\qquad
+dv=x\,dx.
+$$
+
+Then
+
+$$
+du=\frac{1}{x}\,dx,
+\qquad
+v=\frac{x^2}{2}.
+$$
+
+Apply integration by parts:
+
+$$
+\int x\ln x\,dx
+=\frac{x^2}{2}\ln x-\int \frac{x^2}{2}\cdot\frac{1}{x}\,dx.
+$$
+
+Simplify the remaining integral:
+
+$$
+=\frac{x^2}{2}\ln x-\frac12\int x\,dx
+=\frac{x^2}{2}\ln x-\frac{x^2}{4}+C.
+$$
+
+</div>
+// add the tabular method for IBP somewhere in this section
+
+### Partial fractions (BC-only)
+
+Partial fractions break a rational function into simpler rational pieces. Before using them, make sure the numerator degree is smaller than the denominator degree. If not, divide first.
+
+For a denominator like
+
+$$
+(x-a)(x-b),
+$$
+
+write
+
+$$
+\frac{P(x)}{(x-a)(x-b)}
+=\frac{A}{x-a}+\frac{B}{x-b}.
+$$
+
+Then solve for the constants and integrate each term. For more details, you can look at [Unit 13](/notes/ap/precalc/addtopics/) of AP Precalculus for a reminder of how to solve partial fractions.
+
+// add an example of using partial fractions
+
+---
+
+## Improper integrals (BC-only)
+// please write more in this section
+
+An improper integral is a definite integral that has an infinite interval (endpoint at $$\pm \infty$$) or an infinite discontinuity (e.g. a vertical asymptote). It must be rewritten as a limit.
 
 For example,
 
@@ -963,7 +761,7 @@ $$
 \int_1^\infty \frac{1}{x^2+\sin^2 x}\,dx
 $$
 
-converges.
+converges. You do not need to solve out the integral if it does converge.
 
 Since $$\sin^2x\ge0$$,
 
@@ -989,9 +787,18 @@ $$
 \int_1^\infty \frac{1}{x^2+\sin^2x}\,dx
 $$
 
-also converges.
+also converges. You will learn more tests for convergence in Unit 10.
 
 </div>
+
+:::strategy{title="Choosing an integration method"}
+1. Simplify algebraically before choosing a method.
+2. Look for direct antiderivative rules (power rule, exponent rule, etc.)
+3. If there is a function and a version of its derivative, try substitution.
+4. If there is a product where one factor simplifies when differentiated, try integration by parts.
+5. If there is a rational function, try algebraic division or partial fractions.
+6. If bounds are present, decide whether to change bounds or substitute back.
+:::
 
 ---
 

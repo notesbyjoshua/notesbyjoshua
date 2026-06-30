@@ -141,11 +141,11 @@ The value $$c=2$$ lies in $$(1,3)$$, so it is the value guaranteed by the theore
 
 ## Extreme Value Theorem (EVT) and critical points
 
-The Extreme Value Theorem guarantees that a continuous function on a closed interval has both an absolute maximum and an absolute minimum.
+The Extreme Value Theorem (EVT) guarantees that a continuous function on a closed interval has both an absolute maximum and an absolute minimum.
 
 <div class="theorem-box">
 
-**Theorem (Extreme Value Theorem).** If $$f$$ is continuous on $$[a,b]$$, then there are numbers $$m$$ and $$M$$ in $$[a,b]$$ such that
+**Theorem (EVT).** If $$f$$ is continuous on $$[a,b]$$, then there are numbers $$m$$ and $$M$$ in $$[a,b]$$ such that
 
 $$
 f(m)\le f(x)\le f(M)
@@ -154,6 +154,8 @@ $$
 for every $$x$$ in $$[a,b]$$.
 
 </div>
+
+The proof for EVT is based in non-calculus fields like real analysis so will not be shown here.
 
 The two conditions matter. The interval must be closed, so endpoints are included, and the function must be continuous, so it cannot jump over or miss its highest or lowest value. EVT tells you the extrema exist; it does not tell you where they are. Critical points and endpoints are how you find the candidates.
 
@@ -265,8 +267,7 @@ An inflection point is a point where concavity changes. The equation $$f''(x)=0$
 \node[orange!85!black, anchor=south east] at (axis cs:0,0) {local max};
 \node[orange!85!black, anchor=north west] at (axis cs:2,-4) {local min};
 \node[orange!85!black, anchor=south west] at (axis cs:1,-2) {inflection};
-\node[align=center, font=\small] at (axis cs:-1.25,-4.1) {$f'>0$\\$f''<0$};
-\node[align=center, font=\small] at (axis cs:1,-4.1) {$f'<0$\\concavity changes};
+\node[align=center, font=\small] at (axis cs:-1.45,-4.1) {$f'>0$\\$f''<0$};
 \node[align=center, font=\small] at (axis cs:2.8,2.6) {$f'>0$\\$f''>0$};
 \end{axis}
 \end{tikzpicture}
@@ -313,6 +314,7 @@ So $$f'(x)=0$$ at $$x=0$$ and $$x=2$$. Test the sign of $$f'$$ on each interval:
 $$
 f'(-1)=3(-1)(-3)=9>0,\qquad f'(1)=3(1)(-1)=-3<0,\qquad f'(3)=3(3)(1)=9>0.
 $$
+// goes off the page
 
 The derivative goes positive to negative at $$x=0$$, so $$f$$ has a local maximum there, with $$f(0)=0$$. The derivative goes negative to positive at $$x=2$$, so $$f$$ has a local minimum there, with $$f(2)=8-12=-4$$.
 
@@ -412,6 +414,14 @@ The domain is part of the model. A critical point outside the feasible domain do
 
 For closed feasible intervals, compare endpoint and critical-point values. For open or unbounded domains, use derivative sign changes or limiting behavior to justify the optimum.
 
+The hardest part of optimization is usually building the one-variable function. A good setup keeps three pieces separate:
+
+- the target quantity, which is what you want to maximize or minimize,
+- the constraint equation, which connects the variables,
+- the feasible domain, which says what values make sense in the context.
+
+If the target quantity has two variables, use the constraint to solve for one variable and substitute. After that, the calculus part is standard: differentiate, find critical points, and test candidates.
+
 Optimization problems often fail because the domain is ignored. After writing the target function, determine the allowed interval from the context:
 
 - lengths must usually be positive,
@@ -427,6 +437,13 @@ If the allowed domain is closed, use endpoint comparison. If the domain is open 
 3. Determine the feasible domain.
 4. Differentiate and find critical points.
 5. Test candidates and interpret.
+:::
+
+:::mistakes
+- Optimizing the constraint instead of the target quantity.
+- Forgetting endpoints on a closed interval.
+- Ignoring domain restrictions like positive lengths or nonzero denominators.
+- Reporting only the critical value of the variable instead of answering the original question.
 :::
 
 <div class="theorem-box">
@@ -522,20 +539,7 @@ Because $$S(x)\to\infty$$ as $$x\to0^+$$ and as $$x\to\infty$$, the critical poi
 
 ### Optimization strategy details
 
-The hardest part of optimization is usually building the one-variable function. A good setup keeps three pieces separate:
 
-- the target quantity, which is what you want to maximize or minimize,
-- the constraint equation, which connects the variables,
-- the feasible domain, which says what values make sense in the context.
-
-If the target quantity has two variables, use the constraint to solve for one variable and substitute. After that, the calculus part is standard: differentiate, find critical points, and test candidates.
-
-:::mistakes
-- Optimizing the constraint instead of the target quantity.
-- Forgetting endpoints on a closed interval.
-- Ignoring domain restrictions like positive lengths or nonzero denominators.
-- Reporting only the critical value of the variable instead of answering the original question.
-:::
 
 ---
 
@@ -553,7 +557,7 @@ $$
 x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)}.
 $$
 
-$$x_n$$ represents the $$n$$th iteration, where you keep using your previous attempts to estimate the root. The first number always starts out as a guess, as any number, after many iterations, will get closer and closer to the real root. However, the method works best when the starting guess is close to the root and the derivative is not near zero. If the tangent line is nearly horizontal, the next approximation can jump far away.
+$$x_n$$ represents the $$n$$th iteration, where you keep using your previous attempts to estimate the root. The first number always starts out as a guess, as after many iterations, the value will get closer and closer to the real root. However, the method works best when the starting guess is close to the root and the derivative is not near zero. If the tangent line is nearly horizontal, the next approximation can jump far away.
 
 <div class="theorem-box">
 
@@ -567,7 +571,7 @@ $$
 
 <div class="theorem-box">
 
-**Proof (Newton's Method Formula).** The linearization of $$f$$ at $$x_n$$ is
+**Proof (Newton's Method).** The linearization of $$f$$ at $$x_n$$ is
 
 $$
 L(x)=f(x_n)+f'(x_n)(x-x_n).
@@ -624,6 +628,7 @@ This new $$x$$-value is called $$x_{n+1}$$.
 \end{axis}
 \end{tikzpicture}
 ```
+//only do two iterations (x_1 and x_2 (to be consistent with the nth iteration, where the first one is the one where you estimate) and the actual tangent line), and make sure the x_2 label is on the second dot not on the intersection between x_1 tangency line and the x-axis
 
 <div class="theorem-box">
 

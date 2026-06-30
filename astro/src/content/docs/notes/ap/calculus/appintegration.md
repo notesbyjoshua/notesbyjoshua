@@ -4,13 +4,267 @@ sidebar:
   order: 8
 ---
 
+## Accumulation and net change
+
+If $$R(t)$$ is a rate, then
+
+$$
+\int_a^b R(t)\,dt
+$$
+
+gives net change over $$[a,b]$$.
+
+So if $$P'(t)=R(t)$$, then
+
+$$
+P(b)-P(a)=\int_a^b R(t)\,dt.
+$$
+
+<div class="theorem-box">
+
+**Example.** Water enters a tank at rate $$R(t)=6+2t$$ gallons per minute for $$0\le t\le4$$. How much water enters during the first $$4$$ minutes?
+
+The rate is in gallons per minute, so integrating the rate gives gallons:
+
+$$
+\int_0^4 (6+2t)\,dt.
+$$
+
+Evaluate:
+
+$$
+\int_0^4 (6+2t)\,dt
+=
+\left[6t+t^2\right]_0^4
+=
+24+16
+=
+40.
+$$
+
+So $$40$$ gallons enter the tank.
+
+</div>
+
 ---
 
-This unit turns integrals into geometry and accumulated quantities. You should be able to move flexibly between signed area, total change, volume, and other physical interpretations.
+## Average value of a function
+
+The average value of $$f$$ on $$[a,b]$$ is the constant height that would produce the same signed area over the interval:
+
+On $$[a,b]$$:
+
+$$
+f_{\text{avg}} = \frac{1}{b-a}\int_a^b f(x)\,dx.
+$$
+
+This is different from the average rate of change. Average value averages outputs; average rate of change compares endpoint outputs.
+
+<div class="theorem-box">
+
+**Example.** Find the average value of $$f(x)=x^2$$ on $$[0,3]$$.
+
+Apply the average value formula with $$a=0$$ and $$b=3$$:
+
+$$
+f_{\text{avg}} = \frac{1}{3-0}\int_0^3 x^2\,dx.
+$$
+
+The definite integral was computed earlier as $$\int_0^3 x^2\,dx = 9$$, so
+
+$$
+f_{\text{avg}} = \frac{1}{3}\cdot 9 = 3.
+$$
+
+The average value is $$3$$: a constant height of $$3$$ would enclose the same area over $$[0,3]$$ as the curve does.
+
+</div>
+
+---
+
+## Distance vs displacement
+
+If velocity is $$v(t)$$, then:
+
+$$
+\text{displacement} = \int_a^b v(t)\,dt
+$$
+
+$$
+\text{total distance} = \int_a^b \lvert v(t) \rvert\,dt
+$$
+
+Split total distance at sign changes of $$v(t)$$. Displacement keeps direction. Total distance counts all movement as positive.
+
+If acceleration is given, integrate acceleration to get change in velocity. If velocity is given, integrate velocity to get change in position.
+
+<div class="theorem-box">
+
+**Example.** A particle moves with velocity $$v(t)=t^2-4$$ (in suitable units) for $$0\le t\le 3$$. Find its displacement and its total distance traveled.
+
+First find where the velocity changes sign:
+
+$$
+t^2-4=0 \;\Longrightarrow\; t=2,
+$$
+
+(taking the positive root in the interval). For $$0\le t<2$$ the velocity is negative, and for $$2<t\le3$$ it is positive.
+
+The displacement is the signed integral over the whole interval:
+
+$$
+\int_0^3 (t^2-4)\,dt
+= \left[\frac{t^3}{3}-4t\right]_0^3
+= (9-12)-0
+= -3.
+$$
+
+For total distance, split at $$t=2$$ and integrate $$\lvert v(t)\rvert$$:
+
+$$
+\int_0^2 (4-t^2)\,dt
+= \left[4t-\frac{t^3}{3}\right]_0^2
+= 8-\frac83
+= \frac{16}{3},
+$$
+
+$$
+\int_2^3 (t^2-4)\,dt
+= \left[\frac{t^3}{3}-4t\right]_2^3
+= (9-12)-\left(\frac83-8\right)
+= -3+\frac{16}{3}
+= \frac{7}{3}.
+$$
+
+Adding the two pieces,
+
+$$
+\text{total distance}=\frac{16}{3}+\frac{7}{3}=\frac{23}{3}.
+$$
+
+So the displacement is $$-3$$ while the total distance is $$\frac{23}{3}$$, confirming that the two quantities differ once the velocity changes sign.
+
+</div>
+
+---
+
+## Work and force
+
+Work is another accumulation idea. If a force $$F(x)$$ moves an object along a line from $$x=a$$ to $$x=b$$, then
+
+$$
+W=\int_a^b F(x)\,dx.
+$$
+
+If the force is constant, this reduces to
+
+$$
+W=F(b-a).
+$$
+
+If the force changes with position, the integral adds many tiny pieces of work:
+
+$$
+dW=F(x)\,dx.
+$$
+
+### Springs
+
+Hooke's Law says that the force needed to stretch or compress a spring by $$x$$ units is
+
+$$
+F(x)=kx,
+$$
+
+where $$k$$ is the spring constant. The work needed to stretch the spring from $$x=a$$ to $$x=b$$ is
+
+$$
+W=\int_a^b kx\,dx.
+$$
+
+<div class="theorem-box">
+
+**Example.** A spring requires $$12$$ pounds of force to stretch it $$3$$ inches from its natural length. How much work is required to stretch it from $$1$$ inch to $$3$$ inches?
+
+Hooke's Law gives $$F(x)=kx$$. Use the force information to find $$k$$:
+
+$$
+12=k(3)
+\quad\Longrightarrow\quad
+k=4.
+$$
+
+The work from $$x=1$$ to $$x=3$$ is
+
+$$
+W=\int_1^3 4x\,dx.
+$$
+
+Evaluate:
+
+$$
+W=\left[2x^2\right]_1^3
+=18-2
+=16.
+$$
+
+The work is $$16$$ inch-pounds.
+
+</div>
+
+---
+
+## Choosing a slicing direction
+
+Applications of integration usually begin with a geometric slice.
+
+Vertical slices use $$dx$$ and usually compare top minus bottom:
+
+$$
+\int_a^b [\text{top}-\text{bottom}]\,dx.
+$$
+
+Horizontal slices use $$dy$$ and usually compare right minus left:
+
+$$
+\int_c^d [\text{right}-\text{left}]\,dy.
+$$
+
+The correct choice depends on which direction makes the region easiest to describe without unnecessary splitting.
+
+<div class="theorem-box">
+
+**Key idea.** Draw the slice first, then write the formula. The slice tells you the width, height, radius, or cross-sectional area.
+
+</div>
+
+<div class="theorem-box">
+
+**Example.** Set up the area between $$y=x^2$$ and $$y=2x$$ on $$0\le x\le3$$.
+
+First find where the curves cross:
+
+$$
+x^2=2x
+\quad\Longrightarrow\quad
+x(x-2)=0.
+$$
+
+They meet at $$x=0$$ and $$x=2$$. On $$[0,2]$$, $$2x$$ is above $$x^2$$. On $$[2,3]$$, $$x^2$$ is above $$2x$$. Therefore the area must be split:
+
+$$
+A=\int_0^2 (2x-x^2)\,dx+\int_2^3 (x^2-2x)\,dx.
+$$
+
+The main point is the setup: the top and bottom functions switch at $$x=2$$.
+
+</div>
 
 ---
 
 ## Area between curves
+
+Area between curves is geometric area, so it must be nonnegative. If the curves cross, the "top" and "bottom" functions may switch. Split the interval at intersection points so the subtraction matches the geometry on each piece.
 
 If $$f(x) \ge g(x)$$ on $$[a,b]$$, then the area between the curves is
 
@@ -73,88 +327,6 @@ So the enclosed area is $$\frac16$$.
 
 ---
 
-## Accumulation and net change
-
-If $$R(t)$$ is a rate, then
-
-$$
-\int_a^b R(t)\,dt
-$$
-
-gives net change over $$[a,b]$$.
-
-So if $$P'(t)=R(t)$$, then
-
-$$
-P(b)-P(a)=\int_a^b R(t)\,dt.
-$$
-
----
-
-## Distance vs displacement
-
-If velocity is $$v(t)$$, then:
-
-$$
-\text{displacement} = \int_a^b v(t)\,dt
-$$
-
-$$
-\text{total distance} = \int_a^b \lvert v(t) \rvert\,dt
-$$
-
-Split total distance at sign changes of $$v(t)$$.
-
-<div class="theorem-box">
-
-**Example.** A particle moves with velocity $$v(t)=t^2-4$$ (in suitable units) for $$0\le t\le 3$$. Find its displacement and its total distance traveled.
-
-First find where the velocity changes sign:
-
-$$
-t^2-4=0 \;\Longrightarrow\; t=2,
-$$
-
-(taking the positive root in the interval). For $$0\le t<2$$ the velocity is negative, and for $$2<t\le3$$ it is positive.
-
-The displacement is the signed integral over the whole interval:
-
-$$
-\int_0^3 (t^2-4)\,dt
-= \left[\frac{t^3}{3}-4t\right]_0^3
-= (9-12)-0
-= -3.
-$$
-
-For total distance, split at $$t=2$$ and integrate $$\lvert v(t)\rvert$$:
-
-$$
-\int_0^2 (4-t^2)\,dt
-= \left[4t-\frac{t^3}{3}\right]_0^2
-= 8-\frac83
-= \frac{16}{3},
-$$
-
-$$
-\int_2^3 (t^2-4)\,dt
-= \left[\frac{t^3}{3}-4t\right]_2^3
-= (9-12)-\left(\frac83-8\right)
-= -3+\frac{16}{3}
-= \frac{7}{3}.
-$$
-
-Adding the two pieces,
-
-$$
-\text{total distance}=\frac{16}{3}+\frac{7}{3}=\frac{23}{3}.
-$$
-
-So the displacement is $$-3$$ while the total distance is $$\frac{23}{3}$$, confirming that the two quantities differ once the velocity changes sign.
-
-</div>
-
----
-
 ## Volume by cross sections
 
 If cross-sectional area perpendicular to the axis is $$A(x)$$, then volume is
@@ -169,6 +341,22 @@ Common cross sections:
 - rectangles,
 - semicircles,
 - equilateral triangles.
+
+Common area formulas:
+
+$$
+\text{square: } A=s^2,
+$$
+
+$$
+\text{semicircle: } A=\frac12\pi r^2,
+$$
+
+$$
+\text{equilateral triangle: } A=\frac{\sqrt3}{4}s^2.
+$$
+
+The base region determines the side length, diameter, radius, or height needed for the cross-sectional area formula.
 
 <div class="theorem-box">
 
@@ -215,9 +403,41 @@ So the volume is $$8$$.
 
 </div>
 
+<div class="theorem-box">
+
+**Example.** A solid has base bounded by $$y=x$$ and $$y=x^2$$ from $$x=0$$ to $$x=1$$. Cross sections perpendicular to the $$x$$-axis are equilateral triangles. Set up the volume integral.
+
+For $$0\le x\le1$$, the top curve is $$y=x$$ and the bottom curve is $$y=x^2$$. The side length of each equilateral triangle is
+
+$$
+s=x-x^2.
+$$
+
+The area of an equilateral triangle with side length $$s$$ is
+
+$$
+A=\frac{\sqrt3}{4}s^2.
+$$
+
+Thus
+
+$$
+A(x)=\frac{\sqrt3}{4}(x-x^2)^2.
+$$
+
+The volume is
+
+$$
+V=\int_0^1 \frac{\sqrt3}{4}(x-x^2)^2\,dx.
+$$
+
+</div>
+
 ---
 
 ## Disk and washer methods
+
+Washers and disks come from slices perpendicular to the axis of rotation.
 
 Disk method:
 
@@ -291,9 +511,49 @@ So the volume of the solid of revolution is $$8\pi$$.
 
 </div>
 
+<div class="theorem-box">
+
+**Example.** Set up the volume formed by revolving the region between $$y=4$$ and $$y=x^2$$ about the $$x$$-axis.
+
+The curves meet when
+
+$$
+x^2=4,
+$$
+
+so
+
+$$
+x=-2
+\qquad\text{and}\qquad
+x=2.
+$$
+
+A vertical slice rotated around the $$x$$-axis forms a washer. The outer radius is the distance from the axis to $$y=4$$:
+
+$$
+R(x)=4.
+$$
+
+The inner radius is the distance from the axis to $$y=x^2$$:
+
+$$
+r(x)=x^2.
+$$
+
+Thus the volume is
+
+$$
+V=\pi\int_{-2}^{2}\left(4^2-(x^2)^2\right)\,dx.
+$$
+
+</div>
+
 ---
 
 ## Volume by cylindrical shells
+
+Shells come from slices parallel to the axis of rotation.
 
 $$
 V = 2\pi \int_a^b (\text{radius})(\text{height})\,dx.
@@ -347,6 +607,24 @@ So the volume is $$8\pi$$.
 ---
 
 ## Arc length
+
+Arc length adds tiny straight-line distances along a curve. For $$y=f(x)$$,
+
+$$
+dL\approx \sqrt{(dx)^2+(dy)^2}.
+$$
+
+Since
+
+$$
+dy=f'(x)\,dx,
+$$
+
+the length element becomes
+
+$$
+dL=\sqrt{1+[f'(x)]^2}\,dx.
+$$
 
 For a smooth function $$y=f(x)$$ on $$[a,b]$$:
 
@@ -406,6 +684,10 @@ This setup is usually the main AP-style goal. It can be simplified algebraically
 
 ## Improper integrals
 
+Improper integrals are always limits. Infinite intervals are handled by letting an endpoint move without bound. Infinite discontinuities are handled by approaching the problematic point from the correct side.
+
+Convergence means the limiting accumulated value is finite. Divergence means the accumulated value does not settle to a finite number.
+
 An integral is improper if:
 
 - an interval is infinite, or
@@ -451,244 +733,7 @@ The limit is finite, so the improper integral converges and its value is $$1$$.
 
 ---
 
-## Choosing a slicing direction
-
-Applications of integration usually begin with a geometric slice.
-
-Vertical slices use $$dx$$ and usually compare top minus bottom:
-
-$$
-\int_a^b [\text{top}-\text{bottom}]\,dx.
-$$
-
-Horizontal slices use $$dy$$ and usually compare right minus left:
-
-$$
-\int_c^d [\text{right}-\text{left}]\,dy.
-$$
-
-The correct choice depends on which direction makes the region easiest to describe without unnecessary splitting.
-
-<div class="theorem-box">
-
-**Key idea.** Draw the slice first, then write the formula. The slice tells you the width, height, radius, or cross-sectional area.
-
-</div>
-
----
-
-## Area between curves
-
-Area between curves is geometric area, so it must be nonnegative. If the curves cross, the "top" and "bottom" functions may switch. Split the interval at intersection points so the subtraction matches the geometry on each piece.
-
-For functions of $$y$$, use right minus left instead. This is often cleaner when the region is bounded sideways or when solving for $$y$$ would produce multiple branches.
-
----
-
-## Volumes from cross sections
-
-For cross-sectional volume, the integral adds thin slabs:
-
-$$
-dV=A(x)\,dx.
-$$
-
-The base region determines the side length, diameter, radius, or height needed for the cross-sectional area formula.
-
-Common area formulas:
-
-$$
-\text{square: } A=s^2,
-$$
-
-$$
-\text{semicircle: } A=\frac12\pi r^2,
-$$
-
-$$
-\text{equilateral triangle: } A=\frac{\sqrt3}{4}s^2.
-$$
-
-The calculus part is the accumulation. The geometry part is building $$A(x)$$ correctly.
-
----
-
-## Washers vs shells
-
-Washers and disks come from slices perpendicular to the axis of rotation. Shells come from slices parallel to the axis of rotation.
-
-Washer volume:
-
-$$
-V=\pi\int [R^2-r^2]\,d(\text{slice variable}).
-$$
-
-Shell volume:
-
-$$
-V=2\pi\int(\text{radius})(\text{height})\,d(\text{slice variable}).
-$$
-
-The radius is always a distance to the axis of rotation, so it should be nonnegative. If the axis is not one of the coordinate axes, write the distance carefully.
-
----
-
-## Motion and accumulation
-
-If velocity is given, displacement and distance are different:
-
-$$
-\text{displacement}=\int_a^b v(t)\,dt,
-$$
-
-$$
-\text{total distance}=\int_a^b \lvert v(t)\rvert\,dt.
-$$
-
-Displacement keeps direction. Total distance counts all movement as positive. Split total-distance integrals at times when velocity changes sign.
-
-If acceleration is given, integrate acceleration to get change in velocity. If velocity is given, integrate velocity to get change in position.
-
----
-
-## Arc length intuition
-
-Arc length adds tiny straight-line distances along a curve. For $$y=f(x)$$,
-
-$$
-dL\approx \sqrt{(dx)^2+(dy)^2}.
-$$
-
-Since
-
-$$
-dy=f'(x)\,dx,
-$$
-
-the length element becomes
-
-$$
-dL=\sqrt{1+[f'(x)]^2}\,dx.
-$$
-
-This explains why the derivative appears inside the arc length formula: the steepness of the curve affects how much length is packed into each small horizontal interval.
-
----
-
-## Improper integral meaning
-
-Improper integrals are always limits. Infinite intervals are handled by letting an endpoint move without bound. Infinite discontinuities are handled by approaching the problematic point from the correct side.
-
-Convergence means the limiting accumulated value is finite. Divergence means the accumulated value does not settle to a finite number.
-
----
-
-## Common mistakes
-
-:::mistakes
-- Forgetting to split total distance when velocity changes sign.
-- Using top-minus-bottom when the curves cross inside the interval without splitting.
-- Using wrong radii in washer problems.
-- Mixing shell and washer formulas without matching the slice geometry.
-:::
-
----
-
-## Work and force
-
-Work is another accumulation idea. If a force $$F(x)$$ moves an object along a line from $$x=a$$ to $$x=b$$, then
-
-$$
-W=\int_a^b F(x)\,dx.
-$$
-
-If the force is constant, this reduces to
-
-$$
-W=F(b-a).
-$$
-
-If the force changes with position, the integral adds many tiny pieces of work:
-
-$$
-dW=F(x)\,dx.
-$$
-
-### Springs
-
-Hooke's Law says that the force needed to stretch or compress a spring by $$x$$ units is
-
-$$
-F(x)=kx,
-$$
-
-where $$k$$ is the spring constant. The work needed to stretch the spring from $$x=a$$ to $$x=b$$ is
-
-$$
-W=\int_a^b kx\,dx.
-$$
-
-### Average value in applications
-
-The average value formula
-
-$$
-f_{\text{avg}}=\frac{1}{b-a}\int_a^b f(x)\,dx
-$$
-
-appears in physical contexts too. It gives the constant value that would create the same total accumulation over the interval.
-
-### Solids: cross-section mindset
-
-Every volume method has the same backbone:
-
-$$
-V=\int A(\text{slice})\,d(\text{slice variable}).
-$$
-
-The main challenge is writing $$A$$ correctly. For squares, semicircles, disks, washers, and shells, the geometry of the slice determines the formula before any integration happens.
-
-### Non-revolution volumes
-
-Not every volume problem comes from rotating a region. If the cross sections are known, use
-
-$$
-V=\int_a^b A(x)\,dx
-$$
-
-directly, where $$A(x)$$ is the area of a slice perpendicular to the $$x$$-axis.
-
-<div class="theorem-box">
-
-**Example.** A solid has base bounded by $$y=x$$ and $$y=x^2$$ from $$x=0$$ to $$x=1$$. Cross sections perpendicular to the $$x$$-axis are equilateral triangles. Set up the volume integral.
-
-For $$0\le x\le1$$, the top curve is $$y=x$$ and the bottom curve is $$y=x^2$$. The side length of each equilateral triangle is
-
-$$
-s=x-x^2.
-$$
-
-The area of an equilateral triangle with side length $$s$$ is
-
-$$
-A=\frac{\sqrt3}{4}s^2.
-$$
-
-Thus
-
-$$
-A(x)=\frac{\sqrt3}{4}(x-x^2)^2.
-$$
-
-The volume is
-
-$$
-V=\int_0^1 \frac{\sqrt3}{4}(x-x^2)^2\,dx.
-$$
-
-</div>
-
-### Center of mass
+## Center of mass
 
 For a thin plate with constant density in the plane, the center of mass is the balance point. If a region between $$y=f(x)$$ and $$y=g(x)$$ has area $$A$$, with $$f(x)\ge g(x)$$, then
 
@@ -704,7 +749,9 @@ $$
 
 This is BC/enrichment in many courses, but the idea is still accumulation: moment divided by total amount.
 
-### Probability density functions
+---
+
+## Probability density functions
 
 A probability density function $$p(x)$$ must satisfy
 
@@ -761,6 +808,17 @@ k=\frac12.
 $$
 
 </div>
+
+---
+
+## Common mistakes
+
+:::mistakes
+- Forgetting to split total distance when velocity changes sign.
+- Using top-minus-bottom when the curves cross inside the interval without splitting.
+- Using wrong radii in washer problems.
+- Mixing shell and washer formulas without matching the slice geometry.
+:::
 
 ---
 
