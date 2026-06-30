@@ -279,7 +279,7 @@ $$
 </div>
 
 Note that antiderivatives have no bounds. Instead of finding a value, the antiderivative finds a function whose derivative calculates to the original function.
-// add more detail on indefinite integrals and kind of illustrate the difference between it and definite integrals
+// add more detail on indefinite integrals and kind of illustrate the difference between it and definite integrals, also why we need +C and stuff like that
 
 <div class="theorem-box">
 

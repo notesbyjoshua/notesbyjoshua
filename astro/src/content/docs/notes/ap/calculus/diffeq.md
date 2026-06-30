@@ -5,8 +5,9 @@ sidebar:
 ---
 
 ## Introduction to differential equations
+// write a better intro to diff. equations (like why we care about it)
 
-A differential equation usually does not tell you the value of a function directly. It tells you how the function changes.
+ A differential equation usually does not tell you the value of a function directly, but rather, it tells you how the function changes.
 
 For
 
@@ -17,60 +18,6 @@ $$
 the slope at a point depends on the coordinates of that point. A solution curve is a function whose tangent slope matches the differential equation everywhere it passes through.
 
 This is why slope fields are useful: they show the local direction a solution must follow before you solve anything symbolically.
-
----
-
-## General and particular solutions
-
-A differential equation relates a function and its derivatives. A **general solution** contains a constant of integration, so it represents a family of functions.
-
-If an initial condition is given, such as $$y(1)=5$$, you solve for the constant to get the particular solution.
-
-<div class="theorem-box">
-
-**Example.** Verify that $$y=Ce^{2x}$$ is a general solution of $$\frac{dy}{dx}=2y$$.
-
-Differentiate the proposed solution:
-
-$$
-\frac{dy}{dx}=2Ce^{2x}.
-$$
-
-Since $$y=Ce^{2x}$$, the right side of the differential equation is
-
-$$
-2y=2Ce^{2x}.
-$$
-
-The derivative matches the right side, so $$y=Ce^{2x}$$ satisfies the differential equation for any constant $$C$$.
-
-</div>
-
-<div class="theorem-box">
-
-**Example.** The general solution of a differential equation is $$y=Cx^2+1$$. Find the particular solution satisfying $$y(3)=19$$.
-
-Use the initial condition:
-
-$$
-19=C(3)^2+1.
-$$
-
-Then
-
-$$
-18=9C
-\quad\Longrightarrow\quad
-C=2.
-$$
-
-So the particular solution is
-
-$$
-y=2x^2+1.
-$$
-
-</div>
 
 ---
 
