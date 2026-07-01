@@ -65,10 +65,10 @@ The parametric form still gives extra information: as $$t$$ increases, $$x=t+1$$
 ]
 \addplot[blue, very thick, samples=260, domain=0:360] ({2*cos(x)},{sin(2*x)});
 \addplot[->, orange!85!black, very thick] coordinates {(1.73,0.87) (1.38,1.22)};
-\addplot[->, orange!85!black, very thick] coordinates {(-1.73,-0.87) (-2.08,-0.52)};
-\addplot[only marks, mark=*, mark size=1.7pt, blue] coordinates {(1.73,0.87) (-1.73,-0.87)};
+\addplot[->, orange!85!black, very thick] coordinates {(-1.73,0.87) (-1.38,1.22)};
+\addplot[only marks, mark=*, mark size=1.7pt, blue] coordinates {(1.73,0.87) (-1.73,0.87)};
 \node[orange!85!black, anchor=south] at (axis cs:0,1.4) {direction as $t$ increases};
-\node[blue, anchor=west] at (axis cs:0,-1.4) {same curve can be traced twice};
+\node[blue, anchor=west] at (axis cs:-1,-1.4) {same curve can be traced twice};
 \end{axis}
 \end{tikzpicture}
 ```
@@ -586,7 +586,6 @@ $$
 \draw[blue!55, thick] (O) -- ({(2+cos(55))*cos(55)},{(2+cos(55))*sin(55)});
 \draw[->, red!75!black] (0.65,0) arc[start angle=0,end angle=35,radius=0.65] node[midway, right] {$\theta$};
 \node[orange!85!black] at (1.85,1.55) {sector slice};
-\node[align=center] at (0.2,2.75) {area $\approx \frac12 r^2\Delta\theta$};
 \end{tikzpicture}
 ```
 
