@@ -585,7 +585,7 @@ $$
 \draw[blue!55, thick] (O) -- ({(2+cos(35))*cos(35)},{(2+cos(35))*sin(35)});
 \draw[blue!55, thick] (O) -- ({(2+cos(55))*cos(55)},{(2+cos(55))*sin(55)});
 \draw[->, red!75!black] (0.65,0) arc[start angle=0,end angle=35,radius=0.65] node[midway, right] {$\theta$};
-\node[orange!85!black] at (1.85,1.55) {sector slice};
+\node[orange!85!black] at (2.55,1.75) {sector slice};
 \end{tikzpicture}
 ```
 
