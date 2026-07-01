@@ -26,6 +26,10 @@ $$
 
 The t-distribution is symmetric and bell-shaped like the normal distribution, but it has heavier tails. As degrees of freedom increase, the t-distribution approaches the standard normal distribution.
 
+:::key{name="Why t is wider"}
+Replacing the unknown population standard deviation $$\sigma$$ with the sample standard deviation $$s$$ adds uncertainty. The t-distribution accounts for that extra uncertainty with heavier tails, especially when $$n$$ is small.
+:::
+
 
 ```tikz
 \usepackage{pgfplots}
@@ -88,6 +92,10 @@ $$
 
 The alternative may be $$\mu>\mu_0$$, $$\mu<\mu_0$$, or $$\mu\ne\mu_0$$. The p-value is found from the t-distribution with the correct degrees of freedom.
 
+:::exam{topic="Mean tests"}
+State the parameter as a mean of the population, not a mean of the sample. For example: "Let $$\mu$$ be the true mean wait time for all customers at this store."
+:::
+
 ---
 
 ## Two-Sample t-Interval For Difference In Means
@@ -148,6 +156,10 @@ d_i = \text{value}_{1,i} - \text{value}_{2,i}.
 $$
 
 Then run a one-sample t procedure on the differences.
+
+:::warning
+Matched pairs data are not two independent samples. Once the observations are naturally paired, subtract within each pair and analyze the list of differences with a one-sample t procedure.
+:::
 
 Interval:
 
@@ -248,15 +260,39 @@ Calculator output should be translated into statistical language: parameter, con
 ### FRQ
 
 ::::frq{id=stats-quantmeans-1}
-1. _Temporary placeholder FRQ for wiring/testing — replace with a real free-response question for this unit._
+1. A random sample of 12 granola bars from a production line has mean weight $$\bar{x}=41.8$$ grams and sample standard deviation $$s=1.6$$ grams. A box advertises that bars weigh 40 grams on average.
 
-   $$(A)$$ State one key idea from this unit and explain it in your own words.
+   $$(A)$$ State the hypotheses for testing whether the true mean weight is greater than 40 grams.
 
-   $$(B)$$ Give a worked example or application of that idea.
+   $$(B)$$ Calculate the test statistic and degrees of freedom.
+
+   $$(C)$$ Suppose the one-sided p-value is $$0.0013$$. Write a conclusion at $$\alpha=0.05$$.
 
 :::solution
-$$(A)$$ _Placeholder solution._ Any accurate statement of a core concept from this unit, with a correct explanation, earns full credit.
+$$(A)$$ Let $$\mu$$ be the true mean weight, in grams, of granola bars from this production line.
 
-$$(B)$$ _Placeholder solution._ Any correct worked example or application consistent with part (A).
+$$
+H_0:\mu=40
+$$
+
+and
+
+$$
+H_a:\mu>40.
+$$
+
+$$(B)$$ Since $$\sigma$$ is unknown, use a t statistic:
+
+$$
+t=\frac{41.8-40}{1.6/\sqrt{12}}\approx 3.90.
+$$
+
+The degrees of freedom are
+
+$$
+df=12-1=11.
+$$
+
+$$(C)$$ Since $$0.0013<0.05$$, reject $$H_0$$. There is convincing evidence that the true mean weight of granola bars from this production line is greater than 40 grams.
 :::
 ::::

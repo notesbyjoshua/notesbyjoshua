@@ -28,6 +28,10 @@ How you collect data decides what you can conclude. This unit separates vocabula
 
 A **confounding factor** is a third variable tied to both the explanatory variable and the response in a way that makes a link  between two variables misleading. The factor “mixes” with the story you think you are telling, so association between the two variables of interest may be partly or wholly explained by that third variable.
 
+:::exam{topic="Scope of inference"}
+Random sampling helps you generalize to the population sampled from. Random assignment helps you make cause-and-effect conclusions. A study can have one, both, or neither.
+:::
+
 ---
 
 ## Biased sampling
@@ -80,6 +84,10 @@ In **systematic sampling**, choose a random starting point among the first $$k$$
 In **cluster sampling**, the population is partitioned into **clusters** (often pre-existing groups such as schools, city blocks, or hospitals). You randomly select some clusters, then measure all units in the chosen clusters (one-stage cluster sampling), or subsample within them (multistage designs in more advanced courses).
 
 Clusters are usually heterogeneous inside (e.g. people within a school differ from each other) which is fine, since the random selection of clusters is what justifies inference to the larger population when the frame is good. Poor cluster choice or too few clusters can still yield misleading results.
+
+:::warning
+Strata should be internally similar and sampled from every group. Clusters should each look like miniature versions of the population, and only some clusters are selected.
+:::
 
 ---
 
@@ -166,15 +174,19 @@ A **matched-pairs design** is a specialized block design for comparing two treat
 ### FRQ
 
 ::::frq{id=stats-collectingdata-1}
-1. _Temporary placeholder FRQ for wiring/testing — replace with a real free-response question for this unit._
+1. A city wants to estimate support for a new bus route. The city has a list of all households in each neighborhood.
 
-   $$(A)$$ State one key idea from this unit and explain it in your own words.
+   $$(A)$$ Describe how to select a stratified random sample of 300 households using neighborhood as the strata.
 
-   $$(B)$$ Give a worked example or application of that idea.
+   $$(B)$$ Explain one advantage of this design compared with a simple random sample of 300 households.
+
+   $$(C)$$ The city also runs a study where some riders are randomly assigned to receive discounted fares and others are not. Explain whether this second study can support a cause-and-effect conclusion.
 
 :::solution
-$$(A)$$ _Placeholder solution._ Any accurate statement of a core concept from this unit, with a correct explanation, earns full credit.
+$$(A)$$ Separate the household list into groups by neighborhood. Within each neighborhood, use a random number generator to select households. The total selected across all neighborhoods should be 300; the number from each neighborhood can be proportional to neighborhood size if the goal is a citywide estimate.
 
-$$(B)$$ _Placeholder solution._ Any correct worked example or application consistent with part (A).
+$$(B)$$ Stratifying by neighborhood guarantees representation from every neighborhood. This can reduce variability if opinions about the bus route differ by neighborhood.
+
+$$(C)$$ Yes, if riders are randomly assigned to discounted fares or no discounted fares, then differences in ridership between the groups can be attributed to the fare discount, assuming the study is otherwise well controlled. Random assignment supports cause-and-effect conclusions.
 :::
 ::::

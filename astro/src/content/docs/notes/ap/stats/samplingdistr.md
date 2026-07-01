@@ -21,6 +21,10 @@ Samples vary, so statistics vary. This is called **sampling variability**. A goo
 
 Larger random samples usually reduce variability, but they do not fix bias caused by bad sampling design.
 
+:::key{name="Bias versus variability"}
+Bias is about where the sampling distribution is centered. Variability is about how spread out the statistic is from sample to sample. Increasing sample size reduces variability, but it does not automatically fix bias.
+:::
+
 
 ```tikz
 \usepackage{pgfplots}
@@ -122,6 +126,10 @@ n \ge 30
 $$
 
 is often enough for mild or moderate skew. If the population is strongly skewed or has extreme outliers, a larger sample may be needed.
+
+:::warning
+The Central Limit Theorem is about the sampling distribution of $$\bar{x}$$, not necessarily the original population distribution. A large sample can make $$\bar{x}$$ approximately normal even when individual observations are skewed.
+:::
 
 If the population itself is normal, then the sampling distribution of $$\bar{x}$$ is normal for any sample size $$n$$.
 
@@ -309,15 +317,53 @@ $$
 ### FRQ
 
 ::::frq{id=stats-samplingdistr-1}
-1. _Temporary placeholder FRQ for wiring/testing — replace with a real free-response question for this unit._
+1. A company claims that 42% of its customers use the mobile app. Suppose this claim is true and a random sample of 120 customers is selected.
 
-   $$(A)$$ State one key idea from this unit and explain it in your own words.
+   $$(A)$$ Find the mean and standard deviation of the sampling distribution of $$\hat{p}$$.
 
-   $$(B)$$ Give a worked example or application of that idea.
+   $$(B)$$ Check whether a normal approximation is appropriate.
+
+   $$(C)$$ Approximate the probability that more than half of the sample uses the mobile app.
 
 :::solution
-$$(A)$$ _Placeholder solution._ Any accurate statement of a core concept from this unit, with a correct explanation, earns full credit.
+$$(A)$$ For a sample proportion,
 
-$$(B)$$ _Placeholder solution._ Any correct worked example or application consistent with part (A).
+$$
+\mu_{\hat{p}}=p=0.42
+$$
+
+and
+
+$$
+\sigma_{\hat{p}}=\sqrt{\frac{p(1-p)}{n}}=\sqrt{\frac{0.42(0.58)}{120}}\approx 0.0451.
+$$
+
+$$(B)$$ The large-counts condition is met because
+
+$$
+np=120(0.42)=50.4
+$$
+
+and
+
+$$
+n(1-p)=120(0.58)=69.6.
+$$
+
+Both are at least 10, so the sampling distribution of $$\hat{p}$$ is approximately normal.
+
+$$(C)$$ More than half means $$\hat{p}>0.50$$. The z-score is
+
+$$
+z=\frac{0.50-0.42}{0.0451}\approx 1.77.
+$$
+
+Thus,
+
+$$
+P(\hat{p}>0.50)\approx P(Z>1.77)\approx 0.038.
+$$
+
+The probability is about $$0.038$$.
 :::
 ::::

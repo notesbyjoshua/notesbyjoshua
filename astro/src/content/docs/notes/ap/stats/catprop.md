@@ -19,6 +19,10 @@ This unit uses sample proportions to estimate and test claims about population p
 
 A **confidence interval** estimates a plausible range of values for a parameter. A **hypothesis test** evaluates whether sample data provide convincing evidence against a null hypothesis.
 
+:::exam{topic="Inference writing"}
+For an AP free-response inference problem, the calculation is usually not enough. Name the parameter, check conditions in context, show the correct formula or calculator procedure, and finish with a conclusion that answers the original question.
+:::
+
 ---
 
 ## Confidence Intervals
@@ -109,6 +113,14 @@ $$
 
 The **p-value** is the probability, assuming $$H_0$$ is true, of getting a test statistic as extreme as or more extreme than the observed result in the direction of $$H_a$$.
 
+:::strategy{title="Hypothesis test wording"}
+1. Define the parameter in context.
+2. State $$H_0$$ and $$H_a$$ using the parameter, not just words.
+3. Check conditions using the null value when needed.
+4. Compute the test statistic and p-value.
+5. Decide using $$\alpha$$, then write the conclusion in context.
+:::
+
 Decision rule:
 
 - If p-value $$< \alpha$$, reject $$H_0$$.
@@ -195,6 +207,10 @@ $$
 
 Use the pooled proportion only for the hypothesis test, not for the confidence interval.
 
+:::warning
+For two proportions, intervals and tests use different standard errors. Intervals use the two separate sample proportions because you are estimating the difference. Tests for $$H_0:p_1-p_2=0$$ use the pooled proportion because the null assumes the two population proportions are equal.
+:::
+
 ---
 
 ## Errors And Power
@@ -261,15 +277,53 @@ Calculator output does not replace communication. You still need hypotheses, con
 ### FRQ
 
 ::::frq{id=stats-catprop-1}
-1. _Temporary placeholder FRQ for wiring/testing — replace with a real free-response question for this unit._
+1. In a random sample of 250 students at a large high school, 142 say they prefer digital textbooks.
 
-   $$(A)$$ State one key idea from this unit and explain it in your own words.
+   $$(A)$$ Construct and interpret a 95% confidence interval for the proportion of all students at the school who prefer digital textbooks.
 
-   $$(B)$$ Give a worked example or application of that idea.
+   $$(B)$$ A teacher claims that a majority of students prefer digital textbooks. Use a one-proportion z-test at $$\alpha=0.05$$ to test this claim.
 
 :::solution
-$$(A)$$ _Placeholder solution._ Any accurate statement of a core concept from this unit, with a correct explanation, earns full credit.
+$$(A)$$ The sample proportion is
 
-$$(B)$$ _Placeholder solution._ Any correct worked example or application consistent with part (A).
+$$
+\hat{p}=\frac{142}{250}=0.568.
+$$
+
+The random condition is stated. The 10% condition is reasonable if the school has at least 2500 students, or if the sample is small relative to the school. Large counts are met because $$142$$ successes and $$108$$ failures are both at least 10.
+
+A 95% interval is
+
+$$
+0.568\pm 1.96\sqrt{\frac{0.568(0.432)}{250}}.
+$$
+
+The margin of error is about $$0.0614$$, so the interval is
+
+$$
+(0.507,\ 0.629).
+$$
+
+We are 95% confident that the true proportion of all students at the school who prefer digital textbooks is between about 0.507 and 0.629.
+
+$$(B)$$ The hypotheses are
+
+$$
+H_0:p=0.50
+$$
+
+and
+
+$$
+H_a:p>0.50.
+$$
+
+Use the null value in the standard error:
+
+$$
+z=\frac{0.568-0.50}{\sqrt{0.50(0.50)/250}}\approx 2.15.
+$$
+
+The one-sided p-value is about $$0.016$$. Since $$0.016<0.05$$, reject $$H_0$$. There is convincing evidence that a majority of students at the school prefer digital textbooks.
 :::
 ::::

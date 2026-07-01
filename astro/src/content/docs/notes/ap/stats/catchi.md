@@ -54,6 +54,10 @@ Here $$O$$ is an observed count and $$E$$ is an expected count. Large values of 
 
 Chi-square tests are right-tailed: the p-value is the probability of getting a chi-square statistic at least as large as the observed one.
 
+:::key{name="Observed versus expected"}
+Observed counts come from the data. Expected counts come from the null hypothesis. The chi-square statistic measures how far the data are from what the null model predicts.
+:::
+
 ---
 
 ## Conditions For Chi-Square Tests
@@ -165,6 +169,12 @@ The calculations for independence and homogeneity are identical, but the study d
 
 If the problem has one sample and two categorical variables, think independence. If the problem has multiple samples or treatment groups and one categorical outcome, think homogeneity.
 
+:::strategy{title="Choosing the chi-square procedure"}
+- Use **goodness-of-fit** for one categorical variable and one claimed distribution.
+- Use **independence** for one sample with two categorical variables.
+- Use **homogeneity** for separate groups or samples compared on one categorical variable.
+:::
+
 ---
 
 ## Interpreting Contributions
@@ -221,15 +231,42 @@ For two-way tables, store observed counts in a matrix, run the test, and inspect
 ### FRQ
 
 ::::frq{id=stats-catchi-1}
-1. _Temporary placeholder FRQ for wiring/testing — replace with a real free-response question for this unit._
+1. A random sample of 160 students is classified by grade level and whether they participate in at least one school club.
 
-   $$(A)$$ State one key idea from this unit and explain it in your own words.
+   | Grade | Participates | Does not participate | Total |
+   | --- | ---: | ---: | ---: |
+   | 9th | 28 | 12 | 40 |
+   | 10th | 24 | 16 | 40 |
+   | 11th | 18 | 22 | 40 |
+   | 12th | 10 | 30 | 40 |
+   | Total | 80 | 80 | 160 |
 
-   $$(B)$$ Give a worked example or application of that idea.
+   $$(A)$$ State the hypotheses for an appropriate chi-square test.
+
+   $$(B)$$ Find the expected count for 12th-grade students who participate in at least one club.
+
+   $$(C)$$ The chi-square statistic is $$\chi^2=18.4$$. Identify the degrees of freedom and write the conclusion if the p-value is less than $$0.01$$.
 
 :::solution
-$$(A)$$ _Placeholder solution._ Any accurate statement of a core concept from this unit, with a correct explanation, earns full credit.
+$$(A)$$ This is a chi-square test of independence.
 
-$$(B)$$ _Placeholder solution._ Any correct worked example or application consistent with part (A).
+$$H_0:$$ Grade level and club participation are independent among students at the school.
+
+$$H_a:$$ Grade level and club participation are associated among students at the school.
+
+$$(B)$$ The expected count is
+
+$$
+E=\frac{(\text{12th-grade total})(\text{participates total})}{\text{grand total}}
+=\frac{40(80)}{160}=20.
+$$
+
+$$(C)$$ The degrees of freedom are
+
+$$
+df=(4-1)(2-1)=3.
+$$
+
+Since the p-value is less than $$0.01$$, it is also less than common significance levels such as $$0.05$$. Reject $$H_0$$. There is convincing evidence that grade level and club participation are associated among students at the school.
 :::
 ::::

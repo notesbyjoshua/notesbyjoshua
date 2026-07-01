@@ -46,6 +46,10 @@ A **scatterplot** plots each case as a point $$(x, y)$$ in the plane. Choose sca
 
 When you describe a scatterplot, organize your comments around three ideas: **shape**, **direction**, and **strength**.
 
+:::strategy{title="Describing scatterplots"}
+Use form, direction, strength, and unusual features. Then connect the pattern to context: "As [explanatory variable] increases, [response variable] tends to..."
+:::
+
 ### Shape
 
 **Shape** answers whether the overall pattern is linear (points basically follow a straight line) or nonlinear (curved, piecewise, or scattered without a simple path). Nonlinear patterns are a signal that a straight-line model may be wrong unless you transform a variable first.
@@ -84,9 +88,13 @@ Intuitively, $$r$$ compares covariation (do $$x$$ and $$y$$ tend to be on the sa
 
 Values with $$\lvert r\rvert = 1$$ mean all points fall exactly on a single straight line (perfect linear fit). As $$\lvert r\rvert$$ moves toward 0, the linear trend weakens.
 
-Textbooks sometimes give rough cutoffs such as $$\lvert r\rvert < 0.1$$ as very weak, 0.1 to 0.5 as weak-to-moderate, 0.5 to 0.85 as strong, and |r| > 0.85 as very strong. Treat these as rules of thumb, not laws: context, sample size, and outliers matter. Sometimes a $$\lvert r\rvert$$ value of 0.4 can be classified as strong, and sometimes a $$\lvert r\rvert$$ value of 0.8 may be classified as weak. Correlation is not causation; confounding and lurking variables can produce strong $$\lvert r\rvert$$ without a direct cause-and-effect link.
+Textbooks sometimes give rough cutoffs such as $$\lvert r\rvert < 0.1$$ as very weak, 0.1 to 0.5 as weak-to-moderate, 0.5 to 0.85 as strong, and $$\lvert r\rvert > 0.85$$ as very strong. Treat these as rules of thumb, not laws: context, sample size, and outliers matter. Sometimes a $$\lvert r\rvert$$ value of 0.4 can be classified as strong, and sometimes a $$\lvert r\rvert$$ value of 0.8 may be classified as weak. Correlation is not causation; confounding and lurking variables can produce strong $$\lvert r\rvert$$ without a direct cause-and-effect link.
 
 Correlation is unitless and unchanged by linear rescaling (multiplying either variable by a positive constant, or adding a constant), which makes it handy for comparing relationships measured in different units.
+
+:::warning
+Correlation measures linear association only. A strong curved relationship can have a correlation near 0, and a large outlier can make correlation look much stronger or weaker than the main pattern deserves.
+:::
 
 ---
 
@@ -100,7 +108,7 @@ $$
 Y = \beta_0 + \beta_1 X + \epsilon
 $$
 
-Here $$beta_0$$ is the y-intercept, $$beta_1$$ is the slope, and $$\epsilon$$ captures everything the straight line misses: measurement noise, other variables, and genuine nonlinearity. The errors $$\epsilon$$ are what we hope stay small and behave reasonably once we estimate the line from data.
+Here $$\beta_0$$ is the y-intercept, $$\beta_1$$ is the slope, and $$\epsilon$$ captures everything the straight line misses: measurement noise, other variables, and genuine nonlinearity. The errors $$\epsilon$$ are what we hope stay small and behave reasonably once we estimate the line from data.
 
 From a sample, we write estimated coefficients (often $$b_0$$ and $$b_1$$, or $$\hat{\beta}_0$$ and $$\hat{\beta}_1$$) and a fitted line used for prediction.
 
@@ -169,6 +177,10 @@ A residual plot graphs residuals (usually on the vertical axis) against either t
 
 What you hope to see is a formless cloud: points scattered randomly around the horizontal axis at $$\epsilon = 0$$, with roughly constant spread across values of $$x$$ or $$\hat{y}$$.
 
+:::exam{topic="Residual plots"}
+When the residual plot has a curve, say the linear model is not appropriate. When the vertical spread changes as $$x$$ increases, say the equal-spread condition is questionable.
+:::
+
 Curved patterns mean the relationship is probably nonlinear; a linear model is a poor summary. Fan shapes (spread grows or shrinks as $$x$$ changes) suggest nonconstant variance, which matters more when you move into formal inference, but is still worth mentioning when you describe real data.
 
 ---
@@ -220,15 +232,43 @@ Avoid calling this pattern “positive correlation” or “negative correlation
 ### FRQ
 
 ::::frq{id=stats-bivardata-1}
-1. _Temporary placeholder FRQ for wiring/testing — replace with a real free-response question for this unit._
+1. A school counselor records hours studied and quiz score for 8 students. Technology gives the least-squares regression line
 
-   $$(A)$$ State one key idea from this unit and explain it in your own words.
+   $$
+   \hat{y}=54.2+6.8x,
+   $$
 
-   $$(B)$$ Give a worked example or application of that idea.
+   where $$x$$ is hours studied and $$\hat{y}$$ is predicted quiz score. The correlation is $$r=0.86$$.
+
+   $$(A)$$ Interpret the slope in context.
+
+   $$(B)$$ One student studied 4 hours and earned an 88. Find and interpret the residual.
+
+   $$(C)$$ Find and interpret $$r^2$$.
 
 :::solution
-$$(A)$$ _Placeholder solution._ Any accurate statement of a core concept from this unit, with a correct explanation, earns full credit.
+$$(A)$$ For each additional hour studied, the model predicts an increase of about 6.8 quiz points, on average.
 
-$$(B)$$ _Placeholder solution._ Any correct worked example or application consistent with part (A).
+$$(B)$$ The predicted score for $$x=4$$ is
+
+$$
+\hat{y}=54.2+6.8(4)=81.4.
+$$
+
+The residual is
+
+$$
+y-\hat{y}=88-81.4=6.6.
+$$
+
+The student scored 6.6 points higher than the model predicted.
+
+$$(C)$$
+
+$$
+r^2=(0.86)^2=0.7396.
+$$
+
+About 74% of the variation in quiz scores is explained by the least-squares linear relationship with hours studied.
 :::
 ::::

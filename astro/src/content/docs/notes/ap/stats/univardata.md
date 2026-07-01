@@ -88,6 +88,10 @@ A **pie chart** represents the whole as a circle and divides it into slices whos
 
 For **quantitative** data, we care about **center**, **spread**, **shape**, and unusual values.
 
+:::strategy{title="Describing distributions"}
+Use CUSS in context: **Center**, **Unusual features**, **Shape**, and **Spread**. For comparisons, do this for both groups and name the direction of the difference.
+:::
+
 ### Dotplots
 
 A **dotplot** stacks a dot above a number line for each occurrence of a value (or stacks dots in equal-width bins if values are rounded). Dotplots shine with small-to-moderate datasets: you see every value, clusters, gaps, and outliers without losing detail.
@@ -169,6 +173,10 @@ $$
 $$
 
 Always ask whether an outlier is a data entry error, a special case worth investigating, or simply natural variability in a heavy-tailed variable.
+
+:::exam{topic="Outliers"}
+If a problem asks whether a value is an outlier, show the fences and compare the value to them. If it asks whether to remove an outlier, do not remove it unless there is evidence of error or a clear reason in context.
+:::
 
 ---
 
@@ -301,15 +309,57 @@ These rules are worth memorizing: they explain why z-scores are unchanged by shi
 ### FRQ
 
 ::::frq{id=stats-univardata-1}
-1. _Temporary placeholder FRQ for wiring/testing — replace with a real free-response question for this unit._
+1. A teacher records the number of minutes that 16 students spent studying for a quiz:
 
-   $$(A)$$ State one key idea from this unit and explain it in your own words.
+   $$12,\ 18,\ 20,\ 22,\ 25,\ 25,\ 28,\ 30,\ 34,\ 36,\ 39,\ 41,\ 45,\ 50,\ 61,\ 68.$$
 
-   $$(B)$$ Give a worked example or application of that idea.
+   $$(A)$$ Describe the distribution of study times.
+
+   $$(B)$$ Find the five-number summary and determine whether there are any outliers using the $$1.5\text{ IQR}$$ rule.
+
+   $$(C)$$ Which is the better measure of center for this distribution, the mean or the median? Explain.
 
 :::solution
-$$(A)$$ _Placeholder solution._ Any accurate statement of a core concept from this unit, with a correct explanation, earns full credit.
+$$(A)$$ The distribution is unimodal and skewed right because most study times are between about 20 and 45 minutes, with a longer tail toward larger times. The center is around 32 minutes, and the spread is from 12 to 68 minutes. The value 68 minutes is high compared with most of the data.
 
-$$(B)$$ _Placeholder solution._ Any correct worked example or application consistent with part (A).
+$$(B)$$ With 16 values,
+
+$$
+\text{median}=\frac{30+34}{2}=32.
+$$
+
+The lower half is $$12,18,20,22,25,25,28,30$$, so
+
+$$
+Q_1=\frac{22+25}{2}=23.5.
+$$
+
+The upper half is $$34,36,39,41,45,50,61,68$$, so
+
+$$
+Q_3=\frac{41+45}{2}=43.
+$$
+
+Thus,
+
+$$
+\text{IQR}=43-23.5=19.5.
+$$
+
+The outlier fences are
+
+$$
+23.5-1.5(19.5)=-5.75
+$$
+
+and
+
+$$
+43+1.5(19.5)=72.25.
+$$
+
+No observations are below $$-5.75$$ or above $$72.25$$, so there are no outliers by the $$1.5\text{ IQR}$$ rule.
+
+$$(C)$$ The median is better because the distribution is skewed right. The mean would be pulled upward by the larger study times, while the median is more resistant.
 :::
 ::::

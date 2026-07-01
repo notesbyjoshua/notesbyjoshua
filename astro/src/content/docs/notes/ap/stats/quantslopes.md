@@ -210,15 +210,47 @@ from the regression output.
 ### FRQ
 
 ::::frq{id=stats-quantslopes-1}
-1. _Temporary placeholder FRQ for wiring/testing — replace with a real free-response question for this unit._
+1. A researcher studies the relationship between weekly exercise time $$x$$, in hours, and resting heart rate $$y$$, in beats per minute. For a random sample of 18 adults, software gives
 
-   $$(A)$$ State one key idea from this unit and explain it in your own words.
+   $$
+   \hat{y}=76.4-1.85x,\qquad SE_b=0.62.
+   $$
 
-   $$(B)$$ Give a worked example or application of that idea.
+   $$(A)$$ Interpret the slope in context.
+
+   $$(B)$$ Test whether there is evidence of a negative linear relationship between weekly exercise time and resting heart rate. Use $$\alpha=0.05$$.
+
+   $$(C)$$ State one condition that should be checked before trusting this inference procedure.
 
 :::solution
-$$(A)$$ _Placeholder solution._ Any accurate statement of a core concept from this unit, with a correct explanation, earns full credit.
+$$(A)$$ For each additional hour of weekly exercise, the model predicts a decrease of about 1.85 beats per minute in resting heart rate, on average.
 
-$$(B)$$ _Placeholder solution._ Any correct worked example or application consistent with part (A).
+$$(B)$$ The hypotheses are
+
+$$
+H_0:\beta=0
+$$
+
+and
+
+$$
+H_a:\beta<0.
+$$
+
+The test statistic is
+
+$$
+t=\frac{-1.85-0}{0.62}\approx -2.98.
+$$
+
+The degrees of freedom are
+
+$$
+df=18-2=16.
+$$
+
+For $$df=16$$, a test statistic of about $$-2.98$$ gives a one-sided p-value less than $$0.01$$. Since this is less than $$0.05$$, reject $$H_0$$. There is convincing evidence of a negative linear relationship between weekly exercise time and resting heart rate in the population.
+
+$$(C)$$ One condition is linearity: the scatterplot and residual plot should show an approximately linear relationship with no clear curve. Other valid checks include independence, roughly normal residuals, equal variance, and random sampling.
 :::
 ::::

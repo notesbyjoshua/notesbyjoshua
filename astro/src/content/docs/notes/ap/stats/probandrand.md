@@ -66,6 +66,10 @@ read as “$$A$$ given $$B$$.”
 
 Two events are **independent** if knowing whether one occurred does not change the probability of the other (formalized below).
 
+:::warning
+Disjoint and independent are different ideas. If two non-impossible events are disjoint, knowing one happened tells you the other did not happen, so they are not independent.
+:::
+
 ---
 
 ## More probability rules
@@ -111,6 +115,13 @@ P(A \cap B) = P(A)\,P(B)
 $$
 
 If that product rule fails, the events are **dependent**.
+
+:::strategy{title="Probability table problems"}
+1. Translate the words into events.
+2. Fill in joint probabilities first when possible.
+3. Use row and column totals to get marginal probabilities.
+4. For conditional probability, restrict the denominator to the condition.
+:::
 
 ---
 
@@ -168,6 +179,10 @@ E(X_1 + X_2 + ... + X_n) = E(X_1) + E(X_2) + ... + E(X_n)
 $$
 
 This property is useful in games, insurance, and counting problems because it does not require the random variables to be independent. Variance rules, however, do require independence in the simple forms used in AP Statistics.
+
+:::key{name="Combining random variables"}
+Means add and subtract exactly as the variables do. Variances add for sums and differences only when the random variables are independent; standard deviations do not add directly.
+:::
 
 ---
 
@@ -228,15 +243,31 @@ $$
 ### FRQ
 
 ::::frq{id=stats-probandrand-1}
-1. _Temporary placeholder FRQ for wiring/testing — replace with a real free-response question for this unit._
+1. At a school, 60% of students take a language class, 35% take an art class, and 20% take both.
 
-   $$(A)$$ State one key idea from this unit and explain it in your own words.
+   $$(A)$$ Find the probability that a randomly selected student takes a language class or an art class.
 
-   $$(B)$$ Give a worked example or application of that idea.
+   $$(B)$$ Given that a student takes an art class, find the probability that the student also takes a language class.
+
+   $$(C)$$ Are taking a language class and taking an art class independent events? Justify your answer.
 
 :::solution
-$$(A)$$ _Placeholder solution._ Any accurate statement of a core concept from this unit, with a correct explanation, earns full credit.
+$$(A)$$ Use the general addition rule:
 
-$$(B)$$ _Placeholder solution._ Any correct worked example or application consistent with part (A).
+$$
+P(L\cup A)=P(L)+P(A)-P(L\cap A)=0.60+0.35-0.20=0.75.
+$$
+
+The probability is $$0.75$$.
+
+$$(B)$$
+
+$$
+P(L\mid A)=\frac{P(L\cap A)}{P(A)}=\frac{0.20}{0.35}\approx 0.571.
+$$
+
+Given that the student takes art, the probability that the student also takes language is about $$0.571$$.
+
+$$(C)$$ If the events were independent, then $$P(L\mid A)=P(L)$$. But $$0.571\ne 0.60$$, so the events are not independent. Equivalently, $$P(L)P(A)=0.60(0.35)=0.21$$, which is not equal to $$P(L\cap A)=0.20$$.
 :::
 ::::
