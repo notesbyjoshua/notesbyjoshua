@@ -43,11 +43,11 @@ There are many interpretations of the derivative:
   xlabel=$x$, ylabel=$y$,
 ]
 \addplot[blue, very thick, samples=160, domain=0:3.3] {0.5*x^2+0.4};
-\addplot[gray!70, dashed, thick, domain=0.95:2.75] {1.925*x-1.3625};
+\addplot[gray!70, dashed, thick, domain=1.15:3.2] {2.25*x-1.85};
 \addplot[orange!85!black, thick, domain=0.75:2.45] {1.5*x-0.725};
 \addplot[only marks, mark=*, mark size=1.8pt, blue] coordinates {(1.5,1.525)};
-\addplot[only marks, mark=*, mark size=1.5pt, gray!70] coordinates {(2.6,3.78)};
-\node[gray!70!black, anchor=west] at (axis cs:2.55,3.45) {secant};
+\addplot[only marks, mark=*, mark size=1.5pt, gray!70] coordinates {(3,4.9)};
+\node[gray!70!black, anchor=west] at (axis cs:2.75,4.45) {secant};
 \node[blue, anchor=east] at (axis cs:1.45,1.55) {$x=a$};
 \node[orange!85!black, anchor=west] at (axis cs:2.05,2.35) {tangent};
 \end{axis}
@@ -56,7 +56,7 @@ There are many interpretations of the derivative:
 
 <div class="theorem-box">
 
-**Example.** Use the limit definition to find $$f'(x)$$ for $$f(x)=x^2$$.
+**Example.** Use the limit definition to find $$f'(x)$$ to find the derivative for $$f(x)=x^2$$.
 
 Start from the definition and substitute $$f(x+h)=(x+h)^2$$:
 
@@ -86,6 +86,23 @@ So the derivative of $$x^2$$ is $$2x$$.
 
 </div>
 
+### Why the derivative is a limit
+
+The average rate of change on $$[a,a+h]$$ is
+
+$$
+\frac{f(a+h)-f(a)}{h}.
+$$
+
+This is the slope of a secant line. The derivative asks what happens as the second point moves closer and closer to the first point. If the secant slopes approach one stable value, that value is the tangent slope.
+
+This is why the derivative can be interpreted in several connected ways:
+
+- geometrically, it is slope at an instant;
+- numerically, it is the limiting value of nearby average rates;
+- physically, it is instantaneous velocity when $$f$$ is position;
+- locally, it is the coefficient of the best linear approximation.
+
 ### Notation for derivatives
 
 There exists many different notations for derivatives, but the most common ones are:
@@ -112,24 +129,7 @@ The Leibniz Notation ($$\frac{dy}{dx}$$) is especially useful for problems that 
 
 For a quantity $$Q$$ depending on another quantity $$x$$: $$\frac{dQ}{dx}$$ has units of $$Q$$-units per $$x$$-unit. This unit check is one of the fastest ways to catch an interpretation error.
 
-### Why the derivative is a limit
-
-The average rate of change on $$[a,a+h]$$ is
-
-$$
-\frac{f(a+h)-f(a)}{h}.
-$$
-
-This is the slope of a secant line. The derivative asks what happens as the second point moves closer and closer to the first point. If the secant slopes approach one stable value, that value is the tangent slope.
-
-This is why the derivative can be interpreted in several connected ways:
-
-- geometrically, it is slope at an instant;
-- numerically, it is the limiting value of nearby average rates;
-- physically, it is instantaneous velocity when $$f$$ is position;
-- locally, it is the coefficient of the best linear approximation.
-
-### Differentiability from graphs
+### Differentiability of functions
 
 <div class="theorem-box">
 
@@ -145,7 +145,7 @@ $$
 f(x)=\sqrt{x}
 $$
 
-has domain $$[0,\infty)$$, but
+has domain $$[0,\infty)$$, but it's derivative
 
 $$
 f'(x)=\frac{1}{2\sqrt{x}}
@@ -175,6 +175,32 @@ f'_-(a)=\lim_{h\to0^-}\frac{f(a+h)-f(a)}{h}.
 $$
 
 The derivative $$f'(a)$$ exists only when the left and right derivatives agree, just like limits.
+
+<div class="theorem-box">
+
+**Example.** Let
+
+$$
+f(x)=\lvert x-2\rvert.
+$$
+
+Find the one-sided derivatives at $$x=2$$.
+
+For $$x<2$$, the function is $$f(x)=2-x$$, so
+
+$$
+f'_-(2)=-1.
+$$
+
+For $$x>2$$, the function is $$f(x)=x-2$$, so
+
+$$
+f'_+(2)=1.
+$$
+
+Since the one-sided derivatives are not equal, $$f'(2)$$ does not exist. This matches the sharp corner in the graph of $$\lvert x-2\rvert$$.
+
+</div>
 
 ---
 
@@ -378,7 +404,21 @@ All of the trig derivatives can be proved using the derivative definition and th
 
 <div class="theorem-box">
 
-**Proof (Derivatives of $$\sin x$$ and $$\cos x$$).** For sine, start with the derivative definition:
+**Proof (Derivative of $$tan x$$).** Start with the identity
+
+$$
+\tan x=\frac{\sin x}{\cos x}.
+$$
+
+Use the quotient rule:
+
+$$
+\frac{d}{dx}(\tan x)
+=
+\frac{(\frac{d}{dx} \sin x)(\cos x)-(\sin x)(\frac{d}{dx} \cos x)}{\cos^2 x}.
+$$
+
+For sine, start with the derivative definition:
 
 $$
 \frac{d}{dx}(\sin x)
@@ -424,17 +464,7 @@ $$
 \frac{d}{dx}(\cos x)=-\sin x.
 $$
 
-</div>
-
-<div class="theorem-box">
-
-**Proof (Derivative of $$\tan x$$).** Start with the identity
-
-$$
-\tan x=\frac{\sin x}{\cos x}.
-$$
-
-Use the quotient rule:
+Thus,
 
 $$
 \frac{d}{dx}(\tan x)
@@ -453,6 +483,12 @@ $$
 =
 \sec^2 x.
 $$
+
+</div>
+
+<div class="theorem-box">
+
+**Proof (Derivative of $$\tan x$$).**
 
 </div>
 
@@ -483,43 +519,7 @@ $$
 \qquad a>0,\ a\ne 1.
 $$
 
-<div class="theorem-box">
-
-**Proof (General exponential and logarithm derivatives).** Rewrite a general exponential using base $$e$$:
-
-$$
-a^x=e^{x\ln a}.
-$$
-
-Then the chain rule gives
-
-$$
-\frac{d}{dx}(a^x)
-=
-\frac{d}{dx}\left(e^{x\ln a}\right)
-=
-e^{x\ln a}\ln a
-=
-a^x\ln a.
-$$
-
-For logarithms, use change of base:
-
-$$
-\log_a x=\frac{\ln x}{\ln a}.
-$$
-
-Since $$\ln a$$ is constant,
-
-$$
-\frac{d}{dx}(\log_a x)
-=
-\frac{1}{\ln a}\cdot\frac{1}{x}
-=
-\frac{1}{x\ln a}.
-$$
-
-</div>
+The proofs for these formulas can be proved using techniques from Unit 3.
 
 ### Derivatives of hyperbolic functions
 
@@ -531,7 +531,7 @@ $$
 \cosh x=\frac{e^x+e^{-x}}{2}.
 $$
 
-The other hyperbolic functions are defined similarly (e.g. $$\tanh x = \frac{\sinh x}{\cosh x}$$). Their main derivatives are:
+The other hyperbolic functions are defined similarly to trig functions (e.g. $$\tanh x = \frac{\sinh x}{\cosh x}$$). Their main derivatives are:
 
 $$
 \frac{d}{dx}(\sinh x)=\cosh x,
@@ -645,7 +645,19 @@ $$
 
 This rewrite uses the exponent rule $$\sqrt{x+1}=(x+1)^{1/2}$$, so dividing by $$\sqrt{x+1}$$ is the same as multiplying by $$(x+1)^{-1/2}$$. Now the function is a product of three factors instead of a quotient with a radical.
 
-This is a product of three factors. Use the product rule in expanded form:
+This is a product of three factors. The expanded product rule says to differentiate one factor at a time and leave the other factors alone. For three factors,
+
+$$
+(uvw)'=u'vw+uv'w+uvw'.
+$$
+
+Here,
+
+$$
+u=x^2,\qquad v=e^x,\qquad w=(x+1)^{-1/2}.
+$$
+
+Use the product rule in expanded form:
 
 $$
 y'=(2x)e^x(x+1)^{-1/2}

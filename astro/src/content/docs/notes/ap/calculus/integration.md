@@ -20,7 +20,41 @@ $$
 \sum_{i=1}^n f(x_i^*)\Delta x.
 $$
 
-The sample point determines the type of Riemann sum.
+The sample point determines the type of Riemann sum. There are three types of rectangular Riemann sums: left Riemann sums, right Riemann sums, and midpoint Riemann sums.
+
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\pgfplotsset{rs/.style={scale only axis, width=5.2cm, height=3.8cm, axis lines=middle,
+  xmin=0, xmax=2.2, ymin=0, ymax=4.5, xtick={0,1,2}, ytick={0,2,4},
+  grid=both, grid style={gray!15}, xlabel=$x$, ylabel=$f(x)$}}
+\begin{axis}[rs, at={(0cm,0cm)}, title={Left}]
+\addplot[blue, thick, samples=80, domain=0:2] {x^2};
+\addplot[only marks, mark=*, mark size=1.4pt, orange!85!black] coordinates {(0,0) (0.5,0.25) (1,1) (1.5,2.25)};
+\draw[orange!30, fill=orange!18] (axis cs:0,0) rectangle (axis cs:0.5,0);
+\draw[orange!30, fill=orange!18] (axis cs:0.5,0) rectangle (axis cs:1,0.25);
+\draw[orange!30, fill=orange!18] (axis cs:1,0) rectangle (axis cs:1.5,1);
+\draw[orange!30, fill=orange!18] (axis cs:1.5,0) rectangle (axis cs:2,2.25);
+\end{axis}
+\begin{axis}[rs, at={(5.9cm,0cm)}, title={Right}]
+\addplot[blue, thick, samples=80, domain=0:2] {x^2};
+\addplot[only marks, mark=*, mark size=1.4pt, orange!85!black] coordinates {(0.5,0.25) (1,1) (1.5,2.25) (2,4)};
+\draw[orange!30, fill=orange!18] (axis cs:0,0) rectangle (axis cs:0.5,0.25);
+\draw[orange!30, fill=orange!18] (axis cs:0.5,0) rectangle (axis cs:1,1);
+\draw[orange!30, fill=orange!18] (axis cs:1,0) rectangle (axis cs:1.5,2.25);
+\draw[orange!30, fill=orange!18] (axis cs:1.5,0) rectangle (axis cs:2,4);
+\end{axis}
+\begin{axis}[rs, at={(11.8cm,0cm)}, title={Midpoint}]
+\addplot[blue, thick, samples=80, domain=0:2] {x^2};
+\addplot[only marks, mark=*, mark size=1.4pt, orange!85!black] coordinates {(0.25,0.0625) (0.75,0.5625) (1.25,1.5625) (1.75,3.0625)};
+\draw[orange!30, fill=orange!18] (axis cs:0,0) rectangle (axis cs:0.5,0.0625);
+\draw[orange!30, fill=orange!18] (axis cs:0.5,0) rectangle (axis cs:1,0.5625);
+\draw[orange!30, fill=orange!18] (axis cs:1,0) rectangle (axis cs:1.5,1.5625);
+\draw[orange!30, fill=orange!18] (axis cs:1.5,0) rectangle (axis cs:2,3.0625);
+\end{axis}
+\end{tikzpicture}
+```
 
 ### Left Riemann sums
 
@@ -94,37 +128,6 @@ $$
 
 </div>
 
-```tikz
-\usepackage{pgfplots}
-\pgfplotsset{compat=1.16}
-\begin{tikzpicture}
-\pgfplotsset{rs/.style={scale only axis, width=4.4cm, height=3.2cm, axis lines=middle,
-  xmin=0, xmax=2.2, ymin=0, ymax=4.5, xtick={0,1,2}, ytick={0,2,4},
-  grid=both, grid style={gray!15}, xlabel=$x$, ylabel=$f(x)$}}
-\begin{axis}[rs, at={(0cm,0cm)}, title={Left}]
-\addplot[blue, thick, samples=80, domain=0:2] {x^2};
-\draw[orange!30, fill=orange!18] (axis cs:0,0) rectangle (axis cs:0.5,0);
-\draw[orange!30, fill=orange!18] (axis cs:0.5,0) rectangle (axis cs:1,0.25);
-\draw[orange!30, fill=orange!18] (axis cs:1,0) rectangle (axis cs:1.5,1);
-\draw[orange!30, fill=orange!18] (axis cs:1.5,0) rectangle (axis cs:2,2.25);
-\end{axis}
-\begin{axis}[rs, at={(5.1cm,0cm)}, title={Right}]
-\addplot[blue, thick, samples=80, domain=0:2] {x^2};
-\draw[orange!30, fill=orange!18] (axis cs:0,0) rectangle (axis cs:0.5,0.25);
-\draw[orange!30, fill=orange!18] (axis cs:0.5,0) rectangle (axis cs:1,1);
-\draw[orange!30, fill=orange!18] (axis cs:1,0) rectangle (axis cs:1.5,2.25);
-\draw[orange!30, fill=orange!18] (axis cs:1.5,0) rectangle (axis cs:2,4);
-\end{axis}
-\begin{axis}[rs, at={(10.2cm,0cm)}, title={Midpoint}]
-\addplot[blue, thick, samples=80, domain=0:2] {x^2};
-\draw[orange!30, fill=orange!18] (axis cs:0,0) rectangle (axis cs:0.5,0.0625);
-\draw[orange!30, fill=orange!18] (axis cs:0.5,0) rectangle (axis cs:1,0.5625);
-\draw[orange!30, fill=orange!18] (axis cs:1,0) rectangle (axis cs:1.5,1.5625);
-\draw[orange!30, fill=orange!18] (axis cs:1.5,0) rectangle (axis cs:2,3.0625);
-\end{axis}
-\end{tikzpicture}
-```
-
 ### Trapezoidal Riemann sums
 
 The trapezoidal rule uses trapezoids instead of rectangles. On each subinterval, connect the two endpoint heights with a straight segment. The area of one trapezoid is
@@ -166,6 +169,28 @@ $$
 
 </div>
 
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[
+  axis lines=middle, xmin=0, xmax=2.2, ymin=0, ymax=4.5,
+  xtick={0,0.5,1,1.5,2}, ytick={0,1,2,3,4},
+  grid=both, grid style={gray!15},
+  width=9cm, height=5.2cm,
+  xlabel=$x$, ylabel=$f(x)$,
+]
+\addplot[blue, thick, samples=100, domain=0:2] {x^2};
+\draw[orange!30, fill=orange!15] (axis cs:0,0) -- (axis cs:0,0) -- (axis cs:0.5,0.25) -- (axis cs:0.5,0) -- cycle;
+\draw[orange!30, fill=orange!15] (axis cs:0.5,0) -- (axis cs:0.5,0.25) -- (axis cs:1,1) -- (axis cs:1,0) -- cycle;
+\draw[orange!30, fill=orange!15] (axis cs:1,0) -- (axis cs:1,1) -- (axis cs:1.5,2.25) -- (axis cs:1.5,0) -- cycle;
+\draw[orange!30, fill=orange!15] (axis cs:1.5,0) -- (axis cs:1.5,2.25) -- (axis cs:2,4) -- (axis cs:2,0) -- cycle;
+\addplot[only marks, mark=*, mark size=1.5pt, orange!85!black] coordinates {(0,0) (0.5,0.25) (1,1) (1.5,2.25) (2,4)};
+\node[orange!85!black, anchor=west] at (axis cs:1.15,3.45) {trapezoids use both endpoints};
+\end{axis}
+\end{tikzpicture}
+```
+
 ### Riemann sums from data
 
 With table data, the width of each subinterval matters. Equal spacing is convenient, but AP tables often use unequal intervals.
@@ -177,6 +202,33 @@ $$
 $$
 
 If the function is increasing, a left sum underestimates and a right sum overestimates. If the function is decreasing, the reverse is true. Concavity controls whether trapezoids or midpoints tend to overestimate or underestimate.
+
+<div class="theorem-box">
+
+**Example.** A car's velocity is measured in miles per hour:
+
+$$
+\begin{array}{c|cccc}
+t\text{ (hours)} & 0 & 1 & 3 & 4 \\\hline
+v(t)\text{ (mph)} & 20 & 35 & 50 & 42
+\end{array}
+$$
+
+Approximate the distance traveled from $$t=0$$ to $$t=4$$ using a left Riemann sum.
+
+The intervals have widths $$1$$, $$2$$, and $$1$$. A left sum uses the left endpoint velocity on each interval:
+
+$$
+20(1)+35(2)+50(1)=20+70+50=140.
+$$
+
+The car traveled approximately $$140$$ miles. The units work because
+
+$$
+\text{miles per hour}\cdot\text{hours}=\text{miles}.
+$$
+
+</div>
 
 ---
 
@@ -194,11 +246,17 @@ $$
 \lim_{n\to\infty}\sum_{i=1}^{n} f(x_i^*)\Delta x,
 $$
 
-as the width of the largest subinterval approaches $$0$$, assuming this limit exists. $$f(x)$$ is called the integrand, and $$dx$$ is "integrating with respect to $$x$$".
+as the width of the largest subinterval approaches $$0$$, assuming this limit exists. $$f(x)$$ is called the integrand, and $$dx$$ is "integrating with respect to $$x$$". $$a$$ and $$b$$ are the bounds of integration, with $$a$$ being the bottom bound and $$b$$ being the top bound.
 
 </div>
 
-Since the definite integral basically represents the signed area under the curve, we often use definite integrals instead of Riemann sums to calculate area.
+A key property of the definite integral is
+
+$$
+\int_a^b f(x)\,dx = -\int_b^a f(x)\,dx.
+$$
+
+This is because we usually define the definite integral using singed area (talked about right after this), meaning that the direction of the area matters. We usually take right and above as positive, meaning that integrating from right to left or integrating under the $$x$$-axis results in a negative area.
 
 ### Signed area vs geometric area
 
@@ -209,7 +267,9 @@ An important distinction between definite integrals pure area is the difference 
 
 Geometric area is always nonnegative, meaning that you add up the magnitudes of all of the areas.
 
-### The Fundamental Theorem of Calculus
+---
+
+## The Fundamental Theorem of Calculus
 
 The definite integral is defined as a limiting area process, but computing a limit of Riemann sums every time would be painful. The Fundamental Theorem of Calculus gives the shortcut: if you can find an antiderivative, then a definite integral can be evaluated by subtracting endpoint values.
 
@@ -283,9 +343,36 @@ $$
 
 </div>
 
+### Basic antiderivative rules
+
+Before using the Fundamental Theorem of Calculus, you need an antiderivative. These are the most common reverse rules:
+
+$$
+\int x^n\,dx=\frac{x^{n+1}}{n+1}+C,\qquad n\ne -1
+$$
+
+$$
+\int e^x\,dx=e^x+C
+$$
+
+$$
+\int a^x\,dx=\frac{a^x}{\ln a}+C,\qquad a>0,\ a\ne1
+$$
+
+$$
+\int \frac{1}{x}\,dx=\ln\lvert x\rvert+C
+$$
+
+$$
+\int \cos x\,dx=\sin x+C,\qquad
+\int \sin x\,dx=-\cos x+C
+$$
+
+Always check an antiderivative by differentiating it back to the integrand.
+
 <div class="theorem-box">
 
-**Example.** Evaluate $$\displaystyle\int_0^3 x^2\,dx$$ using the Fundamental Theorem of Calculus.
+**Example.** Evaluate $$\displaystyle\int_0^3 x^2\,dx$$.
 
 Find an antiderivative of the integrand:
 
@@ -490,7 +577,7 @@ This is the key difference:
 - A **definite integral** has bounds and returns a number.
 - An **indefinite integral** has no bounds and returns a family of functions.
 
-The $$+C$$ is necessary because derivatives lose constant information. For example,
+For indefinite integrals, you always have to add a **constant of integration** $$+C$$. The $$+C$$ is necessary because derivatives lose constant information. For example,
 
 $$
 \frac{d}{dx}(x^2)=2x,
@@ -562,29 +649,7 @@ for odd functions.
 
 <div class="theorem-box">
 
-**Example.** Evaluate
-
-$$
-\int_{-2}^{2}(x^3+4x)\,dx.
-$$
-
-The function $$x^3+4x$$ is odd because
-
-$$
-(-x)^3+4(-x)=-(x^3+4x).
-$$
-
-Since the interval is symmetric,
-
-$$
-\int_{-2}^{2}(x^3+4x)\,dx=0.
-$$
-
-</div>
-
-<div class="theorem-box">
-
-**Example.** Rewrite
+**Example.**Evaluate
 
 $$
 \int_{-3}^{3}(x^2+1)\,dx
@@ -598,6 +663,28 @@ $$
 \int_{-3}^{3}(x^2+1)\,dx
 =
 2\int_0^3(x^2+1)\,dx.
+$$
+
+</div>
+
+<div class="theorem-box">
+
+**Example.** Evaluate
+
+$$
+\int_{-4\pi}^{4\pi}(sin^3{x}cos^4{x})\,dx.
+$$
+
+The function $$sin^3{x}cos^4{x}$$ is odd because
+
+$$
+sin^3{-x}cos^4{-x}=-sin^3{x}cos^4{x}.
+$$
+
+If you don't see why, make sure to brush up on your trig rules. Since the interval is symmetric,
+
+$$
+\int_{-4\pi}^{4\pi}(sin^3{x}cos^4{x})\,dx=0.
 $$
 
 </div>
@@ -784,6 +871,8 @@ Integrals involving powers of sine and cosine usually depend on whether one powe
 - If the sine power is odd, save one $$\sin x$$ and convert the rest using $$\sin^2x=1-\cos^2x$$.
 - If the cosine power is odd, save one $$\cos x$$ and convert the rest using $$\cos^2x=1-\sin^2x$$.
 - If both powers are even, use power-reduction identities (if you need a reminder to what they are, check out [Unit 8/9](/notes/ap/precalc/graphanalyticaltrig/) of AP Precalculus.)
+- Always remember to use trig rules to simplify if possible
+- When dealing with symmetric bounds for definite integral, always remember to check for even/oddness!
 :::
 
 <div class="theorem-box">
@@ -938,7 +1027,7 @@ $$
 \int x\ln x\,dx.
 $$
 
-Choose
+By LIATE, choose
 
 $$
 u=\ln x,
@@ -970,7 +1059,22 @@ $$
 
 </div>
 
+### Tabular method for integration by parts
+
 The tabular method is a faster way to organize repeated integration by parts when one factor eventually differentiates to $$0$$, such as a polynomial.
+
+It is best for integrals of the form
+
+$$
+\int (\text{polynomial})(\text{easy-to-integrate function})\,dx.
+$$
+
+Make two columns:
+
+1. differentiate the polynomial until it becomes $$0$$,
+2. integrate the other factor the same number of times.
+
+Then multiply along the diagonals and alternate signs $$+,-,+,-,\dots$$. This is the same integration by parts formula repeated several times, just organized in a table.
 
 <div class="theorem-box">
 
@@ -1095,7 +1199,7 @@ $$
 
 <div class="theorem-box">
 
-An *improper integral* is a definite integral where ordinary endpoint evaluation does not make sense. This happens in two main ways:
+**Definition.** An *improper integral* is a definite integral where ordinary endpoint evaluation does not make sense. This happens in two main ways:
 
 - the interval is infinite, such as $$[1,\infty)$$,
 - the integrand becomes unbounded, such as $$1/x$$ near $$x=0$$.
@@ -1156,85 +1260,6 @@ $$
 The limit is finite, so the improper integral converges and its value is $$1$$.
 
 </div>
-
-### Comparison Test for improper integrals
-
-For nonnegative functions, comparison works similarly to series.
-
-If $$0\le f(x)\le g(x)$$ for large $$x$$ and
-
-$$
-\int_a^\infty g(x)\,dx
-$$
-
-converges, then
-
-$$
-\int_a^\infty f(x)\,dx
-$$
-
-also converges.
-
-If $$0\le g(x)\le f(x)$$ for large $$x$$ and
-
-$$
-\int_a^\infty g(x)\,dx
-$$
-
-diverges, then
-
-$$
-\int_a^\infty f(x)\,dx
-$$
-
-also diverges.
-
-<div class="theorem-box">
-
-**Example.** Determine whether
-
-$$
-\int_1^\infty \frac{1}{x^2+\sin^2 x}\,dx
-$$
-
-converges. You do not need to solve out the integral if it does converge.
-
-Since $$\sin^2x\ge0$$,
-
-$$
-x^2+\sin^2x\ge x^2.
-$$
-
-Taking reciprocals reverses the inequality for positive quantities:
-
-$$
-0\le \frac{1}{x^2+\sin^2x}\le \frac{1}{x^2}.
-$$
-
-The comparison integral
-
-$$
-\int_1^\infty \frac{1}{x^2}\,dx
-$$
-
-converges. Therefore, by comparison,
-
-$$
-\int_1^\infty \frac{1}{x^2+\sin^2x}\,dx
-$$
-
-also converges. You will learn more tests for convergence in Unit 10.
-
-</div>
-
-:::strategy{title="Choosing an integration method"}
-1. Simplify algebraically before choosing a method.
-2. Look for direct antiderivative rules (power rule, exponent rule, etc.)
-3. If there is a function and a version of its derivative, try substitution.
-4. If there is a product where one factor simplifies when differentiated, try integration by parts.
-5. If there is a rational function, try algebraic division or partial fractions.
-6. If bounds are present, decide whether to change bounds or substitute back.
-:::
 
 ---
 

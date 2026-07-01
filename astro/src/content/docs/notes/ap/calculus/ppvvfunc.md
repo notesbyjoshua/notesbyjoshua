@@ -65,10 +65,8 @@ The parametric form still gives extra information: as $$t$$ increases, $$x=t+1$$
 ]
 \addplot[blue, very thick, samples=260, domain=0:360] ({2*cos(x)},{sin(2*x)});
 \addplot[->, orange!85!black, very thick] coordinates {(1.73,0.87) (1.38,1.22)};
-\addplot[->, orange!85!black, very thick] coordinates {(-1.73,0.87) (-1.38,1.22)};
-\addplot[only marks, mark=*, mark size=1.7pt, blue] coordinates {(1.73,0.87) (-1.73,0.87)};
+\addplot[only marks, mark=*, mark size=1.7pt, blue] coordinates {(1.73,0.87)};
 \node[orange!85!black, anchor=south] at (axis cs:0,1.4) {direction as $t$ increases};
-\node[blue, anchor=west] at (axis cs:-1,-1.4) {same curve can be traced twice};
 \end{axis}
 \end{tikzpicture}
 ```
@@ -375,7 +373,7 @@ $$
 
 ## Polar coordinates
 
-As a reminder, polar coordinates involve mapping a point using it's radius from the origin $$r$$ and angle from the positive $$x$$-axis $$\tehta$$. For a point $$(x,y)$$:
+As a reminder, polar coordinates involve mapping a point using it's radius from the origin $$r$$ and angle from the positive $$x$$-axis $$\theta$$. For a point $$(x,y)$$:
 
 $$
 x = r\cos\theta, \qquad y = r\sin\theta
@@ -585,7 +583,7 @@ $$
 \draw[blue!55, thick] (O) -- ({(2+cos(35))*cos(35)},{(2+cos(35))*sin(35)});
 \draw[blue!55, thick] (O) -- ({(2+cos(55))*cos(55)},{(2+cos(55))*sin(55)});
 \draw[->, red!75!black] (0.65,0) arc[start angle=0,end angle=35,radius=0.65] node[midway, right] {$\theta$};
-\node[orange!85!black] at (2.55,1.75) {sector slice};
+\node[orange!85!black] at (2.9,1.95) {sector slice};
 \end{tikzpicture}
 ```
 
@@ -617,7 +615,7 @@ So the enclosed area is $$\pi$$. This matches the fact that $$r=2\sin\theta$$ is
 
 <div class="theorem-box">
 
-**Example.** Set up the area inside $$r=2$$ and outside $$r=1+\cos\theta$$ on the interval where $$2\ge1+\cos\theta$$.
+**Example.** Find the area inside $$r=2$$ and outside $$r=1+\cos\theta$$ on the interval where $$2\ge1+\cos\theta$$.
 
 The outer radius is $$2$$ and the inner radius is $$1+\cos\theta$$. The inequality
 
@@ -722,25 +720,9 @@ $$
 \mathbf{r}(t) = \langle x(t), y(t), z(t) \rangle.
 $$
 
-Then
+Then $$\mathbf{r}'(t)$$ gives velocity, $$\mathbf{r}''(t)$$ gives acceleration, and speed is the magnitude of velocity: $$\lvert\mathbf v(t)\rvert$$ as defined before.
 
-$$
-\mathbf{r}'(t)
-$$
-
-gives velocity,
-
-$$
-\mathbf{r}''(t)
-$$
-
-gives acceleration, and speed is the magnitude of velocity:
-
-$$
-\lvert\mathbf v(t)\rvert.
-$$
-
-The direction of motion is given by the velocity vector, while acceleration describes how the velocity vector changes.
+The direction of motion is given by the velocity vector, while acceleration describes how the velocity vector changes. Note that a bolded variable denotes that the variable is a vector.
 
 Vector-valued functions are differentiated and integrated component by component:
 
@@ -760,7 +742,7 @@ $$
 
 <div class="theorem-box">
 
-**Proof (Componentwise vector calculus).** Two vectors are equal exactly when their corresponding components are equal. If
+**Proof (Component-wise vector calculus).** Two vectors are equal exactly when their corresponding components are equal. If
 
 $$
 \mathbf r(t)=\langle f(t),g(t),h(t)\rangle,

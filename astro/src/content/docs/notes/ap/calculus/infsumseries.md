@@ -221,6 +221,8 @@ $$
 \sum_{n=1}^{\infty} \frac{1}{n}.
 $$
 
+The harmonic series by definition diverges.
+
 </div>
 
 The proof of the $$p$$-series converge requires techniques talked about later in this lesson.
@@ -258,15 +260,6 @@ Note that while $$p$$-series are easy to determine convergence, it is really har
 ---
 
 ## Integral Test
-
-The Integral Test applies when $$a_n=f(n)$$ and $$f$$ is:
-
-:::conditions
-1. positive,
-2. continuous,
-3. decreasing,
-4. defined for sufficiently large $$x$$.
-:::
 
 <div class="theorem-box">
 
@@ -380,6 +373,10 @@ There are two types of comparisons: direct comparison, and limit comparison.
 - If $$0 \le a_n \le b_n$$ and $$\sum b_n$$ converges, then $$\sum a_n$$ converges,
 - If $$0 \le b_n \le a_n$$ and $$\sum b_n$$ diverges, then $$\sum a_n$$ diverges.
 
+</div>
+
+<div class="theorem-box">
+
 **Theorem (Limit comparison test).** If
 
 $$
@@ -484,8 +481,6 @@ $$
 
 with $$b_n > 0$$.
 
-<div class="theorem-box">
-
 For positive-term series, convergence is about whether the sum of positive amounts stays finite. For alternating series, positive and negative terms can cancel. That creates two levels of convergence.
 
 If
@@ -500,7 +495,9 @@ If $$\sum a_n$$ converges but $$\sum \lvert a_n \rvert$$ diverges, the convergen
 
 Absolute convergence is stronger. If a series converges absolutely, it converges.
 
-**Theorem (Alternating Series Test).** The series converges if:
+<div class="theorem-box">
+
+**Theorem (Alternating Series Test).** The series converges conditionally if:
 
 - $$b_n$$ decreases eventually,
 - $$b_n \to 0$$.
@@ -693,9 +690,24 @@ Since $$L=0<1$$, the Ratio Test guarantees the series converges absolutely. (Thi
 
 ## Radius and intervals of convergence
 
-The radius of convergence comes from the long-run behavior of the coefficients. The endpoints need separate testing because the ratio or root test usually becomes inconclusive there.
+A power series is a series with a variable in it, often written in the form
 
-For a power series centered at $$c$$, the interval of convergence is always centered at $$c$$. The radius $$R$$ measures how far left and right the series converges before it starts diverging. The endpoints are special because the test used to find $$R$$ usually gives $$L=1$$ there, so each endpoint becomes its own ordinary series problem.
+$$
+\sum_{n=0}^{\infty} a_n(x-c)^n.
+$$
+
+For a fixed value of $$x$$, this becomes an ordinary numerical series. Some values of $$x$$ make the series converge, and other values make it diverge.
+
+The **interval of convergence** is the set of all $$x$$-values where the power series converges. The **radius of convergence** is the distance from the center $$c$$ to the edge of that interval.
+
+For a power series centered at $$c$$, convergence is centered around $$c$$:
+
+- the series always converges at $$x=c$$,
+- it converges for $$\lvert x-c\rvert<R$$,
+- it diverges for $$\lvert x-c\rvert>R$$,
+- the endpoints $$x=c-R$$ and $$x=c+R$$ must be checked separately.
+
+The radius usually comes from the Ratio Test or Root Test. These tests give an inequality involving $$x$$. Solving that inequality gives the open interval first; endpoint testing comes afterward because the Ratio/Root Test usually becomes inconclusive there.
 
 :::checklist
 1. Use the Ratio Test or Root Test on the absolute value of the general term.
@@ -704,12 +716,6 @@ For a power series centered at $$c$$, the interval of convergence is always cent
 4. Substitute each endpoint into the original series and test it separately.
 5. Write the final interval using brackets only for endpoints that converge.
 :::
-
-There is a radius of convergence $$R$$:
-
-- converges for $$\lvert x-c \rvert<R$$,
-- diverges for $$\lvert x-c \rvert>R$$,
-- endpoints must be checked separately.
 
 ```tikz
 \usepackage{tikz}
@@ -840,7 +846,7 @@ $$
 \sum_{n=0}^{\infty} \frac{f^{(n)}(c)}{n!}(x-c)^n.
 $$
 
-*Maclaurin series* is the special case $$c=0$$.
+The *Maclaurin series* is the special case where $$c=0$$.
 
 </div>
 
@@ -918,7 +924,7 @@ Because the original series converges for all $$u$$, this one converges for all 
 
 </div>
 
-### Taylor polynomial and error
+### Taylor polynomials and the Lagrange error bound
 
 The $$n$$th Taylor polynomial is the finite truncation:
 
@@ -926,7 +932,7 @@ $$
 T_n(x) = \sum_{k=0}^{n} \frac{f^{(k)}(c)}{k!}(x-c)^k.
 $$
 
-Taylor polynomials are used to estimate values of functions when exact computation is inconvenient. The center should be close to the input value whenever possible, because powers of $$x-c$$ become small near the center. For alternating series, the first omitted term gives a clean error bound (since like before, the other terms will slowly make the error less). For non-alternating Taylor series, we often uses the Lagrange error bound:
+Taylor polynomials are used to estimate values of functions when exact computation is inconvenient. The center should be close to the input value whenever possible, because powers of $$x-c$$ become small near the center. For alternating series, the first omitted term gives a clean error bound (since like before, the other terms will slowly make the error less). For non-alternating Taylor series, we often use the Lagrange error bound:
 
 $$
 \lvert R_n(x)\rvert
@@ -938,7 +944,13 @@ where $$M$$ is an upper bound for $$\lvert f^{(n+1)}(t)\rvert$$ between $$c$$ an
 
 <div class="theorem-box">
 
-**Proof (Lagrange error bound idea).** Taylor's Theorem says the error after the degree $$n$$ Taylor polynomial can be written as
+**Proof (Lagrange error bound).** The remainder after the degree $$n$$ Taylor polynomial is
+
+$$
+R_n(x)=f(x)-T_n(x).
+$$
+
+For functions with enough derivatives, a result about Taylor remainders says this leftover error can be written as
 
 $$
 R_n(x)=\frac{f^{(n+1)}(\xi)}{(n+1)!}(x-c)^{n+1}
@@ -984,40 +996,33 @@ So the true value of $$\sin(0.5)$$ lies within about $$0.00026$$ of the estimate
 
 <div class="theorem-box">
 
-**Example.** Use the degree $$3$$ Maclaurin polynomial for $$e^x$$ to estimate $$e^{0.2}$$, and give a Lagrange error bound.
+**Example.** How many nonzero terms of the Maclaurin series for $$\sin x$$ are needed to approximate $$\sin(0.4)$$ with error less than $$0.0001$$?
 
-The degree $$3$$ Maclaurin polynomial is
-
-$$
-T_3(x)=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}.
-$$
-
-At $$x=0.2$$,
+The Maclaurin series is
 
 $$
-T_3(0.2)=1+0.2+\frac{0.2^2}{2}+\frac{0.2^3}{6}.
+\sin x=x-\frac{x^3}{3!}+\frac{x^5}{5!}-\frac{x^7}{7!}+\cdots.
 $$
 
-Compute:
+This is alternating near $$x=0$$, so the error is at most the first omitted term. Test the omitted terms at $$x=0.4$$.
+
+Using only the first term $$0.4$$, the first omitted term is
 
 $$
-T_3(0.2)=1+0.2+0.02+\frac{0.008}{6}
-=1.221333\ldots
+\frac{0.4^3}{3!}\approx0.0107,
 $$
 
-For the error, the next derivative of $$e^x$$ is still $$e^x$$. On $$0\le x\le0.2$$, we can use $$M=e^{0.2}$$, or a simple upper bound such as $$M=2$$. Then
+which is too large. Using the first two nonzero terms, the first omitted term is
 
 $$
-\lvert R_3(0.2)\rvert
-\le
-\frac{2}{4!}(0.2)^4
-=
-\frac{2}{24}(0.0016)
-=
-0.000133\ldots
+\frac{0.4^5}{5!}\approx0.0000853.
 $$
 
-So the estimate is within about $$0.000134$$ of the true value.
+This is less than $$0.0001$$, so two nonzero terms are enough:
+
+$$
+\sin(0.4)\approx0.4-\frac{0.4^3}{3!}.
+$$
 
 </div>
 
@@ -1025,14 +1030,14 @@ So the estimate is within about $$0.000134$$ of the true value.
 
 ## Binomial series
 
-The binomial series generalizes powers of $$1+x$$:
+The binomial series generalizes powers of $$a+x$$ using the binomial theorem:
 
 $$
-(1+x)^p
+(a+x)^p
 =
-\sum_{n=0}^{\infty}\binom{p}{n}x^n,
+\sum_{n=0}^{\infty}\binom{p}{n}x^n a^{p-n},
 \qquad
-\lvert x\rvert<1,
+\left\lvert\frac{x}{a}\right\rvert<1,
 $$
 
 where
@@ -1046,9 +1051,9 @@ $$
 The first few terms are
 
 $$
-(1+x)^p
+(a+x)^p
 =
-1+px+\frac{p(p-1)}{2!}x^2+\frac{p(p-1)(p-2)}{3!}x^3+\cdots.
+a^p+pa^{p-1}x+\frac{p(p-1)}{2!}a^{p-2}x^2+\frac{p(p-1)(p-2)}{3!}a^{p-3}x^3+\cdots.
 $$
 
 <div class="theorem-box">
@@ -1056,26 +1061,44 @@ $$
 **Proof (Binomial series coefficients).** Suppose
 
 $$
-(1+x)^p=a_0+a_1x+a_2x^2+a_3x^3+\cdots.
+(a+x)^p=a_0+a_1x+a_2x^2+a_3x^3+\cdots.
 $$
 
-At $$x=0$$, the left side equals $$1$$, so $$a_0=1$$. Differentiate:
+At $$x=0$$, the left side equals $$a^p$$, so $$a_0=a^p$$. Differentiate:
 
 $$
-p(1+x)^{p-1}=a_1+2a_2x+3a_3x^2+\cdots.
+p(a+x)^{p-1}=a_1+2a_2x+3a_3x^2+\cdots.
 $$
 
-Setting $$x=0$$ gives $$a_1=p$$. Differentiating repeatedly gives the pattern
+Setting $$x=0$$ gives
 
 $$
-a_n=\frac{p(p-1)(p-2)\cdots(p-n+1)}{n!}.
+a_1=pa^{p-1}.
+$$
+
+Differentiate twice:
+
+$$
+p(p-1)(a+x)^{p-2}=2a_2+6a_3x+\cdots.
+$$
+
+Setting $$x=0$$ gives
+
+$$
+a_2=\frac{p(p-1)}{2!}a^{p-2}.
+$$
+
+Continuing this pattern gives
+
+$$
+a_n=\frac{p(p-1)(p-2)\cdots(p-n+1)}{n!}a^{p-n}.
 $$
 
 Substituting these coefficients into the power series gives the binomial series.
 
 </div>
 
-Binomial series can be used for any $$(x+a)^n$$ (including roots, which are just fractional powers) and just require the binomial theorem ([Unit 13/14](/notes/ap/precalc/addtopics/) of AP Precalculus)
+Binomial series can be used for any $$p$$ for $$(x+a)^p$$ (including roots, which are just fractional powers) and just require the binomial theorem ([Unit 13/14](/notes/ap/precalc/addtopics/) of AP Precalculus)
 
 <div class="theorem-box">
 
@@ -1196,7 +1219,7 @@ Series questions are decision problems. The hard part is usually not algebra; it
 :::
 
 :::exam{topic="Series justification"}
-AP scoring expects the name of the test and the key evidence. For example, "converges by AST" should include that the terms alternate, decrease in absolute value, and approach $$0$$.
+AP scoring expects the name of the test and the key evidence. For example, "converges by Alternate Series Test" should include that the terms alternate, decrease in absolute value, and approach $$0$$.
 :::
 
 For Taylor polynomials, remember that approximation and error are linked. A polynomial is useful only when you know where it is centered, what degree it has, and how large the possible remainder could be.

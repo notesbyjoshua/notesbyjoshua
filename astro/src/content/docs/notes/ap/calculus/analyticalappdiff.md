@@ -155,7 +155,7 @@ for every $$x$$ in $$[a,b]$$.
 
 </div>
 
-The proof for EVT is based in non-calculus fields like real analysis so will not be shown here.
+The proof for EVT is based in non-calculus fields like real analysis so it will not be shown here.
 
 The two conditions matter. The interval must be closed, so endpoints are included, and the function must be continuous, so it cannot jump over or miss its highest or lowest value. EVT tells you the extrema exist; it does not tell you where they are. Critical points and endpoints are how you find the candidates.
 
@@ -170,49 +170,7 @@ provided $$c$$ is in the domain of $$f$$.
 
 </div>
 
-### Absolute extrema on a closed interval
-
 <div class="theorem-box">
-
-**Definition.** The absolute extrema of an interval $$[a,b]$$ is defined as the point $$x=c$$ where
-
-- $$f(c)$$ is at a maximum (for absolute maxima),
-- $$f(c)$$ is at a minimum (for absolute minima).
-
-</div>
-
-To find absolute max/min (extrema) of $$f$$ on $$[a,b]$$:
-
-:::checklist
-1. Find critical points inside $$(a,b)$$.
-2. Evaluate $$f$$ at each critical point.
-3. Evaluate $$f(a)$$ and $$f(b)$$.
-4. Compare all values to find the extrema.
-:::
-
-The largest output is the absolute maximum, and the smallest output is the absolute minimum. Endpoints must be included because absolute extrema can occur at endpoints even though local extrema usually focus on interior points.
-
-<div class="theorem-box">
-
-**Example.** Find the absolute maximum and minimum of $$f(x)=x^3-3x$$ on $$[0,2]$$.
-
-Differentiate to locate interior critical points:
-
-$$
-f'(x)=3x^2-3=3(x^2-1),
-$$
-
-so $$f'(x)=0$$ at $$x=\pm1$$. Only $$x=1$$ lies inside $$(0,2)$$. Evaluate $$f$$ at this critical point and at both endpoints:
-
-$$
-f(0)=0,\qquad f(1)=1-3=-2,\qquad f(2)=8-6=2.
-$$
-
-Comparing the candidate values, the absolute maximum is $$2$$ at $$x=2$$, and the absolute minimum is $$-2$$ at $$x=1$$.
-
-</div>
-
-### Local/relative extrema and Fermat's Theorem
 
 If $$f$$ has a local extremum at an interior point $$c$$ and $$f'(c)$$ exists, then
 
@@ -220,18 +178,29 @@ $$
 f'(c)=0.
 $$
 
-This theorem explains why critical numbers matter, but it does not say every critical number is an extremum. A sign test or value comparison is still needed.
+</div>
 
-For local extrema, critical points are candidates. For absolute extrema on a closed interval, endpoints are also candidates.
+This theorem explains why critical numbers matter, but it does not say every critical number is an extremum. It only says that if an interior local extremum happens at a differentiable point, the derivative must be zero there. A sign test or value comparison is still needed.
 
-That distinction matters:
+There are two different candidate lists:
 
-- endpoints can be absolute extrema,
-- endpoints are not local extrema under the usual AP definition,
-- interior critical points may or may not be extrema.
+- for local extrema, check interior critical points,
+- for absolute extrema on a closed interval, check interior critical points and endpoints.
 
-When justifying an absolute maximum or minimum, compare function values, not derivative values.
+Endpoints matter for absolute extrema because EVT guarantees the largest and smallest output somewhere on the whole closed interval. Endpoints are included in that interval, even though they are not usually called local extrema in AP Calculus.
 
+When justifying an absolute maximum or minimum, compare function values, not derivative values. The derivative helps you find candidates, but the output values decide the final answer.
+
+:::strategy{title="Closed interval extrema"}
+1. Check that $$f$$ is continuous on the closed interval.
+2. Find critical points inside the interval.
+3. Evaluate $$f$$ at those critical points and at both endpoints.
+4. Compare the output values.
+:::
+
+:::warning
+A point where $$f'(c)=0$$ is not automatically a maximum or minimum. For example, $$f(x)=x^3$$ has $$f'(0)=0$$, but $$x=0$$ is not an extremum.
+:::
 
 ---
 
@@ -267,8 +236,8 @@ An inflection point is a point where concavity changes. The equation $$f''(x)=0$
 \node[orange!85!black, anchor=south east] at (axis cs:0,0) {local max};
 \node[orange!85!black, anchor=north west] at (axis cs:2,-4) {local min};
 \node[orange!85!black, anchor=south west] at (axis cs:1,-2) {inflection};
-\node[align=center, font=\small] at (axis cs:-1.45,-4.1) {$f'>0$\\$f''<0$};
-\node[align=center, font=\small] at (axis cs:2.8,2.6) {$f'>0$\\$f''>0$};
+\node[align=center, font=\small] at (axis cs:-1.55,-4.1) {$f^{\prime}>0$\\$f^{\prime\prime}<0$};
+\node[align=center, font=\small] at (axis cs:2.7,2.6) {$f^{\prime}>0$\\$f^{\prime\prime}>0$};
 \end{axis}
 \end{tikzpicture}
 ```
@@ -326,6 +295,95 @@ f'(3)=3(3)(1)=9>0.
 $$
 
 The derivative goes positive to negative at $$x=0$$, so $$f$$ has a local maximum there, with $$f(0)=0$$. The derivative goes negative to positive at $$x=2$$, so $$f$$ has a local minimum there, with $$f(2)=8-12=-4$$.
+
+</div>
+
+---
+
+## Absolute extrema on a closed interval
+
+<div class="theorem-box">
+
+**Definition.** The absolute extrema of an interval $$[a,b]$$ is defined as the point $$x=c$$ where
+
+- $$f(c)$$ is at a maximum (for absolute maxima),
+- $$f(c)$$ is at a minimum (for absolute minima).
+
+</div>
+
+To find absolute max/min (extrema) of $$f$$ on $$[a,b]$$:
+
+:::checklist
+1. Find critical points inside $$(a,b)$$.
+2. Evaluate $$f$$ at each critical point.
+3. Evaluate $$f(a)$$ and $$f(b)$$.
+4. Compare all values to find the extrema.
+:::
+
+The largest output is the absolute maximum, and the smallest output is the absolute minimum. Endpoints must be included because absolute extrema can occur at endpoints even though local extrema usually focus on interior points.
+
+<div class="theorem-box">
+
+**Example.** Find the absolute maximum and minimum of $$f(x)=x^3-3x$$ on $$[0,2]$$.
+
+Differentiate to locate interior critical points:
+
+$$
+f'(x)=3x^2-3=3(x^2-1),
+$$
+
+so $$f'(x)=0$$ at $$x=\pm1$$. Only $$x=1$$ lies inside $$(0,2)$$. Evaluate $$f$$ at this critical point and at both endpoints:
+
+$$
+f(0)=0,\qquad f(1)=1-3=-2,\qquad f(2)=8-6=2.
+$$
+
+Comparing the candidate values, the absolute maximum is $$2$$ at $$x=2$$, and the absolute minimum is $$-2$$ at $$x=1$$.
+
+</div>
+
+---
+
+## Concavity and the second derivative
+
+Concavity describes how the slopes of a function are changing.
+
+- If $$f''(x)>0$$, then $$f'$$ is increasing and the graph is concave up.
+- If $$f''(x)<0$$, then $$f'$$ is decreasing and the graph is concave down.
+
+An inflection point occurs where concavity changes. The equation $$f''(x)=0$$ gives possible inflection points, but it is not enough by itself. You still need to check that $$f''$$ changes sign or that the graph actually changes concavity.
+
+<div class="theorem-box">
+
+**Example.** Find the concavity intervals and inflection point of
+
+$$
+f(x)=x^3-3x^2.
+$$
+
+Compute the second derivative:
+
+$$
+f'(x)=3x^2-6x,
+\qquad
+f''(x)=6x-6.
+$$
+
+Set $$f''(x)=0$$:
+
+$$
+6x-6=0
+\quad\Longrightarrow\quad
+x=1.
+$$
+
+Test around $$x=1$$. If $$x<1$$, then $$f''(x)<0$$, so the graph is concave down. If $$x>1$$, then $$f''(x)>0$$, so the graph is concave up. Since concavity changes at $$x=1$$, there is an inflection point there:
+
+$$
+f(1)=1-3=-2.
+$$
+
+The inflection point is $$(1,-2)$$.
 
 </div>
 
@@ -413,15 +471,51 @@ You do not need a perfect drawing at first. The goal is to collect enough struct
 A critical point is only a candidate. Do not label it a maximum or minimum until a derivative sign change, second derivative test, or value comparison supports it.
 :::
 
+<div class="theorem-box">
+
+**Example.** Sketch the important derivative information for
+
+$$
+f(x)=x^3-3x^2.
+$$
+
+First derivative:
+
+$$
+f'(x)=3x^2-6x=3x(x-2).
+$$
+
+The critical points are $$x=0$$ and $$x=2$$. A sign chart for $$f'$$ gives:
+
+- increasing on $$(-\infty,0)$$,
+- decreasing on $$(0,2)$$,
+- increasing on $$(2,\infty)$$.
+
+So $$x=0$$ is a local maximum and $$x=2$$ is a local minimum.
+
+Second derivative:
+
+$$
+f''(x)=6x-6.
+$$
+
+The graph is concave down on $$(-\infty,1)$$ and concave up on $$(1,\infty)$$, so there is an inflection point at $$x=1$$.
+
+Evaluate the key points:
+
+$$
+f(0)=0,\qquad f(1)=-2,\qquad f(2)=-4.
+$$
+
+A good sketch should pass through those points, rise before $$0$$, fall between $$0$$ and $$2$$, rise after $$2$$, and change concavity at $$x=1$$.
+
+</div>
+
 ---
 
 ## Optimization
 
 Optimization problems mix modeling with calculus. The derivative only works after the quantity being optimized is written as a one-variable function. The main goal of most optimization problems is to find a local/absolute minima (e.g. minimizing time) or a local/absolute maxima (e.g. maximizing profit).
-
-The domain is part of the model. A critical point outside the feasible domain does not answer the contextual question.
-
-For closed feasible intervals, compare endpoint and critical-point values. For open or unbounded domains, use derivative sign changes or limiting behavior to justify the optimum.
 
 The hardest part of optimization is usually building the one-variable function. A good setup keeps three pieces separate:
 
@@ -546,13 +640,9 @@ Because $$S(x)\to\infty$$ as $$x\to0^+$$ and as $$x\to\infty$$, the critical poi
 
 </div>
 
-### Optimization strategy details
-
-
-
 ---
 
-## Linearization and Newton's method
+## Newton's method
 
 As a reminder, linearization is the process of estimating the value of a function using its derivative:
 
@@ -560,13 +650,7 @@ $$
 L(x) = f(a)+f'(a)(x-a).
 $$
 
-Using linearization, we can approximate the roots of a function using Newton's method (also known as the Newton-Raphson method) for approximating roots. Newton's method uses tangent lines to approximate roots. Starting from $$x_n$$, the tangent line to $$f$$ at $$x_n$$ crosses the $$x$$-axis at
-
-$$
-x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)}.
-$$
-
-$$x_n$$ represents the $$n$$th iteration, where you keep using your previous attempts to estimate the root. The first number always starts out as a guess, as after many iterations, the value will get closer and closer to the real root. However, the method works best when the starting guess is close to the root and the derivative is not near zero. If the tangent line is nearly horizontal, the next approximation can jump far away.
+Using linearization, we can approximate the roots of a function using Newton's method (also known as the Newton-Raphson method) for approximating roots. Newton's method uses tangent lines to approximate roots.
 
 <div class="theorem-box">
 
@@ -577,6 +661,8 @@ x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)}.
 $$
 
 </div>
+
+$$x_n$$ represents the $$n$$th iteration, where you keep using your previous attempts to estimate the root. The first number always starts out as a guess, as after many iterations, the value will get closer and closer to the real root. However, the method works best when the starting guess is close to the root and the derivative is not near zero. If the tangent line is nearly horizontal, the next approximation can jump far away.
 
 <div class="theorem-box">
 
@@ -632,10 +718,10 @@ This new $$x$$-value is called $$x_{n+1}$$.
 \addplot[only marks, mark=*, mark size=1.8pt, orange!85!black] coordinates {(2.2,2.84)};
 \addplot[only marks, mark=*, mark size=1.8pt, red!75!black] coordinates {(1.5455,0.3884)};
 \addplot[only marks, mark=*, mark size=1.6pt, gray!80] coordinates {(1.5545,0) (1.4207,0)};
-\node[orange!85!black, anchor=south west] at (axis cs:2.05,3.2) {tangent at $x_0$};
-\node[gray!80!black, anchor=north] at (axis cs:1.5545,0) {$x_1$};
+\node[orange!85!black, anchor=south west] at (axis cs:1.55,3.2) {tangent at $x_0$};
+\node[gray!80!black, anchor=north] at (axis cs:1.7,0.5) {$x_1$};
 \node[red!75!black, anchor=south east] at (axis cs:1.55,0.62) {tangent at $x_1$};
-\node[gray!80!black, anchor=north east] at (axis cs:1.4207,0) {$x_2$};
+\node[gray!80!black, anchor=north east] at (axis cs:1.4,0.6) {$x_2$};
 \end{axis}
 \end{tikzpicture}
 ```

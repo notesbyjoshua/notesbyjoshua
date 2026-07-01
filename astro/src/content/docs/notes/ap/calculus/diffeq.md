@@ -48,7 +48,6 @@ To sketch a solution curve through an initial condition, start at the given poin
 - look for where slopes are zero,
 - look for where slopes are positive/negative,
 - notice rows or columns where slopes repeat,
-- identify equilibrium solutions,
 - sketch a solution curve that follows the segment directions.
 :::
 
@@ -64,9 +63,8 @@ To sketch a solution curve through an initial condition, start at the given poin
     \draw[gray!65, rotate around={\ang:(\x,\y)}] (\x-0.18,\y) -- (\x+0.18,\y);
   }
 }
-\draw[red!75!black, thick, dashed] (-3,1) -- (3,1) node[right] {equilibrium $y=1$};
-\draw[blue, very thick, domain=-3:3, samples=100] plot (\x,{1-1.6*exp(-0.7*(\x+3))});
-\draw[blue, very thick, domain=-3:3, samples=100] plot (\x,{1+1.4*exp(-0.7*(\x+3))});
+\draw[blue, very thick] plot[smooth] coordinates {(-3,-1) (-2,0.01) (-1,0.51) (0,0.76) (1,0.88) (2,0.94) (3,0.97)};
+\draw[blue, very thick] plot[smooth] coordinates {(-3,2.5) (-2,1.75) (-1,1.37) (0,1.18) (1,1.09) (2,1.05) (3,1.02)};
 \node[blue, anchor=west] at (2.2,0.45) {solutions follow slopes};
 \end{tikzpicture}
 ```
@@ -342,28 +340,6 @@ $$
 \frac{d}{dx}[f(x,y)].
 $$
 
-This helps determine concavity of solution curves.
-
----
-
-## Concavity of solution curves
-
-For a differential equation, concavity often comes from differentiating the slope expression.
-
-If
-
-$$
-\frac{dy}{dx}=f(x,y),
-$$
-
-then
-
-$$
-\frac{d^2y}{dx^2}
-=
-\frac{d}{dx}[f(x,y)].
-$$
-
 When differentiating, remember that $$y$$ depends on $$x$$. After finding $$d^2y/dx^2$$, use its sign to describe whether solution curves are concave up or concave down.
 
 <div class="theorem-box">
@@ -402,7 +378,7 @@ $$
 \frac{d^2y}{dx^2}=1-2+1=0.
 $$
 
-The solution curve has zero second derivative at that point, so this test alone says the curve is momentarily neither concave up nor concave down there.
+The solution curve has zero second derivative at that point, so this test alone says the curve is an inflection point of the curve.
 
 </div>
 
@@ -553,18 +529,6 @@ Behavior:
 - equilibrium solutions at $$y=0$$ and $$y=L$$,
 - growth is fastest near $$y=L/2$$,
 - solutions below $$L$$ increase toward $$L$$.
-
-<div class="theorem-box">
-
-**Proof (Logistic growth behavior).** The factor
-
-$$
-1-\frac{y}{L}
-$$
-
-measures how much room remains before the carrying capacity. When $$y$$ is small, this factor is close to $$1$$, so the model behaves almost exponentially. When $$y$$ is close to $$L$$, this factor is close to $$0$$, so the growth rate becomes small. At $$y=L$$, the growth rate is exactly $$0$$.
-
-</div>
 
 <div class="theorem-box">
 

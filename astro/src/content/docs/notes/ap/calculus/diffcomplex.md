@@ -46,7 +46,7 @@ $$
 \frac{dy}{du}\cdot\frac{du}{dx}.
 $$
 
-This notation is not just a cancellation trick. It reminds you that a composite function changes through an intermediate variable.
+For all future AP Calculus work, it is very important to remember that derivatives is about small changes, which allows us to do cancellations/simplifications like this. Although the derivative sign is not necessarily a fraction sign in the traditional sense, it can definitely be treated that way.
 
 AP problems often hide the chain rule inside:
 
@@ -76,6 +76,14 @@ $$
 
 </div>
 
+Note that the chain rule should be used for all layers of a function. For example, if you have a function $$f(g(h(x)))$$, the derivative is equal to:
+
+$$
+\frac{d}{dx} f(g(h(x))) = f'(g(h(x)))g'(h(x))h'(x).
+$$
+
+This is correct because each layer contributes its own derivative factor, starting from the outside layer and moving inward.
+
 ---
 
 ## Implicit differentiation
@@ -83,6 +91,16 @@ $$
 When a curve is defined by an equation relating $$x$$ and $$y$$, differentiate both sides with respect to $$x$$ and remember that $$y$$ depends on $$x$$. Every time a derivative hits a term involving $$y$$, multiply by $$dy/dx$$ because $$y$$ is changing as $$x$$ changes.
 
 Implicit equations describe a relationship rather than a solved function. The variable $$y$$ still depends on $$x$$, even if the equation does not say so explicitly. Implicit differentiation is especially useful when solving for $$y$$ would be messy or impossible. It also lets you find slopes on curves that are not functions globally, such as circles, ellipses, and many algebraic curves.
+
+:::tip
+When differentiating with respect to $$x$$, attach $$dy/dx$$ exactly when the term you are differentiating includes $$y$$. Another way to think about it is that you are differentiating $$y$$, so any term with $$y$$ will have to include a $$\frac{dy}{dx}$$ (or $$y'$$) term.
+
+- $$\frac{d}{dx}(y^2)=2y\frac{dy}{dx}$$
+- $$\frac{d}{dx}(\sin y)=\cos y\frac{dy}{dx}$$
+- $$\frac{d}{dx}(xy)=x\frac{dy}{dx}+y$$
+
+Terms involving only $$x$$, such as $$x^2$$ or $$\sin x$$, do not get an extra $$dy/dx$$.
+:::
 
 <div class="theorem-box">
 
@@ -131,16 +149,6 @@ $$
 So the tangent line at $$(3,4)$$ has slope $$-\frac34$$.
 
 </div>
-
-:::tip
-When differentiating with respect to $$x$$, attach $$dy/dx$$ exactly when the term you are differentiating includes $$y$$. Another way to think about it is that you are differentiating $$y$$, so any term with $$y$$ will have to include a $$\frac{dy}{dx}$$ (or $$y'$$) term.
-
-- $$\frac{d}{dx}(y^2)=2y\frac{dy}{dx}$$
-- $$\frac{d}{dx}(\sin y)=\cos y\frac{dy}{dx}$$
-- $$\frac{d}{dx}(xy)=x\frac{dy}{dx}+y$$
-
-Terms involving only $$x$$, such as $$x^2$$ or $$\sin x$$, do not get an extra $$dy/dx$$.
-:::
 
 ---
 
@@ -382,7 +390,7 @@ $$
 \frac{1}{y}\frac{dy}{dx},
 $$
 
-so the final derivative usually comes from multiplying by $$y$$.
+so the final derivative usually comes from multiplying by $$y$$, where you resubstitude the original function (if $$y=f(x)$$).
 
 <div class="theorem-box">
 
@@ -429,3 +437,5 @@ This unit is about recognizing when the derivative is hidden inside another rela
 :::exam{topic="Composite and implicit derivatives"}
 AP often mixes rules. A single derivative might require product rule, chain rule, and implicit differentiation in the same line, so write intermediate steps clearly enough that the structure is visible.
 :::
+
+Before moving on, make sure you can explain which rule is being used at each step. On AP-style questions, the hardest part is often choosing the rule order, not doing the algebra afterward.

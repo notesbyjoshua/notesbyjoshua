@@ -638,31 +638,6 @@ The case $$f(b)<N<f(a)$$ follows by applying the same argument to $$-g(x)$$.
 
 This theorem guarantees at least one solution, but it does not tell you how many.
 
-```tikz
-\usepackage{pgfplots}
-\pgfplotsset{compat=1.16}
-\begin{tikzpicture}
-\begin{axis}[
-  axis lines=middle, xmin=0, xmax=5.2, ymin=0, ymax=5,
-  xtick={1,2,3,4}, ytick={1,2,3,4},
-  grid=both, grid style={gray!18},
-  width=8.8cm, height=6cm,
-  xlabel=$x$, ylabel=$y$,
-]
-\addplot[blue, very thick, samples=180, domain=0.8:4.6] {0.22*(x-2.2)^3 + 0.55*x + 1.1};
-\addplot[red!75!black, dashed, domain=0.7:4.7] {3};
-\addplot[gray!70, dashed] coordinates {(1,0) (1,1.655)};
-\addplot[gray!70, dashed] coordinates {(4.5,0) (4.5,4.575)};
-\addplot[orange!85!black, dashed] coordinates {(3.21,0) (3.21,3)};
-\addplot[only marks, mark=*, mark size=1.8pt, orange!85!black] coordinates {(3.21,3)};
-\node[red!75!black, anchor=south west] at (axis cs:4.15,3.05) {$y=N$};
-\node[orange!85!black, anchor=south west] at (axis cs:3.28,3.05) {$f(c)=N$};
-\node[gray!70!black, anchor=north] at (axis cs:1,-0.05) {$a$};
-\node[gray!70!black, anchor=north] at (axis cs:4.5,-0.05) {$b$};
-\end{axis}
-\end{tikzpicture}
-```
-
 ## Average rate of change (Introduction to derivatives)
 
 On $$[a,b]$$, the average rate of change is modeled by

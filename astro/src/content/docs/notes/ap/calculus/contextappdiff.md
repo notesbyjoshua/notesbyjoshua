@@ -65,6 +65,38 @@ Contextual problems often include more variables than you actually need. The goa
 
 If the independent variable is time, every changing quantity gets a rate such as $$dx/dt$$, $$dV/dt$$, or $$dA/dt$$.
 
+<div class="theorem-box">
+
+**Example.** A circular puddle has radius $$r$$ feet, and its area is increasing at $$12$$ square feet per minute. How fast is the radius increasing when $$r=3$$?
+
+Start with the relationship between area and radius:
+
+$$
+A=\pi r^2.
+$$
+
+Differentiate with respect to time:
+
+$$
+\frac{dA}{dt}=2\pi r\frac{dr}{dt}.
+$$
+
+Now substitute the given values:
+
+$$
+12=2\pi(3)\frac{dr}{dt}.
+$$
+
+So
+
+$$
+\frac{dr}{dt}=\frac{12}{6\pi}=\frac{2}{\pi}.
+$$
+
+The radius is increasing at $$\frac{2}{\pi}$$ feet per minute.
+
+</div>
+
 ---
 
 ## Interpreting graphs in context
@@ -81,29 +113,6 @@ Given a graph of a derivative $$f'$$:
 - positive derivative means original function is increasing,
 - negative derivative means decreasing,
 - derivative crossing zero may indicate an extremum in the original function.
-
-```tikz
-\usepackage{pgfplots}
-\pgfplotsset{compat=1.16}
-\begin{tikzpicture}
-\begin{axis}[
-  axis lines=middle, xmin=0, xmax=8, ymin=0, ymax=9,
-  xtick={0,2,4,6,8}, ytick={0,2,4,6,8},
-  grid=both, grid style={gray!18},
-  width=9cm, height=6cm,
-  xlabel=$t$, ylabel=$Q(t)$,
-]
-\addplot[blue, thick, samples=200, domain=0:8] {0.08*(x-4)^3 + 0.25*(x-4)^2 + 4.2};
-\addplot[orange!85!black, thick, domain=1.45:2.95] {-0.74*(x-2.2)+4.02};
-\addplot[orange!85!black, thick, domain=3.5:5.1] {0.17*(x-4.3)+4.22};
-\addplot[orange!85!black, thick, domain=5.7:6.7] {2.26*(x-6.2)+5.74};
-\addplot[only marks, mark=*, mark size=1.7pt, blue] coordinates {(2.2,4.02) (4.3,4.22) (6.2,5.74)};
-\node[orange!85!black, anchor=north east] at (axis cs:2.85,3.65) {steeper negative rate};
-\node[orange!85!black, anchor=south] at (axis cs:4.3,4.55) {small positive rate};
-\node[orange!85!black, anchor=south west] at (axis cs:6.2,6.75) {larger positive rate};
-\end{axis}
-\end{tikzpicture}
-```
 
 :::tip
 Problems will often use and expect certain words:
@@ -500,7 +509,7 @@ $$
 L(x) = f(a) + f'(a)(x-a).
 $$
 
-For small changes in the input value (as long as the value stays enar $$a$$), $$L(x)$$ basically equals $$f(x)$$ for all intensive purposes. Scientists (especiallty physicists) and mathematicians use the process of linearization to simplify hard equations into much simpler ones.
+For small changes in the input value (as long as the value stays near $$a$$), $$L(x)$$ basically equals $$f(x)$$ for all intensive purposes. Scientists (especiallty physicists) and mathematicians use the process of linearization to simplify hard equations into much simpler ones.
 
 <div class="theorem-box">
 
@@ -610,13 +619,17 @@ $$
 
 provided the new limit exists in a usable way.
 
+Here, "the hypotheses are satisfied" means the functions are differentiable near the input value, the denominator is not becoming unusable in the derivative step, and the original limit really has one of the indeterminate forms $$0/0$$ or $$\infty/\infty$$. Do not use L'Hopital's Rule just because a quotient looks complicated.
+
 </div>
 
 <div class="theorem-box">
 
 **Proof (L'Hôpital's Rule).** Here is the idea for the $$0/0$$ case. Suppose $$f(a)=g(a)=0$$, and suppose $$f$$ and $$g$$ satisfy the needed continuity and differentiability conditions near $$a$$, with $$g'(x)\ne0$$.
 
-For $$x\ne a$$, Cauchy's Mean Value Theorem gives a number $$c$$ between $$a$$ and $$x$$ such that
+Cauchy's Mean Value Theorem is a two-function version of the Mean Value Theorem. Instead of comparing one function's average rate to one derivative, it compares the average rates of two functions:
+
+For $$x\ne a$$, it gives a number $$c$$ between $$a$$ and $$x$$ such that
 
 $$
 \frac{f(x)-f(a)}{g(x)-g(a)}

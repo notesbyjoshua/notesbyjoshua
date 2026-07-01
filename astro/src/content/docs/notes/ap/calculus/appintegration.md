@@ -18,6 +18,28 @@ This is different from the average rate of change. Average value averages output
 
 <div class="theorem-box">
 
+**Proof (Average value formula).** Suppose the average value of $$f$$ on $$[a,b]$$ is the constant height $$H$$. The rectangle with base length $$b-a$$ and height $$H$$ should have the same signed area as the graph:
+
+$$
+H(b-a)=\int_a^b f(x)\,dx.
+$$
+
+Solving for $$H$$ gives
+
+$$
+H=\frac{1}{b-a}\int_a^b f(x)\,dx.
+$$
+
+So the average value is
+
+$$
+f_{\text{avg}} = \frac{1}{b-a}\int_a^b f(x)\,dx.
+$$
+
+</div>
+
+<div class="theorem-box">
+
 **Example.** Find the average value of $$f(x)=x^2$$ on $$[0,3]$$.
 
 Apply the average value formula with $$a=0$$ and $$b=3$$:
@@ -315,19 +337,19 @@ $$
 
 When a region is revolved around an axis, a slice perpendicular to the axis forms a disk or washer.
 
-Disk method:
+If you are only revolving one function around an axis, you can use the disk method:
 
 $$
 V=\pi\int_a^b [R(x)]^2\,dx.
 $$
 
-Washer method:
+If you are revolving two functions and taking the middle portion, you can use the washer method:
 
 $$
 V=\pi\int_a^b \left([R(x)]^2-[r(x)]^2\right)\,dx.
 $$
 
-Here $$R$$ is the outer radius and $$r$$ is the inner radius. Both radii are distances to the axis of rotation. The formulas in the integrand is just the standard area formula for a circle with the functions as the radius.
+Here $$R$$ is the outer radius ("top" function) and $$r$$ is the inner radius ("bottom" function). Both radii are distances to the axis of rotation. The formulas in the integrand is just the standard area formula for a circle with the functions as the radius.
 
 ```tikz
 \usepackage{tikz}
@@ -340,9 +362,9 @@ Here $$R$$ is the outer radius and $$r$$ is the inner radius. Both radii are dis
 \fill[blue!15, even odd rule] (4,0) ellipse (0.42 and 1.35) (4,0) ellipse (0.18 and 0.55);
 \draw[blue, very thick] (4,0) ellipse (0.42 and 1.35);
 \draw[red!75!black, very thick] (4,0) ellipse (0.18 and 0.55);
-\draw[orange!85!black, <->] (4,0) -- (4,1.35) node[midway, right] {$R$};
-\draw[red!75!black, <->] (3.65,0) -- (3.65,0.55) node[midway, left] {$r$};
-\node[blue] at (4,-1.8) {washer};
+\draw[orange!85!black, <->] (4.55,0) -- (4.55,1.35) node[midway, right] {$R$};
+\draw[red!75!black, <->] (4,0) -- (4,0.55) node[midway, left] {$r$};
+\node[blue] at (4,-1.95) {washer};
 \end{tikzpicture}
 ```
 
@@ -362,6 +384,43 @@ Evaluate:
 
 $$
 V=\pi\left[\frac{x^2}{2}\right]_0^4=8\pi.
+$$
+
+</div>
+
+<div class="theorem-box">
+
+**Example.** Find the volume formed by revolving the region between $$y=4-x^2$$ and $$y=0$$ about the line $$y=-1$$.
+
+The axis is below the region, so each washer has outer radius from $$y=-1$$ to $$y=4-x^2$$:
+
+$$
+R(x)=5-x^2.
+$$
+
+The inner radius is from $$y=-1$$ to $$y=0$$:
+
+$$
+r(x)=1.
+$$
+
+The curve meets the $$x$$-axis at $$x=-2$$ and $$x=2$$. Therefore
+
+$$
+V=\pi\int_{-2}^{2}\left[(5-x^2)^2-1^2\right]\,dx.
+$$
+
+Expand:
+
+$$
+(5-x^2)^2-1=25-10x^2+x^4-1=24-10x^2+x^4.
+$$
+
+So
+
+$$
+V=\pi\left[24x-\frac{10x^3}{3}+\frac{x^5}{5}\right]_{-2}^{2}
+=\frac{1216\pi}{15}.
 $$
 
 </div>
@@ -414,6 +473,41 @@ $$
 V=2\pi\left[\frac{x^4}{4}\right]_0^2
 =
 8\pi.
+$$
+
+</div>
+
+<div class="theorem-box">
+
+**Example.** Find the volume formed by revolving the region bounded by $$y=x$$ and $$y=x^2$$ about the $$y$$-axis using shells.
+
+The curves intersect where
+
+$$
+x=x^2
+\quad\Longrightarrow\quad
+x=0,1.
+$$
+
+Using vertical shells, the radius is $$x$$ and the height is top minus bottom:
+
+$$
+h(x)=x-x^2.
+$$
+
+Thus
+
+$$
+V=2\pi\int_0^1 x(x-x^2)\,dx
+=2\pi\int_0^1(x^2-x^3)\,dx.
+$$
+
+Evaluate:
+
+$$
+V=2\pi\left[\frac{x^3}{3}-\frac{x^4}{4}\right]_0^1
+=2\pi\left(\frac13-\frac14\right)
+=\frac{\pi}{6}.
 $$
 
 </div>
