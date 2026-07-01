@@ -4,12 +4,6 @@ sidebar:
   order: 5
 ---
 
----
-
-This unit explains why statistics from random samples vary and how that variation becomes predictable. A **sampling distribution** is the distribution of a statistic over many possible random samples of the same size from the same population. It is the bridge between descriptive statistics and inference.
-
----
-
 ## Parameters, Statistics, And Sampling Variability
 
 A **parameter** is a number that describes a population, such as $$p$$, $$\mu$$, or $$\sigma$$. A **statistic** is a number computed from a sample, such as $$\hat{p}$$, $$\bar{x}$$, or $$s$$.

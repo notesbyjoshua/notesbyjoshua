@@ -4,12 +4,6 @@ sidebar:
   order: 6
 ---
 
----
-
-This unit uses sample proportions to estimate and test claims about population proportions. The main statistic is $$\hat{p}$$ for one population, or $$\hat{p}_1-\hat{p}_2$$ for two populations.
-
----
-
 ## Estimation And Hypothesis Testing
 
 **Statistical inference** uses sample data to make conclusions about a population parameter. For proportions, the parameter is usually:

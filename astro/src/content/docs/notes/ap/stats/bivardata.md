@@ -4,12 +4,6 @@ sidebar:
   order: 2
 ---
 
----
-
-Unit 1 focused on one variable at a time ([Exploring Univariate Data](/notes/ap/stats/univardata/)). Here we study **bivariate data**: two variables measured on each case, and the patterns that link them.
-
----
-
 ## Comparing distributions across groups
 
 Before fitting models, you will often place two or more distributions side by side (back-to-back stemplots, parallel boxplots, or histograms with the same scales). When comparing, always address the center (typical values, e.g. mean/median), spread (how variable the groups are, e.g. range, IQR, standard deviation), and shape (symmetric, skewed, unimodal, and so on). Note clusters, gaps, and outliers in each group. Always tie differences back to the context of the problem: who was measured, what units mean, and what question the study is trying to answer.

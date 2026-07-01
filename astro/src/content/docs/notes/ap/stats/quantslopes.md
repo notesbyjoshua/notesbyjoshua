@@ -5,12 +5,6 @@ sidebar:
   order: 9
 ---
 
----
-
-This unit extends linear regression from [Unit 2](/notes/ap/stats/bivardata/) into inference. Instead of only describing the least-squares line for a sample, we ask whether there is evidence of a linear relationship in the population.
-
----
-
 ## Population Regression Model
 
 For a population, the linear regression model is

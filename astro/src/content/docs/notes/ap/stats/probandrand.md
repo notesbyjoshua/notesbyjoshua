@@ -4,12 +4,6 @@ sidebar:
   order: 4
 ---
 
----
-
-**Probability** is a number between 0 and 1 that quantifies how likely an **event** is. In AP Statistics you usually interpret it as **long-run relative frequency**: repeat a random process many times, and the fraction of times the event occurs stabilizes near its probability. The rules below describe how to combine and update probabilities in a **sample space** of possible outcomes.
-
----
-
 ## Sample space and experiments
 
 - A **random phenomenon** or **probability experiment** is a process with outcomes that vary from trial to trial in a way that cannot be predicted with certainty in advance, but whose possible outcomes are known.

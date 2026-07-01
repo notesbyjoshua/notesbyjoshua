@@ -4,12 +4,6 @@ sidebar:
   order: 3
 ---
 
----
-
-How you collect data decides what you can conclude. This unit separates vocabulary for populations and samples, contrasts experiments with observational studies, names common sources of bias, and introduces standard sampling designs and experimental layouts used on the AP Statistics exam.
-
----
-
 ## Basic terms: population, frame, sample, census
 
 - The **population** is the entire group of individuals, objects, or cases you want to learn about. In practice, “population” means whatever group your research question specifies, with clear inclusion rules.

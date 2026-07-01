@@ -4,12 +4,6 @@ sidebar:
   order: 7
 ---
 
----
-
-This unit uses sample means to estimate and test claims about population means. Because population standard deviations are usually unknown in real studies, AP Statistics emphasizes the **t-distribution**.
-
----
-
 ## z Procedures Versus t Procedures
 
 Use a z procedure for a population mean only when the population standard deviation $$\sigma$$ is known:

@@ -4,12 +4,6 @@ sidebar:
   order: 8
 ---
 
----
-
-Chi-square procedures handle categorical data with counts in categories. They compare **observed counts** to **expected counts** and ask whether the differences are larger than random variation would usually produce.
-
----
-
 ## The Chi-Square Distribution
 
 The **chi-square distribution** is a family of right-skewed distributions indexed by degrees of freedom. Chi-square values are always nonnegative because they are built from squared differences.
