@@ -8,7 +8,7 @@ sidebar:
 
 ---
 
-Here you will find notes for AP Precalculus, Calculus AB/BC, and Competition Math. Note that competition math will not include calculus, but is still good to know calculus to excel at competition math.
+Here you will find notes for AP Precalculus, Calculus AB/BC, and Competition Math.
 
 ---
 
@@ -62,6 +62,20 @@ Through my years of preparing for AMC 10/12, AIME, and USAJMO, here are some imp
 
 - Combinations and Permutations
 - Expected Value
+
+---
+
+### Multivariable Calculus
+
+These units follow Bevin Maultsby's MA 242 Multivariable Calculus semester outline, organized in the same unit-link style as the AP Calculus notes.
+
+- [Unit 1: Vectors and Euclidean Geometry in R3](/notes/math/multivariable-calculus/vectors-euclidean-geometry/)
+- [Unit 2: The Geometry of Curves in R3](/notes/math/multivariable-calculus/geometry-of-curves/)
+- [Unit 3: Differential Multivariable Functions](/notes/math/multivariable-calculus/differential-multivariable-functions/)
+- [Unit 4: Multiple Integrals in Cartesian Coordinates](/notes/math/multivariable-calculus/multiple-integrals-cartesian/)
+- [Unit 5: Multiple Integrals in Curvilinear Coordinates](/notes/math/multivariable-calculus/multiple-integrals-curvilinear/)
+- [Unit 6: Line and Surface Integrals](/notes/math/multivariable-calculus/line-and-surface-integrals/)
+- [Unit 7: Vector Analysis](/notes/math/multivariable-calculus/vector-analysis/)
 
 ---
 
