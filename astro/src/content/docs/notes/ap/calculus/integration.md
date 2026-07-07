@@ -55,6 +55,7 @@ The sample point determines the type of Riemann sum. There are three types of re
 \end{axis}
 \end{tikzpicture}
 ```
+// there is no curve for the right Riemann sums
 
 ### Left Riemann sums
 

@@ -4,8 +4,6 @@ sidebar:
   order: 12
 ---
 
----
-
 ## Charges
 
 All atoms that make up matter contains protons, electrons, and neutrons, and ordinary charging is mostly about moving electrons. A proton has charge $$+e$$, an electron has charge $$-e$$, and a neutron is neutral, where

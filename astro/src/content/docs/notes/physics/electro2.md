@@ -5,8 +5,6 @@ sidebar:
   order: 13
 ---
 
----
-
 ## Magnetic force and the motion of charges
 
 A magnetic field exerts a force on moving charge, and on nothing else: a charge at rest in a pure magnetic field feels nothing, no matter how strong the field. This single fact — that the force depends on velocity — is what makes magnetism feel so different from the electrostatics of [Electrostatics](/notes/physics/electro1/), and it is the source of nearly every device in this section, from mass spectrometers to cyclotrons.
