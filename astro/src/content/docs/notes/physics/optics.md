@@ -43,20 +43,6 @@ where $$H=T$$ is your full height. The required length is **half your height**, 
 
 </div>
 
-<div class="theorem-box">
-
-**Example.** Two plane mirrors meet along an edge at angle $$\phi$$ (with $$360^\circ/\phi$$ an integer). How many images of a point object placed between them appear?
-
-Each mirror reflects the object, then those images are reflected again by the other mirror, and so on. All images lie on a circle centered on the hinge (reflection preserves distance from the vertex). Reflecting repeatedly tiles the full $$360^\circ$$ around the vertex into wedges of angular width $$\phi$$; there are $$360^\circ/\phi$$ such wedges, hence $$360^\circ/\phi$$ copies of the object counting the object itself. Subtracting the original object,
-
-$$
-N=\frac{360^\circ}{\phi}-1.
-$$
-
-For perpendicular mirrors ($$\phi=90^\circ$$) this gives $$N=3$$; for $$\phi=60^\circ$$, $$N=5$$. (When $$360^\circ/\phi$$ is *not* an integer the last image straddles the back region and the count needs care, but the integer case is the standard olympiad result. A corner mirror with $$\phi\to 0$$ approaches the infinite regress of two parallel mirrors.)
-
-</div>
-
 ## Refraction and Snell's law
 
 <div class="theorem-box">
@@ -111,40 +97,6 @@ A pool of true depth $$1.0\text{ m}$$ ($$n=1.33$$) looks only $$0.75\text{ m}$$ 
 
 </div>
 
-<div class="theorem-box">
-
-**Example.** A ray hits a parallel-faced glass slab of thickness $$t$$ and index $$n$$ at incidence angle $$\theta_i$$. The two faces are parallel, so the ray emerges parallel to its original direction but displaced sideways. Find the displacement $$\Delta$$.
-
-Inside the slab the ray travels at the refracted angle $$\theta_r$$ ($$\sin\theta_i=n\sin\theta_r$$). The path length inside is $$\ell=t/\cos\theta_r$$. The emerging ray is parallel to the incident one; the perpendicular offset between the two parallel rays is
-
-$$
-\Delta=\ell\,\sin(\theta_i-\theta_r)=\frac{t\,\sin(\theta_i-\theta_r)}{\cos\theta_r}.
-$$
-
-To see the geometry: the in-slab segment makes angle $$\theta_r$$ with the normal, while "no slab" would keep angle $$\theta_i$$; the lateral gap they open is the segment length $$\ell$$ times the sine of their angular difference. For small angles $$\Delta\approx t\,\theta_i(1-1/n)$$, growing with both thickness and index contrast. This is why looking through thick glass at a slant shifts the scene sideways.
-
-</div>
-
-<div class="theorem-box">
-
-**Example.** A fish (or diver) looking up through calm water sees the *entire* hemisphere of sky squeezed into a bright circular cone overhead; outside that cone it sees only the dark reflected bottom. Find the half-angle of the cone.
-
-A ray coming in from the horizon (grazing the surface, $$\theta_{\text{air}}=90^\circ$$) refracts into the water at the largest possible underwater angle. By Snell, $$\sin 90^\circ=n\sin\theta_w$$, so
-
-$$
-\sin\theta_w=\frac{1}{n}=\sin\theta_c,
-$$
-
-which is exactly the critical angle. Every direction of the sky ($$0^\circ$$ to $$90^\circ$$ above water) maps into underwater angles between $$0$$ and $$\theta_c$$. For water $$n=1.33$$,
-
-$$
-\theta_c=\arcsin\frac{1}{1.33}=48.6^\circ.
-$$
-
-So the whole sky is compressed into a cone of half-angle $$48.6^\circ$$ (a full $$97^\circ$$-wide circular window). Beyond it, the surface acts as a mirror by total internal reflection.
-
-</div>
-
 ## Total internal reflection
 
 When light travels from a denser to a less dense medium ($$n_1 > n_2$$), Snell's law has no solution once $$\theta_2$$ would exceed $$90^\circ$$.
@@ -161,19 +113,11 @@ $$
 
 all the light is reflected back — **total internal reflection** (TIR). This is how optical fibers trap light and why a diamond ($$n\approx 2.4$$, so $$\theta_c \approx 24^\circ$$) sparkles. For a water–air boundary $$\theta_c=48.6^\circ$$; for a typical glass ($$n=1.5$$) it is $$\arcsin(1/1.5)=41.8^\circ$$, which is why a $$45^\circ$$ glass prism makes a perfect internal mirror in binoculars.
 
-<div class="theorem-box">
-
-**Example.** A step-index fiber has a core of index $$n_1$$ and cladding $$n_2<n_1$$, surrounded by air. Light entering the flat end face at angle $$\theta_a$$ to the fiber axis must strike the core–cladding wall beyond its critical angle to be guided. Find the maximum acceptance angle and the **numerical aperture** $$\text{NA}=\sin\theta_a$$, for $$n_1=1.50$$, $$n_2=1.48$$.
-
-At the wall, TIR requires the internal angle (from the wall normal) to exceed $$\theta_c$$ with $$\sin\theta_c=n_2/n_1$$. A ray entering at $$\theta_a$$ refracts to angle $$\theta$$ from the axis with $$\sin\theta_a=n_1\sin\theta$$; it hits the wall at angle $$90^\circ-\theta$$ from the wall normal, so the guiding condition $$90^\circ-\theta\ge\theta_c$$ means $$\theta\le 90^\circ-\theta_c$$, i.e. $$\sin\theta\le\cos\theta_c$$. Then
+For a step-index fiber with core index $$n_1$$, cladding index $$n_2<n_1$$, and air outside, the maximum entrance cone is often summarized by the **numerical aperture**
 
 $$
-\text{NA}=\sin\theta_a=n_1\sin\theta_{\max}=n_1\cos\theta_c=n_1\sqrt{1-\frac{n_2^2}{n_1^2}}=\sqrt{n_1^2-n_2^2}.
+\text{NA}=\sin\theta_{\max}=\sqrt{n_1^2-n_2^2}.
 $$
-
-Numerically, $$\text{NA}=\sqrt{1.50^2-1.48^2}=\sqrt{2.25-2.1904}=\sqrt{0.0596}=0.244$$, so $$\theta_a=\arcsin 0.244=14.1^\circ$$. Only light within a $$14^\circ$$ cone of the axis is captured and guided.
-
-</div>
 
 ## Fermat's principle
 
@@ -345,26 +289,6 @@ $$
 
 </div>
 
-<div class="theorem-box">
-
-**Example.** You hold your face $$d_o=10\text{ cm}$$ from a concave makeup mirror of radius $$R=40\text{ cm}$$ ($$f=20\text{ cm}$$). Describe the image.
-
-$$
-\frac{1}{d_i}=\frac{1}{f}-\frac{1}{d_o}=\frac{1}{20}-\frac{1}{10}=-\frac{1}{20}
-\quad\Longrightarrow\quad
-d_i=-20\text{ cm}.
-$$
-
-The negative $$d_i$$ means a **virtual** image $$20\text{ cm}$$ *behind* the mirror. The magnification is
-
-$$
-m=-\frac{d_i}{d_o}=-\frac{-20}{10}=+2,
-$$
-
-so the image is **upright and twice life-size** — exactly what a magnifying makeup or shaving mirror does when you bring your face inside its focal length. (Move past the focus, $$d_o>f$$, and the image flips to real and inverted.)
-
-</div>
-
 The reason a curved mirror focuses at all comes out cleanly for **conic-section** shapes, which have exact reflection properties:
 
 - An **ellipse** reflects every ray from one focus to the other focus.
@@ -373,7 +297,7 @@ The reason a curved mirror focuses at all comes out cleanly for **conic-section*
 
 A spherical mirror only *approximates* a parabola near its axis; rays striking far from the axis miss the focus, an error called **spherical aberration**.
 
-## Thin lenses
+## Thin lenses and ray tracing
 
 A thin lens obeys the same-looking **thin-lens equation** and magnification:
 
@@ -391,11 +315,58 @@ $$
 
 with $$R$$ positive for a surface that bulges toward the incoming light. Converging (convex) lenses have $$f>0$$; diverging (concave) lenses have $$f<0$$. For lenses the sign convention puts real images on the *opposite* side from the object ($$d_i > 0$$ there).
 
+### Types of thin lenses
+
+The words **convex** and **concave** describe the shape; **converging** and **diverging** describe what the lens does to parallel rays in its surrounding medium.
+
+| Lens shape | Cross-section idea | In air | Sign of $$f$$ | Ray behavior |
+| --- | --- | --- | --- | --- |
+| Biconvex | thickest in the middle | converging | $$f>0$$ | parallel rays meet at the far focal point |
+| Plano-convex | one flat side, one convex side | converging | $$f>0$$ | common simple positive lens |
+| Positive meniscus | one convex and one concave side, thicker in middle | converging | $$f>0$$ | weaker/aberration-controlled positive lens |
+| Biconcave | thinnest in the middle | diverging | $$f<0$$ | parallel rays spread as if from the near focal point |
+| Plano-concave | one flat side, one concave side | diverging | $$f<0$$ | common simple negative lens |
+| Negative meniscus | one convex and one concave side, thinner in middle | diverging | $$f<0$$ | weaker/aberration-controlled negative lens |
+
+In ordinary air, a lens thicker in the middle is usually converging and a lens thinner in the middle is usually diverging. If the surrounding medium has a higher index than the lens, the behavior can reverse, because the lensmaker's equation depends on the index contrast, not just the visual shape.
+
+### Principal rays for lenses
+
+For ray tracing, draw at least two of the three principal rays from the top of the object. Where the outgoing rays meet is the image point. If the outgoing rays diverge, extend them backward with dashed lines; where the extensions meet is a virtual image.
+
+For a **converging lens**:
+
+1. A ray parallel to the axis refracts through the far focal point.
+2. A ray through the near focal point emerges parallel to the axis.
+3. A ray through the center of a thin lens continues nearly straight.
+
+For a **diverging lens**:
+
+1. A ray parallel to the axis refracts outward as if it came from the near focal point.
+2. A ray aimed toward the far focal point emerges parallel to the axis.
+3. A ray through the center of a thin lens continues nearly straight.
+
+:::tip{title="Ray-tracing first, equation second"}
+Ray tracing tells you the image type before algebra: real or virtual, upright or inverted, enlarged or reduced. Then the thin-lens equation gives the exact distance and magnification.
+:::
+
+### Image cases
+
+For a converging lens:
+
+- $$d_o>2f$$: real, inverted, reduced image between $$f$$ and $$2f$$.
+- $$d_o=2f$$: real, inverted, same-size image at $$2f$$.
+- $$f<d_o<2f$$: real, inverted, enlarged image beyond $$2f$$.
+- $$d_o=f$$: outgoing rays are parallel, so the image is at infinity.
+- $$d_o<f$$: virtual, upright, enlarged image on the object side.
+
+For a diverging lens with a real object, the image is always virtual, upright, reduced, and on the object side.
+
 <div class="theorem-box">
 
-**Example.** An object sits $$30\text{ cm}$$ in front of a converging lens of focal length $$f = 10\text{ cm}$$. Where is the image, and what is its magnification?
+**Example.** An object sits $$30\text{ cm}$$ in front of a converging lens of focal length $$f = 10\text{ cm}$$. Use ray tracing first, then calculate the image location and magnification.
 
-From the thin-lens equation,
+Since $$d_o=30\text{ cm}>2f$$, the ray diagram should give a real, inverted, reduced image between $$f$$ and $$2f$$ on the far side. Now use the thin-lens equation:
 
 $$
 \frac{1}{d_i} = \frac{1}{f} - \frac{1}{d_o} = \frac{1}{10} - \frac{1}{30} = \frac{2}{30},
@@ -457,18 +428,6 @@ For a **thin prism** ($$A$$ small), all angles are small, so $$\sin\theta\approx
 $$
 \delta=(n-1)A.
 $$
-
-<div class="theorem-box">
-
-**Example.** A glass prism with apex angle $$A=60^\circ$$ produces a minimum deviation $$\delta_m=40^\circ$$ for yellow light. Find the refractive index.
-
-$$
-n=\frac{\sin\!\frac{A+\delta_m}{2}}{\sin\!\frac{A}{2}}=\frac{\sin 50^\circ}{\sin 30^\circ}=\frac{0.766}{0.500}=1.53.
-$$
-
-A typical crown glass. Because $$\delta_m$$ is larger for blue than red (dispersion), measuring $$\delta_m$$ at several wavelengths maps out $$n(\lambda)$$.
-
-</div>
 
 ## The rainbow
 
@@ -538,41 +497,13 @@ $$
 
 For a system matrix $$M=\begin{pmatrix}A&B\\C&D\end{pmatrix}$$, the imaging condition (all rays from an object point reconverge regardless of slope) is $$B=0$$, and then $$A$$ is the magnification. The element $$C$$ gives the system focal length via $$C=-1/f_{\text{eff}}$$.
 
-<div class="theorem-box">
-
-**Example.** Two thin lenses of focal lengths $$f_1,f_2$$ are separated by distance $$d$$. Find the effective focal length.
-
-Build the system right-to-left: lens 1, propagate $$d$$, lens 2.
+For two thin lenses separated by distance $$d$$, the matrix product gives the useful effective-focal-length result
 
 $$
-M=\begin{pmatrix}1&0\\-1/f_2&1\end{pmatrix}
-\begin{pmatrix}1&d\\0&1\end{pmatrix}
-\begin{pmatrix}1&0\\-1/f_1&1\end{pmatrix}.
+\frac{1}{f_{\text{eff}}}=\frac{1}{f_1}+\frac{1}{f_2}-\frac{d}{f_1f_2}.
 $$
 
-Multiply the last two first:
-
-$$
-\begin{pmatrix}1&d\\0&1\end{pmatrix}\begin{pmatrix}1&0\\-1/f_1&1\end{pmatrix}
-=\begin{pmatrix}1-d/f_1&d\\-1/f_1&1\end{pmatrix}.
-$$
-
-Then left-multiply by the lens-2 matrix; the lower-left entry is
-
-$$
-C=-\frac{1}{f_2}\left(1-\frac{d}{f_1}\right)-\frac{1}{f_1}
-=-\left(\frac{1}{f_1}+\frac{1}{f_2}-\frac{d}{f_1 f_2}\right).
-$$
-
-Since $$C=-1/f_{\text{eff}}$$,
-
-$$
-\ \frac{1}{f_{\text{eff}}}=\frac{1}{f_1}+\frac{1}{f_2}-\frac{d}{f_1 f_2}\ ,
-$$
-
-the standard two-lens formula. Setting $$d=0$$ (lenses in contact) recovers $$1/f=1/f_1+1/f_2$$. As a self-check, propagating a distance $$s_o$$ before a single lens and $$s_i$$ after, then imposing $$B=0$$, regenerates the thin-lens equation $$1/s_o+1/s_i=1/f$$.
-
-</div>
+Setting $$d=0$$ gives the contact-lens rule $$1/f=1/f_1+1/f_2$$.
 
 ## Optical instruments
 
@@ -581,18 +512,6 @@ The eye's relaxed near point is $$25\text{ cm}$$; angular magnification compares
 - **Simple magnifier** (object at the focal point, image at infinity): $$M=\dfrac{25\text{ cm}}{f}$$.
 - **Refracting telescope** (objective $$f_o$$, eyepiece $$f_e$$, in afocal configuration): $$M=-\dfrac{f_o}{f_e}$$ (the minus sign = inverted image).
 - **Compound microscope** (objective forms a real image at tube length $$L$$, eyepiece magnifies it): $$M\approx-\dfrac{L}{f_o}\cdot\dfrac{25\text{ cm}}{f_e}$$.
-
-<div class="theorem-box">
-
-**Example.** A refracting telescope has an objective of focal length $$f_o=100\text{ cm}$$ and an eyepiece of $$f_e=2.0\text{ cm}$$. What is its angular magnification, and how long is the tube?
-
-$$
-M=-\frac{f_o}{f_e}=-\frac{100}{2.0}=-50\times,
-$$
-
-inverted, $$50$$-power. In the afocal setup the objective's focal point coincides with the eyepiece's, so the tube length is $$f_o+f_e=102\text{ cm}$$. A larger $$f_o$$ or smaller $$f_e$$ raises the power — but the resolution is still capped by the objective diameter through the Rayleigh criterion below.
-
-</div>
 
 ## Huygens' principle
 
@@ -634,20 +553,6 @@ Measuring this spacing is a standard way to determine an unknown wavelength.
 
 </div>
 
-<div class="theorem-box">
-
-**Example.** A thin transparent sheet of index $$n=1.50$$ and thickness $$t=6.0\,\mu\text{m}$$ is placed over one slit of a double-slit setup illuminated by $$\lambda=600\text{ nm}$$. By how many fringes does the pattern shift, and which way?
-
-The slab replaces a length $$t$$ of air (optical path $$t$$) with glass (optical path $$nt$$), adding extra optical path $$(n-1)t$$ to that arm. The number of fringes the central maximum shifts is the extra path measured in wavelengths:
-
-$$
-\Delta N=\frac{(n-1)t}{\lambda}=\frac{(0.50)(6.0\times10^{-6})}{600\times10^{-9}}=\frac{3.0\times10^{-6}}{6.0\times10^{-7}}=5.0.
-$$
-
-The pattern shifts by **5 whole fringes toward the covered slit** (the central bright fringe moves to where that arm's added path is compensated by a geometric path difference). Because $$\Delta N$$ is an integer here the pattern looks unshifted at the center, but in general a non-integer $$\Delta N$$ measures the slab — this is a precise way to find $$n$$ or $$t$$.
-
-</div>
-
 When mirrors or lenses are in the way, computing path-length differences directly is a nightmare. The shortcut is that **any image — real or virtual — can be treated as its own coherent point source**, so you measure path differences starting from the images rather than tracing all the way back to the original object. (For a real image this follows from Fermat's principle: every ray from object to image takes the same time, so they all arrive in phase and leave the image in phase.) Setups like **Lloyd's mirror** or two slightly tilted mirrors reduce to an ordinary double slit whose two "slits" are the image sources — even though there is only one real light source. A useful caution: reflection adds a phase of $$\pi$$, though it often cancels out when both images reflect the same way.
 
 ## The Michelson interferometer
@@ -662,17 +567,13 @@ $$
 
 Each fringe that passes corresponds to moving the mirror a half-wavelength — a beautifully sensitive ruler.
 
-<div class="theorem-box">
-
-**Example.** In a Michelson interferometer, moving one mirror $$\Delta L=0.150\text{ mm}$$ causes $$500$$ bright fringes to pass a reference mark. Find the wavelength of the light.
+Inserting a gas cell of length $$\ell$$ and changing its index by $$\Delta n$$ shifts the fringe count by
 
 $$
-\lambda=\frac{2\,\Delta L}{m}=\frac{2(0.150\times10^{-3})}{500}=6.00\times10^{-7}\text{ m}=600\text{ nm}.
+\Delta m=\frac{2\ell\,\Delta n}{\lambda},
 $$
 
-Equivalently, the interferometer measures lengths to a fraction of a wavelength: counting $$500$$ fringes pins down a $$0.15\text{ mm}$$ displacement. Inserting a gas cell of length $$\ell$$ and changing its index by $$\Delta n$$ shifts the count by $$2\,\ell\,\Delta n/\lambda$$, the standard way to measure a gas's refractive index.
-
-</div>
+because the light passes through the cell twice.
 
 ## Thin films
 
@@ -717,21 +618,14 @@ MgF$$_2$$ at $$1.38$$ is the closest cheap, durable material — hence the faint
 
 </div>
 
-<div class="theorem-box">
-
-**Example.** A plano-convex lens of radius of curvature $$R$$ rests on a flat glass plate, leaving a thin air wedge between them. Illuminated from above with wavelength $$\lambda$$, it shows concentric bright and dark rings. Find the radii of the dark rings.
-
-At radius $$r$$ from the contact point, the gap thickness $$t$$ satisfies $$r^2 = R^2 - (R-t)^2 \approx 2Rt$$ for $$t \ll R$$, so $$t \approx r^2/2R$$. The two interfering reflections are off the bottom of the lens (glass→air, no flip) and off the top of the plate (air→glass, $$\pi$$ flip). The net half-wavelength shift makes the **center dark** (where $$t\to 0$$), and dark rings occur when the round-trip path $$2t$$ is a whole number of wavelengths:
+For Newton's rings, where a plano-convex lens sits on a flat plate and makes a thin air gap, the reflected pattern has a dark center and dark-ring radii
 
 $$
-2t = m\lambda
-\quad\Longrightarrow\quad
-r_m = \sqrt{m\lambda R}, \qquad m = 0,1,2,\dots
+r_m=\sqrt{m\lambda R},
+\qquad m=0,1,2,\dots,
 $$
 
-The rings crowd together as $$r$$ grows (since $$r_m \propto \sqrt{m}$$), and measuring them is a classic way to find a wavelength or test how truly flat a surface is.
-
-</div>
+where $$R$$ is the lens radius of curvature. This comes from $$t\approx r^2/(2R)$$ and one reflection phase flip.
 
 ## Diffraction
 
@@ -781,26 +675,6 @@ $$
 
 the number of slits times the diffraction order. To resolve finer spectral detail you either illuminate more lines or work at a higher order.
 
-<div class="theorem-box">
-
-**Example.** The sodium D lines are at $$589.0\text{ nm}$$ and $$589.6\text{ nm}$$. How many grating lines must be illuminated to just resolve them in first order ($$m=1$$)?
-
-The required resolving power is
-
-$$
-R=\frac{\lambda}{\Delta\lambda}=\frac{589.0}{0.6}=982.
-$$
-
-Since $$R=Nm$$, in first order we need
-
-$$
-N=\frac{R}{m}=\frac{982}{1}\approx 9.8\times10^{2}\ \text{lines}.
-$$
-
-About a thousand illuminated lines suffices in first order; a grating with $$300\text{ lines/mm}$$ needs only $$\sim 3.3\text{ mm}$$ of beam width. In second order half as many lines would do.
-
-</div>
-
 ## Resolution and the Rayleigh criterion
 
 Diffraction sets a fundamental limit on resolving two nearby point sources through an aperture of diameter $$D$$. By the **Rayleigh criterion**, they are just resolvable when the center of one diffraction pattern falls on the first minimum of the other, at angular separation
@@ -810,26 +684,6 @@ $$
 $$
 
 Bigger apertures (telescope mirrors, eye pupils) and shorter wavelengths give finer resolution.
-
-<div class="theorem-box">
-
-**Example.** A car's headlights are $$1.5\text{ m}$$ apart. With a dark-adapted pupil $$D=5.0\text{ mm}$$ and $$\lambda=550\text{ nm}$$, from how far away can the eye just distinguish the two as separate?
-
-The minimum resolvable angle is
-
-$$
-\theta_{\min}=1.22\frac{\lambda}{D}=1.22\frac{550\times10^{-9}}{5.0\times10^{-3}}=1.34\times10^{-4}\text{ rad}.
-$$
-
-The headlights subtend $$\theta=s/L$$ where $$s=1.5\text{ m}$$, so they are just resolved at
-
-$$
-L=\frac{s}{\theta_{\min}}=\frac{1.5}{1.34\times10^{-4}}=1.1\times10^{4}\text{ m}\approx 11\text{ km}.
-$$
-
-(Atmospheric turbulence and retinal cell spacing degrade this in practice, but diffraction sets the ideal limit.)
-
-</div>
 
 ## Babinet's principle
 
@@ -873,17 +727,7 @@ $$
 \tan\theta_B = \frac{n_2}{n_1}.
 $$
 
-<div class="theorem-box">
-
-**Example.** At what angle does sunlight reflecting off a calm lake ($$n=1.33$$) become fully polarized, and which way is it polarized?
-
-$$
-\theta_B=\arctan\frac{n_2}{n_1}=\arctan\frac{1.33}{1.00}=53.1^\circ
-$$
-
-from the normal. The reflected light is polarized **horizontally** (parallel to the water surface). Polarized sunglasses have a vertical transmission axis, so they block this horizontally polarized glare from water and roads — exactly why they work.
-
-</div>
+For sunlight reflecting off water, $$\theta_B=\arctan(1.33)=53.1^\circ$$ from the normal. The reflected glare is polarized parallel to the surface, which is why vertically oriented polarized sunglasses reduce it.
 
 ---
 
