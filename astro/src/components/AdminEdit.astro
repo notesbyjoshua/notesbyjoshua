@@ -86,6 +86,7 @@ const notes = docs
 
   let loadedContent = ''; // last content fetched/saved, to detect "dirty"
   let allowedTopicKeys: Set<string> | null = null; // null means admin/unrestricted
+  let autoLoadedPath = ''; // avoid auth refreshes reloading over in-progress edits
 
   // Strip YAML front matter so the preview shows the body (front matter still
   // saves — we only hide it from the rendered preview).
@@ -274,9 +275,17 @@ const notes = docs
     // Deep-link from a note's pencil: ?path=astro/src/content/docs/... — select
     // and load that note automatically if it matches a known option.
     const wanted = new URLSearchParams(location.search).get('path');
-    if (wanted) {
+    if (wanted && wanted !== autoLoadedPath) {
+      if (srcEl.value !== loadedContent) {
+        setResult('Session refreshed; kept your unsaved edits.', '');
+        return;
+      }
       fileSel.value = wanted;
-      if (fileSel.value === wanted) { reloadBtn.disabled = false; loadFile(); }
+      if (fileSel.value === wanted) {
+        autoLoadedPath = wanted;
+        reloadBtn.disabled = false;
+        loadFile();
+      }
     }
   }
 
