@@ -1,5 +1,5 @@
 ---
-title: "Conductors and Capacitors"
+title: "Unit 3: Conductors and Capacitors"
 sidebar:
   order: 3
 ---

@@ -1,5 +1,5 @@
 ---
-title: "Force and Translational Dynamics"
+title: "Unit 2: Force and Translational Dynamics"
 sidebar:
   order: 2
 ---

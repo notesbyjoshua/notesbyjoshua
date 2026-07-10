@@ -1,5 +1,5 @@
 ---
-title: "Electric Potential"
+title: "Unit 2: Electric Potential"
 sidebar:
   order: 2
 ---

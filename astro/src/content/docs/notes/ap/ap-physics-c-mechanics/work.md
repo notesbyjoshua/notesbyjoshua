@@ -1,5 +1,5 @@
 ---
-title: "Work, Energy, and Power"
+title: "Unit 3: Work, Energy, and Power"
 sidebar:
   order: 3
 ---

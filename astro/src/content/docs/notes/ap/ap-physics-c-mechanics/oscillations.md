@@ -1,5 +1,5 @@
 ---
-title: "Oscillations"
+title: "Unit 7: Oscillations"
 next: false
 sidebar:
   order: 7

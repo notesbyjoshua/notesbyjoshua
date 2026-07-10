@@ -1,5 +1,5 @@
 ---
-title: "1D and 2D Kinematics"
+title: "Unit 1: 1D and 2D Kinematics"
 sidebar:
   order: 1
 ---

@@ -1,5 +1,5 @@
 ---
-title: "Electromagnetic Induction"
+title: "Unit 6: Electromagnetic Induction"
 next: false
 sidebar:
   order: 6

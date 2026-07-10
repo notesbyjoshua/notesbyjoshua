@@ -1,5 +1,5 @@
 ---
-title: "Circuits"
+title: "Unit 4: Circuits"
 sidebar:
   order: 4
 ---

@@ -1,5 +1,5 @@
 ---
-title: "Magnetic Fields and Electromagnetism"
+title: "Unit 5: Magnetic Fields and Electromagnetism"
 sidebar:
   order: 5
 ---

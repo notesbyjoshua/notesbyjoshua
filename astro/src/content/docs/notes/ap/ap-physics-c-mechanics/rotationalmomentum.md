@@ -1,5 +1,5 @@
 ---
-title: "Energy and Momentum of Rotating Systems"
+title: "Unit 6: Energy and Momentum of Rotating Systems"
 sidebar:
   order: 6
 ---
