@@ -6,16 +6,18 @@ sidebar:
 
 ## Types of Variables
 
+In statistics, there are two main types of variables: categorical (qualitative) variables and quantitative variables.
+
 ### Categorical (qualitative) variables
 
-A **categorical variable** sorts each case into a group or label. The values are usually words or codes (for example: blood type, favorite color, zip code used only as a label). With categorical data, we typically report counts or percents in each category. Averages usually do not make sense unless the categories are coded as numbers in a meaningful way—which is rare in AP settings.
+A **categorical variable** sorts each case into a group or label. The values are usually words or codes (for example: blood type, favorite color, zip code used only as a label). With categorical data, we typically report counts or percents in each category.
 
 ### Quantitative variables
 
-A **quantitative variable** takes numerical values where arithmetic is meaningful: we can talk about differences, totals, and often averages. Quantitative variables are often split into:
+A **quantitative variable** is a variable with a numeric value and can be analyzed using arithmetic operations like differences, totals, and averages. Quantitative variables are split into:
 
 - **Discrete** variables: countable “jumps” between values (number of siblings, number of text messages in a day). Usually this comes in the forms of integers, but is not limited to them.
-- **Continuous** variables: in principle could take any value in an interval (height, time, temperature), though what we record is usually still rounded or binned (partitioned based on value).
+- **Continuous** variables: in principle could take any value in an interval (height, time, temperature), though what we record is usually still rounded or binned (partitioned based on value) for convenience. Think of continuous variables as variables that can be expressed on a spectrum.
 
 ---
 
@@ -25,7 +27,7 @@ A **quantitative variable** takes numerical values where arithmetic is meaningfu
 
 ---
 
-### Tabular methods
+## Tabular methods
 
 Tables are the natural home for **frequency**: how often each value or category appears.
 
@@ -58,7 +60,6 @@ A **frequency distribution** lists possible values (or classes) of the variable 
 | Histogram | distribution shape for many quantitative values |
 | Stemplot | preserves individual values while showing shape |
 | Boxplot | quick comparison of center, spread, and outliers |
-
 
 ---
 
@@ -129,13 +130,13 @@ A **boxplot** (box-and-whisker plot) summarizes a quantitative variable using qu
 \foreach \x/\lab in {1/min,2.5/Q1,4/median,5.5/Q3,7/max}{\draw (\x,-0.1)--(\x,0.8); \node[below] at (\x,-0.1) {\lab};}
 \end{tikzpicture}
 ```
-
+// add an image for each type of chart in both graphical methods section, not just a boxplot (also move the boxplot up a bit more it overlaps with the axis)
 
 ---
 
 ## Examining Graphs
 
-Whenever you look at a univariate graph, train yourself to describe **center**, **spread**, and **shape**, as well as irregularities in the plot (like **clusters**, **gaps**, and **outliers**) When given a question to compare two plots, always start with these five observations and go from there.
+Whenever you look at a univariate graph, there are a few main traits that should always be described. When comparing two graphs, you should always describe the **center**, **spread**, and **shape**, as well as irregularities in the plot (like **clusters**, **gaps**, and **outliers**).
 
 ### Center
 
@@ -147,20 +148,20 @@ The **center** is a typical or middle value—where much of the data sits. For m
 
 ### Shape
 
-**Shape** tells us where data pile up and whether the distribution is **symmetric** or **skewed**.
+**Shape** tells us where data pile up and whether the distribution is symmetric or skewed.
 
 - **Symmetric**: the left and right sides are roughly mirror images (like a bell curve or a uniform histogram).
-- **Skewed**: one tail stretches farther than the other. If the right tail is longer (extreme large values pull the tail), the distribution is **right-skewed** (positively skewed). If the left tail is longer, it is **left-skewed** (negatively skewed).
+- **Skewed**: one tail stretches farther than the other. If the right tail is longer (extreme large values pull the tail), the distribution is **right-skewed** (positively skewed). If the left tail is longer, it is **left-skewed** (negatively skewed). When describing skewed distributions, it is important to remember that the skewed direction is always modeled on the *tail* instead of where the majority of the data are.
 
-Also note that **modality** (one clear peak (**unimodal**), two peaks (**bimodal**), and so on) sometimes suggests there are different subgroups mixed in one variable.
+Also note that **modality** (one clear peak (**unimodal**), two peaks (**bimodal**), and so on) sometimes suggests there are different subgroups mixed in one variable and are very important to describe.
 
 ### Clusters and gaps
 
-**Clusters** are groups of values separated from other groups; they can suggest subpopulations or different regimes (for example, two manufacturing lines). **Gaps** are intervals with no (or very few) observations where you might have expected some; they invite questions about sampling, measurement, or real structure.
+**Clusters** are groups of values separated from other groups; they can indicate the existence subpopulations or different regimes (for example, two manufacturing lines). **Gaps** are intervals with no (or very few) observations where you might have expected some; they invite questions about sampling, measurement, or real structure.
 
 ### Outliers
 
-An **outlier** is a value that stands apart from the overall pattern. On a boxplot, a common **numerical rule** flags outliers relative to the quartiles:
+An **outlier** is a value that stands apart from the overall pattern. On a boxplot, a common numerical rule flags outliers relative to the quartiles:
 
 $$
 \text{Outlier} > Q_3 + 1.5 \cdot IQR \quad \text{or} \quad \text{Outlier} < Q_1 - 1.5 \cdot IQR
@@ -181,7 +182,7 @@ We distinguish **population** and **sample** because notation and formulas track
 - The **population** is the entire group of individuals or instances we want to understand.
 - A **sample** is the part of the population we actually measure.
 
-We compute statistics from a sample to estimate unknown population quantities. Greek letters (for example $$\mu$$, $$\sigma$$) often denote **population** parameters; Roman letters with bars or hats (for example $$\bar{x}$$, $$s$$, $$\hat{p}$$) denote **sample** statistics.
+We compute statistics from a sample to estimate unknown population quantities. *Greek* letters (for example $$\mu$$, $$\sigma$$) often denote population parameters; *Roman* letters (basically English letters) with bars or hats (for example $$\bar{x}$$, $$s$$, $$\hat{p}$$) denote sample statistics.
 
 ---
 
@@ -216,13 +217,13 @@ The median is **resistant** (robust) to outliers, meaning extreme values barely 
 
 ### Measures of variation
 
-**Range** is the simplest spread measure: largest minus smallest. It uses only **two** numbers and is **very sensitive** to outliers.
+**Range** is the simplest spread measure: largest minus smallest. It uses only *two* numbers and is very sensitive to outliers.
 
 $$
 \text{Range} = \max - \min
 $$
 
-**Interquartile range (IQR)** is the width of the **middle half** of the data:
+**Interquartile range (IQR)** is the width of the middle half of the data:
 
 $$
 IQR = Q_3 - Q_1
@@ -236,19 +237,19 @@ $$
 \sigma = \sqrt{\frac{\sum_{i=1}^{N} (x_i - \mu)^2}{N}}
 $$
 
-For a sample, we divide by **$$n - 1$$** (Bessel’s correction) so that $$s^2$$ is an unbiased estimator of population variance in the usual setup:
+For a sample, we divide by $$n - 1$$ (Bessel’s correction) so that $$s^2$$ is an unbiased estimator of population variance:
 
 $$
 s = \sqrt{\frac{\sum_{i=1}^{n} (X_i - \bar{x})^2}{n-1}}
 $$
 
-Larger standard deviation means **more** spread and zero standard deviation means **no** spread (all values equal).
+Larger standard deviation means more spread and zero standard deviation means no spread (all values equal).
 
 ---
 
 ## Measures of position
 
-**Percentiles** generalize the median. The **$$k$$**th percentile is a value such that about **$$k$$%** of observations fall at or below it. A common position rule for the location of the $$k$$th percentile in ordered data of size $$n$$ is:
+**Percentiles** generalize the median. The **$$k$$**th percentile is a value such that about $$k$$% of observations fall at or below it. A common position rule for the location of the $$k$$th percentile in ordered data of size $$n$$ is:
 
 $$
 l = \frac{(n+1)k}{100}
@@ -268,7 +269,7 @@ $$
 z = \frac{x - \mu}{\sigma}
 $$
 
-With a **sample**, use $$\bar{x}$$ and $$s$$ in the same pattern. A z-score answers: “How many standard deviations above or below the mean is this value?” Values with a large $$z$$-score are unusual relative to that distribution. Note that for future chapters, z-score will likely apply to a [normal/Gaussian distribution](/notes/ap/stats/samplingdistr/))
+With a sample, use $$\bar{x}$$ and $$s$$ in the same pattern. A z-score represents the amount of standard deviations above or below the mean a value is. Values with a large $$z$$-score are unusual relative to that distribution. Note that for future chapters, z-score will apply heavily to a [normal/Gaussian distribution](/notes/ap/stats/samplingdistr/).
 
 ---
 
@@ -296,9 +297,11 @@ Multiplying by a constant $$b$$ (for example, feet to inches): $$y_i = b \times 
 | Quartiles | $$+a$$ | $$\times b$$ |
 | Interquartile Range | unchanged | $$\times \lvert b \rvert$$ |
 
-These rules are worth memorizing: they explain why z-scores are unchanged by shifts and rescaling when you use the matching mean and standard deviation of the transformed data, and they explain many standardization tricks in later units.
-
 ## Practice
+
+### MCQ
+
+idk idk bruh add some mcq, more frq
 
 ### FRQ
 

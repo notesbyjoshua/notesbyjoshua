@@ -19,7 +19,7 @@ Visible light is an electromagnetic wave with wavelength $$\lambda \sim 400\text
 
 <div class="theorem-box">
 
-**Theorem (Law of reflection).** At a smooth surface, the angle of incidence equals the angle of reflection, both measured from the normal, and the incident ray, reflected ray, and normal are coplanar:
+**Theorem (Law of Reflection).** At a smooth surface, the angle of incidence equals the angle of reflection, both measured from the normal, and the incident ray, reflected ray, and normal are coplanar:
 
 $$
 \theta_i = \theta_r.
@@ -45,9 +45,11 @@ where $$H=T$$ is your full height. The required length is **half your height**, 
 
 ## Refraction and Snell's law
 
+Refraction is the phenomena where light bends when entering a different medium (substance).
+
 <div class="theorem-box">
 
-**Definition (Index of refraction).** The index of refraction of a medium is
+**Definition (Index of refraction).** The index of refraction of a medium is defined as
 
 $$
 n = \frac{c}{v},
@@ -69,7 +71,7 @@ $$
 
 </div>
 
-Going into a denser medium (larger $$n$$), the ray bends *toward* the normal. Across the boundary the **frequency stays fixed** (it is set by the source), so the wavelength must change:
+Going into a denser medium (larger $$n$$), the ray bends *toward* the normal. Across the boundary the *requency stays fixed (it is set by the source), so the wavelength must change:
 
 $$
 \lambda_{\text{medium}} = \frac{\lambda_0}{n}.
@@ -97,13 +99,13 @@ A pool of true depth $$1.0\text{ m}$$ ($$n=1.33$$) looks only $$0.75\text{ m}$$ 
 
 </div>
 
-## Total internal reflection
+### Total internal reflection
 
 When light travels from a denser to a less dense medium ($$n_1 > n_2$$), Snell's law has no solution once $$\theta_2$$ would exceed $$90^\circ$$.
 
 <div class="theorem-box">
 
-**Definition (Critical angle).** Beyond the critical angle
+**Definition (Critical angle).** Define the critical angle as the angle where all the light is reflected back instead of refracting (**total internal reflection (TIR)**). The angle is given by:
 
 $$
 \sin\theta_c = \frac{n_2}{n_1},
@@ -111,37 +113,180 @@ $$
 
 </div>
 
-all the light is reflected back — **total internal reflection** (TIR). This is how optical fibers trap light and why a diamond ($$n\approx 2.4$$, so $$\theta_c \approx 24^\circ$$) sparkles. For a water–air boundary $$\theta_c=48.6^\circ$$; for a typical glass ($$n=1.5$$) it is $$\arcsin(1/1.5)=41.8^\circ$$, which is why a $$45^\circ$$ glass prism makes a perfect internal mirror in binoculars.
+This is how optical fibers trap light and why a diamond ($$n\approx 2.4$$, so $$\theta_c \approx 24^\circ$$) sparkles. For a water–air boundary $$\theta_c=48.6^\circ$$; for a typical glass ($$n=1.5$$) it is $$\arcsin(1/1.5)=41.8^\circ$$, which is why a $$45^\circ$$ glass prism makes a perfect internal mirror in binoculars.
 
-For a step-index fiber with core index $$n_1$$, cladding index $$n_2<n_1$$, and air outside, the maximum entrance cone is often summarized by the **numerical aperture**
+## Thin lenses and ray tracing
+
+A thin lens is a lens that we assumed to ahve no width and one that obeys the **thin-lens equation** (looks exactly like the mirror equation) and magnification:
 
 $$
-\text{NA}=\sin\theta_{\max}=\sqrt{n_1^2-n_2^2}.
+\frac{1}{f} = \frac{1}{d_o} + \frac{1}{d_i},
+\qquad
+m = -\frac{d_i}{d_o}=-\frac{h_i}{h_o}.
 $$
+
+$$h_i$$ and $$h_o$$ are the heights of the image and the object, respectively. Note that a negative height/magnitude means the image is inverted. 
+
+<div class="theorem-box">
+
+**Proof (Thin lens equation).** A concave mirror has center of curvature $$C$$ at distance $$R$$ from the vertex. A paraxial ray from an axial object $$O$$ (distance $$d_o$$) strikes the mirror at height $$h$$ and reflects to the image $$I$$ (distance $$d_i$$). Let the ray hit at angle $$\theta$$ to the radius (the local normal). Let $$\alpha,\beta,\gamma$$ be the angles the object ray, image ray, and radius make with the axis:
+
+$$
+\alpha\approx\frac{h}{d_o},\qquad \beta\approx\frac{h}{d_i},\qquad \gamma\approx\frac{h}{R}.
+$$
+
+The radius bisects incident and reflected rays (law of reflection), and the exterior-angle relations of the two triangles give $$\gamma=\alpha+\theta$$ and $$\beta=\gamma+\theta$$. Eliminating $$\theta$$,
+
+$$
+\alpha+\beta=2\gamma
+\quad\Longrightarrow\quad
+\frac{1}{d_o}+\frac{1}{d_i}=\frac{2}{R}.
+$$
+
+Parallel rays ($$d_o\to\infty$$) focus at $$d_i=R/2$$, defining the focal length $$f=R/2$$, so
+
+$$
+\frac{1}{d_o}+\frac{1}{d_i}=\frac{1}{f}.
+$$
+
+// change this to fit thin lens instead of curved mirror
+
+</div>
+
+### The lensmaker's equation
+
+<div class="theorem-box">
+
+**Theorem (Lensmaker's equation)** // add the theorem of the lensmaker equation, including sign conventions
+
+</div>
+
+A thin lens is just two spherical surfaces back-to-back. Applying the single-surface formula twice and adding gives the lensmaker's equation as a clean proof.
+
+<div class="theorem-box">
+
+**Proof (Lensmaker's equation).** A thin lens of index $$n$$ sits in air ($$n_{\text{air}}=1$$), with front surface radius $$R_1$$ and back surface $$R_2$$. **Surface 1** (air $$\to$$ glass) images the object at $$s_o$$ to an intermediate image at $$s_i'$$:
+
+$$
+\frac{1}{s_o}+\frac{n}{s_i'}=\frac{n-1}{R_1}.
+$$
+
+This intermediate image acts as the object for **surface 2** (glass $$\to$$ air). For a *thin* lens the two surfaces coincide, so the object distance for surface 2 is $$-s_i'$$ (a real image behind surface 1 is a virtual object for surface 2). Thus
+
+$$
+\frac{n}{-s_i'}+\frac{1}{s_i}=\frac{1-n}{R_2}.
+$$
+
+Add the two equations; the $$\pm n/s_i'$$ terms cancel:
+
+$$
+\frac{1}{s_o}+\frac{1}{s_i}=(n-1)\!\left(\frac{1}{R_1}-\frac{1}{R_2}\right).
+$$
+
+Comparing to the thin-lens form $$1/s_o+1/s_i=1/f$$ identifies the focal length:
+
+$$
+\ \frac{1}{f}=(n-1)\!\left(\frac{1}{R_1}-\frac{1}{R_2}\right)\ .
+$$
+
+</div>
+
+### Types of thin lenses
+
+The words **convex** and **concave** describe the shape; **converging** and **diverging** describe what the lens does to parallel rays in its surrounding medium.
+
+| Lens shape | Cross-section idea | In air | Sign of $$f$$ | Ray behavior |
+| --- | --- | --- | --- | --- |
+| Biconvex | thickest in the middle | converging | $$+$$ | parallel rays meet at the far focal point |
+| Plano-convex | one flat side, one convex side | converging | $$+$$ | common simple positive lens |
+| Positive meniscus | one convex and one concave side, thicker in middle | converging | $$+$$ | weaker/aberration-controlled positive lens |
+| Biconcave | thinnest in the middle | diverging | $$-$$ | parallel rays spread as if from the near focal point |
+| Plano-concave | one flat side, one concave side | diverging | $$-$$ | common simple negative lens |
+| Negative meniscus | one convex and one concave side, thinner in middle | diverging | $$-$$ | weaker/aberration-controlled negative lens |
+
+// add a photo of each type of lens
+
+In ordinary air, a lens thicker in the middle is usually converging and a lens thinner in the middle is usually diverging. If the surrounding medium has a higher index than the lens, the behavior can reverse, because the lensmaker's equation depends on the index contrast, not just the visual shape.
+
+### Principal rays for lenses
+
+For ray tracing, we assume that light emits from an object as rays in every direction. However, to determine the position of the image, we only need to draw the three principal rays from the top of the object. When the outgoing rays meet, it forms the image. If the outgoing rays diverge, extend them backward with dashed lines; where the extensions meet is a virtual image (it would have existed there in the eyes of an observer).
+
+For a **converging (biconvex) lens**:
+
+1. A ray parallel to the axis refracts through the far focal point.
+2. A ray through the near focal point emerges parallel to the axis.
+3. A ray through the center of a thin lens continues nearly straight.
+
+For a **diverging (biconcave) lens**:
+
+1. A ray parallel to the axis refracts outward as if it came from the near focal point.
+2. A ray aimed toward the far focal point emerges parallel to the axis.
+3. A ray through the center of a thin lens continues nearly straight.
+
+:::tip{title="Ray-tracing first, equation second"}
+Ray tracing tells you the image type before algebra: real or virtual, upright or inverted, enlarged or reduced. Then the thin-lens equation gives the exact distance and magnification.
+:::
+
+### Image cases
+
+For a converging lens:
+
+- $$d_o>2f$$: real, inverted, reduced image between $$f$$ and $$2f$$.
+- $$d_o=2f$$: real, inverted, same-size image at $$2f$$.
+- $$f<d_o<2f$$: real, inverted, enlarged image beyond $$2f$$.
+- $$d_o=f$$: outgoing rays are parallel, so the image is at infinity.
+- $$d_o<f$$: virtual, upright, enlarged image on the object side.
+
+For a diverging lens with a real object, the image is always virtual, upright, reduced, and on the object side.
+
+<div class="theorem-box">
+
+**Example.** An object sits $$30\text{ cm}$$ in front of a converging lens of focal length $$f = 10\text{ cm}$$. Use ray tracing first, then calculate the image location and magnification.
+
+Since $$d_o=30\text{ cm}>2f$$, the ray diagram should give a real, inverted, reduced image between $$f$$ and $$2f$$ on the far side. Now use the thin-lens equation:
+
+$$
+\frac{1}{d_i} = \frac{1}{f} - \frac{1}{d_o} = \frac{1}{10} - \frac{1}{30} = \frac{2}{30},
+\qquad
+d_i = 15\text{ cm}.
+$$
+
+Since $$d_i > 0$$, the image is **real** and on the far side of the lens. The magnification is
+
+$$
+m = -\frac{d_i}{d_o} = -\frac{15}{30} = -0.5,
+$$
+
+so the image is **inverted** and **half** the object's size — exactly the behavior of a camera or a projected slide.
+
+</div>
+
+For a system of lenses, work through them one at a time: the image of the first lens becomes the object of the second (a real image on the incoming side of the next lens counts as a positive object distance; an image that would form behind it is a virtual object with negative distance). The total magnification is the product, $$m = m_1 m_2 \cdots$$.
 
 ## Fermat's principle
 
 <div class="theorem-box">
 
-**Theorem (Fermat's principle).** The reason behind the laws of reflection and refraction is that light travels between two points along the path that takes a **stationary** (usually minimum) time. This is why light sometimes won't take a straight path from one point to another.
+**Theorem (Fermat's principle).** Light travels between two points along the path that takes a **stationary** (usually minimum) time. This is why light sometimes won't take a straight path from one point to another.
 
 </div>
 
 <div class="theorem-box">
 
-**Proof (Snell's Law).** Light goes from point $$A$$ in medium $$1$$ to point $$B$$ in medium $$2$$, crossing the boundary at horizontal position $$x$$. If $$A$$ is height $$a$$ above the boundary at horizontal $$0$$, and $$B$$ is depth $$b$$ below at horizontal $$d$$, the travel time is
+**Proof (Snell's Law, using Fermat's principle).** Light goes from point $$A$$ in medium $$1$$ to point $$B$$ in medium $$2$$, crossing the boundary at horizontal position $$x$$. If $$A$$ is height $$a$$ above the boundary at horizontal $$0$$, and $$B$$ is depth $$b$$ below at horizontal $$d$$, the travel time is
 
 $$
 t(x) = \frac{\sqrt{a^2 + x^2}}{v_1} + \frac{\sqrt{b^2 + (d-x)^2}}{v_2}.
 $$
 
-Setting $$dt/dx = 0$$,
+This can be derived from Pythagorean theorem and basic kinematics. Setting $$dt/dx = 0$$,
 
 $$
 \frac{x}{v_1\sqrt{a^2+x^2}} - \frac{d-x}{v_2\sqrt{b^2+(d-x)^2}} = 0.
 $$
 
-The two fractions are exactly $$\sin\theta_1/v_1$$ and $$\sin\theta_2/v_2$$, so
+The two fractions are equal to $$\sin\theta_1/v_1$$ and $$\sin\theta_2/v_2$$, so
 
 $$
 \frac{\sin\theta_1}{v_1} = \frac{\sin\theta_2}{v_2}
@@ -157,9 +302,9 @@ using $$n = c/v$$. The law of reflection follows from the same principle with bo
 
 The index of refraction actually depends slightly on wavelength, $$n(\lambda)$$, with blue light (short $$\lambda$$) refracting more than red in most glass. This **dispersion** is why a prism spreads white light into a spectrum and why rainbows form (refraction + internal reflection + dispersion in water droplets).
 
-## Gradient-index refraction and mirages
+### Gradient-index refraction and mirages
 
-When the index varies *continuously* rather than in a sharp jump, Snell's law still applies across each infinitesimal layer, and the quantity $$n\sin\theta$$ (angle from the vertical) is conserved along the ray. The ray curves smoothly, always **bending toward the region of higher $$n$$** — toward slower light. Applying Snell's law to two nearby heights, a ray climbing through an index gradient turns through an angle $$\approx (1/n)\,(dn/dh)$$ per unit horizontal distance.
+When the index varies *continuously* rather than in a sharp jump, Snell's law still applies across each infinitesimal layer, and the quantity $$n\sin\theta$$ (angle from the vertical) is conserved along the ray. The ray curves smoothly, always **bending toward the region of higher $$n$$**: toward slower light. Applying Snell's law to two nearby heights, a ray climbing through an index gradient turns through an angle $$\approx (1/n)\,(dn/dh)$$ per unit horizontal distance.
 
 This is the physics of **mirages**. In the atmosphere $$n - 1 \propto \rho \propto P/T$$, so a temperature gradient bends light:
 
@@ -210,38 +355,6 @@ So $$1.00/s_i=0.0110-0.0665=-0.0555$$, giving $$s_i=-18.0\text{ cm}$$. The negat
 
 </div>
 
-### The lensmaker's equation
-
-A thin lens is just two spherical surfaces back-to-back. Applying the single-surface formula twice and adding gives the lensmaker's equation as a clean proof.
-
-<div class="theorem-box">
-
-**Proof (Lensmaker's equation).** A thin lens of index $$n$$ sits in air ($$n_{\text{air}}=1$$), with front surface radius $$R_1$$ and back surface $$R_2$$. **Surface 1** (air $$\to$$ glass) images the object at $$s_o$$ to an intermediate image at $$s_i'$$:
-
-$$
-\frac{1}{s_o}+\frac{n}{s_i'}=\frac{n-1}{R_1}.
-$$
-
-This intermediate image acts as the object for **surface 2** (glass $$\to$$ air). For a *thin* lens the two surfaces coincide, so the object distance for surface 2 is $$-s_i'$$ (a real image behind surface 1 is a virtual object for surface 2). Thus
-
-$$
-\frac{n}{-s_i'}+\frac{1}{s_i}=\frac{1-n}{R_2}.
-$$
-
-Add the two equations; the $$\pm n/s_i'$$ terms cancel:
-
-$$
-\frac{1}{s_o}+\frac{1}{s_i}=(n-1)\!\left(\frac{1}{R_1}-\frac{1}{R_2}\right).
-$$
-
-Comparing to the thin-lens form $$1/s_o+1/s_i=1/f$$ identifies the focal length:
-
-$$
-\ \frac{1}{f}=(n-1)\!\left(\frac{1}{R_1}-\frac{1}{R_2}\right)\ .
-$$
-
-</div>
-
 ## Spherical mirrors
 
 A spherical mirror of radius $$R$$ has focal length
@@ -250,13 +363,7 @@ $$
 f = \frac{R}{2}.
 $$
 
-Object and image distances $$d_o, d_i$$ obey the **mirror equation**, and the **magnification** is
-
-$$
-\frac{1}{f} = \frac{1}{d_o} + \frac{1}{d_i},
-\qquad
-m = -\frac{d_i}{d_o}.
-$$
+Object and image distances obey the **thin lens equation** (as described above).
 
 **Sign conventions** (real-is-positive):
 
@@ -264,30 +371,6 @@ $$
 - $$d_i > 0$$ for a real image (same side as object, in front); $$d_i < 0$$ for a virtual image (behind).
 - $$f > 0$$ for a concave (converging) mirror; $$f < 0$$ for convex (diverging).
 - $$m > 0$$ upright, $$m < 0$$ inverted; $$\lvert m \rvert > 1$$ enlarged.
-
-<div class="theorem-box">
-
-**Proof (Mirror equation).** A concave mirror has center of curvature $$C$$ at distance $$R$$ from the vertex. A paraxial ray from an axial object $$O$$ (distance $$d_o$$) strikes the mirror at height $$h$$ and reflects to the image $$I$$ (distance $$d_i$$). Let the ray hit at angle $$\theta$$ to the radius (the local normal). Let $$\alpha,\beta,\gamma$$ be the angles the object ray, image ray, and radius make with the axis:
-
-$$
-\alpha\approx\frac{h}{d_o},\qquad \beta\approx\frac{h}{d_i},\qquad \gamma\approx\frac{h}{R}.
-$$
-
-The radius bisects incident and reflected rays (law of reflection), and the exterior-angle relations of the two triangles give $$\gamma=\alpha+\theta$$ and $$\beta=\gamma+\theta$$. Eliminating $$\theta$$,
-
-$$
-\alpha+\beta=2\gamma
-\quad\Longrightarrow\quad
-\frac{1}{d_o}+\frac{1}{d_i}=\frac{2}{R}.
-$$
-
-Parallel rays ($$d_o\to\infty$$) focus at $$d_i=R/2$$, defining the focal length $$f=R/2$$, so
-
-$$
-\frac{1}{d_o}+\frac{1}{d_i}=\frac{1}{f}.
-$$
-
-</div>
 
 The reason a curved mirror focuses at all comes out cleanly for **conic-section** shapes, which have exact reflection properties:
 
@@ -297,94 +380,7 @@ The reason a curved mirror focuses at all comes out cleanly for **conic-section*
 
 A spherical mirror only *approximates* a parabola near its axis; rays striking far from the axis miss the focus, an error called **spherical aberration**.
 
-## Thin lenses and ray tracing
-
-A thin lens obeys the same-looking **thin-lens equation** and magnification:
-
-$$
-\frac{1}{f} = \frac{1}{d_o} + \frac{1}{d_i},
-\qquad
-m = -\frac{d_i}{d_o}.
-$$
-
-The focal length is set by the surface curvatures and the index through the **lensmaker's equation** (proved above):
-
-$$
-\frac{1}{f} = (n-1)\left(\frac{1}{R_1} - \frac{1}{R_2}\right),
-$$
-
-with $$R$$ positive for a surface that bulges toward the incoming light. Converging (convex) lenses have $$f>0$$; diverging (concave) lenses have $$f<0$$. For lenses the sign convention puts real images on the *opposite* side from the object ($$d_i > 0$$ there).
-
-### Types of thin lenses
-
-The words **convex** and **concave** describe the shape; **converging** and **diverging** describe what the lens does to parallel rays in its surrounding medium.
-
-| Lens shape | Cross-section idea | In air | Sign of $$f$$ | Ray behavior |
-| --- | --- | --- | --- | --- |
-| Biconvex | thickest in the middle | converging | $$f>0$$ | parallel rays meet at the far focal point |
-| Plano-convex | one flat side, one convex side | converging | $$f>0$$ | common simple positive lens |
-| Positive meniscus | one convex and one concave side, thicker in middle | converging | $$f>0$$ | weaker/aberration-controlled positive lens |
-| Biconcave | thinnest in the middle | diverging | $$f<0$$ | parallel rays spread as if from the near focal point |
-| Plano-concave | one flat side, one concave side | diverging | $$f<0$$ | common simple negative lens |
-| Negative meniscus | one convex and one concave side, thinner in middle | diverging | $$f<0$$ | weaker/aberration-controlled negative lens |
-
-In ordinary air, a lens thicker in the middle is usually converging and a lens thinner in the middle is usually diverging. If the surrounding medium has a higher index than the lens, the behavior can reverse, because the lensmaker's equation depends on the index contrast, not just the visual shape.
-
-### Principal rays for lenses
-
-For ray tracing, draw at least two of the three principal rays from the top of the object. Where the outgoing rays meet is the image point. If the outgoing rays diverge, extend them backward with dashed lines; where the extensions meet is a virtual image.
-
-For a **converging lens**:
-
-1. A ray parallel to the axis refracts through the far focal point.
-2. A ray through the near focal point emerges parallel to the axis.
-3. A ray through the center of a thin lens continues nearly straight.
-
-For a **diverging lens**:
-
-1. A ray parallel to the axis refracts outward as if it came from the near focal point.
-2. A ray aimed toward the far focal point emerges parallel to the axis.
-3. A ray through the center of a thin lens continues nearly straight.
-
-:::tip{title="Ray-tracing first, equation second"}
-Ray tracing tells you the image type before algebra: real or virtual, upright or inverted, enlarged or reduced. Then the thin-lens equation gives the exact distance and magnification.
-:::
-
-### Image cases
-
-For a converging lens:
-
-- $$d_o>2f$$: real, inverted, reduced image between $$f$$ and $$2f$$.
-- $$d_o=2f$$: real, inverted, same-size image at $$2f$$.
-- $$f<d_o<2f$$: real, inverted, enlarged image beyond $$2f$$.
-- $$d_o=f$$: outgoing rays are parallel, so the image is at infinity.
-- $$d_o<f$$: virtual, upright, enlarged image on the object side.
-
-For a diverging lens with a real object, the image is always virtual, upright, reduced, and on the object side.
-
-<div class="theorem-box">
-
-**Example.** An object sits $$30\text{ cm}$$ in front of a converging lens of focal length $$f = 10\text{ cm}$$. Use ray tracing first, then calculate the image location and magnification.
-
-Since $$d_o=30\text{ cm}>2f$$, the ray diagram should give a real, inverted, reduced image between $$f$$ and $$2f$$ on the far side. Now use the thin-lens equation:
-
-$$
-\frac{1}{d_i} = \frac{1}{f} - \frac{1}{d_o} = \frac{1}{10} - \frac{1}{30} = \frac{2}{30},
-\qquad
-d_i = 15\text{ cm}.
-$$
-
-Since $$d_i > 0$$, the image is **real** and on the far side of the lens. The magnification is
-
-$$
-m = -\frac{d_i}{d_o} = -\frac{15}{30} = -0.5,
-$$
-
-so the image is **inverted** and **half** the object's size — exactly the behavior of a camera or a projected slide.
-
-</div>
-
-For a system of lenses, work through them one at a time: the image of the first lens becomes the object of the second (a real image on the incoming side of the next lens counts as a positive object distance; an image that would form behind it is a virtual object with negative distance). The total magnification is the product, $$m = m_1 m_2 \cdots$$.
+---
 
 ## Prisms and minimum deviation
 

@@ -898,7 +898,7 @@ a.site-title {
 :root[data-note-theme='nebula'] :is(select, .visual-theme__menu, .header-account-menu),
 :root[data-note-theme='classic'] :is(select, .visual-theme__menu, .header-account-menu) {
 	border-color: var(--classic-ui-border);
-	background-color: var(--classic-popup-bg);
+	background: var(--classic-popup-bg);
 	color: var(--sl-color-text);
 	box-shadow: 0 12px 28px color-mix(in srgb, #000 24%, transparent);
 }
@@ -907,4 +907,13 @@ a.site-title {
 :root[data-note-theme='classic'] :is(select, .visual-theme__menu) option {
 	background-color: var(--classic-popup-bg);
 	color: var(--sl-color-text);
+}
+
+@media (max-width: 49.99rem) {
+	:root[data-note-theme='nebula'] .sidebar-pane,
+	:root[data-note-theme='classic'] .sidebar-pane {
+		background: var(--classic-popup-bg);
+		border-top: 1px solid var(--classic-ui-border);
+		box-shadow: 0 18px 36px color-mix(in srgb, #000 26%, transparent);
+	}
 }

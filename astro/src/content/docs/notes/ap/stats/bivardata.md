@@ -24,7 +24,6 @@ If both variables are quantitative and the relationship looks roughly linear, we
 
 A **scatterplot** plots each case as a point $$(x, y)$$ in the plane. Choose scales so that all observed $$x$$- and $$y$$-values fit comfortably, and label axes with variable names and units.
 
-
 ```tikz
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.16}
@@ -37,11 +36,10 @@ A **scatterplot** plots each case as a point $$(x, y)$$ in the plane. Choose sca
 \end{tikzpicture}
 ```
 
-
 When you describe a scatterplot, organize your comments around three ideas: **shape**, **direction**, and **strength**.
 
 :::strategy{title="Describing scatterplots"}
-Use form, direction, strength, and unusual features. Then connect the pattern to context: "As [explanatory variable] increases, [response variable] tends to..."
+Use form, direction, strength, and unusual features. Then connect the pattern to context: "As [explanatory variable] increases, [response variable] tends to..." However, NEVER imply causation unless it is specifically stated! Correlation does NOT imply causation!
 :::
 
 ### Shape
@@ -60,7 +58,7 @@ Use form, direction, strength, and unusual features. Then connect the pattern to
 
 ## Pearson’s correlation coefficient
 
-Pearson’s correlation coefficient (often called the correlation) is a number that measures the direction and strength of a linear relationship between two quantitative variables. It is denoted $$\rho$$ for a population and $$r$$ for a sample.
+Pearson’s correlation coefficient (often called the correlation is a number that measures the direction and strength of a linear relationship between two quantitative variables. It is denoted $$\rho$$ for a population and $$r$$ for a sample (although $$r$$ is almost always used). For every distribution:
 
 $$
 -1 \le r \le 1
@@ -102,9 +100,9 @@ $$
 Y = \beta_0 + \beta_1 X + \epsilon
 $$
 
-Here $$\beta_0$$ is the y-intercept, $$\beta_1$$ is the slope, and $$\epsilon$$ captures everything the straight line misses: measurement noise, other variables, and genuine nonlinearity. The errors $$\epsilon$$ are what we hope stay small and behave reasonably once we estimate the line from data.
+Here $$\beta_0$$ is the y-intercept, $$\beta_1$$ is the slope, and $$\epsilon$$ is the error term. The errors $$\epsilon$$ are what we hope stay small and behave reasonably once we estimate the line from data.
 
-From a sample, we write estimated coefficients (often $$b_0$$ and $$b_1$$, or $$\hat{\beta}_0$$ and $$\hat{\beta}_1$$) and a fitted line used for prediction.
+From a sample, we write estimated coefficients (often $$b_0$$ and $$b_1$$, or $$\hat{\beta}_0$$ and $$\hat{\beta}_1$$) and a fitted line used for prediction. Note that $$\epsilon$$ is only included when you have to compare the experimental data with the model preictions.
 
 ### Predicted values and residuals
 
@@ -126,9 +124,9 @@ the observed response minus the predicted response. Residuals are the data’s w
 
 ### Why “least squares”?
 
-The least-squares regression line is the line that minimizes the sum of squared residuals, $$\sum e_i^2$$. That criterion is mathematically tractable and penalizes large misses heavily, which is why a few influential points can pull the line. In addition, it only compares the magnitudes of error, so direction does not matter
+The least-squares regression line is the line that minimizes the sum of squared residuals, $$\sum \epsilon_i^2$$. That criterion is mathematically tractable and can be solved without heavy use of approximations, among other mathematical advantages. In addition, it only compares the magnitudes of error, so direction does not matter.
 
-Useful facts for AP work:
+Useful facts for AP Statistics:
 
 - The least-squares line always passes through ($$\bar{x}, \bar{y}$$), the point of means.
 - The slope satisfies
@@ -155,7 +153,6 @@ An outlier in regression is often a point with an unusually large residual: the 
 
 A residual plot graphs residuals (usually on the vertical axis) against either the predicted values $$\hat{y}$$ or the explanatory variable $$x$$. The purpose is to diagnose the fit of a linear model.
 
-
 ```tikz
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.16}
@@ -168,14 +165,13 @@ A residual plot graphs residuals (usually on the vertical axis) against either t
 \end{tikzpicture}
 ```
 
-
 What you hope to see is a formless cloud: points scattered randomly around the horizontal axis at $$\epsilon = 0$$, with roughly constant spread across values of $$x$$ or $$\hat{y}$$.
 
 :::exam{topic="Residual plots"}
 When the residual plot has a curve, say the linear model is not appropriate. When the vertical spread changes as $$x$$ increases, say the equal-spread condition is questionable.
 :::
 
-Curved patterns mean the relationship is probably nonlinear; a linear model is a poor summary. Fan shapes (spread grows or shrinks as $$x$$ changes) suggest nonconstant variance, which matters more when you move into formal inference, but is still worth mentioning when you describe real data.
+Curved patterns mean the relationship is probably nonlinear; a linear model is a poor summary and should not be used. Fan shapes (spread grows or shrinks as $$x$$ changes) suggest nonconstant variance, which matters more when you move into formal inference, but is still worth mentioning when you describe real data.
 
 ---
 
