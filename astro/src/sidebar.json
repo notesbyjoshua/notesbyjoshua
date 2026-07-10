@@ -210,31 +210,31 @@
             "link": "/notes/ap/ap-physics-c-mechanics/"
           },
           {
-            "label": "1D and 2D Kinematics",
+            "label": "Unit 1: 1D and 2D Kinematics",
             "link": "/notes/ap/ap-physics-c-mechanics/kinematics/"
           },
           {
-            "label": "Force and Translational Dynamics",
+            "label": "Unit 2: Force and Translational Dynamics",
             "link": "/notes/ap/ap-physics-c-mechanics/forces/"
           },
           {
-            "label": "Work, Energy, and Power",
+            "label": "Unit 3: Work, Energy, and Power",
             "link": "/notes/ap/ap-physics-c-mechanics/work/"
           },
           {
-            "label": "Linear Momentum and Impulse",
+            "label": "Unit 4: Linear Momentum and Impulse",
             "link": "/notes/ap/ap-physics-c-mechanics/linearmomentum/"
           },
           {
-            "label": "Torque and Rotational Dynamics",
+            "label": "Unit 5: Torque and Rotational Dynamics",
             "link": "/notes/ap/ap-physics-c-mechanics/torque/"
           },
           {
-            "label": "Energy and Momentum of Rotating Systems",
+            "label": "Unit 6: Energy and Momentum of Rotating Systems",
             "link": "/notes/ap/ap-physics-c-mechanics/rotationalmomentum/"
           },
           {
-            "label": "Oscillations",
+            "label": "Unit 7: Oscillations",
             "link": "/notes/ap/ap-physics-c-mechanics/oscillations/"
           }
         ]
@@ -247,27 +247,27 @@
             "link": "/notes/ap/ap-physics-c-em/"
           },
           {
-            "label": "Electric Fields and Forces",
+            "label": "Unit 1: Electric Fields and Forces",
             "link": "/notes/ap/ap-physics-c-em/electrostatics/"
           },
           {
-            "label": "Electric Potential",
+            "label": "Unit 2: Electric Potential",
             "link": "/notes/ap/ap-physics-c-em/electricpot/"
           },
           {
-            "label": "Conductors and Capacitors",
+            "label": "Unit 3: Conductors and Capacitors",
             "link": "/notes/ap/ap-physics-c-em/condcap/"
           },
           {
-            "label": "Circuits",
+            "label": "Unit 4: Circuits",
             "link": "/notes/ap/ap-physics-c-em/circuits/"
           },
           {
-            "label": "Magnetic Fields and Electromagnetism",
+            "label": "Unit 5: Magnetic Fields and Electromagnetism",
             "link": "/notes/ap/ap-physics-c-em/magnetism/"
           },
           {
-            "label": "Electromagnetic Induction",
+            "label": "Unit 6: Electromagnetic Induction",
             "link": "/notes/ap/ap-physics-c-em/eminduction/"
           }
         ]
