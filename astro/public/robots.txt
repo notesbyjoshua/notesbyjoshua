@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://notesbyjoshua.github.io/sitemap-index.xml
