@@ -145,6 +145,8 @@ The coefficient of determination, $$R^2$$, reports the fraction of the variabili
 
 High $$R^2$$ does not prove the model is appropriate (nonlinearity can still hide in residual plots), and it does not prove causation.
 
+Technology output often includes the intercept, slope, residual standard deviation $$s$$, and $$R^2$$. In this unit, use those values descriptively: interpret the slope, make predictions when appropriate, and use residuals to judge whether a linear model is reasonable.
+
 ### Influential observations and outliers
 
 An outlier in regression is often a point with an unusually large residual: the line misses it badly. An influential observation is one whose removal would substantially change the estimated slope or intercept—often a point that is extreme in $$x$$ (high leverage) and also off the trend. Not every outlier is influential, and not every influential point looks like a vertical outlier; inspect the plot and, when possible, recompute the line without suspect cases (sensibly and transparently).

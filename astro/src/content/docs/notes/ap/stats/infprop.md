@@ -288,6 +288,12 @@ $$
 
 Here $$O$$ is an observed count and $$E$$ is an expected count. Large values of $$\chi^2$$ indicate that the observed counts are far from what the null hypothesis predicts, so chi-square tests are right-tailed.
 
+The **chi-square distribution** is right-skewed and indexed by degrees of freedom. Chi-square values are always nonnegative because the statistic is built from squared differences. As degrees of freedom increase, the distribution becomes less skewed.
+
+:::key{name="Observed versus expected"}
+Observed counts come from the data. Expected counts come from the null hypothesis. The chi-square statistic measures how far the data are from what the null model predicts.
+:::
+
 :::conditions
 1. Counts come from random samples, random assignment, or a randomized process.
 2. Observations are independent. If sampling without replacement, check the 10% Condition.

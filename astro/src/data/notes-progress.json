@@ -202,54 +202,12 @@
       "next_step": "Add matching solutions"
     },
     {
-      "title": "Unit 8: Inference for Categorical Data: Chi-Square",
-      "route": "/notes/ap/stats/catchi/",
-      "course": "AP Statistics",
-      "kind": "unit",
-      "status": "draft",
-      "progress": 34,
-      "issues": [
-        "few or no worked boxes",
-        "practice without solutions",
-        "has TODOs/placeholders"
-      ],
-      "next_step": "Add worked examples"
-    },
-    {
-      "title": "Unit 9: Inference for Quantitative Data: Slopes",
-      "route": "/notes/ap/stats/quantslopes/",
-      "course": "AP Statistics",
-      "kind": "unit",
-      "status": "draft",
-      "progress": 34,
-      "issues": [
-        "few or no worked boxes",
-        "practice without solutions",
-        "has TODOs/placeholders"
-      ],
-      "next_step": "Add worked examples"
-    },
-    {
       "title": "Unit 3: Inference for Categorical Data: Proportions",
       "route": "/notes/ap/stats/infprop/",
       "course": "AP Statistics",
       "kind": "unit",
       "status": "draft",
       "progress": 36,
-      "issues": [
-        "few or no worked boxes",
-        "practice without solutions",
-        "has TODOs/placeholders"
-      ],
-      "next_step": "Add worked examples"
-    },
-    {
-      "title": "Unit 5: Sampling Distributions",
-      "route": "/notes/ap/stats/samplingdistr/",
-      "course": "AP Statistics",
-      "kind": "unit",
-      "status": "draft",
-      "progress": 37,
       "issues": [
         "few or no worked boxes",
         "practice without solutions",
@@ -327,39 +285,12 @@
       "next_step": "Add worked examples"
     },
     {
-      "title": "Unit 3: Collecting Data",
-      "route": "/notes/ap/stats/collectingdata/",
-      "course": "AP Statistics",
-      "kind": "unit",
-      "status": "draft",
-      "progress": 47,
-      "issues": [
-        "few or no worked boxes",
-        "practice without solutions",
-        "has TODOs/placeholders"
-      ],
-      "next_step": "Add worked examples"
-    },
-    {
       "title": "AP Calculus AB/BC Cheat Sheet",
       "route": "/notes/ap/calculus/cheatsheet/",
       "course": "Notes",
       "kind": "unit",
       "status": "draft",
       "progress": 53,
-      "issues": [
-        "few or no worked boxes",
-        "missing practice"
-      ],
-      "next_step": "Add worked examples"
-    },
-    {
-      "title": "AP Statistics Cheat Sheet",
-      "route": "/notes/ap/stats/cheatsheet/",
-      "course": "AP Statistics",
-      "kind": "unit",
-      "status": "draft",
-      "progress": 55,
       "issues": [
         "few or no worked boxes",
         "missing practice"

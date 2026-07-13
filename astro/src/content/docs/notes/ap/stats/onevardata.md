@@ -344,6 +344,10 @@ Other probability sampling designs:
 - **Cluster sample**: split the population into clusters, randomly choose clusters, then measure everyone in the chosen clusters.
 - **Systematic sample**: choose a random starting point and then sample every $$k$$th item.
 
+In a **proportional stratified sample**, the number sampled from each stratum is proportional to the stratum's size in the population. This helps the combined sample represent the population while still guaranteeing that every stratum appears in the data.
+
+Systematic samples are quick to carry out, but they can be biased if the ordered list has a hidden pattern that lines up with the spacing $$k$$. Cluster samples are often cheaper than simple random samples, but they can be more variable if people inside each selected cluster are very similar.
+
 :::warning
 Strata should be internally similar and sampled from every group. Clusters should each look like miniature versions of the population, and only some clusters are selected.
 :::
@@ -359,6 +363,7 @@ Strata should be internally similar and sampled from every group. Clusters shoul
 - **Response bias**: answers are inaccurate because of wording, pressure, memory, or other measurement problems.
 - **Voluntary response**: people choose themselves into the sample, often because they have strong opinions.
 - **Convenience sampling**: the sample is chosen because it is easy to reach.
+- **Wording bias**: the question itself pushes people toward a particular answer.
 
 Random sampling helps with selection bias, but it does not automatically fix bad wording, nonresponse, or measurement problems.
 
@@ -380,6 +385,14 @@ Key ideas:
 - **Blinding**: subjects, evaluators, or both do not know which treatment was assigned.
 - **Replication**: enough experimental units are assigned to each treatment.
 - **Blocking**: group similar units first, then randomize within each block.
+
+Common experiment layouts:
+
+- **Completely randomized design**: all experimental units are randomly assigned among the treatments.
+- **Randomized block design**: similar units are grouped into blocks first, then treatments are randomly assigned within each block.
+- **Matched-pairs design**: each pair contains two similar units, or each unit receives both treatments in random order. This is a special block design for comparing two treatments.
+
+If the same unit receives both treatments, think about **order effects** and **carryover effects**. Randomizing the order helps with order effects, but it cannot always fix carryover if the first treatment permanently changes the unit.
 
 :::exam{topic="Scope of inference"}
 Random sampling helps you generalize to the population sampled from. Random assignment helps you make cause-and-effect conclusions. A study can have one, both, or neither.
