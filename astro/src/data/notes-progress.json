@@ -230,8 +230,8 @@
       "next_step": "Add worked examples"
     },
     {
-      "title": "Unit 6: Inference for Categorical Data: Proportions",
-      "route": "/notes/ap/stats/catprop/",
+      "title": "Unit 3: Inference for Categorical Data: Proportions",
+      "route": "/notes/ap/stats/infprop/",
       "course": "AP Statistics",
       "kind": "unit",
       "status": "draft",
@@ -272,8 +272,8 @@
       "next_step": "Add worked examples"
     },
     {
-      "title": "Unit 4: Probability, Random Variables, and Probability Distributions",
-      "route": "/notes/ap/stats/probandrand/",
+      "title": "Unit 2: Probability, Random Variables, and Probability Distributions",
+      "route": "/notes/ap/stats/probranddist/",
       "course": "AP Statistics",
       "kind": "unit",
       "status": "draft",
@@ -299,8 +299,8 @@
       "next_step": "Add worked examples"
     },
     {
-      "title": "Unit 1: Exploring Univariate Data",
-      "route": "/notes/ap/stats/univardata/",
+      "title": "Unit 1: Exploring One-Variable Data and Collecting Data",
+      "route": "/notes/ap/stats/onevardata/",
       "course": "AP Statistics",
       "kind": "unit",
       "status": "draft",
@@ -313,8 +313,8 @@
       "next_step": "Add worked examples"
     },
     {
-      "title": "Unit 2: Exploring Bivariate Data",
-      "route": "/notes/ap/stats/bivardata/",
+      "title": "Unit 5: Regression Analysis",
+      "route": "/notes/ap/stats/reganalysis/",
       "course": "AP Statistics",
       "kind": "unit",
       "status": "draft",

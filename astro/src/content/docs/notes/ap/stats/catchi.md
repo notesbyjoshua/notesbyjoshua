@@ -6,7 +6,7 @@ sidebar:
 ---
 
 :::note
-This is a legacy page from the older AP Statistics sequence. In the Fall 2026 AP Statistics CED, chi-square tests for homogeneity and independence are part of [Unit 3: Inference for Categorical Data: Proportions](/notes/ap/stats/catprop/).
+This is a legacy page from the older AP Statistics sequence. In the Fall 2026 AP Statistics CED, chi-square tests for homogeneity and independence are part of [Unit 3: Inference for Categorical Data: Proportions](/notes/ap/stats/infprop/).
 :::
 
 ## The Chi-Square Distribution

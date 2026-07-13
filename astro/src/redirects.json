@@ -24,5 +24,9 @@
   "/notes/physics/condcap/": "/notes/ap/ap-physics-c-em/condcap/",
   "/notes/physics/circuits/": "/notes/ap/ap-physics-c-em/circuits/",
   "/notes/physics/magnetism/": "/notes/ap/ap-physics-c-em/magnetism/",
-  "/notes/physics/eminduction/": "/notes/ap/ap-physics-c-em/eminduction/"
+  "/notes/physics/eminduction/": "/notes/ap/ap-physics-c-em/eminduction/",
+  "/notes/ap/stats/univardata/": "/notes/ap/stats/onevardata/",
+  "/notes/ap/stats/probandrand/": "/notes/ap/stats/probranddist/",
+  "/notes/ap/stats/catprop/": "/notes/ap/stats/infprop/",
+  "/notes/ap/stats/bivardata/": "/notes/ap/stats/reganalysis/"
 }

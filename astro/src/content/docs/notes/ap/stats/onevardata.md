@@ -277,7 +277,7 @@ $$
 z = \frac{x - \mu}{\sigma}
 $$
 
-With a sample, use $$\bar{x}$$ and $$s$$ in the same pattern. A z-score represents the amount of standard deviations above or below the mean a value is. Values with a large $$z$$-score are unusual relative to that distribution. Note that for future chapters, z-score will apply heavily to a [normal/Gaussian distribution](/notes/ap/stats/probandrand/).
+With a sample, use $$\bar{x}$$ and $$s$$ in the same pattern. A z-score represents the amount of standard deviations above or below the mean a value is. Values with a large $$z$$-score are unusual relative to that distribution. Note that for future chapters, z-score will apply heavily to a [normal/Gaussian distribution](/notes/ap/stats/probranddist/).
 
 ---
 

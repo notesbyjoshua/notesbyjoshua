@@ -13,15 +13,15 @@ Practice problems for **AP Statistics** will be organized by the Fall 2026 five-
 
 ## Unit 1: Exploring One-Variable Data and Collecting Data
 
-[Full notes ->](/notes/ap/stats/univardata/)
+[Full notes ->](/notes/ap/stats/onevardata/)
 
 ## Unit 2: Probability, Random Variables, and Probability Distributions
 
-[Full notes ->](/notes/ap/stats/probandrand/)
+[Full notes ->](/notes/ap/stats/probranddist/)
 
 ## Unit 3: Inference for Categorical Data: Proportions
 
-[Full notes ->](/notes/ap/stats/catprop/)
+[Full notes ->](/notes/ap/stats/infprop/)
 
 ## Unit 4: Inference for Quantitative Data: Means
 
@@ -29,4 +29,4 @@ Practice problems for **AP Statistics** will be organized by the Fall 2026 five-
 
 ## Unit 5: Regression Analysis
 
-[Full notes ->](/notes/ap/stats/bivardata/)
+[Full notes ->](/notes/ap/stats/reganalysis/)

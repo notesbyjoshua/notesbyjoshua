@@ -166,15 +166,15 @@
           },
           {
             "label": "Unit 1: Exploring One-Variable Data and Collecting Data",
-            "link": "/notes/ap/stats/univardata/"
+            "link": "/notes/ap/stats/onevardata/"
           },
           {
             "label": "Unit 2: Probability, Random Variables, and Probability Distributions",
-            "link": "/notes/ap/stats/probandrand/"
+            "link": "/notes/ap/stats/probranddist/"
           },
           {
             "label": "Unit 3: Inference for Categorical Data: Proportions",
-            "link": "/notes/ap/stats/catprop/"
+            "link": "/notes/ap/stats/infprop/"
           },
           {
             "label": "Unit 4: Inference for Quantitative Data: Means",
@@ -182,7 +182,7 @@
           },
           {
             "label": "Unit 5: Regression Analysis",
-            "link": "/notes/ap/stats/bivardata/"
+            "link": "/notes/ap/stats/reganalysis/"
           }
         ]
       },

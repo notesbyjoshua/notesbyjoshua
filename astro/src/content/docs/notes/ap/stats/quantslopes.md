@@ -7,7 +7,7 @@ sidebar:
 ---
 
 :::note
-This is a legacy page from the older AP Statistics sequence. The Fall 2026 AP Statistics CED includes descriptive regression analysis in [Unit 5: Regression Analysis](/notes/ap/stats/bivardata/) but does not include slope inference as a separate unit.
+This is a legacy page from the older AP Statistics sequence. The Fall 2026 AP Statistics CED includes descriptive regression analysis in [Unit 5: Regression Analysis](/notes/ap/stats/reganalysis/) but does not include slope inference as a separate unit.
 :::
 
 ## Population Regression Model
