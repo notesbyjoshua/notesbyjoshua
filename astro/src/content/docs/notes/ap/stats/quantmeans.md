@@ -1,8 +1,17 @@
 ---
-title: "Unit 7: Inference for Quantitative Data: Means"
+title: "Unit 4: Inference for Quantitative Data: Means"
 sidebar:
-  order: 7
+  order: 4
 ---
+
+Unit 4 covers inference for quantitative data in the Fall 2026 AP Statistics CED: sampling distributions for means, confidence intervals and tests for one population mean or paired mean difference, and confidence intervals and tests for the difference between two population means.
+
+:::summary{title="Unit 4 topics"}
+1. Sampling distributions for sample means.
+2. Confidence intervals and tests for one population mean or paired mean difference.
+3. Sampling distributions for the difference between two sample means.
+4. Confidence intervals and tests for the difference between two population means.
+:::
 
 ## z Procedures Versus t Procedures
 
@@ -37,6 +46,39 @@ Replacing the unknown population standard deviation $$\sigma$$ with the sample s
 \end{tikzpicture}
 ```
 
+
+---
+
+## Sampling Distributions For Means
+
+For a quantitative variable with population mean $$\mu$$ and standard deviation $$\sigma$$, the sample mean $$\bar{x}$$ has
+
+$$
+\mu_{\bar{x}}=\mu
+$$
+
+and
+
+$$
+\sigma_{\bar{x}}=\frac{\sigma}{\sqrt{n}}.
+$$
+
+If the population is normal, the sampling distribution of $$\bar{x}$$ is normal for any sample size. If the population is not normal, the Central Limit Theorem says the sampling distribution of $$\bar{x}$$ becomes approximately normal as $$n$$ gets large, assuming independence.
+
+For two independent sample means,
+
+$$
+\mu_{\bar{x}_1-\bar{x}_2}=\mu_1-\mu_2
+$$
+
+and
+
+$$
+\sigma_{\bar{x}_1-\bar{x}_2}
+=\sqrt{\frac{\sigma_1^2}{n_1}+\frac{\sigma_2^2}{n_2}}.
+$$
+
+When $$\sigma_1$$ and $$\sigma_2$$ are unknown, use $$s_1$$ and $$s_2$$ in the standard error for t procedures.
 
 ---
 
@@ -92,7 +134,7 @@ State the parameter as a mean of the population, not a mean of the sample. For e
 
 ---
 
-## Two-Sample t-Interval For Difference In Means
+## Two-Sample t-Interval For The Difference In Means
 
 Use a **two-sample t-interval** to estimate $$\mu_1-\mu_2$$ for two independent groups:
 
@@ -116,7 +158,7 @@ $$
 
 ---
 
-## Two-Sample t-Test For Difference In Means
+## Two-Sample t-Test For The Difference In Means
 
 For independent samples, test
 
@@ -248,45 +290,3 @@ Calculator output should be translated into statistical language: parameter, con
 | Matched pairs interval | $$\bar{d}\pm t^*s_d/\sqrt{n}$$ |
 | Matched pairs test | $$t=(\bar{d}-\mu_{d,0})/(s_d/\sqrt{n})$$ |
 :::
-
-## Practice
-
-### FRQ
-
-::::frq{id=stats-quantmeans-1}
-1. A random sample of 12 granola bars from a production line has mean weight $$\bar{x}=41.8$$ grams and sample standard deviation $$s=1.6$$ grams. A box advertises that bars weigh 40 grams on average.
-
-   $$(A)$$ State the hypotheses for testing whether the true mean weight is greater than 40 grams.
-
-   $$(B)$$ Calculate the test statistic and degrees of freedom.
-
-   $$(C)$$ Suppose the one-sided p-value is $$0.0013$$. Write a conclusion at $$\alpha=0.05$$.
-
-:::solution
-$$(A)$$ Let $$\mu$$ be the true mean weight, in grams, of granola bars from this production line.
-
-$$
-H_0:\mu=40
-$$
-
-and
-
-$$
-H_a:\mu>40.
-$$
-
-$$(B)$$ Since $$\sigma$$ is unknown, use a t statistic:
-
-$$
-t=\frac{41.8-40}{1.6/\sqrt{12}}\approx 3.90.
-$$
-
-The degrees of freedom are
-
-$$
-df=12-1=11.
-$$
-
-$$(C)$$ Since $$0.0013<0.05$$, reject $$H_0$$. There is convincing evidence that the true mean weight of granola bars from this production line is greater than 40 grams.
-:::
-::::

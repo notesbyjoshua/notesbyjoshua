@@ -1,8 +1,18 @@
 ---
-title: "Unit 6: Inference for Categorical Data: Proportions"
+title: "Unit 3: Inference for Categorical Data: Proportions"
 sidebar:
-  order: 6
+  order: 3
 ---
+
+Unit 3 covers inference for categorical data in the Fall 2026 AP Statistics CED: estimators, sampling distributions for sample proportions, confidence intervals and tests for one and two proportions, potential errors, and chi-square tests for homogeneity or independence.
+
+:::summary{title="Unit 3 topics"}
+1. Estimators and sampling distributions for sample proportions.
+2. Confidence intervals and tests for one population proportion.
+3. Confidence intervals and tests for the difference between two population proportions.
+4. Potential errors when performing tests.
+5. Chi-square tests for homogeneity and independence.
+:::
 
 ## Estimation And Hypothesis Testing
 
@@ -16,6 +26,46 @@ A **confidence interval** estimates a plausible range of values for a parameter.
 :::exam{topic="Inference writing"}
 For an AP free-response inference problem, the calculation is usually not enough. Name the parameter, check conditions in context, show the correct formula or calculator procedure, and finish with a conclusion that answers the original question.
 :::
+
+---
+
+## Estimators and Sampling Distributions
+
+An **estimator** is a statistic used to estimate a population parameter. For categorical data, the most common estimators are:
+
+- $$\hat{p}$$ for a population proportion $$p$$.
+- $$\hat{p}_1-\hat{p}_2$$ for a difference in population proportions $$p_1-p_2$$.
+
+A good estimator is usually unbiased and has low variability. For one sample proportion,
+
+$$
+\mu_{\hat{p}}=p
+$$
+
+and
+
+$$
+\sigma_{\hat{p}}=\sqrt{\frac{p(1-p)}{n}}.
+$$
+
+The normal approximation is appropriate when the large-counts condition is met:
+
+$$
+np\ge 10 \quad \text{and} \quad n(1-p)\ge 10.
+$$
+
+For two independent sample proportions,
+
+$$
+\mu_{\hat{p}_1-\hat{p}_2}=p_1-p_2
+$$
+
+and
+
+$$
+\sigma_{\hat{p}_1-\hat{p}_2}
+=\sqrt{\frac{p_1(1-p_1)}{n_1}+\frac{p_2(1-p_2)}{n_2}}.
+$$
 
 ---
 
@@ -228,6 +278,71 @@ Power increases when:
 
 ---
 
+## Chi-Square Tests for Homogeneity and Independence
+
+Chi-square procedures compare **observed counts** to **expected counts**. The test statistic is
+
+$$
+\chi^2=\sum \frac{(O-E)^2}{E}.
+$$
+
+Here $$O$$ is an observed count and $$E$$ is an expected count. Large values of $$\chi^2$$ indicate that the observed counts are far from what the null hypothesis predicts, so chi-square tests are right-tailed.
+
+:::conditions
+1. Counts come from random samples, random assignment, or a randomized process.
+2. Observations are independent. If sampling without replacement, check the 10% Condition.
+3. Expected counts are large enough. AP Statistics commonly uses all expected counts at least 5.
+:::
+
+:::warning
+Use counts, not proportions or percentages, in the chi-square statistic.
+:::
+
+### Homogeneity
+
+A **chi-square test for homogeneity** compares the distribution of one categorical variable across two or more populations or treatment groups.
+
+- $$H_0$$: The category distribution is the same for all populations or treatments.
+- $$H_a$$: At least one population or treatment has a different category distribution.
+
+### Independence
+
+A **chi-square test of independence** checks whether two categorical variables are associated in one population.
+
+- $$H_0$$: The two variables are independent in the population.
+- $$H_a$$: The two variables are associated in the population.
+
+For both homogeneity and independence, the expected count for a cell is
+
+$$
+E=\frac{(\text{row total})(\text{column total})}{\text{grand total}}.
+$$
+
+The degrees of freedom are
+
+$$
+df=(r-1)(c-1),
+$$
+
+where $$r$$ is the number of rows and $$c$$ is the number of columns.
+
+:::strategy{title="Choosing the chi-square procedure"}
+- Use **homogeneity** when there are separate samples or treatment groups and one categorical response.
+- Use **independence** when there is one sample and two categorical variables measured on each individual.
+:::
+
+### Contributions
+
+Each cell's contribution is
+
+$$
+\frac{(O-E)^2}{E}.
+$$
+
+The largest contributions show which cells are most responsible for the overall chi-square statistic. A cell with $$O>E$$ occurred more often than expected under the null; a cell with $$O<E$$ occurred less often than expected.
+
+---
+
 ## Calculator Notes
 
 Common calculator tools:
@@ -236,6 +351,7 @@ Common calculator tools:
 - `1-PropZTest`: one-proportion hypothesis test.
 - `2-PropZInt`: two-proportion confidence interval.
 - `2-PropZTest`: two-proportion hypothesis test.
+- `X2-Test`: chi-square test for homogeneity or independence using a matrix of observed counts.
 
 Calculator output does not replace communication. You still need hypotheses, conditions, p-value or interval, and a conclusion in context.
 
@@ -264,60 +380,6 @@ Calculator output does not replace communication. You still need hypotheses, con
 | Two-proportion interval | $$(\hat{p}_1-\hat{p}_2)\pm z^*\sqrt{\frac{\hat{p}_1(1-\hat{p}_1)}{n_1}+\frac{\hat{p}_2(1-\hat{p}_2)}{n_2}}$$ |
 | Pooled proportion | $$\hat{p}_c=(x_1+x_2)/(n_1+n_2)$$ |
 | Two-proportion test | $$z=\frac{(\hat{p}_1-\hat{p}_2)}{\sqrt{\hat{p}_c(1-\hat{p}_c)(1/n_1+1/n_2)}}$$ |
+| Chi-square statistic | $$\chi^2=\sum\dfrac{(O-E)^2}{E}$$ |
+| Expected count | $$E=\dfrac{(\text{row total})(\text{column total})}{\text{grand total}}$$ |
 :::
-
-## Practice
-
-### FRQ
-
-::::frq{id=stats-catprop-1}
-1. In a random sample of 250 students at a large high school, 142 say they prefer digital textbooks.
-
-   $$(A)$$ Construct and interpret a 95% confidence interval for the proportion of all students at the school who prefer digital textbooks.
-
-   $$(B)$$ A teacher claims that a majority of students prefer digital textbooks. Use a one-proportion z-test at $$\alpha=0.05$$ to test this claim.
-
-:::solution
-$$(A)$$ The sample proportion is
-
-$$
-\hat{p}=\frac{142}{250}=0.568.
-$$
-
-The random condition is stated. The 10% condition is reasonable if the school has at least 2500 students, or if the sample is small relative to the school. Large counts are met because $$142$$ successes and $$108$$ failures are both at least 10.
-
-A 95% interval is
-
-$$
-0.568\pm 1.96\sqrt{\frac{0.568(0.432)}{250}}.
-$$
-
-The margin of error is about $$0.0614$$, so the interval is
-
-$$
-(0.507,\ 0.629).
-$$
-
-We are 95% confident that the true proportion of all students at the school who prefer digital textbooks is between about 0.507 and 0.629.
-
-$$(B)$$ The hypotheses are
-
-$$
-H_0:p=0.50
-$$
-
-and
-
-$$
-H_a:p>0.50.
-$$
-
-Use the null value in the standard error:
-
-$$
-z=\frac{0.568-0.50}{\sqrt{0.50(0.50)/250}}\approx 2.15.
-$$
-
-The one-sided p-value is about $$0.016$$. Since $$0.016<0.05$$, reject $$H_0$$. There is convincing evidence that a majority of students at the school prefer digital textbooks.
-:::
-::::

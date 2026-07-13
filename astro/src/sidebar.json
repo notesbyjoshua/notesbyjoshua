@@ -165,40 +165,24 @@
             "link": "/notes/ap/stats/cheatsheet/"
           },
           {
-            "label": "Unit 1: Exploring Univariate Data",
+            "label": "Unit 1: Exploring One-Variable Data and Collecting Data",
             "link": "/notes/ap/stats/univardata/"
           },
           {
-            "label": "Unit 2: Exploring Bivariate Data",
-            "link": "/notes/ap/stats/bivardata/"
-          },
-          {
-            "label": "Unit 3: Collecting Data",
-            "link": "/notes/ap/stats/collectingdata/"
-          },
-          {
-            "label": "Unit 4: Probability, Random Variables, and Probability Distributions",
+            "label": "Unit 2: Probability, Random Variables, and Probability Distributions",
             "link": "/notes/ap/stats/probandrand/"
           },
           {
-            "label": "Unit 5: Sampling Distributions",
-            "link": "/notes/ap/stats/samplingdistr/"
-          },
-          {
-            "label": "Unit 6: Inference for Categorical Data: Proportions",
+            "label": "Unit 3: Inference for Categorical Data: Proportions",
             "link": "/notes/ap/stats/catprop/"
           },
           {
-            "label": "Unit 7: Inference for Quantitative Data: Means",
+            "label": "Unit 4: Inference for Quantitative Data: Means",
             "link": "/notes/ap/stats/quantmeans/"
           },
           {
-            "label": "Unit 8: Inference for Categorical Data: Chi-Square",
-            "link": "/notes/ap/stats/catchi/"
-          },
-          {
-            "label": "Unit 9: Inference for Quantitative Data: Slopes",
-            "link": "/notes/ap/stats/quantslopes/"
+            "label": "Unit 5: Regression Analysis",
+            "link": "/notes/ap/stats/bivardata/"
           }
         ]
       },

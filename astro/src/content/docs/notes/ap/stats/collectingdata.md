@@ -1,8 +1,13 @@
 ---
 title: "Unit 3: Collecting Data"
 sidebar:
-  order: 3
+  order: 30
+  hidden: true
 ---
+
+:::note
+This is a legacy page from the older AP Statistics sequence. In the Fall 2026 AP Statistics CED, data collection is part of [Unit 1: Exploring One-Variable Data and Collecting Data](/notes/ap/stats/univardata/).
+:::
 
 ## Basic terms: population, frame, sample, census
 

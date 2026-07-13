@@ -1,8 +1,17 @@
 ---
-title: "Unit 1: Exploring Univariate Data"
+title: "Unit 1: Exploring One-Variable Data and Collecting Data"
 sidebar:
   order: 1
 ---
+
+This unit follows the Fall 2026 AP Statistics structure: one-variable data, investigative questions, and data collection now live together. The goal is to learn how to describe one variable clearly and how the way data are collected controls what conclusions are reasonable.
+
+:::summary{title="Unit 1 topics"}
+1. Introducing statistics and investigative questions.
+2. Variables and one-variable displays.
+3. Summary statistics and comparisons.
+4. Data collection, random sampling, sampling problems, and experimental design.
+:::
 
 ## Types of Variables
 
@@ -124,13 +133,12 @@ A **boxplot** (box-and-whisker plot) summarizes a quantitative variable using qu
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
 \begin{tikzpicture}[>=Stealth, font=\small]
-\draw[->] (0,0)--(8,0) node[right] {value};
-\draw[thick] (1.0,0.35)--(2.5,0.35); \draw[thick] (5.5,0.35)--(7.0,0.35);
-\draw[thick, fill=blue!10] (2.5,0) rectangle (5.5,0.7); \draw[very thick] (4.0,0)--(4.0,0.7);
-\foreach \x/\lab in {1/min,2.5/Q1,4/median,5.5/Q3,7/max}{\draw (\x,-0.1)--(\x,0.8); \node[below] at (\x,-0.1) {\lab};}
+\draw[->] (0,-0.35)--(8,-0.35) node[right] {value};
+\draw[thick] (1.0,0.65)--(2.5,0.65); \draw[thick] (5.5,0.65)--(7.0,0.65);
+\draw[thick, fill=blue!10] (2.5,0.3) rectangle (5.5,1.0); \draw[very thick] (4.0,0.3)--(4.0,1.0);
+\foreach \x/\lab in {1/min,2.5/Q1,4/median,5.5/Q3,7/max}{\draw (\x,0.2)--(\x,1.1); \node[below] at (\x,-0.35) {\lab};}
 \end{tikzpicture}
 ```
-// add an image for each type of chart in both graphical methods section, not just a boxplot (also move the boxplot up a bit more it overlaps with the axis)
 
 ---
 
@@ -269,7 +277,7 @@ $$
 z = \frac{x - \mu}{\sigma}
 $$
 
-With a sample, use $$\bar{x}$$ and $$s$$ in the same pattern. A z-score represents the amount of standard deviations above or below the mean a value is. Values with a large $$z$$-score are unusual relative to that distribution. Note that for future chapters, z-score will apply heavily to a [normal/Gaussian distribution](/notes/ap/stats/samplingdistr/).
+With a sample, use $$\bar{x}$$ and $$s$$ in the same pattern. A z-score represents the amount of standard deviations above or below the mean a value is. Values with a large $$z$$-score are unusual relative to that distribution. Note that for future chapters, z-score will apply heavily to a [normal/Gaussian distribution](/notes/ap/stats/probandrand/).
 
 ---
 
@@ -297,66 +305,82 @@ Multiplying by a constant $$b$$ (for example, feet to inches): $$y_i = b \times 
 | Quartiles | $$+a$$ | $$\times b$$ |
 | Interquartile Range | unchanged | $$\times \lvert b \rvert$$ |
 
-## Practice
+---
 
-### MCQ
+## Investigative Questions and Data Collection
 
-idk idk bruh add some mcq, more frq
+Statistics starts with an **investigative question**: a question that can be answered with data and that anticipates variability. A weak question asks for one fixed fact. A stronger statistical question asks about a distribution, comparison, association, or effect.
 
-### FRQ
+Examples:
 
-::::frq{id=stats-univardata-1}
-1. A teacher records the number of minutes that 16 students spent studying for a quiz:
+- Weak: "How many minutes did Alex study last night?"
+- Statistical: "How do study times vary among students in this class?"
+- Statistical comparison: "Do students in morning classes tend to study more than students in afternoon classes?"
 
-   $$12,\ 18,\ 20,\ 22,\ 25,\ 25,\ 28,\ 30,\ 34,\ 36,\ 39,\ 41,\ 45,\ 50,\ 61,\ 68.$$
-
-   $$(A)$$ Describe the distribution of study times.
-
-   $$(B)$$ Find the five-number summary and determine whether there are any outliers using the $$1.5\text{ IQR}$$ rule.
-
-   $$(C)$$ Which is the better measure of center for this distribution, the mean or the median? Explain.
-
-:::solution
-$$(A)$$ The distribution is unimodal and skewed right because most study times are between about 20 and 45 minutes, with a longer tail toward larger times. The center is around 32 minutes, and the spread is from 12 to 68 minutes. The value 68 minutes is high compared with most of the data.
-
-$$(B)$$ With 16 values,
-
-$$
-\text{median}=\frac{30+34}{2}=32.
-$$
-
-The lower half is $$12,18,20,22,25,25,28,30$$, so
-
-$$
-Q_1=\frac{22+25}{2}=23.5.
-$$
-
-The upper half is $$34,36,39,41,45,50,61,68$$, so
-
-$$
-Q_3=\frac{41+45}{2}=43.
-$$
-
-Thus,
-
-$$
-\text{IQR}=43-23.5=19.5.
-$$
-
-The outlier fences are
-
-$$
-23.5-1.5(19.5)=-5.75
-$$
-
-and
-
-$$
-43+1.5(19.5)=72.25.
-$$
-
-No observations are below $$-5.75$$ or above $$72.25$$, so there are no outliers by the $$1.5\text{ IQR}$$ rule.
-
-$$(C)$$ The median is better because the distribution is skewed right. The mean would be pulled upward by the larger study times, while the median is more resistant.
+:::strategy{title="Writing investigative questions"}
+Name the group being studied, the variable being measured, and the pattern or comparison you want to understand. If the question does not involve variability, it is probably not a statistical question.
 :::
-::::
+
+---
+
+## Populations, Samples, and Frames
+
+- The **population** is the full group you want to learn about.
+- A **sample** is the smaller group actually measured.
+- A **sampling frame** is the list or source used to choose the sample.
+- A **census** measures every member of the population.
+
+The population and frame do not always match. If the frame misses some groups, then even a random sample from that frame may underrepresent the population.
+
+---
+
+## Random Sampling
+
+A **simple random sample** gives every possible sample of the chosen size an equal chance of being selected. Random sampling is important because it reduces selection bias and supports generalizing from the sample to the population sampled from.
+
+Other probability sampling designs:
+
+- **Stratified random sample**: split the population into strata, then sample randomly within every stratum.
+- **Cluster sample**: split the population into clusters, randomly choose clusters, then measure everyone in the chosen clusters.
+- **Systematic sample**: choose a random starting point and then sample every $$k$$th item.
+
+:::warning
+Strata should be internally similar and sampled from every group. Clusters should each look like miniature versions of the population, and only some clusters are selected.
+:::
+
+---
+
+## Potential Problems With Sampling
+
+**Bias** is systematic error, not just random variation. Common sources include:
+
+- **Undercoverage**: part of the population is missing from the frame.
+- **Nonresponse bias**: people who do not respond differ from those who do.
+- **Response bias**: answers are inaccurate because of wording, pressure, memory, or other measurement problems.
+- **Voluntary response**: people choose themselves into the sample, often because they have strong opinions.
+- **Convenience sampling**: the sample is chosen because it is easy to reach.
+
+Random sampling helps with selection bias, but it does not automatically fix bad wording, nonresponse, or measurement problems.
+
+---
+
+## Experimental Design
+
+An **observational study** measures variables without assigning treatments. It can show association, but confounding variables usually prevent a cause-and-effect conclusion.
+
+An **experiment** deliberately imposes treatments on experimental units. Random assignment helps balance lurking variables across treatment groups and supports cause-and-effect conclusions.
+
+Key ideas:
+
+- **Treatment**: a condition applied to experimental units.
+- **Factor**: an explanatory variable controlled by the experimenter.
+- **Levels**: the values of a factor.
+- **Control group**: a baseline group for comparison.
+- **Placebo**: an inactive treatment that looks real.
+- **Blinding**: subjects, evaluators, or both do not know which treatment was assigned.
+- **Replication**: enough experimental units are assigned to each treatment.
+- **Blocking**: group similar units first, then randomize within each block.
+
+:::exam{topic="Scope of inference"}
+Random sampling helps you generalize to the population sampled from. Random assignment helps you make cause-and-effect conclusions. A study can have one, both, or neither.
+:::

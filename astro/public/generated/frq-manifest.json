@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-10T18:52:29.334Z",
-  "itemCount": 40,
+  "generatedAt": "2026-07-13T14:16:30.432Z",
+  "itemCount": 35,
   "items": {
     "ap-physics-c-em-circuits-1": {
       "id": "ap-physics-c-em-circuits-1",
@@ -1413,53 +1413,6 @@
         "cells"
       ]
     },
-    "stats-bivardata-1": {
-      "id": "stats-bivardata-1",
-      "domain": "notes/ap",
-      "courseFolder": "notes/ap/stats",
-      "sourcePath": "astro/src/content/docs/notes/ap/stats/bivardata.md",
-      "sitePath": "/notes/ap/stats/bivardata/",
-      "questionMarkdown": "1. A school counselor records hours studied and quiz score for 8 students. Technology gives the least-squares regression line\n\n   $$\n   \\hat{y}=54.2+6.8x,\n   $$\n\n   where $$x$$ is hours studied and $$\\hat{y}$$ is predicted quiz score. The correlation is $$r=0.86$$.\n\n   $$(A)$$ Interpret the slope in context.\n\n   $$(B)$$ One student studied 4 hours and earned an 88. Find and interpret the residual.\n\n   $$(C)$$ Find and interpret $$r^2$$.",
-      "solutionMarkdown": "$$(A)$$ For each additional hour studied, the model predicts an increase of about 6.8 quiz points, on average.\n\n$$(B)$$ The predicted score for $$x=4$$ is\n\n$$\n\\hat{y}=54.2+6.8(4)=81.4.\n$$\n\nThe residual is\n\n$$\ny-\\hat{y}=88-81.4=6.6.\n$$\n\nThe student scored 6.6 points higher than the model predicted.\n\n$$(C)$$\n\n$$\nr^2=(0.86)^2=0.7396.\n$$\n\nAbout 74% of the variation in quiz scores is explained by the least-squares linear relationship with hours studied.",
-      "parts": [
-        {
-          "id": "A"
-        },
-        {
-          "id": "B"
-        },
-        {
-          "id": "C"
-        }
-      ],
-      "nearbyContextMarkdown": " \\frac{s_y}{s_x} \\right)\n$$\n\nwhere $$s_x$$ and $$s_y$$ are the sample standard deviations of $$x$$ and $$y$$. So the sign of $$b_1$$ matches the sign of $$r$$, and the steepness scales with how spread out $$y$$ is relative to $$x$$.\n\n### Coefficient of determination\n\nThe coefficient of determination, $$R^2$$, reports the fraction of the variability in $$y$$ that is accounted for by the linear model using $$x$$. In simple linear regression with one $$x$$, $$R^2$$ equals $$r^2$$ and lies between 0 and 1. Values near 1 mean the points hug the line; values near 0 mean the line explains little of how $$y$$ moves. $$R^2$$ is typically used instead of $$r$$ because it does not depend on direction, so it only shows the correlation.\n\nHigh $$R^2$$ does not prove the model is appropriate (nonlinearity can still hide in residual plots), and it does not prove causation.\n\n### Influential observations and outliers\n\nAn outlier in regression is often a point with an unusually large residual: the line misses it badly. An influential observation is one whose removal would substantially change the estimated slope or intercept—often a point that is extreme in $$x$$ (high leverage) and also off the trend. Not every outlier is influential, and not every influential point looks like a vertical outlier; inspect the plot and, when possible, recompute the line without suspect cases (sensibly and transparently).\n\n---\n\n## Residual plots\n\nA residual plot graphs residuals (usually on the vertical axis) against either the predicted values $$\\hat{y}$$ or the explanatory variable $$x$$. The purpose is to diagnose the fit of a linear model.\n\n```tikz\n\\usepackage{pgfplots}\n\\pgfplotsset{compat=1.16}\n\\begin{tikzpicture}\n\\begin{axis}[axis lines=middle,width=9cm,height=5cm,xmin=0,xmax=10,ymin=-3,ymax=3,xlabel={fitted value},ylabel={residual},xtick=\\empty,ytick=\\empty]\n\\addplot[dashed] coordinates {(0,0) (10,0)};\n\\addplot[only marks, blue] coordinates {(1,0.6) (2,-0.4) (3,0.2) (4,-0.8) (5,0.5) (6,-0.1) (7,0.7) (8,-0.3)};\n\\node at (axis cs:5,2.2) {random scatter means a linear model is reasonable};\n\\end{axis}\n\\end{tikzpicture}\n```\n\nWhat you hope to see is a formless cloud: points scattered randomly around the horizontal axis at $$\\epsilon = 0$$, with roughly constant spread across values of $$x$$ or $$\\hat{y}$$.\n\n:::exam{topic=\"Residual plots\"}\nWhen the residual plot has a curve, say the linear model is not appropriate. When the vertical spread changes as $$x$$ increases, say the equal-spread condition is questionable.\n:::\n\nCurved patterns mean the relationship is probably nonlinear; a linear model is a poor summary and should not be used. Fan shapes (spread grows or shrinks as $$x$$ changes) suggest nonconstant variance, which matters more when you move into formal inference, but is still worth mentioning when you describe real data.\n\n---\n\n## Transformations to achieve linearity\n\nWhen a scatterplot shows a nonlinear trend, one strategy is to transform one or both variables so that the new relationship is more nearly linear. You then fit the line to the transformed scale and interpret conclusions in original units when you report results.\n\nExample: if $$y$$ grows exponentially with $$x$$, plotting $$\\ln(y)$$ against $$x$$ may straighten the cloud. Symbolically, if $$y = a e^{kx}$$ in an idealized world, then $$ln(y) = ln(a) + kx$$ is linear in $$x$$.\n\n### Common transformations\n\n- Log transformation: $$z = ln(y)$$ or $$z = log_{10}(y)$$ for right-skewed positive responses or multiplicative growth patterns.\n- Square root transformation: $$z = \\sqrt{y}$$ for count data or mild right skew where logs feel too aggressive.\n- Reciprocal transformation: $$z = 1/y$$ when larger $$x$$ corresponds to smaller $$y$$ in a rate-like way.\n\nAlways check a residual plot after transforming; the goal is a linear trend with well-behaved residuals, not a cosmetic change on the scatterplot alone.\n\n---\n\n## Two-way tables and categorical association\n\nWhen both variables are categorical, we organize counts in a two-way table (also called a contingency table): $$r$$ rows for one variable’s categories and $$c$$ columns for the other’s. Each cell count tells how many cases fall in that row category and column category together.\n\n### Marginal distributions\n\nMarginal frequencies (or marginal relative frequencies) come from row totals and column totals printed in the margins of the table. They describe each variable ignoring the other—how often each category of $$X$$ occurs overall, and how often each category of $$Y$$ occurs overall.\n\n### Conditional distributions\n\nConditional relative frequencies restrict attention to one row or one column at a time: among cases in that row, what fraction falls in each column? The answer is $$P(\\text{column category} \\mid \\text{row category})$$. Comparing conditional distributions across rows (or across columns) is the standard way to describe association between two categorical variables.\n\n### Association versus independence\n\nTwo categorical variables show no association when the distribution of one variable is the same within every category of the other—equivalently, when cell counts match what independence would predict from the margins.\n\nUnder an independence assumption, the expected count for a cell is\n\n$$\n\\frac{(\\text{row total})(\\text{column total})}{\\text{grand total}}\n$$\n\nCompare observed counts to expected counts. Cells with observed counts larger than expected point to combinations that occur more often than an independence story would predict; observed smaller than expected points to combinations that occur less often. Across the whole table, those comparisons build an overall picture of association (and later, in inference units, chi-square tests formalize the idea).\n\nAvoid calling this pattern “positive correlation” or “negative correlation”; correlation in AP Statistics is reserved for quantitative pairs. For tables, speak in terms of association, dependence, and conditional distributions.\n\n## Practice\n\n### FRQ",
-      "tags": [
-        "comparing",
-        "distributions",
-        "across",
-        "groups",
-        "what",
-        "bivariate",
-        "means",
-        "scatterplots",
-        "shape",
-        "direction",
-        "strength",
-        "pearson",
-        "correlation",
-        "coefficient",
-        "formula",
-        "interpreting",
-        "lvert",
-        "rvert",
-        "least",
-        "squares",
-        "regression",
-        "the",
-        "linear",
-        "model"
-      ]
-    },
     "stats-catchi-1": {
       "id": "stats-catchi-1",
       "domain": "notes/ap",
@@ -1497,50 +1450,6 @@
         "versus",
         "interpreting",
         "contributions",
-        "calculator",
-        "notes",
-        "working",
-        "checklist",
-        "key",
-        "equations",
-        "practice",
-        "frq"
-      ]
-    },
-    "stats-catprop-1": {
-      "id": "stats-catprop-1",
-      "domain": "notes/ap",
-      "courseFolder": "notes/ap/stats",
-      "sourcePath": "astro/src/content/docs/notes/ap/stats/catprop.md",
-      "sitePath": "/notes/ap/stats/catprop/",
-      "questionMarkdown": "1. In a random sample of 250 students at a large high school, 142 say they prefer digital textbooks.\n\n   $$(A)$$ Construct and interpret a 95% confidence interval for the proportion of all students at the school who prefer digital textbooks.\n\n   $$(B)$$ A teacher claims that a majority of students prefer digital textbooks. Use a one-proportion z-test at $$\\alpha=0.05$$ to test this claim.",
-      "solutionMarkdown": "$$(A)$$ The sample proportion is\n\n$$\n\\hat{p}=\\frac{142}{250}=0.568.\n$$\n\nThe random condition is stated. The 10% condition is reasonable if the school has at least 2500 students, or if the sample is small relative to the school. Large counts are met because $$142$$ successes and $$108$$ failures are both at least 10.\n\nA 95% interval is\n\n$$\n0.568\\pm 1.96\\sqrt{\\frac{0.568(0.432)}{250}}.\n$$\n\nThe margin of error is about $$0.0614$$, so the interval is\n\n$$\n(0.507,\\ 0.629).\n$$\n\nWe are 95% confident that the true proportion of all students at the school who prefer digital textbooks is between about 0.507 and 0.629.\n\n$$(B)$$ The hypotheses are\n\n$$\nH_0:p=0.50\n$$\n\nand\n\n$$\nH_a:p>0.50.\n$$\n\nUse the null value in the standard error:\n\n$$\nz=\\frac{0.568-0.50}{\\sqrt{0.50(0.50)/250}}\\approx 2.15.\n$$\n\nThe one-sided p-value is about $$0.016$$. Since $$0.016<0.05$$, reject $$H_0$$. There is convincing evidence that a majority of students at the school prefer digital textbooks.",
-      "parts": [
-        {
-          "id": "A"
-        },
-        {
-          "id": "B"
-        }
-      ],
-      "nearbyContextMarkdown": "z-interval** to estimate one population proportion $$p$$:\n\n$$\n\\hat{p} \\pm z^*\\sqrt{\\frac{\\hat{p}(1-\\hat{p})}{n}}.\n$$\n\n:::conditions\n1. Random sample or random assignment.\n2. Independence: if sampling without replacement, $$n \\le 0.10N$$.\n3. Large counts: $$n\\hat{p} \\ge 10$$ and $$n(1-\\hat{p}) \\ge 10$$.\n:::\n\nCommon critical values:\n\n| Confidence level | $$z^*$$ |\n| --- | --- |\n| 90% | 1.645 |\n| 95% | 1.960 |\n| 99% | 2.576 |\n\n---\n\n## Margin Of Error\n\nThe **margin of error** for a one-proportion interval is\n\n$$\nME = z^*\\sqrt{\\frac{\\hat{p}(1-\\hat{p})}{n}}.\n$$\n\nFor planning sample size, use\n\n$$\nn = \\frac{(z^*)^2p^*(1-p^*)}{ME^2},\n$$\n\nwhere $$p^*$$ is a planning estimate. If no estimate is given, use $$p^*=0.5$$ because it gives the most conservative, largest required sample size.\n\nAlways round required sample size up.\n\n---\n\n## Hypothesis Tests\n\nA hypothesis test begins with:\n\n- **Null hypothesis** $$H_0$$: the default claim, usually \"no difference\" or \"equals a stated value.\"\n- **Alternative hypothesis** $$H_a$$: the claim we seek evidence for.\n\nFor one proportion:\n\n$$\nH_0: p=p_0.\n$$\n\nThe alternative may be\n\n$$\nH_a:p>p_0,\\qquad H_a:p<p_0,\\qquad \\text{or}\\qquad H_a:p\\ne p_0.\n$$\n\nThe **p-value** is the probability, assuming $$H_0$$ is true, of getting a test statistic as extreme as or more extreme than the observed result in the direction of $$H_a$$.\n\n:::strategy{title=\"Hypothesis test wording\"}\n1. Define the parameter in context.\n2. State $$H_0$$ and $$H_a$$ using the parameter, not just words.\n3. Check conditions using the null value when needed.\n4. Compute the test statistic and p-value.\n5. Decide using $$\\alpha$$, then write the conclusion in context.\n:::\n\nDecision rule:\n\n- If p-value $$< \\alpha$$, reject $$H_0$$.\n- If p-value $$\\ge \\alpha$$, fail to reject $$H_0$$.\n\n:::warning\nNever say \"accept $$H_0$$\"; the data may simply not be strong enough to reject it.\n:::\n\n---\n\n## One-Proportion z-Test\n\nUse a **one-proportion z-test** for a claim about one population proportion:\n\n$$\nz = \\frac{\\hat{p}-p_0}{\\sqrt{p_0(1-p_0)/n}}.\n$$\n\nUse $$p_0$$ in the standard error because the test assumes the null hypothesis is true.\n\n:::conditions\n1. Random sample or random assignment.\n2. Independence: if sampling without replacement, $$n \\le 0.10N$$.\n3. Large counts using the null value: $$np_0 \\ge 10$$ and $$n(1-p_0) \\ge 10$$.\n:::\n\n\n```tikz\n\\usepackage{pgfplots}\n\\pgfplotsset{compat=1.16}\n\\begin{tikzpicture}\n\\begin{axis}[axis lines=left,width=8cm,height=5cm,xmin=-4,xmax=4,ymin=0,ymax=0.45,xlabel={test statistic},ylabel={density},xtick=\\empty,ytick=\\empty]\n\\addplot[blue,very thick,samples=200,domain=-4:4]{1/sqrt(2*pi)*exp(-x^2/2)};\n\\addplot[red,fill=red!20,samples=80,domain=1.4:4]{1/sqrt(2*pi)*exp(-x^2/2)} \\closedcycle;\n\\node[red] at (axis cs:2.4,0.18) {$p$-value};\n\\end{axis}\n\\end{tikzpicture}\n```\n\n\n---\n\n## Two-Proportion z-Interval\n\nUse a **two-proportion z-interval** to estimate $$p_1-p_2$$:\n\n$$\n(\\hat{p}_1-\\hat{p}_2) \\pm z^*\n\\sqrt{\\frac{\\hat{p}_1(1-\\hat{p}_1)}{n_1}+\\frac{\\hat{p}_2(1-\\hat{p}_2)}{n_2}}.\n$$\n\n:::conditions\n1. Two random samples or random assignment to two groups.\n2. Independence within and between groups.\n3. If sampling without replacement, $$n_1 \\le 0.10N_1$$ and $$n_2 \\le 0.10N_2$$.\n4. Large counts in both groups: successes and failures are each at least 10.\n:::\n\nInterpret the interval in context: \"We are ___% confident that the true difference in population proportions $$p_1-p_2$$ is between ___ and ___.\"\n\n---\n\n## Two-Proportion z-Test\n\nFor a test of\n\n$$\nH_0:p_1-p_2=0,\n$$\n\nwe pool the sample proportions because the null says the two population proportions are equal:\n\n$$\n\\hat{p}_c = \\frac{x_1+x_2}{n_1+n_2}.\n$$\n\nThe test statistic is\n\n$$\nz = \\frac{(\\hat{p}_1-\\hat{p}_2)-0}\n{\\sqrt{\\hat{p}_c(1-\\hat{p}_c)\\left(\\frac{1}{n_1}+\\frac{1}{n_2}\\right)}}.\n$$\n\nUse the pooled proportion only for the hypothesis test, not for the confidence interval.\n\n:::warning\nFor two proportions, intervals and tests use different standard errors. Intervals use the two separate sample proportions because you are estimating the difference. Tests for $$H_0:p_1-p_2=0$$ use the pooled proportion because the null assumes the two population proportions are equal.\n:::\n\n---\n\n## Errors And Power\n\nA **Type I error** occurs when we reject a true null hypothesis. Its probability is $$\\alpha$$, the significance level.\n\nA **Type II error** occurs when we fail to reject a false null hypothesis. Its probability is $$\\beta$$.\n\n**Power** is the probability of correctly rejecting a false null hypothesis:\n\n$$\n\\text{Power} = 1-\\beta.\n$$\n\nPower increases when:\n\n- The true parameter is farther from the null value.\n- Sample size increases.\n- Significance level $$\\alpha$$ increases.\n- Variability decreases.\n\n---\n\n## Calculator Notes\n\nCommon calculator tools:\n\n- `1-PropZInt`: one-proportion confidence interval.\n- `1-PropZTest`: one-proportion hypothesis test.\n- `2-PropZInt`: two-proportion confidence interval.\n- `2-PropZTest`: two-proportion hypothesis test.\n\nCalculator output does not replace communication. You still need hypotheses, conditions, p-value or interval, and a conclusion in context.\n\n---\n\n## Working Checklist\n\n:::checklist\n1. Identify the parameter: $$p$$ or $$p_1-p_2$$.\n2. Choose interval or test.\n3. Check random, independence, and large-count conditions.\n4. Use the correct standard error: null value for tests, sample value for intervals.\n5. Compute the interval or p-value.\n6. Write a conclusion in context.\n:::\n\n---\n\n## Key Equations\n\n:::equations\n| Idea | Equation |\n| --- | --- |\n| One-proportion interval | $$\\hat{p}\\pm z^*\\sqrt{\\hat{p}(1-\\hat{p})/n}$$ |\n| One-proportion test | $$z=(\\hat{p}-p_0)/\\sqrt{p_0(1-p_0)/n}$$ |\n| Two-proportion interval | $$(\\hat{p}_1-\\hat{p}_2)\\pm z^*\\sqrt{\\frac{\\hat{p}_1(1-\\hat{p}_1)}{n_1}+\\frac{\\hat{p}_2(1-\\hat{p}_2)}{n_2}}$$ |\n| Pooled proportion | $$\\hat{p}_c=(x_1+x_2)/(n_1+n_2)$$ |\n| Two-proportion test | $$z=\\frac{(\\hat{p}_1-\\hat{p}_2)}{\\sqrt{\\hat{p}_c(1-\\hat{p}_c)(1/n_1+1/n_2)}}$$ |\n:::\n\n## Practice\n\n### FRQ",
-      "tags": [
-        "estimation",
-        "and",
-        "hypothesis",
-        "testing",
-        "confidence",
-        "intervals",
-        "one",
-        "proportion",
-        "interval",
-        "margin",
-        "error",
-        "tests",
-        "test",
-        "two",
-        "errors",
-        "power",
         "calculator",
         "notes",
         "working",
@@ -1598,100 +1507,6 @@
         "surveys"
       ]
     },
-    "stats-probandrand-1": {
-      "id": "stats-probandrand-1",
-      "domain": "notes/ap",
-      "courseFolder": "notes/ap/stats",
-      "sourcePath": "astro/src/content/docs/notes/ap/stats/probandrand.md",
-      "sitePath": "/notes/ap/stats/probandrand/",
-      "questionMarkdown": "1. At a school, 60% of students take a language class, 35% take an art class, and 20% take both.\n\n   $$(A)$$ Find the probability that a randomly selected student takes a language class or an art class.\n\n   $$(B)$$ Given that a student takes an art class, find the probability that the student also takes a language class.\n\n   $$(C)$$ Are taking a language class and taking an art class independent events? Justify your answer.",
-      "solutionMarkdown": "$$(A)$$ Use the general addition rule:\n\n$$\nP(L\\cup A)=P(L)+P(A)-P(L\\cap A)=0.60+0.35-0.20=0.75.\n$$\n\nThe probability is $$0.75$$.\n\n$$(B)$$\n\n$$\nP(L\\mid A)=\\frac{P(L\\cap A)}{P(A)}=\\frac{0.20}{0.35}\\approx 0.571.\n$$\n\nGiven that the student takes art, the probability that the student also takes language is about $$0.571$$.\n\n$$(C)$$ If the events were independent, then $$P(L\\mid A)=P(L)$$. But $$0.571\\ne 0.60$$, so the events are not independent. Equivalently, $$P(L)P(A)=0.60(0.35)=0.21$$, which is not equal to $$P(L\\cap A)=0.20$$.",
-      "parts": [
-        {
-          "id": "A"
-        },
-        {
-          "id": "B"
-        },
-        {
-          "id": "C"
-        }
-      ],
-      "nearbyContextMarkdown": "both” happen.\n- **Conditional probability** “$$A$$ given $$B$$” restricts attention to outcomes where $$B$$ occurred. The notation is\n\n$$\nA \\mid B\n$$\n\nread as “$$A$$ given $$B$$.”\n\nTwo events are **independent** if knowing whether one occurred does not change the probability of the other (formalized below).\n\n:::warning\nDisjoint and independent are different ideas. If two non-impossible events are disjoint, knowing one happened tells you the other did not happen, so they are not independent.\n:::\n\n---\n\n## More probability rules\n\n**Complement rule:**\n\n$$\nP(A') = 1 - P(A)\n$$\n\n**General addition rule (union):**\n\n$$\nP(A \\cup B) = P(A) + P(B) - P(A \\cap B)\n$$\n\nIf $$A$$ and $$B$$ are disjoint, then $$P(A \\cap B) = 0$$ and the rule reduces to $$P(A \\cup B) = P(A) + P(B)$$.\n\n**General multiplication rule (intersection):**\n\n$$\nP(A \\cap B) = P(A)\\,P(B \\mid A) = P(B)\\,P(A \\mid B)\n$$\n\nFrom the multiplication rule you obtain the standard formula for conditional probability—the same rearrangement that describes **Bayes’ theorem** in tree-and-table problems:\n\n$$\nP(A \\mid B) = \\frac{P(A \\cap B)}{P(B)}\n$$\n\nprovided $$P(B) > 0$$.\n\n**Independence** (equivalent formulations for events with positive probability):\n\n$$\nP(A \\mid B) = P(A) \\quad \\text{and} \\quad P(B \\mid A) = P(B)\n$$\n\nEquivalently, independence is often written as\n\n$$\nP(A \\cap B) = P(A)\\,P(B)\n$$\n\nIf that product rule fails, the events are **dependent**.\n\n:::strategy{title=\"Probability table problems\"}\n1. Translate the words into events.\n2. Fill in joint probabilities first when possible.\n3. Use row and column totals to get marginal probabilities.\n4. For conditional probability, restrict the denominator to the condition.\n:::\n\n---\n\n## Random variables and probability distributions\n\nA **random variable** assigns a numerical value to each outcome of a random experiment. Customarily we use capital letters such as $$X$$ or $$Y$$ for the variable and lowercase $$x$$ for a possible value it might take.\n\n- A **discrete random variable** takes a **finite** or **countably infinite** set of values (counts, “number of successes,” and so on).\n- A **continuous random variable** takes values in an interval (time, weight, distance). Probabilities for continuous models are assigned to intervals using density and area ideas in later work; this unit focuses on the discrete case.\n\n---\n\n## Discrete probability distributions\n\nA **discrete probability distribution** lists every possible value $$x_i$$ of $$X$$ together with its probability $$P(x_i)$$ (or $$P(X = x_i)$$). The list may appear as a table, a formula, or a probability histogram.\n\nLet $$X$$ take values $$x_1, x_2, \\ldots, x_n$$ with probabilities $$P(x_1), P(x_2), \\ldots, P(x_n)$$. The pairing\n\n$$\n\\{(x_1, P(x_1)), (x_2, P(x_2)), \\ldots, (x_n, P(x_n))\\}\n$$\n\nis a valid probability distribution if\n\n$$\n0 \\le P(x_i) \\le 1 \\quad \\text{for all } i = 1, 2, \\ldots, n\n$$\n\nand\n\n$$\n\\sum_{i=1}^{n} P(x_i) = 1\n$$\n\nThe first condition keeps each entry a legitimate probability; the second says exactly one of the listed values occurs (for a complete list of possibilities).\n\n---\n\n## Mean of a discrete random variable\n\nThe **expected value** $$E(X)$$ of a discrete random variable $$X$$ is also called its mean and denoted $$\\mu_X$$ when emphasis is on the distribution. It is the probability-weighted average of the possible values:\n\n$$\n\\mu = E(X) = \\sum_{i=1}^{n} x_i\\, P(x_i)\n$$\n\nThat number is a center of the distribution, but it need not be a value $$X$$ can actually take.\n\n### Bonus!\n\nSurprisingly, expected value is an additive property. The **linearity of expectation** states that:\n\n$$\nE(X_1 + X_2 + ... + X_n) = E(X_1) + E(X_2) + ... + E(X_n)\n$$\n\nThis property is useful in games, insurance, and counting problems because it does not require the random variables to be independent. Variance rules, however, do require independence in the simple forms used in AP Statistics.\n\n:::key{name=\"Combining random variables\"}\nMeans add and subtract exactly as the variables do. Variances add for sums and differences only when the random variables are independent; standard deviations do not add directly.\n:::\n\n---\n\n## Variance of a discrete random variable\n\nThe **variance** $$\\sigma^2$$ (or $$\\operatorname{Var}(X)$$) measures spread around the mean as a probability-weighted average of squared deviations:\n\n$$\n\\sigma^2 = \\sum_{i=1}^{n} (x_i - \\mu)^2\\, P(x_i)\n$$\n\nThe **standard deviation** is $$\\sigma = \\sqrt{\\sigma^2}$$, returned to the original units of $$X$$.\n\n---\n\n## Combinations (binomial coefficient)\n\nA **combination** counts how many ways you can choose $$r$$ objects from $$n$$ distinct objects when order does not matter. The symbol is the **binomial coefficient** $$\\binom{n}{r}$$, read “$$n$$ choose $$r$$”:\n\n$$\n\\binom{n}{r} = \\frac{n!}{r!\\,(n-r)!}\n$$\n\nThis expression appears in the **binomial probability model** (fixed $$n$$ independent trials, same success probability $$p$$, count successes, described in [Unit 5](/notes/ap/stats/samplingdistr/)) and in many counting-based probability problems on the exam.\n\n---\n\n## Binomial and geometric models\n\nA **binomial random variable** counts successes in a fixed number of independent trials with the same success probability. If $$X \\sim \\operatorname{Binomial}(n,p)$$, then\n\n$$\nP(X=k)=\\binom{n}{k}p^k(1-p)^{n-k}.\n$$\n\nA **geometric random variable** counts trials until the first success. If $$X \\sim \\operatorname{Geometric}(p)$$, then\n\n$$\nP(X=k)=(1-p)^{k-1}p.\n$$\n\n\n```tikz\n\\usepackage{pgfplots}\n\\pgfplotsset{compat=1.16}\n\\begin{tikzpicture}\n\\begin{axis}[ybar,width=9cm,height=5cm,xmin=0,xmax=8,ymin=0,ymax=0.35,xlabel={count},ylabel={probability},xtick={1,2,3,4,5,6,7},ytick=\\empty]\n\\addplot[fill=blue!35] coordinates {(0,0.08)(1,0.23)(2,0.31)(3,0.22)(4,0.11)(5,0.04)};\n\\addplot[fill=red!35] coordinates {(1,0.30)(2,0.21)(3,0.147)(4,0.103)(5,0.072)(6,0.050)(7,0.035)};\n\\node[blue] at (axis cs:2,0.33) {binomial}; \\node[red] at (axis cs:5.5,0.12) {geometric};\n\\end{axis}\n\\end{tikzpicture}\n```\n\n\n## Practice\n\n### FRQ",
-      "tags": [
-        "sample",
-        "space",
-        "and",
-        "experiments",
-        "basic",
-        "rules",
-        "probability",
-        "events",
-        "complement",
-        "disjoint",
-        "union",
-        "intersection",
-        "more",
-        "random",
-        "variables",
-        "distributions",
-        "discrete",
-        "mean",
-        "variable",
-        "bonus",
-        "variance",
-        "combinations",
-        "binomial",
-        "coefficient"
-      ]
-    },
-    "stats-quantmeans-1": {
-      "id": "stats-quantmeans-1",
-      "domain": "notes/ap",
-      "courseFolder": "notes/ap/stats",
-      "sourcePath": "astro/src/content/docs/notes/ap/stats/quantmeans.md",
-      "sitePath": "/notes/ap/stats/quantmeans/",
-      "questionMarkdown": "1. A random sample of 12 granola bars from a production line has mean weight $$\\bar{x}=41.8$$ grams and sample standard deviation $$s=1.6$$ grams. A box advertises that bars weigh 40 grams on average.\n\n   $$(A)$$ State the hypotheses for testing whether the true mean weight is greater than 40 grams.\n\n   $$(B)$$ Calculate the test statistic and degrees of freedom.\n\n   $$(C)$$ Suppose the one-sided p-value is $$0.0013$$. Write a conclusion at $$\\alpha=0.05$$.",
-      "solutionMarkdown": "$$(A)$$ Let $$\\mu$$ be the true mean weight, in grams, of granola bars from this production line.\n\n$$\nH_0:\\mu=40\n$$\n\nand\n\n$$\nH_a:\\mu>40.\n$$\n\n$$(B)$$ Since $$\\sigma$$ is unknown, use a t statistic:\n\n$$\nt=\\frac{41.8-40}{1.6/\\sqrt{12}}\\approx 3.90.\n$$\n\nThe degrees of freedom are\n\n$$\ndf=12-1=11.\n$$\n\n$$(C)$$ Since $$0.0013<0.05$$, reject $$H_0$$. There is convincing evidence that the true mean weight of granola bars from this production line is greater than 40 grams.",
-      "parts": [
-        {
-          "id": "A"
-        },
-        {
-          "id": "B"
-        },
-        {
-          "id": "C"
-        }
-      ],
-      "nearbyContextMarkdown": "-\n\n## One-Sample t-Interval For A Mean\n\nUse a **one-sample t-interval** to estimate a population mean $$\\mu$$:\n\n$$\n\\bar{x} \\pm t^*\\frac{s}{\\sqrt{n}}.\n$$\n\nDegrees of freedom:\n\n$$\ndf = n-1.\n$$\n\n:::conditions\n1. Random sample or random assignment.\n2. Independence: if sampling without replacement, $$n \\le 0.10N$$.\n3. Normal/large sample condition: population is approximately normal, or sample size is large enough for the Central Limit Theorem. Check graphs for strong skew and outliers when $$n$$ is small.\n:::\n\nInterpretation: \"We are ___% confident that the true population mean ___ is between ___ and ___.\"\n\n---\n\n## One-Sample t-Test For A Mean\n\nUse a **one-sample t-test** for a claim about one population mean:\n\n$$\nH_0:\\mu=\\mu_0.\n$$\n\nThe test statistic is\n\n$$\nt = \\frac{\\bar{x}-\\mu_0}{s/\\sqrt{n}},\n$$\n\nwith\n\n$$\ndf=n-1.\n$$\n\nThe alternative may be $$\\mu>\\mu_0$$, $$\\mu<\\mu_0$$, or $$\\mu\\ne\\mu_0$$. The p-value is found from the t-distribution with the correct degrees of freedom.\n\n:::exam{topic=\"Mean tests\"}\nState the parameter as a mean of the population, not a mean of the sample. For example: \"Let $$\\mu$$ be the true mean wait time for all customers at this store.\"\n:::\n\n---\n\n## Two-Sample t-Interval For Difference In Means\n\nUse a **two-sample t-interval** to estimate $$\\mu_1-\\mu_2$$ for two independent groups:\n\n$$\n(\\bar{x}_1-\\bar{x}_2) \\pm t^*\n\\sqrt{\\frac{s_1^2}{n_1}+\\frac{s_2^2}{n_2}}.\n$$\n\n:::conditions\n1. Random samples or random assignment.\n2. The two samples/groups are independent.\n3. Independence within each group: $$n_1 \\le 0.10N_1$$ and $$n_2 \\le 0.10N_2$$ if sampling without replacement.\n4. Normal/large sample condition for each group.\n:::\n\nDegrees of freedom can be found with technology. If doing by hand, use the conservative choice:\n\n$$\ndf = \\min(n_1-1,\\ n_2-1).\n$$\n\n---\n\n## Two-Sample t-Test For Difference In Means\n\nFor independent samples, test\n\n$$\nH_0:\\mu_1-\\mu_2=0\n$$\n\nwith\n\n$$\nt = \\frac{(\\bar{x}_1-\\bar{x}_2)-0}\n{\\sqrt{s_1^2/n_1+s_2^2/n_2}}.\n$$\n\nUse technology for degrees of freedom unless told otherwise. AP problems often care more about setup, conditions, and conclusion than hand-calculating df.\n\n:::warning\nDo not pool variances unless a problem specifically says to use a pooled two-sample t procedure. Modern AP Statistics generally uses unpooled two-sample t procedures.\n:::\n\n---\n\n## Matched Pairs t Procedures\n\nA **matched pairs** design compares paired observations: before/after measurements on the same subject, twins, matched individuals, or two treatments applied to each unit in random order.\n\nFor matched pairs, convert the data to differences:\n\n$$\nd_i = \\text{value}_{1,i} - \\text{value}_{2,i}.\n$$\n\nThen run a one-sample t procedure on the differences.\n\n:::warning\nMatched pairs data are not two independent samples. Once the observations are naturally paired, subtract within each pair and analyze the list of differences with a one-sample t procedure.\n:::\n\nInterval:\n\n$$\n\\bar{d} \\pm t^*\\frac{s_d}{\\sqrt{n}}.\n$$\n\nTest statistic:\n\n$$\nt = \\frac{\\bar{d}-\\mu_{d,0}}{s_d/\\sqrt{n}}.\n$$\n\nDegrees of freedom:\n\n$$\ndf=n-1.\n$$\n\n\n```tikz\n\\usepackage{tikz}\n\\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}\n\\begin{tikzpicture}[>=Stealth, font=\\small]\n\\node[draw, rounded corners] (person) at (0,2) {same subject or matched pair};\n\\node[draw, rounded corners] (before) at (-2,0.5) {before / treatment 1}; \\node[draw, rounded corners] (after) at (2,0.5) {after / treatment 2};\n\\node[draw, rounded corners, fill=blue!8] (diff) at (0,-1) {difference};\n\\draw[->, thick] (person)--(before); \\draw[->, thick] (person)--(after); \\draw[->, thick] (before)--(diff); \\draw[->, thick] (after)--(diff); \\node at (0,-2) {analyze the differences, not two independent samples};\n\\end{tikzpicture}\n```\n\n\n---\n\n## Choosing The Correct Mean Procedure\n\n| Situation | Procedure |\n| --- | --- |\n| One quantitative sample, $$\\sigma$$ unknown | One-sample t |\n| One quantitative sample, $$\\sigma$$ known | One-sample z |\n| Two independent quantitative samples | Two-sample t |\n| Paired quantitative measurements | Matched pairs t |\n\nIf the data are categorical counts or proportions, use Unit 6 or Unit 8 instead.\n\n---\n\n## Confidence Intervals And Tests Together\n\nA two-sided hypothesis test at significance level $$\\alpha$$ corresponds to a $$(1-\\alpha)100\\%$$ confidence interval. If the null value is outside the interval, reject $$H_0$$. If the null value is inside the interval, fail to reject $$H_0$$.\n\nFor one-sided tests, this direct interval comparison requires more care, but the logic is still connected: values far from the interval's plausible range are less compatible with the data.\n\n---\n\n## Calculator Notes\n\nCommon calculator tools:\n\n- `TInterval`: one-sample t confidence interval.\n- `T-Test`: one-sample t test.\n- `2-SampTInt`: two-sample t confidence interval.\n- `2-SampTTest`: two-sample t test.\n- For matched pairs, enter the list of differences and use `TInterval` or `T-Test`.\n\nCalculator output should be translated into statistical language: parameter, conditions, statistic, interval or p-value, and conclusion in context.\n\n---\n\n## Working Checklist\n\n:::checklist\n1. Identify the parameter: $$\\mu$$, $$\\mu_1-\\mu_2$$, or $$\\mu_d$$.\n2. Decide whether the samples are independent or paired.\n3. Check random, independence, and normal/large sample conditions.\n4. Use t unless population $$\\sigma$$ is known.\n5. Compute the interval or test statistic/p-value.\n6. Conclude in context, including units.\n:::\n\n---\n\n## Key Equations\n\n:::equations\n| Idea | Equation |\n| --- | --- |\n| One-sample t interval | $$\\bar{x}\\pm t^*s/\\sqrt{n}$$ |\n| One-sample t test | $$t=(\\bar{x}-\\mu_0)/(s/\\sqrt{n})$$ |\n| Two-sample t interval | $$(\\bar{x}_1-\\bar{x}_2)\\pm t^*\\sqrt{s_1^2/n_1+s_2^2/n_2}$$ |\n| Two-sample t test | $$t=\\frac{(\\bar{x}_1-\\bar{x}_2)-0}{\\sqrt{s_1^2/n_1+s_2^2/n_2}}$$ |\n| Matched pairs interval | $$\\bar{d}\\pm t^*s_d/\\sqrt{n}$$ |\n| Matched pairs test | $$t=(\\bar{d}-\\mu_{d,0})/(s_d/\\sqrt{n})$$ |\n:::\n\n## Practice\n\n### FRQ",
-      "tags": [
-        "procedures",
-        "versus",
-        "one",
-        "sample",
-        "interval",
-        "for",
-        "mean",
-        "test",
-        "two",
-        "difference",
-        "means",
-        "matched",
-        "pairs",
-        "choosing",
-        "the",
-        "correct",
-        "procedure",
-        "confidence",
-        "intervals",
-        "and",
-        "tests",
-        "together",
-        "calculator",
-        "notes"
-      ]
-    },
     "stats-quantslopes-1": {
       "id": "stats-quantslopes-1",
       "domain": "notes/ap",
@@ -1711,7 +1526,7 @@
           "id": "C"
         }
       ],
-      "nearbyContextMarkdown": "---\ntitle: \"Unit 9: Inference for Quantitative Data: Slopes\"\nnext: false\nsidebar:\n  order: 9\n---\n\n## Population Regression Model\n\nFor a population, the linear regression model is\n\n$$\nY = \\alpha + \\beta x + \\epsilon.\n$$\n\nHere:\n\n- $$\\alpha$$ is the population intercept.\n- $$\\beta$$ is the population slope.\n- $$\\epsilon$$ is random error around the line.\n\nThe sample least-squares line is\n\n$$\n\\hat{y} = a + bx,\n$$\n\nwhere $$b$$ estimates the true slope $$\\beta$$.\n\nThe parameter of interest in AP Statistics is usually $$\\beta$$, the true slope of the population regression line.\n\n---\n\n## Conditions For Regression Inference\n\nUse the acronym **LINER**:\n\n:::conditions\n1. **Linear**: scatterplot and residual plot show an approximately linear relationship.\n2. **Independent**: observations are independent; if sampling without replacement, check the 10% Condition.\n3. **Normal**: residuals are approximately normally distributed for each value of $$x$$.\n4. **Equal variance**: vertical spread of residuals is roughly constant across $$x$$.\n5. **Random**: data come from a random sample or randomized experiment.\n:::\n\n\n```tikz\n\\usepackage{pgfplots}\n\\pgfplotsset{compat=1.16}\n\\begin{tikzpicture}\n\\pgfplotsset{rp/.style={width=4.2cm,height=3.3cm,axis lines=middle,xtick=\\empty,ytick=\\empty}}\n\\begin{axis}[rp,title={good}] \\addplot[dashed] coordinates {(0,0)(5,0)}; \\addplot[only marks,blue] coordinates{(0.5,0.2)(1,-0.3)(2,0.4)(3,-0.2)(4,0.1)}; \\end{axis}\n\\begin{axis}[rp,at={(5cm,0)},title={curved}] \\addplot[dashed] coordinates {(0,0)(5,0)}; \\addplot[only marks,red] coordinates{(0.5,1)(1,0)(2,-1)(3,-0.8)(4,0.9)}; \\end{axis}\n\\end{tikzpicture}\n```\n\n\n---\n\n## Standard Error Of The Slope\n\nThe standard error of the slope is written $$SE_b$$. Technology usually reports it directly.\n\nConceptually, $$SE_b$$ measures how much the sample slope $$b$$ would vary from sample to sample. Smaller residual scatter and more spread in the explanatory variable make the slope estimate more precise.\n\nThe residual standard deviation is often written $$s$$:\n\n$$\ns = \\sqrt{\\frac{\\sum (y_i-\\hat{y}_i)^2}{n-2}}.\n$$\n\nThe degrees of freedom for regression inference are\n\n$$\ndf = n-2.\n$$\n\n---\n\n## Confidence Interval For Slope\n\nA confidence interval for the true slope $$\\beta$$ is\n\n$$\nb \\pm t^*SE_b.\n$$\n\nUse\n\n$$\ndf=n-2.\n$$\n\nInterpretation: \"We are ___% confident that the true slope of the population regression line relating [x-context] to [y-context] is between ___ and ___ [y-units per x-unit].\"\n\nIf the interval contains 0, then 0 is a plausible true slope at that confidence level. If it does not contain 0, there is evidence of a linear relationship.\n\n---\n\n## t-Test For Slope\n\nThe usual hypotheses are\n\n$$\nH_0:\\beta=0\n$$\n\nand one of\n\n$$\nH_a:\\beta>0,\\qquad H_a:\\beta<0,\\qquad H_a:\\beta\\ne0.\n$$\n\nThe test statistic is\n\n$$\nt = \\frac{b-0}{SE_b},\n$$\n\nwith\n\n$$\ndf=n-2.\n$$\n\nA small p-value gives evidence that the true slope is not 0 in the direction of the alternative.\n\n---\n\n## Interpreting Regression Output\n\nTechnology output often includes:\n\n- Coefficient estimate for intercept $$a$$.\n- Coefficient estimate for slope $$b$$.\n- Standard error of slope $$SE_b$$.\n- t statistic for slope.\n- p-value for slope.\n- $$s$$, the standard deviation of residuals.\n- $$R^2$$, the percent of variability in $$y$$ explained by the linear relationship with $$x$$.\n\nRemember: $$R^2$$ is descriptive, while the p-value for slope is inferential. A small p-value does not prove causation, especially with observational data.\n\n---\n\n## Residual Plots And Diagnostics\n\nBefore inference, check:\n\n- Scatterplot of $$y$$ versus $$x$$ for form and outliers.\n- Residual plot for randomness around 0.\n- Residual plot for equal spread.\n- Normal probability plot or histogram of residuals for approximate normality.\n\nCurvature suggests the linear model is wrong. Fanning suggests unequal variance. Outliers or high-leverage points can strongly affect the slope and p-value.\n\n---\n\n## Calculator Notes\n\nCommon calculator tool:\n\n- `LinRegTTest`: tests slope and gives regression output.\n\nMany calculators also provide `LinRegTInt` or interval output depending on model/software. If not, compute\n\n$$\nb \\pm t^*SE_b\n$$\n\nfrom the regression output.\n\n---\n\n## Working Checklist\n\n:::checklist\n1. Identify the explanatory variable $$x$$ and response variable $$y$$.\n2. State the parameter $$\\beta$$ in context.\n3. Check LINER conditions using plots and study design.\n4. Use $$df=n-2$$.\n5. Compute the confidence interval or t-test for slope.\n6. Interpret slope in units of $$y$$ per one unit of $$x$$.\n7. Avoid causal language unless the data come from a randomized experiment.\n:::\n\n---\n\n## Key Equations\n\n:::equations\n| Idea | Equation |\n| --- | --- |\n| Population model | $$Y=\\alpha+\\beta x+\\epsilon$$ |\n| Sample regression line | $$\\hat{y}=a+bx$$ |\n| Residual standard deviation | $$s=\\sqrt{\\sum(y_i-\\hat{y}_i)^2/(n-2)}$$ |\n| Confidence interval for slope | $$b\\pm t^*SE_b$$ |\n| Test statistic for slope | $$t=(b-0)/SE_b$$ |\n| Degrees of freedom | $$df=n-2$$ |\n:::\n\n## Practice\n\n### FRQ",
+      "nearbyContextMarkdown": "---\ntitle: \"Unit 9: Inference for Quantitative Data: Slopes\"\nnext: false\nsidebar:\n  order: 90\n  hidden: true\n---\n\n:::note\nThis is a legacy page from the older AP Statistics sequence. The Fall 2026 AP Statistics CED includes descriptive regression analysis in [Unit 5: Regression Analysis](/notes/ap/stats/bivardata/) but does not include slope inference as a separate unit.\n:::\n\n## Population Regression Model\n\nFor a population, the linear regression model is\n\n$$\nY = \\alpha + \\beta x + \\epsilon.\n$$\n\nHere:\n\n- $$\\alpha$$ is the population intercept.\n- $$\\beta$$ is the population slope.\n- $$\\epsilon$$ is random error around the line.\n\nThe sample least-squares line is\n\n$$\n\\hat{y} = a + bx,\n$$\n\nwhere $$b$$ estimates the true slope $$\\beta$$.\n\nThe parameter of interest in AP Statistics is usually $$\\beta$$, the true slope of the population regression line.\n\n---\n\n## Conditions For Regression Inference\n\nUse the acronym **LINER**:\n\n:::conditions\n1. **Linear**: scatterplot and residual plot show an approximately linear relationship.\n2. **Independent**: observations are independent; if sampling without replacement, check the 10% Condition.\n3. **Normal**: residuals are approximately normally distributed for each value of $$x$$.\n4. **Equal variance**: vertical spread of residuals is roughly constant across $$x$$.\n5. **Random**: data come from a random sample or randomized experiment.\n:::\n\n\n```tikz\n\\usepackage{pgfplots}\n\\pgfplotsset{compat=1.16}\n\\begin{tikzpicture}\n\\pgfplotsset{rp/.style={width=4.2cm,height=3.3cm,axis lines=middle,xtick=\\empty,ytick=\\empty}}\n\\begin{axis}[rp,title={good}] \\addplot[dashed] coordinates {(0,0)(5,0)}; \\addplot[only marks,blue] coordinates{(0.5,0.2)(1,-0.3)(2,0.4)(3,-0.2)(4,0.1)}; \\end{axis}\n\\begin{axis}[rp,at={(5cm,0)},title={curved}] \\addplot[dashed] coordinates {(0,0)(5,0)}; \\addplot[only marks,red] coordinates{(0.5,1)(1,0)(2,-1)(3,-0.8)(4,0.9)}; \\end{axis}\n\\end{tikzpicture}\n```\n\n\n---\n\n## Standard Error Of The Slope\n\nThe standard error of the slope is written $$SE_b$$. Technology usually reports it directly.\n\nConceptually, $$SE_b$$ measures how much the sample slope $$b$$ would vary from sample to sample. Smaller residual scatter and more spread in the explanatory variable make the slope estimate more precise.\n\nThe residual standard deviation is often written $$s$$:\n\n$$\ns = \\sqrt{\\frac{\\sum (y_i-\\hat{y}_i)^2}{n-2}}.\n$$\n\nThe degrees of freedom for regression inference are\n\n$$\ndf = n-2.\n$$\n\n---\n\n## Confidence Interval For Slope\n\nA confidence interval for the true slope $$\\beta$$ is\n\n$$\nb \\pm t^*SE_b.\n$$\n\nUse\n\n$$\ndf=n-2.\n$$\n\nInterpretation: \"We are ___% confident that the true slope of the population regression line relating [x-context] to [y-context] is between ___ and ___ [y-units per x-unit].\"\n\nIf the interval contains 0, then 0 is a plausible true slope at that confidence level. If it does not contain 0, there is evidence of a linear relationship.\n\n---\n\n## t-Test For Slope\n\nThe usual hypotheses are\n\n$$\nH_0:\\beta=0\n$$\n\nand one of\n\n$$\nH_a:\\beta>0,\\qquad H_a:\\beta<0,\\qquad H_a:\\beta\\ne0.\n$$\n\nThe test statistic is\n\n$$\nt = \\frac{b-0}{SE_b},\n$$\n\nwith\n\n$$\ndf=n-2.\n$$\n\nA small p-value gives evidence that the true slope is not 0 in the direction of the alternative.\n\n---\n\n## Interpreting Regression Output\n\nTechnology output often includes:\n\n- Coefficient estimate for intercept $$a$$.\n- Coefficient estimate for slope $$b$$.\n- Standard error of slope $$SE_b$$.\n- t statistic for slope.\n- p-value for slope.\n- $$s$$, the standard deviation of residuals.\n- $$R^2$$, the percent of variability in $$y$$ explained by the linear relationship with $$x$$.\n\nRemember: $$R^2$$ is descriptive, while the p-value for slope is inferential. A small p-value does not prove causation, especially with observational data.\n\n---\n\n## Residual Plots And Diagnostics\n\nBefore inference, check:\n\n- Scatterplot of $$y$$ versus $$x$$ for form and outliers.\n- Residual plot for randomness around 0.\n- Residual plot for equal spread.\n- Normal probability plot or histogram of residuals for approximate normality.\n\nCurvature suggests the linear model is wrong. Fanning suggests unequal variance. Outliers or high-leverage points can strongly affect the slope and p-value.\n\n---\n\n## Calculator Notes\n\nCommon calculator tool:\n\n- `LinRegTTest`: tests slope and gives regression output.\n\nMany calculators also provide `LinRegTInt` or interval output depending on model/software. If not, compute\n\n$$\nb \\pm t^*SE_b\n$$\n\nfrom the regression output.\n\n---\n\n## Working Checklist\n\n:::checklist\n1. Identify the explanatory variable $$x$$ and response variable $$y$$.\n2. State the parameter $$\\beta$$ in context.\n3. Check LINER conditions using plots and study design.\n4. Use $$df=n-2$$.\n5. Compute the confidence interval or t-test for slope.\n6. Interpret slope in units of $$y$$ per one unit of $$x$$.\n7. Avoid causal language unless the data come from a randomized experiment.\n:::\n\n---\n\n## Key Equations\n\n:::equations\n| Idea | Equation |\n| --- | --- |\n| Population model | $$Y=\\alpha+\\beta x+\\epsilon$$ |\n| Sample regression line | $$\\hat{y}=a+bx$$ |\n| Residual standard deviation | $$s=\\sqrt{\\sum(y_i-\\hat{y}_i)^2/(n-2)}$$ |\n| Confidence interval for slope | $$b\\pm t^*SE_b$$ |\n| Test statistic for slope | $$t=(b-0)/SE_b$$ |\n| Degrees of freedom | $$df=n-2$$ |\n:::\n\n## Practice\n\n### FRQ",
       "tags": [
         "population",
         "regression",
@@ -1784,53 +1599,6 @@
         "random",
         "variables",
         "binomial"
-      ]
-    },
-    "stats-univardata-1": {
-      "id": "stats-univardata-1",
-      "domain": "notes/ap",
-      "courseFolder": "notes/ap/stats",
-      "sourcePath": "astro/src/content/docs/notes/ap/stats/univardata.md",
-      "sitePath": "/notes/ap/stats/univardata/",
-      "questionMarkdown": "1. A teacher records the number of minutes that 16 students spent studying for a quiz:\n\n   $$12,\\ 18,\\ 20,\\ 22,\\ 25,\\ 25,\\ 28,\\ 30,\\ 34,\\ 36,\\ 39,\\ 41,\\ 45,\\ 50,\\ 61,\\ 68.$$\n\n   $$(A)$$ Describe the distribution of study times.\n\n   $$(B)$$ Find the five-number summary and determine whether there are any outliers using the $$1.5\\text{ IQR}$$ rule.\n\n   $$(C)$$ Which is the better measure of center for this distribution, the mean or the median? Explain.",
-      "solutionMarkdown": "$$(A)$$ The distribution is unimodal and skewed right because most study times are between about 20 and 45 minutes, with a longer tail toward larger times. The center is around 32 minutes, and the spread is from 12 to 68 minutes. The value 68 minutes is high compared with most of the data.\n\n$$(B)$$ With 16 values,\n\n$$\n\\text{median}=\\frac{30+34}{2}=32.\n$$\n\nThe lower half is $$12,18,20,22,25,25,28,30$$, so\n\n$$\nQ_1=\\frac{22+25}{2}=23.5.\n$$\n\nThe upper half is $$34,36,39,41,45,50,61,68$$, so\n\n$$\nQ_3=\\frac{41+45}{2}=43.\n$$\n\nThus,\n\n$$\n\\text{IQR}=43-23.5=19.5.\n$$\n\nThe outlier fences are\n\n$$\n23.5-1.5(19.5)=-5.75\n$$\n\nand\n\n$$\n43+1.5(19.5)=72.25.\n$$\n\nNo observations are below $$-5.75$$ or above $$72.25$$, so there are no outliers by the $$1.5\\text{ IQR}$$ rule.\n\n$$(C)$$ The median is better because the distribution is skewed right. The mean would be pulled upward by the larger study times, while the median is more resistant.",
-      "parts": [
-        {
-          "id": "A"
-        },
-        {
-          "id": "B"
-        },
-        {
-          "id": "C"
-        }
-      ],
-      "nearbyContextMarkdown": "d of where the majority of the data are.\n\nAlso note that **modality** (one clear peak (**unimodal**), two peaks (**bimodal**), and so on) sometimes suggests there are different subgroups mixed in one variable and are very important to describe.\n\n### Clusters and gaps\n\n**Clusters** are groups of values separated from other groups; they can indicate the existence subpopulations or different regimes (for example, two manufacturing lines). **Gaps** are intervals with no (or very few) observations where you might have expected some; they invite questions about sampling, measurement, or real structure.\n\n### Outliers\n\nAn **outlier** is a value that stands apart from the overall pattern. On a boxplot, a common numerical rule flags outliers relative to the quartiles:\n\n$$\n\\text{Outlier} > Q_3 + 1.5 \\cdot IQR \\quad \\text{or} \\quad \\text{Outlier} < Q_1 - 1.5 \\cdot IQR\n$$\n\nAlways ask whether an outlier is a data entry error, a special case worth investigating, or simply natural variability in a heavy-tailed variable.\n\n:::exam{topic=\"Outliers\"}\nIf a problem asks whether a value is an outlier, show the fences and compare the value to them. If it asks whether to remove an outlier, do not remove it unless there is evidence of error or a clear reason in context.\n:::\n\n---\n\n## Summarizing Distributions: Population and Sample\n\nWe distinguish **population** and **sample** because notation and formulas track that distinction.\n\n- The **population** is the entire group of individuals or instances we want to understand.\n- A **sample** is the part of the population we actually measure.\n\nWe compute statistics from a sample to estimate unknown population quantities. *Greek* letters (for example $$\\mu$$, $$\\sigma$$) often denote population parameters; *Roman* letters (basically English letters) with bars or hats (for example $$\\bar{x}$$, $$s$$, $$\\hat{p}$$) denote sample statistics.\n\n---\n\n## Numerical Methods for Continuous Variables\n\nNumerical summaries compress a distribution into a few interpretable numbers. Always pair a measure of center with a measure of spread.\n\n### Measures of Central Tendency\n\n**Mean (average)** balances all values, but it is sensitive to outliers and skew.\n\nFor a population of size $$N$$ with values $$x_1,\\ldots,X_N$$:\n\n$$\n\\mu = \\frac{\\sum_{i=1}^{N} x_i}{N}\n$$\n\nFor a sample of size $$n$$:\n\n$$\n\\bar{x} = \\frac{\\sum_{i=1}^{n} x_i}{n}\n$$\n\n**Median** is the middle value when data are ordered: half the values lie at or below it and half at or above it.\n\n- If there are **$$n$$** ordered observations and **$$n$$** is **odd**, the median is the value at position $$\\frac{n+1}{2}$$.\n- If **$$n$$** is **even**, the median is the **average** of the values at positions $$\\frac{n}{2}$$ and $$\\frac{n}{2}+1$$.\n\nThe median is **resistant** (robust) to outliers, meaning extreme values barely move it, which makes it a measure of central tendency for skewed data or data with outliers.\n\n---\n\n### Measures of variation\n\n**Range** is the simplest spread measure: largest minus smallest. It uses only *two* numbers and is very sensitive to outliers.\n\n$$\n\\text{Range} = \\max - \\min\n$$\n\n**Interquartile range (IQR)** is the width of the middle half of the data:\n\n$$\nIQR = Q_3 - Q_1\n$$\n\nIt is resistant to extremes and matches the width of the box in a boxplot.\n\n**Standard deviation** measures typical distance from the mean. For a population:\n\n$$\n\\sigma = \\sqrt{\\frac{\\sum_{i=1}^{N} (x_i - \\mu)^2}{N}}\n$$\n\nFor a sample, we divide by $$n - 1$$ (Bessel’s correction) so that $$s^2$$ is an unbiased estimator of population variance:\n\n$$\ns = \\sqrt{\\frac{\\sum_{i=1}^{n} (X_i - \\bar{x})^2}{n-1}}\n$$\n\nLarger standard deviation means more spread and zero standard deviation means no spread (all values equal).\n\n---\n\n## Measures of position\n\n**Percentiles** generalize the median. The **$$k$$**th percentile is a value such that about $$k$$% of observations fall at or below it. A common position rule for the location of the $$k$$th percentile in ordered data of size $$n$$ is:\n\n$$\nl = \\frac{(n+1)k}{100}\n$$\n\nIf $$l$$ is not an integer, interpolate between adjacent ordered values. Calculator or software conventions may differ slightly, so be consistent and explain your method when needed.\n\n**Quartiles** are special percentiles:\n\n- $$Q_1$$: **25**th percentile  \n- $$Q_2$$: **50**th percentile (the median)  \n- $$Q_3$$: **75**th percentile  \n\n**Standardized scores (z-scores)** compare a value to the distribution’s center and spread:\n\n$$\nz = \\frac{x - \\mu}{\\sigma}\n$$\n\nWith a sample, use $$\\bar{x}$$ and $$s$$ in the same pattern. A z-score represents the amount of standard deviations above or below the mean a value is. Values with a large $$z$$-score are unusual relative to that distribution. Note that for future chapters, z-score will apply heavily to a [normal/Gaussian distribution](/notes/ap/stats/samplingdistr/).\n\n---\n\n## Effects of Changing Units on Summary Measures\n\nLinear changes to data produce predictable changes to summaries. Suppose we transform each observation $$x_i to y_i$$.\n\nAdding a constant $$a$$ (for example, converting Celsius to a shifted scale, or adding a bonus point to every score): $$y_i = x_i + a$$.\n\n- Mean, median and quartiles shift by $$+a$$.\n- Spread measures that depend only on distances between values (range, IQR, standard deviation) are unchanged.\n\nMultiplying by a constant $$b$$ (for example, feet to inches): $$y_i = b \\times x_i$$.\n\n- Mean, median, and quartiles multiply by $$b$$.\n- Range, IQR, and standard deviation multiply by $$\\lvert b \\rvert$$\n\n\n| Summary Measure | $$y_i = x_i + a$$ | $$y_i = b \\times x_i$$ |\n|----------------|-------------------|------------------|\n| Mean | $$+a$$ | $$\\times b$$ |\n| Median | $$+a$$ | $$\\times b$$ |\n| Range | unchanged | $$\\times \\lvert b \\rvert$$ |\n| Standard Deviation | unchanged | $$\\times \\lvert b \\rvert$$ |\n| Quartiles | $$+a$$ | $$\\times b$$ |\n| Interquartile Range | unchanged | $$\\times \\lvert b \\rvert$$ |\n\n## Practice\n\n### MCQ\n\nidk idk bruh add some mcq, more frq\n\n### FRQ",
-      "tags": [
-        "types",
-        "variables",
-        "categorical",
-        "qualitative",
-        "quantitative",
-        "descriptive",
-        "methods",
-        "tabular",
-        "graphical",
-        "bar",
-        "charts",
-        "pie",
-        "dotplots",
-        "stemplots",
-        "stem",
-        "and",
-        "leaf",
-        "displays",
-        "histograms",
-        "cumulative",
-        "relative",
-        "frequency",
-        "graphs",
-        "ogives"
       ]
     }
   }

@@ -1,7 +1,49 @@
 ---
-title: "Unit 4: Probability, Random Variables, and Probability Distributions"
+title: "Unit 2: Probability, Random Variables, and Probability Distributions"
 sidebar:
-  order: 4
+  order: 2
+---
+
+Unit 2 starts with relationships between two categorical variables, then builds probability, random variables, probability distributions, the binomial model, normal distributions, sampling distributions, and the Central Limit Theorem.
+
+:::summary{title="Unit 2 topics"}
+1. Two-way tables and conditional distributions.
+2. Simulation and probability rules.
+3. Random variables and probability distributions.
+4. Binomial and normal distributions.
+5. Sampling distributions and the Central Limit Theorem.
+:::
+
+## Two Categorical Variables
+
+When two categorical variables are measured on the same individuals, organize the data in a **two-way table**. Each cell records the count for one combination of categories.
+
+| | Category 1 | Category 2 | Total |
+| --- | ---: | ---: | ---: |
+| Group A | $$a$$ | $$b$$ | $$a+b$$ |
+| Group B | $$c$$ | $$d$$ | $$c+d$$ |
+| Total | $$a+c$$ | $$b+d$$ | $$n$$ |
+
+**Marginal relative frequencies** use row or column totals to describe one variable by itself. **Conditional relative frequencies** restrict attention to one row or column and describe the distribution of the other variable within that condition.
+
+:::strategy{title="Checking association"}
+Compare conditional distributions. If the conditional distributions are meaningfully different across groups, the variables appear associated. If they are about the same, there is little evidence of association.
+:::
+
+---
+
+## Simulation
+
+A **simulation** uses random digits, technology, cards, dice, or another chance device to imitate a random process. Simulations are useful when exact probability is hard to calculate or when you want to understand long-run behavior before using formulas.
+
+Good simulations clearly define:
+
+1. What one trial represents.
+2. How random outcomes are assigned to the real-world outcomes.
+3. What statistic is recorded after each trial.
+4. How many repetitions are used.
+5. How the simulation results answer the original question.
+
 ---
 
 ## Sample space and experiments
@@ -200,7 +242,7 @@ $$
 \binom{n}{r} = \frac{n!}{r!\,(n-r)!}
 $$
 
-This expression appears in the **binomial probability model** (fixed $$n$$ independent trials, same success probability $$p$$, count successes, described in [Unit 5](/notes/ap/stats/samplingdistr/)) and in many counting-based probability problems on the exam.
+This expression appears in the **binomial probability model** (fixed $$n$$ independent trials, same success probability $$p$$, count successes) and in many counting-based probability problems on the exam.
 
 ---
 
@@ -210,6 +252,12 @@ A **binomial random variable** counts successes in a fixed number of independent
 
 $$
 P(X=k)=\binom{n}{k}p^k(1-p)^{n-k}.
+$$
+
+The mean and standard deviation are
+
+$$
+\mu_X=np,\qquad \sigma_X=\sqrt{np(1-p)}.
 $$
 
 A **geometric random variable** counts trials until the first success. If $$X \sim \operatorname{Geometric}(p)$$, then
@@ -231,37 +279,58 @@ $$
 \end{tikzpicture}
 ```
 
+---
 
-## Practice
+## Normal Distributions
 
-### FRQ
-
-::::frq{id=stats-probandrand-1}
-1. At a school, 60% of students take a language class, 35% take an art class, and 20% take both.
-
-   $$(A)$$ Find the probability that a randomly selected student takes a language class or an art class.
-
-   $$(B)$$ Given that a student takes an art class, find the probability that the student also takes a language class.
-
-   $$(C)$$ Are taking a language class and taking an art class independent events? Justify your answer.
-
-:::solution
-$$(A)$$ Use the general addition rule:
+A **normal distribution** is a symmetric, bell-shaped distribution described by its mean $$\mu$$ and standard deviation $$\sigma$$:
 
 $$
-P(L\cup A)=P(L)+P(A)-P(L\cap A)=0.60+0.35-0.20=0.75.
+X \sim N(\mu,\sigma).
 $$
 
-The probability is $$0.75$$.
-
-$$(B)$$
+To standardize a value,
 
 $$
-P(L\mid A)=\frac{P(L\cap A)}{P(A)}=\frac{0.20}{0.35}\approx 0.571.
+z=\frac{x-\mu}{\sigma}.
 $$
 
-Given that the student takes art, the probability that the student also takes language is about $$0.571$$.
-
-$$(C)$$ If the events were independent, then $$P(L\mid A)=P(L)$$. But $$0.571\ne 0.60$$, so the events are not independent. Equivalently, $$P(L)P(A)=0.60(0.35)=0.21$$, which is not equal to $$P(L\cap A)=0.20$$.
+:::key{name="Empirical Rule (68-95-99.7)"}
+For a normal distribution, about $$68\%$$ of observations are within $$1$$ standard deviation of the mean, about $$95\%$$ are within $$2$$ standard deviations, and about $$99.7\%$$ are within $$3$$ standard deviations.
 :::
-::::
+
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[axis lines=left,width=8cm,height=5cm,xmin=-4,xmax=4,ymin=0,ymax=0.45,xlabel={$z$},ylabel={density},xtick={-3,-2,-1,0,1,2,3},ytick=\empty]
+\addplot[blue,very thick,samples=200,domain=-4:4]{1/sqrt(2*pi)*exp(-x^2/2)};
+\foreach \x in {-3,-2,-1,0,1,2,3}{\addplot[dashed] coordinates {(\x,0) (\x,{1/sqrt(2*pi)*exp(-\x^2/2)})};}
+\node at (axis cs:0,0.42) {normal model};
+\end{axis}
+\end{tikzpicture}
+```
+
+---
+
+## Sampling Distributions and the Central Limit Theorem
+
+A **sampling distribution** is the distribution of a statistic over many random samples of the same size from the same population. It describes how a statistic varies from sample to sample.
+
+For a statistic, pay attention to:
+
+- **Shape**: normal, skewed, approximately symmetric, etc.
+- **Center**: the mean of the statistic.
+- **Spread**: the standard deviation of the statistic, often called the standard error.
+
+For a sample mean,
+
+$$
+\mu_{\bar{x}}=\mu,\qquad \sigma_{\bar{x}}=\frac{\sigma}{\sqrt{n}}.
+$$
+
+The **Central Limit Theorem** says that when $$n$$ is large, the sampling distribution of $$\bar{x}$$ is approximately normal, even if the population distribution is not normal, as long as observations are independent and the population is not extremely pathological.
+
+:::warning
+The Central Limit Theorem is about the sampling distribution of $$\bar{x}$$, not necessarily the original population distribution.
+:::

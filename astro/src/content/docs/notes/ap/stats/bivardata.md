@@ -1,22 +1,24 @@
 ---
-title: "Unit 2: Exploring Bivariate Data"
+title: "Unit 5: Regression Analysis"
 sidebar:
-  order: 2
+  order: 5
 ---
 
-## Comparing distributions across groups
+The Fall 2026 AP Statistics CED places two-quantitative-variable analysis in Unit 5. This unit focuses on scatterplots, correlation, linear regression models, residuals, and least-squares regression.
 
-Before fitting models, you will often place two or more distributions side by side (back-to-back stemplots, parallel boxplots, or histograms with the same scales). When comparing, always address the center (typical values, e.g. mean/median), spread (how variable the groups are, e.g. range, IQR, standard deviation), and shape (symmetric, skewed, unimodal, and so on). Note clusters, gaps, and outliers in each group. Always tie differences back to the context of the problem: who was measured, what units mean, and what question the study is trying to answer.
+:::summary{title="Unit 5 topics"}
+1. Graphical representations between two quantitative variables.
+2. Correlation.
+3. Linear regression models.
+4. Residuals.
+5. Least-squares regression.
+:::
 
-Use displays that make parallel structure obvious (same axis scales, same bin widths when reasonable, etc.) so the eye is comparing apples to apples.
-
----
-
-## What “bivariate” means
+## Two Quantitative Variables
 
 Bivariate data records two variables for every individual or object in a study. Examples include (study hours, exam score) for each student, or (latitude, January temperature) for each city.
 
-If both variables are quantitative and the relationship looks roughly linear, we summarize direction and strength with the correlation coefficient and describe the overall trend with a least-squares regression line. If one or both variables are categorical, we use two-way tables and talk about association rather than a single line through a scatterplot (since you obviously can't graph categorical variables!).
+If both variables are quantitative and the relationship looks roughly linear, we summarize direction and strength with the correlation coefficient and describe the overall trend with a least-squares regression line.
 
 ---
 
@@ -190,75 +192,3 @@ Example: if $$y$$ grows exponentially with $$x$$, plotting $$\ln(y)$$ against $$
 Always check a residual plot after transforming; the goal is a linear trend with well-behaved residuals, not a cosmetic change on the scatterplot alone.
 
 ---
-
-## Two-way tables and categorical association
-
-When both variables are categorical, we organize counts in a two-way table (also called a contingency table): $$r$$ rows for one variable’s categories and $$c$$ columns for the other’s. Each cell count tells how many cases fall in that row category and column category together.
-
-### Marginal distributions
-
-Marginal frequencies (or marginal relative frequencies) come from row totals and column totals printed in the margins of the table. They describe each variable ignoring the other—how often each category of $$X$$ occurs overall, and how often each category of $$Y$$ occurs overall.
-
-### Conditional distributions
-
-Conditional relative frequencies restrict attention to one row or one column at a time: among cases in that row, what fraction falls in each column? The answer is $$P(\text{column category} \mid \text{row category})$$. Comparing conditional distributions across rows (or across columns) is the standard way to describe association between two categorical variables.
-
-### Association versus independence
-
-Two categorical variables show no association when the distribution of one variable is the same within every category of the other—equivalently, when cell counts match what independence would predict from the margins.
-
-Under an independence assumption, the expected count for a cell is
-
-$$
-\frac{(\text{row total})(\text{column total})}{\text{grand total}}
-$$
-
-Compare observed counts to expected counts. Cells with observed counts larger than expected point to combinations that occur more often than an independence story would predict; observed smaller than expected points to combinations that occur less often. Across the whole table, those comparisons build an overall picture of association (and later, in inference units, chi-square tests formalize the idea).
-
-Avoid calling this pattern “positive correlation” or “negative correlation”; correlation in AP Statistics is reserved for quantitative pairs. For tables, speak in terms of association, dependence, and conditional distributions.
-
-## Practice
-
-### FRQ
-
-::::frq{id=stats-bivardata-1}
-1. A school counselor records hours studied and quiz score for 8 students. Technology gives the least-squares regression line
-
-   $$
-   \hat{y}=54.2+6.8x,
-   $$
-
-   where $$x$$ is hours studied and $$\hat{y}$$ is predicted quiz score. The correlation is $$r=0.86$$.
-
-   $$(A)$$ Interpret the slope in context.
-
-   $$(B)$$ One student studied 4 hours and earned an 88. Find and interpret the residual.
-
-   $$(C)$$ Find and interpret $$r^2$$.
-
-:::solution
-$$(A)$$ For each additional hour studied, the model predicts an increase of about 6.8 quiz points, on average.
-
-$$(B)$$ The predicted score for $$x=4$$ is
-
-$$
-\hat{y}=54.2+6.8(4)=81.4.
-$$
-
-The residual is
-
-$$
-y-\hat{y}=88-81.4=6.6.
-$$
-
-The student scored 6.6 points higher than the model predicted.
-
-$$(C)$$
-
-$$
-r^2=(0.86)^2=0.7396.
-$$
-
-About 74% of the variation in quiz scores is explained by the least-squares linear relationship with hours studied.
-:::
-::::

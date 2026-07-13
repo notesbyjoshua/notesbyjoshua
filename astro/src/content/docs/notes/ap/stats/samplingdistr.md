@@ -1,8 +1,13 @@
 ---
 title: "Unit 5: Sampling Distributions"
 sidebar:
-  order: 5
+  order: 50
+  hidden: true
 ---
+
+:::note
+This is a legacy page from the older AP Statistics sequence. In the Fall 2026 AP Statistics CED, sampling distributions are introduced in [Unit 2](/notes/ap/stats/probandrand/) and then used for proportions in [Unit 3](/notes/ap/stats/catprop/) and means in [Unit 4](/notes/ap/stats/quantmeans/).
+:::
 
 ## Parameters, Statistics, And Sampling Variability
 
