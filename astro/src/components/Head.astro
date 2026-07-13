@@ -9,6 +9,7 @@ const SITE_URL = 'https://notesbyjoshua.github.io';
 const route = (Astro.locals as any).starlightRoute;
 const entry = route?.entry;
 const isNote = Astro.url.pathname.startsWith('/notes/');
+const isHome = Astro.url.pathname === '/';
 
 // The desktop minimap replaces Starlight's text TOC, but it's built by JS after
 // load — so without this the default TOC paints first and then gets swapped for
@@ -21,7 +22,16 @@ const headings = (route?.headings ?? []) as Array<{ depth: number }>;
 const willHaveMinimap = isNote && headings.filter((h) => h.depth === 2 || h.depth === 3).length >= 2;
 
 let jsonLd: string | null = null;
-if (isNote && entry) {
+if (isHome) {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Notes by Joshua',
+    alternateName: 'Joshua Notes',
+    url: SITE_URL,
+  };
+  jsonLd = JSON.stringify(schema).replace(/</g, '\\u003c');
+} else if (isNote && entry) {
   const data = entry.data ?? {};
   const canonical = new URL(Astro.url.pathname, SITE_URL).href;
   const lastUpdated = route?.lastUpdated instanceof Date ? route.lastUpdated.toISOString() : undefined;
