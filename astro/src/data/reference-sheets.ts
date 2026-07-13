@@ -19,6 +19,7 @@ export const referenceSheets: ReferenceSheet[] = [
 	{ prefix: '/notes/ap/chem/', label: 'AP Chem cheatsheet', url: '/notes/ap/chem/cheatsheet/' },
 	{ prefix: '/notes/ap/calculus/', label: 'AP Calc cheatsheet', url: '/notes/ap/calculus/cheatsheet/' },
 	{ prefix: '/notes/ap/precalc/', label: 'AP Precalc cheatsheet', url: '/notes/ap/precalc/cheatsheet/' },
+	{ prefix: '/notes/ap/stats/', label: 'AP Stats cheatsheet', url: '/notes/ap/stats/cheatsheet/' },
 	{
 		prefix: '/notes/ap/ap-physics-c-mechanics/',
 		label: 'Physics C Mech cheatsheet',

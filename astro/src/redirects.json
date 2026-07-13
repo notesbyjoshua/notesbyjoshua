@@ -32,6 +32,5 @@
   "/notes/ap/stats/collectingdata/": "/notes/ap/stats/onevardata/",
   "/notes/ap/stats/samplingdistr/": "/notes/ap/stats/probranddist/",
   "/notes/ap/stats/catchi/": "/notes/ap/stats/infprop/",
-  "/notes/ap/stats/quantslopes/": "/notes/ap/stats/reganalysis/",
-  "/notes/ap/stats/cheatsheet/": "/notes/ap/statistics/"
+  "/notes/ap/stats/quantslopes/": "/notes/ap/stats/reganalysis/"
 }

@@ -1,1438 +1,1653 @@
 {
-  "generated_at": "2026-06-23",
+  "generated_at": "2026-07-13",
   "summary": {
-    "unit_pages": 75,
-    "all_pages": 91,
-    "average_progress": 71,
-    "complete_pages": 18,
-    "below_review_pages": 55,
-    "pages_with_placeholders": 35,
-    "missing_practice_pages": 49,
-    "missing_solutions_pages": 55
+    "unit_pages": 90,
+    "all_pages": 95,
+    "average_progress": 53,
+    "complete_pages": 0,
+    "below_review_pages": 82,
+    "pages_with_placeholders": 17,
+    "missing_practice_pages": 36,
+    "missing_solutions_pages": 32
   },
   "status_counts": {
-    "complete": 18,
-    "developing": 38,
-    "draft": 17,
-    "review": 2
+    "developing": 49,
+    "draft": 11,
+    "review": 13,
+    "stub": 22
   },
   "top_issues": [
     {
       "issue": "missing practice",
-      "count": 49
-    },
-    {
-      "issue": "missing solutions",
-      "count": 49
-    },
-    {
-      "issue": "has TODOs/placeholders",
-      "count": 35
-    },
-    {
-      "issue": "check vertical bars in math",
-      "count": 32
-    },
-    {
-      "issue": "few or no worked boxes",
-      "count": 7
-    },
-    {
-      "issue": "thin explanations",
-      "count": 7
+      "count": 36
     },
     {
       "issue": "practice without solutions",
-      "count": 6
+      "count": 32
     },
     {
-      "issue": "title/H1 mismatch",
-      "count": 2
+      "issue": "empty/stub page",
+      "count": 22
     },
     {
-      "issue": "missing H1",
-      "count": 1
+      "issue": "few or no worked boxes",
+      "count": 20
+    },
+    {
+      "issue": "has TODOs/placeholders",
+      "count": 17
     }
   ],
   "courses": [
     {
       "name": "AP",
       "pages": 1,
-      "average_progress": 33,
+      "average_progress": 88,
       "complete_pages": 0,
-      "below_review_pages": 1
+      "below_review_pages": 0
+    },
+    {
+      "name": "AP Biology",
+      "pages": 9,
+      "average_progress": 0,
+      "complete_pages": 0,
+      "below_review_pages": 9
     },
     {
       "name": "AP Calculus AB/BC",
       "pages": 10,
-      "average_progress": 67,
+      "average_progress": 70,
       "complete_pages": 0,
       "below_review_pages": 10
     },
     {
       "name": "AP Chemistry",
       "pages": 10,
-      "average_progress": 96,
-      "complete_pages": 8,
-      "below_review_pages": 0
+      "average_progress": 68,
+      "complete_pages": 0,
+      "below_review_pages": 10
     },
     {
       "name": "AP Physics C E&M",
       "pages": 6,
-      "average_progress": 69,
+      "average_progress": 63,
       "complete_pages": 0,
       "below_review_pages": 6
     },
     {
       "name": "AP Physics C Mechanics",
       "pages": 7,
-      "average_progress": 65,
+      "average_progress": 63,
       "complete_pages": 0,
       "below_review_pages": 7
     },
     {
       "name": "AP Precalculus",
       "pages": 10,
-      "average_progress": 100,
-      "complete_pages": 10,
+      "average_progress": 85,
+      "complete_pages": 0,
       "below_review_pages": 0
     },
     {
       "name": "AP Statistics",
-      "pages": 10,
-      "average_progress": 47,
+      "pages": 6,
+      "average_progress": 52,
       "complete_pages": 0,
-      "below_review_pages": 10
+      "below_review_pages": 6
     },
     {
-      "name": "Chemistry Competition Prep",
+      "name": "Chemistry",
       "pages": 5,
-      "average_progress": 48,
+      "average_progress": 2,
       "complete_pages": 0,
       "below_review_pages": 5
     },
     {
       "name": "Math",
-      "pages": 3,
-      "average_progress": 58,
+      "pages": 4,
+      "average_progress": 54,
       "complete_pages": 0,
       "below_review_pages": 3
     },
     {
-      "name": "Physics Competition Prep",
-      "pages": 13,
-      "average_progress": 67,
+      "name": "Notes",
+      "pages": 12,
+      "average_progress": 23,
       "complete_pages": 0,
-      "below_review_pages": 13
+      "below_review_pages": 12
+    },
+    {
+      "name": "Physics",
+      "pages": 15,
+      "average_progress": 69,
+      "complete_pages": 0,
+      "below_review_pages": 14
     }
   ],
   "priority_pages": [
     {
       "title": "Homothety",
       "parent": "Math",
-      "path": "Notes/math/Geometry/homothety.md",
+      "path": "",
       "permalink": "/notes/math/geometry/homothety/",
       "kind": "unit",
-      "status": "draft",
-      "progress": 30,
+      "status": "stub",
+      "progress": 0,
       "issues": [
-        "missing H1",
-        "thin explanations",
-        "missing practice",
-        "missing solutions"
+        "empty/stub page"
       ],
-      "next_step": "Add the page H1"
+      "next_step": "Write the note"
     },
     {
-      "title": "AP Biology",
-      "parent": "AP",
-      "path": "Notes/APs/biology.md",
-      "permalink": "/notes/ap/biology/",
+      "title": "Unit 1: Chemistry of Life",
+      "parent": "AP Biology",
+      "path": "",
+      "permalink": "/notes/ap/biology/biochem/",
       "kind": "unit",
-      "status": "draft",
-      "progress": 33,
+      "status": "stub",
+      "progress": 0,
       "issues": [
-        "thin explanations",
-        "missing practice",
-        "missing solutions"
+        "empty/stub page"
       ],
-      "next_step": "Expand core explanations"
+      "next_step": "Write the note"
     },
     {
-      "title": "Unit 7: Inference for Quantitative Data: Means",
-      "parent": "AP Statistics",
-      "path": "Notes/APs/AP Stats/quantmeans.md",
-      "permalink": "/notes/ap/stats/quantmeans/",
+      "title": "Unit 1: Vectors and Euclidean Geometry in R3",
+      "parent": "Notes",
+      "path": "",
+      "permalink": "/notes/math/multivariable-calculus/vectors-euclidean-geometry/",
       "kind": "unit",
-      "status": "draft",
-      "progress": 40,
+      "status": "stub",
+      "progress": 0,
       "issues": [
-        "missing practice",
-        "missing solutions",
-        "has TODOs/placeholders"
+        "empty/stub page"
       ],
-      "next_step": "Add practice problems"
+      "next_step": "Write the note"
     },
     {
-      "title": "Unit 8: Inference for Categorical Data: Chi-Square",
-      "parent": "AP Statistics",
-      "path": "Notes/APs/AP Stats/catchi.md",
-      "permalink": "/notes/ap/stats/catchi/",
+      "title": "Unit 2: Cell Structure and Function",
+      "parent": "AP Biology",
+      "path": "",
+      "permalink": "/notes/ap/biology/cells/",
       "kind": "unit",
-      "status": "draft",
-      "progress": 42,
+      "status": "stub",
+      "progress": 0,
       "issues": [
-        "missing practice",
-        "missing solutions",
-        "has TODOs/placeholders"
+        "empty/stub page"
       ],
-      "next_step": "Add practice problems"
+      "next_step": "Write the note"
     },
     {
-      "title": "Unit 5: Sampling Distributions",
-      "parent": "AP Statistics",
-      "path": "Notes/APs/AP Stats/samplingdistr.md",
-      "permalink": "/notes/ap/stats/samplingdistr/",
+      "title": "Unit 2: The Geometry of Curves in R3",
+      "parent": "Notes",
+      "path": "",
+      "permalink": "/notes/math/multivariable-calculus/geometry-of-curves/",
       "kind": "unit",
-      "status": "draft",
-      "progress": 43,
+      "status": "stub",
+      "progress": 0,
       "issues": [
-        "few or no worked boxes",
-        "missing practice",
-        "missing solutions",
-        "has TODOs/placeholders",
-        "check vertical bars in math"
+        "empty/stub page"
       ],
-      "next_step": "Add worked examples"
+      "next_step": "Write the note"
     },
     {
-      "title": "Unit 6: Inference for Categorical Data: Proportions",
-      "parent": "AP Statistics",
-      "path": "Notes/APs/AP Stats/catprop.md",
-      "permalink": "/notes/ap/stats/catprop/",
+      "title": "Unit 3: Cellular Energetics",
+      "parent": "AP Biology",
+      "path": "",
+      "permalink": "/notes/ap/biology/cellenergy/",
       "kind": "unit",
-      "status": "draft",
-      "progress": 44,
+      "status": "stub",
+      "progress": 0,
       "issues": [
-        "few or no worked boxes",
-        "missing practice",
-        "missing solutions",
-        "has TODOs/placeholders"
+        "empty/stub page"
       ],
-      "next_step": "Add worked examples"
+      "next_step": "Write the note"
     },
     {
-      "title": "Unit 9: Inference for Quantitative Data: Slopes",
-      "parent": "AP Statistics",
-      "path": "Notes/APs/AP Stats/quantslopes.md",
-      "permalink": "/notes/ap/stats/quantslopes/",
+      "title": "Unit 3: Differential Multivariable Functions",
+      "parent": "Notes",
+      "path": "",
+      "permalink": "/notes/math/multivariable-calculus/differential-multivariable-functions/",
       "kind": "unit",
-      "status": "draft",
-      "progress": 44,
+      "status": "stub",
+      "progress": 0,
       "issues": [
-        "missing practice",
-        "missing solutions",
-        "has TODOs/placeholders"
+        "empty/stub page"
       ],
-      "next_step": "Add practice problems"
+      "next_step": "Write the note"
     },
     {
-      "title": "Unit 4: Probability, Random Variables, and Probability Distributions",
-      "parent": "AP Statistics",
-      "path": "Notes/APs/AP Stats/probandrand.md",
-      "permalink": "/notes/ap/stats/probandrand/",
+      "title": "Unit 4: Cell Communication and Cell Cycle",
+      "parent": "AP Biology",
+      "path": "",
+      "permalink": "/notes/ap/biology/cellcommcycle/",
       "kind": "unit",
-      "status": "draft",
-      "progress": 48,
+      "status": "stub",
+      "progress": 0,
       "issues": [
-        "few or no worked boxes",
-        "missing practice",
-        "missing solutions",
-        "has TODOs/placeholders"
+        "empty/stub page"
       ],
-      "next_step": "Add worked examples"
+      "next_step": "Write the note"
+    },
+    {
+      "title": "Unit 4: Multiple Integrals in Cartesian Coordinates",
+      "parent": "Notes",
+      "path": "",
+      "permalink": "/notes/math/multivariable-calculus/multiple-integrals-cartesian/",
+      "kind": "unit",
+      "status": "stub",
+      "progress": 0,
+      "issues": [
+        "empty/stub page"
+      ],
+      "next_step": "Write the note"
+    },
+    {
+      "title": "Unit 5: Heredity",
+      "parent": "AP Biology",
+      "path": "",
+      "permalink": "/notes/ap/biology/heredity/",
+      "kind": "unit",
+      "status": "stub",
+      "progress": 0,
+      "issues": [
+        "empty/stub page"
+      ],
+      "next_step": "Write the note"
+    },
+    {
+      "title": "Unit 5: Multiple Integrals in Curvilinear Coordinates",
+      "parent": "Notes",
+      "path": "",
+      "permalink": "/notes/math/multivariable-calculus/multiple-integrals-curvilinear/",
+      "kind": "unit",
+      "status": "stub",
+      "progress": 0,
+      "issues": [
+        "empty/stub page"
+      ],
+      "next_step": "Write the note"
+    },
+    {
+      "title": "Unit 6: Gene Expression and Regulation",
+      "parent": "AP Biology",
+      "path": "",
+      "permalink": "/notes/ap/biology/geneexpreg/",
+      "kind": "unit",
+      "status": "stub",
+      "progress": 0,
+      "issues": [
+        "empty/stub page"
+      ],
+      "next_step": "Write the note"
+    },
+    {
+      "title": "Unit 6: Line and Surface Integrals",
+      "parent": "Notes",
+      "path": "",
+      "permalink": "/notes/math/multivariable-calculus/line-and-surface-integrals/",
+      "kind": "unit",
+      "status": "stub",
+      "progress": 0,
+      "issues": [
+        "empty/stub page"
+      ],
+      "next_step": "Write the note"
+    },
+    {
+      "title": "Unit 7: Natural Selection",
+      "parent": "AP Biology",
+      "path": "",
+      "permalink": "/notes/ap/biology/natselection/",
+      "kind": "unit",
+      "status": "stub",
+      "progress": 0,
+      "issues": [
+        "empty/stub page"
+      ],
+      "next_step": "Write the note"
+    },
+    {
+      "title": "Unit 7: Vector Analysis",
+      "parent": "Notes",
+      "path": "",
+      "permalink": "/notes/math/multivariable-calculus/vector-analysis/",
+      "kind": "unit",
+      "status": "stub",
+      "progress": 0,
+      "issues": [
+        "empty/stub page"
+      ],
+      "next_step": "Write the note"
+    },
+    {
+      "title": "Unit 8: Ecology",
+      "parent": "AP Biology",
+      "path": "",
+      "permalink": "/notes/ap/biology/ecology/",
+      "kind": "unit",
+      "status": "stub",
+      "progress": 0,
+      "issues": [
+        "empty/stub page"
+      ],
+      "next_step": "Write the note"
+    },
+    {
+      "title": "AP Biology Cheat Sheet",
+      "parent": "AP Biology",
+      "path": "",
+      "permalink": "/notes/ap/biology/cheatsheet/",
+      "kind": "unit",
+      "status": "stub",
+      "progress": 2,
+      "issues": [
+        "empty/stub page"
+      ],
+      "next_step": "Write the note"
     },
     {
       "title": "Advanced Kinetics",
-      "parent": "Chemistry Competition Prep",
-      "path": "Notes/Chemistry/chem comp prep/advkinetics.md",
+      "parent": "Chemistry",
+      "path": "",
       "permalink": "/notes/chemistry/advkinetics/",
       "kind": "unit",
-      "status": "draft",
-      "progress": 48,
+      "status": "stub",
+      "progress": 2,
       "issues": [
-        "thin explanations",
-        "practice without solutions"
+        "empty/stub page"
       ],
-      "next_step": "Expand core explanations"
-    },
-    {
-      "title": "Coordination Chemistry",
-      "parent": "Chemistry Competition Prep",
-      "path": "Notes/Chemistry/chem comp prep/coordination.md",
-      "permalink": "/notes/chemistry/coordination/",
-      "kind": "unit",
-      "status": "draft",
-      "progress": 48,
-      "issues": [
-        "thin explanations",
-        "practice without solutions"
-      ],
-      "next_step": "Expand core explanations"
-    },
-    {
-      "title": "Organic Chemistry",
-      "parent": "Chemistry Competition Prep",
-      "path": "Notes/Chemistry/chem comp prep/organic.md",
-      "permalink": "/notes/chemistry/organic/",
-      "kind": "unit",
-      "status": "draft",
-      "progress": 48,
-      "issues": [
-        "thin explanations",
-        "practice without solutions"
-      ],
-      "next_step": "Expand core explanations"
+      "next_step": "Write the note"
     },
     {
       "title": "Solid-State Chemistry",
-      "parent": "Chemistry Competition Prep",
-      "path": "Notes/Chemistry/chem comp prep/solidstate.md",
+      "parent": "Chemistry",
+      "path": "",
       "permalink": "/notes/chemistry/solidstate/",
       "kind": "unit",
-      "status": "draft",
-      "progress": 48,
+      "status": "stub",
+      "progress": 2,
       "issues": [
-        "thin explanations",
-        "practice without solutions"
+        "empty/stub page"
       ],
-      "next_step": "Expand core explanations"
+      "next_step": "Write the note"
     },
     {
       "title": "Spectroscopy",
-      "parent": "Chemistry Competition Prep",
-      "path": "Notes/Chemistry/chem comp prep/spectroscopy.md",
+      "parent": "Chemistry",
+      "path": "",
       "permalink": "/notes/chemistry/spectroscopy/",
       "kind": "unit",
-      "status": "draft",
-      "progress": 48,
+      "status": "stub",
+      "progress": 2,
       "issues": [
-        "thin explanations",
-        "practice without solutions"
+        "empty/stub page"
       ],
-      "next_step": "Expand core explanations"
-    },
-    {
-      "title": "Unit 1: Exploring Univariate Data",
-      "parent": "AP Statistics",
-      "path": "Notes/APs/AP Stats/univardata.md",
-      "permalink": "/notes/ap/stats/univardata/",
-      "kind": "unit",
-      "status": "draft",
-      "progress": 49,
-      "issues": [
-        "few or no worked boxes",
-        "missing practice",
-        "missing solutions",
-        "has TODOs/placeholders",
-        "check vertical bars in math"
-      ],
-      "next_step": "Add worked examples"
-    },
-    {
-      "title": "Unit 2: Exploring Bivariate Data",
-      "parent": "AP Statistics",
-      "path": "Notes/APs/AP Stats/bivardata.md",
-      "permalink": "/notes/ap/stats/bivardata/",
-      "kind": "unit",
-      "status": "draft",
-      "progress": 51,
-      "issues": [
-        "few or no worked boxes",
-        "missing practice",
-        "missing solutions",
-        "has TODOs/placeholders",
-        "check vertical bars in math"
-      ],
-      "next_step": "Add worked examples"
+      "next_step": "Write the note"
     }
   ],
   "pages": [
     {
-      "title": "Homothety",
-      "parent": "Math",
-      "path": "Notes/math/Geometry/homothety.md",
-      "permalink": "/notes/math/geometry/homothety/",
-      "kind": "unit",
-      "status": "draft",
-      "progress": 30,
-      "issues": [
-        "missing H1",
-        "thin explanations",
-        "missing practice",
-        "missing solutions"
-      ],
-      "next_step": "Add the page H1"
-    },
-    {
-      "title": "AP Biology",
+      "title": "AP",
       "parent": "AP",
-      "path": "Notes/APs/biology.md",
-      "permalink": "/notes/ap/biology/",
-      "kind": "unit",
-      "status": "draft",
-      "progress": 33,
-      "issues": [
-        "thin explanations",
-        "missing practice",
-        "missing solutions"
-      ],
-      "next_step": "Expand core explanations"
+      "path": "",
+      "permalink": "/notes/ap/",
+      "kind": "index",
+      "status": "review",
+      "progress": 88,
+      "issues": [],
+      "next_step": "Review for accuracy"
     },
     {
-      "title": "Unit 7: Inference for Quantitative Data: Means",
-      "parent": "AP Statistics",
-      "path": "Notes/APs/AP Stats/quantmeans.md",
-      "permalink": "/notes/ap/stats/quantmeans/",
+      "title": "Unit 1: Chemistry of Life",
+      "parent": "AP Biology",
+      "path": "",
+      "permalink": "/notes/ap/biology/biochem/",
       "kind": "unit",
-      "status": "draft",
-      "progress": 40,
+      "status": "stub",
+      "progress": 0,
       "issues": [
-        "missing practice",
-        "missing solutions",
-        "has TODOs/placeholders"
+        "empty/stub page"
       ],
-      "next_step": "Add practice problems"
+      "next_step": "Write the note"
     },
     {
-      "title": "Unit 8: Inference for Categorical Data: Chi-Square",
-      "parent": "AP Statistics",
-      "path": "Notes/APs/AP Stats/catchi.md",
-      "permalink": "/notes/ap/stats/catchi/",
+      "title": "Unit 2: Cell Structure and Function",
+      "parent": "AP Biology",
+      "path": "",
+      "permalink": "/notes/ap/biology/cells/",
       "kind": "unit",
-      "status": "draft",
-      "progress": 42,
+      "status": "stub",
+      "progress": 0,
       "issues": [
-        "missing practice",
-        "missing solutions",
-        "has TODOs/placeholders"
+        "empty/stub page"
       ],
-      "next_step": "Add practice problems"
+      "next_step": "Write the note"
     },
     {
-      "title": "Unit 5: Sampling Distributions",
-      "parent": "AP Statistics",
-      "path": "Notes/APs/AP Stats/samplingdistr.md",
-      "permalink": "/notes/ap/stats/samplingdistr/",
+      "title": "Unit 3: Cellular Energetics",
+      "parent": "AP Biology",
+      "path": "",
+      "permalink": "/notes/ap/biology/cellenergy/",
       "kind": "unit",
-      "status": "draft",
-      "progress": 43,
+      "status": "stub",
+      "progress": 0,
       "issues": [
-        "few or no worked boxes",
-        "missing practice",
-        "missing solutions",
-        "has TODOs/placeholders",
-        "check vertical bars in math"
+        "empty/stub page"
       ],
-      "next_step": "Add worked examples"
+      "next_step": "Write the note"
     },
     {
-      "title": "Unit 6: Inference for Categorical Data: Proportions",
-      "parent": "AP Statistics",
-      "path": "Notes/APs/AP Stats/catprop.md",
-      "permalink": "/notes/ap/stats/catprop/",
+      "title": "Unit 4: Cell Communication and Cell Cycle",
+      "parent": "AP Biology",
+      "path": "",
+      "permalink": "/notes/ap/biology/cellcommcycle/",
       "kind": "unit",
-      "status": "draft",
-      "progress": 44,
+      "status": "stub",
+      "progress": 0,
       "issues": [
-        "few or no worked boxes",
-        "missing practice",
-        "missing solutions",
-        "has TODOs/placeholders"
+        "empty/stub page"
       ],
-      "next_step": "Add worked examples"
+      "next_step": "Write the note"
     },
     {
-      "title": "Unit 9: Inference for Quantitative Data: Slopes",
-      "parent": "AP Statistics",
-      "path": "Notes/APs/AP Stats/quantslopes.md",
-      "permalink": "/notes/ap/stats/quantslopes/",
+      "title": "Unit 5: Heredity",
+      "parent": "AP Biology",
+      "path": "",
+      "permalink": "/notes/ap/biology/heredity/",
       "kind": "unit",
-      "status": "draft",
-      "progress": 44,
+      "status": "stub",
+      "progress": 0,
       "issues": [
-        "missing practice",
-        "missing solutions",
-        "has TODOs/placeholders"
+        "empty/stub page"
       ],
-      "next_step": "Add practice problems"
+      "next_step": "Write the note"
     },
     {
-      "title": "Unit 4: Probability, Random Variables, and Probability Distributions",
-      "parent": "AP Statistics",
-      "path": "Notes/APs/AP Stats/probandrand.md",
-      "permalink": "/notes/ap/stats/probandrand/",
+      "title": "Unit 6: Gene Expression and Regulation",
+      "parent": "AP Biology",
+      "path": "",
+      "permalink": "/notes/ap/biology/geneexpreg/",
       "kind": "unit",
-      "status": "draft",
-      "progress": 48,
+      "status": "stub",
+      "progress": 0,
       "issues": [
-        "few or no worked boxes",
-        "missing practice",
-        "missing solutions",
-        "has TODOs/placeholders"
+        "empty/stub page"
       ],
-      "next_step": "Add worked examples"
+      "next_step": "Write the note"
     },
     {
-      "title": "Advanced Kinetics",
-      "parent": "Chemistry Competition Prep",
-      "path": "Notes/Chemistry/chem comp prep/advkinetics.md",
-      "permalink": "/notes/chemistry/advkinetics/",
+      "title": "Unit 7: Natural Selection",
+      "parent": "AP Biology",
+      "path": "",
+      "permalink": "/notes/ap/biology/natselection/",
       "kind": "unit",
-      "status": "draft",
-      "progress": 48,
+      "status": "stub",
+      "progress": 0,
       "issues": [
-        "thin explanations",
-        "practice without solutions"
+        "empty/stub page"
       ],
-      "next_step": "Expand core explanations"
+      "next_step": "Write the note"
     },
     {
-      "title": "Coordination Chemistry",
-      "parent": "Chemistry Competition Prep",
-      "path": "Notes/Chemistry/chem comp prep/coordination.md",
-      "permalink": "/notes/chemistry/coordination/",
+      "title": "Unit 8: Ecology",
+      "parent": "AP Biology",
+      "path": "",
+      "permalink": "/notes/ap/biology/ecology/",
       "kind": "unit",
-      "status": "draft",
-      "progress": 48,
+      "status": "stub",
+      "progress": 0,
       "issues": [
-        "thin explanations",
-        "practice without solutions"
+        "empty/stub page"
       ],
-      "next_step": "Expand core explanations"
+      "next_step": "Write the note"
     },
     {
-      "title": "Organic Chemistry",
-      "parent": "Chemistry Competition Prep",
-      "path": "Notes/Chemistry/chem comp prep/organic.md",
-      "permalink": "/notes/chemistry/organic/",
+      "title": "AP Biology Cheat Sheet",
+      "parent": "AP Biology",
+      "path": "",
+      "permalink": "/notes/ap/biology/cheatsheet/",
       "kind": "unit",
-      "status": "draft",
-      "progress": 48,
+      "status": "stub",
+      "progress": 2,
       "issues": [
-        "thin explanations",
-        "practice without solutions"
+        "empty/stub page"
       ],
-      "next_step": "Expand core explanations"
+      "next_step": "Write the note"
     },
     {
-      "title": "Solid-State Chemistry",
-      "parent": "Chemistry Competition Prep",
-      "path": "Notes/Chemistry/chem comp prep/solidstate.md",
-      "permalink": "/notes/chemistry/solidstate/",
-      "kind": "unit",
-      "status": "draft",
-      "progress": 48,
-      "issues": [
-        "thin explanations",
-        "practice without solutions"
-      ],
-      "next_step": "Expand core explanations"
-    },
-    {
-      "title": "Spectroscopy",
-      "parent": "Chemistry Competition Prep",
-      "path": "Notes/Chemistry/chem comp prep/spectroscopy.md",
-      "permalink": "/notes/chemistry/spectroscopy/",
-      "kind": "unit",
-      "status": "draft",
-      "progress": 48,
-      "issues": [
-        "thin explanations",
-        "practice without solutions"
-      ],
-      "next_step": "Expand core explanations"
-    },
-    {
-      "title": "Unit 1: Exploring Univariate Data",
-      "parent": "AP Statistics",
-      "path": "Notes/APs/AP Stats/univardata.md",
-      "permalink": "/notes/ap/stats/univardata/",
-      "kind": "unit",
-      "status": "draft",
-      "progress": 49,
-      "issues": [
-        "few or no worked boxes",
-        "missing practice",
-        "missing solutions",
-        "has TODOs/placeholders",
-        "check vertical bars in math"
-      ],
-      "next_step": "Add worked examples"
-    },
-    {
-      "title": "Unit 2: Exploring Bivariate Data",
-      "parent": "AP Statistics",
-      "path": "Notes/APs/AP Stats/bivardata.md",
-      "permalink": "/notes/ap/stats/bivardata/",
-      "kind": "unit",
-      "status": "draft",
-      "progress": 51,
-      "issues": [
-        "few or no worked boxes",
-        "missing practice",
-        "missing solutions",
-        "has TODOs/placeholders",
-        "check vertical bars in math"
-      ],
-      "next_step": "Add worked examples"
-    },
-    {
-      "title": "Unit 3: Collecting Data",
-      "parent": "AP Statistics",
-      "path": "Notes/APs/AP Stats/collectingdata.md",
-      "permalink": "/notes/ap/stats/collectingdata/",
-      "kind": "unit",
-      "status": "draft",
-      "progress": 51,
-      "issues": [
-        "few or no worked boxes",
-        "missing practice",
-        "missing solutions",
-        "has TODOs/placeholders"
-      ],
-      "next_step": "Add worked examples"
-    },
-    {
-      "title": "AP Statistics Cheat Sheet",
-      "parent": "AP Statistics",
-      "path": "Notes/APs/AP Stats/cheatsheet.md",
-      "permalink": "/notes/ap/stats/cheatsheet/",
-      "kind": "unit",
-      "status": "draft",
-      "progress": 55,
-      "issues": [
-        "few or no worked boxes",
-        "missing practice",
-        "missing solutions",
-        "check vertical bars in math"
-      ],
-      "next_step": "Add worked examples"
-    },
-    {
-      "title": "Math Tricks",
-      "parent": "Physics Competition Prep",
-      "path": "Notes/Physics/physics comp prep/mathtricks.md",
-      "permalink": "/notes/physics/mathtricks/",
+      "title": "Unit 10: Infinite Sums and Series (BC-only)",
+      "parent": "AP Calculus AB/BC",
+      "path": "",
+      "permalink": "/notes/ap/calculus/infsumseries/",
       "kind": "unit",
       "status": "developing",
-      "progress": 60,
+      "progress": 70,
       "issues": [
-        "title/H1 mismatch",
-        "missing practice",
-        "missing solutions",
-        "check vertical bars in math"
-      ],
-      "next_step": "Align title and H1"
-    },
-    {
-      "title": "Uncertainty",
-      "parent": "Physics Competition Prep",
-      "path": "Notes/Physics/physics comp prep/uncertainty.md",
-      "permalink": "/notes/physics/uncertainty/",
-      "kind": "unit",
-      "status": "developing",
-      "progress": 62,
-      "issues": [
-        "missing practice",
-        "missing solutions",
-        "check vertical bars in math"
-      ],
-      "next_step": "Add practice problems"
-    },
-    {
-      "title": "1D and 2D Kinematics",
-      "parent": "AP Physics C Mechanics",
-      "path": "Notes/APs/AP Physics C Mech/kinematics.md",
-      "permalink": "/notes/physics/kinematics/",
-      "kind": "unit",
-      "status": "developing",
-      "progress": 64,
-      "issues": [
-        "missing practice",
-        "missing solutions",
-        "has TODOs/placeholders",
-        "check vertical bars in math"
-      ],
-      "next_step": "Add practice problems"
-    },
-    {
-      "title": "Oscillations",
-      "parent": "AP Physics C Mechanics",
-      "path": "Notes/APs/AP Physics C Mech/oscillations.md",
-      "permalink": "/notes/physics/oscillations/",
-      "kind": "unit",
-      "status": "developing",
-      "progress": 64,
-      "issues": [
-        "missing practice",
-        "missing solutions",
-        "has TODOs/placeholders",
-        "check vertical bars in math"
-      ],
-      "next_step": "Add practice problems"
-    },
-    {
-      "title": "Torque and Rotational Dynamics",
-      "parent": "AP Physics C Mechanics",
-      "path": "Notes/APs/AP Physics C Mech/torque.md",
-      "permalink": "/notes/physics/torque/",
-      "kind": "unit",
-      "status": "developing",
-      "progress": 64,
-      "issues": [
-        "missing practice",
-        "missing solutions",
-        "has TODOs/placeholders",
-        "check vertical bars in math"
-      ],
-      "next_step": "Add practice problems"
-    },
-    {
-      "title": "Work, Energy, and Power",
-      "parent": "AP Physics C Mechanics",
-      "path": "Notes/APs/AP Physics C Mech/work.md",
-      "permalink": "/notes/physics/work/",
-      "kind": "unit",
-      "status": "developing",
-      "progress": 64,
-      "issues": [
-        "missing practice",
-        "missing solutions",
-        "has TODOs/placeholders"
-      ],
-      "next_step": "Add practice problems"
-    },
-    {
-      "title": "Problem Solving Techniques",
-      "parent": "Physics Competition Prep",
-      "path": "Notes/Physics/physics comp prep/techniques.md",
-      "permalink": "/notes/physics/techniques/",
-      "kind": "unit",
-      "status": "developing",
-      "progress": 64,
-      "issues": [
-        "missing practice",
-        "missing solutions"
-      ],
-      "next_step": "Add practice problems"
-    },
-    {
-      "title": "Stellar Physics",
-      "parent": "Physics Competition Prep",
-      "path": "Notes/Physics/physics comp prep/stellarphys.md",
-      "permalink": "/notes/physics/stellarphys/",
-      "kind": "unit",
-      "status": "developing",
-      "progress": 64,
-      "issues": [
-        "missing practice",
-        "missing solutions",
-        "has TODOs/placeholders",
-        "check vertical bars in math"
+        "missing practice"
       ],
       "next_step": "Add practice problems"
     },
     {
       "title": "Unit 1: Limits and Continuity",
       "parent": "AP Calculus AB/BC",
-      "path": "Notes/APs/AP Calc/limits.md",
-      "permalink": "/notes/math/limits/",
+      "path": "",
+      "permalink": "/notes/ap/calculus/limits/",
       "kind": "unit",
       "status": "developing",
-      "progress": 66,
+      "progress": 70,
       "issues": [
-        "missing practice",
-        "missing solutions",
-        "has TODOs/placeholders",
-        "check vertical bars in math"
-      ],
-      "next_step": "Add practice problems"
-    },
-    {
-      "title": "Unit 3: Differentiation: Composite, Implicit, and Inverse Differentiation",
-      "parent": "AP Calculus AB/BC",
-      "path": "Notes/APs/AP Calc/diffcomplex.md",
-      "permalink": "/notes/math/diffcomplex/",
-      "kind": "unit",
-      "status": "developing",
-      "progress": 66,
-      "issues": [
-        "missing practice",
-        "missing solutions",
-        "has TODOs/placeholders"
-      ],
-      "next_step": "Add practice problems"
-    },
-    {
-      "title": "Unit 5: Analytical Applications of Differentiation",
-      "parent": "AP Calculus AB/BC",
-      "path": "Notes/APs/AP Calc/analyticalappdiff.md",
-      "permalink": "/notes/math/analyticalappdiff/",
-      "kind": "unit",
-      "status": "developing",
-      "progress": 66,
-      "issues": [
-        "missing practice",
-        "missing solutions",
-        "has TODOs/placeholders"
-      ],
-      "next_step": "Add practice problems"
-    },
-    {
-      "title": "Unit 8: Applications of Integration",
-      "parent": "AP Calculus AB/BC",
-      "path": "Notes/APs/AP Calc/appintegration.md",
-      "permalink": "/notes/math/appintegration/",
-      "kind": "unit",
-      "status": "developing",
-      "progress": 66,
-      "issues": [
-        "missing practice",
-        "missing solutions",
-        "has TODOs/placeholders"
-      ],
-      "next_step": "Add practice problems"
-    },
-    {
-      "title": "Unit 9: Parametric, Polar, and Vector-Valued Functions (BC-only)",
-      "parent": "AP Calculus AB/BC",
-      "path": "Notes/APs/AP Calc/ppvvfunc.md",
-      "permalink": "/notes/math/ppvvfunc/",
-      "kind": "unit",
-      "status": "developing",
-      "progress": 66,
-      "issues": [
-        "missing practice",
-        "missing solutions",
-        "has TODOs/placeholders"
-      ],
-      "next_step": "Add practice problems"
-    },
-    {
-      "title": "Energy and Momentum of Rotating Systems",
-      "parent": "AP Physics C Mechanics",
-      "path": "Notes/APs/AP Physics C Mech/rotationalmomentum.md",
-      "permalink": "/notes/physics/rotationalmomentum/",
-      "kind": "unit",
-      "status": "developing",
-      "progress": 66,
-      "issues": [
-        "missing practice",
-        "missing solutions",
-        "has TODOs/placeholders",
-        "check vertical bars in math"
-      ],
-      "next_step": "Add practice problems"
-    },
-    {
-      "title": "Linear Momentum and Impulse",
-      "parent": "AP Physics C Mechanics",
-      "path": "Notes/APs/AP Physics C Mech/linearmomentum.md",
-      "permalink": "/notes/physics/linearmomentum/",
-      "kind": "unit",
-      "status": "developing",
-      "progress": 66,
-      "issues": [
-        "missing practice",
-        "missing solutions",
-        "has TODOs/placeholders"
-      ],
-      "next_step": "Add practice problems"
-    },
-    {
-      "title": "Electrostatics",
-      "parent": "Physics Competition Prep",
-      "path": "Notes/Physics/physics comp prep/electro1.md",
-      "permalink": "/notes/physics/electro1/",
-      "kind": "unit",
-      "status": "developing",
-      "progress": 67,
-      "issues": [
-        "missing practice",
-        "missing solutions"
-      ],
-      "next_step": "Add practice problems"
-    },
-    {
-      "title": "Unit 10: Infinite Sums and Series (BC-only)",
-      "parent": "AP Calculus AB/BC",
-      "path": "Notes/APs/AP Calc/infsumseries.md",
-      "permalink": "/notes/math/infsumseries/",
-      "kind": "unit",
-      "status": "developing",
-      "progress": 68,
-      "issues": [
-        "missing practice",
-        "missing solutions",
-        "has TODOs/placeholders",
-        "check vertical bars in math"
+        "missing practice"
       ],
       "next_step": "Add practice problems"
     },
     {
       "title": "Unit 2: Differentiation: Definition and Fundamental Properties",
       "parent": "AP Calculus AB/BC",
-      "path": "Notes/APs/AP Calc/diffdeffund.md",
-      "permalink": "/notes/math/diffdeffund/",
+      "path": "",
+      "permalink": "/notes/ap/calculus/diffdeffund/",
       "kind": "unit",
       "status": "developing",
-      "progress": 68,
+      "progress": 70,
       "issues": [
-        "missing practice",
-        "missing solutions",
-        "has TODOs/placeholders"
+        "missing practice"
+      ],
+      "next_step": "Add practice problems"
+    },
+    {
+      "title": "Unit 3: Differentiation: Composite, Implicit, and Inverse Differentiation",
+      "parent": "AP Calculus AB/BC",
+      "path": "",
+      "permalink": "/notes/ap/calculus/diffcomplex/",
+      "kind": "unit",
+      "status": "developing",
+      "progress": 70,
+      "issues": [
+        "missing practice"
       ],
       "next_step": "Add practice problems"
     },
     {
       "title": "Unit 4: Contextual Applications of Differentiation",
       "parent": "AP Calculus AB/BC",
-      "path": "Notes/APs/AP Calc/contextappdiff.md",
-      "permalink": "/notes/math/contextappdiff/",
+      "path": "",
+      "permalink": "/notes/ap/calculus/contextappdiff/",
       "kind": "unit",
       "status": "developing",
-      "progress": 68,
+      "progress": 70,
       "issues": [
-        "missing practice",
-        "missing solutions",
-        "has TODOs/placeholders",
-        "check vertical bars in math"
+        "missing practice"
+      ],
+      "next_step": "Add practice problems"
+    },
+    {
+      "title": "Unit 5: Analytical Applications of Differentiation",
+      "parent": "AP Calculus AB/BC",
+      "path": "",
+      "permalink": "/notes/ap/calculus/analyticalappdiff/",
+      "kind": "unit",
+      "status": "developing",
+      "progress": 70,
+      "issues": [
+        "missing practice"
       ],
       "next_step": "Add practice problems"
     },
     {
       "title": "Unit 6: Integration and Accumulation of Change",
       "parent": "AP Calculus AB/BC",
-      "path": "Notes/APs/AP Calc/integration.md",
-      "permalink": "/notes/math/integration/",
+      "path": "",
+      "permalink": "/notes/ap/calculus/integration/",
       "kind": "unit",
       "status": "developing",
-      "progress": 68,
+      "progress": 70,
       "issues": [
-        "missing practice",
-        "missing solutions",
-        "has TODOs/placeholders",
-        "check vertical bars in math"
+        "missing practice"
       ],
       "next_step": "Add practice problems"
     },
     {
       "title": "Unit 7: Differential Equations",
       "parent": "AP Calculus AB/BC",
-      "path": "Notes/APs/AP Calc/diffeq.md",
-      "permalink": "/notes/math/diffeq/",
+      "path": "",
+      "permalink": "/notes/ap/calculus/diffeq/",
       "kind": "unit",
       "status": "developing",
-      "progress": 68,
+      "progress": 70,
       "issues": [
-        "missing practice",
-        "missing solutions",
-        "has TODOs/placeholders"
+        "missing practice"
       ],
       "next_step": "Add practice problems"
     },
     {
-      "title": "Conductors and Capacitors",
-      "parent": "AP Physics C E&M",
-      "path": "Notes/APs/AP Physics C E&M/condcap.md",
-      "permalink": "/notes/physics/condcap/",
+      "title": "Unit 8: Applications of Integration",
+      "parent": "AP Calculus AB/BC",
+      "path": "",
+      "permalink": "/notes/ap/calculus/appintegration/",
       "kind": "unit",
       "status": "developing",
-      "progress": 68,
+      "progress": 70,
       "issues": [
-        "missing practice",
-        "missing solutions",
-        "has TODOs/placeholders"
+        "missing practice"
       ],
       "next_step": "Add practice problems"
     },
     {
-      "title": "Electric Fields and Forces",
-      "parent": "AP Physics C E&M",
-      "path": "Notes/APs/AP Physics C E&M/electrostatics.md",
-      "permalink": "/notes/physics/electrostatics/",
+      "title": "Unit 9: Parametric, Polar, and Vector-Valued Functions (BC-only)",
+      "parent": "AP Calculus AB/BC",
+      "path": "",
+      "permalink": "/notes/ap/calculus/ppvvfunc/",
       "kind": "unit",
       "status": "developing",
-      "progress": 68,
+      "progress": 70,
       "issues": [
-        "title/H1 mismatch",
-        "missing practice",
-        "missing solutions",
+        "missing practice"
+      ],
+      "next_step": "Add practice problems"
+    },
+    {
+      "title": "AP Chemistry Cheat Sheet",
+      "parent": "AP Chemistry",
+      "path": "",
+      "permalink": "/notes/ap/chem/cheatsheet/",
+      "kind": "unit",
+      "status": "draft",
+      "progress": 55,
+      "issues": [
+        "few or no worked boxes",
+        "missing practice"
+      ],
+      "next_step": "Add worked examples"
+    },
+    {
+      "title": "Unit 2: Compound Structure and Properties",
+      "parent": "AP Chemistry",
+      "path": "",
+      "permalink": "/notes/ap/chem/compounds/",
+      "kind": "unit",
+      "status": "developing",
+      "progress": 64,
+      "issues": [
+        "few or no worked boxes",
+        "practice without solutions"
+      ],
+      "next_step": "Add worked examples"
+    },
+    {
+      "title": "Unit 1: Atomic Structure and Properties",
+      "parent": "AP Chemistry",
+      "path": "",
+      "permalink": "/notes/ap/chem/atomicstrucprop/",
+      "kind": "unit",
+      "status": "developing",
+      "progress": 70,
+      "issues": [
+        "few or no worked boxes",
+        "practice without solutions"
+      ],
+      "next_step": "Add worked examples"
+    },
+    {
+      "title": "Unit 3: Substances and Mixtures",
+      "parent": "AP Chemistry",
+      "path": "",
+      "permalink": "/notes/ap/chem/submix/",
+      "kind": "unit",
+      "status": "developing",
+      "progress": 70,
+      "issues": [
+        "few or no worked boxes",
+        "practice without solutions"
+      ],
+      "next_step": "Add worked examples"
+    },
+    {
+      "title": "Unit 4: Chemical Reactions",
+      "parent": "AP Chemistry",
+      "path": "",
+      "permalink": "/notes/ap/chem/chemrxns/",
+      "kind": "unit",
+      "status": "developing",
+      "progress": 70,
+      "issues": [
+        "few or no worked boxes",
+        "practice without solutions"
+      ],
+      "next_step": "Add worked examples"
+    },
+    {
+      "title": "Unit 5: Kinetics",
+      "parent": "AP Chemistry",
+      "path": "",
+      "permalink": "/notes/ap/chem/kinetics/",
+      "kind": "unit",
+      "status": "developing",
+      "progress": 70,
+      "issues": [
+        "few or no worked boxes",
+        "practice without solutions"
+      ],
+      "next_step": "Add worked examples"
+    },
+    {
+      "title": "Unit 6: Thermochemistry",
+      "parent": "AP Chemistry",
+      "path": "",
+      "permalink": "/notes/ap/chem/thermochemistry/",
+      "kind": "unit",
+      "status": "developing",
+      "progress": 70,
+      "issues": [
+        "few or no worked boxes",
+        "practice without solutions"
+      ],
+      "next_step": "Add worked examples"
+    },
+    {
+      "title": "Unit 7: Equilibrium",
+      "parent": "AP Chemistry",
+      "path": "",
+      "permalink": "/notes/ap/chem/equilibrium/",
+      "kind": "unit",
+      "status": "developing",
+      "progress": 70,
+      "issues": [
+        "few or no worked boxes",
+        "practice without solutions"
+      ],
+      "next_step": "Add worked examples"
+    },
+    {
+      "title": "Unit 8: Acid-Base Equilibrium",
+      "parent": "AP Chemistry",
+      "path": "",
+      "permalink": "/notes/ap/chem/acidbase/",
+      "kind": "unit",
+      "status": "developing",
+      "progress": 70,
+      "issues": [
+        "few or no worked boxes",
+        "practice without solutions"
+      ],
+      "next_step": "Add worked examples"
+    },
+    {
+      "title": "Unit 9: Thermodynamics and Electrochemistry",
+      "parent": "AP Chemistry",
+      "path": "",
+      "permalink": "/notes/ap/chem/thermoelectro/",
+      "kind": "unit",
+      "status": "developing",
+      "progress": 70,
+      "issues": [
+        "few or no worked boxes",
+        "practice without solutions"
+      ],
+      "next_step": "Add worked examples"
+    },
+    {
+      "title": "Unit 1: Electric Fields and Forces",
+      "parent": "AP Physics C E&M",
+      "path": "",
+      "permalink": "/notes/ap/ap-physics-c-em/electrostatics/",
+      "kind": "unit",
+      "status": "developing",
+      "progress": 63,
+      "issues": [
+        "practice without solutions",
         "has TODOs/placeholders"
       ],
-      "next_step": "Align title and H1"
+      "next_step": "Add matching solutions"
+    },
+    {
+      "title": "Unit 2: Electric Potential",
+      "parent": "AP Physics C E&M",
+      "path": "",
+      "permalink": "/notes/ap/ap-physics-c-em/electricpot/",
+      "kind": "unit",
+      "status": "developing",
+      "progress": 63,
+      "issues": [
+        "practice without solutions",
+        "has TODOs/placeholders"
+      ],
+      "next_step": "Add matching solutions"
+    },
+    {
+      "title": "Unit 3: Conductors and Capacitors",
+      "parent": "AP Physics C E&M",
+      "path": "",
+      "permalink": "/notes/ap/ap-physics-c-em/condcap/",
+      "kind": "unit",
+      "status": "developing",
+      "progress": 63,
+      "issues": [
+        "practice without solutions",
+        "has TODOs/placeholders"
+      ],
+      "next_step": "Add matching solutions"
+    },
+    {
+      "title": "Unit 4: Circuits",
+      "parent": "AP Physics C E&M",
+      "path": "",
+      "permalink": "/notes/ap/ap-physics-c-em/circuits/",
+      "kind": "unit",
+      "status": "developing",
+      "progress": 63,
+      "issues": [
+        "practice without solutions",
+        "has TODOs/placeholders"
+      ],
+      "next_step": "Add matching solutions"
+    },
+    {
+      "title": "Unit 5: Magnetic Fields and Electromagnetism",
+      "parent": "AP Physics C E&M",
+      "path": "",
+      "permalink": "/notes/ap/ap-physics-c-em/magnetism/",
+      "kind": "unit",
+      "status": "developing",
+      "progress": 63,
+      "issues": [
+        "practice without solutions",
+        "has TODOs/placeholders"
+      ],
+      "next_step": "Add matching solutions"
+    },
+    {
+      "title": "Unit 6: Electromagnetic Induction",
+      "parent": "AP Physics C E&M",
+      "path": "",
+      "permalink": "/notes/ap/ap-physics-c-em/eminduction/",
+      "kind": "unit",
+      "status": "developing",
+      "progress": 63,
+      "issues": [
+        "practice without solutions",
+        "has TODOs/placeholders"
+      ],
+      "next_step": "Add matching solutions"
+    },
+    {
+      "title": "Unit 1: 1D and 2D Kinematics",
+      "parent": "AP Physics C Mechanics",
+      "path": "",
+      "permalink": "/notes/ap/ap-physics-c-mechanics/kinematics/",
+      "kind": "unit",
+      "status": "developing",
+      "progress": 63,
+      "issues": [
+        "practice without solutions",
+        "has TODOs/placeholders"
+      ],
+      "next_step": "Add matching solutions"
+    },
+    {
+      "title": "Unit 2: Force and Translational Dynamics",
+      "parent": "AP Physics C Mechanics",
+      "path": "",
+      "permalink": "/notes/ap/ap-physics-c-mechanics/forces/",
+      "kind": "unit",
+      "status": "developing",
+      "progress": 63,
+      "issues": [
+        "practice without solutions",
+        "has TODOs/placeholders"
+      ],
+      "next_step": "Add matching solutions"
+    },
+    {
+      "title": "Unit 3: Work, Energy, and Power",
+      "parent": "AP Physics C Mechanics",
+      "path": "",
+      "permalink": "/notes/ap/ap-physics-c-mechanics/work/",
+      "kind": "unit",
+      "status": "developing",
+      "progress": 63,
+      "issues": [
+        "practice without solutions",
+        "has TODOs/placeholders"
+      ],
+      "next_step": "Add matching solutions"
+    },
+    {
+      "title": "Unit 4: Linear Momentum and Impulse",
+      "parent": "AP Physics C Mechanics",
+      "path": "",
+      "permalink": "/notes/ap/ap-physics-c-mechanics/linearmomentum/",
+      "kind": "unit",
+      "status": "developing",
+      "progress": 63,
+      "issues": [
+        "practice without solutions",
+        "has TODOs/placeholders"
+      ],
+      "next_step": "Add matching solutions"
+    },
+    {
+      "title": "Unit 5: Torque and Rotational Dynamics",
+      "parent": "AP Physics C Mechanics",
+      "path": "",
+      "permalink": "/notes/ap/ap-physics-c-mechanics/torque/",
+      "kind": "unit",
+      "status": "developing",
+      "progress": 63,
+      "issues": [
+        "practice without solutions",
+        "has TODOs/placeholders"
+      ],
+      "next_step": "Add matching solutions"
+    },
+    {
+      "title": "Unit 6: Energy and Momentum of Rotating Systems",
+      "parent": "AP Physics C Mechanics",
+      "path": "",
+      "permalink": "/notes/ap/ap-physics-c-mechanics/rotationalmomentum/",
+      "kind": "unit",
+      "status": "developing",
+      "progress": 63,
+      "issues": [
+        "practice without solutions",
+        "has TODOs/placeholders"
+      ],
+      "next_step": "Add matching solutions"
+    },
+    {
+      "title": "Unit 7: Oscillations",
+      "parent": "AP Physics C Mechanics",
+      "path": "",
+      "permalink": "/notes/ap/ap-physics-c-mechanics/oscillations/",
+      "kind": "unit",
+      "status": "developing",
+      "progress": 63,
+      "issues": [
+        "practice without solutions",
+        "has TODOs/placeholders"
+      ],
+      "next_step": "Add matching solutions"
+    },
+    {
+      "title": "Unit 1 & 2: Fundamentals, Equations, and Inequalities",
+      "parent": "AP Precalculus",
+      "path": "",
+      "permalink": "/notes/ap/precalc/fundeqineq/",
+      "kind": "unit",
+      "status": "review",
+      "progress": 81,
+      "issues": [
+        "practice without solutions"
+      ],
+      "next_step": "Add matching solutions"
+    },
+    {
+      "title": "Unit 10: Additional Topics in Trigonometry (Triangle Laws, Parametric, Polar, and Vectors)",
+      "parent": "AP Precalculus",
+      "path": "",
+      "permalink": "/notes/ap/precalc/additionaltrig/",
+      "kind": "unit",
+      "status": "review",
+      "progress": 85,
+      "issues": [
+        "practice without solutions"
+      ],
+      "next_step": "Add matching solutions"
+    },
+    {
+      "title": "Unit 11: Matrices and Systems",
+      "parent": "AP Precalculus",
+      "path": "",
+      "permalink": "/notes/ap/precalc/matrices/",
+      "kind": "unit",
+      "status": "review",
+      "progress": 85,
+      "issues": [
+        "practice without solutions"
+      ],
+      "next_step": "Add matching solutions"
+    },
+    {
+      "title": "Unit 12: Conic Sections",
+      "parent": "AP Precalculus",
+      "path": "",
+      "permalink": "/notes/ap/precalc/conicsections/",
+      "kind": "unit",
+      "status": "review",
+      "progress": 85,
+      "issues": [
+        "practice without solutions"
+      ],
+      "next_step": "Add matching solutions"
+    },
+    {
+      "title": "Unit 13 & 14: Additional Topics in Algebra",
+      "parent": "AP Precalculus",
+      "path": "",
+      "permalink": "/notes/ap/precalc/addtopics/",
+      "kind": "unit",
+      "status": "review",
+      "progress": 85,
+      "issues": [
+        "practice without solutions"
+      ],
+      "next_step": "Add matching solutions"
+    },
+    {
+      "title": "Unit 3: Functions",
+      "parent": "AP Precalculus",
+      "path": "",
+      "permalink": "/notes/ap/precalc/functions/",
+      "kind": "unit",
+      "status": "review",
+      "progress": 85,
+      "issues": [
+        "practice without solutions"
+      ],
+      "next_step": "Add matching solutions"
+    },
+    {
+      "title": "Unit 4 & 13: Polynomial & Rational Functions and Applications to Optimization",
+      "parent": "AP Precalculus",
+      "path": "",
+      "permalink": "/notes/ap/precalc/polyratopt/",
+      "kind": "unit",
+      "status": "review",
+      "progress": 85,
+      "issues": [
+        "practice without solutions"
+      ],
+      "next_step": "Add matching solutions"
+    },
+    {
+      "title": "Unit 5: Exponential & Logarithmic Functions",
+      "parent": "AP Precalculus",
+      "path": "",
+      "permalink": "/notes/ap/precalc/explog/",
+      "kind": "unit",
+      "status": "review",
+      "progress": 85,
+      "issues": [
+        "practice without solutions"
+      ],
+      "next_step": "Add matching solutions"
+    },
+    {
+      "title": "Unit 6 & 7: Trigonometric Functions",
+      "parent": "AP Precalculus",
+      "path": "",
+      "permalink": "/notes/ap/precalc/trigfunc/",
+      "kind": "unit",
+      "status": "review",
+      "progress": 85,
+      "issues": [
+        "practice without solutions"
+      ],
+      "next_step": "Add matching solutions"
+    },
+    {
+      "title": "Unit 8 & 9: Graphs and Analytics of Trig Functions",
+      "parent": "AP Precalculus",
+      "path": "",
+      "permalink": "/notes/ap/precalc/graphanalyticaltrig/",
+      "kind": "unit",
+      "status": "review",
+      "progress": 85,
+      "issues": [
+        "practice without solutions"
+      ],
+      "next_step": "Add matching solutions"
+    },
+    {
+      "title": "Unit 3: Inference for Categorical Data: Proportions",
+      "parent": "AP Statistics",
+      "path": "",
+      "permalink": "/notes/ap/stats/infprop/",
+      "kind": "unit",
+      "status": "draft",
+      "progress": 45,
+      "issues": [
+        "few or no worked boxes",
+        "missing practice"
+      ],
+      "next_step": "Add worked examples"
+    },
+    {
+      "title": "Unit 4: Inference for Quantitative Data: Means",
+      "parent": "AP Statistics",
+      "path": "",
+      "permalink": "/notes/ap/stats/quantmeans/",
+      "kind": "unit",
+      "status": "draft",
+      "progress": 45,
+      "issues": [
+        "few or no worked boxes",
+        "missing practice"
+      ],
+      "next_step": "Add worked examples"
+    },
+    {
+      "title": "AP Statistics Cheat Sheet",
+      "parent": "AP Statistics",
+      "path": "",
+      "permalink": "/notes/ap/stats/cheatsheet/",
+      "kind": "unit",
+      "status": "draft",
+      "progress": 54,
+      "issues": [
+        "few or no worked boxes",
+        "missing practice"
+      ],
+      "next_step": "Add worked examples"
+    },
+    {
+      "title": "Unit 1: Exploring One-Variable Data and Collecting Data",
+      "parent": "AP Statistics",
+      "path": "",
+      "permalink": "/notes/ap/stats/onevardata/",
+      "kind": "unit",
+      "status": "draft",
+      "progress": 55,
+      "issues": [
+        "few or no worked boxes",
+        "missing practice"
+      ],
+      "next_step": "Add worked examples"
+    },
+    {
+      "title": "Unit 2: Probability, Random Variables, and Probability Distributions",
+      "parent": "AP Statistics",
+      "path": "",
+      "permalink": "/notes/ap/stats/probranddist/",
+      "kind": "unit",
+      "status": "draft",
+      "progress": 55,
+      "issues": [
+        "few or no worked boxes",
+        "missing practice"
+      ],
+      "next_step": "Add worked examples"
+    },
+    {
+      "title": "Unit 5: Regression Analysis",
+      "parent": "AP Statistics",
+      "path": "",
+      "permalink": "/notes/ap/stats/reganalysis/",
+      "kind": "unit",
+      "status": "draft",
+      "progress": 55,
+      "issues": [
+        "few or no worked boxes",
+        "missing practice"
+      ],
+      "next_step": "Add worked examples"
+    },
+    {
+      "title": "Advanced Kinetics",
+      "parent": "Chemistry",
+      "path": "",
+      "permalink": "/notes/chemistry/advkinetics/",
+      "kind": "unit",
+      "status": "stub",
+      "progress": 2,
+      "issues": [
+        "empty/stub page"
+      ],
+      "next_step": "Write the note"
+    },
+    {
+      "title": "Solid-State Chemistry",
+      "parent": "Chemistry",
+      "path": "",
+      "permalink": "/notes/chemistry/solidstate/",
+      "kind": "unit",
+      "status": "stub",
+      "progress": 2,
+      "issues": [
+        "empty/stub page"
+      ],
+      "next_step": "Write the note"
+    },
+    {
+      "title": "Spectroscopy",
+      "parent": "Chemistry",
+      "path": "",
+      "permalink": "/notes/chemistry/spectroscopy/",
+      "kind": "unit",
+      "status": "stub",
+      "progress": 2,
+      "issues": [
+        "empty/stub page"
+      ],
+      "next_step": "Write the note"
+    },
+    {
+      "title": "Coordination Chemistry",
+      "parent": "Chemistry",
+      "path": "",
+      "permalink": "/notes/chemistry/coordination/",
+      "kind": "unit",
+      "status": "stub",
+      "progress": 3,
+      "issues": [
+        "empty/stub page"
+      ],
+      "next_step": "Write the note"
+    },
+    {
+      "title": "Organic Chemistry",
+      "parent": "Chemistry",
+      "path": "",
+      "permalink": "/notes/chemistry/organic/",
+      "kind": "unit",
+      "status": "stub",
+      "progress": 3,
+      "issues": [
+        "empty/stub page"
+      ],
+      "next_step": "Write the note"
+    },
+    {
+      "title": "Homothety",
+      "parent": "Math",
+      "path": "",
+      "permalink": "/notes/math/geometry/homothety/",
+      "kind": "unit",
+      "status": "stub",
+      "progress": 0,
+      "issues": [
+        "empty/stub page"
+      ],
+      "next_step": "Write the note"
+    },
+    {
+      "title": "Recursion",
+      "parent": "Math",
+      "path": "",
+      "permalink": "/notes/math/algebra/recursion/",
+      "kind": "unit",
+      "status": "developing",
+      "progress": 64,
+      "issues": [
+        "missing practice"
+      ],
+      "next_step": "Add practice problems"
     },
     {
       "title": "Summations",
       "parent": "Math",
-      "path": "Notes/math/Algebra/summations.md",
+      "path": "",
       "permalink": "/notes/math/algebra/summations/",
       "kind": "unit",
       "status": "developing",
-      "progress": 68,
+      "progress": 67,
       "issues": [
         "missing practice",
-        "missing solutions",
         "has TODOs/placeholders"
       ],
       "next_step": "Add practice problems"
     },
     {
-      "title": "Fluid Dynamics",
-      "parent": "Physics Competition Prep",
-      "path": "Notes/Physics/physics comp prep/fluiddynamics.md",
-      "permalink": "/notes/physics/fluiddynamics/",
+      "title": "Math",
+      "parent": "Math",
+      "path": "",
+      "permalink": "/notes/math/",
+      "kind": "index",
+      "status": "review",
+      "progress": 87,
+      "issues": [],
+      "next_step": "Review for accuracy"
+    },
+    {
+      "title": "Unit 1: Vectors and Euclidean Geometry in R3",
+      "parent": "Notes",
+      "path": "",
+      "permalink": "/notes/math/multivariable-calculus/vectors-euclidean-geometry/",
+      "kind": "unit",
+      "status": "stub",
+      "progress": 0,
+      "issues": [
+        "empty/stub page"
+      ],
+      "next_step": "Write the note"
+    },
+    {
+      "title": "Unit 2: The Geometry of Curves in R3",
+      "parent": "Notes",
+      "path": "",
+      "permalink": "/notes/math/multivariable-calculus/geometry-of-curves/",
+      "kind": "unit",
+      "status": "stub",
+      "progress": 0,
+      "issues": [
+        "empty/stub page"
+      ],
+      "next_step": "Write the note"
+    },
+    {
+      "title": "Unit 3: Differential Multivariable Functions",
+      "parent": "Notes",
+      "path": "",
+      "permalink": "/notes/math/multivariable-calculus/differential-multivariable-functions/",
+      "kind": "unit",
+      "status": "stub",
+      "progress": 0,
+      "issues": [
+        "empty/stub page"
+      ],
+      "next_step": "Write the note"
+    },
+    {
+      "title": "Unit 4: Multiple Integrals in Cartesian Coordinates",
+      "parent": "Notes",
+      "path": "",
+      "permalink": "/notes/math/multivariable-calculus/multiple-integrals-cartesian/",
+      "kind": "unit",
+      "status": "stub",
+      "progress": 0,
+      "issues": [
+        "empty/stub page"
+      ],
+      "next_step": "Write the note"
+    },
+    {
+      "title": "Unit 5: Multiple Integrals in Curvilinear Coordinates",
+      "parent": "Notes",
+      "path": "",
+      "permalink": "/notes/math/multivariable-calculus/multiple-integrals-curvilinear/",
+      "kind": "unit",
+      "status": "stub",
+      "progress": 0,
+      "issues": [
+        "empty/stub page"
+      ],
+      "next_step": "Write the note"
+    },
+    {
+      "title": "Unit 6: Line and Surface Integrals",
+      "parent": "Notes",
+      "path": "",
+      "permalink": "/notes/math/multivariable-calculus/line-and-surface-integrals/",
+      "kind": "unit",
+      "status": "stub",
+      "progress": 0,
+      "issues": [
+        "empty/stub page"
+      ],
+      "next_step": "Write the note"
+    },
+    {
+      "title": "Unit 7: Vector Analysis",
+      "parent": "Notes",
+      "path": "",
+      "permalink": "/notes/math/multivariable-calculus/vector-analysis/",
+      "kind": "unit",
+      "status": "stub",
+      "progress": 0,
+      "issues": [
+        "empty/stub page"
+      ],
+      "next_step": "Write the note"
+    },
+    {
+      "title": "AP Precalculus Cheat Sheet",
+      "parent": "Notes",
+      "path": "",
+      "permalink": "/notes/ap/precalc/cheatsheet/",
+      "kind": "unit",
+      "status": "draft",
+      "progress": 44,
+      "issues": [
+        "few or no worked boxes",
+        "missing practice"
+      ],
+      "next_step": "Add worked examples"
+    },
+    {
+      "title": "AP Calculus AB/BC Cheat Sheet",
+      "parent": "Notes",
+      "path": "",
+      "permalink": "/notes/ap/calculus/cheatsheet/",
+      "kind": "unit",
+      "status": "draft",
+      "progress": 52,
+      "issues": [
+        "few or no worked boxes",
+        "missing practice"
+      ],
+      "next_step": "Add worked examples"
+    },
+    {
+      "title": "AP Physics C: E&M Cheat Sheet",
+      "parent": "Notes",
+      "path": "",
+      "permalink": "/notes/ap/ap-physics-c-em/cheatsheet/",
+      "kind": "unit",
+      "status": "draft",
+      "progress": 55,
+      "issues": [
+        "few or no worked boxes",
+        "missing practice"
+      ],
+      "next_step": "Add worked examples"
+    },
+    {
+      "title": "AP Physics C: Mechanics Cheat Sheet",
+      "parent": "Notes",
+      "path": "",
+      "permalink": "/notes/ap/ap-physics-c-mechanics/cheatsheet/",
+      "kind": "unit",
+      "status": "draft",
+      "progress": 55,
+      "issues": [
+        "few or no worked boxes",
+        "missing practice"
+      ],
+      "next_step": "Add worked examples"
+    },
+    {
+      "title": "Notes",
+      "parent": "Notes",
+      "path": "",
+      "permalink": "/notes/notes/",
+      "kind": "index",
+      "status": "developing",
+      "progress": 71,
+      "issues": [
+        "has TODOs/placeholders"
+      ],
+      "next_step": "Resolve placeholders"
+    },
+    {
+      "title": "Stellar Physics",
+      "parent": "Physics",
+      "path": "",
+      "permalink": "/notes/physics/stellarphys/",
       "kind": "unit",
       "status": "developing",
-      "progress": 68,
+      "progress": 60,
       "issues": [
         "missing practice",
-        "missing solutions"
+        "has TODOs/placeholders"
+      ],
+      "next_step": "Add practice problems"
+    },
+    {
+      "title": "Uncertainty",
+      "parent": "Physics",
+      "path": "",
+      "permalink": "/notes/physics/uncertainty/",
+      "kind": "unit",
+      "status": "developing",
+      "progress": 61,
+      "issues": [
+        "missing practice"
+      ],
+      "next_step": "Add practice problems"
+    },
+    {
+      "title": "Problem Solving Techniques",
+      "parent": "Physics",
+      "path": "",
+      "permalink": "/notes/physics/techniques/",
+      "kind": "unit",
+      "status": "developing",
+      "progress": 63,
+      "issues": [
+        "missing practice"
+      ],
+      "next_step": "Add practice problems"
+    },
+    {
+      "title": "Math Tricks",
+      "parent": "Physics",
+      "path": "",
+      "permalink": "/notes/physics/mathtricks/",
+      "kind": "unit",
+      "status": "developing",
+      "progress": 66,
+      "issues": [
+        "missing practice"
       ],
       "next_step": "Add practice problems"
     },
     {
       "title": "Advanced Mechanics",
-      "parent": "Physics Competition Prep",
-      "path": "Notes/Physics/physics comp prep/advmech.md",
+      "parent": "Physics",
+      "path": "",
       "permalink": "/notes/physics/advmech/",
       "kind": "unit",
       "status": "developing",
-      "progress": 69,
+      "progress": 70,
       "issues": [
-        "missing practice",
-        "missing solutions",
-        "check vertical bars in math"
+        "missing practice"
+      ],
+      "next_step": "Add practice problems"
+    },
+    {
+      "title": "Electrostatics",
+      "parent": "Physics",
+      "path": "",
+      "permalink": "/notes/physics/electro1/",
+      "kind": "unit",
+      "status": "developing",
+      "progress": 70,
+      "issues": [
+        "missing practice"
+      ],
+      "next_step": "Add practice problems"
+    },
+    {
+      "title": "Fluid Dynamics",
+      "parent": "Physics",
+      "path": "",
+      "permalink": "/notes/physics/fluiddynamics/",
+      "kind": "unit",
+      "status": "developing",
+      "progress": 70,
+      "issues": [
+        "missing practice"
       ],
       "next_step": "Add practice problems"
     },
     {
       "title": "Magnetism & Electrodynamics",
-      "parent": "Physics Competition Prep",
-      "path": "Notes/Physics/physics comp prep/electro2.md",
+      "parent": "Physics",
+      "path": "",
       "permalink": "/notes/physics/electro2/",
       "kind": "unit",
       "status": "developing",
-      "progress": 69,
-      "issues": [
-        "missing practice",
-        "missing solutions",
-        "check vertical bars in math"
-      ],
-      "next_step": "Add practice problems"
-    },
-    {
-      "title": "Circuits",
-      "parent": "AP Physics C E&M",
-      "path": "Notes/APs/AP Physics C E&M/circuits.md",
-      "permalink": "/notes/physics/circuits/",
-      "kind": "unit",
-      "status": "developing",
       "progress": 70,
       "issues": [
-        "missing practice",
-        "missing solutions"
-      ],
-      "next_step": "Add practice problems"
-    },
-    {
-      "title": "Electric Potential",
-      "parent": "AP Physics C E&M",
-      "path": "Notes/APs/AP Physics C E&M/electricpot.md",
-      "permalink": "/notes/physics/electricpot/",
-      "kind": "unit",
-      "status": "developing",
-      "progress": 70,
-      "issues": [
-        "missing practice",
-        "missing solutions",
-        "check vertical bars in math"
-      ],
-      "next_step": "Add practice problems"
-    },
-    {
-      "title": "Electromagnetic Induction",
-      "parent": "AP Physics C E&M",
-      "path": "Notes/APs/AP Physics C E&M/eminduction.md",
-      "permalink": "/notes/physics/eminduction/",
-      "kind": "unit",
-      "status": "developing",
-      "progress": 70,
-      "issues": [
-        "missing practice",
-        "missing solutions",
-        "check vertical bars in math"
-      ],
-      "next_step": "Add practice problems"
-    },
-    {
-      "title": "Magnetic Fields and Electromagnetism",
-      "parent": "AP Physics C E&M",
-      "path": "Notes/APs/AP Physics C E&M/magnetism.md",
-      "permalink": "/notes/physics/magnetism/",
-      "kind": "unit",
-      "status": "developing",
-      "progress": 70,
-      "issues": [
-        "missing practice",
-        "missing solutions",
-        "check vertical bars in math"
-      ],
-      "next_step": "Add practice problems"
-    },
-    {
-      "title": "Force and Translational Dynamics",
-      "parent": "AP Physics C Mechanics",
-      "path": "Notes/APs/AP Physics C Mech/forces.md",
-      "permalink": "/notes/physics/forces/",
-      "kind": "unit",
-      "status": "developing",
-      "progress": 70,
-      "issues": [
-        "missing practice",
-        "missing solutions"
+        "missing practice"
       ],
       "next_step": "Add practice problems"
     },
     {
       "title": "Modern Physics",
-      "parent": "Physics Competition Prep",
-      "path": "Notes/Physics/physics comp prep/quantnucphys.md",
+      "parent": "Physics",
+      "path": "",
       "permalink": "/notes/physics/quantnucphys/",
       "kind": "unit",
       "status": "developing",
       "progress": 70,
       "issues": [
-        "missing practice",
-        "missing solutions",
-        "check vertical bars in math"
+        "missing practice"
       ],
       "next_step": "Add practice problems"
     },
     {
       "title": "Optics",
-      "parent": "Physics Competition Prep",
-      "path": "Notes/Physics/physics comp prep/optics.md",
+      "parent": "Physics",
+      "path": "",
       "permalink": "/notes/physics/optics/",
       "kind": "unit",
       "status": "developing",
       "progress": 70,
       "issues": [
-        "missing practice",
-        "missing solutions"
+        "missing practice"
       ],
       "next_step": "Add practice problems"
     },
     {
       "title": "Relativity",
-      "parent": "Physics Competition Prep",
-      "path": "Notes/Physics/physics comp prep/relativity.md",
+      "parent": "Physics",
+      "path": "",
       "permalink": "/notes/physics/relativity/",
       "kind": "unit",
       "status": "developing",
       "progress": 70,
       "issues": [
-        "missing practice",
-        "missing solutions",
-        "check vertical bars in math"
+        "missing practice"
       ],
       "next_step": "Add practice problems"
     },
     {
       "title": "Thermodynamics",
-      "parent": "Physics Competition Prep",
-      "path": "Notes/Physics/physics comp prep/thermodynamics.md",
+      "parent": "Physics",
+      "path": "",
       "permalink": "/notes/physics/thermodynamics/",
       "kind": "unit",
       "status": "developing",
       "progress": 70,
       "issues": [
-        "missing practice",
-        "missing solutions",
-        "check vertical bars in math"
+        "missing practice"
       ],
       "next_step": "Add practice problems"
     },
     {
       "title": "Waves",
-      "parent": "Physics Competition Prep",
-      "path": "Notes/Physics/physics comp prep/waves.md",
+      "parent": "Physics",
+      "path": "",
       "permalink": "/notes/physics/waves/",
       "kind": "unit",
       "status": "developing",
       "progress": 70,
       "issues": [
-        "missing practice",
-        "missing solutions",
-        "check vertical bars in math"
+        "missing practice"
       ],
       "next_step": "Add practice problems"
     },
     {
-      "title": "Recursion",
-      "parent": "Math",
-      "path": "Notes/math/Algebra/recursion.md",
-      "permalink": "/notes/math/algebra/recursion/",
-      "kind": "unit",
+      "title": "Physics Competition Prep",
+      "parent": "Physics",
+      "path": "",
+      "permalink": "/notes/physics/usapho/",
+      "kind": "index",
       "status": "developing",
       "progress": 77,
       "issues": [
-        "practice without solutions",
-        "check vertical bars in math"
+        "has TODOs/placeholders"
       ],
-      "next_step": "Add matching solutions"
+      "next_step": "Resolve placeholders"
     },
     {
-      "title": "AP Chemistry Cheat Sheet",
-      "parent": "AP Chemistry",
-      "path": "Notes/APs/AP Chem/cheatsheet.md",
-      "permalink": "/notes/ap/chem/cheatsheet/",
-      "kind": "unit",
+      "title": "Physics",
+      "parent": "Physics",
+      "path": "",
+      "permalink": "/notes/physics/",
+      "kind": "index",
       "status": "review",
-      "progress": 88,
-      "issues": [
-        "has TODOs/placeholders"
-      ],
-      "next_step": "Resolve placeholders"
-    },
-    {
-      "title": "Unit 8: Acid-Base Equilibrium",
-      "parent": "AP Chemistry",
-      "path": "Notes/APs/AP Chem/acidbase.md",
-      "permalink": "/notes/ap/chem/acidbase/",
-      "kind": "unit",
-      "status": "review",
-      "progress": 94,
-      "issues": [
-        "has TODOs/placeholders",
-        "check vertical bars in math"
-      ],
-      "next_step": "Resolve placeholders"
-    },
-    {
-      "title": "Unit 2: Compound Structure and Properties",
-      "parent": "AP Chemistry",
-      "path": "Notes/APs/AP Chem/compounds.md",
-      "permalink": "/notes/ap/chem/compounds/",
-      "kind": "unit",
-      "status": "complete",
-      "progress": 96,
-      "issues": [
-        "has TODOs/placeholders"
-      ],
-      "next_step": "Resolve placeholders"
-    },
-    {
-      "title": "Unit 3: Substances and Mixtures",
-      "parent": "AP Chemistry",
-      "path": "Notes/APs/AP Chem/submix.md",
-      "permalink": "/notes/ap/chem/submix/",
-      "kind": "unit",
-      "status": "complete",
-      "progress": 96,
-      "issues": [
-        "has TODOs/placeholders"
-      ],
-      "next_step": "Resolve placeholders"
-    },
-    {
-      "title": "Unit 6: Thermochemistry",
-      "parent": "AP Chemistry",
-      "path": "Notes/APs/AP Chem/thermochemistry.md",
-      "permalink": "/notes/ap/chem/thermochemistry/",
-      "kind": "unit",
-      "status": "complete",
-      "progress": 96,
-      "issues": [],
-      "next_step": "Review for accuracy"
-    },
-    {
-      "title": "Unit 7: Equilibrium",
-      "parent": "AP Chemistry",
-      "path": "Notes/APs/AP Chem/equilibrium.md",
-      "permalink": "/notes/ap/chem/equilibrium/",
-      "kind": "unit",
-      "status": "complete",
-      "progress": 96,
-      "issues": [
-        "has TODOs/placeholders",
-        "check vertical bars in math"
-      ],
-      "next_step": "Resolve placeholders"
-    },
-    {
-      "title": "Unit 9: Thermodynamics and Electrochemistry",
-      "parent": "AP Chemistry",
-      "path": "Notes/APs/AP Chem/thermoelectro.md",
-      "permalink": "/notes/ap/chem/thermoelectro/",
-      "kind": "unit",
-      "status": "complete",
-      "progress": 96,
-      "issues": [
-        "has TODOs/placeholders",
-        "check vertical bars in math"
-      ],
-      "next_step": "Resolve placeholders"
-    },
-    {
-      "title": "Unit 1: Atomic Structure and Properties",
-      "parent": "AP Chemistry",
-      "path": "Notes/APs/AP Chem/atomicstrucprop.md",
-      "permalink": "/notes/ap/chem/atomicstrucprop/",
-      "kind": "unit",
-      "status": "complete",
-      "progress": 100,
-      "issues": [],
-      "next_step": "Review for accuracy"
-    },
-    {
-      "title": "Unit 4: Chemical Reactions",
-      "parent": "AP Chemistry",
-      "path": "Notes/APs/AP Chem/chemrxns.md",
-      "permalink": "/notes/ap/chem/chemrxns/",
-      "kind": "unit",
-      "status": "complete",
-      "progress": 100,
-      "issues": [
-        "check vertical bars in math"
-      ],
-      "next_step": "Run a focused review"
-    },
-    {
-      "title": "Unit 5: Kinetics",
-      "parent": "AP Chemistry",
-      "path": "Notes/APs/AP Chem/kinetics.md",
-      "permalink": "/notes/ap/chem/kinetics/",
-      "kind": "unit",
-      "status": "complete",
-      "progress": 100,
-      "issues": [
-        "check vertical bars in math"
-      ],
-      "next_step": "Run a focused review"
-    },
-    {
-      "title": "Unit 1 & 2: Fundamentals, Equations, and Inequalities",
-      "parent": "AP Precalculus",
-      "path": "Notes/APs/AP Precalc/fundeqineq.md",
-      "permalink": "/notes/ap/precalc/fundeqineq/",
-      "kind": "unit",
-      "status": "complete",
-      "progress": 100,
-      "issues": [],
-      "next_step": "Review for accuracy"
-    },
-    {
-      "title": "Unit 10: Additional Topics in Trigonometry (Triangle Laws, Parametric, Polar, and Vectors)",
-      "parent": "AP Precalculus",
-      "path": "Notes/APs/AP Precalc/additionaltrig.md",
-      "permalink": "/notes/ap/precalc/additionaltrig/",
-      "kind": "unit",
-      "status": "complete",
-      "progress": 100,
-      "issues": [],
-      "next_step": "Review for accuracy"
-    },
-    {
-      "title": "Unit 11: Matrices and Systems",
-      "parent": "AP Precalculus",
-      "path": "Notes/APs/AP Precalc/matrices.md",
-      "permalink": "/notes/ap/precalc/matrices/",
-      "kind": "unit",
-      "status": "complete",
-      "progress": 100,
-      "issues": [],
-      "next_step": "Review for accuracy"
-    },
-    {
-      "title": "Unit 12: Conic Sections",
-      "parent": "AP Precalculus",
-      "path": "Notes/APs/AP Precalc/conicsections.md",
-      "permalink": "/notes/ap/precalc/conicsections/",
-      "kind": "unit",
-      "status": "complete",
-      "progress": 100,
-      "issues": [
-        "check vertical bars in math"
-      ],
-      "next_step": "Run a focused review"
-    },
-    {
-      "title": "Unit 13 & 14: Additional Topics in Algebra",
-      "parent": "AP Precalculus",
-      "path": "Notes/APs/AP Precalc/addtopics.md",
-      "permalink": "/notes/ap/precalc/addtopics/",
-      "kind": "unit",
-      "status": "complete",
-      "progress": 100,
-      "issues": [
-        "check vertical bars in math"
-      ],
-      "next_step": "Run a focused review"
-    },
-    {
-      "title": "Unit 3: Functions",
-      "parent": "AP Precalculus",
-      "path": "Notes/APs/AP Precalc/functions.md",
-      "permalink": "/notes/ap/precalc/functions/",
-      "kind": "unit",
-      "status": "complete",
-      "progress": 100,
-      "issues": [],
-      "next_step": "Review for accuracy"
-    },
-    {
-      "title": "Unit 4 & 13: Polynomial & Rational Functions and Applications to Optimization",
-      "parent": "AP Precalculus",
-      "path": "Notes/APs/AP Precalc/polyratopt.md",
-      "permalink": "/notes/ap/precalc/polyratopt/",
-      "kind": "unit",
-      "status": "complete",
-      "progress": 100,
-      "issues": [],
-      "next_step": "Review for accuracy"
-    },
-    {
-      "title": "Unit 5: Exponential & Logarithmic Functions",
-      "parent": "AP Precalculus",
-      "path": "Notes/APs/AP Precalc/explog.md",
-      "permalink": "/notes/ap/precalc/explog/",
-      "kind": "unit",
-      "status": "complete",
-      "progress": 100,
-      "issues": [],
-      "next_step": "Review for accuracy"
-    },
-    {
-      "title": "Unit 6 & 7: Trigonometric Functions",
-      "parent": "AP Precalculus",
-      "path": "Notes/APs/AP Precalc/trigfunc.md",
-      "permalink": "/notes/ap/precalc/trigfunc/",
-      "kind": "unit",
-      "status": "complete",
-      "progress": 100,
-      "issues": [],
-      "next_step": "Review for accuracy"
-    },
-    {
-      "title": "Unit 8 & 9: Graphs and Analytics of Trig Functions",
-      "parent": "AP Precalculus",
-      "path": "Notes/APs/AP Precalc/graphanalyticaltrig.md",
-      "permalink": "/notes/ap/precalc/graphanalyticaltrig/",
-      "kind": "unit",
-      "status": "complete",
-      "progress": 100,
+      "progress": 82,
       "issues": [],
       "next_step": "Review for accuracy"
     }

@@ -154,31 +154,35 @@
         ]
       },
       {
-        "label": "AP Statistics",
+        "label": "AP Physics C E&M",
         "items": [
           {
-            "label": "AP Statistics Home",
-            "link": "/notes/ap/statistics/"
+            "label": "AP Physics C E&M Home",
+            "link": "/notes/ap/ap-physics-c-em/"
           },
           {
-            "label": "Unit 1: Exploring One-Variable Data and Collecting Data",
-            "link": "/notes/ap/stats/onevardata/"
+            "label": "Unit 1: Electric Fields and Forces",
+            "link": "/notes/ap/ap-physics-c-em/electrostatics/"
           },
           {
-            "label": "Unit 2: Probability, Random Variables, and Probability Distributions",
-            "link": "/notes/ap/stats/probranddist/"
+            "label": "Unit 2: Electric Potential",
+            "link": "/notes/ap/ap-physics-c-em/electricpot/"
           },
           {
-            "label": "Unit 3: Inference for Categorical Data: Proportions",
-            "link": "/notes/ap/stats/infprop/"
+            "label": "Unit 3: Conductors and Capacitors",
+            "link": "/notes/ap/ap-physics-c-em/condcap/"
           },
           {
-            "label": "Unit 4: Inference for Quantitative Data: Means",
-            "link": "/notes/ap/stats/quantmeans/"
+            "label": "Unit 4: Circuits",
+            "link": "/notes/ap/ap-physics-c-em/circuits/"
           },
           {
-            "label": "Unit 5: Regression Analysis",
-            "link": "/notes/ap/stats/reganalysis/"
+            "label": "Unit 5: Magnetic Fields and Electromagnetism",
+            "link": "/notes/ap/ap-physics-c-em/magnetism/"
+          },
+          {
+            "label": "Unit 6: Electromagnetic Induction",
+            "link": "/notes/ap/ap-physics-c-em/eminduction/"
           }
         ]
       },
@@ -216,39 +220,6 @@
           {
             "label": "Unit 7: Oscillations",
             "link": "/notes/ap/ap-physics-c-mechanics/oscillations/"
-          }
-        ]
-      },
-      {
-        "label": "AP Physics C E&M",
-        "items": [
-          {
-            "label": "AP Physics C E&M Home",
-            "link": "/notes/ap/ap-physics-c-em/"
-          },
-          {
-            "label": "Unit 1: Electric Fields and Forces",
-            "link": "/notes/ap/ap-physics-c-em/electrostatics/"
-          },
-          {
-            "label": "Unit 2: Electric Potential",
-            "link": "/notes/ap/ap-physics-c-em/electricpot/"
-          },
-          {
-            "label": "Unit 3: Conductors and Capacitors",
-            "link": "/notes/ap/ap-physics-c-em/condcap/"
-          },
-          {
-            "label": "Unit 4: Circuits",
-            "link": "/notes/ap/ap-physics-c-em/circuits/"
-          },
-          {
-            "label": "Unit 5: Magnetic Fields and Electromagnetism",
-            "link": "/notes/ap/ap-physics-c-em/magnetism/"
-          },
-          {
-            "label": "Unit 6: Electromagnetic Induction",
-            "link": "/notes/ap/ap-physics-c-em/eminduction/"
           }
         ]
       },
@@ -298,6 +269,39 @@
           {
             "label": "Unit 13 & 14: Additional Topics in Algebra",
             "link": "/notes/ap/precalc/addtopics/"
+          }
+        ]
+      },
+      {
+        "label": "AP Statistics",
+        "items": [
+          {
+            "label": "AP Statistics Home",
+            "link": "/notes/ap/statistics/"
+          },
+          {
+            "label": "AP Statistics Cheat Sheet",
+            "link": "/notes/ap/stats/cheatsheet/"
+          },
+          {
+            "label": "Unit 1: Exploring One-Variable Data and Collecting Data",
+            "link": "/notes/ap/stats/onevardata/"
+          },
+          {
+            "label": "Unit 2: Probability, Random Variables, and Probability Distributions",
+            "link": "/notes/ap/stats/probranddist/"
+          },
+          {
+            "label": "Unit 3: Inference for Categorical Data: Proportions",
+            "link": "/notes/ap/stats/infprop/"
+          },
+          {
+            "label": "Unit 4: Inference for Quantitative Data: Means",
+            "link": "/notes/ap/stats/quantmeans/"
+          },
+          {
+            "label": "Unit 5: Regression Analysis",
+            "link": "/notes/ap/stats/reganalysis/"
           }
         ]
       }
