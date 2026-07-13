@@ -327,36 +327,6 @@ The field point $$\vec r$$ cancels, leaving the same field everywhere in the cav
 
 </div>
 
-### Flux tricks (bypassing surface integrals)
-
-The point of these tricks is to use enclosed charge and field-line geometry to avoid integrating over weird boundaries.
-
-- **The "anchor" trick (1D sheets).** If a layered system is overall neutral—for example a P–N junction with $$\rho_p x_p=\rho_n x_n$$—the field completely outside it is exactly $$0$$. Anchor one end of a Gaussian pillbox in that zero-field region: the outside face then contributes no flux, so the flux equation collapses to "field on the inner face equals enclosed charge over $$\varepsilon_0$$." This turns a messy stack of sheets into a single application of Gauss's law.
-
-- **Self-flux vs. other-flux.** A charge cannot exert a net force on itself, so to get the force on one face of a charged shape you want the field due to *everything except that face*. The clean way: find the total outward flux of the whole shape, then subtract the flat face's own "self-flux" to isolate the contribution from the rest of the object.
-
-$$
-\Phi_{\text{self}}=\frac{\sigma A}{2\varepsilon_0},
-\qquad
-F=\sigma\,\Phi_{\text{other}}.
-$$
-
-This is the same $$1/2$$ that appears in the electrostatic pressure $$P=\sigma^2/2\varepsilon_0$$ below: a surface charge feels the field of the *rest* of the distribution, not the full field including itself.
-
-- **Flux tubes (conserved field lines).** Rotating a single field line about the axis through a point charge sweeps out a cone. Since field lines are neither created nor destroyed in empty space, the flux trapped in the "launch" cone must equal the flux entering the "landing" cone. For a point charge $$q$$ at the apex, the flux through a cone of half-angle $$\theta$$ is the solid-angle fraction of the total $$q/\varepsilon_0$$:
-
-$$
-\Phi=\frac{q}{\varepsilon_0}\left(\frac{1-\cos\theta}{2}\right).
-$$
-
-Equating the trapped flux at the two ends gives the conservation relation
-
-$$
-q_1\,(1-\cos\alpha)=q_2\,(1-\cos\beta),
-$$
-
-which lets you relate launch and landing angles of a field line between two charges without ever solving the field explicitly.
-
 ### Electrostatic equilibrium in conductors
 
 In a conductor at electrostatic equilibrium, charges have stopped moving macroscopically. Therefore:
