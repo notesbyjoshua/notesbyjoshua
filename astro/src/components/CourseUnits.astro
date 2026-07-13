@@ -22,7 +22,7 @@ function findGroup(items: Item[], label: string): Item[] | null {
 
 const groupItems = findGroup(notesSidebar as Item[], course) ?? [];
 const units = groupItems
-  .filter((it) => it.link && !it.label?.endsWith(' Home'))
+  .filter((it) => it.link && !it.label?.endsWith(' Home') && !it.label?.includes('Cheat Sheet'))
   .map((it) => ({ label: it.label!, link: it.link! }));
 
 const byRoute = new Map((progress.pages as any[]).map((p) => [p.route, p]));

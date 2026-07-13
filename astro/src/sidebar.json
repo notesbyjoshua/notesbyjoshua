@@ -325,6 +325,39 @@
       {
         "label": "Recursion",
         "link": "/notes/math/algebra/recursion/"
+      },
+      {
+        "label": "Multivariable Calculus",
+        "items": [
+          {
+            "label": "Unit 1: Vectors and Euclidean Geometry in 3D",
+            "link": "/notes/math/multivariable-calculus/vectors-euclidean-geometry/"
+          },
+          {
+            "label": "Unit 2: The Geometry of Curves in 3D",
+            "link": "/notes/math/multivariable-calculus/geometry-of-curves/"
+          },
+          {
+            "label": "Unit 3: Differential Multivariable Functions",
+            "link": "/notes/math/multivariable-calculus/differential-multivariable-functions/"
+          },
+          {
+            "label": "Unit 4: Multiple Integrals in Cartesian Coordinates",
+            "link": "/notes/math/multivariable-calculus/multiple-integrals-cartesian/"
+          },
+          {
+            "label": "Unit 5: Multiple Integrals in Curvilinear Coordinates",
+            "link": "/notes/math/multivariable-calculus/multiple-integrals-curvilinear/"
+          },
+          {
+            "label": "Unit 6: Line and Surface Integrals",
+            "link": "/notes/math/multivariable-calculus/line-and-surface-integrals/"
+          },
+          {
+            "label": "Unit 7: Vector Analysis",
+            "link": "/notes/math/multivariable-calculus/vector-analysis/"
+          }
+        ]
       }
     ]
   },
