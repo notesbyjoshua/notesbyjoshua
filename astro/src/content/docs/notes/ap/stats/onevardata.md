@@ -4,15 +4,6 @@ sidebar:
   order: 1
 ---
 
-This unit follows the Fall 2026 AP Statistics structure: one-variable data, investigative questions, and data collection now live together. The goal is to learn how to describe one variable clearly and how the way data are collected controls what conclusions are reasonable.
-
-:::summary{title="Unit 1 topics"}
-1. Introducing statistics and investigative questions.
-2. Variables and one-variable displays.
-3. Summary statistics and comparisons.
-4. Data collection, random sampling, sampling problems, and experimental design.
-:::
-
 ## Types of Variables
 
 In statistics, there are two main types of variables: categorical (qualitative) variables and quantitative variables.

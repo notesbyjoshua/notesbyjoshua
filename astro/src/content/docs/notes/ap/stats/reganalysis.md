@@ -4,16 +4,6 @@ sidebar:
   order: 5
 ---
 
-The Fall 2026 AP Statistics CED places two-quantitative-variable analysis in Unit 5. This unit focuses on scatterplots, correlation, linear regression models, residuals, and least-squares regression.
-
-:::summary{title="Unit 5 topics"}
-1. Graphical representations between two quantitative variables.
-2. Correlation.
-3. Linear regression models.
-4. Residuals.
-5. Least-squares regression.
-:::
-
 ## Two Quantitative Variables
 
 Bivariate data records two variables for every individual or object in a study. Examples include (study hours, exam score) for each student, or (latitude, January temperature) for each city.

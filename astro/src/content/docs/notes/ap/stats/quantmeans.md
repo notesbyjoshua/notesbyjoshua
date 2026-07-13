@@ -4,15 +4,6 @@ sidebar:
   order: 4
 ---
 
-Unit 4 covers inference for quantitative data in the Fall 2026 AP Statistics CED: sampling distributions for means, confidence intervals and tests for one population mean or paired mean difference, and confidence intervals and tests for the difference between two population means.
-
-:::summary{title="Unit 4 topics"}
-1. Sampling distributions for sample means.
-2. Confidence intervals and tests for one population mean or paired mean difference.
-3. Sampling distributions for the difference between two sample means.
-4. Confidence intervals and tests for the difference between two population means.
-:::
-
 ## z Procedures Versus t Procedures
 
 Use a z procedure for a population mean only when the population standard deviation $$\sigma$$ is known:

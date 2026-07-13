@@ -4,16 +4,6 @@ sidebar:
   order: 2
 ---
 
-Unit 2 starts with relationships between two categorical variables, then builds probability, random variables, probability distributions, the binomial model, normal distributions, sampling distributions, and the Central Limit Theorem.
-
-:::summary{title="Unit 2 topics"}
-1. Two-way tables and conditional distributions.
-2. Simulation and probability rules.
-3. Random variables and probability distributions.
-4. Binomial and normal distributions.
-5. Sampling distributions and the Central Limit Theorem.
-:::
-
 ## Two Categorical Variables
 
 When two categorical variables are measured on the same individuals, organize the data in a **two-way table**. Each cell records the count for one combination of categories.

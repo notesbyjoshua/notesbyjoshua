@@ -4,16 +4,6 @@ sidebar:
   order: 3
 ---
 
-Unit 3 covers inference for categorical data in the Fall 2026 AP Statistics CED: estimators, sampling distributions for sample proportions, confidence intervals and tests for one and two proportions, potential errors, and chi-square tests for homogeneity or independence.
-
-:::summary{title="Unit 3 topics"}
-1. Estimators and sampling distributions for sample proportions.
-2. Confidence intervals and tests for one population proportion.
-3. Confidence intervals and tests for the difference between two population proportions.
-4. Potential errors when performing tests.
-5. Chi-square tests for homogeneity and independence.
-:::
-
 ## Estimation And Hypothesis Testing
 
 **Statistical inference** uses sample data to make conclusions about a population parameter. For proportions, the parameter is usually:
