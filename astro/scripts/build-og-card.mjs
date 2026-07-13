@@ -63,7 +63,7 @@ const bg = Buffer.from(`
   </defs>
   <rect width="${W}" height="${H}" fill="#f6f4ef"/>
   <rect width="${W}" height="${H}" fill="url(#dots)"/>
-  <path d="M84 76 C180 58, 230 84, 318 66 S510 60, 615 79 S805 95, 929 72 S1092 64, 1130 88"
+  <path d="M220 76 C300 58, 360 84, 448 66 S610 60, 715 79 S845 95, 969 72 S1092 64, 1130 88"
         fill="none" stroke="#b84a18" stroke-width="5" stroke-linecap="round" opacity="0.58"/>
   <path d="M70 536 C195 520, 278 552, 397 530 S625 520, 749 542 S982 560, 1134 524"
         fill="none" stroke="#b84a18" stroke-width="4" stroke-linecap="round" opacity="0.45"/>
