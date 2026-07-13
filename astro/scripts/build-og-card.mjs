@@ -15,7 +15,7 @@ const W = 1200;
 const H = 630;
 
 // Rounded-square avatar from the favicon, composited over the card.
-const AV = 132;
+const AV = 108;
 const avatar = await sharp(join(pub, 'favicon.jpeg'))
   .resize(AV, AV, { fit: 'cover' })
   .composite([
@@ -63,22 +63,22 @@ const bg = Buffer.from(`
   </defs>
   <rect width="${W}" height="${H}" fill="#f6f4ef"/>
   <rect width="${W}" height="${H}" fill="url(#dots)"/>
-  <path d="M84 70 C180 50, 230 78, 318 60 S510 54, 615 73 S805 89, 929 66 S1092 58, 1130 82"
+  <path d="M84 76 C180 58, 230 84, 318 66 S510 60, 615 79 S805 95, 929 72 S1092 64, 1130 88"
         fill="none" stroke="#b84a18" stroke-width="5" stroke-linecap="round" opacity="0.58"/>
-  <path d="M70 544 C195 525, 278 558, 397 535 S625 526, 749 548 S982 566, 1134 530"
+  <path d="M70 536 C195 520, 278 552, 397 530 S625 520, 749 542 S982 560, 1134 524"
         fill="none" stroke="#b84a18" stroke-width="4" stroke-linecap="round" opacity="0.45"/>
   <rect x="48" y="44" width="1104" height="542" rx="30" fill="none" stroke="#ddd6c8" stroke-width="3"/>
 
   <g>
-    <text class="ui" x="240" y="148" font-size="31" font-weight="600" fill="#b84a18" letter-spacing="1">notesbyjoshua.github.io</text>
-    <text class="display" x="80" y="346" font-size="110" font-weight="700" fill="#141820">${esc('Notes by Joshua')}</text>
-    <text class="prose" x="84" y="430" font-size="40" font-weight="500" fill="#5d564a">${esc('Free, shareable study notes')}</text>
-    <text class="prose" x="84" y="486" font-size="34" font-weight="500" fill="#5d564a">${esc('AP courses · math · physics · chemistry')}</text>
+    <text class="ui" x="220" y="132" font-size="30" font-weight="600" fill="#b84a18" letter-spacing="1">notesbyjoshua.github.io</text>
+    <text class="display" x="78" y="326" font-size="112" font-weight="700" fill="#141820">${esc('Notes by Joshua')}</text>
+    <text class="prose" x="84" y="414" font-size="39" font-weight="500" fill="#5d564a">${esc('Free, shareable study notes')}</text>
+    <text class="prose" x="84" y="469" font-size="33" font-weight="500" fill="#5d564a">${esc('AP courses · math · physics · chemistry')}</text>
   </g>
 </svg>`);
 
 await sharp(bg)
-  .composite([{ input: avatar, top: 64, left: 80 }])
+  .composite([{ input: avatar, top: 72, left: 82 }])
   .png()
   .toFile(join(pub, 'og-card.png'));
 
