@@ -65,17 +65,17 @@ A **frequency distribution** lists possible values (or classes) of the variable 
 
 ## Graphical Methods (Qualitative)
 
-For **categorical** data, we want displays that compare category sizes at a glance.
+For **categorical** data, we want displays that compare category sizes.
+
+// draw diagrams for each type of graphical method (qualitative and quantitative)
 
 ### Bar charts
 
-In a **bar chart**, each category gets a bar; the **length or height** of the bar shows **frequency** or **count** (sometimes relative frequency or percent). Categories on an axis are usually separated with a little space between bars, which signals that the order of categories is not necessarily numeric.
-
-You can use a horizontal bar chart by swapping the roles of the axes—helpful when category names are long.
+In a **bar chart**, each category gets a bar and the length or height of the bar (depending on orientation) shows frequency (count) or relative frequency (percent). Categories on an axis are usually separated with a little space between bars, which signals that the order of categories is not necessarily numeric.
 
 ### Pie charts
 
-A **pie chart** represents the whole as a circle and divides it into slices whose central angles (or areas) match relative frequencies. For example, a category with relative frequency 0.36 gets about 36% of the circle. Pie charts work best with a small number of categories and when you want to emphasize parts of a whole. They become hard to read when there are many thin slices or when differences are subtle.
+A **pie chart** represents the whole as a circle and divides it into slices whose central angles (or areas) match relative frequencies. For example, a category with relative frequency 0.36 gets about 36% of the circle. Pie charts work best with a small number of categories and when you want to emphasize parts of a whole. Usually, the pies will be different colors to have better contrast. They become hard to read when there are many thin slices or when differences are subtle.
 
 ---
 
@@ -89,11 +89,11 @@ Use CUSS in context: **Center**, **Unusual features**, **Shape**, and **Spread**
 
 ### Dotplots
 
-A **dotplot** stacks a dot above a number line for each occurrence of a value (or stacks dots in equal-width bins if values are rounded). Dotplots shine with small-to-moderate datasets: you see every value, clusters, gaps, and outliers without losing detail.
+A **dotplot** stacks a dot above a number line for each occurrence of a value (or stacks dots in equal-width bins if values are rounded). Dotplots are best with small-to-moderate datasets: you see every value, clusters, gaps, and outliers without losing detail. Dotplots can also illustrate the shape of a distribution.
 
 ### Stemplots (stem-and-leaf displays)
 
-A **stemplot** splits each number into a **stem** (leading digit or digits) and a **leaf** (usually the last digit). Stems are listed in order; leaves are often ordered on each stem. The split between stem and leaf is a choice: you might split tens vs. ones, or group stems (e.g., 2\*, 2•) when a plot is too sparse or too crowded. Stemplots preserve the actual values (unlike a histogram, where raw values disappear into bins) and work well for small datasets.
+A **stemplot** splits each number into a **stem** (leading digit or digits) and a **leaf** (usually the last digit). Stems are listed in order; leaves are often ordered on each stem. The split between stem and leaf is a choice: you might split tens vs. ones, or group stems (e.g., 2\*, 2•) when a plot is too sparse or too crowded. Stemplots preserve the actual values and work well for small datasets. The stems are listed on the left and the leaves are listed on the right.
 
 ### Histograms
 
@@ -109,7 +109,7 @@ A **histogram** groups quantitative data into intervals (bins), then draws bars 
 \begin{axis}[hs,at={(4.6cm,0)},title={right skew}] \addplot[fill=red!30] coordinates{(1,5)(2,3)(3,2)(4,1)(5,0.5)}; \end{axis}
 \end{tikzpicture}
 ```
-
+// the vertical axis cuts off a bit and the vertical bars should not be intersecting with the vertical axis
 
 ### Cumulative relative frequency graphs (ogives)
 
@@ -130,6 +130,7 @@ A **boxplot** (box-and-whisker plot) summarizes a quantitative variable using qu
 \foreach \x/\lab in {1/min,2.5/Q1,4/median,5.5/Q3,7/max}{\draw (\x,0.2)--(\x,1.1); \node[below] at (\x,-0.35) {\lab};}
 \end{tikzpicture}
 ```
+// remove the overlapping lines on Q1, median, and Q3
 
 ---
 

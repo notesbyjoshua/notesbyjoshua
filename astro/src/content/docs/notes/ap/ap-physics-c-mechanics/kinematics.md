@@ -4,13 +4,7 @@ sidebar:
   order: 1
 ---
 
----
-
-**Kinematics** describes motion—position, velocity, and acceleration as functions of time—without asking what forces cause that motion. From here on, calculus is assumed: instantaneous rates are derivatives of position or velocity, and changes over an interval can be recovered with integrals when you know how acceleration varies.
-
 **ADD PRACTICE TO ALL PHYSICS PAGES**
-
----
 
 :::variables
 - $$t$$ = time (Units: seconds ($$s$$))
@@ -26,9 +20,9 @@ sidebar:
 
 ## Scalars, vectors, and basic definitions of describing motion
 
-A **scalar** has magnitude only (examples: speed, distance, time). A **vector** has magnitude and direction (examples: displacement, velocity, acceleration). In one dimension, a sign attached to a scalar component encodes direction along an axis.
+A **scalar** has magnitude only (examples: speed, distance, time). A **vector** has magnitude and direction (examples: displacement, velocity, acceleration). In one dimension, a sign attached to a scalar component encodes direction along an axis. When solving problems, always choose an origin and a positive direction along each axis. 
 
-Choose an origin and a positive direction along each axis. **Displacement** $$\Delta x$$ is the change in position regardless of what path you take (can be negative); **distance** is the length of the path traveled and is always nonnegative. **Average velocity** over an interval is
+**Displacement** $$\Delta x$$ is the change in position regardless of what path you take (can be negative) and **distance** is the length of the path traveled and is always nonnegative. **Average velocity** over an interval is
 
 $$
 \bar{v} = \frac{\Delta x}{\Delta t}.
@@ -62,10 +56,12 @@ $$
 
 and similarly position from velocity.
 
-Be careful to distinguish **average** and **instantaneous** quantities. Average velocity over an interval is the single constant velocity that would produce the same displacement in the same time; it depends only on the endpoints, $$\bar{v}=\Delta x/\Delta t$$. Instantaneous velocity is the limit of that ratio as the interval shrinks to zero, $$v=dx/dt$$. The two agree only when velocity is constant, or, for the special case of constant acceleration, the average velocity happens to equal the midpoint value $$\frac{1}{2}(v_0+v_f)$$. That coincidence is exactly equation 5 below and does **not** hold when acceleration varies.
+Be careful to distinguish **average** and **instantaneous** quantities. Average velocity over an interval is the single constant velocity that would produce the same displacement in the same time. It depends only on the endpoints, $$\bar{v}=\Delta x/\Delta t$$. 
+
+Instantaneous velocity is the limit of that ratio as the interval shrinks to zero, $$v=dx/dt$$. The two agree only when velocity is constant, or, for the special case of constant acceleration, the average velocity happens to equal the midpoint value $$\frac{1}{2}(v_0+v_f)$$.
 
 :::warning
-Be careful when taking average speed over an interval. The average of two speeds is NOT necessarily the average speed of the whole trip! For example, if you went $$16$$mph for $$30$$ minutes and then $$4$$mph for $$90$$ minutes your average speed is NOT $$10$$! Always do $$\bar v = \frac{\Delta d}{\Delta t}$$ (You should get $$7$$mph).
+Be careful when taking average speed over an interval. The average of two speeds is NOT necessarily the average speed of the whole trip! For example, if you went $$16$$ mph for $$30$$ minutes and then $$4$$mph for $$90$$ minutes your average speed is NOT $$10$$ mph! Always do $$\bar v = \frac{\Delta d}{\Delta t}$$ (You should get $$7$$ mph).
 :::
 
 <div class="theorem-box">
@@ -96,8 +92,7 @@ $$
 
 ## Motion graphs
 
-Graphs of position, velocity, and acceleration versus time are linked by the same calculus that links the quantities themselves. Reading them well is half of one-dimensional kinematics.
-
+Graphs of position, velocity, and acceleration versus time are linked by the same calculus that links the quantities themselves.
 
 ```tikz
 \usepackage{pgfplots}
@@ -110,15 +105,16 @@ Graphs of position, velocity, and acceleration versus time are linked by the sam
 \end{tikzpicture}
 ```
 
-
 - **Slopes go down the list.** The slope of an $$x$$-$$t$$ graph at an instant is the velocity, $$v = dx/dt$$. The slope of a $$v$$-$$t$$ graph is the acceleration, $$a = dv/dt$$. A curving $$x$$-$$t$$ graph therefore means nonzero acceleration, and a straight $$x$$-$$t$$ line means constant velocity.
-- **Areas go up the list.** The signed area under a $$v$$-$$t$$ graph between two times is the displacement, $$\Delta x = \int v\, dt$$. The signed area under an $$a$$-$$t$$ graph is the change in velocity, $$\Delta v = \int a\, dt$$. "Signed" matters: area below the axis subtracts.
+- **Areas go up the list.** The signed area under a $$v$$-$$t$$ graph between two times is the displacement, $$\Delta x = \int v\, dt$$. The signed area under an $$a$$-$$t$$ graph is the change in velocity, $$\Delta v = \int a\, dt$$. Note that when we talk about displacement or velocity, we will always use signed area, meaning that we have to take into account negative areas as well.
 
-A few consistency checks worth internalizing: a maximum or minimum of $$x(t)$$ occurs where $$v = 0$$ (the slope is momentarily flat); the object is speeding up when $$v$$ and $$a$$ have the same sign and slowing down when they have opposite signs; and a horizontal $$v$$-$$t$$ line means zero acceleration even if the velocity itself is large.
+A maximum or minimum of $$x(t)$$ occurs where $$v = 0$$ (the slope is momentarily flat); the object is speeding up when $$v$$ and $$a$$ have the same sign and slowing down when they have opposite signs; and a horizontal $$v$$-$$t$$ line means zero acceleration even if the velocity itself is large.
 
 <div class="theorem-box">
 
 **Example.** A cart moves along a line. Its velocity is $$+4\ \text{m/s}$$ and constant for the first $$3\ \text{s}$$, then ramps linearly down to $$-2\ \text{m/s}$$ over the next $$2\ \text{s}$$. Find the acceleration during each phase, the total displacement, and the distance traveled.
+
+// add a picture of the graph
 
 During the first phase the $$v$$-$$t$$ graph is flat, so $$a_1 = 0$$. During the second phase,
 
@@ -146,7 +142,7 @@ So total displacement is $$12 + 2 = 14\ \text{m}$$. Distance traveled adds the m
 
 ## Constant acceleration in one dimension
 
-Many problems use **constant** acceleration $$a$$ (free fall near Earth’s surface is a common case with $$a = -g$$ or $$a = +g$$ depending on axis choice). The following equations (known as the **Big Five** (holy niche bro)) are very useful for these types of problems, since they only require 4 out of the 5 useful variables ($$a$$, $$v_f$$, $$v_0$$, $$\Delta x$$, $$t$$). By convention, we set $$t_0 = 0$$, with $$a$$ being acceleration, $$v_0$$ being initial velocity, $$v_f$$ being final velocity, $$\Delta x$$ being displacement, and $$t$$ being time:
+Many problems use constant acceleration $$a$$ (free fall near Earth’s surface is a common case with $$a = -g$$ or $$a = +g$$ depending on axis choice). The following equations (known as the **Big Five** (holy niche bro)) are very useful for these types of problems, since they only require 4 out of the 5 useful variables ($$a$$, $$v_f$$, $$v_0$$, $$\Delta x$$, $$t$$). By convention, we set $$t_0 = 0$$, with $$a$$ being acceleration, $$v_0$$ being initial velocity, $$v_f$$ being final velocity, $$\Delta x$$ being displacement, and $$t$$ being time:
 
 :::key{name="The Big Five"}
 1. Missing $$\Delta x$$: $$v_f = v_0 + at$$
@@ -159,7 +155,7 @@ Many problems use **constant** acceleration $$a$$ (free fall near Earth’s surf
 These are algebraic consequences of $$a = dv/dt$$ constant and $$v = dx/dt$$.
 
 :::conditions
-- Valid only for **constant acceleration** — for non-constant acceleration you need other methods (see below).
+- Valid only for **constant acceleration**. For non-constant acceleration you need other methods (talked about later).
 - If $$a=0$$, they reduce to the constant-velocity result $$\Delta x=vt$$.
 :::
 
@@ -315,18 +311,17 @@ The Big Five fail whenever $$a$$ varies, so you fall back on the defining deriva
 
 :::strategy{title="Non-constant acceleration"}
 - **$$a$$ depends on time, $$a = a(t)$$.** Integrate directly: $$v = v_0 + \int a(t)\, dt$$, then $$x = x_0 + \int v(t)\, dt$$.
-- **$$a$$ depends on position, $$a = a(x)$$.** Time is awkward here, so eliminate it with the chain rule. Writing $$a = dv/dt = (dv/dx)(dx/dt) = v\,dv/dx$$ gives the separable relation $$a(x)\, dx = v\, dv$$. Integrating both sides connects speed to position without ever solving for time, much like how equation 4 was derived.
+- **$$a$$ depends on position, $$a = a(x)$$.** Time is not very useful here, so eliminate it with the chain rule. Writing $$a = dv/dt = (dv/dx)(dx/dt) = v\,dv/dx$$ gives the separable relation $$a(x)\, dx = v\, dv$$. Integrating both sides connects speed to position without ever solving for time, much like how equation 4 was derived.
 - **$$a$$ depends on velocity, $$a = a(v)$$.** Separate variables in $$dv/dt = a(v)$$ to get $$dt = dv/a(v)$$, or use $$v\,dv/dx = a(v)$$ if you want $$v$$ as a function of $$x$$.
 :::
 
-The tool $$a = v\,dv/dx$$ is worth remembering: it trades the time variable for position whenever time is the inconvenient one to track.
+Always remember to use the chain rule when you want a variable that is not in the original expression.
 
 ---
 
 ## Two dimensions and projectile motion
 
 In 2D, vectors can be broken down into $$x$$- and $$y$$-components. For **projectile motion** with negligible air resistance (meaning you throw something in the air or something is launched), horizontal acceleration is zero and vertical acceleration is $$g$$ downward (again, signs depend on whether you call “up” positive $$y$$ or not). The motions along $$x$$ and $$y$$ are independent except that they share the same time parameter $$t$$.
-
 
 ```tikz
 \usepackage{tikz}
@@ -336,10 +331,10 @@ In 2D, vectors can be broken down into $$x$$- and $$y$$-components. For **projec
 \draw[blue, very thick, domain=0:6.4, samples=80] plot (\x,{0.9*\x-0.14*\x*\x});
 \draw[->, red, thick] (0,0) -- (1.4,1.26) node[above] {$v_0$};
 \draw[dashed] (1.4,1.26) -- (1.4,0) node[below] {$v_{0x}$}; \draw[dashed] (1.4,1.26) -- (0,1.26) node[left] {$v_{0y}$};
-\node at (4.6,1.0) {parabolic path};
+\node at (4.6,2.0) {parabolic path};
 \end{tikzpicture}
 ```
-
+// make parabola taller
 
 With initial speed $$v_0$$ at launch angle $$\theta$$ above the horizontal,
 
@@ -372,6 +367,8 @@ $$
 $$
 T = \frac{2v_0 \sin(\theta)}{g}.
 $$
+
+If launch and landing heights differ, solve the quadratic in $$t$$ from the $$y$$ equation rather than memorizing these shortcuts.
 
 <div class="theorem-box">
 
@@ -441,8 +438,6 @@ As a sanity check, a $$60^\circ$$ launch at the same speed would give the same r
 
 </div>
 
-If launch and landing heights differ, solve the quadratic in $$t$$ from the $$y$$ equation rather than memorizing these shortcuts.
-
 <div class="theorem-box">
 
 **Example.** A projectile is launched from the top of a cliff $$45\ \text{m}$$ tall at $$v_0 = 30\ \text{m/s}$$ and $$\theta = 37^\circ$$ above the horizontal. Take $$g = 10\ \text{m/s}^2$$, $$\sin 37^\circ = 0.6$$, $$\cos 37^\circ = 0.8$$. How long is it in the air, and how far from the base of the cliff does it land?
@@ -485,8 +480,6 @@ $$
 
 Note that with unequal launch and landing heights the trajectory is no longer symmetric, which is why the level-ground shortcuts cannot be used here.
 
-**ADD INCLINED PLANE PROJECTILE MOTION**
-
 </div>
 
 ---
@@ -499,7 +492,6 @@ $$
 \vec{v}_{A/C} = \vec{v}_{A/B} + \vec{v}_{B/C}.
 $$
 
-
 ```tikz
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
@@ -510,7 +502,6 @@ $$
 \draw[gray] (-0.6,-0.2) rectangle (3.1,2.9); \node at (1.2,-0.55) {river-crossing vector addition};
 \end{tikzpicture}
 ```
-
 
 To visualize, you can draw the velocities as vectors, and do vector addition to get your final result. A useful consistency check is that swapping the subscripts negates the vector, $$\vec{v}_{A/B} = -\vec{v}_{B/A}$$.
 

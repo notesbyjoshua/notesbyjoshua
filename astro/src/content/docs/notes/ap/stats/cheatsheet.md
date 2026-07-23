@@ -4,70 +4,7 @@ sidebar:
   order: 0
 ---
 
-This page is a high-yield AP Statistics reference aligned to the Fall 2026 five-unit Course and Exam Description. Use it to remember when to apply each idea and how to phrase conclusions in context.
-
----
-
-## Calculator Tips for the Exam
-
-College Board expects students to have a graphing calculator with statistical capabilities for AP Statistics. For the 2026 digital exam, Bluebook also includes the built-in Desmos graphing calculator for AP Statistics. A calculator is helpful, but it does not replace statistical communication.
-
-:::exam{topic="Calculator use"}
-Use your calculator to compute, graph, and check. On free-response, still show the setup: parameter, hypotheses or interval target, conditions, statistic, p-value or interval, and conclusion in context.
-:::
-
-### General calculator habits
-
-- Bring a calculator you already know how to use, and make sure it is allowed by the current AP calculator policy.
-- If using a handheld calculator, check batteries before the exam. If allowed and available, bring a backup.
-- Clear old lists before entering new data so previous numbers do not silently contaminate a calculation.
-- Name lists clearly when possible, especially for two-variable data or two-sample procedures.
-- Store exact intermediate values when possible; round final answers reasonably, usually to 3 or 4 decimal places unless the problem says otherwise.
-- For probability and inference, check whether the calculator wants **area to the left**, **area between bounds**, raw data, summary statistics, counts, or proportions.
-- Do not paste calculator output as your whole answer. Translate it into AP Stats language.
-
-### TI-84-style tools worth knowing
-
-Common menus vary by calculator model, but these are the TI-84-style commands students often use:
-
-| Task | Common tool |
-| --- | --- |
-| One-variable statistics | `1-Var Stats` |
-| Two-variable regression setup | `STAT` -> `EDIT`, then `LinReg(a+bx)` |
-| Normal probabilities | `normalcdf(lower, upper, mean, sd)` |
-| Normal inverse percentiles | `invNorm(area left, mean, sd)` |
-| Binomial probability | `binompdf(n, p, x)` |
-| Binomial cumulative probability | `binomcdf(n, p, x)` |
-| Geometric probability | `geometpdf(p, x)` or `geometcdf(p, x)` |
-| One-proportion z interval/test | `1-PropZInt`, `1-PropZTest` |
-| Two-proportion z interval/test | `2-PropZInt`, `2-PropZTest` |
-| One-sample t interval/test | `TInterval`, `T-Test` |
-| Two-sample t interval/test | `2-SampTInt`, `2-SampTTest` |
-| Chi-square test | `χ²-Test` |
-| Goodness-of-fit test | `χ²GOF-Test` if available |
-
-:::warning
-Calculator names are not the same as statistical justification. For example, writing `2-SampTTest` is not enough unless you also state the hypotheses, check conditions, and interpret the p-value in context.
-:::
-
-### Desmos/Bluebook habits
-
-- Practice with the Bluebook-style Desmos calculator before test day if your class uses the digital AP exam format.
-- For distributions, confirm the calculator is using the correct mean, standard deviation, and tail direction.
-- For regression, make sure the explanatory variable is on the $$x$$-axis and the response variable is on the $$y$$-axis.
-- Use graphs to check reasonableness: skew, outliers, linearity, residual pattern, and whether a value is far into a tail.
-
-### Fast checks before trusting output
-
-1. Does the procedure match the parameter? Use proportion procedures for $$p$$ and t procedures for $$\mu$$.
-2. Are the inputs in the right order? Two-sample problems can flip signs if group 1 and group 2 are swapped.
-3. Did you use the null value in the standard error for a one-proportion or two-proportion test?
-4. Is the alternative hypothesis one-sided or two-sided?
-5. Does the final sentence answer the original question, not just report a number?
-
----
-
-## Core Vocabulary
+## Key Vocabulary
 
 - **Parameter**: a fixed, usually unknown population value, such as $$\mu$$, $$p$$, or $$\sigma$$.
 - **Statistic**: a value computed from a sample, such as $$\bar{x}$$, $$\hat{p}$$, or $$s$$.
@@ -311,3 +248,62 @@ Say "predicted" and "on average" when interpreting regression. Do not claim caus
 3. Check conditions with context and numbers.
 4. Show the statistic, standard error, and critical value or p-value.
 5. Conclude in context using the language of the original question.
+
+---
+
+## Calculator Tips for the Exam
+
+College Board expects students to have a graphing calculator with statistical capabilities for AP Statistics. For the 2026 digital exam, Bluebook also includes the built-in Desmos graphing calculator for AP Statistics. A calculator is helpful, but it does not replace statistical communication.
+
+:::exam{topic="Calculator use"}
+Use your calculator to compute, graph, and check. On free-response, still show the setup: parameter, hypotheses or interval target, conditions, statistic, p-value or interval, and conclusion in context.
+:::
+
+### General calculator habits
+
+- Bring a calculator you already know how to use, and make sure it is allowed by the current AP calculator policy.
+- If using a handheld calculator, check batteries before the exam. If allowed and available, bring a backup.
+- Clear old lists before entering new data so previous numbers do not silently contaminate a calculation.
+- Name lists clearly when possible, especially for two-variable data or two-sample procedures.
+- Store exact intermediate values when possible; round final answers reasonably, usually to 3 or 4 decimal places unless the problem says otherwise.
+- For probability and inference, check whether the calculator wants **area to the left**, **area between bounds**, raw data, summary statistics, counts, or proportions.
+- Do not paste calculator output as your whole answer. Translate it into AP Stats language.
+
+### TI-84-style tools worth knowing
+
+Common menus vary by calculator model, but these are the TI-84-style commands students often use:
+
+| Task | Common tool |
+| --- | --- |
+| One-variable statistics | `1-Var Stats` |
+| Two-variable regression setup | `STAT` -> `EDIT`, then `LinReg(a+bx)` |
+| Normal probabilities | `normalcdf(lower, upper, mean, sd)` |
+| Normal inverse percentiles | `invNorm(area left, mean, sd)` |
+| Binomial probability | `binompdf(n, p, x)` |
+| Binomial cumulative probability | `binomcdf(n, p, x)` |
+| Geometric probability | `geometpdf(p, x)` or `geometcdf(p, x)` |
+| One-proportion z interval/test | `1-PropZInt`, `1-PropZTest` |
+| Two-proportion z interval/test | `2-PropZInt`, `2-PropZTest` |
+| One-sample t interval/test | `TInterval`, `T-Test` |
+| Two-sample t interval/test | `2-SampTInt`, `2-SampTTest` |
+| Chi-square test | `χ²-Test` |
+| Goodness-of-fit test | `χ²GOF-Test` if available |
+
+:::warning
+Calculator names are not the same as statistical justification. For example, writing `2-SampTTest` is not enough unless you also state the hypotheses, check conditions, and interpret the p-value in context.
+:::
+
+### Desmos/Bluebook habits
+
+- Practice with the Bluebook-style Desmos calculator before test day if your class uses the digital AP exam format.
+- For distributions, confirm the calculator is using the correct mean, standard deviation, and tail direction.
+- For regression, make sure the explanatory variable is on the $$x$$-axis and the response variable is on the $$y$$-axis.
+- Use graphs to check reasonableness: skew, outliers, linearity, residual pattern, and whether a value is far into a tail.
+
+### Fast checks before trusting output
+
+1. Does the procedure match the parameter? Use proportion procedures for $$p$$ and t procedures for $$\mu$$.
+2. Are the inputs in the right order? Two-sample problems can flip signs if group 1 and group 2 are swapped.
+3. Did you use the null value in the standard error for a one-proportion or two-proportion test?
+4. Is the alternative hypothesis one-sided or two-sided?
+5. Does the final sentence answer the original question, not just report a number?

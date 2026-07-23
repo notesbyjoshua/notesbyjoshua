@@ -4,8 +4,6 @@ sidebar:
   order: 2
 ---
 
----
-
 :::variables
 - $$\vec{F}$$ = force (Units: newtons, $$\text{N} = \text{kg}\cdot\text{m}/\text{s}^2$$)
 - $$m$$ = mass (Units: kilograms, $$\text{kg}$$)
@@ -28,7 +26,7 @@ sidebar:
 
 ## Newton's Three Laws of Motion
 
-In 1687, Newton formulated the three laws of motion. They work extremely well for ordinary macroscopic objects moving much slower than the speed of light. At quantum, relativistic, or very strong-gravity scales, Newtonian mechanics must be replaced or extended, but for AP purposes, Newtonian mechanics suffices.
+In 1687, Newton formulated the three laws of motion. They work extremely well for ordinary macroscopic objects moving much slower than the speed of light. At quantum, relativistic, or very strong-gravity scales, Newtonian mechanics must be replaced or extended by quantum mechanics, but for AP purposes, Newtonian mechanics suffices.
 
 <div class="theorem-box">
 
@@ -48,7 +46,6 @@ Third-law forces act on different objects, so they never cancel for one object. 
 
 A **free-body diagram** is a force diagram for one object or one chosen system. It should show only external forces acting on that object/system, not forces the object applies to something else. Forces are treated as vectors and can be composed accordingly.
 
-
 ```tikz
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
@@ -61,12 +58,11 @@ A **free-body diagram** is a force diagram for one object or one chosen system. 
 \end{tikzpicture}
 ```
 
-
 Good procedure:
 
 1. Choose the object or system.
 2. Draw a dot or simple sketch.
-3. Add one arrow for each external force.
+3. Add one arrow for each external force (make sure to draw where the force originates from).
 4. Choose axes, usually one axis parallel to the expected acceleration or along a surface.
 5. Resolve angled forces into components using vector decomposition.
 6. Write Newton's second law separately for each direction.
@@ -77,7 +73,7 @@ $$
 \sum F_x = ma_x, \qquad \sum F_y = ma_y.
 $$
 
-If acceleration is zero in one direction, the net force in that direction is **zero** even if forces are present.
+If acceleration is zero in one direction, the net force in that direction is zero even if forces are present (basically they cancel out each other).
 
 ---
 
@@ -239,7 +235,6 @@ $$
 a = g\sin\theta.
 $$
 
-
 ```tikz
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
@@ -256,7 +251,6 @@ $$
 \draw (2.2,-1) arc[start angle=0,end angle=19,radius=0.8] node[midway,right] {$\theta$};
 \end{tikzpicture}
 ```
-
 
 With friction, decide whether the block is moving or about to move. If it is moving, use kinetic friction. If it is at rest, static friction takes whatever value is needed up to $$\mu_sF_N$$. It is also helpful to use geometry/similar triangles to determine certain angles for vector decompositions. ALWAYS remember your normal force!
 
@@ -301,6 +295,8 @@ $$
 The block accelerates down the plane at about $$1.5\ \text{m/s}^2$$. Had $$f_{s,\text{max}}$$ exceeded $$19.6\ \text{N}$$, the block would have stayed put with static friction equal to exactly $$19.6\ \text{N}$$, not $$\mu_s F_N$$.
 
 </div>
+
+// add inclined plane kinematics
 
 ---
 
