@@ -1,7 +1,7 @@
 ---
 title: "Electrostatics"
 sidebar:
-  order: 12
+  order: 1
 ---
 
 ## Charges

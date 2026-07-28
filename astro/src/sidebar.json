@@ -420,12 +420,29 @@
             "link": "/notes/physics/optics/"
           },
           {
-            "label": "Electrostatics",
-            "link": "/notes/physics/electro1/"
-          },
-          {
-            "label": "Magnetism & Electrodynamics",
-            "link": "/notes/physics/electro2/"
+            "label": "Electricity & Magnetism",
+            "items": [
+              {
+                "label": "Electricity & Magnetism Home",
+                "link": "/notes/physics/eandm/"
+              },
+              {
+                "label": "Electrostatics",
+                "link": "/notes/physics/eandm/electrostatics/"
+              },
+              {
+                "label": "Conductors & Capacitors",
+                "link": "/notes/physics/eandm/conductors-capacitors/"
+              },
+              {
+                "label": "Circuits",
+                "link": "/notes/physics/eandm/circuits/"
+              },
+              {
+                "label": "Magnetism",
+                "link": "/notes/physics/eandm/magnetism/"
+              }
+            ]
           }
         ]
       }

@@ -1,10 +1,10 @@
 {
   "summary": {
-    "generated_at": "2026-07-13",
-    "unit_pages": 90,
-    "all_pages": 95,
-    "average_progress": 51,
-    "below_complete": 90,
+    "generated_at": "2026-07-27",
+    "unit_pages": 92,
+    "all_pages": 94,
+    "average_progress": 49,
+    "below_complete": 92,
     "with_placeholders": 15
   },
   "pages": [
@@ -105,6 +105,42 @@
       "next_step": "Write the note"
     },
     {
+      "title": "Circuits",
+      "route": "/notes/physics/eandm/circuits/",
+      "course": "Electricity & Magnetism",
+      "kind": "unit",
+      "status": "stub",
+      "progress": 0,
+      "issues": [
+        "empty/stub page"
+      ],
+      "next_step": "Write the note"
+    },
+    {
+      "title": "Conductors & Capacitors",
+      "route": "/notes/physics/eandm/conductors-capacitors/",
+      "course": "Electricity & Magnetism",
+      "kind": "unit",
+      "status": "stub",
+      "progress": 0,
+      "issues": [
+        "empty/stub page"
+      ],
+      "next_step": "Write the note"
+    },
+    {
+      "title": "Magnetism",
+      "route": "/notes/physics/eandm/magnetism/",
+      "course": "Electricity & Magnetism",
+      "kind": "unit",
+      "status": "stub",
+      "progress": 0,
+      "issues": [
+        "empty/stub page"
+      ],
+      "next_step": "Write the note"
+    },
+    {
       "title": "Homothety",
       "route": "/notes/math/geometry/homothety/",
       "course": "Math",
@@ -119,7 +155,7 @@
     {
       "title": "Unit 1: Vectors and Euclidean Geometry in R3",
       "route": "/notes/math/multivariable-calculus/vectors-euclidean-geometry/",
-      "course": "Notes",
+      "course": "Multivariable Calculus",
       "kind": "unit",
       "status": "stub",
       "progress": 0,
@@ -131,7 +167,7 @@
     {
       "title": "Unit 2: The Geometry of Curves in R3",
       "route": "/notes/math/multivariable-calculus/geometry-of-curves/",
-      "course": "Notes",
+      "course": "Multivariable Calculus",
       "kind": "unit",
       "status": "stub",
       "progress": 0,
@@ -143,7 +179,7 @@
     {
       "title": "Unit 3: Differential Multivariable Functions",
       "route": "/notes/math/multivariable-calculus/differential-multivariable-functions/",
-      "course": "Notes",
+      "course": "Multivariable Calculus",
       "kind": "unit",
       "status": "stub",
       "progress": 0,
@@ -155,7 +191,7 @@
     {
       "title": "Unit 4: Multiple Integrals in Cartesian Coordinates",
       "route": "/notes/math/multivariable-calculus/multiple-integrals-cartesian/",
-      "course": "Notes",
+      "course": "Multivariable Calculus",
       "kind": "unit",
       "status": "stub",
       "progress": 0,
@@ -167,7 +203,7 @@
     {
       "title": "Unit 5: Multiple Integrals in Curvilinear Coordinates",
       "route": "/notes/math/multivariable-calculus/multiple-integrals-curvilinear/",
-      "course": "Notes",
+      "course": "Multivariable Calculus",
       "kind": "unit",
       "status": "stub",
       "progress": 0,
@@ -179,7 +215,7 @@
     {
       "title": "Unit 6: Line and Surface Integrals",
       "route": "/notes/math/multivariable-calculus/line-and-surface-integrals/",
-      "course": "Notes",
+      "course": "Multivariable Calculus",
       "kind": "unit",
       "status": "stub",
       "progress": 0,
@@ -191,7 +227,7 @@
     {
       "title": "Unit 7: Vector Analysis",
       "route": "/notes/math/multivariable-calculus/vector-analysis/",
-      "course": "Notes",
+      "course": "Multivariable Calculus",
       "kind": "unit",
       "status": "stub",
       "progress": 0,
@@ -273,25 +309,12 @@
       "next_step": "Write the note"
     },
     {
-      "title": "AP Precalculus Cheat Sheet",
-      "route": "/notes/ap/precalc/cheatsheet/",
-      "course": "Notes",
-      "kind": "unit",
-      "status": "draft",
-      "progress": 44,
-      "issues": [
-        "few or no worked boxes",
-        "missing practice"
-      ],
-      "next_step": "Add worked examples"
-    },
-    {
       "title": "Unit 3: Inference for Categorical Data: Proportions",
       "route": "/notes/ap/stats/infprop/",
       "course": "AP Statistics",
       "kind": "unit",
       "status": "draft",
-      "progress": 45,
+      "progress": 43,
       "issues": [
         "few or no worked boxes",
         "missing practice"
@@ -304,7 +327,20 @@
       "course": "AP Statistics",
       "kind": "unit",
       "status": "draft",
-      "progress": 45,
+      "progress": 44,
+      "issues": [
+        "few or no worked boxes",
+        "missing practice"
+      ],
+      "next_step": "Add worked examples"
+    },
+    {
+      "title": "AP Precalculus Cheat Sheet",
+      "route": "/notes/ap/precalc/cheatsheet/",
+      "course": "Notes",
+      "kind": "unit",
+      "status": "draft",
+      "progress": 44,
       "issues": [
         "few or no worked boxes",
         "missing practice"
@@ -896,6 +932,18 @@
       "next_step": "Add worked examples"
     },
     {
+      "title": "Electrostatics",
+      "route": "/notes/physics/eandm/electrostatics/",
+      "course": "Electricity & Magnetism",
+      "kind": "unit",
+      "status": "developing",
+      "progress": 70,
+      "issues": [
+        "missing practice"
+      ],
+      "next_step": "Add practice problems"
+    },
+    {
       "title": "Advanced Mechanics",
       "route": "/notes/physics/advmech/",
       "course": "Physics",
@@ -908,32 +956,8 @@
       "next_step": "Add practice problems"
     },
     {
-      "title": "Electrostatics",
-      "route": "/notes/physics/electro1/",
-      "course": "Physics",
-      "kind": "unit",
-      "status": "developing",
-      "progress": 70,
-      "issues": [
-        "missing practice"
-      ],
-      "next_step": "Add practice problems"
-    },
-    {
       "title": "Fluid Dynamics",
       "route": "/notes/physics/fluiddynamics/",
-      "course": "Physics",
-      "kind": "unit",
-      "status": "developing",
-      "progress": 70,
-      "issues": [
-        "missing practice"
-      ],
-      "next_step": "Add practice problems"
-    },
-    {
-      "title": "Magnetism & Electrodynamics",
-      "route": "/notes/physics/electro2/",
       "course": "Physics",
       "kind": "unit",
       "status": "developing",
@@ -1016,18 +1040,6 @@
       "next_step": "Resolve placeholders"
     },
     {
-      "title": "Physics Competition Prep",
-      "route": "/notes/physics/usapho/",
-      "course": "Physics",
-      "kind": "index",
-      "status": "developing",
-      "progress": 77,
-      "issues": [
-        "has TODOs/placeholders"
-      ],
-      "next_step": "Resolve placeholders"
-    },
-    {
       "title": "Unit 1 & 2: Fundamentals, Equations, and Inequalities",
       "route": "/notes/ap/precalc/fundeqineq/",
       "course": "AP Precalculus",
@@ -1038,16 +1050,6 @@
         "practice without solutions"
       ],
       "next_step": "Add matching solutions"
-    },
-    {
-      "title": "Physics",
-      "route": "/notes/physics/",
-      "course": "Physics",
-      "kind": "index",
-      "status": "review",
-      "progress": 82,
-      "issues": [],
-      "next_step": "Review for accuracy"
     },
     {
       "title": "Unit 10: Additional Topics in Trigonometry (Triangle Laws, Parametric, Polar, and Vectors)",
@@ -1156,16 +1158,6 @@
         "practice without solutions"
       ],
       "next_step": "Add matching solutions"
-    },
-    {
-      "title": "Math",
-      "route": "/notes/math/",
-      "course": "Math",
-      "kind": "index",
-      "status": "review",
-      "progress": 87,
-      "issues": [],
-      "next_step": "Review for accuracy"
     },
     {
       "title": "AP",
