@@ -3,7 +3,7 @@
     "generated_at": "2026-07-27",
     "unit_pages": 92,
     "all_pages": 94,
-    "average_progress": 49,
+    "average_progress": 50,
     "below_complete": 92,
     "with_placeholders": 15
   },
@@ -107,18 +107,6 @@
     {
       "title": "Circuits",
       "route": "/notes/physics/eandm/circuits/",
-      "course": "Electricity & Magnetism",
-      "kind": "unit",
-      "status": "stub",
-      "progress": 0,
-      "issues": [
-        "empty/stub page"
-      ],
-      "next_step": "Write the note"
-    },
-    {
-      "title": "Conductors & Capacitors",
-      "route": "/notes/physics/eandm/conductors-capacitors/",
       "course": "Electricity & Magnetism",
       "kind": "unit",
       "status": "stub",
@@ -930,6 +918,18 @@
         "practice without solutions"
       ],
       "next_step": "Add worked examples"
+    },
+    {
+      "title": "Conductors & Capacitors",
+      "route": "/notes/physics/eandm/conductors-capacitors/",
+      "course": "Electricity & Magnetism",
+      "kind": "unit",
+      "status": "developing",
+      "progress": 70,
+      "issues": [
+        "missing practice"
+      ],
+      "next_step": "Add practice problems"
     },
     {
       "title": "Electrostatics",
