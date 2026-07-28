@@ -308,65 +308,31 @@
     ]
   },
   {
-    "label": "SAT",
+    "label": "Chemistry",
     "items": [
       {
-        "label": "SAT Prep Home",
-        "link": "/notes/sat/"
+        "label": "Chemistry Home",
+        "link": "/notes/chemistry/"
       },
       {
-        "label": "SAT Strategies and Tips",
-        "link": "/notes/sat/strategies-tips/"
+        "label": "Organic Chemistry",
+        "link": "/notes/chemistry/organic/"
       },
       {
-        "label": "Reading and Writing",
-        "items": [
-          {
-            "label": "Reading and Writing Home",
-            "link": "/notes/sat/reading-writing/"
-          },
-          {
-            "label": "Information and Ideas",
-            "link": "/notes/sat/reading-writing/information-ideas/"
-          },
-          {
-            "label": "Craft and Structure",
-            "link": "/notes/sat/reading-writing/craft-structure/"
-          },
-          {
-            "label": "Expression of Ideas",
-            "link": "/notes/sat/reading-writing/expression-ideas/"
-          },
-          {
-            "label": "Standard English Conventions",
-            "link": "/notes/sat/reading-writing/standard-english-conventions/"
-          }
-        ]
+        "label": "Coordination Chemistry",
+        "link": "/notes/chemistry/coordination/"
       },
       {
-        "label": "Math",
-        "items": [
-          {
-            "label": "Math Home",
-            "link": "/notes/sat/math/"
-          },
-          {
-            "label": "Algebra",
-            "link": "/notes/sat/math/algebra/"
-          },
-          {
-            "label": "Advanced Math",
-            "link": "/notes/sat/math/advanced-math/"
-          },
-          {
-            "label": "Problem-Solving and Data Analysis",
-            "link": "/notes/sat/math/problem-solving-data-analysis/"
-          },
-          {
-            "label": "Geometry and Trigonometry",
-            "link": "/notes/sat/math/geometry-trigonometry/"
-          }
-        ]
+        "label": "Spectroscopy",
+        "link": "/notes/chemistry/spectroscopy/"
+      },
+      {
+        "label": "Advanced Kinetics",
+        "link": "/notes/chemistry/advkinetics/"
+      },
+      {
+        "label": "Solid-State Chemistry",
+        "link": "/notes/chemistry/solidstate/"
       }
     ]
   },
@@ -512,31 +478,65 @@
     ]
   },
   {
-    "label": "Chemistry",
+    "label": "SAT",
     "items": [
       {
-        "label": "Chemistry Home",
-        "link": "/notes/chemistry/"
+        "label": "SAT Prep Home",
+        "link": "/notes/sat/"
       },
       {
-        "label": "Organic Chemistry",
-        "link": "/notes/chemistry/organic/"
+        "label": "SAT Strategies and Tips",
+        "link": "/notes/sat/strategies-tips/"
       },
       {
-        "label": "Coordination Chemistry",
-        "link": "/notes/chemistry/coordination/"
+        "label": "Reading and Writing",
+        "items": [
+          {
+            "label": "Reading and Writing Home",
+            "link": "/notes/sat/reading-writing/"
+          },
+          {
+            "label": "Information and Ideas",
+            "link": "/notes/sat/reading-writing/information-ideas/"
+          },
+          {
+            "label": "Craft and Structure",
+            "link": "/notes/sat/reading-writing/craft-structure/"
+          },
+          {
+            "label": "Expression of Ideas",
+            "link": "/notes/sat/reading-writing/expression-ideas/"
+          },
+          {
+            "label": "Standard English Conventions",
+            "link": "/notes/sat/reading-writing/standard-english-conventions/"
+          }
+        ]
       },
       {
-        "label": "Spectroscopy",
-        "link": "/notes/chemistry/spectroscopy/"
-      },
-      {
-        "label": "Advanced Kinetics",
-        "link": "/notes/chemistry/advkinetics/"
-      },
-      {
-        "label": "Solid-State Chemistry",
-        "link": "/notes/chemistry/solidstate/"
+        "label": "Math",
+        "items": [
+          {
+            "label": "Math Home",
+            "link": "/notes/sat/math/"
+          },
+          {
+            "label": "Algebra",
+            "link": "/notes/sat/math/algebra/"
+          },
+          {
+            "label": "Advanced Math",
+            "link": "/notes/sat/math/advanced-math/"
+          },
+          {
+            "label": "Problem-Solving and Data Analysis",
+            "link": "/notes/sat/math/problem-solving-data-analysis/"
+          },
+          {
+            "label": "Geometry and Trigonometry",
+            "link": "/notes/sat/math/geometry-trigonometry/"
+          }
+        ]
       }
     ]
   }
