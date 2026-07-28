@@ -313,6 +313,56 @@
       {
         "label": "SAT Prep Home",
         "link": "/notes/sat/"
+      },
+      {
+        "label": "Reading and Writing",
+        "items": [
+          {
+            "label": "Reading and Writing Home",
+            "link": "/notes/sat/reading-writing/"
+          },
+          {
+            "label": "Information and Ideas",
+            "link": "/notes/sat/reading-writing/information-ideas/"
+          },
+          {
+            "label": "Craft and Structure",
+            "link": "/notes/sat/reading-writing/craft-structure/"
+          },
+          {
+            "label": "Expression of Ideas",
+            "link": "/notes/sat/reading-writing/expression-ideas/"
+          },
+          {
+            "label": "Standard English Conventions",
+            "link": "/notes/sat/reading-writing/standard-english-conventions/"
+          }
+        ]
+      },
+      {
+        "label": "Math",
+        "items": [
+          {
+            "label": "Math Home",
+            "link": "/notes/sat/math/"
+          },
+          {
+            "label": "Algebra",
+            "link": "/notes/sat/math/algebra/"
+          },
+          {
+            "label": "Advanced Math",
+            "link": "/notes/sat/math/advanced-math/"
+          },
+          {
+            "label": "Problem-Solving and Data Analysis",
+            "link": "/notes/sat/math/problem-solving-data-analysis/"
+          },
+          {
+            "label": "Geometry and Trigonometry",
+            "link": "/notes/sat/math/geometry-trigonometry/"
+          }
+        ]
       }
     ]
   },
