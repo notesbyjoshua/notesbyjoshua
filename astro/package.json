@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "prebuild": "node scripts/build-frq-manifest.mjs",
+    "prebuild": "node scripts/build-frq-manifest.mjs && node scripts/build-sitemap.mjs",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
