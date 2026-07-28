@@ -60,6 +60,16 @@ Use a colon after a complete sentence to introduce a list, explanation, example,
 
 Everything before the colon must be able to stand alone. “The variables included” is incomplete because *included* still needs an object, so it should not be followed immediately by a colon.
 
+<div class="theorem-box">
+
+**Example.** Choose the punctuation that correctly completes the sentence: “The observatory tracks three kinds of objects ___ planets, comets, and asteroids.”
+
+The words before the blank form a complete sentence and the words after it provide the promised list, so a colon is correct:
+
+> The observatory tracks three kinds of objects: planets, comets, and asteroids.
+
+</div>
+
 ### Transitions Between Sentences
 
 A transition such as *however* does not join two sentences with commas. Use:
@@ -146,6 +156,14 @@ In a sentence beginning with *there is* or *there are*, the subject follows the 
 
 > There are several reasons.
 
+<div class="theorem-box">
+
+**Example.** Choose the verb that correctly completes the sentence: “The collection of letters from the expedition ___ stored in the university archive.”
+
+The subject is the singular noun *collection*. The phrase *of letters from the expedition* does not change its number, so the correct verb is *is*.
+
+</div>
+
 ### Verb Tense and Form
 
 Use simple present for general facts and ideas discussed in a text, and simple past for completed past actions. A specific completed time usually requires simple past.
@@ -191,6 +209,16 @@ Place a modifying phrase next to what it describes:
 > Walking through the laboratory, the researcher noticed an unusual sample.
 
 The noun immediately after an introductory modifying phrase should logically perform the action. “Walking through the laboratory, an unusual sample caught the researcher's attention” incorrectly suggests that the sample was walking.
+
+<div class="theorem-box">
+
+**Example.** Revise the sentence “After reviewing the final data, several errors were noticed by the research team” so that the introductory modifier clearly describes the correct subject.
+
+The research team performed the reviewing, so it should appear immediately after the introductory phrase:
+
+> After reviewing the final data, the research team noticed several errors.
+
+</div>
 
 ### Parallelism and Comparisons
 
