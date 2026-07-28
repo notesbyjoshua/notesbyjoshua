@@ -308,6 +308,15 @@
     ]
   },
   {
+    "label": "SAT",
+    "items": [
+      {
+        "label": "SAT Prep Home",
+        "link": "/notes/sat/"
+      }
+    ]
+  },
+  {
     "label": "Math",
     "items": [
       {
