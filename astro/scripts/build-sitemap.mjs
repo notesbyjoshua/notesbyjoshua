@@ -8,6 +8,7 @@ const here = dirname(fileURLToPath(import.meta.url));
 const root = join(here, '..');
 const docsDir = join(root, 'src', 'content', 'docs');
 const publicDir = join(root, 'public');
+const sitemapFile = 'notes-sitemap.xml';
 
 const extraPublicRoutes = ['/feedback/'];
 
@@ -61,5 +62,5 @@ const urls = routes
 
 const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`;
 
-writeFileSync(join(publicDir, 'sitemap.xml'), xml);
-console.log(`Sitemap: ${routes.length} URL(s) -> public/sitemap.xml`);
+writeFileSync(join(publicDir, sitemapFile), xml);
+console.log(`Sitemap: ${routes.length} URL(s) -> public/${sitemapFile}`);

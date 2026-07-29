@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://notesbyjoshua.github.io/sitemap.xml
+Sitemap: https://notesbyjoshua.github.io/notes-sitemap.xml
