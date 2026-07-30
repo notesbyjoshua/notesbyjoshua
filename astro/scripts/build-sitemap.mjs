@@ -8,7 +8,8 @@ const here = dirname(fileURLToPath(import.meta.url));
 const root = join(here, '..');
 const docsDir = join(root, 'src', 'content', 'docs');
 const publicDir = join(root, 'public');
-const sitemapFile = 'notes-sitemap.xml';
+const xmlSitemapFile = 'notes-sitemap.xml';
+const txtSitemapFile = 'notes-sitemap.txt';
 
 const extraPublicRoutes = ['/feedback/'];
 
@@ -59,8 +60,11 @@ const routes = [...new Set([...docRoutes, ...extraPublicRoutes])].sort((a, b) =>
 const urls = routes
   .map((route) => `  <url><loc>${xmlEscape(new URL(route, SITE_URL).href)}</loc></url>`)
   .join('\n');
+const txt = routes.map((route) => new URL(route, SITE_URL).href).join('\n') + '\n';
 
 const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`;
 
-writeFileSync(join(publicDir, sitemapFile), xml);
-console.log(`Sitemap: ${routes.length} URL(s) -> public/${sitemapFile}`);
+writeFileSync(join(publicDir, xmlSitemapFile), xml);
+writeFileSync(join(publicDir, txtSitemapFile), txt);
+console.log(`Sitemap: ${routes.length} URL(s) -> public/${xmlSitemapFile}`);
+console.log(`Text sitemap: ${routes.length} URL(s) -> public/${txtSitemapFile}`);
