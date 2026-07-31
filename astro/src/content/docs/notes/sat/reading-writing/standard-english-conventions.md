@@ -6,7 +6,23 @@ sidebar:
 
 ---
 
-This domain focuses on editing sentences so they follow standard rules for sentence structure, usage, and punctuation.
+This domain focuses on editing sentences so they follow standard rules for sentence structure, usage, and punctuation. These questions are not asking which option sounds the nicest. They are testing whether a sentence is grammatically complete and whether its parts fit together.
+
+## Where to Start
+
+When the choices differ mainly in punctuation, identify clauses before thinking about commas or semicolons. When the choices differ in verbs or pronouns, find the word that controls the agreement or meaning.
+
+:::strategy{title="A grammar process that works"}
+1. Read the entire sentence, including the words after the blank.
+2. Identify what changes between the choices: punctuation, verb, pronoun, modifier, or another feature.
+3. Ignore interrupting phrases and find the sentence's basic structure.
+4. Apply a specific rule.
+5. Reread the completed sentence to check its meaning.
+:::
+
+:::tip{title="If grammar is your weakest area"}
+Start with sentence boundaries. Learn to identify a complete sentence, then master periods, semicolons, commas with coordinating conjunctions, and colons. This one skill resolves many punctuation questions and makes later rules easier to understand.
+:::
 
 ## Boundaries
 
@@ -21,6 +37,16 @@ A dependent clause cannot stand alone:
 > Although the researchers analyzed the samples
 
 Words such as *although*, *because*, *while*, *when*, *if*, *since*, *unless*, and *whereas* often create dependent clauses.
+
+The easiest test is to read the clause by itself. If it leaves you waiting for the rest—“Although the researchers analyzed the samples…what happened?”—it is dependent.
+
+<div class="theorem-box">
+
+**Example.** Determine whether “Because the telescope collected more light” is a complete sentence, and explain what it needs.
+
+It has a subject (*the telescope*) and verb (*collected*), but *because* makes the idea dependent. The reader is waiting for a result. It needs an independent clause, such as: “Because the telescope collected more light, the image appeared brighter.”
+
+</div>
 
 ### Joining Complete Sentences
 
@@ -47,6 +73,23 @@ A comma alone creates a comma splice:
 > The experiment failed, the researchers repeated it.
 
 </div>
+
+<div class="theorem-box">
+
+**Example.** Choose the option that correctly completes the text: “The first design was inexpensive ___ it could not withstand high temperatures.”
+
+- **A.** , however,
+- **B.** ; however,
+- **C.** however
+- **D.** ,
+
+Both sides are complete sentences. *However* is a transition, not a coordinating conjunction, so it cannot join them with commas alone. **B** is correct: “The first design was inexpensive; however, it could not withstand high temperatures.”
+
+</div>
+
+:::tip{title="Period and semicolon choices"}
+A period and semicolon perform the same boundary job between two complete sentences. If they appear as separate answer choices with no other meaningful difference, neither can be uniquely correct; look for another structural difference.
+:::
 
 :::key{name="Sentence boundaries"}
 Complete sentence + complete sentence = period, semicolon, or comma + coordinating conjunction.
@@ -100,6 +143,16 @@ Essential information identifies which person or thing the sentence means and do
 Punctuation around nonessential information comes in pairs. If you open the phrase with a comma or dash, close it with matching punctuation.
 :::
 
+<div class="theorem-box">
+
+**Example.** Choose the punctuation that correctly completes the sentence: “Mina Patel ___ the lead engineer on the project ___ presented the prototype.”
+
+The phrase *the lead engineer on the project* merely adds information about Mina Patel. Remove it and the sentence still reads “Mina Patel presented the prototype.” Therefore, surround the phrase with matching commas or matching dashes:
+
+> Mina Patel, the lead engineer on the project, presented the prototype.
+
+</div>
+
 Do not place a comma between a subject and its verb or between a verb and its object:
 
 > The results of the long experiment were surprising.
@@ -127,6 +180,10 @@ Use apostrophes for possession, not ordinary plurals:
 - irregular plural possession: *the children's books*.
 
 *Its* means belonging to it; *it's* means *it is* or *it has*. Possessive pronouns such as *its*, *yours*, *hers*, *ours*, and *theirs* do not use apostrophes.
+
+:::tip{title="Testing apostrophes"}
+For *it's*, substitute *it is* or *it has*. If neither works, use *its*. For other nouns, first decide whether the sentence means more than one noun or something belonging to the noun.
+:::
 
 ### Subject-Verb Agreement
 
@@ -164,6 +221,21 @@ The subject is the singular noun *collection*. The phrase *of letters from the e
 
 </div>
 
+<div class="theorem-box">
+
+**Example.** Choose the correct verb: “Each of the murals painted by local artists ___ a different event from the town's history.”
+
+- **A.** depict
+- **B.** depicts
+
+The subject is *each*, which is singular. The plural nouns *murals* and *artists* appear inside modifying phrases and do not control the verb. Therefore, **B**, *depicts*, is correct.
+
+</div>
+
+:::tip{title="Finding the true subject"}
+Temporarily cross out prepositional phrases beginning with words such as *of*, *in*, *with*, or *among*. Then match the verb to the remaining subject.
+:::
+
 ### Verb Tense and Form
 
 Use simple present for general facts and ideas discussed in a text, and simple past for completed past actions. A specific completed time usually requires simple past.
@@ -186,6 +258,19 @@ Make sure every sentence has a finite verb:
 
 “The scientist conducting the experiment” alone is a fragment.
 
+<div class="theorem-box">
+
+**Example.** Choose the correct verb form: “In 2018, the research team ___ the first complete survey of the reef.”
+
+- **A.** completes
+- **B.** has completed
+- **C.** completed
+- **D.** completing
+
+The specific finished time *in 2018* calls for simple past, so **C**, *completed*, is correct. Present perfect generally does not pair with a finished past time.
+
+</div>
+
 ### Pronouns
 
 A pronoun must agree with its antecedent and refer clearly to one person or thing:
@@ -201,6 +286,10 @@ Use subject pronouns for subjects and object pronouns for objects. Remove the ot
 > The teacher praised me.
 
 For *who* and *whom*, substitute *he* and *him*: *he* corresponds to *who*, while *him* corresponds to *whom*.
+
+:::tip{title="Pronoun questions"}
+Identify the antecedent—the noun the pronoun replaces. Then check number, person, and clarity. If two different nouns could be the antecedent, the pronoun may be ambiguous.
+:::
 
 ### Modifiers
 
@@ -220,6 +309,10 @@ The research team performed the reviewing, so it should appear immediately after
 
 </div>
 
+:::tip{title="Checking modifiers"}
+Draw an arrow from the opening phrase to the noun immediately after the comma. If that noun cannot logically perform the action in the phrase, the modifier is misplaced.
+:::
+
 ### Parallelism and Comparisons
 
 Items in a series or comparison should use the same grammatical form:
@@ -233,6 +326,31 @@ Compare logically equivalent things:
 > The population of California is larger than that of Nevada.
 
 Without *that of*, the sentence incorrectly compares a population with a state.
+
+<div class="theorem-box">
+
+**Example.** Choose the clearest and most parallel completion: “The internship required students to collect samples, analyze the results, and ___.”
+
+- **A.** presenting their conclusions
+- **B.** presentation of their conclusions
+- **C.** present their conclusions
+- **D.** their conclusions were presented
+
+The first two items use the base verbs *collect* and *analyze*. **C**, *present*, continues that pattern. The other choices change grammatical form.
+
+</div>
+
+## Final Grammar Checklist
+
+:::checklist
+- Is each clause complete or dependent?
+- If two complete sentences meet, is the boundary strong enough?
+- Does punctuation come in a required pair?
+- Does the verb agree with the true subject and match the timeframe?
+- Does every pronoun refer clearly and agree with its antecedent?
+- Is each modifier next to what it describes?
+- Are lists and comparisons parallel and logically equivalent?
+:::
 
 ### Frequently Confused Words
 

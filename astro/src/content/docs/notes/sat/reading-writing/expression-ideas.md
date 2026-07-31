@@ -6,7 +6,16 @@ sidebar:
 
 ---
 
-This domain focuses on revising writing to accomplish a specific rhetorical goal and connect ideas logically.
+This domain focuses on revising writing to accomplish a specific goal and connect ideas logically. These questions are less about interpreting a difficult passage and more about following instructions precisely.
+
+There are two main jobs:
+
+- **Rhetorical synthesis:** select information from notes that fulfills a stated goal.
+- **Transitions:** identify the logical relationship between two ideas.
+
+:::tip{title="A high-confidence domain"}
+Both question types have repeatable steps. Read the goal or determine the relationship before looking closely at the choices. This prevents polished but irrelevant answers from distracting you.
+:::
 
 ## Rhetorical Synthesis
 
@@ -30,6 +39,8 @@ Pay close attention to the goal word:
 
 An answer can be completely true and still be wrong because it does not fulfill the requested goal.
 
+Rhetorical synthesis is not a test of how many notes you can include. Usually, the best answer uses only the facts needed for the goal. Extra accurate facts can make a choice less effective.
+
 <div class="theorem-box">
 
 **Example.** A student's notes state that sculptor Amara Cole began working with recycled glass in 2018 and that sculptor Luis Ortega began using discarded metal in 2020. The student wants to emphasize a similarity between the artists. Write the information an effective answer must include.
@@ -38,9 +49,30 @@ The answer should mention both artists and their shared use of discarded materia
 
 </div>
 
+<div class="theorem-box">
+
+**Example.** A student's notes say that the Eastside Garden opened in 2012, occupies two acres, donates vegetables to a food pantry, and is maintained by neighborhood volunteers. The student wants to emphasize the garden's benefit to the wider community. Which choice most effectively accomplishes this goal?
+
+- **A.** Opened in 2012, the Eastside Garden occupies two acres.
+- **B.** Neighborhood volunteers maintain the two-acre Eastside Garden.
+- **C.** The Eastside Garden supports the wider community by donating vegetables to a food pantry.
+- **D.** The Eastside Garden is maintained by volunteers and opened in 2012.
+
+**C** is correct because it directly states a benefit beyond the garden itself. The other choices contain true information, but they do not fulfill the goal.
+
+</div>
+
+:::strategy{title="Rhetorical synthesis in three steps"}
+1. Underline the goal: *introduce*, *compare*, *emphasize a difference*, *give an example*, or another task.
+2. Select only the notes relevant to that goal.
+3. Reject choices that are accurate but answer a different goal.
+:::
+
 ## Transitions
 
 Ignore the choices at first. Summarize the sentence before the blank, summarize the sentence after it, and name the relationship between them.
+
+Do not choose a transition because you often see it in formal writing. Two transitions can sound equally academic while expressing opposite logical relationships.
 
 | Relationship | Common transitions |
 | --- | --- |
@@ -63,6 +95,23 @@ Then select the transition that expresses that relationship. Do not choose based
 The second sentence contrasts a benefit with a drawback, so *however* works. *Therefore* would incorrectly claim that the low cost causes the manufacturing difficulty.
 
 </div>
+
+<div class="theorem-box">
+
+**Example.** Complete the text with the most logical transition: “Many desert plants open their stomata at night, reducing water loss during the hottest hours. ___, cacti use this adaptation to survive in extremely dry environments.”
+
+- **A.** Nevertheless,
+- **B.** For example,
+- **C.** Similarly,
+- **D.** Consequently,
+
+The second sentence gives cacti as a specific case of the general statement, so **B**, *For example*, is correct. **D** is tempting because survival is a result of the adaptation, but the relationship between the two complete sentences is general claim to example.
+
+</div>
+
+:::tip{title="When two transitions seem possible"}
+Describe the relationship between the entire sentence before the blank and the entire sentence after it. Do not focus on only the last few words. Then substitute each transition and check whether its exact meaning matches.
+:::
 
 <div class="theorem-box">
 
