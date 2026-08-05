@@ -4,10 +4,6 @@ sidebar:
   order: 2
 ---
 
----
-
-This domain focuses on how an author communicates: the meaning a word takes on in context, the job performed by part of a passage, and the relationship between two passages. You are reading like a writer—paying attention not only to what the passage says, but also to how and why it says it.
-
 ## Recognizing the Question Type
 
 - **Words in Context:** determine the meaning or most logical word for one sentence.
@@ -15,7 +11,7 @@ This domain focuses on how an author communicates: the meaning a word takes on i
 - **Cross-Text Connections:** compare the claims or perspectives of two short passages.
 
 :::tip{title="If the passage feels complicated"}
-Translate it into plain language. You rarely need to understand every technical noun. Focus on the author's attitude, the logical turn, and the relationship named in the question.
+Translate it into plain language. You rarely need to understand every technical noun. Focus on the author's attitude, the logical turn, and the relationship named in the question. You can even replace technical nouns you don't know with something easier that is similar (e.g. "craniofacial syndrome" with "disease") as long as the meaning of the sentence doesn't change significantly.
 :::
 
 ## Words in Context
@@ -28,18 +24,10 @@ A word can have several valid definitions, but only one will preserve the logic 
 1. Cover the choices.
 2. Replace the tested word with a simple word of your own.
 3. Determine whether the sentence's tone is positive, negative, or neutral.
-4. Choose the answer that matches both the meaning and tone.
+4. Choose the answer that matches both the meaning and tone. To test, swap the highlighted word with your chosen word.
 :::
 
 For example, in “The scientist's findings qualified the earlier theory,” *qualified* most likely means *limited* or *modified*, not *made eligible*.
-
-<div class="theorem-box">
-
-**Example.** In the sentence “Although the committee praised the proposal's ambition, its final report was measured in its assessment of the likely benefits,” what does *measured* most nearly mean?
-
-The contrast shows that the report was less enthusiastic than the initial praise. Here, *measured* means *careful and restrained*, not physically counted or unusually large.
-
-</div>
 
 <div class="theorem-box">
 
@@ -51,6 +39,19 @@ The contrast shows that the report was less enthusiastic than the initial praise
 - **D.** scheduled in advance
 
 The word *because* connects incomplete records to the description. Incomplete evidence makes a conclusion uncertain, so **A** is correct. The other meanings can describe something tentative in other contexts, but they do not fit this sentence's logic.
+
+</div>
+
+<div class="theorem-box">
+
+**Example.** “Many rare genetic disorders are associated with recognizable facial features, often described using Human Phenotype Ontology (HPO) terms such as hypertelorism and short philtrum. However, clinical facial assessment is subjective and can vary among observers. New methods developed by researchers aim to use _____ facial feature measurements combined with machine learning methods to ensure a more accurate diagnosis." Which choice completes the text with the most logical and precise word or phrase?
+
+- **A.** observational
+- **B.** esoteric
+- **C.** quantitative
+- **D.** wholesale
+
+// please provide an explanation for why C is correct.
 
 </div>
 
@@ -90,22 +91,19 @@ State the function in your own words before reading the choices. The best answer
 
 <div class="theorem-box">
 
-**Example.** A passage first explains that hand-written records are sometimes incomplete. It then describes a newly discovered shipping ledger that lists every vessel entering a port during 1792. What function does the ledger serve in the passage?
+**Example.** "Due to the lack of grip on his volleyball shoes, the player kept slipping during his transition off the net. *Normally this would not be such a problem, but the next game was the finals of the national championship and he couldn't bear to make one mistake, as such an error would surely cause the loss of the game.* Thus, he decided to buy himself a new pair of volleyball shoes immediately to prevent such an occurence. On the day of the final, he confidently boasted his brand new shoes, and shined on the big stage to win the national championship with a beautiful spike cross-court where the two defensive players could not dig the ball." Which choise best states the function of the underlined sentence in the overall structure of the text?
 
-The ledger provides an example of a record that may fill a gap created by incomplete historical sources. It does not introduce the general problem; the first sentence already does that.
+// please underline the italicized portion
+
+// add proper answer choices/solution to the question
 
 </div>
 
 <div class="theorem-box">
 
-**Example.** A passage explains that early maps of an island placed its northern coast too far east. The underlined sentence states, “Sailors navigating with those maps therefore had to correct their course as land came into view.” Which choice best describes the function of the sentence?
+**Example.**
 
-- **A.** It gives a consequence of the maps' inaccuracy.
-- **B.** It challenges the claim that the maps were inaccurate.
-- **C.** It introduces a different method of producing maps.
-- **D.** It explains why the island's coast moved over time.
-
-**A** is correct. The word *therefore* shows a cause-and-result relationship: inaccurate maps led sailors to adjust. **B** reverses the purpose, while **C** and **D** introduce ideas not present in the passage.
+// please write out an actual story and then add a fill in the blank question with answers/solution
 
 </div>
 

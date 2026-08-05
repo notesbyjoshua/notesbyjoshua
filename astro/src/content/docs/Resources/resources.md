@@ -38,3 +38,17 @@ This section compiles a list of resources that I found very helpful throughout m
 - For past F=ma and USAPhO problems, I recommend visiting [AAPT's official website](https://aapt.org/physicsteam/PT-exams.cfm), where you can find all past F=ma and USAPhO problems.
 
 - For older USAPhO problems, I recommend using [Physics with Stefan](https://physicswithstefan.com/usapho-papers/) collection of USAPhO papers, since the older versions are harder to find online.
+
+---
+
+## Chemistry
+
+- Organic Chemistry tutor ig
+
+---
+
+## SAT
+
+- Bluebook (what you use to take the SAT) has 8 really good practice SAT sets that can serve as a great mock exam for the actual SAT
+
+- This [niche website](https://bluebooky.com) has thousands of R&W and math practice problems that you can use to study.

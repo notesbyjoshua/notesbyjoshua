@@ -81,6 +81,8 @@ If acceleration is zero in one direction, the net force in that direction is zer
 
 In AP Physics C, most force problems are built from a small set of common forces.
 
+// please include a problem/solution example for each type of force.
+
 ### Weight
 
 **Weight** is the gravitational force on an object. Near Earth's surface,
@@ -156,6 +158,8 @@ $$
 $$
 
 for high-speed quadratic drag.
+
+Essentially, drag acts like a friction force for falling objects. At some point, the amount of drag pulling up will equal the force of gravity pulling down, allowing an object to go at a constant velocity (terminal velocity). Usually, drag force can never exceed gravity (that's why skydivers don't just go back up after reaching terminal velocity!).
 
 ---
 
@@ -252,6 +256,8 @@ $$
 \end{tikzpicture}
 ```
 
+// the block should be on top of the incline not phasing through it, the angle marking is not even in the proper place (it is like really far away from the proper corner), mg sin theta should be parallel to the plane and mg cos theta should be perpendicular
+
 With friction, decide whether the block is moving or about to move. If it is moving, use kinetic friction. If it is at rest, static friction takes whatever value is needed up to $$\mu_sF_N$$. It is also helpful to use geometry/similar triangles to determine certain angles for vector decompositions. ALWAYS remember your normal force!
 
 <div class="theorem-box">
@@ -298,17 +304,15 @@ The block accelerates down the plane at about $$1.5\ \text{m/s}^2$$. Had $$f_{s,
 
 // add inclined plane kinematics
 
----
-
-## Friction and the slipping condition
+### Friction and the slipping condition
 
 The condition for impending slip is
 
 $$
-f_s = \mu_s F_N.
+f_s = \mu_s F_N,
 $$
 
-For a block resting on an incline, slipping begins when
+equivalent to the maximum possible value for static friction. For a block resting on an incline, slipping begins when
 
 $$
 mg\sin\theta = \mu_s mg\cos\theta.
@@ -342,7 +346,7 @@ The mass and $$g$$ both cancel, which is why this simple tilt test works regardl
 
 ## Connected objects and pulleys
 
-For ideal ropes and pulleys, connected objects share related accelerations. A common Atwood machine has two hanging masses connected by a massless string over a frictionless pulley.
+For ideal ropes and pulleys, connected objects share related accelerations. A common Atwood machine is a very simple pulley that contains two hanging masses connected by a massless string over a frictionless pulley.
 
 
 ```tikz
@@ -357,6 +361,7 @@ For ideal ropes and pulleys, connected objects share related accelerations. A co
 \end{tikzpicture}
 ```
 
+// make image smaller
 
 If $$m_2 > m_1$$, the acceleration magnitude is
 
@@ -374,7 +379,7 @@ $$
 
 **Proof (Atwood tension and acceleration).** Two masses $$m_1$$ and $$m_2$$ (with $$m_2 > m_1$$) hang from a massless, inextensible string over a massless, frictionless pulley. Find the acceleration $$a$$ and tension $$T$$.
 
-Because the string is inextensible, whatever distance $$m_2$$ falls, $$m_1$$ rises by the same amount, so both masses have the same acceleration magnitude $$a$$. Take the direction of motion as positive for each mass: $$m_2$$ accelerates downward and $$m_1$$ accelerates upward, with the same $$a$$. The tension $$T$$ is the same on both sides because the string and pulley are ideal.
+Since the string is inextensible, whatever distance $$m_2$$ falls, $$m_1$$ rises by the same amount, so both masses have the same acceleration magnitude $$a$$. Take the direction of motion as positive for each mass: $$m_2$$ accelerates downward and $$m_1$$ accelerates upward, with the same $$a$$. The tension $$T$$ is the same on both sides because the string and pulley are ideal.
 
 Free-body diagram for $$m_1$$ (taking up as positive):
 
@@ -464,7 +469,7 @@ The person feels lighter. Note the sign of $$a$$ is what matters, not the direct
 
 ---
 
-## Equilibrium
+## Translational equilibrium
 
 An object is in **translational equilibrium** when
 
@@ -480,19 +485,23 @@ $$
 
 Do not assume equilibrium just because an object is momentarily at rest. If a ball is thrown upward, it has zero velocity at the top but still has downward acceleration.
 
-For static equilibrium of extended objects, torque must also balance:
+For static equilibrium of extended objects (meaning the object isn't moving or rotating), torque must also balance:
 
 $$
 \sum \tau = 0.
 $$
 
-Torque is treated in [Unit 5](/notes/ap/ap-physics-c-mechanics/torque/), but it is useful to remember that translational equilibrium alone is not enough to prevent rotation.
+Torque is talked about in [Unit 5](/notes/ap/ap-physics-c-mechanics/torque/), but it is useful to remember that translational equilibrium alone is not enough to prevent movement (rotation is movement too!).
 
 ---
 
-## Uniform circular motion
+## Circular motion
 
-In **uniform circular motion**, speed is constant but velocity changes direction, so the object accelerates toward the center of the circle. The centripetal acceleration is
+Often, we often describe thing as going in circles (or approximately so). There are two types of circular motino: uniform and non-uniform circular motion.
+
+### Uniform circular motion
+
+In **uniform circular motion** (an object moving at constant speed in a circle), speed is constant but velocity changes direction, so the object accelerates toward the center of the circle. The centripetal (center-facing) acceleration is
 
 $$
 a_c = \frac{v^2}{r} = \omega^2 r.
@@ -504,8 +513,7 @@ $$
 \sum F_r = m\frac{v^2}{r}.
 $$
 
-There is no special "centripetal force." The phrase describes the net inward force required for circular motion. All forces acting on an object going in uniform circular motion must add up to the centripetal force (as long as the force does not act perpendicular to the vector connecting the object and the center of the circle.).
-
+There is no special "centripetal force." The phrase describes the net inward force required for circular motion. All forces acting on an object going in uniform circular motion must add up to the centripetal force (as long as the force does not act perpendicular to the vector connecting the object and the center of the circle).
 
 ```tikz
 \usepackage{tikz}
@@ -513,12 +521,10 @@ There is no special "centripetal force." The phrase describes the net inward for
 \begin{tikzpicture}[>=Stealth, font=\small]
 \draw[blue, thick] (0,0) circle (1.6); \fill (0,0) circle (1.5pt) node[below] {center};
 \fill (1.35,0.85) circle (2pt) node[above right] {$m$};
-\draw[->, very thick, red] (1.35,0.85) -- (0.35,0.2) node[midway, above] {$F_{net}$};
+\draw[->, very thick, red] (1.35,0.85) -- (0.25,0.3) node[midway, above] {$F_{net}$};
 \draw[->, very thick, blue] (1.35,0.85) -- (0.75,1.8) node[above] {$v$};
-\node at (0,-2.1) {net force points toward the center};
 \end{tikzpicture}
 ```
-
 
 Examples:
 
@@ -585,9 +591,7 @@ As $$\theta \to 0$$ the period approaches $$2\pi\sqrt{L/g}$$, the small-angle pe
 
 </div>
 
----
-
-## Nonuniform circular motion
+### Nonuniform circular motion
 
 For **nonuniform circular motion**, acceleration has both radial and tangential components:
 
@@ -613,7 +617,7 @@ This is common in vertical circle problems, where gravity has a tangential compo
 \usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
 \begin{tikzpicture}[>=Stealth, font=\small]
 \draw[blue, thick] (0,0) circle (1.7);
-\fill (0,1.7) circle (2pt) node[above] {top}; \fill (0,-1.7) circle (2pt) node[below] {bottom};
+\fill (0,1.7) circle (2pt) node[above, left] {top}; \fill (0,-1.7) circle (2pt) node[below, left] {bottom};
 \draw[->, red, thick] (0,1.7) -- (0,0.7) node[midway,right] {$mg$}; \draw[->, blue, thick] (0,1.7) -- (0,0.2) node[midway,left] {$T$};
 \draw[->, red, thick] (0,-1.7) -- (0,-2.7) node[below] {$mg$}; \draw[->, blue, thick] (0,-1.7) -- (0,-0.5) node[midway,right] {$T$};
 \end{tikzpicture}
@@ -648,35 +652,13 @@ Below this speed, the required inward force is less than $$mg$$, so the object f
 
 <div class="theorem-box">
 
-**Example.** A small bead slides without friction down a track and around a vertical loop of radius $$r = 0.40\ \text{m}$$. From what minimum height $$h$$ above the bottom of the loop must it be released to complete the loop?
-
-The minimum condition at the top is $$v_{\text{top}}^2 = gr$$ from the proof above. Using energy conservation (frictionless) between the release point at height $$h$$ and the top of the loop at height $$2r$$:
-
-$$
-mgh = mg(2r) + \tfrac{1}{2}mv_{\text{top}}^2.
-$$
-
-Substitute $$v_{\text{top}}^2 = gr$$ and cancel $$m$$:
-
-$$
-gh = 2gr + \tfrac{1}{2}gr = \tfrac{5}{2}gr,
-$$
-
-so
-
-$$
-h = \frac{5}{2}r = \frac{5}{2}(0.40) = 1.0\ \text{m}.
-$$
-
-The classic result is that the release height must be at least $$2.5$$ radii above the bottom of the loop. See [Unit 3: Work, Energy, and Power](/notes/ap/ap-physics-c-mechanics/work/) for the energy method used here.
+// add an example of nonuniform circular motion without using energy in the solution
 
 </div>
 
----
+### Banked curves
 
-## Banked curves
-
-For a frictionless banked (raised) curve, the horizontal component of the normal force provides centripetal acceleration, while the vertical component balances weight:
+Sometimes, circular motion is not confined on a flat surface. For a frictionless banked (raised) curve, the horizontal component of the normal force provides centripetal acceleration, while the vertical component balances weight:
 
 $$
 F_N\cos\theta = mg,
@@ -698,12 +680,13 @@ $$
 v = \sqrt{rg\tan\theta}.
 $$
 
+With friction, static friction points whichever way prevents slipping: up the slope if the car would slide down, and down the slope if the car would slide up (remember static friction always OPPOSES motion!).
 
 ```tikz
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
 \begin{tikzpicture}[>=Stealth, font=\small]
-\draw[thick] (-3,-1) -- (3,0.2); \draw[fill=gray!20, rotate=11] (-0.5,-0.15) rectangle (0.5,0.25); \node at (0,0.35) {car};
+\draw[thick] (-3,-1) -- (3,0.2); \draw[fill=gray!20, rotate=11] (-0.5,-0.15) rectangle (0.5,0.25);
 \draw[->, red, thick] (0,0.25) -- (0,-1.4) node[below] {$mg$};
 \draw[->, blue, thick] (0,0.25) -- (-0.45,2.2) node[above] {$N$};
 \draw[dashed, blue] (0,0.25) -- (-0.45,0.25) node[left] {$N\sin\theta$};
@@ -711,6 +694,8 @@ $$
 \draw (2.1,-0.6) arc[start angle=0,end angle=11,radius=0.8] node[midway,right] {$\theta$};
 \end{tikzpicture}
 ```
+
+// no floor (basically the ramp is floating), the angle marker is like really far right, not even at the place where it is supposed to be, the car appears to be floating, the arrows should be from the center of the car, make the ramp steeper so that the Nsin theta part goes out of the car, and make sure the Ncos theta part is on the right of the normal force arrow
 
 
 <div class="theorem-box">
@@ -769,8 +754,6 @@ A car going faster than $$25\ \text{m/s}$$ on this bank would tend to slide outw
 
 </div>
 
-With friction, static friction points whichever way prevents slipping: up the slope if the car would slide down, and down the slope if the car would slide up.
-
 ---
 
 ## Inertial and non-inertial frames
@@ -783,13 +766,15 @@ $$
 \vec{F}_{\text{pseudo}} = -m\vec{a}_{\text{frame}}.
 $$
 
-Pseudo-forces are not interaction forces and do not have third-law partners. They are bookkeeping tools for working in non-inertial frames. AP Physics C usually lets you solve from an inertial frame, but pseudo-forces can be useful for accelerating elevators, accelerating wedges, and rotating-frame intuition.
+Pseudo-forces are not interaction forces and do not have third-law partners (since they don't actually exist!). Think of it like this: // give an intuitive example
 
 <div class="theorem-box">
 
 **Example.** A block of mass $$m$$ rests on a frictionless incline of angle $$\theta$$ built on a cart. How fast must the cart accelerate horizontally (toward the foot of the incline) so that the block does not slide relative to the incline?
 
-Work in the cart's non-inertial frame, where the block is in equilibrium. Three forces act on it: gravity $$mg$$ downward, the normal force $$F_N$$ perpendicular to the incline surface, and the pseudo-force $$ma$$ pointing horizontally backward (opposite the cart's acceleration). Resolve along the incline, taking down-the-slope as positive. Gravity contributes $$mg\sin\theta$$ down the slope, while the pseudo-force contributes $$ma\cos\theta$$ up the slope. For the block not to slide, these must cancel:
+// add a picture of the problem
+
+Work in the cart's non-inertial frame, where the block is in equilibrium (not moving). Three forces act on it: gravity $$mg$$ downward, the normal force $$F_N$$ perpendicular to the incline surface, and the pseudo-force $$ma$$ pointing horizontally backward (opposite the cart's acceleration). Resolve along the incline, taking down-the-slope as positive. Gravity contributes $$mg\sin\theta$$ down the slope, while the pseudo-force contributes $$ma\cos\theta$$ up the slope. For the block not to slide, these must cancel:
 
 $$
 mg\sin\theta = ma\cos\theta,
@@ -803,7 +788,7 @@ $$
 
 The cleanest way to see it: in the cart frame gravity and the pseudo-force combine into an **effective gravity** $$\vec{g}_{\text{eff}} = \vec{g} - \vec{a}_{\text{frame}}$$. When $$a = g\tan\theta$$, this effective gravity points exactly perpendicular to the incline, so the block sits as if on level ground and has no tendency to slide.
 
-As a check, solve it in the inertial ground frame. There the block accelerates horizontally at $$a$$, and only gravity and the normal force act. Vertically there is no acceleration, so $$F_N\cos\theta = mg$$; horizontally the normal force supplies the acceleration, so $$F_N\sin\theta = ma$$. Dividing gives $$\tan\theta = a/g$$, the same result — the pseudo-force was just bookkeeping for the acceleration we put in by hand in the ground frame.
+As a check, solve it in the inertial ground frame. There the block accelerates horizontally at $$a$$, and only gravity and the normal force act. Vertically there is no acceleration, so $$F_N\cos\theta = mg$$; horizontally the normal force supplies the acceleration, so $$F_N\sin\theta = ma$$. Dividing gives $$\tan\theta = a/g$$, the same result, as expected.
 
 </div>
 
@@ -816,6 +801,8 @@ For constant mass, Newton's second law can be written as
 $$
 \vec{F}_{\text{net}} = m\frac{d\vec{v}}{dt} = m\frac{d^2\vec{r}}{dt^2}.
 $$
+
+// add stuff about variable mass
 
 <div class="theorem-box">
 
@@ -878,6 +865,8 @@ $$
 $$
 
 Internal forces between particles cancel in pairs by Newton's third law when considering the system as a whole. This is why a person cannot accelerate a closed system's center of mass by pushing only on internal parts.
+
+// add an example
 
 ---
 

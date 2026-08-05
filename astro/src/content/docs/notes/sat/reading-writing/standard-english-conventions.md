@@ -4,10 +4,6 @@ sidebar:
   order: 4
 ---
 
----
-
-This domain focuses on editing sentences so they follow standard rules for sentence structure, usage, and punctuation. These questions are not asking which option sounds the nicest. They are testing whether a sentence is grammatically complete and whether its parts fit together.
-
 ## Where to Start
 
 When the choices differ mainly in punctuation, identify clauses before thinking about commas or semicolons. When the choices differ in verbs or pronouns, find the word that controls the agreement or meaning.
@@ -36,7 +32,7 @@ A dependent clause cannot stand alone:
 
 > Although the researchers analyzed the samples
 
-Words such as *although*, *because*, *while*, *when*, *if*, *since*, *unless*, and *whereas* often create dependent clauses.
+Words such as *although*, *because*, *while*, *when*, *if*, *since*, *unless*, and *whereas* (AWUBIS words) often create dependent clauses.
 
 The easiest test is to read the clause by itself. If it leaves you waiting for the rest—“Although the researchers analyzed the samples…what happened?”—it is dependent.
 

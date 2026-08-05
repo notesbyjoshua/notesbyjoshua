@@ -11,7 +11,7 @@ Capacitors are systems of conductors separated by vacuum or an insulating materi
 A conductor at electrostatic equilibrium is an equipotential. If you put charge $$Q$$ on a fixed isolated conductor, its potential relative to infinity is proportional to $$Q$$, because electrostatics is linear. That motivates **capacitance**:
 
 $$
-C=\frac{Q}{\Delta V}.
+C=\frac{\Delta Q}{\Delta V}.
 $$
 
 Capacitance measures how much charge a geometry can store per volt. It depends only on the geometry and the material between conductors, not on the particular value of $$Q$$ or $$\Delta V$$. The sign convention is usually: $$Q$$ means the positive charge on one conductor and $$\Delta V$$ means the potential of that positive conductor minus the other conductor, so $$C>0$$.
@@ -28,13 +28,13 @@ Most devices use two conductors carrying equal and opposite charges $$+Q$$ and $
 
 ### Parallel-plate capacitor
 
-For two large parallel conducting plates of area $$A$$ separated by distance $$d$$, ignore edge fringing if $$d$$ is much smaller than the plate dimensions. The charges live mainly on the inner faces, and the field between the plates is approximately uniform:
+For two large parallel conducting plates of area $$A$$ separated by distance $$d$$, ignore edge fringing if $$d$$ is much smaller than the plate dimensions (usually assumed). The charges live mainly on the inner faces, and the field between the plates is approximately uniform:
 
 $$
 E=\frac{\sigma}{\varepsilon_0}=\frac{Q}{\varepsilon_0 A}.
 $$
 
-The potential difference is
+The potential difference is therefore
 
 $$
 \Delta V=Ed=\frac{Qd}{\varepsilon_0 A},
@@ -46,7 +46,7 @@ $$
 C=\frac{Q}{\Delta V}=\frac{\varepsilon_0 A}{d}.
 $$
 
-The approximations are doing real work here: near the edges, the field bulges outward, so the exact capacitance is slightly larger than $$\varepsilon_0A/d$$.
+Near the edges, the field bulges outward, so the capacitance is slightly larger than $$\varepsilon_0A/d$$, but this is usually ignored for USAPhO problems.
 
 <div class="theorem-box">
 
@@ -196,6 +196,8 @@ $$
 \frac{1}{C_{\text{eq}}}
 =\frac{1}{C_1}+\frac{1}{C_2}+\cdots.
 $$
+
+A quick way to tell parallel from series is that in parallel, the capacitors have the same voltage passed through them, while in series, the voltages add.
 
 Two circuit facts are especially useful in electrostatics problems:
 
