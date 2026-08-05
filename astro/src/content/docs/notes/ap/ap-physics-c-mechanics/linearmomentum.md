@@ -19,19 +19,21 @@ sidebar:
 
 ## Linear Momentum
 
-The momentum of a particle is
+The linear momentum of a particle is
 
 $$
 \vec{p} = m\vec{v}.
 $$
 
-Momentum is a vector, so components must be conserved independently. Newton's second law can be written in its more general form as
+Momentum is a vector, so the components must be conserved independently. Newton's second law can be written in its more general form as
 
 $$
 \vec{F}_{\text{net}} = \frac{d\vec{p}}{dt}.
 $$
 
-For constant mass, this reduces to $$\vec{F}_{\text{net}} = m\vec{a}$$. The momentum form is the more fundamental statement of Newton's second law, and it is essential whenever mass is not constant, such as a rocket burning fuel or a rope piling onto the ground.
+For constant mass, this reduces to $$\vec{F}_{\text{net}} = m\vec{a}$$. The momentum form is the more fundamental statement of Newton's second law (in fact, it was the original statement of the law!), and it is essential whenever mass is not constant, such as a rocket burning fuel or a rope piling onto the ground.
+
+// maybe introduce more on momentum, like get an intuitive sense of it, as well as having an example
 
 ---
 
@@ -49,8 +51,7 @@ $$
 \vec{J} = \vec{F}_{\text{net}}\Delta t.
 $$
 
-On a force-time graph, impulse is the signed area under the curve. This is the time-domain analog of how work is the area under a force-position graph in [work and energy](/notes/ap/ap-physics-c-mechanics/work/). During a collision, the peak force may be hard to model, but the impulse can often be found from the initial and final momenta, since $$\vec{J}=\Delta\vec{p}$$ does not care about the detailed shape of $$\vec{F}(t)$$.
-
+On a force-time graph, impulse is the signed area under the curve. This is the time-domain analog of how work is the area under a force-position graph in [Unit 3](/notes/ap/ap-physics-c-mechanics/work/). During a collision, the peak force may be hard to model, but the impulse can often be found from the initial and final momenta, since $$\vec{J}=\Delta\vec{p}$$ does not care about the detailed shape of $$\vec{F}(t)$$.
 
 ```tikz
 \usepackage{pgfplots}
@@ -64,7 +65,7 @@ On a force-time graph, impulse is the signed area under the curve. This is the t
 \end{tikzpicture}
 ```
 
-
+// same issue as the force graph
 
 It is also useful to define the **average force** over a collision:
 
@@ -74,8 +75,8 @@ $$
 
 The average force is the constant force that would deliver the same impulse over the same time.
 
-:::tip{title="Extend the contact time"}
-A longer contact time (a "follow-through," an airbag, bent knees on landing) reduces the peak force for a fixed change in momentum.
+:::tip
+A longer contact time (a "follow-through," an airbag, bent knees on landing) reduces the peak force for a fixed change in momentum, thus effectively "softening" the impact.
 :::
 
 <div class="theorem-box">
@@ -199,8 +200,9 @@ $$
 \end{tikzpicture}
 ```
 
+// redo the labeling
 
-For discrete particles,
+For discrete particles, the position $$r$$ (in whatever coordinate direction you define $$r$$ to be in) for an object's center of mass (for one coordinate, e.g. x-coordinate or y-coordinate) is equal to 
 
 $$
 \vec{r}_{\text{cm}} = \frac{1}{M}\sum_i m_i\vec{r}_i,
@@ -212,7 +214,7 @@ $$
 M = \sum_i m_i.
 $$
 
-For a continuous body,
+The proof for the formula uses topics covered later on, so will not be covered here. For a continuous body, 
 
 $$
 \vec{r}_{\text{cm}} = \frac{1}{M}\int \vec{r}\,dm.
@@ -354,15 +356,23 @@ The second piece moves forward at twice the original speed. Crucially, the **cen
 
 All collisions conserve momentum for an isolated system. Kinetic energy may or may not be conserved.
 
+### Elastic collisions
+
 An **elastic collision** conserves both momentum and kinetic energy:
 
 $$
 \vec{P}_i = \vec{P}_f, \qquad K_i = K_f.
 $$
 
-An **inelastic collision** conserves momentum but not kinetic energy. Some mechanical energy becomes internal energy, deformation, heat, or sound.
+// add more on elastic collisions, e.g. how to easily solve these types of problems, formula shortcuts, etc.
 
-A **perfectly inelastic collision** is the special case where objects stick together after impact:
+// add an example problem (make it harder)
+
+### Inelastic collisions
+
+An **inelastic collision** is a collision that conserves momentum but not kinetic energy. Some mechanical energy becomes internal energy, deformation, heat, or sound.
+
+A **perfectly inelastic collision** is the special case where objects stick together after impact\:
 
 $$
 m_1\vec{v}_{1i}+m_2\vec{v}_{2i} = (m_1+m_2)\vec{v}_f.
@@ -376,41 +386,13 @@ $$
 
 This loss is maximal among all collisions with the same initial momenta, because sticking together leaves the objects with the least possible kinetic energy consistent with conserved momentum (the energy of the center-of-mass motion alone).
 
-<div class="theorem-box">
+// add more on inelastic collisions, e.g. how to easily solve these types of problems, formula shortcuts, etc.
 
-**Example.** A $$1500\ \text{kg}$$ car moving east at $$20\ \text{m/s}$$ rear-ends a $$1000\ \text{kg}$$ car moving east at $$8.0\ \text{m/s}$$. They lock bumpers. Find their common velocity and the kinetic energy lost.
+// add an example problem, but make it harder
 
-Momentum conservation in one dimension:
+### The Ballistic Pendulum
 
-$$
-m_1 v_{1i} + m_2 v_{2i} = (m_1+m_2)v_f,
-$$
-
-$$
-v_f = \frac{(1500)(20)+(1000)(8.0)}{1500+1000} = \frac{30000 + 8000}{2500} = 15.2\ \text{m/s}.
-$$
-
-Kinetic energy before:
-
-$$
-K_i = \tfrac{1}{2}(1500)(20)^2 + \tfrac{1}{2}(1000)(8.0)^2 = 300000 + 32000 = 3.32\times10^5\ \text{J}.
-$$
-
-Kinetic energy after:
-
-$$
-K_f = \tfrac{1}{2}(2500)(15.2)^2 = 2.89\times10^5\ \text{J}.
-$$
-
-So $$\Delta K = K_f - K_i = -4.3\times10^4\ \text{J}$$ is lost to deformation, heat, and sound, even though momentum is exactly conserved.
-
-</div>
-
----
-
-## The Ballistic Pendulum
-
-The **ballistic pendulum** is the classic problem that requires *both* momentum and energy, applied to *different stages*. A bullet embeds in a hanging block; the block then swings up.
+The **ballistic pendulum** is the classic problem that requires *both* momentum and energy, applied to *different stages*. The most standard example involves a bullet embedding itself in a hanging block which causes the block to swing up.
 
 :::strategy{title="Ballistic pendulum"}
 The trick is recognizing that the embedding (a perfectly inelastic collision) conserves momentum but loses energy, while the subsequent swing (no friction, no collision) conserves mechanical energy. Analyze each stage with the correct conserved quantity, then combine.
@@ -570,63 +552,11 @@ The two masses simply swap velocities. This is why a head-on shot in billiards (
 
 </div>
 
----
-
-## The Zero-Momentum (Center-of-Mass) Frame
-
-For some problems it helps to work in the **center-of-mass frame**, the reference frame moving with $$\vec{v}_{\text{cm}}$$. In this frame the total momentum is zero by construction:
-
-$$
-\vec{P}'_{\text{sys}} = M(\vec{v}_{\text{cm}} - \vec{v}_{\text{cm}}) = 0.
-$$
-
-Since the total momentum is zero, the objects always have equal and opposite momenta in this frame, both before and after a collision. An elastic collision in the CM frame simply reverses each object's velocity; an inelastic collision brings them to rest in this frame, which makes the maximum-energy-loss statement obvious. The lab-frame results then follow by adding $$\vec{v}_{\text{cm}}$$ back.
+// move this section to the elastic collisions part, this is out of place
 
 ---
 
-## A Brief Note on Variable Mass: the Rocket Equation
-
-When mass is added to or expelled from a system, the constant-mass form $$\vec{F}=m\vec{a}$$ is no longer the whole story; the momentum carried by the expelled mass matters. AP Physics C only needs the basic idea, but a clean derivation is short.
-
-<div class="theorem-box">
-
-**Proof (rocket equation, force-free case).** A rocket of instantaneous mass $$m$$ moves at speed $$v$$ and ejects fuel at speed $$u$$ *relative to the rocket*, opposite the direction of motion. In a short time $$dt$$ the rocket expels mass $$-dm > 0$$ (since $$m$$ decreases) and gains speed $$dv$$.
-
-Conserve momentum of the whole system (rocket + expelled bit) with no external force. Before: momentum $$mv$$. After: the rocket has $$(m+dm)(v+dv)$$, and the ejected mass $$(-dm)$$ moves at velocity $$v - u$$:
-
-$$
-mv = (m+dm)(v+dv) + (-dm)(v-u).
-$$
-
-Expand and drop the second-order term $$dm\,dv$$:
-
-$$
-mv = mv + m\,dv + v\,dm - v\,dm + u\,dm,
-$$
-
-$$
-0 = m\,dv + u\,dm.
-$$
-
-So
-
-$$
-m\,dv = -u\,dm \quad\Rightarrow\quad dv = -u\,\frac{dm}{m}.
-$$
-
-Integrate from initial mass $$m_0$$, speed $$v_0$$ to final mass $$m_f$$, speed $$v_f$$:
-
-$$
-v_f - v_0 = -u\ln\frac{m_f}{m_0} = u\ln\frac{m_0}{m_f}.
-$$
-
-This is the **Tsiolkovsky rocket equation**. The change in speed depends only on the exhaust speed and the mass ratio, which is why staging (shedding empty mass) matters so much.
-
-</div>
-
----
-
-## Momentum in Two Dimensions
+## Momentum and Collisions in Two Dimensions
 
 In two dimensions, conserve components separately:
 
@@ -665,6 +595,8 @@ $$
 $$
 
 If both objects move ($$v_{1f},v_{2f}\neq 0$$), the dot product vanishing means the final velocities are perpendicular: the objects separate at $$90^\circ$$. This is the familiar billiards result for equal-mass balls; it fails if the masses differ or the collision is inelastic.
+
+// add this to elastic collisions section
 
 </div>
 
@@ -706,11 +638,21 @@ The struck puck recoils to the opposite side, balancing the $$y$$-momentum that 
 
 </div>
 
+// add an example (f=ma exam 2025 problem 3, please cite like this: **Example (2025 F=ma Exam).**)
+
 ---
 
-## Connections to Other Units
+## The Zero-Momentum (Center-of-Mass) Frame
 
-Momentum complements the energy methods of [work and energy](/notes/ap/ap-physics-c-mechanics/work/): momentum tracks force over *time*, energy tracks force over *distance*, and collision problems often need both. The rotational analog of linear momentum, angular momentum, is developed in [rotational momentum](/notes/ap/ap-physics-c-mechanics/rotationalmomentum/), where $$\vec{L}$$ plays the role of $$\vec{p}$$ and torque plays the role of force. The kinematics of the resulting motion is handled in [kinematics](/notes/ap/ap-physics-c-mechanics/kinematics/).
+For some problems it helps to work in the **center-of-mass frame**, the reference frame moving with $$\vec{v}_{\text{cm}}$$. In this frame the total momentum is zero by construction:
+
+$$
+\vec{P}'_{\text{sys}} = M(\vec{v}_{\text{cm}} - \vec{v}_{\text{cm}}) = 0.
+$$
+
+Since the total momentum is zero, the objects always have equal and opposite momenta in this frame, both before and after a collision. An elastic collision in the CM frame simply reverses each object's velocity; an inelastic collision brings them to rest in this frame, which makes the maximum-energy-loss statement obvious. The lab-frame results then follow by adding $$\vec{v}_{\text{cm}}$$ back.
+
+// expand on this, add some examples
 
 ---
 

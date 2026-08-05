@@ -4,8 +4,6 @@ sidebar:
   order: 5
 ---
 
----
-
 :::variables
 - $$\theta$$ = angular position (Units: radians)
 - $$\omega$$ = angular velocity (Units: $$\text{rad/s}$$)
@@ -20,7 +18,7 @@ sidebar:
 
 ## Angular Kinematics
 
-For a rigid body rotating about a fixed axis, angular variables mirror linear variables, except it applies to rotations instead of linear translation:
+Sometimes, an object does not have to be moving for it to have motion. Angular kinematics deals with rotation around a fixed axis. For a rigid body rotating about a fixed axis, angular variables mirror linear variables, except it applies to rotations instead of linear translation:
 
 $$
 \omega = \frac{d\theta}{dt}, \qquad \alpha = \frac{d\omega}{dt} = \frac{d^2\theta}{dt^2}.
@@ -40,11 +38,9 @@ $$
 \omega_f^2 = \omega_i^2 + 2\alpha(\theta_f-\theta_i).
 $$
 
-Radians are dimensionless in SI, but keeping them visible helps avoid mixing angular and linear quantities.
+This is the rotational equivalent of the Big 5 equations from Unit 1. Radians are dimensionless in SI, but keeping them visible helps avoid mixing angular and linear quantities.
 
----
-
-## Connecting Linear and Angular Motion
+### Connecting Linear and Angular Motion
 
 For a point a distance $$r$$ from a fixed rotation axis,
 
@@ -66,13 +62,15 @@ $$
 a_r = \frac{v_t^2}{r} = r\omega^2,
 $$
 
-directed toward the axis. Tangential acceleration changes speed; radial acceleration changes direction.
+directed toward the axis. Tangential acceleration changes speed; radial acceleration changes direction. Always remember that the rotational equivalent of any linear variables will involve dividing by the radius. // give an intuitive explanation for this
+
+// add a practice problem or two for angular kinematics
 
 ---
 
 ## Torque
 
-Torque is the rotational effect of a force:
+Torque is the rotational effect and analogy of a force:
 
 $$
 \vec{\tau} = \vec{r}\times \vec{F}.
@@ -100,6 +98,7 @@ where $$r_{\perp}$$ is the lever arm, the perpendicular distance from the axis t
 \end{tikzpicture}
 ```
 
+// the angle label is way too big and not even in the correct place, r_perp isn't either, the force should push instead of pull
 
 There are two equivalent ways to read $$\tau = rF\sin\theta$$, and switching between them is often the key to a clean solution:
 
@@ -110,7 +109,7 @@ There are two equivalent ways to read $$\tau = rF\sin\theta$$, and switching bet
 "Force times distance" is a trap: it is only the full torque when the force is perpendicular to $$\vec r$$. When the force is along $$\vec r$$ (radial), $$\sin\theta = 0$$ and the torque vanishes no matter how large the force or the distance.
 :::
 
-The direction of torque follows the right-hand rule applied to $$\vec\tau = \vec r\times\vec F$$: point the fingers along $$\vec r$$ (from axis to application point), curl them toward $$\vec F$$, and the thumb gives $$\vec\tau$$. In planar problems the torque vector points either out of or into the page, so we replace the vector bookkeeping with signs: **counterclockwise torques positive, clockwise torques negative**. Pick that sign convention once at the start of a problem and apply it to every torque.
+The direction of torque follows the **right-hand rule** applied to $$\vec\tau = \vec r\times\vec F$$: point the fingers along $$\vec r$$ (from axis to application point), curl them toward $$\vec F$$, and the thumb gives $$\vec\tau$$. In planar problems the torque vector points either out of or into the page, so we replace the vector bookkeeping with signs: **counterclockwise torques positive, clockwise torques negative**. Pick that sign convention once at the start of a problem and apply it to every torque.
 
 <div class="theorem-box">
 
@@ -130,13 +129,15 @@ $$
 
 Both readings agree. If you had naively multiplied $$F$$ by the full distance $$r$$ you would have gotten $$24\ \text{N}\cdot\text{m}$$, twice too large, because that ignores the $$\sin\theta$$. To maximize torque you would push perpendicular to the handle ($$\theta = 90^\circ$$), giving the full $$24\ \text{N}\cdot\text{m}$$.
 
+// make the problem harder
+
 </div>
 
 ---
 
 ## Rotational Inertia
 
-Rotational inertia measures resistance to angular acceleration:
+Rotational inertia (also known as moment of inertia) measures resistance to angular acceleration:
 
 $$
 I = \sum_i m_i r_i^2
@@ -148,7 +149,7 @@ $$
 I = \int r^2\,dm
 $$
 
-for continuous bodies. Mass farther from the axis contributes more strongly because of the $$r^2$$ factor.
+for continuous bodies. Mass farther from the axis contributes more strongly because of the $$r^2$$ factor. Rotational inertia can be thought of as the rotational equivalent of mass.
 
 Common results:
 
@@ -169,7 +170,10 @@ Common results:
 | Thin rod, center | $$\frac1{12}ML^2$$ |
 | Thin rod, end | $$\frac13ML^2$$ |
 
+// add a picture instead of table
 
+Below are example proofs of how to derive these formulas:
+a 
 <div class="theorem-box">
 
 **Proof (Rotational Inertia of a Thin Rod About Its Center).** Let a uniform rod of length $$L$$ and mass $$M$$ lie along the $$x$$-axis with its center at $$x=0$$. Its linear mass density is
@@ -317,17 +321,19 @@ $$
 
 </div>
 
----
-
 ### Parallel-Axis Theorem
 
-If $$I_{\text{cm}}$$ is the rotational inertia about an axis through the center of mass, then the rotational inertia about a parallel axis a distance $$d$$ away is
+<div class="theorem-box">
+
+**Theorem (Parallel-Axis Theorem).** If $$I_{\text{cm}}$$ is the rotational inertia about an axis through the center of mass, then the rotational inertia about a parallel axis a distance $$d$$ away is
 
 $$
 I = I_{\text{cm}} + Md^2.
 $$
 
 This theorem is useful for rods about one end, rolling bodies about contact points, and composite rigid bodies.
+
+</div>
 
 <div class="theorem-box">
 
@@ -357,6 +363,8 @@ $$
 
 </div>
 
+The parallel-axis theorem can extend standard results derived from the center of mass to more complicated and often more useful pivot points.
+
 <div class="theorem-box">
 
 **Proof (Thin Rod About One End).** We already know the rod about its center is $$I_{\text{cm}}=\tfrac{1}{12}ML^2$$. The end of the rod is a parallel axis displaced from the center by $$d=L/2$$. The parallel-axis theorem gives
@@ -375,17 +383,21 @@ This matches a direct integration $$\int_0^L x^2\lambda\,dx$$, but the parallel-
 
 </div>
 
----
-
 ### Perpendicular-Axis Theorem
 
-The parallel-axis theorem shifts an axis sideways; the **perpendicular-axis theorem** relates axes that are mutually perpendicular. It applies only to a **planar object** (a flat lamina) lying in a plane. If the lamina lies in the $$xy$$-plane, then the rotational inertia about the $$z$$-axis (perpendicular to the lamina, through a chosen point) equals the sum of the inertias about the two in-plane axes through that same point:
+The parallel-axis theorem shifts an axis sideways; the **perpendicular-axis theorem** relates axes that are mutually perpendicular. It applies only to a **planar object** (a flat lamina) lying in a plane.
+
+<div class="theorem-box">
+
+**Theorem (Perpendicular-Axis Theorem).** If the lamina lies in the $$xy$$-plane, then the rotational inertia about the $$z$$-axis (perpendicular to the lamina, through a chosen point) equals the sum of the inertias about the two in-plane axes through that same point:
 
 $$
 I_z = I_x + I_y.
 $$
 
 This is often the fastest way to get the inertia of a flat object about an in-plane axis once you know it about the perpendicular axis.
+
+</div>
 
 <div class="theorem-box">
 
@@ -485,7 +497,7 @@ $$
 a_{\text{end}}=L\alpha=L\cdot\frac{3g}{2L}=\frac{3}{2}g.
 $$
 
-Strikingly, the tip of the rod accelerates downward faster than $$g$$. A coin placed near the free end will be left behind (the rod falls out from under it) because the rod's surface there is accelerating at $$1.5g$$ while a free coin can only manage $$g$$. Note this is the *initial* angular acceleration; as the rod swings down, the lever arm of gravity shrinks like $$\cos\theta$$, so $$\alpha$$ decreases throughout the fall.
+Interestingly, the tip of the rod accelerates downward faster than $$g$$. A coin placed near the free end will be left behind (the rod falls out from under it) because the rod's surface there is accelerating at $$1.5g$$ while a free coin can only manage $$g$$. Note this is the *initial* angular acceleration; as the rod swings down, the lever arm of gravity shrinks like $$\cos\theta$$, so $$\alpha$$ decreases throughout the fall.
 
 </div>
 
@@ -557,9 +569,9 @@ $$
 \sum \vec{\tau}=0.
 $$
 
-If the object is not accelerating linearly or angularly, both conditions must hold. A subtle but powerful fact: in **equilibrium**, the net torque is zero about *every* axis, not just the real one. So you are free to compute torques about whatever point makes the algebra easiest.
+If the object is not accelerating linearly or angularly (basically not moving or rotating), both conditions must hold. A subtle but powerful fact: in **equilibrium**, the net torque is zero about *every* axis, not just the real one. So you are free to compute torques about whatever point makes the algebra easiest.
 
-The standard trick is to **put the pivot at the location of an unknown force**. Since a force exerts zero torque about a point on its own line of action, that unknown drops out of the torque equation entirely, leaving fewer unknowns. Hinge forces and contact forces of unknown direction are the usual targets: pivot at the hinge and you never need to know the hinge force to find everything else. Once the other unknowns are found, the force equations $$\sum F_x = 0$$ and $$\sum F_y = 0$$ recover the hinge force.
+The standard trick is to **put the pivot at the location of an unknown force**. Since a force exerts zero torque about a point on its own line of action (since the distance to the pivot point is zero), that unknown drops out of the torque equation entirely, leaving fewer unknowns. Hinge forces and contact forces of unknown direction are the usual targets: pivot at the hinge and you never need to know the hinge force to find everything else. Once the other unknowns are found, the force equations $$\sum F_x = 0$$ and $$\sum F_y = 0$$ recover the hinge force.
 
 :::strategy{title="Static equilibrium problems"}
 1. Draw a free-body diagram of the extended object, placing each force at its actual point of application (do not collapse the body to a point — location matters for torque).
@@ -571,6 +583,8 @@ The standard trick is to **put the pivot at the location of an unknown force**. 
 <div class="theorem-box">
 
 **Example.** A uniform horizontal beam of mass $$m = 20\ \text{kg}$$ and length $$L$$ is hinged to a wall at its left end. A cable runs from the far (right) end of the beam up to the wall, making an angle $$\theta = 37^\circ$$ with the beam. A sign of weight $$W = 300\ \text{N}$$ hangs from the right end. Find the tension in the cable and the force the hinge exerts on the beam. Take $$g = 9.8\ \text{m/s}^2$$.
+
+// draw the diagram
 
 Forces on the beam: its weight $$mg = (20)(9.8) = 196\ \text{N}$$ acting down at the center ($$L/2$$); the sign's weight $$W = 300\ \text{N}$$ down at the right end ($$L$$); the cable tension $$T$$ along the cable at the right end; and the hinge force with unknown components $$H_x, H_y$$ at the left end.
 
@@ -606,11 +620,15 @@ $$
 
 The hinge force magnitude is $$\sqrt{H_x^2 + H_y^2} = \sqrt{528^2 + 98^2}\approx 537\ \text{N}$$. Choosing the hinge as pivot let us solve for $$T$$ in a single equation before ever touching the hinge force.
 
+// goes outside the box, please fix
+
 </div>
 
 <div class="theorem-box">
 
 **Example.** A uniform diving board of mass $$m = 30\ \text{kg}$$ and length $$L = 4.0\ \text{m}$$ rests on two supports: support $$A$$ at the left end and support $$B$$ a distance $$d = 1.5\ \text{m}$$ to the right of $$A$$. A diver of weight $$W = 600\ \text{N}$$ stands at the far right end. Find the forces the two supports exert on the board. Take $$g = 9.8\ \text{m/s}^2$$, so the board's weight is $$mg = 294\ \text{N}$$.
+
+// draw the diagram
 
 The board is in equilibrium under four forces: support force $$N_A$$ up at $$A$$, support force $$N_B$$ up at $$B$$, the board's weight $$294\ \text{N}$$ down at the center ($$2.0\ \text{m}$$ from $$A$$), and the diver's weight $$600\ \text{N}$$ down at the right end ($$4.0\ \text{m}$$ from $$A$$).
 
@@ -634,13 +652,15 @@ $$
 
 So support $$B$$ (the fulcrum near the diver) carries a large upward force of about $$1990\ \text{N}$$, while support $$A$$ (the anchored end) is held down with about $$1100\ \text{N}$$. As a check, the net upward force is $$1992 - 1098 = 894\ \text{N}$$, which equals the total downward weight $$294 + 600 = 894\ \text{N}$$.
 
+// goes out of the box, please fix
+
 </div>
 
 ---
 
 ## Rolling Without Slipping
 
-Rolling without slipping imposes the constraint
+Rolling without slipping is a special case of rotary motion that imposes the constraint
 
 $$
 v_{\text{cm}} = R\omega
@@ -654,9 +674,9 @@ $$
 
 The point of contact is instantaneously at rest relative to the ground, so static friction can provide torque without doing work on an ideal rolling object. Static friction may point uphill or downhill depending on what torque is needed.
 
----
+// explain more, especially on what RWOS actually means as well as the friction components which might confuse some people.
 
-## Rolling Down an Incline
+### Rolling Down an Incline
 
 A round object released on an incline rolls without slipping if friction is sufficient. We can find its center-of-mass acceleration in general, then specialize to common shapes.
 
@@ -674,6 +694,7 @@ A round object released on an incline rolls without slipping if friction is suff
 \end{tikzpicture}
 ```
 
+// the ball is overlapping with the ramp, normal force should go to the center, and the label/arrow for alpha is completely off
 
 <div class="theorem-box">
 

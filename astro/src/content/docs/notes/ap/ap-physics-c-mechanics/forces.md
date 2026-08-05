@@ -856,20 +856,6 @@ As $$t \to \infty$$, the exponential vanishes and $$v \to v_t$$, as expected. Th
 
 ---
 
-## Center of mass and systems
-
-For a system of particles, the net external force determines the acceleration of the center of mass:
-
-$$
-\sum \vec{F}_{\text{ext}} = M\vec{a}_{\text{CM}}.
-$$
-
-Internal forces between particles cancel in pairs by Newton's third law when considering the system as a whole. This is why a person cannot accelerate a closed system's center of mass by pushing only on internal parts.
-
-// add an example
-
----
-
 ## Working checklist
 
 :::checklist

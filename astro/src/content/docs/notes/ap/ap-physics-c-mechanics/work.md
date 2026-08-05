@@ -4,8 +4,6 @@ sidebar:
   order: 3
 ---
 
----
-
 :::variables
 - $$W$$ = work (Units: joules, $$\text{J}$$)
 - $$K$$ = kinetic energy (Units: $$\text{J}$$)
@@ -28,15 +26,15 @@ $$
 W = \vec{F}\cdot \Delta \vec{r} = F\Delta r\cos\theta.
 $$
 
-Only the component of force parallel to displacement does work. A perpendicular force can change direction without changing speed, so it does no work at that instant.
+Only the component of force parallel to displacement does work. A perpendicular force can change direction without changing speed, so it does no work at that instant. Due to this property, perpendicular forces like the normal force cannot exert any work.
 
-For a variable force, use the line integral (just the integral over the path of an object)
+For a variable force, use the line integral (just the integral over the path of an object) to evaluate work:
 
 $$
 W = \int_C \vec{F}\cdot d\vec{r}.
 $$
 
-In one dimension this becomes
+In one dimension (which involves most AP Physics C problems) this becomes
 
 $$
 W = \int_{x_i}^{x_f} F_x(x)\, dx,
@@ -57,10 +55,11 @@ the signed area under the force-position graph.
 \end{tikzpicture}
 ```
 
+// add like a more curvy graph and make sure it extends out to the axis and the right end of the graph
 
 ### The geometry of the dot product
 
-Since $$W = \vec{F}\cdot\Delta\vec{r} = F\,\Delta r\cos\theta$$, the **sign of the work** is set entirely by the angle $$\theta$$ between the force and the displacement:
+Since $$W = \vec{F}\cdot\Delta\vec{r} = F\,\Delta r\cos\theta$$, the sign of the work is set entirely by the angle $$\theta$$ between the force and the displacement:
 
 
 ```tikz
@@ -85,6 +84,8 @@ This is why a centripetal force can bend a path without changing speed: it is al
 
 **Example.** A force directed along the $$x$$-axis varies with position as follows: it is constant at $$F=20\ \text{N}$$ from $$x=0$$ to $$x=3\ \text{m}$$, then ramps linearly down to $$0\ \text{N}$$ at $$x=5\ \text{m}$$. Find the work done from $$x=0$$ to $$x=5\ \text{m}$$.
 
+// draw the graph
+
 The work is the area under the graph. Split it into a rectangle and a triangle:
 
 $$
@@ -99,6 +100,8 @@ If the force had pointed in the $$-x$$ direction over some interval, that area w
 <div class="theorem-box">
 
 **Example.** A position-dependent force $$F(x) = \alpha x^2$$ acts along the $$x$$-axis, with $$\alpha = 6\ \text{N/m}^2$$. Find the work it does on a particle moving from $$x_i = 1\ \text{m}$$ to $$x_f = 3\ \text{m}$$.
+
+// make this example harder (e.g. there is no point in alpha if you just give the answer)
 
 Use $$W = \int_{x_i}^{x_f} F(x)\,dx$$:
 
@@ -137,7 +140,7 @@ W_{\text{net}} = \int \vec{F}_{\text{net}}\cdot d\vec{r}
 = \frac{1}{2}mv_f^2-\frac{1}{2}mv_i^2.
 $$
 
-The key substitution is $$d\vec{r}=\vec{v}\,dt$$. Because $$\vec{v}\cdot d\vec{v}=\frac{1}{2}d(v^2)$$, the integral turns into the change in $$\frac{1}{2}mv^2$$. Therefore
+Therefore,
 
 $$
 W_{\text{net}}=\Delta K.
@@ -194,6 +197,8 @@ In one dimension,
 $$
 F_x = -\frac{dU}{dx}.
 $$
+
+// please derive (shortly) where this comes from
 
 In three dimensions,
 
@@ -285,6 +290,8 @@ $$
 
 The $$x$$-displacement drops out because $$\hat{y}\cdot\hat{x}=0$$, so only the change in height matters. A box carried straight up, or up a long ramp, or along a wiggling staircase to the same final height, all involve the same gravitational work. Around any closed loop ($$y_B = y_A$$), $$W_g = 0$$, which is the defining property of a conservative force.
 
+// this proof goes out of the box
+
 </div>
 
 <div class="theorem-box">
@@ -311,25 +318,13 @@ The mass of the projectile cancels, so escape speed is the same for a pebble or 
 
 ## Spring Potential Energy
 
-For an ideal spring,
-
-$$
-F_s = -kx.
-$$
-
-The potential energy stored in the spring is
+For an ideal, massless spring, the potential energy stored in the spring is
 
 $$
 U_s = \frac{1}{2}kx^2,
 $$
 
-where $$x$$ is displacement from equilibrium. The force is the negative derivative:
-
-$$
-F_s = -\frac{d}{dx}\left(\frac{1}{2}kx^2\right) = -kx.
-$$
-
-The spring does negative work when stretched farther from equilibrium and positive work when returning toward equilibrium.
+where $$x$$ is displacement from equilibrium.
 
 <div class="theorem-box">
 
@@ -407,13 +402,13 @@ Stretching the second $$10\ \text{cm}$$ takes three times the work of the first,
 
 ## Conservation of Mechanical Energy
 
-Mechanical energy is defined as
+Defined **mechanical energy** as
 
 $$
 E_{\text{mech}} = K + U.
 $$
 
-If only conservative forces do work,
+If only conservative forces do work (e.g. no friction),
 
 $$
 K_i + U_i = K_f + U_f.
@@ -499,7 +494,7 @@ $$
 
 Friction usually decreases mechanical energy and converts it into thermal energy, so $$W_f$$ is usually negative for a sliding object.
 
-:::tip{title="Signs of nonconservative work"}
+:::tip
 If you forgot the sign of a non-conservative force, just think about whether the force would add energy or remove energy from the system (e.g. friction releases heat, meaning it removes energy).
 :::
 
@@ -511,7 +506,7 @@ $$
 \Delta E_{\text{mech}} + \Delta E_{\text{thermal}} + \cdots = 0,
 $$
 
-energy is conserved overall, with $$\lvert W_f \rvert = \mu_k F_N d$$ being the amount converted to heat. In AP problems we usually track $$E_{\text{mech}}$$ and treat friction's effect through $$W_{\text{nc}}$$, but it is conceptually important that energy is never destroyed — only mechanical energy is.
+energy is conserved overall, with any mechanical energy lost usually being converted to heat or sound. This ensures that we don't violate the Law of Conservation of Energy.
 
 <div class="theorem-box">
 
@@ -579,13 +574,15 @@ $$
 
 The clean strategy: spring energy in, friction energy out, kinetic energy is whatever remains.
 
+// make the problem harder
+
 </div>
 
 ---
 
 ## Energy Diagrams and Equilibrium
 
-In one-dimensional systems, a graph of $$U(x)$$ contains force information:
+In one-dimensional systems, a graph of $$U(x)$$ contains lots of useful information about force and an object's current state:
 
 
 ```tikz
@@ -600,26 +597,17 @@ In one-dimensional systems, a graph of $$U(x)$$ contains force information:
 \end{tikzpicture}
 ```
 
+// your labels don't even make sense (both stable and unstabel are not even at minima/maxima), and please add metastable/neutral equilibrium as well
+
+As a reminder, $$F_x = -\frac{dU}{dx}.$$ Equilibrium occurs where 
 
 $$
-F_x = -\frac{dU}{dx}.
+\frac{dU}{dx}=0,
 $$
 
-Equilibrium occurs where
+and at that point, the object is moving at constant velocity. Note that this may mean the object is not moving, but does not have to be. The equilibrium is **stable** if $$U(x)$$ has a local minimum ($$\frac{d^2 U}{dx^2} > 0$$), **unstable** if it has a local maximum ($$\frac{d^2 U}{dx^2} < 0$$), and **neutral** if small displacements do not change $$U$$ to second order ($$\frac{d^2 U}{dx^2} = 0$$).
 
-$$
-\frac{dU}{dx}=0.
-$$
-
-The equilibrium is **stable** if $$U(x)$$ has a local minimum ($$\frac{d^2 U}{dx^2} > 0$$), **unstable** if it has a local maximum ($$\frac{d^2 U}{dx^2} < 0$$), and **neutral** if small displacements do not change $$U$$ to second order ($$\frac{d^2 U}{dx^2} = 0$$).
-
-Turning points occur where $$K=0$$, so
-
-$$
-E = U(x).
-$$
-
-The particle can move only in regions where $$E\ge U(x)$$ because kinetic energy cannot be negative.
+// give an image of the three equilibrium (use a ball in a bowl, a hill, and on a flat surface as an example)
 
 <div class="theorem-box">
 
@@ -664,19 +652,19 @@ The particle is trapped in the well as long as $$E$$ is below the barrier height
 
 ## Power
 
-**Power** is the rate of energy transfer:
+**Power** is defined as the rate of energy transfer:
 
 $$
 P = \frac{dW}{dt}.
 $$
 
-For a force acting on an object with instantaneous velocity $$\vec{v}$$,
+For a constant force acting on an object with instantaneous velocity $$\vec{v}$$,
 
 $$
 P = \vec{F}\cdot \vec{v}.
 $$
 
-Average power over a time interval is
+Average power over a time interval is also defined as
 
 $$
 \bar{P} = \frac{\Delta E}{\Delta t}.
