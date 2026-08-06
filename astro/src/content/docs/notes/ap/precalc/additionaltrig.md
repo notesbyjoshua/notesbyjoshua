@@ -789,7 +789,7 @@ $$
 
 Switching sine and cosine, or making one coefficient negative, can change where the graph starts and which direction it is traced, but the rectangular equation may stay the same.
 
-:::strategy{title="Eliminating the parameter in a trig parametrization"}
+:::strategy
 1. Isolate the two trig expressions (e.g. $$\cos t = \frac{x}{a}$$).
 2. Use a version of the Pythagoren Identity (e.g. $$\cos^2 t + \sin^2 t = 1$$) to combine the two equations.
 3. State any domain restrictions on the graph and indicate orientation/direction.
@@ -827,7 +827,7 @@ The graph is an ellipse centered at the origin.
 
 ### Graphing parametric equations
 
-:::strategy{title="Sketching a parametric curve"}
+:::strategy
 1. Choose values of $$t$$.
 2. Calculate the corresponding $$x$$ and $$y$$ values.
 3. Plot the ordered pairs $$(x,y)$$.
@@ -1241,7 +1241,7 @@ $$
 r=f(\theta).
 $$
 
-:::strategy{title="Graphing a polar curve"}
+:::strategy
 1. Make a table of $$\theta$$ and $$r$$ values, and draw a helper $$r$$ vs. $$\theta$$ graph if necessary.
 2. Plot each polar point.
 3. Watch for negative $$r$$ values.

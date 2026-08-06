@@ -251,7 +251,7 @@ $$
 
 we must have $$x\ne 3$$ before doing anything else.
 
-:::strategy{title="Solving rational equations"}
+:::strategy
 1. State the restrictions.
 2. Multiply both sides by the least common denominator.
 3. Solve the resulting equation.
@@ -394,7 +394,7 @@ $$
 \sqrt{x-5}=x-7.
 $$
 
-:::strategy{title="Solving radical equations"}
+:::strategy
 The process is careful, not mysterious:
 
 1. Write the domain restrictions.
@@ -504,7 +504,7 @@ $$
 p(x)>0,\qquad p(x)\le 0,\qquad \text{etc.}
 $$
 
-:::strategy{title="Polynomial inequalities (sign chart)"}
+:::strategy
 1. Move everything to one side so the other side is $$0$$.
 2. Factor the polynomial.
 3. Mark the zeros on a number line.
@@ -530,7 +530,7 @@ Typical form: $$\dfrac{P(x)}{Q(x)} > 0$$, $$\ge 0$$, $$< 0$$, or $$\le 0$$ (stri
 
 The method is similar to polynomial inequalities, with one major warning: denominator zeros are never allowed.
 
-:::strategy{title="Rational inequalities (safest process)"}
+:::strategy
 1. Move everything to one side and combine into one fraction.
 2. Factor the numerator and denominator.
 3. Mark zeros of the numerator and denominator on a number line.

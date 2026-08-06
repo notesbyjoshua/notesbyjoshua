@@ -18,7 +18,7 @@ This domain focuses on understanding what a passage states directly, what it imp
 | Textual evidence | Find information that directly supports a claim |
 | Quantitative evidence | Match a claim to values or trends in a graph or table |
 
-:::tip{title="The key distinction"}
+:::tip
 A detail answer is already in the passage. An inference answer is not stated word for word, but it must follow from what is stated. If an inference requires several imagined steps, it is probably unsupported.
 :::
 
@@ -31,7 +31,7 @@ Central-idea questions ask what the passage is mostly trying to communicate. A c
 - avoid unnecessary details,
 - match the passage's level of certainty.
 
-:::strategy{title="Finding the central idea"}
+:::strategy
 1. Identify the topic.
 2. Ask what the author says about that topic.
 3. State the answer in one sentence before reading the choices.
@@ -76,7 +76,7 @@ Preserve:
 Watch for reversals such as increase versus decrease, cause versus result, Group A versus Group B, and earlier versus later.
 :::
 
-:::tip{title="If details keep getting mixed up"}
+:::tip
 Point to the exact sentence that answers the question. Restate it using the same subject, action, and direction before checking the choices. This makes reversal traps easier to see.
 :::
 
@@ -84,7 +84,7 @@ Point to the exact sentence that answers the question. Restate it using the same
 
 An inference is one small logical step from the information in the passage, not a new theory.
 
-:::strategy{title="Making a supported inference"}
+:::strategy
 1. Identify the facts immediately before the blank or the claim in the question.
 2. Notice logical signals such as *therefore*, *however*, *for example*, or *not surprisingly*.
 3. Finish the reasoning yourself.
@@ -114,7 +114,7 @@ The safest inference is that the shorter label was associated with longer viewin
 
 </div>
 
-:::tip{title="For difficult inference questions"}
+:::tip
 Choose the least ambitious answer. A careful answer limited to the passage's conditions is usually stronger than a sweeping answer that sounds impressive.
 :::
 

@@ -83,7 +83,7 @@ A **pie chart** represents the whole as a circle and divides it into slices whos
 
 For **quantitative** data, we care about **center**, **spread**, **shape**, and unusual values.
 
-:::strategy{title="Describing distributions"}
+:::strategy
 Use CUSS in context: **Center**, **Unusual features**, **Shape**, and **Spread**. For comparisons, do this for both groups and name the direction of the difference.
 :::
 
@@ -309,7 +309,7 @@ Examples:
 - Statistical: "How do study times vary among students in this class?"
 - Statistical comparison: "Do students in morning classes tend to study more than students in afternoon classes?"
 
-:::strategy{title="Writing investigative questions"}
+:::strategy
 Name the group being studied, the variable being measured, and the pattern or comparison you want to understand. If the question does not involve variability, it is probably not a statistical question.
 :::
 

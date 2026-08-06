@@ -376,7 +376,7 @@ quadratic in speed, with a drag coefficient $$C_D$$. The crossover in a pipe is 
 
 A quick decision tree for what tool to grab:
 
-:::strategy{title="Choosing a fluids tool"}
+:::strategy
 1. **Nothing moves**: Hydrostatics. Use $$p=p_0+\rho g h$$, equal pressure at equal heights in connected fluid, and Archimedes for floating/submerged bodies.
 2. **Whole fluid accelerates/rotates rigidly**: Effective gravity $$\vec g_{\text{eff}}=\vec g-\vec a$$; surfaces $$\perp$$ to it; rotating ⟶ parabolic surface.
 3. **Steady flow, want a speed or pressure**: Continuity ($$Av=$$const) + Bernoulli. Choose two points on one streamline; know what each pressure and speed is (open surfaces are at $$p_{\text{atm}}$$; wide reservoirs are nearly at rest).

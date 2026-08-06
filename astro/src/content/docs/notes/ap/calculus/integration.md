@@ -869,7 +869,7 @@ $$
 
 Integrals involving powers of sine and cosine usually depend on whether one power is odd.
 
-:::strategy{title="Sine and cosine powers"}
+:::strategy
 - If the sine power is odd, save one $$\sin x$$ and convert the rest using $$\sin^2x=1-\cos^2x$$.
 - If the cosine power is odd, save one $$\cos x$$ and convert the rest using $$\cos^2x=1-\sin^2x$$.
 - If both powers are even, use power-reduction identities (if you need a reminder to what they are, check out [Unit 8/9](/notes/ap/precalc/graphanalyticaltrig/) of AP Precalculus.)
@@ -1005,7 +1005,7 @@ $$
 
 It is useful for products such as polynomial times exponential, polynomial times trig, or logarithmic functions.
 
-:::tip{title="Choosing u"}
+:::tip
 A common priority list is **L**ogarithmic, **I**nverse trig, **A**lgebraic, **T**rig, **E**xponential (**LIATE**). This is only a guide, but it helps choose the factor that becomes simpler when differentiated.
 :::
 

@@ -18,7 +18,7 @@ The virtual work method is a way to find equilibrium conditions (or the force ne
 
 The magic is that **constraint forces do no virtual work**: normal forces, tensions in inextensible strings, and frictionless contact forces are all perpendicular to the allowed motion (or internal and canceling), so they drop out entirely. You only ever deal with the forces you care about (gravity, applied loads, springs).
 
-:::strategy{title="Virtual work method"}
+:::strategy
 1. Identify the **degrees of freedom** and pick a single coordinate $$q$$ that captures the allowed motion (e.g. rectangular, polar, etc.).
 2. Write the positions of every point where a force acts in terms of $$q$$.
 3. Give the system a virtual displacement $$\delta q$$ and compute the total work $$\delta W=\sum_i \vec F_i\cdot\delta\vec r_i$$.
@@ -94,7 +94,7 @@ This converts many dynamics problems into *statics* problems. A block on an acce
 
 Since this whole page is a toolbox, the decision tree is a meta one: when a problem looks ugly, which technique do you reach for first?
 
-:::strategy{title="Which technique to reach for"}
+:::strategy
 1. **Asked for an equilibrium force or condition, with messy tensions/normals/constraints**: Virtual work. Pick one coordinate $$q$$, write $$\delta W=\sum_i\vec F_i\cdot\delta\vec r_i=0$$, and the constraint forces drop out — or use $$dU/dq=0$$ if forces are conservative.
 2. **You only need the *form* of the answer, or you're sanity-checking algebra**: Dimensional analysis. Build the unique combination with the right units; e.g. a time from length and gravity can only be $$\sqrt{L/g}$$. Just remember it cannot fix dimensionless constants like the $$2\pi$$.
 3. **Computing a field, force, or integral over a symmetric configuration**: Exploit symmetry. Components mapped to their negatives cancel, and Gauss's/Ampère's law become usable because the field is constant over a chosen surface or loop.

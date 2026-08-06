@@ -16,7 +16,7 @@ When two categorical variables are measured on the same individuals, organize th
 
 **Marginal relative frequencies** use row or column totals to describe one variable by itself. **Conditional relative frequencies** restrict attention to one row or column and describe the distribution of the other variable within that condition.
 
-:::strategy{title="Checking association"}
+:::strategy
 Compare conditional distributions. If the conditional distributions are meaningfully different across groups, the variables appear associated. If they are about the same, there is little evidence of association.
 :::
 
@@ -142,7 +142,7 @@ $$
 
 If that product rule fails, the events are **dependent**.
 
-:::strategy{title="Probability table problems"}
+:::strategy
 1. Translate the words into events.
 2. Fill in joint probabilities first when possible.
 3. Use row and column totals to get marginal probabilities.

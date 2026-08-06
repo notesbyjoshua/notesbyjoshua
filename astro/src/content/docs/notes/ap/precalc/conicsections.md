@@ -312,7 +312,7 @@ For a vertical major axis, the same algebra applies after swapping the roles of 
 
 ### Graphing an ellipse
 
-:::strategy{title="Graphing an ellipse in standard form"}
+:::strategy
 1. Find the center $$(h,k)$$.
 2. Identify the larger denominator. This determines the major axis.
 3. Move $$a$$ units from the center along the major axis to find the vertices.
@@ -553,7 +553,7 @@ The conjugate hyperbola swaps the roles of the terms (e.g. $$\frac{y^{2}}{a^{2}}
 
 ### Graphing a hyperbola
 
-:::strategy{title="Graphing a hyperbola in standard form"}
+:::strategy
 1. Find the center $$(h,k)$$.
 2. Identify the positive term. This tells you whether the transverse axis is horizontal or vertical.
 3. Move $$a$$ units from the center along the transverse axis to find the vertices.
@@ -899,7 +899,7 @@ $$
 
 When a problem gives a focus, a directrix, and eccentricity, start from the definition instead of trying to guess the standard form immediately.
 
-:::strategy{title="From focus-directrix data to an equation"}
+:::strategy
 1. Write the distance from $$(x,y)$$ to the focus.
 2. Write the perpendicular distance from $$(x,y)$$ to the directrix.
 3. Set $$PF=e\,d(P,\ell)$$.
@@ -1318,7 +1318,7 @@ Depending on which side the directrix is on and whether it is horizontal or vert
 
 ### Reading polar conic equations
 
-:::strategy{title="Reading polar conic equations"}
+:::strategy
 1. Rewrite the denominator so the constant term is $$1$$.
 2. The coefficient of $$\sin\theta$$ or $$\cos\theta$$ is the eccentricity $$e$$.
 3. Use $$e$$ to classify the conic.
@@ -1400,7 +1400,7 @@ $$
 x=r\cos\theta,\qquad y=r\sin\theta,\qquad r^2=x^2+y^2.
 $$
 
-:::strategy{title="Converting polar conics to rectangular form"}
+:::strategy
 1. Multiply both sides by the denominator.
 2. Replace $$r\cos\theta$$ with $$x$$ or $$r\sin\theta$$ with $$y$$.
 3. Isolate the remaining $$r$$ term.

@@ -165,7 +165,7 @@ Essentially, drag acts like a friction force for falling objects. At some point,
 
 ## Solving Newton's second law problems
 
-:::strategy{title="Newton's second law problems"}
+:::strategy
 1. Draw a free-body diagram for each object.
 2. Pick axes that simplify the motion.
 3. Write $$\sum F = ma$$ along each axis.

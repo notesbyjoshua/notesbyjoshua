@@ -663,7 +663,7 @@ An **optimization** problem asks for the input that makes a quantity as large or
 
 The usual workflow is:
 
-:::strategy{title="Solving an optimization problem"}
+:::strategy
 1. Decide what quantity you want to maximize or minimize.
 2. Draw a picture if the problem is geometric.
 3. Name variables.

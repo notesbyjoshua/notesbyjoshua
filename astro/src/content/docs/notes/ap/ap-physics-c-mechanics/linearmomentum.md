@@ -394,7 +394,7 @@ This loss is maximal among all collisions with the same initial momenta, because
 
 The **ballistic pendulum** is the classic problem that requires *both* momentum and energy, applied to *different stages*. The most standard example involves a bullet embedding itself in a hanging block which causes the block to swing up.
 
-:::strategy{title="Ballistic pendulum"}
+:::strategy
 The trick is recognizing that the embedding (a perfectly inelastic collision) conserves momentum but loses energy, while the subsequent swing (no friction, no collision) conserves mechanical energy. Analyze each stage with the correct conserved quantity, then combine.
 :::
 

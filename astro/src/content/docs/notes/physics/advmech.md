@@ -64,7 +64,7 @@ For this to vanish for **every** allowed $$\delta q$$, the bracket must be zero 
 
 ### General process
 
-:::strategy{title="Solving with the Lagrangian"}
+:::strategy
 1. Pick generalized coordinates that respect the constraints.
 2. Write $$T$$ and $$V$$ in those coordinates; form $$L=T-V$$.
 3. For each coordinate, compute $$\partial L/\partial \dot q_i$$ and $$\partial L/\partial q_i$$ and assemble the Euler–Lagrange equation.
@@ -1038,7 +1038,7 @@ i.e. L4/L5 are stable whenever one body is at least $$\sim25$$ times heavier tha
 
 The hardest part of an advanced-mechanics problem is usually choosing the right framework before any algebra. A decision tree:
 
-:::strategy{title="Choosing a framework"}
+:::strategy
 1. **Constraints, weird geometry, or you don't want to find constraint forces**: Reach for **Lagrangian mechanics**. Pick generalized coordinates that build the constraints in, write $$L=T-V$$, and *before* expanding the equations look for cyclic coordinates (conserved canonical momenta) and the conserved energy function $$h$$. Half of all "find the equation of motion" and "find the small-oscillation frequency" problems fall to two derivatives this way.
 2. **Two bodies under a central force, or motion in a $$1/r$$ potential / $$1/r^2$$ force**: Reduce to a one-body problem with the reduced mass, then use **conservation of $$E$$ and $$L$$**. Read the *qualitative* behavior off the effective potential $$V_{\text{eff}}=L^2/2\mu r^2+V(r)$$ (circular orbit at its minimum, bound motion between turning points), and get *numbers* from vis-viva and Kepler's laws. Do not integrate the trajectory when energy and angular momentum already pin down what you need.
 3. **Stable equilibrium — "find the frequency of small oscillations"**: Expand the potential to second order: $$\omega=\sqrt{V''(x_0)/m_{\text{eff}}}$$ for one coordinate. For several coupled coordinates, build the mass and stiffness matrices and solve $$\det(\mathbf K-\omega^2\mathbf M)=0$$ for the **normal modes**; exploit symmetry to guess the mode shapes first. Watch for zero-frequency modes — they signal an unconstrained translation or rotation, not an error.

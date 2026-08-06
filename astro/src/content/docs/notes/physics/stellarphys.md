@@ -635,7 +635,7 @@ Measuring $$P$$ and $$a$$ gives the *total* mass. The individual masses follow f
 
 Stellar problems reward a small set of reusable moves:
 
-:::strategy{title="Stellar physics problems"}
+:::strategy
 1. **Photometry questions** (temperature, size, distance, brightness): reach for $$L=4\pi R^2\sigma T^4$$, $$F=L/4\pi d^2$$, Wien's law, and the magnitude/distance-modulus relations. Watch the backwards, logarithmic magnitude scale.
 2. **Distance questions:** parallax for nearby stars ($$d[\text{pc}]=1/p['']$$); standard candles (known $$M$$) plus the distance modulus for far ones.
 3. **Interior/structure questions:** start from hydrostatic equilibrium and *estimate* with $$P_c\sim GM^2/R^4$$; bring in the ideal-gas law for $$T_c$$ and the virial theorem for energetics.

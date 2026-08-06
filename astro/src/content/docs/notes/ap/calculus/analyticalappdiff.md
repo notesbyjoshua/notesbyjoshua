@@ -191,7 +191,7 @@ Endpoints matter for absolute extrema because EVT guarantees the largest and sma
 
 When justifying an absolute maximum or minimum, compare function values, not derivative values. The derivative helps you find candidates, but the output values decide the final answer.
 
-:::strategy{title="Closed interval extrema"}
+:::strategy
 1. Check that $$f$$ is continuous on the closed interval.
 2. Find critical points inside the interval.
 3. Evaluate $$f$$ at those critical points and at both endpoints.
@@ -438,7 +438,7 @@ The Second Derivative Test is faster when it applies, but it has two limits:
 - it only applies when $$f'(c)=0$$,
 - if $$f''(c)=0$$, the test gives no conclusion.
 
-:::tip{title="Derivative test choice"}
+:::tip
 Use the First Derivative Test when a sign chart is already natural or when $$f'$$ is undefined at the critical point. Use the Second Derivative Test when $$f''(c)$$ is easy to compute and clearly positive or negative.
 :::
 
@@ -534,7 +534,7 @@ Optimization problems often fail because the domain is ignored. After writing th
 
 If the allowed domain is closed, use endpoint comparison. If the domain is open or unbounded, use derivative signs and behavior at the ends.
 
-:::strategy{title="Optimization"}
+:::strategy
 1. Identify the quantity to optimize.
 2. Write it as a function of one variable.
 3. Determine the feasible domain.
@@ -808,7 +808,7 @@ So the solution is approximately $$x\approx0.7391$$.
 
 Analytical applications ask you to turn derivative information into a story about the original function. The safest approach is to separate **where candidates occur** from **what those candidates mean**.
 
-:::strategy{title="Function analysis workflow"}
+:::strategy
 1. Find the domain first, because endpoints and discontinuities matter.
 2. Find critical numbers from $$f'(x)=0$$ and places where $$f'$$ is undefined.
 3. Build a sign chart for $$f'$$ to determine increasing/decreasing behavior.

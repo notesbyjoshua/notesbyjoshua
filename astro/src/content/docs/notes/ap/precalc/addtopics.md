@@ -102,7 +102,7 @@ $$
 
 Mathematical induction is a great way to prove statements $$P(n)$$ for all integers $$n \ge n_0$$ when you don't know how to derive it.
 
-:::strategy{title="Mathematical induction"}
+:::strategy
 1. **Base case**: Verify $$P(n_0)$$ is true.
 2. **Inductive hypothesis**: Assume $$P(k)$$ holds for some $$k \ge n_0$$.
 3. **Inductive step**: Prove $$P(k+1)$$ follows from $$P(k)$$.

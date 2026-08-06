@@ -129,7 +129,7 @@ All the transformations learned in Unit 4 apply here as well.
 
 To graph one full period:
 
-:::strategy{title="Graphing a transformed sine or cosine"}
+:::strategy
 1. Find the amplitude $$\lvert A \rvert$$.
 2. Find the period $$\frac{2\pi}{\lvert B \rvert}$$.
 3. Find the phase shift and starting point.
@@ -967,7 +967,7 @@ $$
 
 A general strategy is:
 
-:::strategy{title="Solving a trigonometric equation"}
+:::strategy
 1. Use identities to rewrite the equation using one trig function when possible.
 2. Factor if the equation is quadratic in a trig expression.
 3. Find the reference angle using the unit circle.

@@ -147,7 +147,7 @@ $$
 
 The **p-value** is the probability, assuming $$H_0$$ is true, of getting a test statistic as extreme as or more extreme than the observed result in the direction of $$H_a$$.
 
-:::strategy{title="Hypothesis test wording"}
+:::strategy
 1. Define the parameter in context.
 2. State $$H_0$$ and $$H_a$$ using the parameter, not just words.
 3. Check conditions using the null value when needed.
@@ -322,7 +322,7 @@ $$
 
 where $$r$$ is the number of rows and $$c$$ is the number of columns.
 
-:::strategy{title="Choosing the chi-square procedure"}
+:::strategy
 - Use **homogeneity** when there are separate samples or treatment groups and one categorical response.
 - Use **independence** when there is one sample and two categorical variables measured on each individual.
 :::

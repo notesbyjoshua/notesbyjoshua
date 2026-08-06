@@ -578,7 +578,7 @@ $$
 
 There are three common strategies:
 
-:::strategy{title="Solving exponential and logarithmic equations"}
+:::strategy
 1. If the bases match, set exponents equal.
 2. If the bases do not match, take logs of both sides.
 3. If logs are involved, rewrite as exponentials or combine logs first.

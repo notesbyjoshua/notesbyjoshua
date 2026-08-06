@@ -1008,7 +1008,7 @@ Linear systems are predictable: two lines can meet once, never meet, or be the s
 
 The goal is still the same: find all ordered pairs that satisfy every equation. The difference is that the algebra often produces quadratics or higher-degree equations, so there may be multiple solutions.
 
-:::strategy{title="Nonlinear systems"}
+:::strategy
 - Use substitution when one equation is easy to solve for one variable.
 - Use elimination when the nonlinear terms can be canceled.
 - Check all answers, especially after squaring or multiplying by expressions involving variables.
@@ -1073,7 +1073,7 @@ Equations usually describe boundaries: lines, circles, parabolas, and so on. Ine
 
 For example, $$y>2x+1$$ means all points above the line $$y=2x+1$$. The line itself is not included because the inequality is strict. In contrast, $$y\ge 2x+1$$ includes the line.
 
-:::strategy{title="Graphing a linear inequality"}
+:::strategy
 1. Graph the boundary line.
 2. Use a solid line for $$\le$$ or $$\ge$$.
 3. Use a dashed line for $$<$$ or $$>$$.

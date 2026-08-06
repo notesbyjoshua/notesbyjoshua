@@ -771,7 +771,7 @@ $$
 
 Series tests are tools for different patterns.
 
-:::strategy{title="Choosing a convergence test"}
+:::strategy
 1. First check whether $$a_n\to0$$. If not, the series diverges.
 2. Look for a geometric series, $$p$$-series, or telescoping pattern (cancellation) before using heavier tests.
 3. Use comparison tests for positive series that resemble simpler known series.
@@ -1209,7 +1209,7 @@ $$
 
 Series questions are decision problems. The hard part is usually not algebra; it is choosing a test whose hypotheses match the series.
 
-:::strategy{title="Choosing a convergence test"}
+:::strategy
 1. First check whether $$a_n\to0$$. If not, the series diverges.
 2. Look for a geometric series, $$p$$-series, or telescoping pattern before using heavier tests.
 3. Use comparison tests for positive series that resemble simpler known series.

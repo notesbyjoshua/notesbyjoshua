@@ -8,7 +8,7 @@ sidebar:
 
 When the choices differ mainly in punctuation, identify clauses before thinking about commas or semicolons. When the choices differ in verbs or pronouns, find the word that controls the agreement or meaning.
 
-:::strategy{title="A grammar process that works"}
+:::strategy
 1. Read the entire sentence, including the words after the blank.
 2. Identify what changes between the choices: punctuation, verb, pronoun, modifier, or another feature.
 3. Ignore interrupting phrases and find the sentence's basic structure.
@@ -16,7 +16,7 @@ When the choices differ mainly in punctuation, identify clauses before thinking 
 5. Reread the completed sentence to check its meaning.
 :::
 
-:::tip{title="If grammar is your weakest area"}
+:::tip
 Start with sentence boundaries. Learn to identify a complete sentence, then master periods, semicolons, commas with coordinating conjunctions, and colons. This one skill resolves many punctuation questions and makes later rules easier to understand.
 :::
 
@@ -83,7 +83,7 @@ Both sides are complete sentences. *However* is a transition, not a coordinating
 
 </div>
 
-:::tip{title="Period and semicolon choices"}
+:::tip
 A period and semicolon perform the same boundary job between two complete sentences. If they appear as separate answer choices with no other meaningful difference, neither can be uniquely correct; look for another structural difference.
 :::
 
@@ -157,7 +157,7 @@ Do not place a comma between a subject and its verb or between a verb and its ob
 
 ### Fast Punctuation Decision Tree
 
-:::strategy{title="Choosing punctuation"}
+:::strategy
 1. Check whether the material on each side is a complete sentence.
 2. If both sides are complete, use a period, semicolon, or comma plus a coordinating conjunction.
 3. If a complete sentence introduces an explanation or list, consider a colon.
@@ -177,7 +177,7 @@ Use apostrophes for possession, not ordinary plurals:
 
 *Its* means belonging to it; *it's* means *it is* or *it has*. Possessive pronouns such as *its*, *yours*, *hers*, *ours*, and *theirs* do not use apostrophes.
 
-:::tip{title="Testing apostrophes"}
+:::tip
 For *it's*, substitute *it is* or *it has*. If neither works, use *its*. For other nouns, first decide whether the sentence means more than one noun or something belonging to the noun.
 :::
 
@@ -228,7 +228,7 @@ The subject is *each*, which is singular. The plural nouns *murals* and *artists
 
 </div>
 
-:::tip{title="Finding the true subject"}
+:::tip
 Temporarily cross out prepositional phrases beginning with words such as *of*, *in*, *with*, or *among*. Then match the verb to the remaining subject.
 :::
 
@@ -283,7 +283,7 @@ Use subject pronouns for subjects and object pronouns for objects. Remove the ot
 
 For *who* and *whom*, substitute *he* and *him*: *he* corresponds to *who*, while *him* corresponds to *whom*.
 
-:::tip{title="Pronoun questions"}
+:::tip
 Identify the antecedent—the noun the pronoun replaces. Then check number, person, and clarity. If two different nouns could be the antecedent, the pronoun may be ambiguous.
 :::
 
@@ -305,7 +305,7 @@ The research team performed the reviewing, so it should appear immediately after
 
 </div>
 
-:::tip{title="Checking modifiers"}
+:::tip
 Draw an arrow from the opening phrase to the noun immediately after the comma. If that noun cannot logically perform the action in the phrase, the modifier is misplaced.
 :::
 

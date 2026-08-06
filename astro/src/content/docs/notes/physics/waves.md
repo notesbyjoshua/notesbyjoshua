@@ -438,7 +438,7 @@ There is now a **minimum frequency** $$\omega_0$$: drive the string below it and
 
 Match the situation to the right tool before reaching for algebra:
 
-:::strategy{title="Choosing the right wave tool"}
+:::strategy
 1. **A pulse or wave travels through a medium and you want its speed**: use the "restoring force over inertia" template — $$v=\sqrt{T/\mu}$$ on a string, $$v=\sqrt{B/\rho}=\sqrt{\gamma RT/M}$$ for sound, $$v=\sqrt{gD}$$ in shallow water. If the tension (hence speed) varies along the path, integrate $$\tau=\int dx/v(x)$$, as for the hanging rope.
 2. **The medium is confined between boundaries (string or pipe)**: it is a normal-mode problem. Fit half-wavelengths to the boundary conditions — node at a fixed/closed end, antinode at a free/open end — to get $$\lambda_n=2L/n$$, $$f_n=nv/2L$$ for symmetric ends, or the odd-only series $$f_n=(2n-1)v/4L$$ for open–closed.
 3. **Two waves overlap and you want loud/quiet spots**: superpose. Convert any path-length difference to phase via $$\delta=\tfrac{2\pi}{\lambda}\Delta r$$; constructive at $$\Delta r=m\lambda$$, destructive at $$\Delta r=(m+\tfrac12)\lambda$$, net amplitude $$2A\cos\tfrac{\delta}{2}$$.

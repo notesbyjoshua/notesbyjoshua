@@ -573,7 +573,7 @@ If the object is not accelerating linearly or angularly (basically not moving or
 
 The standard trick is to **put the pivot at the location of an unknown force**. Since a force exerts zero torque about a point on its own line of action (since the distance to the pivot point is zero), that unknown drops out of the torque equation entirely, leaving fewer unknowns. Hinge forces and contact forces of unknown direction are the usual targets: pivot at the hinge and you never need to know the hinge force to find everything else. Once the other unknowns are found, the force equations $$\sum F_x = 0$$ and $$\sum F_y = 0$$ recover the hinge force.
 
-:::strategy{title="Static equilibrium problems"}
+:::strategy
 1. Draw a free-body diagram of the extended object, placing each force at its actual point of application (do not collapse the body to a point — location matters for torque).
 2. Pick a sign convention (counterclockwise positive) and a smart pivot, usually at an unknown force.
 3. Write $$\sum\tau = 0$$ about that pivot using lever arms.

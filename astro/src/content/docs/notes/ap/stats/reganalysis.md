@@ -30,7 +30,7 @@ A **scatterplot** plots each case as a point $$(x, y)$$ in the plane. Choose sca
 
 When you describe a scatterplot, organize your comments around three ideas: **shape**, **direction**, and **strength**.
 
-:::strategy{title="Describing scatterplots"}
+:::strategy
 Use form, direction, strength, and unusual features. Then connect the pattern to context: "As [explanatory variable] increases, [response variable] tends to..." However, NEVER imply causation unless it is specifically stated! Correlation does NOT imply causation!
 :::
 

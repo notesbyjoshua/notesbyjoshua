@@ -116,7 +116,7 @@ The negative sign in Faraday's law is **Lenz's law**: the induced current produc
 
 Lenz's law is conservation of energy in disguise. If induced currents helped the flux change instead of opposing it, systems could generate energy from nothing.
 
-:::strategy{title="Finding induced current direction"}
+:::strategy
 1. Identify whether the magnetic flux through the loop is increasing or decreasing.
 2. Decide what magnetic field direction the induced current must create to oppose that change.
 3. Use the right-hand rule for loops to get current direction.

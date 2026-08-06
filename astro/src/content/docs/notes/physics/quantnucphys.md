@@ -613,7 +613,7 @@ The Sun's spectrum is the reverse situation: a hot continuous (blackbody) source
 
 Modern-physics problems usually reduce to "which quantization or conservation rule applies." Match the situation to the right tool:
 
-:::strategy{title="Which quantization or conservation rule applies"}
+:::strategy
 1. **A particle is trapped and you want its energy levels:** apply the WKB / Bohr–Sommerfeld rule $$\oint p\,dx = \left(n+\tfrac{\alpha}{2\pi}\right)h$$. Count turning points to fix $$\alpha$$ — $$\pi$$ per hard wall, $$\pi/2$$ per soft turning point — then do the loop integral (box gives $$E_n = n^2h^2/8mL^2$$, oscillator gives $$E_n = \hbar\omega_0(n+\tfrac12)$$).
 2. **Rotational / circular-orbit quantization:** use Bohr's condition $$L = n\hbar$$. For hydrogen, pair it with the Coulomb-centripetal balance $$mv^2/r = e^2/4\pi\epsilon_0 r^2$$ to get $$r_n = a_0 n^2$$ and $$E_n = -13.6\,\text{eV}/n^2$$; transitions emit $$\hbar\omega = E_i - E_f$$.
 3. **An order-of-magnitude estimate of a ground-state energy or size:** use the uncertainty principle $$\Delta x\,\Delta p \ge \hbar/2$$, set $$\Delta p \sim \hbar/\Delta x$$, write $$E(\Delta x)$$ and minimize. The same trick gives spectral linewidths and lifetimes via $$\Delta E\,\Delta t \ge \hbar/2$$.

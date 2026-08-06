@@ -298,7 +298,7 @@ $$
 
 which is *constant in time* even though the particle is not rotating about anything — because $$r\sin\theta$$ stays equal to the fixed lever arm $$r$$. This is a useful sanity check: angular momentum is conserved here because no force (hence no torque) acts.
 
-:::tip{title="State the reference point"}
+:::tip
 Always state the reference point before quoting an angular momentum; the same motion can have any value of $$L$$, including zero (choose the origin on the line of motion), depending on where you measure from.
 :::
 

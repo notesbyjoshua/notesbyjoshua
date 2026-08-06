@@ -746,7 +746,7 @@ A "spread out" configuration has higher multiplicity, hence higher entropy, than
 
 Read the process first, then pick the constraint that turns the first law into something solvable:
 
-:::strategy{title="Pick the constraint, then apply the first law"}
+:::strategy
 1. **Heating/cooling or a phase change, no gas process**: Stack $$Q = mc\,\Delta T$$ for each temperature change and $$Q = Lm$$ for each phase change, and add (do the stages separately — never melt and warm in one step). For mixtures set $$\sum Q = 0$$.
 2. **Conduction / steady-state heat flow**: Use $$H = kA(T_H - T_L)/L$$, treat layers as thermal resistances $$R = L/k$$ in series (add $$L_i/k_i$$) and areas in parallel; the same $$H$$ flows through every series layer.
 3. **A named gas process**: Apply $$\Delta E_{\text{int}} = Q + W$$ with the matching constraint — isochoric $$W=0$$, isobaric $$W=-p\,\Delta V$$, isothermal $$\Delta E_{\text{int}}=0$$ so $$W=-nRT\ln(V_f/V_i)$$, adiabatic $$Q=0$$ with $$pV^\gamma=\text{const}$$ and $$W=(p_fV_f-p_iV_i)/(\gamma-1)$$. Always $$\Delta E_{\text{int}} = nC_V\Delta T$$.

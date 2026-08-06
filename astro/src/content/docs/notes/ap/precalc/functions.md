@@ -51,7 +51,7 @@ Always keep track of domain restrictions, and the legal domain is everything tha
 
 The range is often harder than the domain because it asks what output values are possible.
 
-:::strategy{title="Finding the range"}
+:::strategy
 - Graphing the function
 - Rewriting the formula by completing the square
 - finding the inverse function's domain
@@ -694,7 +694,7 @@ The notation $$f^{-1}(x)$$ means "the inverse function of $$f$$." It does **not*
 
 ## Finding an Inverse
 
-:::strategy{title="Finding an inverse"}
+:::strategy
 1. Write $$y=f(x)$$.
 2. Switch $$x$$ and $$y$$.
 3. Solve for $$y$$.

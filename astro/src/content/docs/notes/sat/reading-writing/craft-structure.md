@@ -10,7 +10,7 @@ sidebar:
 - **Text Structure and Purpose:** explain what a sentence or part of the passage does.
 - **Cross-Text Connections:** compare the claims or perspectives of two short passages.
 
-:::tip{title="If the passage feels complicated"}
+:::tip
 Translate it into plain language. You rarely need to understand every technical noun. Focus on the author's attitude, the logical turn, and the relationship named in the question. You can even replace technical nouns you don't know with something easier that is similar (e.g. "craniofacial syndrome" with "disease") as long as the meaning of the sentence doesn't change significantly.
 :::
 
@@ -20,7 +20,7 @@ The SAT asks for the meaning of a word in its sentence, not necessarily its most
 
 A word can have several valid definitions, but only one will preserve the logic of the sentence. Nearby contrast words, examples, and descriptions often reveal the intended meaning.
 
-:::strategy{title="Solving words-in-context questions"}
+:::strategy
 1. Cover the choices.
 2. Replace the tested word with a simple word of your own.
 3. Determine whether the sentence's tone is positive, negative, or neutral.
@@ -62,7 +62,7 @@ Common traps include:
 - a word that is too extreme,
 - two similar words when only one is precise.
 
-:::tip{title="When you do not know the tested word"}
+:::tip
 Use the rest of the sentence. Decide what kind of word must fit—positive or negative, strong or mild, agreement or contrast—and eliminate choices that break that logic. You can solve many vocabulary questions without knowing every definition immediately.
 :::
 
@@ -107,7 +107,7 @@ State the function in your own words before reading the choices. The best answer
 
 </div>
 
-:::tip{title="Content versus function"}
+:::tip
 If your answer merely repeats the sentence, add a verb that describes its job: *illustrates*, *supports*, *contrasts*, *qualifies*, *defines*, or *concludes*.
 :::
 
@@ -147,7 +147,7 @@ The author of Passage 2 would agree that trees are useful but qualify the claim 
 
 </div>
 
-:::strategy{title="Comparing two passages"}
+:::strategy
 1. Write the main claim of Passage 1 in a few words.
 2. Write the main claim of Passage 2 in a few words.
 3. Decide whether Passage 2 agrees, disagrees, qualifies, or shifts the focus.

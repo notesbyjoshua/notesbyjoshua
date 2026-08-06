@@ -44,7 +44,7 @@ In a slope field, each small segment represents the slope assigned by the differ
 
 To sketch a solution curve through an initial condition, start at the given point and move in the direction of the nearby line segments. Do not connect the segments with sharp corners; the solution should be a smooth curve whose tangent direction matches the field. You can reason about the solution without solving the differential equation by asking where slopes are positive, negative, zero, steep, or shallow.
 
-:::strategy{title="Analyzing a slope field"}
+:::strategy
 - look for where slopes are zero,
 - look for where slopes are positive/negative,
 - notice rows or columns where slopes repeat,
@@ -567,7 +567,7 @@ Differential equation questions often move among four representations:
 - a particular solution through an initial condition,
 - a verbal model of growth, decay, or limiting behavior.
 
-:::strategy{title="Differential equation workflow"}
+:::strategy
 1. If asked to verify a solution, substitute both $$y$$ and $$dy/dx$$ into the differential equation.
 2. If asked to solve, check whether variables can be separated.
 3. If an initial condition is given, use it after integrating to find the constant.

@@ -56,7 +56,7 @@ Notice that this is a rate, not a total: it does not say there are $$40$$ fish, 
 
 Contextual problems often include more variables than you actually need. The goal is to write one equation connecting the changing quantities, then identify which rate the question asks for.
 
-:::strategy{title="Related quantities"}
+:::strategy
 - define every variable before differentiating,
 - record which variables are changing,
 - keep constants as constants,
@@ -363,7 +363,7 @@ $$
 
 Do not plug in the numerical values before differentiating. The equation must still show how the variables are changing.
 
-:::strategy{title="Related rates"}
+:::strategy
 1. Draw and label a diagram.
 2. Write an equation relating the variables.
 3. Differentiate implicitly with respect to time.

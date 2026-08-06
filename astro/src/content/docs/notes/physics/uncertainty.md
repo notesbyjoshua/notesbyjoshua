@@ -104,7 +104,7 @@ So $$f=\sin30^\circ=0.500\pm0.008$$. The derivative-based method handles *any* f
 
 A quick decision tree for picking the right propagation rule (default to quadrature unless told otherwise):
 
-:::strategy{title="Picking the right propagation rule"}
+:::strategy
 1. **Adding or subtracting measured quantities** ($$f=x\pm y$$): combine **absolute** uncertainties, $$\delta f=\sqrt{(\delta x)^2+(\delta y)^2}$$ (or $$\delta f=\delta x+\delta y$$ worst case). Subtraction never subtracts errors — watch for two nearly-equal numbers blowing up the relative error.
 2. **Multiplying, dividing, or taking powers** ($$f=x^a y^b/z^c$$): combine **relative** uncertainties weighted by exponents, $$\dfrac{\delta f}{f}=\sqrt{\left(a\dfrac{\delta x}{x}\right)^2+\left(b\dfrac{\delta y}{y}\right)^2+\left(c\dfrac{\delta z}{z}\right)^2}$$. For a single power $$f=x^n$$, $$\dfrac{\delta f}{f}=\lvert n\rvert\dfrac{\delta x}{x}$$.
 3. **Any other function** (trig, log, exp, mixed): drop to the **master formula** $$\delta f=\sqrt{\sum_i\left(\dfrac{\partial f}{\partial x_i}\,\delta x_i\right)^2}$$; for one variable, $$\delta f=\lvert f'(x)\rvert\,\delta x$$. Convert angles to radians before differentiating.

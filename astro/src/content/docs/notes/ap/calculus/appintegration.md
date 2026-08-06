@@ -172,7 +172,7 @@ Do not assume the first function listed is on top. Test a point or inspect the g
 
 The subtraction order is chosen so each slice length is nonnegative.
 
-:::strategy{title="Area between curves"}
+:::strategy
 1. Sketch or reason about the region.
 2. Find intersection points to determine bounds.
 3. Decide whether vertical or horizontal slices describe the region more cleanly.
@@ -732,7 +732,7 @@ $$
 
 Applications of integration are mostly about choosing the correct tiny piece.
 
-:::strategy{title="Choosing an integral model"}
+:::strategy
 1. Area between curves: slice vertically for top minus bottom or horizontally for right minus left.
 2. Volume by cross sections: identify the base interval and write the cross-sectional area $$A(x)$$ or $$A(y)$$.
 3. Washers/disks: radii are perpendicular to the axis of rotation.

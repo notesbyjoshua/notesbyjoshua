@@ -309,7 +309,7 @@ A quick check with equation 5: $$\Delta x = \frac{v_0 + v}{2}t = \frac{25 + 0}{2
 
 The Big Five fail whenever $$a$$ varies, so you fall back on the defining derivatives and choose your integration variable based on what $$a$$ depends on:
 
-:::strategy{title="Non-constant acceleration"}
+:::strategy
 - **$$a$$ depends on time, $$a = a(t)$$.** Integrate directly: $$v = v_0 + \int a(t)\, dt$$, then $$x = x_0 + \int v(t)\, dt$$.
 - **$$a$$ depends on position, $$a = a(x)$$.** Time is not very useful here, so eliminate it with the chain rule. Writing $$a = dv/dt = (dv/dx)(dx/dt) = v\,dv/dx$$ gives the separable relation $$a(x)\, dx = v\, dv$$. Integrating both sides connects speed to position without ever solving for time, much like how equation 4 was derived.
 - **$$a$$ depends on velocity, $$a = a(v)$$.** Separate variables in $$dv/dt = a(v)$$ to get $$dt = dv/a(v)$$, or use $$v\,dv/dx = a(v)$$ if you want $$v$$ as a function of $$x$$.

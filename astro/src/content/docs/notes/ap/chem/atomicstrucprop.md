@@ -148,7 +148,7 @@ and you round $$n$$ to the nearest integer when the data allows it (subject to m
 
 When a problem gives **mass percentages** (or masses of elements in a sample), treat the sample as a sample of *$$100\ \text{g}$$* so each element’s mass in grams equals its *percent* numerically.
 
-:::strategy{title="Mass percent to empirical formula"}
+:::strategy
 
 1. Convert each element’s mass to moles using its molar mass.
 

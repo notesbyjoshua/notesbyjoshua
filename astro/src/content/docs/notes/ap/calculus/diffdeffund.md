@@ -621,7 +621,7 @@ $$
 
 Most derivative problems are not about one isolated rule. They are about choosing the order in which rules apply.
 
-:::strategy{title="Derivative procedure"}
+:::strategy
 1. Simplify obvious algebra first, especially constants and powers.
 2. Identify the outermost operation: sum, product, quotient, power, trig, exponential, or logarithm.
 3. Apply the rule for the outermost operation.

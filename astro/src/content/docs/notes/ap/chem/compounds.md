@@ -92,7 +92,7 @@ For resonance to be meaningful, the alternative structures must involve the *sam
 
 A practical algorithm:
 
-:::strategy{title="Constructing Lewis structures"}
+:::strategy
 
 1. Count total **valence electrons** (adjust for charge on **ions**).
 2. Choose a **central atom**—usually the least electronegative element that is not hydrogen. For only two atoms, there is no unique “center”; place them adjacent.

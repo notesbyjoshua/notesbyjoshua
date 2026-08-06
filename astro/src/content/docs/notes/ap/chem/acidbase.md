@@ -170,7 +170,7 @@ $$
 [\text{H}_3\text{O}^+] = 10^{-\text{pH}}, \qquad [\text{OH}^-] = 10^{-\text{pOH}}.
 $$
 
-:::strategy{title="Choosing a pH calculation method"}
+:::strategy
 
 1. **Strong acid or strong base only**: use stoichiometric dissociation first, then pH/pOH.
 2. **Weak acid or weak base only**: write $$K_a$$ or $$K_b$$ and use an ICE table.

@@ -485,7 +485,7 @@ $$
 
 where $$\kappa=1+\chi_e$$ is the relative permittivity and $$\varepsilon=\kappa\varepsilon_0$$ is the permittivity. In this special case, symmetric Gauss-law problems often amount to replacing $$\varepsilon_0$$ by $$\varepsilon$$. The shortcut is not reliable when the dielectric only partly fills the field region, $$\kappa$$ varies with position, or the material is nonlinear or anisotropic.
 
-:::strategy{title="Fields in dielectric problems"}
+:::strategy
 1. Identify which charges are externally supplied (**free**) and which arise from polarization (**bound**).
 2. Use symmetry and $$\oint\vec D\cdot d\vec A=Q_{\text{free, enc}}$$ to find $$\vec D$$ when possible.
 3. Use the material relation, such as $$\vec D=\varepsilon\vec E$$, to recover the physical field $$\vec E$$.

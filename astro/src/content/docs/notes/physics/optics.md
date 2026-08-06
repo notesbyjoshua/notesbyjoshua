@@ -224,7 +224,7 @@ For a **diverging (biconcave) lens**:
 2. A ray aimed toward the far focal point emerges parallel to the axis.
 3. A ray through the center of a thin lens continues nearly straight.
 
-:::tip{title="Ray-tracing first, equation second"}
+:::tip
 Ray tracing tells you the image type before algebra: real or virtual, upright or inverted, enlarged or reduced. Then the thin-lens equation gives the exact distance and magnification.
 :::
 
@@ -731,7 +731,7 @@ For sunlight reflecting off water, $$\theta_B=\arctan(1.33)=53.1^\circ$$ from th
 
 A quick decision tree for picking the right tool:
 
-:::strategy{title="Choosing the right optics tool"}
+:::strategy
 1. **Features much larger than $$\lambda$$ (mirrors, lenses, shadows)**: Geometric optics. Trace rays, apply the law of reflection $$\theta_i=\theta_r$$ and Snell's law $$n_1\sin\theta_1=n_2\sin\theta_2$$. For plane-mirror geometry, reflection-point heights (mirror length $$=H/2$$) and image counts ($$N=360^\circ/\phi-1$$) follow from equal-angle ray tracing.
 2. **Image formation by a mirror or lens**: Use $$\frac{1}{f}=\frac{1}{d_o}+\frac{1}{d_i}$$ with $$m=-\frac{d_i}{d_o}$$, and $$f=R/2$$ for a mirror or the lensmaker's $$\frac{1}{f}=(n-1)\left(\frac{1}{R_1}-\frac{1}{R_2}\right)$$ for a lens. Pin down every sign before plugging in. For multi-element systems, feed each image forward as the next object and multiply magnifications, or multiply **ABCD matrices** ($$B=0$$ images, $$C=-1/f_{\text{eff}}$$). Optical instruments: magnifier $$M=25\text{ cm}/f$$, telescope $$M=-f_o/f_e$$.
 3. **A single curved interface (not a lens)**: Refraction at a spherical surface $$\frac{n_1}{s_o}+\frac{n_2}{s_i}=\frac{n_2-n_1}{R}$$ (real-is-positive; $$R>0$$ when $$C$$ is on the outgoing side) — e.g. the fish-in-a-bowl. Applying it twice *is* the lensmaker's equation.

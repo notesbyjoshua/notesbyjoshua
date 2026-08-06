@@ -517,7 +517,7 @@ Of this, $$0.030\ \text{J}$$ is stored in the capacitor and the remaining $$0.03
 
 The parallel-plate result is one geometry, but the same method works for any capacitor with enough symmetry.
 
-:::strategy{title="Capacitance from symmetry"}
+:::strategy
 1. Find the field between the conductors with Gauss's law.
 2. Integrate the field to get the potential difference $$\Delta V$$.
 3. Use $$C = Q/\Delta V$$.

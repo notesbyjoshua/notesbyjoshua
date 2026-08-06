@@ -13,7 +13,7 @@ These strategies apply to both Reading and Writing and Math. Section-specific me
 
 Start by identifying the topics that cost you the most points. Do not judge a topic only by whether an answer was correct: guessed answers also reveal skills that need work.
 
-:::strategy{title="A simple SAT study cycle"}
+:::strategy
 1. Take a practice set and record every missed or guessed question.
 2. Sort each question by topic and by the reason you missed it.
 3. Review the weakest skill and practice similar questions without a time limit.

@@ -639,7 +639,7 @@ It is instructive to compare this to a *simple* pendulum of the same length $$L=
 
 Not every oscillator is a spring or a pendulum.
 
-:::strategy{title="Finding ω for any oscillator"}
+:::strategy
 The general recipe is always the same: displace the system by a small amount, find the net restoring force as a function of displacement, write it as $$F=-(\text{const})\,x$$, and read off $$\omega^2=\text{const}/m$$.
 :::
 

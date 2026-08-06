@@ -160,7 +160,7 @@ Direct substitution sometimes gives an indeterminate form, which means the algeb
 
 In AP Calculus AB/BC, most of these are handled with algebra or L'Hôpital's Rule (Unit 4).
 
-:::strategy{title="Solving indeterminate forms"}
+:::strategy
 There are many common ways to solve indeterminate forms in limits using algebra:
 
 - Factor and cancel a common factor
@@ -343,7 +343,7 @@ The AP course usually emphasizes the intuition rather than formal proof: limits 
 
 The formal definition is also useful for understanding why limit statements are stronger than a graph or table. A table can suggest that the output is approaching $$L$$, but an epsilon-delta proof says that every possible tolerance can be handled.
 
-:::strategy{title="Basic epsilon-delta proof"}
+:::strategy
 1. Start with $$\lvert f(x)-L\rvert<\varepsilon$$.
 2. Rewrite it until it is controlled by $$\lvert x-a\rvert$$.
 3. Choose $$\delta$$ small enough to force the desired inequality.

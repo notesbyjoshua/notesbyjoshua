@@ -47,7 +47,7 @@ $$
 
 In contest math, we often do not need a closed form.
 
-:::strategy{title="Solving a recurrence in contests"}
+:::strategy
 - Define a sequence clearly.
 - Find a recurrence.
 - Compute initial values.
@@ -543,7 +543,7 @@ $$
 a_n=\sum_k F(k,n).
 $$
 
-:::strategy{title="Snake Oil method"}
+:::strategy
 - Instead of attacking $$a_n$$ directly, form the generating function $$A(x)=\sum_{n \ge 0} a_nx^n = \sum_{n \ge 0}\sum_k F(k,n)x^n$$.
 - Switch the order of summation to get $$A(x)=\sum_k \sum_{n \ge 0} F(k,n)x^n$$.
 - If the inner sums become recognizable generating functions, the problem becomes much easier.

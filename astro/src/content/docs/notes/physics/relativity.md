@@ -377,7 +377,7 @@ In general relativity gravity *is* spacetime curvature: freely falling objects m
 
 Match the question to the cleanest invariant or transformation before grinding through algebra:
 
-:::strategy{title="Choosing the right relativistic tool"}
+:::strategy
 1. **Compare clocks, lengths, or event coordinates between two frames:** write the Lorentz transformation $$t' = \gamma(t - vx/c^2),\ x' = \gamma(x - vt)$$ and read off time dilation (one clock, two times $$\to \Delta t = \gamma\,\Delta\tau$$) or length contraction (two ends, one time $$\to L/\gamma$$). For anything labeled a "paradox," draw the relativity of simultaneity first: the rear clock leads by $$Lv/c^2$$.
 2. **Combine velocities or transform an emission angle:** use velocity addition $$u_x = \dfrac{u_x' + v}{1 + u_x' v/c^2}$$ (with the $$\gamma$$ in $$u_y$$), and aberration $$\cos\theta = \dfrac{\cos\theta_0 + v/c}{1 + (v/c)\cos\theta_0}$$ for light directions and beaming into the $$\sim 1/\gamma$$ cone.
 3. **Collisions, decays, or "find the unknown mass":** go to four-momenta. Conserve the total $$p^\mu = (E, \mathbf{p})$$, then take the norm $$p\cdot p = E^2 - \lvert\mathbf{p}\rvert^2 = m^2$$ in whatever frame is easiest. Work with $$E$$ and $$\mathbf{p}$$, never velocities.

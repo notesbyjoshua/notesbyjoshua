@@ -13,7 +13,7 @@ There are two main jobs:
 - **Rhetorical synthesis:** select information from notes that fulfills a stated goal.
 - **Transitions:** identify the logical relationship between two ideas.
 
-:::tip{title="A high-confidence domain"}
+:::tip
 Both question types have repeatable steps. Read the goal or determine the relationship before looking closely at the choices. This prevents polished but irrelevant answers from distracting you.
 :::
 
@@ -62,7 +62,7 @@ The answer should mention both artists and their shared use of discarded materia
 
 </div>
 
-:::strategy{title="Rhetorical synthesis in three steps"}
+:::strategy
 1. Underline the goal: *introduce*, *compare*, *emphasize a difference*, *give an example*, or another task.
 2. Select only the notes relevant to that goal.
 3. Reject choices that are accurate but answer a different goal.
@@ -109,7 +109,7 @@ The second sentence gives cacti as a specific case of the general statement, so 
 
 </div>
 
-:::tip{title="When two transitions seem possible"}
+:::tip
 Describe the relationship between the entire sentence before the blank and the entire sentence after it. Do not focus on only the last few words. Then substitute each transition and check whether its exact meaning matches.
 :::
 

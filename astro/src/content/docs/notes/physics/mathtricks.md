@@ -188,7 +188,7 @@ The meta-skill is **pattern recognition**: rearrange the physics into one of the
 
 Once the physics is set up, the question becomes *which mathematical tool to reach for*. A quick decision tree:
 
-:::strategy{title="Which mathematical tool to reach for"}
+:::strategy
 1. **A small parameter appears** (a ratio $$x\ll 1$$, a tiny angle, $$v\ll c$$): linearize with the small-value approximations, leading with $$(1+x)^n\approx 1+nx$$. Factor out the large quantity *first* so the leftover is genuinely small.
 2. **You need the next correction, or are near an equilibrium**: Taylor/Maclaurin expand, $$f(x)=f(0)+f'(0)x+\tfrac12 f''(0)x^2+\cdots$$. For small oscillations keep the quadratic term and read off $$\omega=\sqrt{U''(x_0)/m}$$; otherwise the linear term usually suffices.
 3. **A linear ODE with constant coefficients** (oscillations, AC circuits, driven systems): recognize the standard form. Restoring force linear in displacement gives $$\ddot x=-\omega^2 x$$; a single decay/growth rate gives $$\dot y=-ky$$. Write down the known solution instead of re-deriving it.

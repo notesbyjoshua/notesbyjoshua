@@ -245,7 +245,7 @@ A continuous charge distribution is the same argument with the sum replaced by a
 
 </div>
 
-:::tip{title="Matching the Gaussian surface to the symmetry"}
+:::tip
 Good Gaussian surfaces match the symmetry:
 
 - sphere for spherical symmetry,
@@ -501,7 +501,7 @@ The surface of a conductor in equilibrium is itself an equipotential, which is e
 
 A few habits that save the most time on potential problems:
 
-:::tip{title="Potential problem habits"}
+:::tip
 - **Reach for the scalar first.** Potential adds without components, so $$V=k\int dq/r$$ is almost always easier than the field integral. If you ultimately need $$\vec E$$ on a symmetry axis, find $$V$$ and take $$-\nabla V$$ (as in the ring example above).
 - **Look for "constant $$r$$."** If every charge element is equidistant from the field point (e.g. the center of a ring, shell, arc, or hemisphere) the integral collapses to $$V=kQ/r$$ with no work.
 - **If you already have $$\vec E$$, integrate it, don't re-integrate $$dq$$.** Once Gauss's law has given $$\vec E$$, use $$\Delta V=-\int\vec E\cdot d\vec\ell$$ along the simplest path (usually radial, so $$\vec E\cdot d\vec\ell=E\,dr$$).
@@ -703,7 +703,7 @@ and the total induced charge on the grounded sphere is exactly $$q'=-(R/a)q$$.
 
 A short decision tree for which tool to pull off the shelf:
 
-:::strategy{title="Which electrostatics tool to use"}
+:::strategy
 1. **A handful of discrete point charges, want force or field:** Coulomb's law $$\vec F=k\dfrac{q_1q_2}{r^2}\hat r$$ with vector superposition $$\vec E_{\text{net}}=\sum_i\vec E_i$$. Resolve into components or use symmetry to kill a direction before adding — never sum magnitudes.
 2. **The distribution has spherical, cylindrical, or planar symmetry:** Gauss's law $$\oint\vec E\cdot d\vec A=\dfrac{Q_{\text{enc}}}{\varepsilon_0}$$ with the matching Gaussian surface (sphere/cylinder/pillbox). Reach for the memorized shell, solid-sphere, line, and sheet ($$E=\sigma/2\varepsilon_0$$) results rather than re-deriving.
 3. **A continuous blob with no useful symmetry:** Integrate. Set $$dq=\lambda\,d\ell$$, $$\sigma\,dA$$, or $$\rho\,dV$$, pick good coordinates, project the surviving component, then integrate $$dE=k\,dq/r^2$$. You may need to do double or even triple integrals.

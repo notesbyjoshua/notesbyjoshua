@@ -556,7 +556,7 @@ Since sine is the $$y$$-coordinate, it is positive above the $$x$$-axis and nega
 
 The **reference angle** is the acute angle formed by the terminal side of $$\theta$$ and the $$x$$-axis.
 
-:::strategy{title="Evaluating a trig function of any angle"}
+:::strategy
 - If $$\theta$$ is in Quadrant I, the reference angle is $$\theta$$.
 - If $$\theta$$ is in Quadrant II, the reference angle is $$\pi-\theta$$.
 - If $$\theta$$ is in Quadrant III, the reference angle is $$\theta-\pi$$.
@@ -834,7 +834,7 @@ $$
 
 To prove a trigonometric identity, work on one side of the equation and transform it into the other side.
 
-:::strategy{title="Proving trig identities"}
+:::strategy
 Common strategies include:
 
 - rewrite everything in terms of sine and cosine,
