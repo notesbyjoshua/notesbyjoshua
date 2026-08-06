@@ -658,124 +658,6 @@ So support $$B$$ (the fulcrum near the diver) carries a large upward force of ab
 
 ---
 
-## Rolling Without Slipping
-
-Rolling without slipping is a special case of rotary motion that imposes the constraint
-
-$$
-v_{\text{cm}} = R\omega
-$$
-
-and, if the constraint holds through the acceleration,
-
-$$
-a_{\text{cm}} = R\alpha.
-$$
-
-The point of contact is instantaneously at rest relative to the ground, so static friction can provide torque without doing work on an ideal rolling object. Static friction may point uphill or downhill depending on what torque is needed.
-
-// explain more, especially on what RWOS actually means as well as the friction components which might confuse some people.
-
-### Rolling Down an Incline
-
-A round object released on an incline rolls without slipping if friction is sufficient. We can find its center-of-mass acceleration in general, then specialize to common shapes.
-
-
-```tikz
-\usepackage{tikz}
-\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
-\begin{tikzpicture}[>=Stealth, font=\small]
-\draw[thick] (-3,-1) -- (3,-1) -- (3,1.2) -- cycle;
-\begin{scope}[shift={(0,0.15)}, rotate=19]
-\draw[fill=gray!20] (0,0) circle (0.55); \draw[->, blue, thick] (0,0.55) -- (0,1.5) node[above] {$N$}; \draw[->, orange, thick] (0,-0.55) -- (-1,-0.55) node[left] {$f$};
-\end{scope}
-\draw[->, red, thick] (0,0.15) -- (0,-1.5) node[below] {$mg$};
-\draw[->, thick] (1.1,0.25) arc[start angle=20,end angle=-250,radius=0.45] node[right] {$\alpha$};
-\end{tikzpicture}
-```
-
-// the ball is overlapping with the ramp, normal force should go to the center, and the label/arrow for alpha is completely off
-
-<div class="theorem-box">
-
-**Proof (acceleration of a rolling object down an incline).** Let a round body of mass $$M$$, radius $$R$$, and central moment of inertia $$I_{\text{cm}}$$ roll without slipping down an incline of angle $$\theta$$. Three forces act: gravity, the normal force, and static friction $$f$$ acting up the incline (we will let the math confirm the direction).
-
-Translation along the incline (take down-the-incline positive), with the center of mass accelerating at $$a$$:
-
-$$
-Mg\sin\theta - f = Ma.
-$$
-
-Rotation about the center of mass: the only force with a torque about the center is friction (gravity acts at the center, normal force points through the center). Its lever arm is $$R$$, so
-
-$$
-fR = I_{\text{cm}}\alpha.
-$$
-
-Rolling without slipping gives the constraint $$a = R\alpha$$, i.e. $$\alpha = a/R$$. Substitute into the torque equation:
-
-$$
-fR = I_{\text{cm}}\frac{a}{R}\quad\Rightarrow\quad f = \frac{I_{\text{cm}}\,a}{R^2}.
-$$
-
-Put this friction back into the translation equation:
-
-$$
-Mg\sin\theta - \frac{I_{\text{cm}}\,a}{R^2} = Ma\quad\Rightarrow\quad Mg\sin\theta = a\left(M + \frac{I_{\text{cm}}}{R^2}\right).
-$$
-
-Solve for $$a$$:
-
-$$
-a=\frac{g\sin\theta}{1+\dfrac{I_{\text{cm}}}{MR^2}}.
-$$
-
-It is convenient to write $$I_{\text{cm}} = \beta MR^2$$, where the dimensionless $$\beta$$ depends only on the shape ($$\beta = \tfrac12$$ for a disk, $$\tfrac25$$ for a sphere, $$1$$ for a hoop). Then
-
-$$
-a=\frac{g\sin\theta}{1+\beta},\qquad f=\frac{\beta}{1+\beta}\,Mg\sin\theta.
-$$
-
-The friction comes out positive, confirming it points up the incline. Notice $$a$$ is independent of $$M$$ and $$R$$ and is always less than the frictionless slide value $$g\sin\theta$$, because some of gravity's pull goes into spinning the body up rather than speeding its center.
-
-</div>
-
-Specializing $$a = g\sin\theta/(1+\beta)$$ to common shapes:
-
-- **Solid sphere** ($$\beta = \tfrac25$$): $$a = \dfrac{g\sin\theta}{1+2/5} = \dfrac{5}{7}g\sin\theta$$.
-- **Solid disk or cylinder** ($$\beta = \tfrac12$$): $$a = \dfrac{g\sin\theta}{1+1/2} = \dfrac{2}{3}g\sin\theta$$.
-- **Thin hoop** ($$\beta = 1$$): $$a = \dfrac{g\sin\theta}{1+1} = \dfrac{1}{2}g\sin\theta$$.
-
-Smaller $$\beta$$ means less mass far from the axis, less rotational inertia to spin up, and therefore larger $$a$$. In a race down the same incline the order is sphere (fastest), then disk, then hoop (slowest) — independent of their masses and radii. The hoop loses because all of its mass sits at radius $$R$$.
-
-<div class="theorem-box">
-
-**Example.** A solid cylinder of mass $$M = 2.0\ \text{kg}$$ and radius $$R = 0.10\ \text{m}$$ rolls without slipping down a $$\theta = 30^\circ$$ incline. Find its center-of-mass acceleration and the static friction force, and state the minimum coefficient of friction needed.
-
-A solid cylinder has $$\beta = I_{\text{cm}}/MR^2 = \tfrac12$$, so
-
-$$
-a=\frac{g\sin\theta}{1+\tfrac12}=\frac{2}{3}g\sin\theta=\frac{2}{3}(9.8)\sin 30^\circ=\frac{2}{3}(9.8)(0.5)=3.27\ \text{m/s}^2.
-$$
-
-The friction force, from $$f = \dfrac{\beta}{1+\beta}Mg\sin\theta$$ with $$\beta=\tfrac12$$ (so $$\dfrac{\beta}{1+\beta}=\tfrac13$$):
-
-$$
-f=\frac{1}{3}Mg\sin\theta=\frac{1}{3}(2.0)(9.8)(0.5)=3.27\ \text{N}.
-$$
-
-For the cylinder to roll without slipping, static friction must be able to supply this, so $$f \le \mu_s F_N = \mu_s Mg\cos\theta$$. The minimum coefficient is
-
-$$
-\mu_{s,\min}=\frac{f}{Mg\cos\theta}=\frac{\tfrac13 Mg\sin\theta}{Mg\cos\theta}=\frac{1}{3}\tan\theta=\frac{1}{3}\tan 30^\circ=0.19.
-$$
-
-If the actual $$\mu_s$$ is smaller than this, the cylinder slips: it then accelerates faster than $$\tfrac23 g\sin\theta$$ translationally but spins up more slowly, and you must use kinetic friction $$f_k = \mu_k Mg\cos\theta$$ with $$a \ne R\alpha$$. For the pure energy-method companion to this problem (using $$K = \tfrac12 Mv_{\text{cm}}^2 + \tfrac12 I\omega^2$$ to find the speed at the bottom), see [Unit 6](/notes/ap/ap-physics-c-mechanics/rotationalmomentum/); rotational kinetic energy and angular-momentum conservation are developed there.
-
-</div>
-
----
-
 :::equations
 
 | Idea | Equation |
@@ -788,8 +670,7 @@ If the actual $$\mu_s$$ is smaller than this, the cylinder slips: it then accele
 | Moment of inertia | $$I=\sum m_i r_i^2=\int r^2\,dm$$ |
 | Parallel-axis theorem | $$I=I_{\text{cm}}+Md^2$$ |
 | Static equilibrium | $$\sum\vec F=0,\quad \sum\tau=0$$ |
-| Rolling constraint | $$v_{\text{cm}}=R\omega,\quad a_{\text{cm}}=R\alpha$$ |
-| Rolling down an incline | $$a=\dfrac{g\sin\theta}{1+I_{\text{cm}}/MR^2}$$ |
+
 :::
 
 ## Practice

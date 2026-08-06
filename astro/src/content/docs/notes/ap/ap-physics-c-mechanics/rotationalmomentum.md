@@ -4,12 +4,6 @@ sidebar:
   order: 6
 ---
 
----
-
-This unit completes the rotation picture by adding rotational energy and angular momentum. The translational ideas from [work and energy](/notes/ap/ap-physics-c-mechanics/work/) and [linear momentum](/notes/ap/ap-physics-c-mechanics/linearmomentum/) have close angular analogs, but the axis choice matters more than it did before.
-
----
-
 :::variables
 - $$K_{\text{rot}}$$ = rotational kinetic energy
 - $$L$$ = angular momentum
@@ -24,58 +18,11 @@ This unit completes the rotation picture by adding rotational energy and angular
 
 ## Rotational Kinetic Energy
 
-A rigid body rotating with angular speed $$\omega$$ has rotational kinetic energy
+When an object is rotating, its kinetic energy is not limited to translational kinetic energy. A rigid body rotating with angular speed $$\omega$$ has rotational kinetic energy
 
 $$
 K_{\text{rot}} = \frac{1}{2}I\omega^2.
 $$
-
-For an object that both translates and rotates, total kinetic energy is
-
-$$
-K = \frac{1}{2}Mv_{\text{cm}}^2 + \frac{1}{2}I_{\text{cm}}\omega^2.
-$$
-
-This form is especially important for rolling objects. The translational term tracks motion of the center of mass; the rotational term tracks spinning about the center of mass. The split is not an approximation: any rigid-body motion can be decomposed into translation of the center of mass plus rotation about the center of mass, and the kinetic energy splits cleanly into exactly these two pieces with no cross term.
-
-<div class="theorem-box">
-
-**Proof (Splitting Kinetic Energy).** Treat the body as many small masses $$m_i$$. Write each particle's velocity as the center-of-mass velocity plus a velocity relative to the center of mass,
-
-$$
-\vec{v}_i = \vec{v}_{\text{cm}} + \vec{v}_i\,',
-$$
-
-where $$\vec{v}_i\,'$$ is the velocity of $$m_i$$ as seen from the center of mass. The total kinetic energy is
-
-$$
-K = \sum_i \frac{1}{2}m_i\,\vec{v}_i\cdot\vec{v}_i
-= \sum_i \frac{1}{2}m_i\left(\vec{v}_{\text{cm}} + \vec{v}_i\,'\right)\cdot\left(\vec{v}_{\text{cm}} + \vec{v}_i\,'\right).
-$$
-
-Expanding the dot product gives three sums:
-
-$$
-K = \frac{1}{2}\left(\sum_i m_i\right)v_{\text{cm}}^2
-+ \vec{v}_{\text{cm}}\cdot\sum_i m_i\vec{v}_i\,'
-+ \sum_i \frac{1}{2}m_i\,v_i'^2.
-$$
-
-The first sum is $$\tfrac{1}{2}Mv_{\text{cm}}^2$$. The middle (cross) term contains $$\sum_i m_i\vec{v}_i\,'$$, which is the total momentum *measured in the center-of-mass frame* — and that is zero by definition of the center of mass. So the cross term vanishes. In the last sum, every particle moves only because the body spins about the center of mass, so $$v_i' = r_i\omega$$, giving
-
-$$
-\sum_i \frac{1}{2}m_i\,v_i'^2 = \frac{1}{2}\omega^2\sum_i m_ir_i^2 = \frac{1}{2}I_{\text{cm}}\omega^2.
-$$
-
-Therefore
-
-$$
-K = \frac{1}{2}Mv_{\text{cm}}^2 + \frac{1}{2}I_{\text{cm}}\omega^2.
-$$
-
-The disappearance of the cross term is exactly why translation and rotation can be analyzed as separate energy reservoirs.
-
-</div>
 
 <div class="theorem-box">
 
@@ -112,11 +59,62 @@ $$
 
 </div>
 
+For an object that both translates and rotates, total kinetic energy is simply the sum of the two kinetic energies:
+
+$$
+K = \frac{1}{2}Mv_{\text{cm}}^2 + \frac{1}{2}I_{\text{cm}}\omega^2.
+$$
+
+This form is especially important for rolling objects. The translational term tracks motion of the center of mass; the rotational term tracks spinning about the center of mass. The split is not an approximation: any rigid-body motion can be decomposed into translation of the center of mass plus rotation about the center of mass, and the kinetic energy splits cleanly into exactly these two pieces with no cross term.
+
+<div class="theorem-box">
+
+**Proof (Splitting Kinetic Energy).** Treat the body as many small masses $$m_i$$. Write each particle's velocity as the center-of-mass velocity plus a velocity relative to the center of mass,
+
+$$
+\vec{v}_i = \vec{v}_{\text{cm}} + \vec{v}_i\,',
+$$
+
+where $$\vec{v}_i\,'$$ is the velocity of $$m_i$$ as seen from the center of mass. The total kinetic energy is
+
+$$
+K = \sum_i \frac{1}{2}m_i\,\vec{v}_i\cdot\vec{v}_i
+= \sum_i \frac{1}{2}m_i\left(\vec{v}_{\text{cm}} + \vec{v}_i\,'\right)\cdot\left(\vec{v}_{\text{cm}} + \vec{v}_i\,'\right).
+$$
+
+Expanding the dot product (look at Unit 10 of AP Precalculus if you need more guidance) gives three sums:
+
+$$
+K = \frac{1}{2}\left(\sum_i m_i\right)v_{\text{cm}}^2
++ \vec{v}_{\text{cm}}\cdot\sum_i m_i\vec{v}_i\,'
++ \sum_i \frac{1}{2}m_i\,v_i'^2.
+$$
+
+The first sum is $$\tfrac{1}{2}Mv_{\text{cm}}^2$$. The middle (cross) term contains $$\sum_i m_i\vec{v}_i\,'$$, which is the total momentum *measured in the center-of-mass frame* — and that is zero by definition of the center of mass. So the cross term vanishes. In the last sum, every particle moves only because the body spins about the center of mass, so $$v_i' = r_i\omega$$, giving
+
+$$
+\sum_i \frac{1}{2}m_i\,v_i'^2 = \frac{1}{2}\omega^2\sum_i m_ir_i^2 = \frac{1}{2}I_{\text{cm}}\omega^2.
+$$
+
+Therefore
+
+$$
+K = \frac{1}{2}Mv_{\text{cm}}^2 + \frac{1}{2}I_{\text{cm}}\omega^2.
+$$
+
+The disappearance of the cross term is exactly why translation and rotation can be analyzed as separate energy reservoirs.
+
+</div>
+
+// add like a example problem/solution
+
 ---
 
-## Rotational Work
+## Variables of Rotation
 
-For a torque acting through an angular displacement,
+### Rotational Work
+
+For a torque acting through an angular displacement, the work done through each small angle $$d\theta$$ is
 
 $$
 dW = \tau\,d\theta.
@@ -140,11 +138,9 @@ $$
 W_{\text{net,rot}} = \Delta K_{\text{rot}}.
 $$
 
-This is the angular counterpart of $$W_{\text{net}}=\Delta K$$.
+This is the angular counterpart of $$W_{\text{net}}=\Delta K$$. Indeed, if you substitute the angular variables for the linear counterparts, the work done is the same formula.
 
----
-
-## Power in Rotation
+### Rotational Power
 
 Instantaneous rotational power is
 
@@ -155,61 +151,126 @@ $$
 More generally, in vector form,
 
 $$
-P = \vec{\tau}\cdot\vec{\omega}.
+\vec P = \vec{\tau} \cdot \vec{\omega}.
 $$
 
-This is useful for motors, wheels, pulleys, and any device where energy transfer is described by torque and angular speed.
+// add an example combining rotational work/power if possible
 
 ---
 
-## Rolling Energy
+## Rolling Without Slipping
 
-For rolling without slipping,
-
-$$
-v_{\text{cm}} = R\omega.
-$$
-
-Substituting into total kinetic energy gives
+Rolling without slipping is a special case of rotary motion that imposes the constraint
 
 $$
-K = \frac{1}{2}Mv_{\text{cm}}^2 + \frac{1}{2}I_{\text{cm}}\left(\frac{v_{\text{cm}}}{R}\right)^2.
+v_{\text{cm}} = R\omega
 $$
 
-It is convenient to write the moment of inertia of a rolling body as $$I_{\text{cm}} = cMR^2$$, where the dimensionless number $$c$$ depends only on shape: $$c = 1$$ for a hoop, $$c = \tfrac12$$ for a solid disk or cylinder, and $$c = \tfrac25$$ for a solid sphere. The factor $$R$$ cancels everywhere, so the geometry enters *only* through $$c$$. Objects with larger $$c = I_{\text{cm}}/(MR^2)$$ put more of their energy into rotation and less into translational speed for the same total energy. That is why a hoop and solid disk released from the same height on a ramp do not reach the bottom with the same speed — and, strikingly, the result is independent of both mass and radius.
+and, if the constraint holds through the acceleration,
+
+$$
+a_{\text{cm}} = R\alpha.
+$$
+
+The point of contact is instantaneously at rest relative to the ground, so static friction can provide torque without doing work on an ideal rolling object. Static friction may point uphill or downhill depending on what torque is needed.
+
+// explain more, especially on what RWOS actually means as well as the friction components which might confuse some people.
+
+### Rolling Down an Incline
+
+A round object released on an incline rolls without slipping if friction is sufficient. We can find its center-of-mass acceleration in general, then specialize to common shapes.
+
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw[thick] (-3,-1) -- (3,-1) -- (3,1.2) -- cycle;
+\begin{scope}[shift={(0,0.15)}, rotate=19]
+\draw[fill=gray!20] (0,0) circle (0.55); \draw[->, blue, thick] (0,0.55) -- (0,1.5) node[above] {$N$}; \draw[->, orange, thick] (0,-0.55) -- (-1,-0.55) node[left] {$f$};
+\end{scope}
+\draw[->, red, thick] (0,0.15) -- (0,-1.5) node[below] {$mg$};
+\draw[->, thick] (1.1,0.25) arc[start angle=20,end angle=-250,radius=0.45] node[right] {$\alpha$};
+\end{tikzpicture}
+```
+
+// the ball is overlapping with the ramp, normal force should go to the center, and the label/arrow for alpha is completely off
 
 <div class="theorem-box">
 
-**Example.** A hoop ($$c=1$$), a solid disk ($$c=\tfrac12$$), and a solid sphere ($$c=\tfrac25$$) are released from rest and roll without slipping down a ramp from the same height $$h$$. Find each object's speed at the bottom and rank the finishing order.
+**Proof (acceleration of a rolling object down an incline).** Let a round body of mass $$M$$, radius $$R$$, and central moment of inertia $$I_{\text{cm}}$$ roll without slipping down an incline of angle $$\theta$$. Three forces act: gravity, the normal force, and static friction $$f$$ acting up the incline (we will let the math confirm the direction).
 
-Use energy conservation. Static friction does no work on an ideal rolling object (the contact point is instantaneously at rest), so mechanical energy is conserved. With $$I_{\text{cm}} = cMR^2$$ and $$\omega = v_{\text{cm}}/R$$, the kinetic energy at the bottom is
-
-$$
-K = \frac{1}{2}Mv^2 + \frac{1}{2}(cMR^2)\frac{v^2}{R^2}
-= \frac{1}{2}Mv^2(1 + c).
-$$
-
-Setting $$Mgh = \tfrac12 Mv^2(1+c)$$ and solving,
+Translation along the incline (take down-the-incline positive), with the center of mass accelerating at $$a$$:
 
 $$
-v = \sqrt{\frac{2gh}{1 + c}}.
+Mg\sin\theta - f = Ma.
 $$
 
-Both $$M$$ and $$R$$ cancel. Substituting each shape:
+Rotation about the center of mass: the only force with a torque about the center is friction (gravity acts at the center, normal force points through the center). Its lever arm is $$R$$, so
 
 $$
-v_{\text{sphere}} = \sqrt{\frac{2gh}{1+\tfrac25}} = \sqrt{\frac{10gh}{7}} \approx 1.195\sqrt{gh},
+fR = I_{\text{cm}}\alpha.
 $$
 
-$$
-v_{\text{disk}} = \sqrt{\frac{2gh}{1+\tfrac12}} = \sqrt{\frac{4gh}{3}} \approx 1.155\sqrt{gh},
-$$
+Rolling without slipping gives the constraint $$a = R\alpha$$, i.e. $$\alpha = a/R$$. Substitute into the torque equation:
 
 $$
-v_{\text{hoop}} = \sqrt{\frac{2gh}{1+1}} = \sqrt{gh} \approx 1.000\sqrt{gh}.
+fR = I_{\text{cm}}\frac{a}{R}\quad\Rightarrow\quad f = \frac{I_{\text{cm}}\,a}{R^2}.
 $$
 
-The smaller $$c$$ is, the faster the object: **sphere first, disk second, hoop last.** A point mass sliding frictionlessly ($$c=0$$) would beat them all with $$v=\sqrt{2gh}$$. The hoop concentrates all its mass at radius $$R$$, so it stores the most energy in rotation and arrives slowest. Notice the ranking has nothing to do with which object is heavier — a bowling ball and a marble of the same shape tie.
+Put this friction back into the translation equation:
+
+$$
+Mg\sin\theta - \frac{I_{\text{cm}}\,a}{R^2} = Ma\quad\Rightarrow\quad Mg\sin\theta = a\left(M + \frac{I_{\text{cm}}}{R^2}\right).
+$$
+
+Solve for $$a$$:
+
+$$
+a=\frac{g\sin\theta}{1+\dfrac{I_{\text{cm}}}{MR^2}}.
+$$
+
+It is convenient to write $$I_{\text{cm}} = \beta MR^2$$, where the dimensionless $$\beta$$ depends only on the shape ($$\beta = \tfrac12$$ for a disk, $$\tfrac25$$ for a sphere, $$1$$ for a hoop). Then
+
+$$
+a=\frac{g\sin\theta}{1+\beta},\qquad f=\frac{\beta}{1+\beta}\,Mg\sin\theta.
+$$
+
+The friction comes out positive, confirming it points up the incline. Notice $$a$$ is independent of $$M$$ and $$R$$ and is always less than the frictionless slide value $$g\sin\theta$$, because some of gravity's pull goes into spinning the body up rather than speeding its center.
+
+</div>
+
+Specializing $$a = g\sin\theta/(1+\beta)$$ to common shapes:
+
+- **Solid sphere** ($$\beta = \tfrac25$$): $$a = \dfrac{g\sin\theta}{1+2/5} = \dfrac{5}{7}g\sin\theta$$.
+- **Solid disk or cylinder** ($$\beta = \tfrac12$$): $$a = \dfrac{g\sin\theta}{1+1/2} = \dfrac{2}{3}g\sin\theta$$.
+- **Thin hoop** ($$\beta = 1$$): $$a = \dfrac{g\sin\theta}{1+1} = \dfrac{1}{2}g\sin\theta$$.
+
+Smaller $$\beta$$ means less mass far from the axis, less rotational inertia to spin up, and therefore larger $$a$$. In a race down the same incline the order is sphere (fastest), then disk, then hoop (slowest) — independent of their masses and radii. The hoop loses because all of its mass sits at radius $$R$$.
+
+<div class="theorem-box">
+
+**Example.** A solid cylinder of mass $$M = 2.0\ \text{kg}$$ and radius $$R = 0.10\ \text{m}$$ rolls without slipping down a $$\theta = 30^\circ$$ incline. Find its center-of-mass acceleration and the static friction force, and state the minimum coefficient of friction needed.
+
+A solid cylinder has $$\beta = I_{\text{cm}}/MR^2 = \tfrac12$$, so
+
+$$
+a=\frac{g\sin\theta}{1+\tfrac12}=\frac{2}{3}g\sin\theta=\frac{2}{3}(9.8)\sin 30^\circ=\frac{2}{3}(9.8)(0.5)=3.27\ \text{m/s}^2.
+$$
+
+The friction force, from $$f = \dfrac{\beta}{1+\beta}Mg\sin\theta$$ with $$\beta=\tfrac12$$ (so $$\dfrac{\beta}{1+\beta}=\tfrac13$$):
+
+$$
+f=\frac{1}{3}Mg\sin\theta=\frac{1}{3}(2.0)(9.8)(0.5)=3.27\ \text{N}.
+$$
+
+For the cylinder to roll without slipping, static friction must be able to supply this, so $$f \le \mu_s F_N = \mu_s Mg\cos\theta$$. The minimum coefficient is
+
+$$
+\mu_{s,\min}=\frac{f}{Mg\cos\theta}=\frac{\tfrac13 Mg\sin\theta}{Mg\cos\theta}=\frac{1}{3}\tan\theta=\frac{1}{3}\tan 30^\circ=0.19.
+$$
+
+If the actual $$\mu_s$$ is smaller than this, the cylinder slips: it then accelerates faster than $$\tfrac23 g\sin\theta$$ translationally but spins up more slowly, and you must use kinetic friction $$f_k = \mu_k Mg\cos\theta$$ with $$a \ne R\alpha$$.
 
 </div>
 
@@ -217,7 +278,7 @@ The smaller $$c$$ is, the faster the object: **sphere first, disk second, hoop l
 
 ## Angular Momentum of a Particle
 
-The angular momentum of a particle about a chosen origin is
+The angular momentum of a particle about a chosen origin is a cross product (a way of multiplying vectors):
 
 $$
 \vec{L} = \vec{r}\times \vec{p}.
@@ -241,9 +302,9 @@ which is *constant in time* even though the particle is not rotating about anyth
 Always state the reference point before quoting an angular momentum; the same motion can have any value of $$L$$, including zero (choose the origin on the line of motion), depending on where you measure from.
 :::
 
----
+The direction of angular momentum is always defined using the right hand rule, where you curl your hand in the direction of spin and your thumb points in the direction of angular momentum.
 
-## Angular Momentum of a Rigid Body
+### Angular Momentum of a Rigid Body
 
 For a rigid body rotating about a fixed symmetry axis,
 
@@ -253,11 +314,13 @@ $$
 
 This simple form assumes the angular momentum vector is parallel to the angular velocity vector. That is true for the fixed-axis and principal-axis cases AP Physics C normally uses. In general, $$\vec L$$ and $$\vec\omega$$ need *not* be parallel — for a body spun about a lopsided axis, the angular momentum vector wobbles relative to the spin axis, which is what makes an unbalanced wheel shake. AP Physics C deliberately restricts itself to symmetry axes, where $$\vec L = I\vec\omega$$ holds cleanly, so you can treat $$L = I\omega$$ as a scalar relation for a fixed axis. Just remember it is a special case, not the definition; the definition is always $$\vec L = \sum_i \vec r_i \times \vec p_i$$.
 
+// add image of a disk spinning (label spin direction) and angular momentum labeled
+
 ---
 
 ## Torque and Angular Momentum
 
-Torque is the rate of change of angular momentum:
+Just like how force is the rate of change of linear momentum, torque is the rate of change of angular momentum:
 
 $$
 \sum \vec{\tau}_{\text{ext}} = \frac{d\vec{L}}{dt}.
@@ -266,10 +329,10 @@ $$
 For constant $$I$$ about a fixed axis, this becomes
 
 $$
-\sum \tau = I\alpha.
+\sum \tau = I\alpha,
 $$
 
-This form explains why angular momentum is conserved when the net external torque about the chosen axis is zero. The relation $$\sum\tau = I\alpha$$ is developed further on the [torque and rotational dynamics](/notes/ap/ap-physics-c-mechanics/torque/) page; here the more general statement $$\sum\vec\tau_{\text{ext}} = d\vec L/dt$$ is the one to remember, because it still holds when $$I$$ changes (a spinning skater) — a case where $$\sum\tau = I\alpha$$ alone would be misleading.
+which matches the rotational form of Newton's second law. This form explains why angular momentum is conserved when the net external torque about the chosen axis is zero.
 
 <div class="theorem-box">
 
@@ -315,7 +378,7 @@ $$
 
 ## Conservation of Angular Momentum
 
-If
+You may have picked up that all of the linear motion laws usually have rotational counterparts. The Law of Conservation of Momentum is no different! If
 
 $$
 \sum \vec{\tau}_{\text{ext}} = 0,
@@ -333,25 +396,11 @@ $$
 I_i\omega_i = I_f\omega_f.
 $$
 
-If rotational inertia decreases, angular speed increases; if rotational inertia increases, angular speed decreases. Rotational kinetic energy does not have to be conserved during this process because internal work may be done while the mass distribution changes.
+If rotational inertia decreases, angular speed increases; if rotational inertia increases, angular speed decreases. Rotational kinetic energy does not have to be conserved during this process because internal work may be done while the mass distribution changes, similar to how kinetic energy is not necessarily conserved when momentum is conserved.
 
 :::warning
-This is the central subtlety of the topic: $$L$$ is conserved whenever external torque vanishes, but $$K_{\text{rot}}$$ is conserved only when, additionally, no internal work is done and no inelastic merging occurs.
+This is the central subtlety of the topic: $$L$$ is conserved whenever external torque becomes zero, but $$K_{\text{rot}}$$ is conserved only when, additionally, no internal work is done and no inelastic merging occurs.
 :::
-
-The examples below show both behaviors side by side — pulling mass inward *raises* $$K$$, while objects sticking together *lowers* it.
-
-
-```tikz
-\usepackage{tikz}
-\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
-\begin{tikzpicture}[>=Stealth, font=\small]
-\draw[fill=gray!20] (-2,0) circle (0.35); \draw[thick] (-2,-0.35)--(-2,-1.4); \draw[thick] (-3, -0.6)--(-1,-0.6); \node at (-2,-1.8) {large $I$};
-\draw[fill=gray!20] (2,0) circle (0.35); \draw[thick] (2,-0.35)--(2,-1.4); \draw[thick] (1.6,-0.6)--(2.4,-0.6); \node at (2,-1.8) {small $I$, faster $\omega$};
-\draw[->, thick] (-0.8,-0.7) -- (0.8,-0.7);
-\end{tikzpicture}
-```
-
 
 <div class="theorem-box">
 
@@ -376,32 +425,6 @@ K_f = \tfrac12 I_f\omega_f^2 = \tfrac12(2.0)(6.0)^2 = 36\ \text{J}.
 $$
 
 Kinetic energy *tripled*, increasing by $$24\ \text{J}$$. This energy is not free: the skater's muscles do positive work pulling her arms inward against the outward "centrifugal" tendency of the rotating mass. Angular momentum is conserved; kinetic energy is not, because internal forces did work. A quick way to see the increase: since $$L = I\omega$$ is fixed, $$K = \tfrac12 I\omega^2 = \tfrac12 L\omega = L^2/(2I)$$, so shrinking $$I$$ must raise $$K$$.
-
-</div>
-
-<div class="theorem-box">
-
-**Example.** A frictionless turntable (a uniform disk) has moment of inertia $$I_d = 200\ \text{kg}\cdot\text{m}^2$$ and rotates at $$\omega_i = 1.5\ \text{rad/s}$$. A person of mass $$m = 60\ \text{kg}$$ steps on at the rim, radius $$R = 2.0\ \text{m}$$, landing gently so as to move with the disk. Find the final angular speed and how much kinetic energy is lost.
-
-Treat the person as a point mass on the rim, $$I_p = mR^2 = 60(2.0)^2 = 240\ \text{kg}\cdot\text{m}^2$$. The person stepping on exerts only internal forces on the (disk + person) system about the fixed vertical axis, so $$L$$ is conserved:
-
-$$
-I_d\omega_i = (I_d + I_p)\omega_f
-\;\Rightarrow\;
-\omega_f = \frac{200(1.5)}{200 + 240} = \frac{300}{440} \approx 0.68\ \text{rad/s}.
-$$
-
-Kinetic energies:
-
-$$
-K_i = \tfrac12(200)(1.5)^2 = 225\ \text{J},
-$$
-
-$$
-K_f = \tfrac12(440)(0.68)^2 \approx 102\ \text{J}.
-$$
-
-About $$123\ \text{J}$$ is lost to friction between the person's feet and the disk as they come to a common angular speed. This is the rotational analog of a perfectly inelastic collision: $$L$$ is conserved but kinetic energy is **not**. Whenever two rotating things merge and end up at one common $$\omega$$, expect kinetic energy to drop, never rise.
 
 </div>
 
@@ -481,7 +504,7 @@ $$
 \int_{t_i}^{t_f}\vec{\tau}_{\text{ext}}\,dt = \Delta \vec{L}.
 $$
 
-This is the angular version of impulse-momentum. A large torque over a short time can significantly change angular momentum even if the interaction is brief. On a torque-time graph, angular impulse is the signed area under the curve, just as linear impulse is the area under a force-time graph.
+This is the angular version of impulse-momentum. A large torque over a short time can significantly change angular momentum even if the interaction is brief. On a torque-time graph, angular impulse is the *signed* area under the curve, just as linear impulse is the area under a force-time graph.
 
 <div class="theorem-box">
 
@@ -519,21 +542,11 @@ $$
 \vec{\tau} = \vec{r}\times \vec{F}=0.
 $$
 
-Therefore angular momentum about the center is conserved. This is why planets sweep out equal areas in equal times and why orbital speed changes as the distance from the central body changes.
+// can you prove this statement
 
+Therefore angular momentum about the center is conserved. These forces are called central forces, and are important in everyday life, like in the cases of gravity and Coulombic force.
 
-```tikz
-\usepackage{tikz}
-\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
-\begin{tikzpicture}[>=Stealth, font=\small]
-\draw[blue, very thick] (0,0) ellipse (3 and 1.6); \fill[orange] (-1.4,0) circle (3pt) node[below] {Sun};
-\fill (1.3,1.45) circle (2pt); \fill (2.8,0.55) circle (2pt); \fill (-2.7,-0.7) circle (2pt); \fill (-1.4,-1.42) circle (2pt);
-\fill[blue!15] (-1.4,0) -- (1.3,1.45) arc[start angle=65,end angle=20,x radius=3,y radius=1.6] -- cycle;
-\fill[red!15] (-1.4,0) -- (-2.7,-0.7) arc[start angle=206,end angle=242,x radius=3,y radius=1.6] -- cycle;
-\node at (0.9,0.75) {equal area}; \node at (-2.2,-0.65) {equal area};
-\end{tikzpicture}
-```
-
+// add more stuff on kepler's laws and orbits
 
 <div class="theorem-box">
 
@@ -583,9 +596,10 @@ The comet moves five times slower at aphelion than at perihelion, in exact propo
 |---|---|
 | Rotational kinetic energy | $$K_{\text{rot}} = \tfrac12 I\omega^2$$ |
 | Total KE (translation + rotation) | $$K = \tfrac12 Mv_{\text{cm}}^2 + \tfrac12 I_{\text{cm}}\omega^2$$ |
-| Rolling speed from height | $$v = \sqrt{\dfrac{2gh}{1 + I_{\text{cm}}/MR^2}}$$ |
 | Rotational work | $$W_{\text{rot}} = \displaystyle\int \tau\,d\theta$$ |
 | Rotational power | $$P = \tau\omega = \vec\tau\cdot\vec\omega$$ |
+| Rolling constraint | $$v_{\text{cm}}=R\omega,\quad a_{\text{cm}}=R\alpha$$ |
+| Rolling down an incline | $$a=\dfrac{g\sin\theta}{1+I_{\text{cm}}/MR^2}$$ |
 | Angular momentum (particle) | $$\vec L = \vec r\times\vec p,\quad L = rp\sin\theta$$ |
 | Angular momentum (rigid body) | $$\vec L = I\vec\omega$$ (symmetry axis) |
 | Torque–angular momentum | $$\sum\vec\tau_{\text{ext}} = \dfrac{d\vec L}{dt}$$ |
