@@ -260,7 +260,8 @@ $$
 ```
 
 - Make sure to always use `\lvert` and `\rvert` instead of vertical bars when doing absolute value, because the renderer sometimes reads vertical bars as a table and messes up the formatting. (Use `\left|`/`\right|` for tall bars and `\mid` for "such that"/conditional probability.)
-- Always remember to have proper spacing in between sections! Always make sure to leave a blank space above and below any separation markers, special headers, theorem boxes, and image links.
+- Always remember to have proper spacing in between sections! Always make sure to leave a blank space above and below any separation markers, special headers, and theorem boxes.
+- Leave exactly one blank line above and below every image block, including image tags and image-generating fenced code blocks such as TikZ. Do not leave multiple empty lines around an image block.
 - Do NOT write an summary pargarph at the start of the notes! If you want a summary put it at the end of the notes page. You should go from title directly to the first subtitle.
 
 ---

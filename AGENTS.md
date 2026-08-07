@@ -370,7 +370,8 @@ When making edits:
 - keep Markdown/Jekyll formatting valid
 - use `$$...$$` for display math
 - use `\lvert` and `\rvert` instead of vertical bars for absolute value
-- keep spacing around section dividers, theorem boxes, and images
+- keep spacing around section dividers and theorem boxes
+- leave exactly one blank line above and below every image block, including `<img>` tags and image-generating fenced code blocks such as TikZ; do not leave multiple empty lines
 
 ## Core Agent Functions
 
@@ -448,6 +449,7 @@ Steps:
 - Identify placeholder descriptions.
 - Suggest what each diagram should show.
 - Prefer repo-hosted images under `assets/`.
+- Leave exactly one blank line above and below each image block. This applies to both `<img>` tags and image-generating fenced code blocks such as TikZ.
 - Use the existing image tag format:
 
 ```markdown
