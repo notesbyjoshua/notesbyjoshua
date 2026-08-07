@@ -18,6 +18,8 @@ This repo is a Jekyll notes website. The agent's job is to help track note progr
 
 Follow `how-to-write-notes.md` as the source of truth for note structure.
 
+Open tip and strategy callouts with bare `:::tip` and `:::strategy` directives. Do not add `title` fields or other sub-labels to these two callout types.
+
 Every note page should generally have:
 - YAML front matter
 - one H1 matching the title

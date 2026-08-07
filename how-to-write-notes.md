@@ -187,7 +187,7 @@ Author them as `:::type` … `:::` (a blank line inside is fine; close with `:::
 See the live [Writing notes reference](/writing-notes/) for how each one looks.
 
 ``` markdown
-:::tip{title="Strategy"}
+:::tip
 1. Draw a diagram.
 2. Relate the variables.
 :::
@@ -205,14 +205,14 @@ Types and their optional field (the field renders as a chip next to the label):
 
 | Directive | Optional field | Use for |
 | --- | --- | --- |
-| `:::tip` | `title` | a short actionable tip / how-to |
+| `:::tip` | — | a short actionable tip / how-to |
 | `:::note` | — | neutral aside / context |
 | `:::warning` | — | cautions, common pitfalls |
 | `:::exam` | `topic` | what the AP/exam tends to ask |
 | `:::key` | `name` | a key fact / formula to remember |
 | `:::summary` | `title` | recap of a section |
 | `:::mistakes` | — | bulleted "common mistakes" list |
-| `:::strategy` | `title` | the general method for a *class* of problems |
+| `:::strategy` | — | the general method for a *class* of problems |
 | `:::checklist` | — | a working checklist of steps to execute / verify |
 | `:::conditions` | — | numbered requirements / assumptions |
 | `:::equations` | — | a markdown table of key equations |
@@ -221,6 +221,9 @@ Types and their optional field (the field renders as a chip next to the label):
 Use `:::strategy` for *how to approach* a type of problem and `:::checklist`
 for the concrete steps to run through or verify. Put a page's variable glossary
 (the AP "useful variables" list) in `:::variables`, near the top of the page.
+
+Always open tips and strategies with bare `:::tip` and `:::strategy` directives.
+Do not add `title` fields or other sub-labels to these two callout types.
 
 Tag fields follow the same **broad-subject** rule as examples — tag with the
 topic, not a hyper-specific title.

@@ -5,7 +5,7 @@
 //
 // Authoring:
 //
-//   :::tip{title="Strategy"}
+//   :::tip
 //   1. Draw a diagram.
 //   2. Relate the variables.
 //   :::
