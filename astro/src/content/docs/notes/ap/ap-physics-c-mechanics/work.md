@@ -48,14 +48,13 @@ the signed area under the force-position graph.
 \pgfplotsset{compat=1.16}
 \begin{tikzpicture}
 \begin{axis}[axis lines=left,width=8cm,height=5cm,xmin=0,xmax=6,ymin=0,ymax=5,xlabel={$x$},ylabel={$F$},xtick=\empty,ytick=\empty]
-\addplot[fill=blue!20, draw=none] coordinates {(1,0) (1,2) (3,4) (5,1.5) (5,0)} -- cycle;
-\addplot[blue,very thick] coordinates {(1,2) (3,4) (5,1.5)};
-\node at (axis cs:3,1.2) {area = work};
+\addplot[fill=blue!18, draw=none, domain=0:5.4, samples=120] {1.1+1.7*exp(-0.25*(x-2.3)^2)+0.45*sin(deg(1.35*x))} \closedcycle;
+\addplot[blue,very thick,domain=0:5.4,samples=120] {1.1+1.7*exp(-0.25*(x-2.3)^2)+0.45*sin(deg(1.35*x))};
+\draw[dashed] (axis cs:5.4,0) -- (axis cs:5.4,1.95);
+\node at (axis cs:3.0,0.75) {area = work};
 \end{axis}
 \end{tikzpicture}
 ```
-
-// add like a more curvy graph and make sure it extends out to the axis and the right end of the graph
 
 ### The geometry of the dot product
 
@@ -84,7 +83,19 @@ This is why a centripetal force can bend a path without changing speed: it is al
 
 **Example.** A force directed along the $$x$$-axis varies with position as follows: it is constant at $$F=20\ \text{N}$$ from $$x=0$$ to $$x=3\ \text{m}$$, then ramps linearly down to $$0\ \text{N}$$ at $$x=5\ \text{m}$$. Find the work done from $$x=0$$ to $$x=5\ \text{m}$$.
 
-// draw the graph
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[axis lines=left,width=7.5cm,height=4.5cm,xmin=0,xmax=5.5,ymin=0,ymax=24,xlabel={$x\ (\text{m})$},ylabel={$F\ (\text{N})$},xtick={0,3,5},ytick={0,20}]
+\addplot[fill=blue!18, draw=none] coordinates {(0,0) (0,20) (3,20) (5,0)} -- cycle;
+\addplot[blue,very thick] coordinates {(0,20) (3,20) (5,0)};
+\draw[dashed] (axis cs:3,0) -- (axis cs:3,20);
+\node at (axis cs:1.5,10) {rectangle};
+\node at (axis cs:4.05,6) {triangle};
+\end{axis}
+\end{tikzpicture}
+```
 
 The work is the area under the graph. Split it into a rectangle and a triangle:
 
@@ -99,17 +110,23 @@ If the force had pointed in the $$-x$$ direction over some interval, that area w
 
 <div class="theorem-box">
 
-**Example.** A position-dependent force $$F(x) = \alpha x^2$$ acts along the $$x$$-axis, with $$\alpha = 6\ \text{N/m}^2$$. Find the work it does on a particle moving from $$x_i = 1\ \text{m}$$ to $$x_f = 3\ \text{m}$$.
-
-// make this example harder (e.g. there is no point in alpha if you just give the answer)
+**Example.** A position-dependent force $$F(x)=\alpha x^2-\beta x$$ acts along the $$x$$-axis, where $$\alpha=6.0\ \text{N/m}^2$$ and $$\beta=10\ \text{N/m}$$. Find the work it does on a particle moving from $$x_i=0.50\ \text{m}$$ to $$x_f=3.0\ \text{m}$$, and state whether the force adds or removes mechanical energy overall.
 
 Use $$W = \int_{x_i}^{x_f} F(x)\,dx$$:
 
 $$
-W = \int_{1}^{3} \alpha x^2\,dx = \alpha\left[\frac{x^3}{3}\right]_{1}^{3} = \frac{\alpha}{3}\left(3^3 - 1^3\right) = \frac{6}{3}(27-1) = 2(26) = 52\ \text{J}.
+W=\int_{0.50}^{3.0}(\alpha x^2-\beta x)\,dx
+=\left[\frac{\alpha x^3}{3}-\frac{\beta x^2}{2}\right]_{0.50}^{3.0}.
 $$
 
-Whenever the force is not constant, you cannot use $$W = F\,d$$; you must integrate. The constant-force formula is just the special case where $$F$$ comes out of the integral.
+Substitute values:
+
+$$
+W=\left[2x^3-5x^2\right]_{0.50}^{3.0}
+=(54-45)-\left(0.25-1.25\right)=10\ \text{J}.
+$$
+
+Even though the force is negative over part of the interval and positive later, the net work is positive, so it adds $$10\ \text{J}$$ of kinetic energy. Whenever the force is not constant, you cannot use $$W = Fd$$; you must integrate.
 
 </div>
 
@@ -198,7 +215,29 @@ $$
 F_x = -\frac{dU}{dx}.
 $$
 
-// please derive (shortly) where this comes from
+This comes directly from comparing a tiny amount of conservative work to a tiny change in potential energy:
+
+$$
+dW=F_x\,dx,
+$$
+
+and
+
+$$
+dW=-dU.
+$$
+
+Therefore
+
+$$
+F_x\,dx=-dU,
+$$
+
+so
+
+$$
+F_x=-\frac{dU}{dx}.
+$$
 
 In three dimensions,
 
@@ -285,12 +324,22 @@ The fact that we could even *define* a potential energy depends on gravity being
 **Proof (gravity near Earth is path-independent).** Near Earth's surface $$\vec{F}_g = -mg\,\hat{y}$$, a constant vector. For *any* path from point $$A$$ to point $$B$$,
 
 $$
-W_g = \int_A^B \vec{F}_g\cdot d\vec{r} = \int_A^B (-mg\,\hat{y})\cdot(dx\,\hat{x} + dy\,\hat{y}) = -mg\int_{y_A}^{y_B} dy = -mg(y_B - y_A).
+W_g=\int_A^B \vec{F}_g\cdot d\vec{r}.
+$$
+
+Since $$\vec{F}_g=-mg\hat{y}$$ and $$d\vec{r}=dx\hat{x}+dy\hat{y}$$,
+
+$$
+W_g=\int_A^B (-mg\hat{y})\cdot(dx\hat{x}+dy\hat{y}).
+$$
+
+The $$x$$ part vanishes because $$\hat{y}\cdot\hat{x}=0$$, leaving
+
+$$
+W_g=-mg\int_{y_A}^{y_B}dy=-mg(y_B-y_A).
 $$
 
 The $$x$$-displacement drops out because $$\hat{y}\cdot\hat{x}=0$$, so only the change in height matters. A box carried straight up, or up a long ramp, or along a wiggling staircase to the same final height, all involve the same gravitational work. Around any closed loop ($$y_B = y_A$$), $$W_g = 0$$, which is the defining property of a conservative force.
-
-// this proof goes out of the box
 
 </div>
 
@@ -542,7 +591,7 @@ For comparison, a frictionless incline would give $$v = \sqrt{2gd\sin\theta} = \
 
 <div class="theorem-box">
 
-**Example.** A $$0.50\ \text{kg}$$ block is pressed against a spring ($$k = 800\ \text{N/m}$$) compressed by $$x = 0.10\ \text{m}$$ on a horizontal surface. After release, the block slides $$L = 1.2\ \text{m}$$ along a rough patch ($$\mu_k = 0.25$$) before reaching a smooth section. Find its speed at the end of the rough patch.
+**Example.** A $$0.50\ \text{kg}$$ block is pressed against a spring ($$k = 800\ \text{N/m}$$) compressed by $$x = 0.12\ \text{m}$$ on a horizontal surface. After release, the block crosses a rough patch of length $$L = 1.2\ \text{m}$$ with $$\mu_k=0.25$$, then climbs a frictionless ramp that rises by height $$h=0.40\ \text{m}$$. Find whether the block reaches the top of the ramp, and if it does, find its speed there.
 
 The spring force is conservative, so its stored energy $$U_s = \tfrac{1}{2}kx^2$$ is the initial energy. Friction is the only nonconservative force. Apply
 
@@ -550,31 +599,41 @@ $$
 K_i + U_i + W_{\text{nc}} = K_f + U_f.
 $$
 
-Here $$K_i = 0$$, $$U_i = \tfrac{1}{2}kx^2$$ (spring), $$U_f = 0$$ (spring relaxed, same height), and $$W_{\text{nc}} = -\mu_k mg L$$:
+Here $$K_i=0$$ and the initial spring energy is $$U_s=\tfrac12kx^2$$. Friction removes $$\mu_kmgL$$ on the rough patch, and climbing the ramp requires gravitational potential energy $$mgh$$. If the remaining energy is positive, the block reaches the top:
 
 $$
-\tfrac{1}{2}kx^2 - \mu_k mg L = \tfrac{1}{2}mv^2.
+\tfrac{1}{2}kx^2-\mu_kmgL-mgh=\tfrac{1}{2}mv^2.
 $$
 
 Compute each energy term:
 
 $$
-\tfrac{1}{2}kx^2 = \tfrac{1}{2}(800)(0.10)^2 = 4.0\ \text{J},
+\tfrac{1}{2}kx^2=\tfrac{1}{2}(800)(0.12)^2=5.76\ \text{J},
 $$
 
 $$
-\mu_k mg L = (0.25)(0.50)(9.8)(1.2) = 1.47\ \text{J}.
+\mu_kmgL=(0.25)(0.50)(9.8)(1.2)=1.47\ \text{J},
 $$
 
-So $$\tfrac{1}{2}mv^2 = 4.0 - 1.47 = 2.53\ \text{J}$$, giving
+and
 
 $$
-v = \sqrt{\frac{2(2.53)}{0.50}} = \sqrt{10.1} \approx 3.2\ \text{m/s}.
+mgh=(0.50)(9.8)(0.40)=1.96\ \text{J}.
 $$
 
-The clean strategy: spring energy in, friction energy out, kinetic energy is whatever remains.
+The remaining kinetic energy is
 
-// make the problem harder
+$$
+\tfrac12mv^2=5.76-1.47-1.96=2.33\ \text{J}.
+$$
+
+Since this is positive, the block reaches the top. Its speed there is
+
+$$
+v=\sqrt{\frac{2(2.33)}{0.50}}=\sqrt{9.32}\approx3.1\ \text{m/s}.
+$$
+
+The clean strategy: spring energy in, friction and gravitational potential out, kinetic energy is whatever remains.
 
 </div>
 
@@ -590,14 +649,15 @@ In one-dimensional systems, a graph of $$U(x)$$ contains lots of useful informat
 \pgfplotsset{compat=1.16}
 \begin{tikzpicture}
 \begin{axis}[axis lines=middle,width=9cm,height=5cm,xmin=-3,xmax=5,ymin=-1,ymax=6,xlabel={$x$},ylabel={$U$},xtick=\empty,ytick=\empty]
-\addplot[blue,very thick,samples=180,domain=-2.5:4.5]{0.18*(x+1.8)*(x-0.4)^2*(x-3.2)+2.2};
-\addplot[dashed] coordinates {(-3,3.0) (5,3.0)};
-\node at (axis cs:-1.6,1.2) {stable}; \node at (axis cs:2.8,4.4) {unstable}; \node at (axis cs:4.2,3.2) {$E$};
+\addplot[blue,very thick,samples=200,domain=-2.6:4.6]{0.08*(x+2.0)^2*(x-0.6)^2+0.16*(x-2.7)^4-0.9*(x-2.7)^2+2.0};
+\addplot[dashed] coordinates {(-3,3.2) (5,3.2)};
+\node[below] at (axis cs:-2.0,1.35) {stable};
+\node[above] at (axis cs:0.6,3.2) {unstable};
+\node[below] at (axis cs:2.7,1.1) {metastable};
+\node at (axis cs:4.5,3.45) {$E$};
 \end{axis}
 \end{tikzpicture}
 ```
-
-// your labels don't even make sense (both stable and unstabel are not even at minima/maxima), and please add metastable/neutral equilibrium as well
 
 As a reminder, $$F_x = -\frac{dU}{dx}.$$ Equilibrium occurs where 
 
@@ -605,9 +665,22 @@ $$
 \frac{dU}{dx}=0,
 $$
 
-and at that point, the object is moving at constant velocity. Note that this may mean the object is not moving, but does not have to be. The equilibrium is **stable** if $$U(x)$$ has a local minimum ($$\frac{d^2 U}{dx^2} > 0$$), **unstable** if it has a local maximum ($$\frac{d^2 U}{dx^2} < 0$$), and **neutral** if small displacements do not change $$U$$ to second order ($$\frac{d^2 U}{dx^2} = 0$$).
+and at that point, the object has zero acceleration. The equilibrium is **stable** if $$U(x)$$ has a local minimum ($$\frac{d^2 U}{dx^2} > 0$$), **unstable** if it has a local maximum ($$\frac{d^2 U}{dx^2} < 0$$), and **neutral** if small displacements do not change $$U$$ to second order ($$\frac{d^2 U}{dx^2} = 0$$). A **metastable** equilibrium is a local minimum that is stable for small disturbances but can escape if the total energy is high enough to cross a nearby barrier.
 
-// give an image of the three equilibrium (use a ball in a bowl, a hill, and on a flat surface as an example)
+```tikz
+\usepackage{tikz}
+\begin{tikzpicture}[font=\small]
+\draw[thick] (-3.6,0) parabola bend (-2.6,-0.7) (-1.6,0);
+\fill[gray!60] (-2.6,-0.45) circle (0.13);
+\node at (-2.6,-1.15) {stable};
+\draw[thick] (-0.9,-0.7) parabola bend (0.1,0.15) (1.1,-0.7);
+\fill[gray!60] (0.1,0.32) circle (0.13);
+\node at (0.1,-1.15) {unstable};
+\draw[thick] (1.8,-0.25) -- (3.8,-0.25);
+\fill[gray!60] (2.8,-0.12) circle (0.13);
+\node at (2.8,-1.15) {neutral};
+\end{tikzpicture}
+```
 
 <div class="theorem-box">
 

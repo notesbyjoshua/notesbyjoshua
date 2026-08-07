@@ -106,7 +106,38 @@ The disappearance of the cross term is exactly why translation and rotation can 
 
 </div>
 
-// add like a example problem/solution
+<div class="theorem-box">
+
+**Example.** A solid sphere of mass $$M=2.0\ \text{kg}$$ and radius $$R=0.15\ \text{m}$$ rolls without slipping at center-of-mass speed $$v_{\text{cm}}=4.0\ \text{m/s}$$. Find its total kinetic energy.
+
+For a solid sphere,
+
+$$
+I_{\text{cm}}=\frac{2}{5}MR^2.
+$$
+
+Rolling without slipping gives $$\omega=v_{\text{cm}}/R$$. Thus
+
+$$
+K=\frac12Mv_{\text{cm}}^2+\frac12I_{\text{cm}}\omega^2.
+$$
+
+Substitute:
+
+$$
+K=\frac12Mv^2+\frac12\left(\frac25MR^2\right)\left(\frac{v}{R}\right)^2
+=\frac12Mv^2+\frac15Mv^2=\frac{7}{10}Mv^2.
+$$
+
+Numerically,
+
+$$
+K=\frac{7}{10}(2.0)(4.0)^2=22.4\ \text{J}.
+$$
+
+The radius cancels because a smaller sphere spins faster at the same rolling speed, exactly compensating for the smaller $$R^2$$ in $$I$$.
+
+</div>
 
 ---
 
@@ -154,7 +185,31 @@ $$
 \vec P = \vec{\tau} \cdot \vec{\omega}.
 $$
 
-// add an example combining rotational work/power if possible
+<div class="theorem-box">
+
+**Example.** A motor applies a constant torque $$\tau=4.0\ \text{N}\cdot\text{m}$$ to a wheel starting from rest. The wheel rotates through $$12\ \text{rad}$$ in the first $$3.0\ \text{s}$$. Find the work done by the motor and the average power. If the wheel's angular speed at the end is $$8.0\ \text{rad/s}$$, find the instantaneous power at that instant.
+
+Rotational work is
+
+$$
+W=\tau\Delta\theta=(4.0)(12)=48\ \text{J}.
+$$
+
+Average power is
+
+$$
+\bar{P}=\frac{W}{\Delta t}=\frac{48}{3.0}=16\ \text{W}.
+$$
+
+Instantaneous rotational power is
+
+$$
+P=\tau\omega=(4.0)(8.0)=32\ \text{W}.
+$$
+
+The average power over the interval is lower than the final instantaneous power because the wheel started from rest and sped up.
+
+</div>
 
 ---
 
@@ -174,7 +229,15 @@ $$
 
 The point of contact is instantaneously at rest relative to the ground, so static friction can provide torque without doing work on an ideal rolling object. Static friction may point uphill or downhill depending on what torque is needed.
 
-// explain more, especially on what RWOS actually means as well as the friction components which might confuse some people.
+Rolling without slipping means the surface does not slide at the contact point. The contact point on the rolling object is instantaneously at rest relative to the ground, so the distance the center moves equals the arc length unwound from the rim:
+
+$$
+\Delta x_{\text{cm}}=R\Delta\theta.
+$$
+
+Differentiating gives $$v_{\text{cm}}=R\omega$$ and $$a_{\text{cm}}=R\alpha$$. If slipping occurs, these constraints fail; the object can translate too fast or too slowly for its spin.
+
+Friction is the force that enforces the no-slip condition, but its direction is not automatic. For a passive ball rolling down an incline, static friction points up the incline because it provides the torque needed to spin the ball faster. For a driven wheel on a car, static friction can point forward because the engine tries to spin the tire backward against the road. Static friction does not necessarily oppose the motion of the center of mass; it opposes relative slipping at the contact point.
 
 ### Rolling Down an Incline
 
@@ -185,16 +248,17 @@ A round object released on an incline rolls without slipping if friction is suff
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
 \begin{tikzpicture}[>=Stealth, font=\small]
-\draw[thick] (-3,-1) -- (3,-1) -- (3,1.2) -- cycle;
-\begin{scope}[shift={(0,0.15)}, rotate=19]
-\draw[fill=gray!20] (0,0) circle (0.55); \draw[->, blue, thick] (0,0.55) -- (0,1.5) node[above] {$N$}; \draw[->, orange, thick] (0,-0.55) -- (-1,-0.55) node[left] {$f$};
-\end{scope}
-\draw[->, red, thick] (0,0.15) -- (0,-1.5) node[below] {$mg$};
-\draw[->, thick] (1.1,0.25) arc[start angle=20,end angle=-250,radius=0.45] node[right] {$\alpha$};
+\draw[thick] (-3,-1.2) -- (3,-1.2) -- (3,0.9) -- cycle;
+\draw[thick] (-3,-1.2) -- (3,0.9);
+\coordinate (O) at (0.1,0.02);
+\draw[fill=gray!20] (O) circle (0.5);
+\draw[->, blue, thick] (O) -- ++(-0.34,0.94) node[above] {$N$};
+\draw[->, orange!90!black, thick] ($(O)+(-0.18,-0.47)$) -- ++(-1.0,-0.35) node[left] {$f_s$};
+\draw[->, red, thick] (O) -- ++(0,-1.35) node[below] {$mg$};
+\draw[->, thick] ($(O)+(0.73,0.05)$) arc[start angle=5,end angle=-270,radius=0.33] node[right] {$\alpha$};
+\draw[->, gray!80, thick] (O) -- ++(0.9,0.32) node[right] {$a_{\text{cm}}$};
 \end{tikzpicture}
 ```
-
-// the ball is overlapping with the ramp, normal force should go to the center, and the label/arrow for alpha is completely off
 
 <div class="theorem-box">
 
@@ -314,7 +378,17 @@ $$
 
 This simple form assumes the angular momentum vector is parallel to the angular velocity vector. That is true for the fixed-axis and principal-axis cases AP Physics C normally uses. In general, $$\vec L$$ and $$\vec\omega$$ need *not* be parallel — for a body spun about a lopsided axis, the angular momentum vector wobbles relative to the spin axis, which is what makes an unbalanced wheel shake. AP Physics C deliberately restricts itself to symmetry axes, where $$\vec L = I\vec\omega$$ holds cleanly, so you can treat $$L = I\omega$$ as a scalar relation for a fixed axis. Just remember it is a special case, not the definition; the definition is always $$\vec L = \sum_i \vec r_i \times \vec p_i$$.
 
-// add image of a disk spinning (label spin direction) and angular momentum labeled
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw[fill=gray!20] (0,0) ellipse (1.5 and 0.55);
+\draw[dashed] (0,-1.5) -- (0,1.8);
+\draw[->, very thick, blue] (0,0.2) -- (0,1.8) node[above] {$\vec L,\ \vec\omega$};
+\draw[->, thick] (1.0,0.35) arc[start angle=20,end angle=320,x radius=1.0,y radius=0.35] node[right] {spin};
+\node at (0,-1.9) {symmetric disk spinning about its central axis};
+\end{tikzpicture}
+```
 
 ---
 
@@ -542,11 +616,49 @@ $$
 \vec{\tau} = \vec{r}\times \vec{F}=0.
 $$
 
-// can you prove this statement
+<div class="theorem-box">
+
+**Proof (central forces exert zero torque about the center).** A central force is parallel or antiparallel to $$\vec r$$, the vector from the center to the particle. The torque magnitude is
+
+$$
+\tau=rF\sin\theta,
+$$
+
+where $$\theta$$ is the angle between $$\vec r$$ and $$\vec F$$. For a central force, $$\theta=0^\circ$$ or $$180^\circ$$, so $$\sin\theta=0$$. Therefore
+
+$$
+\tau=0.
+$$
+
+Equivalently, the line of action of the force passes through the center, so the lever arm about that center is zero.
+
+</div>
 
 Therefore angular momentum about the center is conserved. These forces are called central forces, and are important in everyday life, like in the cases of gravity and Coulombic force.
 
-// add more stuff on kepler's laws and orbits
+For gravity, central-force motion leads to Kepler's laws:
+
+- **First law:** bound orbits are ellipses with the central body at one focus.
+- **Second law:** the radius vector sweeps equal areas in equal times.
+- **Third law:** for orbits around the same central mass, $$T^2\propto a^3$$, where $$a$$ is the semimajor axis.
+
+For circular orbits, Kepler's third law follows immediately from force balance:
+
+$$
+\frac{GMm}{r^2}=m\frac{4\pi^2r}{T^2}.
+$$
+
+Solving,
+
+$$
+T^2=\frac{4\pi^2}{GM}r^3.
+$$
+
+For elliptical orbits, replace $$r$$ with the semimajor axis $$a$$:
+
+$$
+T^2=\frac{4\pi^2}{GM}a^3.
+$$
 
 <div class="theorem-box">
 

@@ -62,9 +62,53 @@ $$
 a_r = \frac{v_t^2}{r} = r\omega^2,
 $$
 
-directed toward the axis. Tangential acceleration changes speed; radial acceleration changes direction. Always remember that the rotational equivalent of any linear variables will involve dividing by the radius. // give an intuitive explanation for this
+directed toward the axis. Tangential acceleration changes speed; radial acceleration changes direction. Always remember that the rotational equivalent of any linear variables will involve dividing by the radius.
 
-// add a practice problem or two for angular kinematics
+The radius conversion comes from arc length: $$s=r\theta$$. A point twice as far from the axis covers twice as much arc length for the same angle, so it has twice the tangential speed at the same $$\omega$$. Turning that around, the same linear speed corresponds to a smaller angular speed when the radius is larger:
+
+$$
+\omega=\frac{v_t}{r}.
+$$
+
+<div class="theorem-box">
+
+**Example.** A wheel of radius $$0.40\ \text{m}$$ starts from rest and has constant angular acceleration $$3.0\ \text{rad/s}^2$$ for $$5.0\ \text{s}$$. Find its final angular speed and the tangential speed of a point on the rim.
+
+Use angular kinematics:
+
+$$
+\omega_f=\omega_i+\alpha t=0+(3.0)(5.0)=15\ \text{rad/s}.
+$$
+
+The tangential speed is
+
+$$
+v_t=r\omega=(0.40)(15)=6.0\ \text{m/s}.
+$$
+
+</div>
+
+<div class="theorem-box">
+
+**Example.** A disk spinning at $$12\ \text{rad/s}$$ slows uniformly to $$4.0\ \text{rad/s}$$ while rotating through $$8.0\ \text{rad}$$. Find its angular acceleration.
+
+Use the angular version of the no-time kinematics equation:
+
+$$
+\omega_f^2=\omega_i^2+2\alpha\Delta\theta.
+$$
+
+So
+
+$$
+\alpha=\frac{\omega_f^2-\omega_i^2}{2\Delta\theta}
+=\frac{4.0^2-12^2}{2(8.0)}
+=\frac{16-144}{16}=-8.0\ \text{rad/s}^2.
+$$
+
+The negative sign means the angular acceleration opposes the spin.
+
+</div>
 
 ---
 
@@ -90,15 +134,14 @@ where $$r_{\perp}$$ is the lever arm, the perpendicular distance from the axis t
 \usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
 \begin{tikzpicture}[>=Stealth, font=\small]
 \fill (0,0) circle (2pt) node[below] {pivot};
-\draw[very thick] (0,0) -- (3,1.2) node[midway, below] {$\vec r$};
-\draw[->, very thick, red] (3,1.2) -- (3,3.2) node[above] {$\vec F$};
-\draw[dashed] (0,0) -- (3,0); \draw[dashed] (3,1.2) -- (0.45,0.18);
-\draw[<->, blue] (0.55,0.22) -- (0.55,1.95) node[midway,left] {$r_\perp$};
-\draw (1.0,0.4) arc[start angle=22,end angle=90,radius=0.7] node[midway,above] {$\theta$};
+\draw[very thick] (0,0) -- (3.2,0.8) node[midway, below] {$\vec r$};
+\draw[->, very thick, red] (3.2,0.8) -- (1.9,2.35) node[above left] {$\vec F$};
+\draw[dashed, red!70] (1.25,3.12) -- (3.7,0.20);
+\draw[dashed, blue] (0,0) -- (1.86,2.38);
+\draw[<->, blue] (0.18,0.22) -- (1.95,2.30) node[midway,left] {$r_\perp$};
+\draw (0.9,0.23) arc[start angle=14,end angle=130,radius=0.55] node[midway,above] {$\theta$};
 \end{tikzpicture}
 ```
-
-// the angle label is way too big and not even in the correct place, r_perp isn't either, the force should push instead of pull
 
 There are two equivalent ways to read $$\tau = rF\sin\theta$$, and switching between them is often the key to a clean solution:
 
@@ -113,23 +156,21 @@ The direction of torque follows the **right-hand rule** applied to $$\vec\tau = 
 
 <div class="theorem-box">
 
-**Example.** A wrench grips a bolt at the origin. You push on the handle a distance $$r = 0.30\ \text{m}$$ from the bolt with a force $$F = 80\ \text{N}$$ directed $$30^\circ$$ above the handle. Find the torque on the bolt.
+**Example.** A wrench grips a bolt at the origin. You push on the handle a distance $$r = 0.30\ \text{m}$$ from the bolt with force $$F=80\ \text{N}$$. The force is directed $$30^\circ$$ above the handle for the first push. Then you move your hand to $$r=0.45\ \text{m}$$ but can only push with $$55\ \text{N}$$ at $$70^\circ$$ to the handle. Which push produces more torque?
 
 Using the perpendicular component of the force,
 
 $$
-\tau = rF\sin\theta = (0.30\ \text{m})(80\ \text{N})\sin 30^\circ = (0.30)(80)(0.50) = 12\ \text{N}\cdot\text{m}.
+\tau_1=rF\sin\theta=(0.30)(80)\sin30^\circ=12\ \text{N}\cdot\text{m}.
 $$
 
-Reading the same number as a lever arm: the perpendicular distance from the bolt to the line of the force is $$r_\perp = r\sin\theta = (0.30)(0.50) = 0.15\ \text{m}$$, and
+For the second push,
 
 $$
-\tau = F\,r_\perp = (80)(0.15) = 12\ \text{N}\cdot\text{m}.
+\tau_2=(0.45)(55)\sin70^\circ=23\ \text{N}\cdot\text{m}.
 $$
 
-Both readings agree. If you had naively multiplied $$F$$ by the full distance $$r$$ you would have gotten $$24\ \text{N}\cdot\text{m}$$, twice too large, because that ignores the $$\sin\theta$$. To maximize torque you would push perpendicular to the handle ($$\theta = 90^\circ$$), giving the full $$24\ \text{N}\cdot\text{m}$$.
-
-// make the problem harder
+Even though the second push has less force, it produces more torque because the lever arm is longer and the force is closer to perpendicular. Torque rewards both distance from the pivot and perpendicularity.
 
 </div>
 
@@ -161,19 +202,33 @@ Common results:
 - Thin rod about end: $$I = \frac{1}{3}ML^2$$
 
 
-| Object and axis | Moment of inertia |
-| --- | ---: |
-| Point mass | $$mr^2$$ |
-| Thin hoop, central axis | $$MR^2$$ |
-| Solid disk/cylinder, central axis | $$\frac12MR^2$$ |
-| Solid sphere, diameter | $$\frac25MR^2$$ |
-| Thin rod, center | $$\frac1{12}ML^2$$ |
-| Thin rod, end | $$\frac13ML^2$$ |
-
-// add a picture instead of table
+```tikz
+\usepackage{tikz}
+\begin{tikzpicture}[font=\small]
+\draw[fill=gray!15] (-3.7,1.0) circle (0.42);
+\fill (-3.7,1.0) circle (1.5pt);
+\node at (-3.7,0.35) {point mass};
+\node at (-3.7,-0.05) {$I=mr^2$};
+\draw[thick] (-1.7,1.0) circle (0.45);
+\node at (-1.7,0.35) {hoop};
+\node at (-1.7,-0.05) {$I=MR^2$};
+\draw[fill=gray!20] (0.2,1.0) circle (0.45);
+\node at (0.2,0.35) {disk};
+\node at (0.2,-0.05) {$I=\tfrac12MR^2$};
+\shade[ball color=gray!35] (2.1,1.0) circle (0.45);
+\node at (2.1,0.35) {sphere};
+\node at (2.1,-0.05) {$I=\tfrac25MR^2$};
+\draw[very thick] (-1.1,-1.1) -- (1.1,-1.1);
+\fill (0,-1.1) circle (1.5pt);
+\node at (0,-1.65) {rod center: $\tfrac1{12}ML^2$};
+\draw[very thick] (2.6,-1.1) -- (4.6,-1.1);
+\fill (2.6,-1.1) circle (1.5pt);
+\node at (3.6,-1.65) {rod end: $\tfrac13ML^2$};
+\end{tikzpicture}
+```
 
 Below are example proofs of how to derive these formulas:
-a 
+
 <div class="theorem-box">
 
 **Proof (Rotational Inertia of a Thin Rod About Its Center).** Let a uniform rod of length $$L$$ and mass $$M$$ lie along the $$x$$-axis with its center at $$x=0$$. Its linear mass density is
@@ -584,7 +639,21 @@ The standard trick is to **put the pivot at the location of an unknown force**. 
 
 **Example.** A uniform horizontal beam of mass $$m = 20\ \text{kg}$$ and length $$L$$ is hinged to a wall at its left end. A cable runs from the far (right) end of the beam up to the wall, making an angle $$\theta = 37^\circ$$ with the beam. A sign of weight $$W = 300\ \text{N}$$ hangs from the right end. Find the tension in the cable and the force the hinge exerts on the beam. Take $$g = 9.8\ \text{m/s}^2$$.
 
-// draw the diagram
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw[very thick] (0,0) -- (5,0);
+\fill (0,0) circle (2pt) node[below] {hinge};
+\draw[thick] (0,0) -- (0,2.4);
+\draw[very thick] (5,0) -- (0,2.4) node[midway,above] {cable};
+\draw[->,blue,thick] (5,0) -- (4.0,0.48) node[above] {$T$};
+\draw[->,red,thick] (2.5,0) -- (2.5,-1.0) node[below] {$mg$};
+\draw[->,red,thick] (5,0) -- (5,-1.2) node[below] {$W$};
+\draw[->,orange!80!black,thick] (0,0) -- (0.9,0.5) node[right] {$\vec H$};
+\draw (4.2,0) arc[start angle=180,end angle=154,radius=0.8] node[midway,left] {$\theta$};
+\end{tikzpicture}
+```
 
 Forces on the beam: its weight $$mg = (20)(9.8) = 196\ \text{N}$$ acting down at the center ($$L/2$$); the sign's weight $$W = 300\ \text{N}$$ down at the right end ($$L$$); the cable tension $$T$$ along the cable at the right end; and the hinge force with unknown components $$H_x, H_y$$ at the left end.
 
@@ -608,8 +677,10 @@ $$
 
 Now use force balance for the hinge force. Horizontally, only the cable's horizontal component and $$H_x$$ act:
 
+The cable pulls the beam left, so the hinge pushes right:
+
 $$
-H_x = T\cos\theta = (661)(0.799) = 528\ \text{N}\ \text{(pulling the beam toward the wall, so the hinge pushes out).}
+H_x=T\cos\theta=(661)(0.799)=528\ \text{N}.
 $$
 
 Vertically,
@@ -620,15 +691,29 @@ $$
 
 The hinge force magnitude is $$\sqrt{H_x^2 + H_y^2} = \sqrt{528^2 + 98^2}\approx 537\ \text{N}$$. Choosing the hinge as pivot let us solve for $$T$$ in a single equation before ever touching the hinge force.
 
-// goes outside the box, please fix
-
 </div>
 
 <div class="theorem-box">
 
 **Example.** A uniform diving board of mass $$m = 30\ \text{kg}$$ and length $$L = 4.0\ \text{m}$$ rests on two supports: support $$A$$ at the left end and support $$B$$ a distance $$d = 1.5\ \text{m}$$ to the right of $$A$$. A diver of weight $$W = 600\ \text{N}$$ stands at the far right end. Find the forces the two supports exert on the board. Take $$g = 9.8\ \text{m/s}^2$$, so the board's weight is $$mg = 294\ \text{N}$$.
 
-// draw the diagram
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw[very thick] (0,0) -- (6,0);
+\draw[fill=gray!20] (-0.15,-0.35) -- (0.15,-0.35) -- (0,0) -- cycle;
+\draw[fill=gray!20] (2.1,-0.35) -- (2.4,-0.35) -- (2.25,0) -- cycle;
+\node[below] at (0,-0.35) {$A$};
+\node[below] at (2.25,-0.35) {$B$};
+\draw[->,blue,thick] (0,0) -- (0,0.9) node[left] {$N_A$};
+\draw[->,blue,thick] (2.25,0) -- (2.25,1.0) node[right] {$N_B$};
+\draw[->,red,thick] (3,0) -- (3,-0.9) node[below] {$mg$};
+\draw[->,red,thick] (6,0) -- (6,-1.1) node[below] {$W$};
+\draw[<->] (0,0.35) -- (2.25,0.35) node[midway,above] {$1.5\ \text{m}$};
+\draw[<->] (0,0.75) -- (6,0.75) node[midway,above] {$4.0\ \text{m}$};
+\end{tikzpicture}
+```
 
 The board is in equilibrium under four forces: support force $$N_A$$ up at $$A$$, support force $$N_B$$ up at $$B$$, the board's weight $$294\ \text{N}$$ down at the center ($$2.0\ \text{m}$$ from $$A$$), and the diver's weight $$600\ \text{N}$$ down at the right end ($$4.0\ \text{m}$$ from $$A$$).
 
@@ -651,8 +736,6 @@ N_A + N_B - mg - W = 0\ \Rightarrow\ N_B = mg + W - N_A = 294 + 600 - (-1098) = 
 $$
 
 So support $$B$$ (the fulcrum near the diver) carries a large upward force of about $$1990\ \text{N}$$, while support $$A$$ (the anchored end) is held down with about $$1100\ \text{N}$$. As a check, the net upward force is $$1992 - 1098 = 894\ \text{N}$$, which equals the total downward weight $$294 + 600 = 894\ \text{N}$$.
-
-// goes out of the box, please fix
 
 </div>
 

@@ -33,7 +33,27 @@ $$
 
 For constant mass, this reduces to $$\vec{F}_{\text{net}} = m\vec{a}$$. The momentum form is the more fundamental statement of Newton's second law (in fact, it was the original statement of the law!), and it is essential whenever mass is not constant, such as a rocket burning fuel or a rope piling onto the ground.
 
-// maybe introduce more on momentum, like get an intuitive sense of it, as well as having an example
+Intuitively, momentum measures how hard it is to stop something **because of both mass and velocity**. A slow truck and a fast baseball can both have large momentum, but for different reasons. Force changes momentum over time, which is why stopping the same object gently means spreading the same momentum change over a longer time.
+
+<div class="theorem-box">
+
+**Example.** A $$0.15\ \text{kg}$$ baseball moving at $$40\ \text{m/s}$$ and a $$1200\ \text{kg}$$ car moving at $$0.0050\ \text{m/s}$$ have the same speed? The same kinetic energy? The same momentum? Compare their momenta.
+
+The baseball's momentum is
+
+$$
+p_{\text{ball}}=mv=(0.15)(40)=6.0\ \text{kg}\cdot\text{m/s}.
+$$
+
+The car's momentum is
+
+$$
+p_{\text{car}}=(1200)(0.0050)=6.0\ \text{kg}\cdot\text{m/s}.
+$$
+
+They have the same momentum even though their speeds are wildly different. Momentum is not just "fastness"; it is mass times velocity. This is why collisions care so much about both the object's speed and how much matter is moving.
+
+</div>
 
 ---
 
@@ -58,14 +78,13 @@ On a force-time graph, impulse is the signed area under the curve. This is the t
 \pgfplotsset{compat=1.16}
 \begin{tikzpicture}
 \begin{axis}[axis lines=left,width=8cm,height=5cm,xmin=0,xmax=6,ymin=0,ymax=5,xlabel={$t$},ylabel={$F$},xtick=\empty,ytick=\empty]
-\addplot[fill=blue!20, draw=none] coordinates {(0.8,0) (0.8,1) (2.5,4) (4.8,1.2) (4.8,0)} -- cycle;
-\addplot[blue,very thick] coordinates {(0.8,1) (2.5,4) (4.8,1.2)};
-\node at (axis cs:2.8,1.0) {area = impulse};
+\addplot[fill=blue!18, draw=none, domain=0:5.5, samples=120] {0.35+3.7*exp(-0.55*(x-2.8)^2)} \closedcycle;
+\addplot[blue,very thick,domain=0:5.5,samples=120] {0.35+3.7*exp(-0.55*(x-2.8)^2)};
+\draw[dashed] (axis cs:5.5,0) -- (axis cs:5.5,0.55);
+\node at (axis cs:3.0,1.0) {area = impulse};
 \end{axis}
 \end{tikzpicture}
 ```
-
-// same issue as the force graph
 
 It is also useful to define the **average force** over a collision:
 
@@ -192,15 +211,18 @@ $$
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
 \begin{tikzpicture}[>=Stealth, font=\small]
-\fill[blue] (-2,0.8) circle (4pt) node[above] {$m_1$}; \fill[blue] (0,-0.6) circle (6pt) node[below] {$m_2$}; \fill[blue] (2,0.5) circle (3pt) node[above] {$m_3$};
-\fill[red] (0.15,0.05) circle (3pt) node[right] {center of mass};
-\draw[dashed] (-2,0.8)--(0.15,0.05)--(0,-0.6); \draw[dashed] (2,0.5)--(0.15,0.05);
+\fill[blue] (-2,0.8) circle (4pt) node[above left] {$m_1$};
+\fill[blue] (0,-0.6) circle (6pt) node[below] {$m_2$};
+\fill[blue] (2,0.5) circle (3pt) node[above right] {$m_3$};
+\fill[red] (0.15,0.05) circle (3pt) node[below right] {$\vec r_{\text{cm}}$};
+\draw[dashed,gray] (-2,0.8)--(0.15,0.05)--(0,-0.6);
+\draw[dashed,gray] (2,0.5)--(0.15,0.05);
+\node[align=center] at (0,-1.55) {weighted average\\of particle positions};
 \draw[thick, rounded corners] (3,-1) .. controls (4,-1.8) and (5,1.1) .. (6,0.7) .. controls (5.2,2) and (3.3,1.5) .. (3,-1);
-\fill[red] (4.6,0.4) circle (3pt) node[right] {COM};
+\fill[red] (4.6,0.4) circle (3pt) node[below right] {center of mass};
+\node at (4.65,-1.55) {extended object};
 \end{tikzpicture}
 ```
-
-// redo the labeling
 
 For discrete particles, the position $$r$$ (in whatever coordinate direction you define $$r$$ to be in) for an object's center of mass (for one coordinate, e.g. x-coordinate or y-coordinate) is equal to 
 
@@ -364,9 +386,45 @@ $$
 \vec{P}_i = \vec{P}_f, \qquad K_i = K_f.
 $$
 
-// add more on elastic collisions, e.g. how to easily solve these types of problems, formula shortcuts, etc.
+For 1D elastic collisions, the cleanest method is usually:
 
-// add an example problem (make it harder)
+1. Conserve momentum.
+2. Use the relative-speed reversal $$v_{1i}-v_{2i}=-(v_{1f}-v_{2f})$$ instead of expanding kinetic energy.
+3. Solve the two linear equations.
+
+Useful shortcuts:
+
+- Equal masses in 1D exchange velocities.
+- If a light object elastically hits a much heavier stationary object, the light object rebounds with nearly the same speed.
+- If a heavy object elastically hits a much lighter stationary object, the heavy object barely changes speed and the light object leaves at nearly twice the heavy object's speed.
+
+<div class="theorem-box">
+
+**Example.** A $$3.0\ \text{kg}$$ cart moving right at $$5.0\ \text{m/s}$$ elastically collides with a $$1.0\ \text{kg}$$ cart moving left at $$2.0\ \text{m/s}$$. Find both final velocities.
+
+Use the 1D elastic formulas:
+
+$$
+v_{1f}=\frac{m_1-m_2}{m_1+m_2}v_{1i}+\frac{2m_2}{m_1+m_2}v_{2i},
+$$
+
+$$
+v_{2f}=\frac{2m_1}{m_1+m_2}v_{1i}+\frac{m_2-m_1}{m_1+m_2}v_{2i}.
+$$
+
+With $$m_1=3.0$$, $$m_2=1.0$$, $$v_{1i}=5.0$$, and $$v_{2i}=-2.0$$,
+
+$$
+v_{1f}=\frac{2}{4}(5.0)+\frac{2}{4}(-2.0)=2.5-1.0=1.5\ \text{m/s},
+$$
+
+$$
+v_{2f}=\frac{6}{4}(5.0)+\frac{-2}{4}(-2.0)=7.5+1.0=8.5\ \text{m/s}.
+$$
+
+The lighter cart shoots right quickly because it receives momentum and kinetic energy from the heavier incoming cart.
+
+</div>
 
 ### Inelastic collisions
 
@@ -386,9 +444,56 @@ $$
 
 This loss is maximal among all collisions with the same initial momenta, because sticking together leaves the objects with the least possible kinetic energy consistent with conserved momentum (the energy of the center-of-mass motion alone).
 
-// add more on inelastic collisions, e.g. how to easily solve these types of problems, formula shortcuts, etc.
+For inelastic collisions, the most reliable shortcut is to solve for the center-of-mass velocity:
 
-// add an example problem, but make it harder
+$$
+\vec{v}_{\text{cm}}=\frac{\vec{P}_{\text{tot}}}{M_{\text{tot}}}.
+$$
+
+In a perfectly inelastic collision, the stuck-together object moves at exactly $$\vec{v}_{\text{cm}}$$. The kinetic energy after sticking is the kinetic energy of the center-of-mass motion; everything else has been converted into internal energy.
+
+<div class="theorem-box">
+
+**Example.** A $$0.20\ \text{kg}$$ puck moving east at $$6.0\ \text{m/s}$$ sticks to a $$0.30\ \text{kg}$$ puck moving north at $$4.0\ \text{m/s}$$. Find the final velocity of the stuck pair and the kinetic energy lost.
+
+Conserve momentum in components. The total mass is $$0.50\ \text{kg}$$. Initial momentum components:
+
+$$
+P_x=(0.20)(6.0)=1.2\ \text{kg}\cdot\text{m/s},
+$$
+
+$$
+P_y=(0.30)(4.0)=1.2\ \text{kg}\cdot\text{m/s}.
+$$
+
+Thus the final velocity components are
+
+$$
+v_{fx}=\frac{1.2}{0.50}=2.4\ \text{m/s},\qquad
+v_{fy}=\frac{1.2}{0.50}=2.4\ \text{m/s}.
+$$
+
+The stuck pair moves northeast with speed
+
+$$
+v_f=\sqrt{2.4^2+2.4^2}=3.4\ \text{m/s}.
+$$
+
+Initial kinetic energy:
+
+$$
+K_i=\tfrac12(0.20)(6.0)^2+\tfrac12(0.30)(4.0)^2=3.6+2.4=6.0\ \text{J}.
+$$
+
+Final kinetic energy:
+
+$$
+K_f=\tfrac12(0.50)(3.4)^2\approx2.9\ \text{J}.
+$$
+
+So about $$3.1\ \text{J}$$ is lost to deformation, heat, and sound.
+
+</div>
 
 ### The Ballistic Pendulum
 
@@ -552,8 +657,6 @@ The two masses simply swap velocities. This is why a head-on shot in billiards (
 
 </div>
 
-// move this section to the elastic collisions part, this is out of place
-
 ---
 
 ## Momentum and Collisions in Two Dimensions
@@ -594,9 +697,7 @@ $$
 2\,\vec{v}_{1f}\cdot\vec{v}_{2f} = 0.
 $$
 
-If both objects move ($$v_{1f},v_{2f}\neq 0$$), the dot product vanishing means the final velocities are perpendicular: the objects separate at $$90^\circ$$. This is the familiar billiards result for equal-mass balls; it fails if the masses differ or the collision is inelastic.
-
-// add this to elastic collisions section
+If both objects move ($$v_{1f},v_{2f}\neq 0$$), the dot product vanishing means the final velocities are perpendicular: the objects separate at $$90^\circ$$. This is the familiar billiards result for equal-mass balls; it fails if the masses differ or the collision is inelastic. Treat it as the two-dimensional cousin of the equal-mass velocity-exchange rule from elastic collisions.
 
 </div>
 
@@ -638,7 +739,27 @@ The struck puck recoils to the opposite side, balancing the $$y$$-momentum that 
 
 </div>
 
-// add an example (f=ma exam 2025 problem 3, please cite like this: **Example (2025 F=ma Exam).**)
+<div class="theorem-box">
+
+**Example (2025 F=ma Exam).** Three identical smooth disks are arranged so one moving disk with speed $$v$$ collides elastically with two initially stationary disks one at a time because of a slight misalignment. Each collision occurs along a line of centers making $$30^\circ$$ with the incoming disk's direction at that collision. Find the final speed of the originally moving disk after the two sequential collisions.
+
+In an elastic collision between identical smooth disks, the component of the moving disk's velocity along the line of centers is transferred to the struck disk, while the perpendicular component remains with the originally moving disk.
+
+After the first collision, the originally moving disk keeps the component perpendicular to the first line of centers:
+
+$$
+v_1=v\sin 30^\circ=\frac{v}{2}.
+$$
+
+Its new direction is such that, for the second collision, its velocity again has a component perpendicular to the next line of centers equal to $$v_1\sin 30^\circ$$. Therefore the final speed of the original disk is
+
+$$
+v_f=v_1\sin 30^\circ=\frac{v}{2}\cdot\frac{1}{2}=\frac{v}{4}.
+$$
+
+The important idea is that a smooth elastic disk collision only changes the line-of-centers component; the perpendicular component passes through unchanged.
+
+</div>
 
 ---
 
@@ -652,7 +773,52 @@ $$
 
 Since the total momentum is zero, the objects always have equal and opposite momenta in this frame, both before and after a collision. An elastic collision in the CM frame simply reverses each object's velocity; an inelastic collision brings them to rest in this frame, which makes the maximum-energy-loss statement obvious. The lab-frame results then follow by adding $$\vec{v}_{\text{cm}}$$ back.
 
-// expand on this, add some examples
+For two objects in one dimension, the CM-frame method is:
+
+1. Compute $$v_{\text{cm}}$$.
+2. Subtract it from every velocity to enter the CM frame.
+3. Apply the collision rule there.
+4. Add $$v_{\text{cm}}$$ back to return to the lab frame.
+
+<div class="theorem-box">
+
+**Example.** A $$3.0\ \text{kg}$$ cart moving at $$5.0\ \text{m/s}$$ hits a $$1.0\ \text{kg}$$ cart moving at $$-2.0\ \text{m/s}$$ elastically. Solve using the center-of-mass frame.
+
+The center-of-mass velocity is
+
+$$
+v_{\text{cm}}=\frac{(3.0)(5.0)+(1.0)(-2.0)}{4.0}=\frac{13}{4}=3.25\ \text{m/s}.
+$$
+
+In the CM frame,
+
+$$
+v'_{1i}=5.0-3.25=1.75\ \text{m/s},
+$$
+
+$$
+v'_{2i}=-2.0-3.25=-5.25\ \text{m/s}.
+$$
+
+For a 1D elastic collision in the CM frame, velocities reverse:
+
+$$
+v'_{1f}=-1.75\ \text{m/s},\qquad v'_{2f}=5.25\ \text{m/s}.
+$$
+
+Add $$v_{\text{cm}}$$ back:
+
+$$
+v_{1f}= -1.75+3.25=1.5\ \text{m/s},
+$$
+
+$$
+v_{2f}=5.25+3.25=8.5\ \text{m/s}.
+$$
+
+This matches the formula result, but the CM-frame view makes the "reverse in elastic collisions" idea visible.
+
+</div>
 
 ---
 

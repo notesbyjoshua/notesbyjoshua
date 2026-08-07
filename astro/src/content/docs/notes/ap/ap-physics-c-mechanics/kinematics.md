@@ -114,7 +114,19 @@ A maximum or minimum of $$x(t)$$ occurs where $$v = 0$$ (the slope is momentaril
 
 **Example.** A cart moves along a line. Its velocity is $$+4\ \text{m/s}$$ and constant for the first $$3\ \text{s}$$, then ramps linearly down to $$-2\ \text{m/s}$$ over the next $$2\ \text{s}$$. Find the acceleration during each phase, the total displacement, and the distance traveled.
 
-// add a picture of the graph
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{tikzpicture}
+\begin{axis}[axis lines=middle,width=8cm,height=5cm,xmin=0,xmax=5.5,ymin=-3,ymax=5,xlabel={$t\ (\text{s})$},ylabel={$v\ (\text{m/s})$},xtick={0,3,5},ytick={-2,0,4},grid=both,grid style={gray!15}]
+\addplot[blue,very thick] coordinates {(0,4) (3,4) (5,-2)};
+\addplot[fill=blue!15,draw=none] coordinates {(0,0) (0,4) (3,4) (4.333,0)} -- cycle;
+\addplot[fill=red!15,draw=none] coordinates {(4.333,0) (5,-2) (5,0)} -- cycle;
+\node[blue] at (axis cs:1.6,2.0) {positive area};
+\node[red!70!black] at (axis cs:4.78,-0.75) {negative};
+\end{axis}
+\end{tikzpicture}
+```
 
 During the first phase the $$v$$-$$t$$ graph is flat, so $$a_1 = 0$$. During the second phase,
 
@@ -328,13 +340,12 @@ In 2D, vectors can be broken down into $$x$$- and $$y$$-components. For **projec
 \usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
 \begin{tikzpicture}[>=Stealth, font=\small]
 \draw[->] (0,0) -- (7,0) node[right] {$x$}; \draw[->] (0,0) -- (0,3.5) node[above] {$y$};
-\draw[blue, very thick, domain=0:6.4, samples=80] plot (\x,{0.9*\x-0.14*\x*\x});
-\draw[->, red, thick] (0,0) -- (1.4,1.26) node[above] {$v_0$};
-\draw[dashed] (1.4,1.26) -- (1.4,0) node[below] {$v_{0x}$}; \draw[dashed] (1.4,1.26) -- (0,1.26) node[left] {$v_{0y}$};
-\node at (4.6,2.0) {parabolic path};
+\draw[blue, very thick, domain=0:6.4, samples=80] plot (\x,{1.35*\x-0.21*\x*\x});
+\draw[->, red, thick] (0,0) -- (1.4,1.89) node[above] {$v_0$};
+\draw[dashed] (1.4,1.89) -- (1.4,0) node[below] {$v_{0x}$}; \draw[dashed] (1.4,1.89) -- (0,1.89) node[left] {$v_{0y}$};
+\node at (4.8,2.55) {parabolic path};
 \end{tikzpicture}
 ```
-// make parabola taller
 
 With initial speed $$v_0$$ at launch angle $$\theta$$ above the horizontal,
 

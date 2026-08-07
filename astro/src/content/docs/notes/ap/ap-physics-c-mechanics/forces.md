@@ -81,8 +81,6 @@ If acceleration is zero in one direction, the net force in that direction is zer
 
 In AP Physics C, most force problems are built from a small set of common forces.
 
-// please include a problem/solution example for each type of force.
-
 ### Weight
 
 **Weight** is the gravitational force on an object. Near Earth's surface,
@@ -141,7 +139,7 @@ $$
 \vec{F}_s = -k\vec{x},
 $$
 
-where $$\vec{x}$$ is displacement from equilibrium. The negative sign means the spring force points opposite the displacement. This force is more relevant in [Unit 7: Oscillations](/notes/ap/ap-physics-c-mechanics/oscillations/).
+where $$\vec{x}$$ is displacement from equilibrium. The negative sign means the spring force points opposite the displacement. This force is more relevant in [Unit 7: Oscillations](/notes/ap/ap-physics-c-mechanics/oscillations/). The value $$k$$ is called the spring constant.
 
 ### Drag and resistive forces
 
@@ -160,6 +158,52 @@ $$
 for high-speed quadratic drag.
 
 Essentially, drag acts like a friction force for falling objects. At some point, the amount of drag pulling up will equal the force of gravity pulling down, allowing an object to go at a constant velocity (terminal velocity). Usually, drag force can never exceed gravity (that's why skydivers don't just go back up after reaching terminal velocity!).
+
+<div class="theorem-box">
+
+**Example.** A $$5.0\ \text{kg}$$ box rests on a horizontal table. A spring pulls it to the right with force $$12\ \text{N}$$, a rope pulls it to the left with tension $$7.0\ \text{N}$$, and kinetic friction has coefficient $$\mu_k=0.20$$. Find the box's acceleration if it is sliding right.
+
+The weight is $$mg=(5.0)(9.8)=49\ \text{N}$$ downward. Since there is no vertical acceleration, the normal force is $$F_N=49\ \text{N}$$ upward. The box slides right, so kinetic friction points left:
+
+$$
+f_k=\mu_kF_N=(0.20)(49)=9.8\ \text{N}.
+$$
+
+The horizontal net force is
+
+$$
+\sum F_x = 12-7.0-9.8=-4.8\ \text{N}.
+$$
+
+Thus
+
+$$
+a_x=\frac{\sum F_x}{m}=\frac{-4.8}{5.0}=-0.96\ \text{m/s}^2.
+$$
+
+The negative sign means the acceleration is leftward, so the object is slowing down while moving right. This one setup uses the main force types: weight, normal force, tension, friction, and spring force.
+
+</div>
+
+<div class="theorem-box">
+
+**Example.** A $$70\ \text{kg}$$ skydiver falls downward through air with linear drag $$F_d=bv$$, where $$b=35\ \text{kg/s}$$. Find the terminal speed.
+
+At terminal speed, acceleration is zero, so the upward drag equals the downward weight:
+
+$$
+bv_t=mg.
+$$
+
+Therefore
+
+$$
+v_t=\frac{mg}{b}=\frac{(70)(9.8)}{35}=19.6\ \text{m/s}.
+$$
+
+This is a force-balance problem, not a kinematics problem: terminal speed comes from $$\sum F=0$$.
+
+</div>
 
 ---
 
@@ -243,20 +287,24 @@ $$
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
 \begin{tikzpicture}[>=Stealth, font=\small]
-\draw[thick] (-3,-1) -- (3,-1) -- (3,1.2) -- cycle;
-\begin{scope}[rotate=19]
-\draw[fill=gray!20] (-0.5,-0.2) rectangle (0.5,0.4); \node at (0,0.1) {$m$};
-\draw[->, very thick, blue] (0,0.4) -- (0,1.7) node[above] {$N$};
-\draw[->, very thick, orange] (-0.5,0.1) -- (-1.6,0.1) node[left] {$f$};
+\coordinate (A) at (-3,-1.2);
+\coordinate (B) at (3,-1.2);
+\coordinate (C) at (3,1.0);
+\draw[thick] (A) -- (B) -- (C) -- cycle;
+\draw (2.25,-1.2) arc[start angle=0,end angle=20.6,radius=0.75] node[midway,right] {$\theta$};
+\begin{scope}[shift={(0.1,-0.18)}, rotate=20.6]
+\draw[fill=gray!20] (-0.55,0) rectangle (0.55,0.45);
+\node at (0,0.23) {$m$};
+\coordinate (O) at (0,0.23);
+\draw[->, very thick, blue] (O) -- (0,1.55) node[above] {$N$};
+\draw[->, very thick, orange!90!black] (O) -- (-1.35,0.23) node[left] {$f$};
+\draw[dashed] (-0.8,0) -- (0.9,0);
 \end{scope}
-\draw[->, very thick, red] (0,0) -- (0,-2) node[below] {$mg$};
-\draw[dashed, red] (0,0) -- (-0.65,-1.85) node[left] {$mg\sin\theta$};
-\draw[dashed, red] (0,0) -- (1.25,-0.45) node[right] {$mg\cos\theta$};
-\draw (2.2,-1) arc[start angle=0,end angle=19,radius=0.8] node[midway,right] {$\theta$};
+\draw[->, very thick, red] (0.1,0.05) -- (0.1,-1.9) node[below] {$mg$};
+\draw[->, dashed, red] (0.1,0.05) -- (-0.62,-1.86) node[left] {$mg\sin\theta$};
+\draw[->, dashed, red] (0.1,0.05) -- (1.36,-0.42) node[right] {$mg\cos\theta$};
 \end{tikzpicture}
 ```
-
-// the block should be on top of the incline not phasing through it, the angle marking is not even in the proper place (it is like really far away from the proper corner), mg sin theta should be parallel to the plane and mg cos theta should be perpendicular
 
 With friction, decide whether the block is moving or about to move. If it is moving, use kinetic friction. If it is at rest, static friction takes whatever value is needed up to $$\mu_sF_N$$. It is also helpful to use geometry/similar triangles to determine certain angles for vector decompositions. ALWAYS remember your normal force!
 
@@ -302,7 +350,23 @@ The block accelerates down the plane at about $$1.5\ \text{m/s}^2$$. Had $$f_{s,
 
 </div>
 
-// add inclined plane kinematics
+### Inclined plane kinematics
+
+Once the acceleration along the plane is known, the motion becomes a one-dimensional kinematics problem along the surface. Choose the down-plane direction as positive if the object is sliding down, then use the Big Five from [Unit 1](/notes/ap/ap-physics-c-mechanics/kinematics/) with $$\Delta x$$ measured **along the incline**, not vertically.
+
+For a frictionless incline released from rest,
+
+$$
+a=g\sin\theta.
+$$
+
+If the object travels a distance $$s$$ along the incline, then
+
+$$
+v^2=2as=2g s\sin\theta.
+$$
+
+Since the vertical drop is $$h=s\sin\theta$$, this also gives $$v=\sqrt{2gh}$$, matching the energy result from [Unit 3](/notes/ap/ap-physics-c-mechanics/work/). The dynamics method and the energy method are saying the same thing in two different languages.
 
 ### Friction and the slipping condition
 
@@ -330,7 +394,7 @@ The result $$\tan\theta_{\max} = \mu_s$$ is notable because the mass cancels: a 
 
 <div class="theorem-box">
 
-**Example).** A coin placed on a flat book starts to slide when the book is tilted to $$\theta_{\max} = 22^\circ$$ from horizontal. Find $$\mu_s$$.
+**Example.** A coin placed on a flat book starts to slide when the book is tilted to $$\theta_{\max} = 22^\circ$$ from horizontal. Find $$\mu_s$$.
 
 At impending slip the down-plane gravity component equals the maximum static friction:
 
@@ -352,7 +416,7 @@ For ideal ropes and pulleys, connected objects share related accelerations. A co
 ```tikz
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
-\begin{tikzpicture}[>=Stealth, font=\small]
+\begin{tikzpicture}[>=Stealth, font=\small, scale=0.8]
 \draw[thick] (0,2) circle (0.55); \draw[thick] (-0.55,2) -- (-0.55,0.2); \draw[thick] (0.55,2) -- (0.55,-0.5);
 \draw[fill=gray!20] (-1.0,-0.6) rectangle (-0.1,0.2); \node at (-0.55,-0.2) {$m_1$};
 \draw[fill=gray!20] (0.1,-1.3) rectangle (1.0,-0.5); \node at (0.55,-0.9) {$m_2$};
@@ -360,8 +424,6 @@ For ideal ropes and pulleys, connected objects share related accelerations. A co
 \draw[->, blue, thick] (0.55,-0.5) -- (0.55,0.4) node[right] {$T$}; \draw[->, red, thick] (0.55,-1.3) -- (0.55,-2.2) node[right] {$m_2g$};
 \end{tikzpicture}
 ```
-
-// make image smaller
 
 If $$m_2 > m_1$$, the acceleration magnitude is
 
@@ -652,7 +714,34 @@ Below this speed, the required inward force is less than $$mg$$, so the object f
 
 <div class="theorem-box">
 
-// add an example of nonuniform circular motion without using energy in the solution
+**Example.** A $$0.30\ \text{kg}$$ ball attached to a string of length $$L=1.2\ \text{m}$$ moves through the top of a vertical circle at speed $$v=4.0\ \text{m/s}$$. At a point $$30^\circ$$ below the top, its speed is momentarily $$4.4\ \text{m/s}$$. Find the radial acceleration, tangential acceleration, and tension at that instant without using energy.
+
+The radial acceleration depends only on the instantaneous speed:
+
+$$
+a_r=\frac{v^2}{L}=\frac{(4.4)^2}{1.2}=16.1\ \text{m/s}^2.
+$$
+
+At $$30^\circ$$ below the top, the component of gravity tangent to the circle is $$mg\sin 30^\circ$$, directed down the path, so
+
+$$
+a_t=g\sin 30^\circ=4.9\ \text{m/s}^2.
+$$
+
+For tension, write the radial equation inward. The inward component of weight is $$mg\cos 30^\circ$$, so
+
+$$
+T+mg\cos 30^\circ=m\frac{v^2}{L}.
+$$
+
+Therefore
+
+$$
+T=m\frac{v^2}{L}-mg\cos 30^\circ
+=(0.30)(16.1)-(0.30)(9.8)(0.866)=2.3\ \text{N}.
+$$
+
+The speed at that instant was given, so no energy step was needed; the radial and tangential force equations were enough.
 
 </div>
 
@@ -686,16 +775,21 @@ With friction, static friction points whichever way prevents slipping: up the sl
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
 \begin{tikzpicture}[>=Stealth, font=\small]
-\draw[thick] (-3,-1) -- (3,0.2); \draw[fill=gray!20, rotate=11] (-0.5,-0.15) rectangle (0.5,0.25);
-\draw[->, red, thick] (0,0.25) -- (0,-1.4) node[below] {$mg$};
-\draw[->, blue, thick] (0,0.25) -- (-0.45,2.2) node[above] {$N$};
-\draw[dashed, blue] (0,0.25) -- (-0.45,0.25) node[left] {$N\sin\theta$};
-\draw[dashed, blue] (-0.45,0.25) -- (-0.45,2.2) node[midway,left] {$N\cos\theta$};
-\draw (2.1,-0.6) arc[start angle=0,end angle=11,radius=0.8] node[midway,right] {$\theta$};
+\draw[fill=gray!15] (-3.2,-1.0) -- (3.2,-1.0) -- (3.2,1.1) -- cycle;
+\draw[thick] (-3.2,-1.0) -- (3.2,1.1);
+\draw (2.35,-1.0) arc[start angle=0,end angle=18.2,radius=0.8] node[midway,right] {$\theta$};
+\begin{scope}[shift={(0,0.02)}, rotate=18.2]
+\draw[fill=gray!25] (-0.55,0) rectangle (0.55,0.35);
+\node at (0,0.18) {car};
+\coordinate (O) at (0,0.18);
+\end{scope}
+\draw[->, red, very thick] (0,0.20) -- (0,-1.45) node[below] {$mg$};
+\draw[->, blue, very thick] (0,0.20) -- (-0.72,2.30) node[above] {$N$};
+\draw[dashed, blue] (0,0.20) -- (-0.72,0.20) node[left] {$N\sin\theta$};
+\draw[dashed, blue] (-0.72,0.20) -- (-0.72,2.30) node[midway,right] {$N\cos\theta$};
+\draw[->, gray!70] (0,0.20) -- (-1.35,0.20) node[below] {center};
 \end{tikzpicture}
 ```
-
-// no floor (basically the ramp is floating), the angle marker is like really far right, not even at the place where it is supposed to be, the car appears to be floating, the arrows should be from the center of the car, make the ramp steeper so that the Nsin theta part goes out of the car, and make sure the Ncos theta part is on the right of the normal force arrow
 
 
 <div class="theorem-box">
@@ -756,7 +850,65 @@ A car going faster than $$25\ \text{m/s}$$ on this bank would tend to slide outw
 
 ## Universal Gravitation
 
-// add more to this section
+Newton's law of universal gravitation gives the attractive force between two masses:
+
+$$
+F_g=\frac{Gm_1m_2}{r^2}.
+$$
+
+The force points along the line connecting the masses. For a mass $$m$$ near a planet of mass $$M$$,
+
+$$
+F_g=\frac{GMm}{r^2}=mg(r),
+$$
+
+so the local gravitational field strength is
+
+$$
+g(r)=\frac{GM}{r^2}.
+$$
+
+Near Earth's surface, $$r\approx R_E$$ changes very little over ordinary heights, so $$g(r)$$ is treated as constant and becomes the familiar $$9.8\ \text{m/s}^2$$. Far from the surface, however, you must use the inverse-square form. Circular orbits come from setting gravity equal to the required centripetal force:
+
+$$
+\frac{GMm}{r^2}=m\frac{v^2}{r}.
+$$
+
+Thus
+
+$$
+v=\sqrt{\frac{GM}{r}}.
+$$
+
+The orbital period follows from $$T=2\pi r/v$$:
+
+$$
+T=2\pi\sqrt{\frac{r^3}{GM}}.
+$$
+
+This is the circular-orbit version of Kepler's third law.
+
+<div class="theorem-box">
+
+**Example.** A satellite orbits Earth in a circular orbit of radius $$r=7.0\times10^6\ \text{m}$$ from Earth's center. Using $$GM_E=3.99\times10^{14}\ \text{m}^3/\text{s}^2$$, find its orbital speed.
+
+For a circular orbit, gravity supplies the centripetal force:
+
+$$
+\frac{GM_Em}{r^2}=m\frac{v^2}{r}.
+$$
+
+The satellite mass cancels, giving
+
+$$
+v=\sqrt{\frac{GM_E}{r}}
+=\sqrt{\frac{3.99\times10^{14}}{7.0\times10^6}}
+=7.5\times10^3\ \text{m/s}.
+$$
+
+The satellite is falling toward Earth, but its sideways speed is large enough that it keeps missing the surface.
+
+</div>
 
 ---
 
@@ -770,13 +922,29 @@ $$
 \vec{F}_{\text{pseudo}} = -m\vec{a}_{\text{frame}}.
 $$
 
-Pseudo-forces are not interaction forces and do not have third-law partners (since they don't actually exist!). Think of it like this: // give an intuitive example
+Pseudo-forces are not interaction forces and do not have third-law partners (since they don't actually exist!). Think of it like this: if a bus suddenly accelerates forward, you feel thrown backward, but no mysterious object pushed you backward. Your body was trying to keep its original velocity while the bus floor moved forward underneath you. In the accelerating bus frame, adding a backward pseudo-force is a bookkeeping trick that lets Newton's second law look normal from inside the bus.
 
 <div class="theorem-box">
 
 **Example.** A block of mass $$m$$ rests on a frictionless incline of angle $$\theta$$ built on a cart. How fast must the cart accelerate horizontally (toward the foot of the incline) so that the block does not slide relative to the incline?
 
-// add a picture of the problem
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,patterns}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw[fill=gray!10] (-2.7,-0.9) rectangle (2.7,-0.55);
+\draw[fill=gray!20] (-2.1,-0.55) -- (1.8,-0.55) -- (1.8,1.05) -- cycle;
+\draw[thick] (-2.1,-0.55) -- (1.8,1.05);
+\begin{scope}[shift={(0.15,0.05)}, rotate=22]
+\draw[fill=white] (-0.45,0) rectangle (0.45,0.35);
+\node at (0,0.18) {$m$};
+\end{scope}
+\draw[->, very thick, blue] (-2.2,-0.25) -- (-3.4,-0.25) node[left] {$a$};
+\draw[->, red, thick] (0.15,0.22) -- (0.15,-1.05) node[below] {$mg$};
+\draw[->, orange!90!black, thick] (0.15,0.22) -- (1.25,0.22) node[right] {$ma$};
+\draw (1.25,-0.55) arc[start angle=0,end angle=22,radius=0.65] node[midway,right] {$\theta$};
+\end{tikzpicture}
+```
 
 Work in the cart's non-inertial frame, where the block is in equilibrium (not moving). Three forces act on it: gravity $$mg$$ downward, the normal force $$F_N$$ perpendicular to the incline surface, and the pseudo-force $$ma$$ pointing horizontally backward (opposite the cart's acceleration). Resolve along the incline, taking down-the-slope as positive. Gravity contributes $$mg\sin\theta$$ down the slope, while the pseudo-force contributes $$ma\cos\theta$$ up the slope. For the block not to slide, these must cancel:
 
@@ -806,7 +974,21 @@ $$
 \vec{F}_{\text{net}} = m\frac{d\vec{v}}{dt} = m\frac{d^2\vec{r}}{dt^2}.
 $$
 
-// add stuff about variable mass
+For variable-mass systems, be careful: $$\vec{F}=m\vec{a}$$ only works cleanly when the mass of the chosen object is constant. The safer statement is
+
+$$
+\vec{F}_{\text{ext}}=\frac{d\vec{p}_{\text{sys}}}{dt},
+$$
+
+where the system includes whatever mass is being tracked. If mass crosses the system boundary, that entering or leaving mass carries momentum with it. Rockets are the classic example: expelled gas carries backward momentum, so the rocket gains forward momentum even if the only external force is small.
+
+For a rocket in deep space with exhaust speed $$u$$ relative to the rocket, the ideal rocket equation is
+
+$$
+\Delta v=u\ln\left(\frac{m_i}{m_f}\right),
+$$
+
+where $$m_i$$ is the initial mass and $$m_f$$ is the final mass after fuel is burned. AP Physics C usually will not require deriving this unless the problem guides you through it, but the conceptual point is important: changing mass means momentum flux matters.
 
 <div class="theorem-box">
 
