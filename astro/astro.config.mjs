@@ -45,6 +45,8 @@ export default defineConfig({
 		starlight({
 			title: 'Notes by Joshua',
 			description: 'Math, Physics, and Thoughts',
+			// Keep the custom src/pages/404.astro route instead of Starlight's default.
+			disable404Route: true,
 			// Show "Last updated" (from git history) in the page footer.
 			lastUpdated: true,
 			favicon: '/assets/Images/favicon.jpeg',
