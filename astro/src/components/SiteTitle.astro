@@ -5,6 +5,7 @@
 // the sidebar config tagged `site-link`: shown in the sidebar below 75rem
 // (incl. the mobile drawer), hidden at ≥75rem where this nav takes over.
 import Default from '@astrojs/starlight/components/SiteTitle.astro';
+import SiteTour from './SiteTour.astro';
 
 const links = [
 	{ label: 'Home', href: '/' },
@@ -32,6 +33,7 @@ const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWit
 		))}
 	</nav>
 </div>
+<SiteTour />
 
 <style is:global>
 	.site-title-nav {

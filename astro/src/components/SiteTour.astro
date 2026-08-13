@@ -1,0 +1,169 @@
+---
+// A cross-page onboarding tour. Progress is kept in sessionStorage so the
+// highlighted links can perform normal Astro navigations without losing place.
+---
+
+<button class="site-tour-launcher" type="button" data-tour-launch aria-label="Take a tour of the website">
+  <span aria-hidden="true">👋</span> Site tour
+</button>
+
+<div class="site-tour" data-site-tour hidden aria-live="polite">
+  <div class="site-tour-shade" aria-hidden="true"></div>
+  <section class="site-tour-card" role="dialog" aria-modal="true" aria-labelledby="site-tour-title">
+    <div class="site-tour-progress">
+      <span data-tour-count></span>
+      <button type="button" class="site-tour-skip" data-tour-skip>Skip tour</button>
+    </div>
+    <h2 id="site-tour-title" data-tour-title></h2>
+    <p data-tour-copy></p>
+    <p class="site-tour-hint" data-tour-hint hidden></p>
+    <div class="site-tour-actions">
+      <button type="button" class="site-tour-back" data-tour-back>Back</button>
+      <button type="button" class="site-tour-next" data-tour-next>Next</button>
+    </div>
+  </section>
+</div>
+
+<style is:global>
+  .site-tour-launcher {
+    position: fixed; right: 1rem; bottom: 1rem; z-index: 35;
+    display: inline-flex; align-items: center; gap: 0.45rem;
+    border: 1px solid var(--sl-color-accent); border-radius: 999px;
+    padding: 0.55rem 0.85rem; color: var(--sl-color-white);
+    background: var(--sl-color-accent-low); box-shadow: 0 5px 18px #0003;
+    font: 700 var(--sl-text-sm) var(--font-ui, sans-serif); cursor: pointer;
+  }
+  .site-tour-launcher:hover { transform: translateY(-2px); }
+  .site-tour[hidden] { display: none; }
+  .site-tour-shade { position: fixed; inset: 0; z-index: 1000; background: #101522b8; }
+  .site-tour-target {
+    position: relative !important; z-index: 1001 !important;
+    border-radius: 0.55rem; outline: 4px solid #ffd166 !important;
+    outline-offset: 4px; box-shadow: 0 0 0 9999px #101522b8, 0 0 0 9px #ffd16640 !important;
+    animation: site-tour-pulse 1.6s ease-in-out infinite;
+  }
+  .site-tour-card {
+    position: fixed; z-index: 1002; width: min(23rem, calc(100vw - 2rem));
+    left: 50%; bottom: 1.25rem; transform: translateX(-50%);
+    padding: 1.15rem; border: 2px solid var(--sl-color-accent);
+    border-radius: 1rem; color: var(--sl-color-white); background: var(--sl-color-black);
+    box-shadow: 0 18px 55px #0008; font-family: var(--font-ui, sans-serif);
+  }
+  .site-tour-card h2 { margin: 0.65rem 0 0.45rem; font-size: 1.25rem; }
+  .site-tour-card p { margin: 0; line-height: 1.55; }
+  .site-tour-progress, .site-tour-actions { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; }
+  .site-tour-progress { color: var(--sl-color-gray-3); font-size: 0.78rem; }
+  .site-tour-skip { border: 0; padding: 0; color: inherit; background: none; text-decoration: underline; cursor: pointer; }
+  .site-tour-actions { margin-top: 1rem; }
+  .site-tour-actions button { border-radius: 0.55rem; padding: 0.48rem 0.8rem; font: inherit; font-weight: 700; cursor: pointer; }
+  .site-tour-back { border: 1px solid var(--sl-color-gray-5); color: var(--sl-color-white); background: transparent; }
+  .site-tour-next { margin-left: auto; border: 1px solid var(--sl-color-accent); color: white; background: var(--sl-color-accent); }
+  .site-tour-hint { margin-top: 0.7rem !important; color: #ffd166; font-weight: 700; font-size: 0.88rem; }
+  @keyframes site-tour-pulse { 50% { outline-offset: 8px; } }
+  @media (min-width: 50rem) {
+    .site-tour-card[data-position="right"] { left: auto; right: 2rem; top: 6rem; bottom: auto; transform: none; }
+  }
+  @media (prefers-reduced-motion: reduce) { .site-tour-target { animation: none; } }
+</style>
+
+<script>
+  const KEY = 'notesbyjoshua-site-tour';
+  type Step = {
+    path: string; title: string; copy: string; selector?: string;
+    click?: boolean; next?: string; position?: 'right';
+  };
+  const steps: Step[] = [
+    { path: '/', title: 'Welcome to Notes by Joshua!', copy: 'This quick tour will show you how to find notes, work through practice, and use an account to track your progress.' },
+    { path: '/', title: 'Start with the notes', copy: 'The notes are organized by subject and course. Click “Browse the notes” to open the notes library.', selector: '.hero a[href="/notes/notes/"]', click: true },
+    { path: '/notes/notes/', title: 'Browse by subject', copy: 'Notes are grouped into broad subjects first. Click AP Notes to see all of the AP courses.', selector: 'main a[href="/notes/ap/"]', click: true },
+    { path: '/notes/ap/', title: 'Choose a finished course', copy: 'We’ll use AP Precalculus, the most complete set of notes, for this tour. Click its course hub.', selector: 'main a[href="/notes/ap/precalculus/"]', click: true },
+    { path: '/notes/ap/precalculus/', title: 'Pick a unit', copy: 'Each card opens one unit and shows its completion status. Click the first unit to see a full note.', selector: '.unit-card[href="/notes/ap/precalc/fundeqineq/"]', click: true },
+    { path: '/notes/ap/precalc/fundeqineq/', title: 'Read and learn', copy: 'Unit pages combine explanations, formulas, worked examples, and diagrams. Signed-in readers can also bookmark notes, mark them read, and highlight text.', selector: 'main', next: '/practiceproblems/practice/' },
+    { path: '/practiceproblems/practice/', title: 'Practice by course', copy: 'Practice problems are collected separately so you can study without accidentally seeing solutions. Click AP Precalculus.', selector: 'a[href="/practiceproblems/ap-precalculus/"]', click: true },
+    { path: '/practiceproblems/ap-precalculus/', title: 'Problems and solutions', copy: 'Work through a unit’s questions, then reveal the matching solutions when you are ready. Filters at the top help you jump between units.', selector: 'main', position: 'right' },
+    { path: '/practiceproblems/ap-precalculus/', title: 'Sign in when you want to', copy: 'Signing in is optional. The account area in the header lets you track read notes, save bookmarks and highlights, and see your progress on the dashboard.', selector: '.social-icons' },
+    { path: '/practiceproblems/ap-precalculus/', title: 'You’re ready!', copy: 'That’s the whole loop: choose a note, learn the material, practice it, and track your progress. You can replay this tour anytime with the “Site tour” button.' },
+  ];
+
+  let activeTarget: HTMLElement | null = null;
+  const getIndex = () => Math.max(0, Math.min(steps.length - 1, Number(sessionStorage.getItem(KEY) || 0)));
+  const setIndex = (index: number) => sessionStorage.setItem(KEY, String(index));
+  const pathMatches = (wanted: string) => location.pathname === wanted;
+  const preferredTarget = (selector?: string) => {
+    if (!selector) return null;
+    const candidates = Array.from(document.querySelectorAll<HTMLElement>(selector));
+    return candidates.find((el) => el.getClientRects().length > 0) || candidates[0] || null;
+  };
+
+  function openTargetParents(target: HTMLElement) {
+    target.closest('details')?.setAttribute('open', '');
+    let parent = target.parentElement?.closest('details');
+    while (parent) { parent.open = true; parent = parent.parentElement?.closest('details') ?? null; }
+  }
+
+  function render() {
+    const root = document.querySelector<HTMLElement>('[data-site-tour]');
+    if (!root || root.hidden) return;
+    const index = getIndex();
+    const step = steps[index];
+    activeTarget?.classList.remove('site-tour-target');
+    activeTarget = null;
+    root.querySelector<HTMLElement>('[data-tour-count]')!.textContent = `Step ${index + 1} of ${steps.length}`;
+    root.querySelector<HTMLElement>('[data-tour-title]')!.textContent = step.title;
+    root.querySelector<HTMLElement>('[data-tour-copy]')!.textContent = step.copy;
+    const card = root.querySelector<HTMLElement>('.site-tour-card')!;
+    card.dataset.position = step.position || '';
+    const back = root.querySelector<HTMLButtonElement>('[data-tour-back]')!;
+    const next = root.querySelector<HTMLButtonElement>('[data-tour-next]')!;
+    const hint = root.querySelector<HTMLElement>('[data-tour-hint]')!;
+    back.disabled = index === 0;
+    next.textContent = index === steps.length - 1 ? 'Finish' : step.next ? 'Show practice' : 'Next';
+    next.hidden = !!step.click;
+    hint.hidden = !step.click;
+    hint.textContent = step.click ? 'Click the highlighted item to continue →' : '';
+
+    if (!pathMatches(step.path)) {
+      location.href = step.path;
+      return;
+    }
+    activeTarget = preferredTarget(step.selector);
+    if (activeTarget) {
+      openTargetParents(activeTarget);
+      activeTarget.classList.add('site-tour-target');
+      activeTarget.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      if (step.click) activeTarget.addEventListener('click', () => setIndex(index + 1), { once: true });
+    } else if (step.click) {
+      // Keep the tour usable if a future layout change renames a selector.
+      next.hidden = false;
+      next.textContent = 'Continue';
+      hint.hidden = true;
+    }
+  }
+
+  function bindTour() {
+    const root = document.querySelector<HTMLElement>('[data-site-tour]');
+    const launcher = document.querySelector<HTMLButtonElement>('[data-tour-launch]');
+    if (!root || !launcher || launcher.dataset.bound) return;
+    launcher.dataset.bound = '1';
+    launcher.addEventListener('click', () => { setIndex(0); root.hidden = false; launcher.hidden = true; render(); });
+    root.querySelector('[data-tour-skip]')?.addEventListener('click', () => { activeTarget?.classList.remove('site-tour-target'); root.hidden = true; launcher.hidden = false; });
+    root.querySelector('[data-tour-back]')?.addEventListener('click', () => { setIndex(getIndex() - 1); render(); });
+    root.querySelector('[data-tour-next]')?.addEventListener('click', () => {
+      const index = getIndex();
+      const step = steps[index];
+      if (index === steps.length - 1) {
+        activeTarget?.classList.remove('site-tour-target'); root.hidden = true; launcher.hidden = false;
+        sessionStorage.removeItem(KEY); return;
+      }
+      setIndex(index + 1);
+      if (step.next) location.href = step.next;
+      else render();
+    });
+    root.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') (root.querySelector<HTMLButtonElement>('[data-tour-skip]'))?.click();
+    });
+    if (sessionStorage.getItem(KEY) !== null) { root.hidden = false; launcher.hidden = true; render(); }
+  }
+  bindTour();
+  document.addEventListener('astro:page-load', bindTour);
+</script>
