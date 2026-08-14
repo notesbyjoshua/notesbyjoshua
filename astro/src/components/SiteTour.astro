@@ -35,15 +35,20 @@
   }
   .site-tour-launcher:hover { transform: translateY(-2px); }
   .site-tour[hidden] { display: none; }
-  .site-tour-shade { position: fixed; inset: 0; z-index: 1000; background: #101522b8; }
+  /* The overlay is visual only. It must never swallow clicks intended for the
+     highlighted navigation control underneath it. */
+  .site-tour { pointer-events: none; }
+  .site-tour-shade { position: fixed; inset: 0; z-index: 1000; background: #101522b8; pointer-events: none; }
   .site-tour-target {
     position: relative !important; z-index: 1001 !important;
+    pointer-events: auto !important;
     border-radius: 0.55rem; outline: 4px solid #ffd166 !important;
     outline-offset: 4px; box-shadow: 0 0 0 9999px #101522b8, 0 0 0 9px #ffd16640 !important;
     animation: site-tour-pulse 1.6s ease-in-out infinite;
   }
   .site-tour-card {
     position: fixed; z-index: 1002; width: min(23rem, calc(100vw - 2rem));
+    pointer-events: auto;
     left: 50%; bottom: 1.25rem; transform: translateX(-50%);
     padding: 1.15rem; border: 2px solid var(--sl-color-accent);
     border-radius: 1rem; color: var(--sl-color-white); background: var(--sl-color-black);
