@@ -51,15 +51,61 @@ the signed area under the force-position graph.
 \addplot[fill=blue!18, draw=none, domain=0:5.4, samples=120] {1.1+1.7*exp(-0.25*(x-2.3)^2)+0.45*sin(deg(1.35*x))} \closedcycle;
 \addplot[blue,very thick,domain=0:5.4,samples=120] {1.1+1.7*exp(-0.25*(x-2.3)^2)+0.45*sin(deg(1.35*x))};
 \draw[dashed] (axis cs:5.4,0) -- (axis cs:5.4,1.95);
-\node at (axis cs:3.0,0.75) {area = work};
+\node at (axis cs:2.5,1.2) {work};
 \end{axis}
 \end{tikzpicture}
 ```
 
+### Linear Mechanical Advantage
+
+Mechanical advantage compares the output force a machine gives to the input force you apply:
+
+$$
+\text{MA}=\frac{F_{\text{out}}}{F_{\text{in}}}.
+$$
+
+For an ideal machine with no energy loss, work in equals work out:
+
+$$
+F_{\text{in}}d_{\text{in}}=F_{\text{out}}d_{\text{out}}.
+$$
+
+Therefore
+
+$$
+\text{MA}=\frac{F_{\text{out}}}{F_{\text{in}}}
+=\frac{d_{\text{in}}}{d_{\text{out}}}.
+$$
+
+This is the basic tradeoff behind ramps, levers, and pulley systems: you can get a larger force out only by applying your input force over a larger distance. Real machines have efficiency below $$100\%$$, so $$W_{\text{out}}<W_{\text{in}}$$ and the actual mechanical advantage is smaller than the ideal value.
+
+<div class="theorem-box">
+
+**Example.** A frictionless ramp of length $$5.0\ \text{m}$$ raises a box by height $$1.0\ \text{m}$$ at constant speed. Find the ideal mechanical advantage and the force needed to lift a $$200\ \text{N}$$ box along the ramp.
+
+The output force is the box's weight, $$F_{\text{out}}=200\ \text{N}$$, and the distance ratio gives
+
+$$
+\text{MA}=\frac{d_{\text{in}}}{d_{\text{out}}}
+=\frac{5.0}{1.0}=5.0.
+$$
+
+Thus
+
+$$
+F_{\text{in}}=\frac{F_{\text{out}}}{\text{MA}}
+=\frac{200}{5.0}=40\ \text{N}.
+$$
+
+The ramp does not reduce the work; it spreads the same ideal work over a longer distance.
+
+</div>
+
+---
+
 ### The geometry of the dot product
 
-Since $$W = \vec{F}\cdot\Delta\vec{r} = F\,\Delta r\cos\theta$$, the sign of the work is set entirely by the angle $$\theta$$ between the force and the displacement:
-
+Since work is a dot product, it is a scalar quantity. However, to indicate the so-called "direction" of work, we can use the geometry of the dot product to our advantage. Due to the fact that $$W = \vec{F}\cdot\Delta\vec{r} = F\,\Delta r\cos\theta$$, the sign of the work is set entirely by the angle $$\theta$$ between the force and the displacement:
 
 ```tikz
 \usepackage{tikz}
@@ -68,16 +114,18 @@ Since $$W = \vec{F}\cdot\Delta\vec{r} = F\,\Delta r\cos\theta$$, the sign of the
 \draw[->, very thick, blue] (0,0) -- (4,0) node[right] {$\Delta x$};
 \draw[->, very thick, red] (0,0) -- (2.7,1.8) node[above] {$\vec F$};
 \draw[dashed, red] (2.7,1.8) -- (2.7,0) node[below] {$F\cos\theta$};
+\draw[->, very thick, red] (0,-0.25) -- (2.7,-0.25) node[midway,below] {$F\cos\theta$};
 \draw (0.9,0) arc[start angle=0,end angle=34,radius=0.9] node[midway,right] {$\theta$};
 \end{tikzpicture}
 ```
-
 
 - **Positive work** ($$0\le\theta<90^\circ$$): the force has a component along the motion and speeds the object up (it transfers energy *into* the object). A horizontal push on a sliding box does positive work.
 - **Negative work** ($$90^\circ<\theta\le180^\circ$$): the force opposes the motion and slows the object (it removes energy). Kinetic friction on a sliding box does negative work.
 - **Zero work** ($$\theta=90^\circ$$): a force perpendicular to the velocity does no work. The normal force on a block sliding along a floor, the tension on a ball in uniform circular motion, and the magnetic force on a charge all do zero work even though they are nonzero forces.
 
-This is why a centripetal force can bend a path without changing speed: it is always perpendicular to $$\vec{v}$$, so it does no work.
+:::tip
+Positive work will always speeds up the object, negative work always slows down the object, and zero work causes the speed to remain constant, even though the direction might change.
+:::
 
 <div class="theorem-box">
 
@@ -91,8 +139,6 @@ This is why a centripetal force can bend a path without changing speed: it is al
 \addplot[fill=blue!18, draw=none] coordinates {(0,0) (0,20) (3,20) (5,0)} -- cycle;
 \addplot[blue,very thick] coordinates {(0,20) (3,20) (5,0)};
 \draw[dashed] (axis cs:3,0) -- (axis cs:3,20);
-\node at (axis cs:1.5,10) {rectangle};
-\node at (axis cs:4.05,6) {triangle};
 \end{axis}
 \end{tikzpicture}
 ```
@@ -134,11 +180,13 @@ Even though the force is negative over part of the interval and positive later, 
 
 ## Kinetic Energy and the Work-Energy Theorem
 
-Translational kinetic energy is defined as
+Translational kinetic energy of a particle is defined as
 
 $$
 K = \frac{1}{2}mv^2.
 $$
+
+An important relationship between kinetic energy and work is the Work-Energy Theorem.
 
 <div class="theorem-box">
 
@@ -164,8 +212,6 @@ W_{\text{net}}=\Delta K.
 $$
 
 </div>
-
-This derivation is worth knowing because it explains why energy methods remain valid even when force varies with position.
 
 <div class="theorem-box">
 
@@ -197,13 +243,19 @@ Notice that the stopping distance scales with $$v_0^2$$: doubling the speed quad
 
 ## Conservative Forces and Potential Energy
 
-A force is **conservative** if its work depends only on the initial and final positions, not on the path taken. Equivalently,
+<div class="theorem-box">
+
+**Definition.** A force is **conservative** if its work depends only on the initial and final positions, not on the path taken. Equivalently,
 
 $$
 \oint \vec{F}\cdot d\vec{r} = 0
 $$
 
-around any closed path (You don't need to know the exact integral definition, just a conceptual one). For a conservative force, define potential energy $$U$$ by
+around any closed path. The integral (known as a surface integral) represents the integral around a path, and thus represents the fact that in a closed loop the work done is $$0$$.
+
+</div>
+
+For a conservative force, define potential energy $$U$$ by
 
 $$
 W_{\text{cons}} = -\Delta U.
@@ -247,11 +299,9 @@ $$
 
 The $$\nabla$$ symbol is just an extension of a derivative to all three dimensions. Potential energy is not an absolute property; it requires a reference level, which is usually set at some point at infinity or zero. Only changes in potential energy affect mechanics.
 
----
+### Gravitational Potential Energy
 
-## Gravitational Potential Energy
-
-Near Earth's surface, where $$g$$ is approximately constant,
+Near Earth's surface, where $$g$$ is approximately constant, the gravitational potential energy of an object is
 
 $$
 U_g = mgy
@@ -363,9 +413,7 @@ The mass of the projectile cancels, so escape speed is the same for a pebble or 
 
 </div>
 
----
-
-## Spring Potential Energy
+### Spring Potential Energy
 
 For an ideal, massless spring, the potential energy stored in the spring is
 
@@ -649,11 +697,8 @@ In one-dimensional systems, a graph of $$U(x)$$ contains lots of useful informat
 \pgfplotsset{compat=1.16}
 \begin{tikzpicture}
 \begin{axis}[axis lines=middle,width=9cm,height=5cm,xmin=-3,xmax=5,ymin=-1,ymax=6,xlabel={$x$},ylabel={$U$},xtick=\empty,ytick=\empty]
-\addplot[blue,very thick,samples=200,domain=-2.6:4.6]{0.08*(x+2.0)^2*(x-0.6)^2+0.16*(x-2.7)^4-0.9*(x-2.7)^2+2.0};
+\addplot[blue,very thick,samples=240,domain=-2.6:4.6]{0.075*(x+2.1)^2*(x-0.45)^2+0.13*(x-2.55)^4-0.85*(x-2.55)^2+2.0+0.18*sin(deg(3.2*x))};
 \addplot[dashed] coordinates {(-3,3.2) (5,3.2)};
-\node[below] at (axis cs:-2.0,1.35) {stable};
-\node[above] at (axis cs:0.6,3.2) {unstable};
-\node[below] at (axis cs:2.7,1.1) {metastable};
 \node at (axis cs:4.5,3.45) {$E$};
 \end{axis}
 \end{tikzpicture}
@@ -665,7 +710,7 @@ $$
 \frac{dU}{dx}=0,
 $$
 
-and at that point, the object has zero acceleration. The equilibrium is **stable** if $$U(x)$$ has a local minimum ($$\frac{d^2 U}{dx^2} > 0$$), **unstable** if it has a local maximum ($$\frac{d^2 U}{dx^2} < 0$$), and **neutral** if small displacements do not change $$U$$ to second order ($$\frac{d^2 U}{dx^2} = 0$$). A **metastable** equilibrium is a local minimum that is stable for small disturbances but can escape if the total energy is high enough to cross a nearby barrier.
+and at that point, the object has zero acceleration. The equilibrium is **stable** if $$U(x)$$ has a local minimum ($$\frac{d^2 U}{dx^2} > 0$$), **unstable** if it has a local maximum ($$\frac{d^2 U}{dx^2} < 0$$), and **neutral** if small displacements do not change $$U$$ to second order ($$\frac{d^2 U}{dx^2} = 0$$). A **metastable** (neutral) equilibrium is a local minimum that is stable for small disturbances but can escape if the total energy is high enough to cross a nearby barrier.
 
 ```tikz
 \usepackage{tikz}

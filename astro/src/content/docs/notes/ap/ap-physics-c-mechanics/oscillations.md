@@ -26,7 +26,7 @@ Oscillations will mostly deal with one specific type of motion: **Simple Harmoni
 
 **Definition (Simple Harmonic Motion).** A system is in simple harmonic motion when its acceleration is proportional to displacement and points toward equilibrium, $$a = -\omega^2 x$$, equivalently $$\dfrac{d^2x}{dt^2} + \omega^2x = 0$$.
 
-The general solution is a sinusoidal one:
+The general solution is given as:
 
 $$
 x(t)=A\cos(\omega t+\phi)
@@ -94,7 +94,7 @@ Speed is greatest at equilibrium and zero at the turning points, both of which a
 
 <div class="theorem-box">
 
-**Example.** A mass in SHM has amplitude $$A=0.20\ \text{m}$$. At $$x=0.12\ \text{m}$$, its speed is $$0.80\ \text{m/s}$$. Find its maximum speed, without using the period or frequency.
+**Example.** A mass in SHM has amplitude $$A=0.20\ \text{m}$$. At $$x=0.12\ \text{m}$$, its speed is $$0.80\ \text{m/s}$$. Find its maximum speed, without using the period or frequency. For SHM, it may be useful to know that $$v^2=\omega^2(A^2-x^2).$$
 
 For SHM,
 
@@ -141,6 +141,39 @@ Period is the time for one full cycle. Frequency is cycles per second, measured 
 
 Angular frequency is not "cycles per second"; it is radians of phase per second. One cycle corresponds to $$2\pi$$ radians of phase, which is why $$\omega=2\pi f$$. In SHM, $$\omega$$ is usually the most natural quantity because it appears directly in $$a=-\omega^2x$$. Large $$\omega$$ means a strong restoring acceleration for a given displacement, so the oscillator turns around quickly and has a short period.
 
+<div class="theorem-box">
+
+**Example.** An oscillator has position $$x(t)=0.12\cos(8.0t+\pi/3)$$ in meters. Find its amplitude, angular frequency, period, and frequency.
+
+Compare the equation to $$x(t)=A\cos(\omega t+\phi)$$:
+
+$$
+A=0.12\ \text{m},\qquad \omega=8.0\ \text{rad/s}.
+$$
+
+The period is
+
+$$
+T=\frac{2\pi}{\omega}
+=\frac{2\pi}{8.0}
+=0.785\ \text{s}.
+$$
+
+The frequency is
+
+$$
+f=\frac{1}{T}
+=\frac{\omega}{2\pi}
+=\frac{8.0}{2\pi}
+=1.27\ \text{Hz}.
+$$
+
+The phase $$\pi/3$$ shifts where the oscillator starts, but it does not change amplitude, period, or frequency.
+
+</div>
+
+---
+
 ## Common Modes of SHM
 
 ### Mass-Spring Oscillators
@@ -162,10 +195,10 @@ Angular frequency and period do NOT depend on the amplitude for an ideal spring!
 **Proof (Mass-Spring Period).** Hooke's law gives
 
 $$
-F=-kx.
+F=ma=-kx.
 $$
 
-Newton's second law gives
+Using the differential form of Newton's second law gives
 
 $$
 m\frac{d^2x}{dt^2}=-kx.
@@ -205,7 +238,11 @@ $$
 
 ### Combinations of springs
 
-Many AP setups attach a mass to more than one spring. Each combination behaves like a single ideal spring with an **effective spring constant** $$k_{\text{eff}}$$ that models the whole system, and the period is then $$T=2\pi\sqrt{m/k_{\text{eff}}}$$.
+Many AP setups attach a mass to more than one spring. Each combination behaves like a single ideal spring with an **effective spring constant** $$k_{\text{eff}}$$ that models the whole system, and the period is then $$T=2\pi\sqrt{m/k_{\text{eff}}}$$. Similarly, $$U=\frac{1}{2}k_{\text{eff}}x^2$$.
+
+Springs are in **parallel** when they attach to the same moving object and stretch or compress by the same amount. If the mass moves by $$x$$, each parallel spring changes length by $$x$$, so their restoring forces add.
+
+Springs are in **series** when they are connected end-to-end and the same force passes through each spring. The total stretch is split between them: one spring may stretch more than the other, but both carry the same tension. A good test is: same displacement means parallel; same force through each spring means series.
 
 ```tikz
 \usepackage{tikz}
@@ -220,7 +257,7 @@ Many AP setups attach a mass to more than one spring. Each combination behaves l
 
 **Proof (series and parallel spring constants).** Lets say you have two ideal springs with spring constant $$k_1$$ and $$k_2$$ supporting one mass.
 
-*Parallel* (both springs connect the mass to the wall side by side, so both stretch by the same displacement $$x$$). Each pulls back, and the forces add:
+*Parallel*. Each pulls back, and the forces add:
 
 $$
 F=-k_1 x-k_2 x=-(k_1+k_2)x.
@@ -232,9 +269,9 @@ $$
 k_{\text{eff}}=k_1+k_2.
 $$
 
-Parallel springs are *stiffer* than either alone.
+Parallel springs are *stiffer* than either alone. If you have more than two springs in parallel, you simply add all of the spring constants together to get the effective spring constant.
 
-*Series* (the springs are joined end to end, so the same force $$F$$ is transmitted through both, but their stretches add). Each spring stretches by $$x_i=F/k_i$$ in magnitude, and the total stretch is
+*Series*. Each spring stretches by $$x_i=F/k_i$$ in magnitude, and the total stretch is
 
 $$
 x=x_1+x_2=\frac{F}{k_1}+\frac{F}{k_2}=F\left(\frac{1}{k_1}+\frac{1}{k_2}\right).
@@ -246,7 +283,13 @@ $$
 \frac{1}{k_{\text{eff}}}=\frac{1}{k_1}+\frac{1}{k_2}.
 $$
 
-Series springs are *softer* than either alone.
+Alternatively,
+
+$$
+k_{\text{eff}}=\frac{k_1 k_2}{k_1 + k_2}
+$$
+
+Series springs are *softer* than either alone. If you have more than two springs in parallel, you simply add all of the reciprocals of the spring constants together and take the reciprocal of the sum to get the effective spring constant.
 
 </div>
 
@@ -280,11 +323,15 @@ The series arrangement is softer, so it oscillates more slowly. A quick sanity c
 
 ### Effective spring constants from energy
 
-Not every spring configuration is purely series or parallel. A general method is to displace the mass by a small coordinate $$x$$, write the total spring potential energy, and match it to
+Not every spring configuration is purely series or parallel. A general method is to displace the mass by a small coordinate $$x$$ (which simulates SHM), write the total spring potential energy, and match it to
 
 $$
 U=\frac{1}{2}k_{\text{eff}}x^2.
 $$
+
+<div class="theorem-box">
+
+**Example.** A block is attached symmetrically to two identical springs of constant $$k$$. Each spring makes angle $$\theta$$ with the horizontal at equilibrium. If the block is displaced a small distance $$x$$ horizontally, find the effective spring constant for horizontal oscillations.
 
 ```tikz
 \usepackage{tikz}
@@ -296,16 +343,11 @@ $$
 \draw[decorate,decoration={coil,aspect=0.45,segment length=5pt,amplitude=4pt},thick] (3,1.6) -- (0.45,0.2);
 \draw[fill=gray!20] (-0.45,-0.25) rectangle (0.45,0.65);
 \node at (0,0.2) {$m$};
-\draw[dashed] (0,0.2) -- (0,-0.9);
 \draw[->,blue,thick] (0,-0.75) -- (0.9,-0.75) node[right] {$x$};
 \node at (-1.55,1.2) {$k$};
 \node at (1.55,1.2) {$k$};
 \end{tikzpicture}
 ```
-
-<div class="theorem-box">
-
-**Example.** A block is attached symmetrically to two identical springs of constant $$k$$. Each spring makes angle $$\theta$$ with the horizontal at equilibrium. If the block is displaced a small distance $$x$$ horizontally, find the effective spring constant for horizontal oscillations.
 
 For a small horizontal displacement, each spring's length changes by the component of the block's displacement along that spring:
 
@@ -365,7 +407,7 @@ $$
 \tau=-mgL\sin\theta.
 $$
 
-For small angles, $$\sin\theta\approx\theta$$, so
+For small angles, $$\sin\theta\approx\theta$$ (using a Taylor series expansion), so
 
 $$
 \tau\approx-mgL\theta.
@@ -394,6 +436,8 @@ so
 $$
 T=2\pi\sqrt{\frac{L}{g}}.
 $$
+
+Note that this only works for *small* angles of $$\theta$$! Without the small angle approximation, the solution has no closed form and requires elliptical integrals to solve!
 
 </div>
 
@@ -446,20 +490,20 @@ However, as time went on, scientists changed the definition of the meter since g
 \usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
 \begin{tikzpicture}[>=Stealth, font=\small]
 \fill (0,2) circle (2pt) node[above] {pivot};
-\draw[dashed] (0,2) -- (0,-1.1);
+\draw[dashed] (0,2) -- (0,-1.2);
+\draw[thick] (0,2) -- (0.42,1.25);
 \draw[thick, fill=gray!18, rotate around={-18:(0,2)}]
-  (0,1.65) .. controls (0.35,0.95) and (0.15,0.15) .. (0.65,-0.55)
-  .. controls (0.20,-0.85) and (-0.35,-0.55) .. (-0.15,0.10)
-  .. controls (-0.45,0.80) and (-0.25,1.35) .. (0,1.65);
-\coordinate (C) at (0.37,-0.18);
+  (-0.32,1.35) .. controls (0.12,0.90) and (0.08,0.25) .. (0.46,-0.35)
+  .. controls (0.05,-0.78) and (-0.55,-0.58) .. (-0.58,0.10)
+  .. controls (-0.78,0.75) and (-0.68,1.20) .. (-0.32,1.35);
+\coordinate (C) at (-0.16,0.45);
 \fill[red] (C) circle (2pt) node[right] {CM};
 \draw[->, red, thick] (C) -- ++(0,-1.05) node[below] {$mg$};
-\draw (0,1.15) arc[start angle=-90,end angle=-108,radius=0.85] node[midway,left] {$\theta$};
 \draw[<->] (0.05,1.72) -- (C) node[midway,right] {$d$};
 \end{tikzpicture}
 ```
 
-While simple pendulums are very easy to solve, not all pendulums act this way. A rigid body swinging about a pivot is a **physical pendulum**. If the center of mass is distance $$d$$ from the pivot,
+While simple pendulums are very easy to solve, not all pendulums act this way. A rigid body swinging about a pivot is a **physical pendulum** and is subject to rotation about the pivot point. If the center of mass is distance $$d$$ from the pivot,
 
 $$
 \omega=\sqrt{\frac{mgd}{I}},
@@ -551,6 +595,16 @@ The general recipe is always the same: displace the system by a small amount, fi
 
 **Example.** A solid cylinder of cross-sectional area $$A$$, height $$h$$, and density $$\rho_{\text{obj}}$$ floats upright in a liquid of density $$\rho_{\text{liq}}$$. It is pushed down slightly and released. Show the motion is SHM and find $$\omega$$.
 
+These formulas may be helpful:
+
+$$
+F_B=\rho_{\text{fluid}}gV_{\text{sub}},
+\qquad
+m=\rho_{\text{object}}V.
+$$
+
+The first is Archimedes' principle: buoyant force equals the weight of displaced fluid. The second is the density relation, mass equals density times volume.
+
 At equilibrium the object floats with some submerged depth $$d_0$$, where buoyancy balances weight. Now push it down an extra distance $$y$$. The submerged volume increases by $$A\,y$$, so the buoyant force grows by
 
 $$
@@ -576,6 +630,16 @@ The area $$A$$ cancels, and the frequency depends only on the density ratio, $$g
 <div class="theorem-box">
 
 **Example.** A U-shaped tube of uniform cross-sectional area $$A$$ contains a liquid of density $$\rho$$, with total liquid column length $$L$$. The liquid is disturbed so one side rises by $$y$$ while the other falls by $$y$$. Find the period of the resulting oscillation.
+
+These formulas may be helpful:
+
+$$
+m=\rho V,
+\qquad
+W=mg.
+$$
+
+For a uniform tube, the liquid volume is cross-sectional area times length, $$V=AL$$. Weight is then the gravitational force on that mass.
 
 When the left surface drops by $$y$$ and the right rises by $$y$$, the height difference between the two columns is $$2y$$. That excess column of height $$2y$$ and cross-section $$A$$ has weight
 
@@ -629,7 +693,7 @@ $$
 E=\frac{1}{2}mv_{\max}^2.
 $$
 
-Energy continuously transfers between kinetic energy and spring potential energy while total mechanical energy remains constant if damping is negligible. These equations lead to the following two equations:
+Energy continuously transfers between kinetic energy and spring potential energy while total mechanical energy remains constant if the spring system is ideal. These equations lead to the following two equations:
 
 $$
 \frac{1}{2}mv^2+\frac{1}{2}kx^2=\frac{1}{2}kA^2
@@ -641,7 +705,7 @@ This recovers $$v_{\max}=A\omega$$ at $$x=0$$ and $$v=0$$ at $$x=\pm A$$ without
 
 <div class="theorem-box">
 
-**Proof (SHM from energy conservation).** For an undamped mass-spring system the total mechanical energy is constant:
+**Proof (SHM from energy conservation).** For an ideal mass-spring system the total mechanical energy is constant:
 
 $$
 E=\frac{1}{2}mv^2+\frac{1}{2}kx^2=\text{const.}
@@ -665,7 +729,7 @@ $$
 m\frac{d^2x}{dt^2}+kx=0,
 $$
 
-which is exactly the SHM equation with $$\omega=\sqrt{k/m}$$. Energy conservation alone, differentiated once, reproduces the equation of motion — a clean alternative to writing $$F=ma$$ directly.
+which is exactly the SHM equation with $$\omega=\sqrt{k/m}$$. This equation can apply to any type of SHM, not just mass-spring oscillators.
 
 </div>
 

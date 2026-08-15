@@ -31,13 +31,13 @@ $$
 \vec{F}_{\text{net}} = \frac{d\vec{p}}{dt}.
 $$
 
-For constant mass, this reduces to $$\vec{F}_{\text{net}} = m\vec{a}$$. The momentum form is the more fundamental statement of Newton's second law (in fact, it was the original statement of the law!), and it is essential whenever mass is not constant, such as a rocket burning fuel or a rope piling onto the ground.
+For constant mass, this reduces to $$\vec{F}_{\text{net}} = m\vec{a}$$. However, the momentum form is the more fundamental statement of Newton's second law (in fact, it was the original statement of the law!), and it is essential whenever mass is not constant, such as a rocket burning fuel or a rope piling onto the ground.
 
-Intuitively, momentum measures how hard it is to stop something **because of both mass and velocity**. A slow truck and a fast baseball can both have large momentum, but for different reasons. Force changes momentum over time, which is why stopping the same object gently means spreading the same momentum change over a longer time.
+Intuitively, momentum measures how hard it is to stop something because of **both mass and velocity**. A slow truck and a fast baseball can both have large momentum, but for different reasons. Force changes momentum over time, which is why stopping the same object gently means spreading the same momentum change over a longer time.
 
 <div class="theorem-box">
 
-**Example.** A $$0.15\ \text{kg}$$ baseball moving at $$40\ \text{m/s}$$ and a $$1200\ \text{kg}$$ car moving at $$0.0050\ \text{m/s}$$ have the same speed? The same kinetic energy? The same momentum? Compare their momenta.
+**Example.** A $$0.15\ \text{kg}$$ baseball moving at $$40\ \text{m/s}$$ and a $$1200\ \text{kg}$$ car moving at $$0.0050\ \text{m/s}$$ have the same speed? The same kinetic energy? The same momentum? Compare their momenta and kinetic energy.
 
 The baseball's momentum is
 
@@ -52,6 +52,20 @@ p_{\text{car}}=(1200)(0.0050)=6.0\ \text{kg}\cdot\text{m/s}.
 $$
 
 They have the same momentum even though their speeds are wildly different. Momentum is not just "fastness"; it is mass times velocity. This is why collisions care so much about both the object's speed and how much matter is moving.
+
+Their kinetic energies are very different:
+
+$$
+K_{\text{ball}}=\frac{1}{2}(0.15)(40)^2=120\ \text{J},
+$$
+
+while
+
+$$
+K_{\text{car}}=\frac{1}{2}(1200)(0.0050)^2=0.015\ \text{J}.
+$$
+
+So equal momentum does **not** mean equal kinetic energy. For the same momentum, the lighter object must move much faster, and because $$K=p^2/(2m)$$, it carries more kinetic energy.
 
 </div>
 
@@ -81,7 +95,7 @@ On a force-time graph, impulse is the signed area under the curve. This is the t
 \addplot[fill=blue!18, draw=none, domain=0:5.5, samples=120] {0.35+3.7*exp(-0.55*(x-2.8)^2)} \closedcycle;
 \addplot[blue,very thick,domain=0:5.5,samples=120] {0.35+3.7*exp(-0.55*(x-2.8)^2)};
 \draw[dashed] (axis cs:5.5,0) -- (axis cs:5.5,0.55);
-\node at (axis cs:3.0,1.0) {area = impulse};
+\node at (axis cs:2.8,1.4) {impulse};
 \end{axis}
 \end{tikzpicture}
 ```
@@ -92,7 +106,7 @@ $$
 \vec{F}_{\text{avg}} = \frac{\vec{J}}{\Delta t} = \frac{\Delta \vec{p}}{\Delta t}.
 $$
 
-The average force is the constant force that would deliver the same impulse over the same time.
+The average force is the constant force that would deliver the same impulse over the same time, even if the actual force varies.
 
 :::tip
 A longer contact time (a "follow-through," an airbag, bent knees on landing) reduces the peak force for a fixed change in momentum, thus effectively "softening" the impact.
@@ -206,21 +220,20 @@ $$
 
 ## Center of Mass
 
+Often times, when dealing with complex shapes or systems of particles, we will often model them using the center of mass. The usefulness is that force, momentum, etc. all depend on the kinematics of the center of mass, so calculations are much easier there.
 
 ```tikz
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
 \begin{tikzpicture}[>=Stealth, font=\small]
 \fill[blue] (-2,0.8) circle (4pt) node[above left] {$m_1$};
-\fill[blue] (0,-0.6) circle (6pt) node[below] {$m_2$};
+\fill[blue] (0,-0.6) circle (6pt) node[below=7pt] {$m_2$};
 \fill[blue] (2,0.5) circle (3pt) node[above right] {$m_3$};
 \fill[red] (0.15,0.05) circle (3pt) node[below right] {$\vec r_{\text{cm}}$};
 \draw[dashed,gray] (-2,0.8)--(0.15,0.05)--(0,-0.6);
 \draw[dashed,gray] (2,0.5)--(0.15,0.05);
-\node[align=center] at (0,-1.55) {weighted average\\of particle positions};
 \draw[thick, rounded corners] (3,-1) .. controls (4,-1.8) and (5,1.1) .. (6,0.7) .. controls (5.2,2) and (3.3,1.5) .. (3,-1);
-\fill[red] (4.6,0.4) circle (3pt) node[below right] {center of mass};
-\node at (4.65,-1.55) {extended object};
+\fill[red] (4.6,0.4) circle (3pt) node[above left] {CoM};
 \end{tikzpicture}
 ```
 
@@ -296,9 +309,9 @@ $$
 
 <div class="theorem-box">
 
-**Example.** Find the center of mass of a uniform right-triangular plate with legs along the axes: vertices at $$(0,0)$$, $$(b,0)$$, and $$(0,h)$$.
+**Example.** Find the center of mass of a uniform right-triangular plate with legs along the axes: vertices at $$(0,0)$$, $$(b,0)$$, and $$(0,h)$$. It may be helpful to define a surface mass density $$\sigma$$ (mass per area).
 
-Let the surface mass density be $$\sigma$$ (mass per area), constant. The total mass is $$M = \sigma \cdot \tfrac{1}{2}bh$$. Slice the triangle into thin vertical strips of width $$dx$$ at position $$x$$. At that $$x$$, the hypotenuse runs from $$(0,h)$$ to $$(b,0)$$, so its height is
+Since the plate is uniform, $$\sigma$$ is constant all throughout the plate. Thus, the total mass is $$M = \sigma \cdot \tfrac{1}{2}bh$$ (mass/area times area). Slice the triangle into thin vertical strips of width $$dx$$ at position $$x$$. At that $$x$$, the hypotenuse runs from $$(0,h)$$ to $$(b,0)$$, so its height is
 
 $$
 y(x) = h\left(1 - \frac{x}{b}\right).
@@ -386,16 +399,84 @@ $$
 \vec{P}_i = \vec{P}_f, \qquad K_i = K_f.
 $$
 
-For 1D elastic collisions, the cleanest method is usually:
+For a one-dimensional elastic collision between masses $$m_1$$ and $$m_2$$, conservation of momentum and kinetic energy imply that the relative speed reverses:
 
-1. Conserve momentum.
+$$
+v_{1i}-v_{2i}=-(v_{1f}-v_{2f}).
+$$
+
+Solving with momentum conservation gives
+
+$$
+v_{1f}=\frac{m_1-m_2}{m_1+m_2}v_{1i}+\frac{2m_2}{m_1+m_2}v_{2i},
+$$
+
+$$
+v_{2f}=\frac{2m_1}{m_1+m_2}v_{1i}+\frac{m_2-m_1}{m_1+m_2}v_{2i}.
+$$
+
+The proof for the final velocities is left to the reader as an exercise.
+
+<div class="theorem-box">
+
+**Proof (Relative Speed Reversal in a 1D Elastic Collision).** Momentum conservation gives
+
+$$
+m_1v_{1i}+m_2v_{2i}=m_1v_{1f}+m_2v_{2f}.
+$$
+
+Rearrange:
+
+$$
+m_1(v_{1i}-v_{1f})=m_2(v_{2f}-v_{2i}).
+$$
+
+Kinetic energy conservation gives
+
+$$
+\frac{1}{2}m_1v_{1i}^2+\frac{1}{2}m_2v_{2i}^2
+=
+\frac{1}{2}m_1v_{1f}^2+\frac{1}{2}m_2v_{2f}^2.
+$$
+
+Rearrange and factor:
+
+$$
+m_1(v_{1i}^2-v_{1f}^2)=m_2(v_{2f}^2-v_{2i}^2),
+$$
+
+$$
+m_1(v_{1i}-v_{1f})(v_{1i}+v_{1f})
+=
+m_2(v_{2f}-v_{2i})(v_{2f}+v_{2i}).
+$$
+
+Divide this equation by the rearranged momentum equation:
+
+$$
+v_{1i}+v_{1f}=v_{2f}+v_{2i}.
+$$
+
+Move terms:
+
+$$
+v_{1i}-v_{2i}=-(v_{1f}-v_{2f}).
+$$
+
+So the relative velocity after the collision is the negative of the relative velocity before the collision.
+
+</div>
+
+:::strategy
+1. Conserve momentum in one dimension.
 2. Use the relative-speed reversal $$v_{1i}-v_{2i}=-(v_{1f}-v_{2f})$$ instead of expanding kinetic energy.
 3. Solve the two linear equations.
+:::
 
 Useful shortcuts:
 
 - Equal masses in 1D exchange velocities.
-- If a light object elastically hits a much heavier stationary object, the light object rebounds with nearly the same speed.
+- If a light object elastically hits a much heavier stationary object (usually denoted by $$m << M$$), the light object rebounds with nearly the same speed.
 - If a heavy object elastically hits a much lighter stationary object, the heavy object barely changes speed and the light object leaves at nearly twice the heavy object's speed.
 
 <div class="theorem-box">
@@ -428,9 +509,7 @@ The lighter cart shoots right quickly because it receives momentum and kinetic e
 
 ### Inelastic collisions
 
-An **inelastic collision** is a collision that conserves momentum but not kinetic energy. Some mechanical energy becomes internal energy, deformation, heat, or sound.
-
-A **perfectly inelastic collision** is the special case where objects stick together after impact\:
+An **inelastic collision** is a collision that conserves momentum but not kinetic energy. Some mechanical energy becomes internal energy, deformation, heat, or sound. A **perfectly inelastic collision** is the special case where objects stick together after impact:
 
 $$
 m_1\vec{v}_{1i}+m_2\vec{v}_{2i} = (m_1+m_2)\vec{v}_f.
@@ -551,114 +630,6 @@ The two stages must be analyzed separately with the correct conserved quantity f
 
 ---
 
-## One-Dimensional Elastic Collision Relations
-
-For a one-dimensional elastic collision between masses $$m_1$$ and $$m_2$$, conservation of momentum and kinetic energy imply that the relative speed reverses:
-
-$$
-v_{1i}-v_{2i}=-(v_{1f}-v_{2f}).
-$$
-
-Solving with momentum conservation gives
-
-$$
-v_{1f}=\frac{m_1-m_2}{m_1+m_2}v_{1i}+\frac{2m_2}{m_1+m_2}v_{2i},
-$$
-
-$$
-v_{2f}=\frac{2m_1}{m_1+m_2}v_{1i}+\frac{m_2-m_1}{m_1+m_2}v_{2i}.
-$$
-
-These formulas are useful, but the underlying conservation laws are usually safer.
-
-<div class="theorem-box">
-
-**Proof (Relative Speed Reversal in a 1D Elastic Collision).** Momentum conservation gives
-
-$$
-m_1v_{1i}+m_2v_{2i}=m_1v_{1f}+m_2v_{2f}.
-$$
-
-Rearrange:
-
-$$
-m_1(v_{1i}-v_{1f})=m_2(v_{2f}-v_{2i}).
-$$
-
-Kinetic energy conservation gives
-
-$$
-\frac{1}{2}m_1v_{1i}^2+\frac{1}{2}m_2v_{2i}^2
-=
-\frac{1}{2}m_1v_{1f}^2+\frac{1}{2}m_2v_{2f}^2.
-$$
-
-Rearrange and factor:
-
-$$
-m_1(v_{1i}^2-v_{1f}^2)=m_2(v_{2f}^2-v_{2i}^2),
-$$
-
-$$
-m_1(v_{1i}-v_{1f})(v_{1i}+v_{1f})
-=
-m_2(v_{2f}-v_{2i})(v_{2f}+v_{2i}).
-$$
-
-Divide this equation by the rearranged momentum equation:
-
-$$
-v_{1i}+v_{1f}=v_{2f}+v_{2i}.
-$$
-
-Move terms:
-
-$$
-v_{1i}-v_{2i}=-(v_{1f}-v_{2f}).
-$$
-
-So the relative velocity after the collision is the negative of the relative velocity before the collision.
-
-</div>
-
-<div class="theorem-box">
-
-**Example.** A $$2.0\ \text{kg}$$ cart moving right at $$3.0\ \text{m/s}$$ elastically collides head-on with a $$1.0\ \text{kg}$$ cart at rest. Find both final velocities.
-
-Use the relation formulas with $$m_1 = 2.0$$, $$m_2 = 1.0$$, $$v_{1i} = 3.0$$, $$v_{2i} = 0$$:
-
-$$
-v_{1f} = \frac{m_1-m_2}{m_1+m_2}v_{1i} = \frac{2.0-1.0}{3.0}(3.0) = 1.0\ \text{m/s},
-$$
-
-$$
-v_{2f} = \frac{2m_1}{m_1+m_2}v_{1i} = \frac{2(2.0)}{3.0}(3.0) = 4.0\ \text{m/s}.
-$$
-
-Check momentum: $$p_i = (2.0)(3.0) = 6.0$$; $$p_f = (2.0)(1.0)+(1.0)(4.0) = 6.0\ \text{kg}\cdot\text{m/s}$$. Check kinetic energy: $$K_i = \tfrac{1}{2}(2.0)(9.0) = 9.0\ \text{J}$$; $$K_f = \tfrac{1}{2}(2.0)(1.0) + \tfrac{1}{2}(1.0)(16) = 1.0 + 8.0 = 9.0\ \text{J}$$. Both are conserved, confirming the result. The lighter target rebounds faster than the incoming cart, which keeps moving forward but slower.
-
-</div>
-
-<div class="theorem-box">
-
-**Proof (equal masses exchange velocities in 1D elastic collision).** Set $$m_1 = m_2 = m$$ in the elastic-collision relation formulas. The coefficients become
-
-$$
-\frac{m_1-m_2}{m_1+m_2} = 0, \qquad \frac{2m_2}{m_1+m_2} = 1, \qquad \frac{2m_1}{m_1+m_2} = 1, \qquad \frac{m_2-m_1}{m_1+m_2} = 0.
-$$
-
-Therefore
-
-$$
-v_{1f} = v_{2i}, \qquad v_{2f} = v_{1i}.
-$$
-
-The two masses simply swap velocities. This is why a head-on shot in billiards (equal-mass balls) stops the cue ball dead while the struck ball leaves at the cue ball's speed. Intuitively, in the center-of-mass frame the equal masses approach with equal and opposite velocities; an elastic collision reverses each, and transforming back to the lab frame produces the swap.
-
-</div>
-
----
-
 ## Momentum and Collisions in Two Dimensions
 
 In two dimensions, conserve components separately:
@@ -668,6 +639,8 @@ $$
 $$
 
 Angles enter through vector components. The momentum vector triangle is often more important than speed alone, because momentum depends on both mass and velocity. A useful sanity check: the total momentum vector before equals the total momentum vector after, so the "after" vectors must tip-to-tail close the same vector as the "before" vectors.
+
+A very useful formula when dealing with 2D elastic collisions is the 90° separation rule, where unless the collision is head-on, the two objects move off at right angles.
 
 <div class="theorem-box">
 
@@ -741,7 +714,7 @@ The struck puck recoils to the opposite side, balancing the $$y$$-momentum that 
 
 <div class="theorem-box">
 
-**Example (2025 F=ma Exam).** Three identical smooth disks are arranged so one moving disk with speed $$v$$ collides elastically with two initially stationary disks one at a time because of a slight misalignment. Each collision occurs along a line of centers making $$30^\circ$$ with the incoming disk's direction at that collision. Find the final speed of the originally moving disk after the two sequential collisions.
+**Example (2025 F=ma).** Three identical smooth disks are arranged so one moving disk with speed $$v$$ collides elastically with two initially stationary disks one at a time because of a slight misalignment. Each collision occurs along a line of centers making $$30^\circ$$ with the incoming disk's direction at that collision. Find the final speed of the originally moving disk after the two sequential collisions.
 
 In an elastic collision between identical smooth disks, the component of the moving disk's velocity along the line of centers is transferred to the struck disk, while the perpendicular component remains with the originally moving disk.
 
@@ -771,14 +744,14 @@ $$
 \vec{P}'_{\text{sys}} = M(\vec{v}_{\text{cm}} - \vec{v}_{\text{cm}}) = 0.
 $$
 
-Since the total momentum is zero, the objects always have equal and opposite momenta in this frame, both before and after a collision. An elastic collision in the CM frame simply reverses each object's velocity; an inelastic collision brings them to rest in this frame, which makes the maximum-energy-loss statement obvious. The lab-frame results then follow by adding $$\vec{v}_{\text{cm}}$$ back.
+Since the total momentum is zero, the objects always have equal and opposite momenta in this frame, both before and after a collision. An elastic collision in the CM frame simply reverses each object's velocity; an inelastic collision brings them to rest in this frame, which makes the maximum-energy-loss statement obvious. The lab-frame (the stationary frame) results then follow by adding $$\vec{v}_{\text{cm}}$$ back.
 
-For two objects in one dimension, the CM-frame method is:
-
+:::strategy
 1. Compute $$v_{\text{cm}}$$.
 2. Subtract it from every velocity to enter the CM frame.
 3. Apply the collision rule there.
 4. Add $$v_{\text{cm}}$$ back to return to the lab frame.
+:::
 
 <div class="theorem-box">
 
@@ -834,11 +807,10 @@ This matches the formula result, but the CM-frame view makes the "reverse in ela
 | Center of mass (discrete) | $$\vec{r}_{\text{cm}} = \tfrac{1}{M}\sum_i m_i\vec{r}_i$$ |
 | Center of mass (continuous) | $$\vec{r}_{\text{cm}} = \tfrac{1}{M}\int \vec{r}\,dm$$ |
 | System momentum | $$\vec{P}_{\text{sys}} = M\vec{v}_{\text{cm}}$$ |
-| Perfectly inelastic collision | $$m_1\vec{v}_{1i} + m_2\vec{v}_{2i} = (m_1+m_2)\vec{v}_f$$ |
 | 1D elastic, relative speed | $$v_{1i}-v_{2i} = -(v_{1f}-v_{2f})$$ |
 | 1D elastic final velocities | $$v_{1f} = \tfrac{m_1-m_2}{m_1+m_2}v_{1i} + \tfrac{2m_2}{m_1+m_2}v_{2i}$$ |
-| Kinetic energy from momentum | $$K = p^2/2m$$ |
-| Rocket equation | $$\Delta v = u\ln(m_0/m_f)$$ |
+| Perfectly inelastic collision | $$m_1\vec{v}_{1i} + m_2\vec{v}_{2i} = (m_1+m_2)\vec{v}_f$$ |
+
 :::
 
 ## Practice

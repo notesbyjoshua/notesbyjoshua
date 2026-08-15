@@ -16,9 +16,35 @@ sidebar:
 
 ---
 
-## Rotational Kinetic Energy
+## Variables of Rotation
 
-When an object is rotating, its kinetic energy is not limited to translational kinetic energy. A rigid body rotating with angular speed $$\omega$$ has rotational kinetic energy
+### Rotational Mechanical Advantage
+
+Rotational mechanical advantage is the same work tradeoff as linear mechanical advantage, but written with torque and angle. For an ideal rotational machine,
+
+$$
+W_{\text{in}}=W_{\text{out}},
+$$
+
+so
+
+$$
+\tau_{\text{in}}\Delta\theta_{\text{in}}
+=\tau_{\text{out}}\Delta\theta_{\text{out}}.
+$$
+
+Thus the ideal torque advantage is
+
+$$
+\frac{\tau_{\text{out}}}{\tau_{\text{in}}}
+=\frac{\Delta\theta_{\text{in}}}{\Delta\theta_{\text{out}}}.
+$$
+
+This is why gears, wheels and axles, and screw mechanisms can multiply torque: the input side turns through a larger angular displacement than the output side. In a real machine, friction makes $$W_{\text{out}}<W_{\text{in}}$$, so the actual torque advantage is smaller than the ideal ratio.
+
+### Rotational Kinetic Energy
+
+When an object is rotating, its kinetic energy is not limited to translational kinetic energy. A rigid body (a body that cannot stretch/contract) rotating with angular speed $$\omega$$ has rotational kinetic energy
 
 $$
 K_{\text{rot}} = \frac{1}{2}I\omega^2.
@@ -65,7 +91,7 @@ $$
 K = \frac{1}{2}Mv_{\text{cm}}^2 + \frac{1}{2}I_{\text{cm}}\omega^2.
 $$
 
-This form is especially important for rolling objects. The translational term tracks motion of the center of mass; the rotational term tracks spinning about the center of mass. The split is not an approximation: any rigid-body motion can be decomposed into translation of the center of mass plus rotation about the center of mass, and the kinetic energy splits cleanly into exactly these two pieces with no cross term.
+This form is especially important for rolling objects. The translational term tracks motion of the center of mass; the rotational term tracks spinning about the center of mass. Any rigid-body motion can be decomposed into translation of the center of mass plus rotation about the center of mass, and the kinetic energy splits into exactly these two pieces with no cross term.
 
 <div class="theorem-box">
 
@@ -108,40 +134,27 @@ The disappearance of the cross term is exactly why translation and rotation can 
 
 <div class="theorem-box">
 
-**Example.** A solid sphere of mass $$M=2.0\ \text{kg}$$ and radius $$R=0.15\ \text{m}$$ rolls without slipping at center-of-mass speed $$v_{\text{cm}}=4.0\ \text{m/s}$$. Find its total kinetic energy.
+**Example.** A uniform disk of mass $$M=3.0\ \text{kg}$$ and radius $$R=0.40\ \text{m}$$ spins about a fixed axle through its center at $$\omega=12\ \text{rad/s}$$. Find its rotational kinetic energy. Do not assume the disk is rolling.
 
-For a solid sphere,
-
-$$
-I_{\text{cm}}=\frac{2}{5}MR^2.
-$$
-
-Rolling without slipping gives $$\omega=v_{\text{cm}}/R$$. Thus
+For a solid disk about its center,
 
 $$
-K=\frac12Mv_{\text{cm}}^2+\frac12I_{\text{cm}}\omega^2.
+I=\frac{1}{2}MR^2
+=\frac{1}{2}(3.0)(0.40)^2
+=0.24\ \text{kg}\cdot\text{m}^2.
 $$
 
-Substitute:
+Since the axle is fixed, the disk has rotational kinetic energy only:
 
 $$
-K=\frac12Mv^2+\frac12\left(\frac25MR^2\right)\left(\frac{v}{R}\right)^2
-=\frac12Mv^2+\frac15Mv^2=\frac{7}{10}Mv^2.
+K_{\text{rot}}=\frac{1}{2}I\omega^2
+=\frac{1}{2}(0.24)(12)^2
+=17.3\ \text{J}.
 $$
 
-Numerically,
-
-$$
-K=\frac{7}{10}(2.0)(4.0)^2=22.4\ \text{J}.
-$$
-
-The radius cancels because a smaller sphere spins faster at the same rolling speed, exactly compensating for the smaller $$R^2$$ in $$I$$.
+There is no $$\frac{1}{2}Mv_{\text{cm}}^2$$ term because the center of mass is not translating.
 
 </div>
-
----
-
-## Variables of Rotation
 
 ### Rotational Work
 
@@ -215,7 +228,7 @@ The average power over the interval is lower than the final instantaneous power 
 
 ## Rolling Without Slipping
 
-Rolling without slipping is a special case of rotary motion that imposes the constraint
+Rolling without slipping is a special case of rotary motion and is the kind of rotary motion people generally associate with "rolling." Formally, rolling without slipping imposes the constraint
 
 $$
 v_{\text{cm}} = R\omega
@@ -227,38 +240,38 @@ $$
 a_{\text{cm}} = R\alpha.
 $$
 
-The point of contact is instantaneously at rest relative to the ground, so static friction can provide torque without doing work on an ideal rolling object. Static friction may point uphill or downhill depending on what torque is needed.
+The point of contact is instantaneously at rest relative to the ground, meaning that if you take a contact point between the object and the ground, it will not "slide" or move horizontally. Rather, that point "kisses" the ground upon touch and immediately is lifted from the ground by the rotary movement. Since the velocity is technically zero at the contact point, the surfaces are not sliding past each other, so static friction is used instead of kinetic friction. Static friction can provide torque without doing work on an ideal rolling object, and may point uphill or downhill depending on what torque is needed.
 
-Rolling without slipping means the surface does not slide at the contact point. The contact point on the rolling object is instantaneously at rest relative to the ground, so the distance the center moves equals the arc length unwound from the rim:
+Due to the fact that the contact point on the rolling object is instantaneously at rest relative to the ground, so the distance the center moves equals the arc length unwound from the rim:
 
 $$
 \Delta x_{\text{cm}}=R\Delta\theta.
 $$
 
-Differentiating gives $$v_{\text{cm}}=R\omega$$ and $$a_{\text{cm}}=R\alpha$$. If slipping occurs, these constraints fail; the object can translate too fast or too slowly for its spin.
+Differentiating gives $$v_{\text{cm}}=R\omega$$ and $$a_{\text{cm}}=R\alpha$$. If slipping occurs (e.g. the contact point slides along the surface before being rotated), these constraints fail; the object can translate too fast or too slowly for its spin.
 
-Friction is the force that enforces the no-slip condition, but its direction is not automatic. For a passive ball rolling down an incline, static friction points up the incline because it provides the torque needed to spin the ball faster. For a driven wheel on a car, static friction can point forward because the engine tries to spin the tire backward against the road. Static friction does not necessarily oppose the motion of the center of mass; it opposes relative slipping at the contact point.
+Note that rolling without slipping is only possible with enough friction, which prevents the contact point from ever sliding. That begs the question: will an infinitely large static friction stop a wheel from rolling down a ramp? Surprisingly, no! Static friction does not necessarily impede motion, it only prevents relative motion at the contact point, meaning that the wheel will still roll without slipping down the ramp. However, if there is a really large *kinetic* friction, the wheel will stop since kinetic friction does impede motion by removing kinetic energy!
 
 ### Rolling Down an Incline
 
-A round object released on an incline rolls without slipping if friction is sufficient. We can find its center-of-mass acceleration in general, then specialize to common shapes.
+A round object released on an incline rolls without slipping if friction is sufficient (which we will usually assume is true). As a result, there are many shortcut formulas for the kinematics of such motion:
 
+$$
+a=\frac{g\sin\theta}{1+\dfrac{I_{\text{cm}}}{MR^2}},
+$$
 
-```tikz
-\usepackage{tikz}
-\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
-\begin{tikzpicture}[>=Stealth, font=\small]
-\draw[thick] (-3,-1.2) -- (3,-1.2) -- (3,0.9) -- cycle;
-\draw[thick] (-3,-1.2) -- (3,0.9);
-\coordinate (O) at (0.1,0.02);
-\draw[fill=gray!20] (O) circle (0.5);
-\draw[->, blue, thick] (O) -- ++(-0.34,0.94) node[above] {$N$};
-\draw[->, orange!90!black, thick] ($(O)+(-0.18,-0.47)$) -- ++(-1.0,-0.35) node[left] {$f_s$};
-\draw[->, red, thick] (O) -- ++(0,-1.35) node[below] {$mg$};
-\draw[->, thick] ($(O)+(0.73,0.05)$) arc[start angle=5,end angle=-270,radius=0.33] node[right] {$\alpha$};
-\draw[->, gray!80, thick] (O) -- ++(0.9,0.32) node[right] {$a_{\text{cm}}$};
-\end{tikzpicture}
-```
+$$
+f=\frac{I_{\text{cm}}a}{R^2},
+\qquad
+f=\frac{\beta}{1+\beta}Mg\sin\theta
+\quad\text{when } I_{\text{cm}}=\beta MR^2,
+$$
+
+and
+
+$$
+v_{\text{cm}}=R\omega,\qquad a_{\text{cm}}=R\alpha.
+$$
 
 <div class="theorem-box">
 
@@ -314,35 +327,67 @@ Smaller $$\beta$$ means less mass far from the axis, less rotational inertia to 
 
 <div class="theorem-box">
 
-**Example.** A solid cylinder of mass $$M = 2.0\ \text{kg}$$ and radius $$R = 0.10\ \text{m}$$ rolls without slipping down a $$\theta = 30^\circ$$ incline. Find its center-of-mass acceleration and the static friction force, and state the minimum coefficient of friction needed.
+**Example.** In the 2011 F=ma Problem 25 setup, a hollow cylinder rolls without slipping down an incline of angle $$\theta$$ while a block slides down the same incline with coefficient of kinetic friction $$\mu$$. They start from rest at the same height and reach the bottom at the same time. Find $$\mu$$.
 
-A solid cylinder has $$\beta = I_{\text{cm}}/MR^2 = \tfrac12$$, so
+If they start together and travel the same distance in the same time from rest, their accelerations down the incline are equal.
 
-$$
-a=\frac{g\sin\theta}{1+\tfrac12}=\frac{2}{3}g\sin\theta=\frac{2}{3}(9.8)\sin 30^\circ=\frac{2}{3}(9.8)(0.5)=3.27\ \text{m/s}^2.
-$$
-
-The friction force, from $$f = \dfrac{\beta}{1+\beta}Mg\sin\theta$$ with $$\beta=\tfrac12$$ (so $$\dfrac{\beta}{1+\beta}=\tfrac13$$):
+For a rolling object,
 
 $$
-f=\frac{1}{3}Mg\sin\theta=\frac{1}{3}(2.0)(9.8)(0.5)=3.27\ \text{N}.
+a_{\text{roll}}=\frac{g\sin\theta}{1+\beta},
 $$
 
-For the cylinder to roll without slipping, static friction must be able to supply this, so $$f \le \mu_s F_N = \mu_s Mg\cos\theta$$. The minimum coefficient is
+where $$I=\beta MR^2$$. A hollow cylinder has $$\beta=1$$, so
 
 $$
-\mu_{s,\min}=\frac{f}{Mg\cos\theta}=\frac{\tfrac13 Mg\sin\theta}{Mg\cos\theta}=\frac{1}{3}\tan\theta=\frac{1}{3}\tan 30^\circ=0.19.
+a_{\text{roll}}=\frac{1}{2}g\sin\theta.
 $$
 
-If the actual $$\mu_s$$ is smaller than this, the cylinder slips: it then accelerates faster than $$\tfrac23 g\sin\theta$$ translationally but spins up more slowly, and you must use kinetic friction $$f_k = \mu_k Mg\cos\theta$$ with $$a \ne R\alpha$$.
+For the sliding block,
+
+$$
+a_{\text{slide}}=g\sin\theta-\mu g\cos\theta.
+$$
+
+Set the accelerations equal:
+
+$$
+\frac{1}{2}g\sin\theta
+=g\sin\theta-\mu g\cos\theta.
+$$
+
+Cancel $$g$$ and solve:
+
+$$
+\mu\cos\theta=\frac{1}{2}\sin\theta,
+$$
+
+so
+
+$$
+\mu=\frac{1}{2}\tan\theta.
+$$
+
+The block needs just enough kinetic friction to lose the same translational acceleration that the hollow cylinder loses to rotational inertia.
 
 </div>
+
+In general, when solving rolling without slipping problems, always:
+
+:::strategy
+1. Decide whether the object is rolling without slipping. If yes, write the constraint $$v_{\text{cm}}=R\omega$$ or $$a_{\text{cm}}=R\alpha$$.
+2. Draw forces on the center of mass. Static friction is unknown; do not set it equal to $$\mu_sN$$ unless the problem asks for the slipping threshold.
+3. Write translation along the direction of motion: $$\sum F=Ma$$.
+4. Write rotation about the center of mass: $$\sum\tau_{\text{cm}}=I_{\text{cm}}\alpha$$.
+5. Use $$a=R\alpha$$ to combine the equations. Usually this solves for $$a$$ first.
+6. Return to the force equations to find friction or normal force if needed, then check $$\lvert f_s\rvert\le\mu_sN$$ if slipping is a concern.
+:::
 
 ---
 
 ## Angular Momentum of a Particle
 
-The angular momentum of a particle about a chosen origin is a cross product (a way of multiplying vectors):
+The angular momentum of a particle about a chosen origin is a cross product (refer to the previous units if you need a reminder of what the cross product is):
 
 $$
 \vec{L} = \vec{r}\times \vec{p}.
@@ -360,13 +405,11 @@ $$
 L = mvr = rp,
 $$
 
-which is *constant in time* even though the particle is not rotating about anything — because $$r\sin\theta$$ stays equal to the fixed lever arm $$r$$. This is a useful sanity check: angular momentum is conserved here because no force (hence no torque) acts.
+which is *constant in time* even though the particle is not rotating about anything since $$r\sin\theta$$ stays equal to the fixed lever arm $$r$$. The direction of angular momentum is always defined using the right hand rule.
 
 :::tip
 Always state the reference point before quoting an angular momentum; the same motion can have any value of $$L$$, including zero (choose the origin on the line of motion), depending on where you measure from.
 :::
-
-The direction of angular momentum is always defined using the right hand rule, where you curl your hand in the direction of spin and your thumb points in the direction of angular momentum.
 
 ### Angular Momentum of a Rigid Body
 
@@ -383,16 +426,35 @@ This simple form assumes the angular momentum vector is parallel to the angular 
 \usetikzlibrary{arrows.meta}
 \begin{tikzpicture}[>=Stealth, font=\small]
 \draw[fill=gray!20] (0,0) ellipse (1.5 and 0.55);
-\draw[dashed] (0,-1.5) -- (0,1.8);
-\draw[->, very thick, blue] (0,0.2) -- (0,1.8) node[above] {$\vec L,\ \vec\omega$};
-\draw[->, thick] (1.0,0.35) arc[start angle=20,end angle=320,x radius=1.0,y radius=0.35] node[right] {spin};
-\node at (0,-1.9) {symmetric disk spinning about its central axis};
+\draw[dashed] (0,-1.4) -- (0,1.75);
+\draw[->, very thick, blue] (0,0) -- (0,1.75) node[above] {$\vec L,\ \vec\omega$};
+\draw[->, thick] (1.25,0.45) arc[start angle=25,end angle=330,x radius=1.25,y radius=0.43];
+\node[right] at (1.55,0.05) {spin};
 \end{tikzpicture}
 ```
 
----
+<div class="theorem-box">
 
-## Torque and Angular Momentum
+**Example.** A $$0.20\ \text{kg}$$ particle moves at $$6.0\ \text{m/s}$$ along a straight line. The chosen origin is $$0.50\ \text{m}$$ from the particle's line of motion. Find the magnitude of the particle's angular momentum about that origin.
+
+Use the perpendicular-distance form:
+
+$$
+L=mvr_\perp.
+$$
+
+Thus
+
+$$
+L=(0.20)(6.0)(0.50)
+=0.60\ \text{kg}\cdot\text{m}^2/\text{s}.
+$$
+
+The particle is not moving in a circle, but it still has angular momentum about an off-line origin.
+
+</div>
+
+### Torque and Angular Momentum
 
 Just like how force is the rate of change of linear momentum, torque is the rate of change of angular momentum:
 
@@ -448,6 +510,36 @@ $$
 
 </div>
 
+<div class="theorem-box">
+
+**Example.** A wheel has moment of inertia $$I=0.80\ \text{kg}\cdot\text{m}^2$$ and spins at $$5.0\ \text{rad/s}$$. A constant braking torque of magnitude $$2.0\ \text{N}\cdot\text{m}$$ acts opposite the spin. Find how long it takes to stop.
+
+Use torque as the rate of change of angular momentum:
+
+$$
+\tau=\frac{\Delta L}{\Delta t}.
+$$
+
+The angular momentum changes from $$I\omega_i$$ to $$0$$:
+
+$$
+\Delta L=0-I\omega_i
+=-(0.80)(5.0)
+=-4.0\ \text{kg}\cdot\text{m}^2/\text{s}.
+$$
+
+The torque is $$-2.0\ \text{N}\cdot\text{m}$$, so
+
+$$
+\Delta t=\frac{\Delta L}{\tau}
+=\frac{-4.0}{-2.0}
+=2.0\ \text{s}.
+$$
+
+The same answer would come from $$\tau=I\alpha$$, but angular momentum makes the impulse idea visible.
+
+</div>
+
 ---
 
 ## Conservation of Angular Momentum
@@ -473,34 +565,8 @@ $$
 If rotational inertia decreases, angular speed increases; if rotational inertia increases, angular speed decreases. Rotational kinetic energy does not have to be conserved during this process because internal work may be done while the mass distribution changes, similar to how kinetic energy is not necessarily conserved when momentum is conserved.
 
 :::warning
-This is the central subtlety of the topic: $$L$$ is conserved whenever external torque becomes zero, but $$K_{\text{rot}}$$ is conserved only when, additionally, no internal work is done and no inelastic merging occurs.
+$$L$$ is conserved whenever external torque becomes zero, but $$K_{\text{rot}}$$ is conserved only when, additionally, no internal work is done and no inelastic merging occurs, just like with linear momentum and kinetic energy.
 :::
-
-<div class="theorem-box">
-
-**Example.** A skater spins at $$\omega_i = 2.0\ \text{rad/s}$$ with arms extended, giving a moment of inertia $$I_i = 6.0\ \text{kg}\cdot\text{m}^2$$. She pulls her arms in, reducing her moment of inertia to $$I_f = 2.0\ \text{kg}\cdot\text{m}^2$$. Find her new angular speed and the change in rotational kinetic energy.
-
-The only external torques (gravity, the normal force at the skates) act along or through the vertical spin axis, so the external torque about that axis is zero and angular momentum is conserved:
-
-$$
-I_i\omega_i = I_f\omega_f
-\;\Rightarrow\;
-\omega_f = \frac{I_i\omega_i}{I_f} = \frac{(6.0)(2.0)}{2.0} = 6.0\ \text{rad/s}.
-$$
-
-She spins three times faster. Now compare the kinetic energies:
-
-$$
-K_i = \tfrac12 I_i\omega_i^2 = \tfrac12(6.0)(2.0)^2 = 12\ \text{J},
-$$
-
-$$
-K_f = \tfrac12 I_f\omega_f^2 = \tfrac12(2.0)(6.0)^2 = 36\ \text{J}.
-$$
-
-Kinetic energy *tripled*, increasing by $$24\ \text{J}$$. This energy is not free: the skater's muscles do positive work pulling her arms inward against the outward "centrifugal" tendency of the rotating mass. Angular momentum is conserved; kinetic energy is not, because internal forces did work. A quick way to see the increase: since $$L = I\omega$$ is fixed, $$K = \tfrac12 I\omega^2 = \tfrac12 L\omega = L^2/(2I)$$, so shrinking $$I$$ must raise $$K$$.
-
-</div>
 
 <div class="theorem-box">
 
@@ -534,7 +600,7 @@ $$
 L_i = (0.010)(300)(1.0) = 3.0\ \text{kg}\cdot\text{m}^2/\text{s}.
 $$
 
-**Step 3 — Moment of inertia after impact.** The rod about its end is $$I_{\text{rod}} = \tfrac13 ML^2$$ (see [torque and rotational dynamics](/notes/ap/ap-physics-c-mechanics/torque/)), and the embedded bullet adds $$md^2$$:
+**Step 3 — Moment of inertia after impact.** The rod about its end is $$I_{\text{rod}} = \tfrac13 ML^2$$, and the embedded bullet adds $$md^2$$:
 
 $$
 I = \tfrac13 ML^2 + md^2 = \tfrac13(1.0)(1.2)^2 + (0.010)(1.0)^2 = 0.480 + 0.010 = 0.490\ \text{kg}\cdot\text{m}^2.
@@ -610,95 +676,72 @@ Because the torque varied with time, we could not use $$\tau = I\alpha$$ with a 
 
 ## Orbiting Particles and Central Forces
 
-If a force always points along the line between a particle and a fixed center, then the torque about that center is zero:
+Gravity is a **central force**: it points along the line connecting the orbiting object to the body it orbits. For a circular orbit, gravity supplies the centripetal force:
 
 $$
-\vec{\tau} = \vec{r}\times \vec{F}=0.
+\frac{GMm}{r^2}=m\frac{v_{\text{orbit}}^2}{r}.
 $$
 
-<div class="theorem-box">
-
-**Proof (central forces exert zero torque about the center).** A central force is parallel or antiparallel to $$\vec r$$, the vector from the center to the particle. The torque magnitude is
+The orbiting mass cancels, giving
 
 $$
-\tau=rF\sin\theta,
+v_{\text{orbit}}=\sqrt{\frac{GM}{r}}.
 $$
 
-where $$\theta$$ is the angle between $$\vec r$$ and $$\vec F$$. For a central force, $$\theta=0^\circ$$ or $$180^\circ$$, so $$\sin\theta=0$$. Therefore
+The orbital period follows from circumference over speed:
 
 $$
-\tau=0.
+T=\frac{2\pi r}{v_{\text{orbit}}}
+=2\pi\sqrt{\frac{r^3}{GM}}.
 $$
 
-Equivalently, the line of action of the force passes through the center, so the lever arm about that center is zero.
-
-</div>
-
-Therefore angular momentum about the center is conserved. These forces are called central forces, and are important in everyday life, like in the cases of gravity and Coulombic force.
-
-For gravity, central-force motion leads to Kepler's laws:
-
-- **First law:** bound orbits are ellipses with the central body at one focus.
-- **Second law:** the radius vector sweeps equal areas in equal times.
-- **Third law:** for orbits around the same central mass, $$T^2\propto a^3$$, where $$a$$ is the semimajor axis.
-
-For circular orbits, Kepler's third law follows immediately from force balance:
-
-$$
-\frac{GMm}{r^2}=m\frac{4\pi^2r}{T^2}.
-$$
-
-Solving,
+Squaring gives Kepler's third law for circular orbits:
 
 $$
 T^2=\frac{4\pi^2}{GM}r^3.
 $$
 
-For elliptical orbits, replace $$r$$ with the semimajor axis $$a$$:
+For elliptical orbits, replace $$r$$ with the semi-major axis $$a$$:
 
 $$
 T^2=\frac{4\pi^2}{GM}a^3.
 $$
 
-<div class="theorem-box">
-
-**Proof (Kepler's Second Law from Angular-Momentum Conservation).** Consider a planet of mass $$m$$ at position $$\vec r$$ from the Sun, moving with velocity $$\vec v$$. In a small time $$dt$$ it moves $$d\vec r = \vec v\,dt$$. The area swept out by the radius vector is the area of the thin triangle with sides $$\vec r$$ and $$d\vec r$$:
+Escape speed comes from the condition that total mechanical energy reaches zero at infinity:
 
 $$
-dA = \tfrac12\,\lvert \vec r \times d\vec r\rvert = \tfrac12\,\lvert \vec r \times \vec v\rvert\,dt.
+v_{\text{esc}}=\sqrt{\frac{2GM}{r}}.
 $$
 
-Divide by $$dt$$:
+For a bound circular orbit, the total mechanical energy is
 
 $$
-\frac{dA}{dt} = \tfrac12\,\lvert \vec r \times \vec v\rvert.
+E=K+U
+=\frac{1}{2}m\left(\frac{GM}{r}\right)-\frac{GMm}{r}
+=-\frac{GMm}{2r}.
 $$
 
-Now multiply and divide by $$m$$ to bring in angular momentum, using $$\vec L = \vec r \times m\vec v$$:
+For an elliptical orbit, the corresponding result is
 
 $$
-\frac{dA}{dt} = \frac{1}{2m}\,\lvert \vec r \times m\vec v\rvert = \frac{L}{2m}.
+E=-\frac{GMm}{2a}.
 $$
 
-Gravity is a central force, so the torque about the Sun is zero and $$L$$ is constant. With $$m$$ also constant, $$dA/dt = L/2m$$ is constant: **the planet sweeps equal areas in equal times.** Kepler's empirical second law is just angular-momentum conservation in disguise.
-
-</div>
-
-<div class="theorem-box">
-
-**Example.** A comet orbits the Sun. At its closest approach (perihelion) it is $$r_p = 0.6\ \text{AU}$$ from the Sun moving at $$v_p = 50\ \text{km/s}$$; the velocity there is perpendicular to the radius. Find its speed at its farthest point (aphelion), $$r_a = 3.0\ \text{AU}$$, where the velocity is again perpendicular to the radius.
-
-At perihelion and aphelion the velocity is perpendicular to $$\vec r$$, so $$L = mvr\sin 90^\circ = mvr$$. Angular momentum about the Sun is conserved:
+The more general speed formula is the **vis-viva equation**:
 
 $$
-m v_p r_p = m v_a r_a
-\;\Rightarrow\;
-v_a = v_p\frac{r_p}{r_a} = 50\cdot\frac{0.6}{3.0} = 10\ \text{km/s}.
+v^2=GM\left(\frac{2}{r}-\frac{1}{a}\right),
 $$
 
-The comet moves five times slower at aphelion than at perihelion, in exact proportion to the inverse of its distance — the "equal areas" rule made quantitative. Note we never needed the gravitational force law itself, only that it is central.
+where $$a$$ is the semi-major axis. A circular orbit is the special case $$a=r$$, which reduces back to $$v^2=GM/r$$.
 
-</div>
+Because gravity is central, it produces no torque about the attracting mass:
+
+$$
+\vec\tau=\vec r\times \vec F_g=\vec 0.
+$$
+
+Therefore angular momentum is conserved in orbital motion. This is why an object in an elliptical orbit moves fastest near periapsis and slowest near apoapsis: $$L=mrv_\perp$$ stays constant. Mechanical energy is also conserved if gravity is the only force doing work, so orbit problems often combine energy conservation with angular momentum conservation.
 
 ---
 
@@ -712,11 +755,18 @@ The comet moves five times slower at aphelion than at perihelion, in exact propo
 | Rotational power | $$P = \tau\omega = \vec\tau\cdot\vec\omega$$ |
 | Rolling constraint | $$v_{\text{cm}}=R\omega,\quad a_{\text{cm}}=R\alpha$$ |
 | Rolling down an incline | $$a=\dfrac{g\sin\theta}{1+I_{\text{cm}}/MR^2}$$ |
+| Rolling friction on incline | $$f=\dfrac{\beta}{1+\beta}Mg\sin\theta,\quad I_{\text{cm}}=\beta MR^2$$ |
 | Angular momentum (particle) | $$\vec L = \vec r\times\vec p,\quad L = rp\sin\theta$$ |
 | Angular momentum (rigid body) | $$\vec L = I\vec\omega$$ (symmetry axis) |
 | Torque–angular momentum | $$\sum\vec\tau_{\text{ext}} = \dfrac{d\vec L}{dt}$$ |
 | Conservation of $$L$$ | $$I_i\omega_i = I_f\omega_f$$ (zero ext. torque) |
 | Angular impulse | $$\displaystyle\int\vec\tau_{\text{ext}}\,dt = \Delta\vec L$$ |
+| Circular orbit speed | $$v_{\text{orbit}}=\sqrt{\dfrac{GM}{r}}$$ |
+| Circular orbit period | $$T=2\pi\sqrt{\dfrac{r^3}{GM}}$$ |
+| Kepler's third law | $$T^2=\dfrac{4\pi^2}{GM}a^3$$ |
+| Escape speed | $$v_{\text{esc}}=\sqrt{\dfrac{2GM}{r}}$$ |
+| Vis-viva equation | $$v^2=GM\left(\dfrac{2}{r}-\dfrac{1}{a}\right)$$ |
+| Orbital mechanical energy | $$E=-\dfrac{GMm}{2a}$$ |
 | Areal velocity (central force) | $$\dfrac{dA}{dt} = \dfrac{L}{2m}$$ |
 :::
 

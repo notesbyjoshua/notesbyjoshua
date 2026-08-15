@@ -51,10 +51,10 @@ A **free-body diagram** is a force diagram for one object or one chosen system. 
 \usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
 \begin{tikzpicture}[>=Stealth, font=\small]
 \draw[fill=gray!15] (-0.5,-0.5) rectangle (0.5,0.5); \node at (0,0) {$m$};
-\draw[->, very thick, blue] (0,0.5) -- (0,2) node[above] {$N$};
-\draw[->, very thick, red] (0,-0.5) -- (0,-2) node[below] {$mg$};
-\draw[->, very thick, green!50!black] (0.5,0) -- (2,0) node[right] {$F$};
-\draw[->, very thick, orange!90!black] (-0.5,0) -- (-1.8,0) node[left] {$f$};
+\draw[->, very thick, blue] (0,0.5) -- (0,2) node[above] {$F_N$};
+\draw[->, very thick, red] (0,-0.5) -- (0,-2) node[below] {$F_W$};
+\draw[->, very thick, green!50!black] (0.5,0) -- (2,0) node[right] {$F_1$};
+\draw[->, very thick, orange!90!black] (-0.5,0) -- (-1.8,0) node[left] {$F_f$};
 \end{tikzpicture}
 ```
 
@@ -95,7 +95,7 @@ $$
 F_g = mg.
 $$
 
-Weight points downward, toward Earth's center. Mass is not weight: mass is an object's inertia, while weight is a force caused by gravity. Weight is always drawn from the center of the object, and sometimes drawing out the whole object (as opposed to just a dot) is very important! For example, when the force of gravity passes through the corner of the object, it will start to topple!
+Weight points downward, toward Earth's center. Note that mass is not weight: mass is an object's inertia, while weight is a force caused by gravity. Weight is always drawn from the center of the object, and sometimes drawing out the whole object (as opposed to just a dot) is very important! For example, when the force of gravity passes through the corner of the object, it will start to topple!
 
 ### Normal force
 
@@ -109,31 +109,29 @@ Always get $$F_N$$ from the perpendicular equation, never by assumption, because
 
 ### Tension
 
-**Tension** is a pulling force transmitted by a rope, string, or cable. In an ideal world, strings are massless and inextensible, and pulleys are massless and frictionless. Under those assumptions, the tension is the same throughout a continuous string.
-
-If a string or pulley has mass, or if the pulley has rotational inertia, tension may differ on different sides. Those cases usually belong more naturally with rotational dynamics.
+**Tension** is a pulling force transmitted by a rope, string, or cable. In an ideal world, strings are massless and inextensible, and pulleys are massless and frictionless. Under those assumptions, the tension is the same throughout a continuous string. Tension will always point *away* from an object along the direction of the string. If a string or pulley has mass, or if the pulley has rotational inertia, tension may differ on different sides. Those cases usually belong more naturally with rotational dynamics.
 
 ### Friction
 
-**Friction** is a contact force parallel to a surface that opposes relative motion or impending relative motion.
+**Friction** is a contact force parallel to a surface that opposes relative motion or impending relative motion and will *always* point *opposite* to the direction of motion (e.g. when you are moving down a ramp friction points upwards). There are two types: static and kinetic friction.
 
-Static friction adjusts up to a maximum value:
+Static friction is friction that prevents an object from moving, and adjusts up to a maximum value:
 
 $$
 0 \le f_s \le f_{s,\text{max}} = \mu_s F_N.
 $$
 
-Kinetic friction has approximately constant magnitude:
+Kinetic friction is friction an object experiences while moving and has approximately constant magnitude:
 
 $$
 f_k = \mu_k F_N.
 $$
 
-Static friction is not always equal to $$\mu_sF_N$$; that expression gives the maximum possible static friction before slipping begins. Usually $$\mu_s > \mu_k$$.
+$$\mu_s$$ and $$\mu_k$$ are the coefficient of static friction and kinetic friction, respectively. Usually these values will be given, and determining them (without any other information) requires experimentation. An important note is that static friction is not always equal to $$\mu_sF_N$$; that expression gives the maximum possible static friction before slipping begins. Usually $$\mu_s > \mu_k$$.
 
 ### Spring force
 
-For an ideal spring, **Hooke's law** gives
+For an ideal spring, **Hooke's law** gives the force required for displacement:
 
 $$
 \vec{F}_s = -k\vec{x},
@@ -143,7 +141,7 @@ where $$\vec{x}$$ is displacement from equilibrium. The negative sign means the 
 
 ### Drag and resistive forces
 
-Air resistance and fluid drag are often ignored in AP mechanics unless specified. When included, drag points opposite velocity. Two common models are
+Air resistance and fluid drag is friction experienced by an object going through a medium (usually liquid/air). They are often ignored in AP mechanics unless specified. When included, drag points opposite velocity (air resistance is drag in air). Two most common models are
 
 $$
 \vec{F}_d = -b\vec{v}
@@ -155,13 +153,29 @@ $$
 \vec{F}_d = c\vec{v}^2
 $$
 
-for high-speed quadratic drag.
+for high-speed quadratic drag. The model that you should use for a problem will usually be stated.
 
 Essentially, drag acts like a friction force for falling objects. At some point, the amount of drag pulling up will equal the force of gravity pulling down, allowing an object to go at a constant velocity (terminal velocity). Usually, drag force can never exceed gravity (that's why skydivers don't just go back up after reaching terminal velocity!).
 
 <div class="theorem-box">
 
 **Example.** A $$5.0\ \text{kg}$$ box rests on a horizontal table. A spring pulls it to the right with force $$12\ \text{N}$$, a rope pulls it to the left with tension $$7.0\ \text{N}$$, and kinetic friction has coefficient $$\mu_k=0.20$$. Find the box's acceleration if it is sliding right.
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,decorations.pathmorphing}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw[thick] (-3,-0.35) -- (3,-0.35);
+\draw[fill=gray!18] (-0.65,-0.35) rectangle (0.65,0.45);
+\node at (0,0.05) {$5.0\ \text{kg}$};
+\draw[decorate, decoration={coil,aspect=0.45,segment length=5pt,amplitude=4pt}, thick] (0.65,0.08) -- (2.3,0.08);
+\draw[thick] (2.3,-0.25) -- (2.3,0.55);
+\draw[->, red, very thick] (0.65,0.32) -- (1.85,0.32) node[above] {$12\ \text{N}$};
+\draw[->, blue, very thick] (-0.65,0.32) -- (-1.9,0.32) node[above] {$7.0\ \text{N}$};
+\draw[->, orange!90!black, very thick] (0,-0.18) -- (-1.0,-0.18) node[below] {$f_k$};
+\draw[->, gray, thick] (-0.25,-0.62) -- (0.9,-0.62) node[right] {$v$};
+\end{tikzpicture}
+```
 
 The weight is $$mg=(5.0)(9.8)=49\ \text{N}$$ downward. Since there is no vertical acceleration, the normal force is $$F_N=49\ \text{N}$$ upward. The box slides right, so kinetic friction points left:
 
@@ -188,6 +202,18 @@ The negative sign means the acceleration is leftward, so the object is slowing d
 <div class="theorem-box">
 
 **Example.** A $$70\ \text{kg}$$ skydiver falls downward through air with linear drag $$F_d=bv$$, where $$b=35\ \text{kg/s}$$. Find the terminal speed.
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\fill[gray!35] (0,0) circle (0.24);
+\draw[thick] (-0.35,-0.25) -- (0.35,-0.25);
+\draw[->, red, very thick] (0,-0.25) -- (0,-1.7) node[below] {$mg$};
+\draw[->, blue, very thick] (0,0.25) -- (0,1.7) node[above] {$F_d=bv$};
+\draw[->, gray, thick] (0.75,0.7) -- (0.75,-0.7) node[midway,right] {$v$};
+\end{tikzpicture}
+```
 
 At terminal speed, acceleration is zero, so the upward drag equals the downward weight:
 
@@ -229,9 +255,29 @@ If the question asks only for acceleration of a connected system, the system app
 
 **Example.** A block of mass $$m_1 = 3.0\ \text{kg}$$ sits on a frictionless horizontal table. A light inextensible string runs from the block, over a frictionless pulley at the edge of the table, to a hanging block of mass $$m_2 = 2.0\ \text{kg}$$. Find the acceleration of the system and the tension in the string.
 
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\draw[thick] (-3,-0.45) -- (1.35,-0.45);
+\draw[fill=gray!15] (-2.4,-0.45) rectangle (-1.35,0.25);
+\node at (-1.88,-0.1) {$m_1$};
+\draw[thick] (-1.35,-0.1) -- (1.35,-0.1);
+\draw[thick] (1.55,-0.1) circle (0.2);
+\draw[thick] (1.75,-0.1) -- (1.75,-1.25);
+\draw[fill=gray!15] (1.35,-2.05) rectangle (2.15,-1.25);
+\node at (1.75,-1.65) {$m_2$};
+\draw[->, blue, thick] (-1.35,0.08) -- (-0.45,0.08) node[above] {$T$};
+\draw[->, purple, thick] (-1.88,0.25) -- (-1.88,0.95) node[above] {$N$};
+\draw[->, red, thick] (-1.88,-0.45) -- (-1.88,-1.15) node[below] {$m_1g$};
+\draw[->, blue, thick] (1.75,-1.25) -- (1.75,-0.55) node[right] {$T$};
+\draw[->, red, thick] (1.75,-2.05) -- (1.75,-2.75) node[below] {$m_2g$};
+\end{tikzpicture}
+```
+
 Both blocks share the same acceleration magnitude $$a$$ because the string is inextensible: as $$m_2$$ falls, $$m_1$$ slides forward by the same amount.
 
-First, the fast way (system method). The only external force along the direction of motion is the weight of the hanging mass, $$m_2 g$$, and the moving mass is $$m_1 + m_2$$:
+First, we can treat the blocks as one system. The only external force along the direction of motion is the weight of the hanging mass, $$m_2 g$$, and the moving mass is $$m_1 + m_2$$:
 
 $$
 m_2 g = (m_1 + m_2)a \quad\Rightarrow\quad a = \frac{m_2 g}{m_1 + m_2} = \frac{(2.0)(9.8)}{5.0} = 3.9\ \text{m/s}^2.
@@ -292,17 +338,16 @@ $$
 \coordinate (C) at (3,1.0);
 \draw[thick] (A) -- (B) -- (C) -- cycle;
 \draw (2.25,-1.2) arc[start angle=0,end angle=20.6,radius=0.75] node[midway,right] {$\theta$};
-\begin{scope}[shift={(0.1,-0.18)}, rotate=20.6]
+\begin{scope}[shift={(0.0,-0.02)}, rotate=20.6]
 \draw[fill=gray!20] (-0.55,0) rectangle (0.55,0.45);
-\node at (0,0.23) {$m$};
-\coordinate (O) at (0,0.23);
-\draw[->, very thick, blue] (O) -- (0,1.55) node[above] {$N$};
-\draw[->, very thick, orange!90!black] (O) -- (-1.35,0.23) node[left] {$f$};
-\draw[dashed] (-0.8,0) -- (0.9,0);
+\node at (0.34,0.22) {$m$};
+\coordinate (O) at (-0.12,0.23);
+\draw[->, very thick, blue] (O) -- (0,1.45) node[above] {$N$};
+\draw[->, very thick, orange!90!black] (O) -- (-1.35,0) node[left] {$f$};
+\draw[->, dashed, red] (O) -- (-1.25,0) node[below left] {$mg\sin\theta$};
+\draw[->, dashed, red] (O) -- (0,-1.05) node[right] {$mg\cos\theta$};
 \end{scope}
-\draw[->, very thick, red] (0.1,0.05) -- (0.1,-1.9) node[below] {$mg$};
-\draw[->, dashed, red] (0.1,0.05) -- (-0.62,-1.86) node[left] {$mg\sin\theta$};
-\draw[->, dashed, red] (0.1,0.05) -- (1.36,-0.42) node[right] {$mg\cos\theta$};
+\draw[->, very thick, red] (-0.12,0.18) -- (-0.12,-1.85) node[below] {$mg$};
 \end{tikzpicture}
 ```
 
@@ -343,7 +388,15 @@ mg\sin\theta - f_k = ma,
 $$
 
 $$
-a = g\sin\theta - \mu_k g\cos\theta = 9.8(\sin 30^\circ - 0.40\cos 30^\circ) = 9.8(0.500 - 0.346) = 1.5\ \text{m/s}^2.
+a = g\sin\theta - \mu_k g\cos\theta.
+$$
+
+Substitute numbers:
+
+$$
+a = 9.8(\sin 30^\circ - 0.40\cos 30^\circ)
+= 9.8(0.500 - 0.346)
+= 1.5\ \text{m/s}^2.
 $$
 
 The block accelerates down the plane at about $$1.5\ \text{m/s}^2$$. Had $$f_{s,\text{max}}$$ exceeded $$19.6\ \text{N}$$, the block would have stayed put with static friction equal to exactly $$19.6\ \text{N}$$, not $$\mu_s F_N$$.
@@ -352,7 +405,7 @@ The block accelerates down the plane at about $$1.5\ \text{m/s}^2$$. Had $$f_{s,
 
 ### Inclined plane kinematics
 
-Once the acceleration along the plane is known, the motion becomes a one-dimensional kinematics problem along the surface. Choose the down-plane direction as positive if the object is sliding down, then use the Big Five from [Unit 1](/notes/ap/ap-physics-c-mechanics/kinematics/) with $$\Delta x$$ measured **along the incline**, not vertically.
+Sometimes, you will deal with kinematics on an inclined plane, which will break the projectile motion shortcut rules learned in Unit 1. However, once the acceleration along the plane is known, the motion becomes a one-dimensional kinematics problem along the surface. Choose the down-plane direction as positive if the object is sliding down, then use the Big Five from Unit 1 with $$\Delta x$$ measured **along the incline**, not vertically.
 
 For a frictionless incline released from rest,
 
@@ -366,11 +419,37 @@ $$
 v^2=2as=2g s\sin\theta.
 $$
 
-Since the vertical drop is $$h=s\sin\theta$$, this also gives $$v=\sqrt{2gh}$$, matching the energy result from [Unit 3](/notes/ap/ap-physics-c-mechanics/work/). The dynamics method and the energy method are saying the same thing in two different languages.
+Since the vertical drop is $$h=s\sin\theta$$, this also gives $$v=\sqrt{2gh}$$.
+
+<div class="theorem-box">
+
+**Example.** A block starts from rest and slides without friction down a $$4.0\ \text{m}$$ incline tilted at $$25^\circ$$. Find the acceleration down the plane and the speed at the bottom.
+
+The acceleration along the surface is
+
+$$
+a=g\sin25^\circ=(9.8)(0.423)=4.15\ \text{m/s}^2.
+$$
+
+Use kinematics along the incline, not vertically:
+
+$$
+v^2=v_0^2+2as=0+2(4.15)(4.0)=33.2,
+$$
+
+so
+
+$$
+v=5.8\ \text{m/s}.
+$$
+
+The vertical drop shortcut gives the same result because $$h=s\sin25^\circ$$, but the one-dimensional incline method is more flexible when friction is present.
+
+</div>
 
 ### Friction and the slipping condition
 
-The condition for impending slip is
+The condition for impending slip (equivalent to when a block starts to move) is
 
 $$
 f_s = \mu_s F_N,
@@ -416,7 +495,7 @@ For ideal ropes and pulleys, connected objects share related accelerations. A co
 ```tikz
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
-\begin{tikzpicture}[>=Stealth, font=\small, scale=0.8]
+\begin{tikzpicture}[>=Stealth, font=\small, scale=0.65]
 \draw[thick] (0,2) circle (0.55); \draw[thick] (-0.55,2) -- (-0.55,0.2); \draw[thick] (0.55,2) -- (0.55,-0.5);
 \draw[fill=gray!20] (-1.0,-0.6) rectangle (-0.1,0.2); \node at (-0.55,-0.2) {$m_1$};
 \draw[fill=gray!20] (0.1,-1.3) rectangle (1.0,-0.5); \node at (0.55,-0.9) {$m_2$};
@@ -531,32 +610,6 @@ The person feels lighter. Note the sign of $$a$$ is what matters, not the direct
 
 ---
 
-## Translational equilibrium
-
-An object is in **translational equilibrium** when
-
-$$
-\sum \vec{F} = 0.
-$$
-
-This means its acceleration is zero, so the object is either at rest or moving with constant velocity. In two dimensions,
-
-$$
-\sum F_x = 0, \qquad \sum F_y = 0.
-$$
-
-Do not assume equilibrium just because an object is momentarily at rest. If a ball is thrown upward, it has zero velocity at the top but still has downward acceleration.
-
-For static equilibrium of extended objects (meaning the object isn't moving or rotating), torque must also balance:
-
-$$
-\sum \tau = 0.
-$$
-
-Torque is talked about in [Unit 5](/notes/ap/ap-physics-c-mechanics/torque/), but it is useful to remember that translational equilibrium alone is not enough to prevent movement (rotation is movement too!).
-
----
-
 ## Circular motion
 
 Often, we often describe thing as going in circles (or approximately so). There are two types of circular motino: uniform and non-uniform circular motion.
@@ -583,7 +636,7 @@ There is no special "centripetal force." The phrase describes the net inward for
 \begin{tikzpicture}[>=Stealth, font=\small]
 \draw[blue, thick] (0,0) circle (1.6); \fill (0,0) circle (1.5pt) node[below] {center};
 \fill (1.35,0.85) circle (2pt) node[above right] {$m$};
-\draw[->, very thick, red] (1.35,0.85) -- (0.25,0.3) node[midway, above] {$F_{net}$};
+\draw[->, very thick, red] (1.35,0.85) -- (0.25,0.3) node[midway, above, left] {$F_{net}$};
 \draw[->, very thick, blue] (1.35,0.85) -- (0.75,1.8) node[above] {$v$};
 \end{tikzpicture}
 ```
@@ -679,7 +732,8 @@ This is common in vertical circle problems, where gravity has a tangential compo
 \usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
 \begin{tikzpicture}[>=Stealth, font=\small]
 \draw[blue, thick] (0,0) circle (1.7);
-\fill (0,1.7) circle (2pt) node[above, left] {top}; \fill (0,-1.7) circle (2pt) node[below, left] {bottom};
+\fill (0,1.7) circle (2pt); \node[above=8pt] at (0,1.7) {top};
+\fill (0,-1.7) circle (2pt); \node[below=8pt] at (0,-1.7) {bottom};
 \draw[->, red, thick] (0,1.7) -- (0,0.7) node[midway,right] {$mg$}; \draw[->, blue, thick] (0,1.7) -- (0,0.2) node[midway,left] {$T$};
 \draw[->, red, thick] (0,-1.7) -- (0,-2.7) node[below] {$mg$}; \draw[->, blue, thick] (0,-1.7) -- (0,-0.5) node[midway,right] {$T$};
 \end{tikzpicture}
@@ -771,27 +825,6 @@ $$
 
 With friction, static friction points whichever way prevents slipping: up the slope if the car would slide down, and down the slope if the car would slide up (remember static friction always OPPOSES motion!).
 
-```tikz
-\usepackage{tikz}
-\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
-\begin{tikzpicture}[>=Stealth, font=\small]
-\draw[fill=gray!15] (-3.2,-1.0) -- (3.2,-1.0) -- (3.2,1.1) -- cycle;
-\draw[thick] (-3.2,-1.0) -- (3.2,1.1);
-\draw (2.35,-1.0) arc[start angle=0,end angle=18.2,radius=0.8] node[midway,right] {$\theta$};
-\begin{scope}[shift={(0,0.02)}, rotate=18.2]
-\draw[fill=gray!25] (-0.55,0) rectangle (0.55,0.35);
-\node at (0,0.18) {car};
-\coordinate (O) at (0,0.18);
-\end{scope}
-\draw[->, red, very thick] (0,0.20) -- (0,-1.45) node[below] {$mg$};
-\draw[->, blue, very thick] (0,0.20) -- (-0.72,2.30) node[above] {$N$};
-\draw[dashed, blue] (0,0.20) -- (-0.72,0.20) node[left] {$N\sin\theta$};
-\draw[dashed, blue] (-0.72,0.20) -- (-0.72,2.30) node[midway,right] {$N\cos\theta$};
-\draw[->, gray!70] (0,0.20) -- (-1.35,0.20) node[below] {center};
-\end{tikzpicture}
-```
-
-
 <div class="theorem-box">
 
 **Proof (banked-curve design speed).** A car rounds a curve of radius $$r$$ on a road banked at angle $$\theta$$, with no friction needed. Find the speed at which it can do so.
@@ -850,13 +883,13 @@ A car going faster than $$25\ \text{m/s}$$ on this bank would tend to slide outw
 
 ## Universal Gravitation
 
-Newton's law of universal gravitation gives the attractive force between two masses:
+You may be familiar with the "force of gravity" on you, or in other words, your weight. However, $$F=mg$$ is a large simplification because gravity acts between *two* objects (by Newton's third law), not just one, and we are assuming that the Earth experiences negligible force (and thus does not move) when compared with the weight you experience. In general, Newton's law of universal gravitation gives the attractive force between two masses:
 
 $$
 F_g=\frac{Gm_1m_2}{r^2}.
 $$
 
-The force points along the line connecting the masses. For a mass $$m$$ near a planet of mass $$M$$,
+The force points along the line connecting the masses and both reactionary forces point towards each other. For a mass $$m$$ near a planet of mass $$M$$,
 
 $$
 F_g=\frac{GMm}{r^2}=mg(r),
@@ -868,25 +901,7 @@ $$
 g(r)=\frac{GM}{r^2}.
 $$
 
-Near Earth's surface, $$r\approx R_E$$ changes very little over ordinary heights, so $$g(r)$$ is treated as constant and becomes the familiar $$9.8\ \text{m/s}^2$$. Far from the surface, however, you must use the inverse-square form. Circular orbits come from setting gravity equal to the required centripetal force:
-
-$$
-\frac{GMm}{r^2}=m\frac{v^2}{r}.
-$$
-
-Thus
-
-$$
-v=\sqrt{\frac{GM}{r}}.
-$$
-
-The orbital period follows from $$T=2\pi r/v$$:
-
-$$
-T=2\pi\sqrt{\frac{r^3}{GM}}.
-$$
-
-This is the circular-orbit version of Kepler's third law.
+Near Earth's surface, $$r\approx R_E$$ changes very little over ordinary heights, so $$g(r)$$ is treated as constant and becomes the familiar $$9.8\ \text{m/s}^2$$. Far from the surface, however, you must use the inverse-square form.
 
 <div class="theorem-box">
 
@@ -907,6 +922,51 @@ v=\sqrt{\frac{GM_E}{r}}
 $$
 
 The satellite is falling toward Earth, but its sideways speed is large enough that it keeps missing the surface.
+
+</div>
+
+<div class="theorem-box">
+
+**Example.** A planet of mass $$M$$ has a moon in a circular orbit of radius $$r$$ with measured orbital speed $$v_{\text{orbit}}$$. A second moon orbits the same planet at radius $$4r$$. Using only Newton's law of universal gravitation and circular-motion force balance, find the second moon's orbital speed in terms of $$v_{\text{orbit}}$$.
+
+For the first moon, gravity supplies the centripetal force:
+
+$$
+\frac{GMm}{r^2}=m\frac{v_{\text{orbit}}^2}{r}.
+$$
+
+Cancel $$m$$ and solve for $$GM$$:
+
+$$
+GM=v_{\text{orbit}}^2r.
+$$
+
+For the second moon at radius $$4r$$,
+
+$$
+\frac{GMm_2}{(4r)^2}=m_2\frac{v_2^2}{4r}.
+$$
+
+Cancel $$m_2$$:
+
+$$
+v_2^2=\frac{GM}{4r}.
+$$
+
+Substitute $$GM=v_{\text{orbit}}^2r$$:
+
+$$
+v_2^2=\frac{v_{\text{orbit}}^2r}{4r}
+=\frac{v_{\text{orbit}}^2}{4},
+$$
+
+so
+
+$$
+v_2=\frac{v_{\text{orbit}}}{2}.
+$$
+
+The farther moon moves more slowly because the gravitational field is weaker and a larger orbit needs less centripetal acceleration for a given speed.
 
 </div>
 
@@ -935,14 +995,15 @@ Pseudo-forces are not interaction forces and do not have third-law partners (sin
 \draw[fill=gray!10] (-2.7,-0.9) rectangle (2.7,-0.55);
 \draw[fill=gray!20] (-2.1,-0.55) -- (1.8,-0.55) -- (1.8,1.05) -- cycle;
 \draw[thick] (-2.1,-0.55) -- (1.8,1.05);
-\begin{scope}[shift={(0.15,0.05)}, rotate=22]
+\draw (-1.45,-0.55) arc[start angle=0,end angle=22,radius=0.65] node[midway,right] {$\theta$};
+\begin{scope}[shift={(0.05,0.25)}, rotate=22]
 \draw[fill=white] (-0.45,0) rectangle (0.45,0.35);
 \node at (0,0.18) {$m$};
+\coordinate (O) at (0,0.18);
 \end{scope}
-\draw[->, very thick, blue] (-2.2,-0.25) -- (-3.4,-0.25) node[left] {$a$};
-\draw[->, red, thick] (0.15,0.22) -- (0.15,-1.05) node[below] {$mg$};
-\draw[->, orange!90!black, thick] (0.15,0.22) -- (1.25,0.22) node[right] {$ma$};
-\draw (1.25,-0.55) arc[start angle=0,end angle=22,radius=0.65] node[midway,right] {$\theta$};
+\draw[->, very thick, blue] (-2.2,-0.25) -- (-3.4,-0.25) node[left] {$a_{\text{cart}}$};
+\draw[->, red, thick] (0.0,0.39) -- (0.0,-0.95) node[below] {$mg$};
+\draw[->, orange!90!black, thick] (0.0,0.39) -- (1.25,0.39) node[right] {$ma_{\text{cart}}$};
 \end{tikzpicture}
 ```
 
@@ -974,21 +1035,7 @@ $$
 \vec{F}_{\text{net}} = m\frac{d\vec{v}}{dt} = m\frac{d^2\vec{r}}{dt^2}.
 $$
 
-For variable-mass systems, be careful: $$\vec{F}=m\vec{a}$$ only works cleanly when the mass of the chosen object is constant. The safer statement is
-
-$$
-\vec{F}_{\text{ext}}=\frac{d\vec{p}_{\text{sys}}}{dt},
-$$
-
-where the system includes whatever mass is being tracked. If mass crosses the system boundary, that entering or leaving mass carries momentum with it. Rockets are the classic example: expelled gas carries backward momentum, so the rocket gains forward momentum even if the only external force is small.
-
-For a rocket in deep space with exhaust speed $$u$$ relative to the rocket, the ideal rocket equation is
-
-$$
-\Delta v=u\ln\left(\frac{m_i}{m_f}\right),
-$$
-
-where $$m_i$$ is the initial mass and $$m_f$$ is the final mass after fuel is burned. AP Physics C usually will not require deriving this unless the problem guides you through it, but the conceptual point is important: changing mass means momentum flux matters.
+For variable-mass systems, you will have to use methods that are learned later.
 
 <div class="theorem-box">
 

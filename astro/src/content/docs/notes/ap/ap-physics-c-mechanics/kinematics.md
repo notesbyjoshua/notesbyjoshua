@@ -123,7 +123,7 @@ A maximum or minimum of $$x(t)$$ occurs where $$v = 0$$ (the slope is momentaril
 \addplot[fill=blue!15,draw=none] coordinates {(0,0) (0,4) (3,4) (4.333,0)} -- cycle;
 \addplot[fill=red!15,draw=none] coordinates {(4.333,0) (5,-2) (5,0)} -- cycle;
 \node[blue] at (axis cs:1.6,2.0) {positive area};
-\node[red!70!black] at (axis cs:4.78,-0.75) {negative};
+\node[red!70!black] at (axis cs:4.45,-1.55) {negative area};
 \end{axis}
 \end{tikzpicture}
 ```
@@ -328,6 +328,28 @@ The Big Five fail whenever $$a$$ varies, so you fall back on the defining deriva
 :::
 
 Always remember to use the chain rule when you want a variable that is not in the original expression.
+
+<div class="theorem-box">
+
+**Example.** A particle moves along the $$x$$-axis with acceleration $$a(t)=6t$$. At $$t=0$$, it has $$v_0=2.0\ \text{m/s}$$ and $$x_0=1.0\ \text{m}$$. Find $$v(t)$$ and $$x(t)$$.
+
+Since acceleration is a function of time, integrate directly:
+
+$$
+v(t)=v_0+\int_0^t 6t'\,dt'
+=2.0+3t^2.
+$$
+
+Then integrate velocity:
+
+$$
+x(t)=x_0+\int_0^t \left(2.0+3t'^2\right)\,dt'
+=1.0+2.0t+t^3.
+$$
+
+The Big Five do not apply because acceleration is not constant. The definitions $$a=dv/dt$$ and $$v=dx/dt$$ are the safer starting point.
+
+</div>
 
 ---
 

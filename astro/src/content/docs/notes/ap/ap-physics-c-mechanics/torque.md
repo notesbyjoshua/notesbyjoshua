@@ -64,11 +64,39 @@ $$
 
 directed toward the axis. Tangential acceleration changes speed; radial acceleration changes direction. Always remember that the rotational equivalent of any linear variables will involve dividing by the radius.
 
-The radius conversion comes from arc length: $$s=r\theta$$. A point twice as far from the axis covers twice as much arc length for the same angle, so it has twice the tangential speed at the same $$\omega$$. Turning that around, the same linear speed corresponds to a smaller angular speed when the radius is larger:
+<div class="theorem-box">
+
+**Proof (linear and angular conversion).** The radius conversion comes from arc length:
+
+$$
+s=r\theta.
+$$
+
+A point twice as far from the axis covers twice as much arc length for the same angle, so it has twice the tangential speed at the same $$\omega$$. Differentiate $$s=r\theta$$ with respect to time:
+
+$$
+\frac{ds}{dt}=r\frac{d\theta}{dt}.
+$$
+
+Thus
+
+$$
+v_t=r\omega.
+$$
+
+Differentiate once more:
+
+$$
+a_t=r\alpha.
+$$
+
+Turning $$v_t=r\omega$$ around, the same linear speed corresponds to a smaller angular speed when the radius is larger:
 
 $$
 \omega=\frac{v_t}{r}.
 $$
+
+</div>
 
 <div class="theorem-box">
 
@@ -134,12 +162,11 @@ where $$r_{\perp}$$ is the lever arm, the perpendicular distance from the axis t
 \usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
 \begin{tikzpicture}[>=Stealth, font=\small]
 \fill (0,0) circle (2pt) node[below] {pivot};
-\draw[very thick] (0,0) -- (3.2,0.8) node[midway, below] {$\vec r$};
-\draw[->, very thick, red] (3.2,0.8) -- (1.9,2.35) node[above left] {$\vec F$};
-\draw[dashed, red!70] (1.25,3.12) -- (3.7,0.20);
-\draw[dashed, blue] (0,0) -- (1.86,2.38);
-\draw[<->, blue] (0.18,0.22) -- (1.95,2.30) node[midway,left] {$r_\perp$};
-\draw (0.9,0.23) arc[start angle=14,end angle=130,radius=0.55] node[midway,above] {$\theta$};
+\draw[very thick] (0,0) -- (3,1.2) node[midway, below] {$\vec r$};
+\draw[->, very thick, red] (3,1.2) -- (3,3.2) node[above] {$\vec F$};
+\draw[dashed] (0,0) -- (3,0); \draw[dashed] (3,1.2) -- (0.45,0.18);
+\draw[<->, blue] (0.55,0.22) -- (0.55,1.95) node[midway,left] {$r_\perp$};
+\draw (1.0,0.4) arc[start angle=22,end angle=90,radius=0.7] node[midway,above] {$\theta$};
 \end{tikzpicture}
 ```
 
@@ -153,6 +180,28 @@ There are two equivalent ways to read $$\tau = rF\sin\theta$$, and switching bet
 :::
 
 The direction of torque follows the **right-hand rule** applied to $$\vec\tau = \vec r\times\vec F$$: point the fingers along $$\vec r$$ (from axis to application point), curl them toward $$\vec F$$, and the thumb gives $$\vec\tau$$. In planar problems the torque vector points either out of or into the page, so we replace the vector bookkeeping with signs: **counterclockwise torques positive, clockwise torques negative**. Pick that sign convention once at the start of a problem and apply it to every torque.
+
+### Cross Products and the Right-Hand Rule
+
+A cross product takes two vectors and produces a third vector perpendicular to both:
+
+$$
+\vec{\tau}=\vec r\times \vec F.
+$$
+
+Its magnitude is
+
+$$
+\lvert \vec r\times \vec F\rvert=rF\sin\theta,
+$$
+
+where $$\theta$$ is the smaller angle between the vectors. The direction is found with the right-hand rule: point your fingers along the first vector, curl toward the second vector, and your thumb points in the direction of the cross product. This is why order matters:
+
+$$
+\vec r\times \vec F=-(\vec F\times \vec r).
+$$
+
+In most AP Mechanics torque problems, the object lies in the page, so the torque vector points either out of the page or into the page. A dot $$\odot$$ means out of the page; a cross $$\otimes$$ means into the page. Once you choose counterclockwise as positive, out-of-page torque is positive and into-page torque is negative.
 
 <div class="theorem-box">
 
@@ -205,27 +254,40 @@ Common results:
 ```tikz
 \usepackage{tikz}
 \begin{tikzpicture}[font=\small]
-\draw[fill=gray!15] (-3.7,1.0) circle (0.42);
-\fill (-3.7,1.0) circle (1.5pt);
-\node at (-3.7,0.35) {point mass};
-\node at (-3.7,-0.05) {$I=mr^2$};
-\draw[thick] (-1.7,1.0) circle (0.45);
-\node at (-1.7,0.35) {hoop};
-\node at (-1.7,-0.05) {$I=MR^2$};
-\draw[fill=gray!20] (0.2,1.0) circle (0.45);
-\node at (0.2,0.35) {disk};
-\node at (0.2,-0.05) {$I=\tfrac12MR^2$};
-\shade[ball color=gray!35] (2.1,1.0) circle (0.45);
-\node at (2.1,0.35) {sphere};
-\node at (2.1,-0.05) {$I=\tfrac25MR^2$};
-\draw[very thick] (-1.1,-1.1) -- (1.1,-1.1);
-\fill (0,-1.1) circle (1.5pt);
-\node at (0,-1.65) {rod center: $\tfrac1{12}ML^2$};
-\draw[very thick] (2.6,-1.1) -- (4.6,-1.1);
-\fill (2.6,-1.1) circle (1.5pt);
-\node at (3.6,-1.65) {rod end: $\tfrac13ML^2$};
+\draw[fill=gray!15] (-3.7,0.9) circle (0.36);
+\fill (-3.7,0.9) circle (1.5pt);
+\node at (-3.7,0.28) {point mass};
+\node at (-3.7,-0.10) {$I=mr^2$};
+\draw[line width=1.3pt] (-1.7,0.9) circle (0.36);
+\node at (-1.7,0.28) {hoop};
+\node at (-1.7,-0.10) {$I=MR^2$};
+\draw[fill=gray!20] (0.2,0.9) circle (0.36);
+\node at (0.2,0.28) {disk};
+\node at (0.2,-0.10) {$I=\tfrac12MR^2$};
+\shade[ball color=gray!35] (2.1,0.9) circle (0.36);
+\node at (2.1,0.28) {sphere};
+\node at (2.1,-0.10) {$I=\tfrac25MR^2$};
+\draw[line width=3pt] (-2.4,-1.05) -- (-0.4,-1.05);
+\fill (-1.4,-1.05) circle (1.5pt);
+\node at (-1.4,-1.55) {rod center: $\tfrac1{12}ML^2$};
+\draw[line width=3pt] (0.8,-1.05) -- (2.8,-1.05);
+\fill (0.8,-1.05) circle (1.5pt);
+\node at (1.8,-1.55) {rod end: $\tfrac13ML^2$};
 \end{tikzpicture}
 ```
+
+:::strategy
+To solve for moments of inertia,
+
+1. For point mass objects, compute $$m_i r_i^2$$ for each point and add them: $$I=\sum m_i r_i^2$$.
+2. For a continuous object, choose a tiny mass element $$dm$$ and write its distance $$r$$ from the rotation axis.
+3. Express $$dm$$ using a density:
+   - linear density $$\lambda=M/L$$ gives $$dm=\lambda\,dx$$,
+   - surface density $$\sigma=M/A$$ gives $$dm=\sigma\,dA$$,
+   - volume density $$\rho=M/V$$ gives $$dm=\rho\,dV$$.
+4. Integrate $$I=\int r^2\,dm$$ over the entire object.
+5. If the axis is shifted from a center-of-mass axis, use the parallel-axis theorem $$I=I_{\text{cm}}+Md^2$$ instead of redoing a harder integral.
+:::
 
 Below are example proofs of how to derive these formulas:
 
@@ -522,13 +584,11 @@ $$
 \sum \vec{\tau}_{\text{cm}} = I_{\text{cm}}\vec{\alpha}.
 $$
 
-The translational motion of the center of mass still obeys
+However, if an object is rotating and translating, the translational motion of the center of mass still obeys
 
 $$
 \sum \vec{F}_{\text{ext}} = M\vec{a}_{\text{cm}}.
 $$
-
-Rolling and pulley problems often require both equations at once.
 
 <div class="theorem-box">
 
@@ -624,12 +684,12 @@ $$
 \sum \vec{\tau}=0.
 $$
 
-If the object is not accelerating linearly or angularly (basically not moving or rotating), both conditions must hold. A subtle but powerful fact: in **equilibrium**, the net torque is zero about *every* axis, not just the real one. So you are free to compute torques about whatever point makes the algebra easiest.
+If the object is not accelerating linearly or angularly (basically not moving or rotating), both conditions must hold. In **equilibrium**, the net torque is zero about *every* axis, not just the real one. So you are free to compute torques about whatever point makes the algebra easiest.
 
-The standard trick is to **put the pivot at the location of an unknown force**. Since a force exerts zero torque about a point on its own line of action (since the distance to the pivot point is zero), that unknown drops out of the torque equation entirely, leaving fewer unknowns. Hinge forces and contact forces of unknown direction are the usual targets: pivot at the hinge and you never need to know the hinge force to find everything else. Once the other unknowns are found, the force equations $$\sum F_x = 0$$ and $$\sum F_y = 0$$ recover the hinge force.
+The standard trick is to put the pivot at the **location of an unknown force**. Since a force exerts zero torque about a point on its own line of action (since the distance to the pivot point is zero), that unknown drops out of the torque equation entirely, leaving fewer unknowns. Hinge forces and contact forces of unknown direction are the usual targets: pivot at the hinge and you never need to know the hinge force to find everything else. Once the other unknowns are found, the force equations $$\sum F_x = 0$$ and $$\sum F_y = 0$$ recover the hinge force.
 
 :::strategy
-1. Draw a free-body diagram of the extended object, placing each force at its actual point of application (do not collapse the body to a point — location matters for torque).
+1. Draw a free-body diagram of the extended object, placing each force at its actual point of application (do not collapse the body to a point since location matters for torque). Always make sure that your picture is accurate so that visualizing the problem is easy
 2. Pick a sign convention (counterclockwise positive) and a smart pivot, usually at an unknown force.
 3. Write $$\sum\tau = 0$$ about that pivot using lever arms.
 4. Write $$\sum F_x = 0$$ and $$\sum F_y = 0$$ to recover any remaining forces.
@@ -643,10 +703,10 @@ The standard trick is to **put the pivot at the location of an unknown force**. 
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta}
 \begin{tikzpicture}[>=Stealth, font=\small]
-\draw[very thick] (0,0) -- (5,0);
+\draw[line width=4pt] (0,0) -- (5,0);
 \fill (0,0) circle (2pt) node[below] {hinge};
-\draw[thick] (0,0) -- (0,2.4);
-\draw[very thick] (5,0) -- (0,2.4) node[midway,above] {cable};
+\draw[line width=3pt] (0,-1.4) -- (0,2.4);
+\draw[red, thick] (5,0) -- (0,2.4) node[midway,above right] {cable};
 \draw[->,blue,thick] (5,0) -- (4.0,0.48) node[above] {$T$};
 \draw[->,red,thick] (2.5,0) -- (2.5,-1.0) node[below] {$mg$};
 \draw[->,red,thick] (5,0) -- (5,-1.2) node[below] {$W$};
@@ -686,7 +746,15 @@ $$
 Vertically,
 
 $$
-H_y + T\sin\theta - mg - W = 0\ \Rightarrow\ H_y = mg + W - T\sin\theta = 196 + 300 - 398 = 98\ \text{N (up).}
+H_y + T\sin\theta - mg - W = 0.
+$$
+
+Therefore
+
+$$
+H_y = mg + W - T\sin\theta
+= 196 + 300 - 398
+= 98\ \text{N (up).}
 $$
 
 The hinge force magnitude is $$\sqrt{H_x^2 + H_y^2} = \sqrt{528^2 + 98^2}\approx 537\ \text{N}$$. Choosing the hinge as pivot let us solve for $$T$$ in a single equation before ever touching the hinge force.
@@ -695,29 +763,13 @@ The hinge force magnitude is $$\sqrt{H_x^2 + H_y^2} = \sqrt{528^2 + 98^2}\approx
 
 <div class="theorem-box">
 
-**Example.** A uniform diving board of mass $$m = 30\ \text{kg}$$ and length $$L = 4.0\ \text{m}$$ rests on two supports: support $$A$$ at the left end and support $$B$$ a distance $$d = 1.5\ \text{m}$$ to the right of $$A$$. A diver of weight $$W = 600\ \text{N}$$ stands at the far right end. Find the forces the two supports exert on the board. Take $$g = 9.8\ \text{m/s}^2$$, so the board's weight is $$mg = 294\ \text{N}$$.
+**Example.** A uniform diving board of mass $$m = 30\ \text{kg}$$ and length $$L = 4.0\ \text{m}$$ rests on two supports: support $$A$$ at the left end and support $$B$$ a distance $$d = 1.5\ \text{m}$$ to the right of $$A$$. A diver of weight $$W = 600\ \text{N}$$ stands at the far right end. Find the forces the two supports exert on the board.
 
-```tikz
-\usepackage{tikz}
-\usetikzlibrary{arrows.meta}
-\begin{tikzpicture}[>=Stealth, font=\small]
-\draw[very thick] (0,0) -- (6,0);
-\draw[fill=gray!20] (-0.15,-0.35) -- (0.15,-0.35) -- (0,0) -- cycle;
-\draw[fill=gray!20] (2.1,-0.35) -- (2.4,-0.35) -- (2.25,0) -- cycle;
-\node[below] at (0,-0.35) {$A$};
-\node[below] at (2.25,-0.35) {$B$};
-\draw[->,blue,thick] (0,0) -- (0,0.9) node[left] {$N_A$};
-\draw[->,blue,thick] (2.25,0) -- (2.25,1.0) node[right] {$N_B$};
-\draw[->,red,thick] (3,0) -- (3,-0.9) node[below] {$mg$};
-\draw[->,red,thick] (6,0) -- (6,-1.1) node[below] {$W$};
-\draw[<->] (0,0.35) -- (2.25,0.35) node[midway,above] {$1.5\ \text{m}$};
-\draw[<->] (0,0.75) -- (6,0.75) node[midway,above] {$4.0\ \text{m}$};
-\end{tikzpicture}
-```
+The board is in equilibrium under four forces: support force $$N_A$$ up at $$A$$, support force $$N_B$$ up at $$B$$, the board's weight down at the center ($$2.0\ \text{m}$$ from $$A$$), and the diver's weight $$600\ \text{N}$$ down at the right end ($$4.0\ \text{m}$$ from $$A$$).
 
-The board is in equilibrium under four forces: support force $$N_A$$ up at $$A$$, support force $$N_B$$ up at $$B$$, the board's weight $$294\ \text{N}$$ down at the center ($$2.0\ \text{m}$$ from $$A$$), and the diver's weight $$600\ \text{N}$$ down at the right end ($$4.0\ \text{m}$$ from $$A$$).
+The board's weight can be calculated using $$W=mg=294N$$ using $$g=9.8 \frac{m}{s^2}$$.
 
-**Pivot at $$B$$** to eliminate $$N_B$$. Measure distances from $$B$$: support $$A$$ is $$1.5\ \text{m}$$ to the left, the center of the board is $$2.0 - 1.5 = 0.5\ \text{m}$$ to the right of $$B$$, and the diver is $$4.0 - 1.5 = 2.5\ \text{m}$$ to the right of $$B$$. Taking counterclockwise positive, $$N_A$$ (up, left of $$B$$) torques clockwise; both weights are right of $$B$$ and torque counterclockwise. Then $$\sum\tau_B = 0$$:
+Pivot at $$B$$ to eliminate $$N_B$$. Measure distances from $$B$$: support $$A$$ is $$1.5\ \text{m}$$ to the left, the center of the board is $$2.0 - 1.5 = 0.5\ \text{m}$$ to the right of $$B$$, and the diver is $$4.0 - 1.5 = 2.5\ \text{m}$$ to the right of $$B$$. Taking counterclockwise positive, $$N_A$$ (up, left of $$B$$) torques clockwise; both weights are right of $$B$$ and torque counterclockwise. Then $$\sum\tau_B = 0$$:
 
 $$
 -N_A(1.5) + (294)(0.5) + (600)(2.5) = 0,
