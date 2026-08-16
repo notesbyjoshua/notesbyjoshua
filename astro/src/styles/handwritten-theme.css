@@ -909,6 +909,16 @@ a.site-title {
 	color: var(--sl-color-text);
 }
 
+:root[data-note-theme='nebula'] .sidebar-content a[aria-current='page'],
+:root[data-note-theme='nebula'] .sidebar-content a[aria-current='page']:hover,
+:root[data-note-theme='nebula'] .sidebar-content a[aria-current='page']:focus,
+:root[data-note-theme='classic'] .sidebar-content a[aria-current='page'],
+:root[data-note-theme='classic'] .sidebar-content a[aria-current='page']:hover,
+:root[data-note-theme='classic'] .sidebar-content a[aria-current='page']:focus {
+	color: var(--sl-color-bg);
+	background-color: var(--classic-ui-accent-alt);
+}
+
 @media (max-width: 49.99rem) {
 	:root[data-note-theme='nebula'] .sidebar-pane,
 	:root[data-note-theme='classic'] .sidebar-pane {
