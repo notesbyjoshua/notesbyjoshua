@@ -4,10 +4,6 @@ sidebar:
   order: 3
 ---
 
----
-
-This domain focuses on revising writing to accomplish a specific goal and connect ideas logically. These questions are less about interpreting a difficult passage and more about following instructions precisely.
-
 ## Recognizing the Question Type
 
 | Question type | What you are being asked to do |
@@ -48,20 +44,30 @@ Pay close attention to the goal word:
 | Explain chronology | Make the time sequence clear |
 | Present a finding | State the research result |
 
-An answer can be completely true and still be wrong because it does not fulfill the requested goal.
-
-Rhetorical synthesis is not a test of how many notes you can include. Usually, the best answer uses only the facts needed for the goal. Extra accurate facts can make a choice less effective.
+:::strategy
+1. Read the question! Underline the goal: *introduce*, *compare*, *emphasize a difference*, *give an example*, or another task.
+2. Eliminate any answer choices that do not actually answer the question given.
+3. If there is more than one answer left, always look at the notes and see which answer choice is supported by the notes. Often, there will be two options remaining, and only one will have the correct information to solve the problem.
+:::
 
 <div class="theorem-box">
 
-**Example.** A student's notes state that sculptor Amara Cole began working with recycled glass in 2018 and that sculptor Luis Ortega began using discarded metal in 2020. The student wants to emphasize a similarity between the artists. Which choice most effectively uses relevant information from the notes to accomplish this goal?
+**Example.** While researching contemporary sculptors, a student has taken the following notes:
+
+- Amara Cole is a sculptor who began working with recycled glass in 2018.
+- Cole collects glass discarded during building renovations.
+- Luis Ortega is a sculptor who began working with discarded metal in 2020.
+- Ortega obtains much of his metal from industrial scrapyards.
+- Cole and Ortega work with different materials.
+
+The student wants to emphasize a similarity between Cole and Ortega. Which choice most effectively uses relevant information from the notes to accomplish this goal?
 
 - **A.** Cole began working with recycled glass two years before Ortega began using discarded metal.
 - **B.** Both Cole and Ortega create sculptures using materials that would otherwise be discarded.
 - **C.** Cole works with glass, whereas Ortega began working with metal in 2020.
 - **D.** In 2018, Cole became a sculptor who used recycled glass.
 
-**B** is correct because it mentions both artists and emphasizes their shared use of discarded materials. **A** and **C** emphasize differences, while **D** discusses only Cole.
+**B** is correct because it mentions both artists and emphasizes their shared use of materials that have been discarded. **A** and **C** emphasize differences in timing or material, while **D** discusses only Cole.
 
 </div>
 
@@ -86,12 +92,6 @@ The student wants to emphasize a tension between preserving the artwork's physic
 
 </div>
 
-:::strategy
-1. Underline the goal: *introduce*, *compare*, *emphasize a difference*, *give an example*, or another task.
-2. Select only the notes relevant to that goal.
-3. Reject choices that are accurate but answer a different goal.
-:::
-
 ## Transitions
 
 Ignore the choices at first. Summarize the sentence before the blank, summarize the sentence after it, and name the relationship between them.
@@ -114,14 +114,14 @@ Then select the transition that expresses that relationship. Do not choose based
 
 <div class="theorem-box">
 
-**Example.** Complete the sentences with the most logical transition: “The material is inexpensive. ___, it is difficult to manufacture.”
+**Example.** Conservators once treated the presence of copper resinate, a translucent green pigment, as evidence that a disputed painting was produced after the period to which it had been attributed. Chemical analysis has since detected copper resinate in layers added during documented restorations of several authenticated paintings from that period. _____, the pigment's presence in the disputed painting cannot by itself determine when the original work was created. Which choice completes the text with the most logical transition?
 
-- **A.** Similarly,
-- **B.** Therefore,
-- **C.** However,
-- **D.** For example,
+- **A.** Consequently,
+- **B.** Nevertheless,
+- **C.** For example,
+- **D.** Likewise,
 
-**C** is correct because the second sentence contrasts a benefit with a drawback. **B** would incorrectly claim that the low cost causes the manufacturing difficulty, and **A** and **D** express relationships the sentences do not establish.
+**A** is correct because the final sentence draws a conclusion from the restoration evidence: if the pigment could have been added later, its presence does not establish the age of the original painting. **B** signals a concession even though the conclusion follows from the preceding evidence. **C** would present the conclusion as an example, and **D** would signal a similarity to a separate idea that is not given.
 
 </div>
 
@@ -141,18 +141,5 @@ Then select the transition that expresses that relationship. Do not choose based
 :::tip
 Describe the relationship between the entire sentence before the blank and the entire sentence after it. Do not focus on only the last few words. Then substitute each transition and check whether its exact meaning matches.
 :::
-
-<div class="theorem-box">
-
-**Example.** Complete the text with the most logical transition: “The first trial produced inconsistent measurements. ___, the researchers recalibrated the instrument before beginning the second trial.”
-
-- **A.** Consequently,
-- **B.** Nevertheless,
-- **C.** Likewise,
-- **D.** For instance,
-
-**A** is correct because recalibration is a result of the inconsistent measurements. **B** signals concession, **C** signals similarity, and **D** introduces an example, none of which matches the relationship.
-
-</div>
 
 ## Practice
