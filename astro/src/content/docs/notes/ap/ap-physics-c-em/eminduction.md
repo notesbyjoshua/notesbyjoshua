@@ -1,5 +1,6 @@
 ---
 title: "Unit 6: Electromagnetic Induction"
+description: "AP Physics C E&M notes on electromagnetic induction, magnetic flux, Faraday's law, Lenz's law, inductors, and circuits."
 next: false
 sidebar:
   order: 6

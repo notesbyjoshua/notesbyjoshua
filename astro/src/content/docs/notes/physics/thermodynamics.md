@@ -1,5 +1,6 @@
 ---
 title: "Thermodynamics"
+description: "Physics notes on thermodynamics, temperature, heat transfer, ideal gases, work, internal energy, and the laws of thermodynamics."
 sidebar:
   order: 9
 ---

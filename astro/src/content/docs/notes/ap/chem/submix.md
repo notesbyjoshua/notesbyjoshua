@@ -1,5 +1,6 @@
 ---
 title: "Unit 3: Substances and Mixtures"
+description: "AP Chemistry notes on gases, solutions, intermolecular forces, chromatography, particulate models, and mixtures."
 sidebar:
   order: 3
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Unit 6 & 7: Trigonometric Functions"
+description: "AP Precalculus notes on angles, radians, arc length, circular motion, right-triangle trig, unit circle values, and identities."
 sidebar:
   order: 5
 ---

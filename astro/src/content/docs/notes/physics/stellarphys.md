@@ -1,5 +1,6 @@
 ---
 title: "Stellar Physics"
+description: "Physics notes on stellar physics, including luminosity, spectra, stellar evolution, fusion, blackbody radiation, and classification."
 sidebar:
   order: 8
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Unit 1 & 2: Fundamentals, Equations, and Inequalities"
+description: "AP Precalculus notes on number sets, coordinate geometry, solving equations, inequalities, and symmetry with worked practice."
 sidebar:
   order: 1
 ---

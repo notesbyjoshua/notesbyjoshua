@@ -1,5 +1,6 @@
 ---
 title: "Unit 5: Magnetic Fields and Electromagnetism"
+description: "AP Physics C E&M notes on magnetic fields, magnetic force, Biot-Savart law, Ampere's law, and electromagnetism."
 sidebar:
   order: 5
 ---

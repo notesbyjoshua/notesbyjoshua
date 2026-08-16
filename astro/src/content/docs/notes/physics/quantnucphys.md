@@ -1,5 +1,6 @@
 ---
 title: "Modern Physics"
+description: "Physics notes on modern physics, quantum models, photons, atomic spectra, nuclear reactions, radioactivity, and relativity links."
 sidebar:
   order: 6
 ---

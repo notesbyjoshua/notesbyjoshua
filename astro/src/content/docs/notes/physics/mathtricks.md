@@ -1,5 +1,6 @@
 ---
 title: "Math Tricks"
+description: "Physics notes on math tricks for problem solving, including algebra shortcuts, approximations, units, and graph reasoning."
 sidebar:
   order: 1
 ---

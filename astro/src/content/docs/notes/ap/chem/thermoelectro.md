@@ -1,5 +1,6 @@
 ---
 title: "Unit 9: Thermodynamics and Electrochemistry"
+description: "AP Chemistry notes on thermodynamics, entropy, Gibbs free energy, electrochemistry, galvanic cells, and electrolysis."
 next: false
 sidebar:
   order: 9

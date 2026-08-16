@@ -1,5 +1,6 @@
 ---
 title: "Unit 7: Equilibrium"
+description: "AP Chemistry notes on equilibrium, reaction quotients, equilibrium constants, ICE tables, Le Chatelier's principle, and solubility."
 sidebar:
   order: 7
 ---

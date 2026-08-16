@@ -1,5 +1,6 @@
 ---
 title: "Unit 2: Differentiation: Definition and Fundamental Properties"
+description: "AP Calculus notes on derivative definitions, basic rules, tangent lines, rates of change, and fundamental differentiation skills."
 sidebar:
   order: 2
 ---

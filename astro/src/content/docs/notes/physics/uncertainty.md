@@ -1,5 +1,6 @@
 ---
 title: "Uncertainty"
+description: "Physics notes on uncertainty, measurement, significant figures, propagation of error, precision, accuracy, and experimental reasoning."
 sidebar:
   order: 2
 ---

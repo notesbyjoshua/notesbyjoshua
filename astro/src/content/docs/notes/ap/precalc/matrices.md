@@ -1,5 +1,6 @@
 ---
 title: "Unit 11: Matrices and Systems"
+description: "AP Precalculus notes on systems of equations, matrices, row operations, inverses, determinants, and Cramer's Rule."
 sidebar:
   order: 8
 ---

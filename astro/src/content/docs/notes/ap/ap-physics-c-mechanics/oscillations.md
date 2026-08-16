@@ -1,5 +1,6 @@
 ---
 title: "Unit 7: Oscillations"
+description: "AP Physics C Mechanics notes on simple harmonic motion, springs, pendulums, energy, angular frequency, and oscillation graphs."
 next: false
 sidebar:
   order: 7

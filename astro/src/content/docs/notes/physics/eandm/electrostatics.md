@@ -1,5 +1,6 @@
 ---
 title: "Electrostatics"
+description: "Physics notes on electrostatics, electric charge, Coulomb's law, electric fields, Gauss's law, and electric flux."
 sidebar:
   order: 1
 ---

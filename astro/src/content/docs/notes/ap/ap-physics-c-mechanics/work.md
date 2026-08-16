@@ -1,5 +1,6 @@
 ---
 title: "Unit 3: Work, Energy, and Power"
+description: "AP Physics C Mechanics notes on work, energy, power, conservative forces, potential energy, and the work-energy theorem."
 sidebar:
   order: 3
 ---

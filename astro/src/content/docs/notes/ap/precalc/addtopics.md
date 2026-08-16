@@ -1,5 +1,6 @@
 ---
 title: "Unit 13 & 14: Additional Topics in Algebra"
+description: "AP Precalculus notes on partial fractions, binomial coefficients, sequences, series, induction, and advanced algebra topics."
 next: false
 sidebar:
   order: 10

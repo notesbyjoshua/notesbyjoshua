@@ -1,5 +1,6 @@
 ---
 title: "Unit 5: Kinetics"
+description: "AP Chemistry notes on reaction rates, rate laws, mechanisms, catalysts, collision theory, and integrated rate laws."
 sidebar:
   order: 5
 ---

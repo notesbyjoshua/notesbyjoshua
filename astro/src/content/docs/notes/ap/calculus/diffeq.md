@@ -1,5 +1,6 @@
 ---
 title: "Unit 7: Differential Equations"
+description: "AP Calculus notes on separable differential equations, slope fields, Euler's method, exponential models, and logistic growth."
 sidebar:
   order: 7
 ---

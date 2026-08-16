@@ -1,5 +1,6 @@
 ---
 title: "Unit 3: Conductors and Capacitors"
+description: "AP Physics C E&M notes on conductors, capacitors, capacitance, dielectrics, electric fields, and capacitor energy."
 sidebar:
   order: 3
 ---

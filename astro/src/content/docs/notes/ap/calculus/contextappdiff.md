@@ -1,5 +1,6 @@
 ---
 title: "Unit 4: Contextual Applications of Differentiation"
+description: "AP Calculus notes on interpreting derivatives in context, motion, related rates, linearization, and differential models."
 sidebar:
   order: 4
 ---

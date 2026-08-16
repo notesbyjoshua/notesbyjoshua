@@ -1,5 +1,6 @@
 ---
 title: "Unit 6: Energy and Momentum of Rotating Systems"
+description: "AP Physics C Mechanics notes on rotational energy, angular momentum, rolling motion, torque, inertia, and conservation laws."
 sidebar:
   order: 6
 ---

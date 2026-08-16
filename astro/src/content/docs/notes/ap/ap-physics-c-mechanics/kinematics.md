@@ -1,5 +1,6 @@
 ---
 title: "Unit 1: 1D and 2D Kinematics"
+description: "AP Physics C Mechanics notes on one- and two-dimensional motion, vectors, projectile motion, graphs, and kinematics equations."
 sidebar:
   order: 1
 ---

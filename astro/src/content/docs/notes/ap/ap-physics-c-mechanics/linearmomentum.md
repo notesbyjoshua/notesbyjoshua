@@ -1,5 +1,6 @@
 ---
 title: "Unit 4: Linear Momentum and Impulse"
+description: "AP Physics C Mechanics notes on linear momentum, impulse, collisions, center of mass, conservation laws, and systems."
 sidebar:
   order: 4
 ---

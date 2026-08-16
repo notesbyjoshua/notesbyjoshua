@@ -1,5 +1,6 @@
 ---
 title: "Unit 9: Parametric, Polar, and Vector-Valued Functions (BC-only)"
+description: "AP Calculus BC notes on parametric, polar, and vector-valued functions, including derivatives, area, arc length, and motion."
 sidebar:
   order: 9
 ---

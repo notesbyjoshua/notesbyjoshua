@@ -1,5 +1,6 @@
 ---
 title: "Conductors & Capacitors"
+description: "Physics notes on conductors, capacitors, electric potential, capacitance, dielectrics, and electric field behavior."
 sidebar:
   order: 2
 ---

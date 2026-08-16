@@ -1,5 +1,6 @@
 ---
 title: "Unit 4: Circuits"
+description: "AP Physics C E&M notes on circuits, current, resistance, Ohm's law, Kirchhoff's rules, RC circuits, and power."
 sidebar:
   order: 4
 ---

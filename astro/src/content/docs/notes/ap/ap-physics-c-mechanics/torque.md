@@ -1,5 +1,6 @@
 ---
 title: "Unit 5: Torque and Rotational Dynamics"
+description: "AP Physics C Mechanics notes on torque, rotational dynamics, moment of inertia, angular acceleration, and equilibrium."
 sidebar:
   order: 5
 ---

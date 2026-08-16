@@ -1,5 +1,6 @@
 ---
 title: "Unit 8: Acid-Base Equilibrium"
+description: "AP Chemistry notes on acids, bases, pH, buffers, titrations, equilibrium calculations, and acid-base reaction reasoning."
 sidebar:
   order: 8
 ---

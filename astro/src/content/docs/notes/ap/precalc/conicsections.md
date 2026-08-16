@@ -1,5 +1,6 @@
 ---
 title: "Unit 12: Conic Sections"
+description: "AP Precalculus notes on circles, parabolas, ellipses, hyperbolas, eccentricity, focus-directrix form, and polar conics."
 sidebar:
   order: 9
 ---

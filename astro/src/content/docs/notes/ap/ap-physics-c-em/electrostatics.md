@@ -1,5 +1,6 @@
 ---
 title: "Unit 1: Electric Fields and Forces"
+description: "AP Physics C E&M notes on charge, Coulomb's law, electric fields, Gauss's law, flux, and electrostatic force."
 sidebar:
   order: 1
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Unit 6: Thermochemistry"
+description: "AP Chemistry notes on thermochemistry, enthalpy, calorimetry, Hess's law, bond energies, and energy diagrams."
 sidebar:
   order: 6
 ---

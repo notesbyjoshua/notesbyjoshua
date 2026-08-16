@@ -1,5 +1,6 @@
 ---
 title: "Problem Solving Techniques"
+description: "Physics notes on problem-solving techniques, including diagrams, units, approximations, conservation laws, and equation selection."
 sidebar:
   order: 3
 ---

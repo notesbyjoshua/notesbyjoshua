@@ -1,5 +1,6 @@
 ---
 title: "Unit 3: Differentiation: Composite, Implicit, and Inverse Differentiation"
+description: "AP Calculus notes on chain rule, implicit differentiation, inverse functions, logarithmic differentiation, and inverse trig derivatives."
 sidebar:
   order: 3
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Unit 5: Exponential & Logarithmic Functions"
+description: "AP Precalculus notes on exponential and logarithmic functions, growth and decay models, log laws, and equation solving."
 sidebar:
   order: 4
 ---

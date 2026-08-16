@@ -1,5 +1,6 @@
 ---
 title: "Unit 5: Analytical Applications of Differentiation"
+description: "AP Calculus notes on mean value theorems, monotonicity, concavity, optimization, related rates, and curve sketching."
 sidebar:
   order: 5
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Unit 2: Force and Translational Dynamics"
+description: "AP Physics C Mechanics notes on forces, Newton's laws, free-body diagrams, friction, drag, circular motion, and dynamics."
 sidebar:
   order: 2
 ---

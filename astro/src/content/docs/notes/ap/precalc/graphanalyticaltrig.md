@@ -1,5 +1,6 @@
 ---
 title: "Unit 8 & 9: Graphs and Analytics of Trig Functions"
+description: "AP Precalculus notes on trig graphs, transformations, identities, equations, inverse trig functions, and analytic techniques."
 sidebar:
   order: 6
 ---

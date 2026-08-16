@@ -1,5 +1,6 @@
 ---
 title: "Unit 4 & 13: Polynomial & Rational Functions and Applications to Optimization"
+description: "AP Precalculus notes on polynomial and rational functions, zeros, asymptotes, graphing, and optimization applications."
 sidebar:
   order: 3
 ---

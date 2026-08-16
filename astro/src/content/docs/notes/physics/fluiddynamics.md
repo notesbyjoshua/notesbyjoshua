@@ -1,5 +1,6 @@
 ---
 title: "Fluid Dynamics"
+description: "Physics notes on fluid dynamics, continuity, Bernoulli's equation, viscosity, pressure, flow rate, and applications."
 sidebar:
   order: 5
 ---

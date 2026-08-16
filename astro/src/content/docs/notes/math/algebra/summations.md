@@ -1,5 +1,6 @@
 ---
 title: "Summations"
+description: "Math notes on summation notation, arithmetic and geometric series, telescoping sums, sigma rules, and common identities."
 sidebar:
   order: 5
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Unit 4: Chemical Reactions"
+description: "AP Chemistry notes on chemical reactions, stoichiometry, net ionic equations, redox, precipitation, and reaction evidence."
 sidebar:
   order: 4
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Recursion"
+description: "Math notes on recursive sequences, explicit formulas, recurrence relations, iteration, and pattern-based problem solving."
 next: false
 sidebar:
   order: 6

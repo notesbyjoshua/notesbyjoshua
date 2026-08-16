@@ -1,5 +1,6 @@
 ---
 title: "Unit 8: Applications of Integration"
+description: "AP Calculus notes on area, volume, average value, arc length, improper integrals, and integration applications."
 sidebar:
   order: 8
 ---

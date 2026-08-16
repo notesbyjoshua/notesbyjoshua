@@ -1,5 +1,6 @@
 ---
 title: "Unit 6: Integration and Accumulation of Change"
+description: "AP Calculus notes on antiderivatives, definite integrals, Riemann sums, accumulation functions, and the Fundamental Theorem."
 sidebar:
   order: 6
 ---

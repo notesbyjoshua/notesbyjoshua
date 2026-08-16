@@ -1,5 +1,6 @@
 ---
 title: "Unit 2: Electric Potential"
+description: "AP Physics C E&M notes on electric potential, potential energy, voltage, equipotentials, and relationships to electric fields."
 sidebar:
   order: 2
 ---

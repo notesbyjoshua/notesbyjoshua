@@ -1,5 +1,6 @@
 ---
 title: "Unit 2: Compound Structure and Properties"
+description: "AP Chemistry notes on compounds, bonding, molecular structure, Lewis diagrams, polarity, hybridization, and intermolecular forces."
 sidebar:
   order: 2
 ---

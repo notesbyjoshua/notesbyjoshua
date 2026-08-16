@@ -1,5 +1,6 @@
 ---
 title: "Unit 1: Limits and Continuity"
+description: "AP Calculus notes on limits, continuity, asymptotes, the squeeze theorem, intermediate value theorem, and limit techniques."
 sidebar:
   order: 1
 ---

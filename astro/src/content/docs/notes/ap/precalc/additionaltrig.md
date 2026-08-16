@@ -1,5 +1,6 @@
 ---
 title: "Unit 10: Additional Topics in Trigonometry (Triangle Laws, Parametric, Polar, and Vectors)"
+description: "AP Precalculus notes on triangle laws, parametric and polar equations, vectors, dot products, and polar graph analysis."
 sidebar:
   order: 7
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Unit 1: Atomic Structure and Properties"
+description: "AP Chemistry notes on atomic structure, periodic trends, electron configurations, Coulombic attraction, and photoelectron spectra."
 sidebar:
   order: 1
 ---

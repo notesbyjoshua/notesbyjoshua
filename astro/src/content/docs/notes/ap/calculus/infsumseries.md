@@ -1,5 +1,6 @@
 ---
 title: "Unit 10: Infinite Sums and Series (BC-only)"
+description: "AP Calculus BC notes on sequences, series, convergence tests, power series, Taylor series, and error bounds."
 next: false
 sidebar:
   order: 10

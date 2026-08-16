@@ -1,5 +1,6 @@
 ---
 title: "Waves"
+description: "Physics notes on waves, oscillations, sound, standing waves, superposition, interference, resonance, and wave speed."
 sidebar:
   order: 10
 ---

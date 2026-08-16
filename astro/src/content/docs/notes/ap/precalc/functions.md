@@ -1,5 +1,6 @@
 ---
 title: "Unit 3: Functions"
+description: "AP Precalculus notes on functions, domain and range, transformations, inverses, composition, piecewise functions, and modeling."
 sidebar:
   order: 2
 ---
