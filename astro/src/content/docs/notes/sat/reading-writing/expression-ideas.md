@@ -50,6 +50,20 @@ Pay close attention to the goal word:
 3. If there is more than one answer left, always look at the notes and see which answer choice is supported by the notes. Often, there will be two options remaining, and only one will have the correct information to solve the problem.
 :::
 
+### The Three-Filter Test
+
+Evaluate each rhetorical-synthesis choice in this order:
+
+1. **Goal:** Does the choice perform the exact task in the question stem?
+2. **Accuracy:** Is every claim supported by the notes, with comparisons, dates, and degrees of certainty preserved?
+3. **Efficiency:** Does the choice accomplish the goal without irrelevant or repetitive information?
+
+Do not begin with length. A short choice can omit a required comparison, while a longer choice can add facts that distract from the goal. Use concision only after confirming that the choice is relevant and accurate.
+
+:::tip
+If two choices both accomplish the goal and accurately represent the notes, prefer the one that states the essential information more directly. Repeated ideas and unnecessary background usually make a choice less effective, but “shorter” is a tiebreaker—not a substitute for checking the goal.
+:::
+
 <div class="theorem-box">
 
 **Example.** While researching contemporary sculptors, a student has taken the following notes:
@@ -98,19 +112,32 @@ Ignore the choices at first. Summarize the sentence before the blank, summarize 
 
 Do not choose a transition because you often see it in formal writing. Two transitions can sound equally academic while expressing opposite logical relationships.
 
-| Relationship | Common transitions |
-| --- | --- |
-| Addition | moreover, furthermore, additionally |
-| Contrast | however, nevertheless, in contrast |
-| Cause or result | therefore, thus, consequently |
-| Example | for example, for instance |
-| Specification | specifically, in particular |
-| Similarity | similarly, likewise |
-| Sequence | next, subsequently, finally |
-| Concession | admittedly, even so, nevertheless |
-| Emphasis | indeed, notably |
+| Broad family | Exact relationship | Common transitions |
+| --- | --- | --- |
+| Continuation | Addition | moreover, furthermore, additionally |
+| Continuation | Example | for example, for instance |
+| Continuation | Specification | specifically, in particular |
+| Continuation | Similarity | similarly, likewise |
+| Continuation | Sequence | next, subsequently, finally |
+| Continuation | Emphasis | indeed, notably |
+| Cause and effect | Result | therefore, thus, consequently |
+| Contrast | Direct contrast | however, in contrast, on the other hand |
+| Contrast | Concession | admittedly, even so, nevertheless |
 
 Then select the transition that expresses that relationship. Do not choose based only on what sounds academic.
+
+:::strategy
+1. Cross out or ignore the transition in the sentence.
+2. Summarize the complete idea before the blank and the complete idea after it.
+3. Choose the broad family: continuation, cause and effect, or contrast.
+4. Name the exact relationship within that family, such as example, specification, result, or concession.
+5. Check the choices and substitute the best transition into the passage.
+6. Reread at least one full sentence before and after the blank to verify the relationship in context.
+:::
+
+:::tip
+If two choices are true synonyms in context—such as *therefore* and *consequently*—they cannot both be the one correct answer. Eliminate both only after checking that they really express the same relationship; near-synonyms such as *however* and *nevertheless* can differ when one idea is a concession rather than a direct contrast.
+:::
 
 <div class="theorem-box">
 
@@ -141,5 +168,10 @@ Then select the transition that expresses that relationship. Do not choose based
 :::tip
 Describe the relationship between the entire sentence before the blank and the entire sentence after it. Do not focus on only the last few words. Then substitute each transition and check whether its exact meaning matches.
 :::
+
+## Further Review
+
+- [Complete SAT Grammar Rules](https://thecriticalreader.com/complete-sat-grammar-rules/) provides a broader review of transitions and Standard English conventions.
+- [SAT/ACT Grammar Cheat Sheet](https://thecriticalreader.com/wp-content/uploads/2016/03/SAT_ACT-grammar-cheat-sheet.pdf) summarizes transition and rhetoric strategies. Some question formats on the sheet come from the older paper SAT or the ACT, so use the transferable reasoning methods rather than treating every listed format as part of the current digital SAT.
 
 ## Practice
