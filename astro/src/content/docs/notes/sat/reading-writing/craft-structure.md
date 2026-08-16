@@ -44,14 +44,14 @@ The word *because* connects incomplete records to the description. Incomplete ev
 
 <div class="theorem-box">
 
-**Example.** “Many rare genetic disorders are associated with recognizable facial features, often described using Human Phenotype Ontology (HPO) terms such as hypertelorism and short philtrum. However, clinical facial assessment is subjective and can vary among observers. New methods developed by researchers aim to use _____ facial feature measurements combined with machine learning methods to ensure a more accurate diagnosis." Which choice completes the text with the most logical and precise word or phrase?
+**Example.** Many rare genetic disorders are associated with recognizable facial features, but clinical assessments of those features can vary among observers. Researchers have therefore developed methods that combine machine learning with measurements derived from facial images, replacing impressions that are difficult to reproduce with data that can be consistently compared. The researchers' methods aim to make facial assessment more _____. Which choice completes the text with the most logical and precise word or phrase?
 
-- **A.** observational
-- **B.** esoteric
-- **C.** quantitative
-- **D.** wholesale
+- **A.** intuitive
+- **B.** objective
+- **C.** exhaustive
+- **D.** conventional
 
-// please provide an explanation for why C is correct.
+**B** is correct because consistently comparable measurements reduce the subjectivity of personal impressions, making the assessment more *objective*. **A** points toward judgment by instinct, the problem the methods are meant to reduce. **C** means comprehensive, but the text does not say the measurements capture every possible feature. **D** conflicts with the description of the methods as newly developed.
 
 </div>
 
@@ -91,19 +91,27 @@ State the function in your own words before reading the choices. The best answer
 
 <div class="theorem-box">
 
-**Example.** "Due to the lack of grip on his volleyball shoes, the player kept slipping during his transition off the net. *Normally this would not be such a problem, but the next game was the finals of the national championship and he couldn't bear to make one mistake, as such an error would surely cause the loss of the game.* Thus, he decided to buy himself a new pair of volleyball shoes immediately to prevent such an occurence. On the day of the final, he confidently boasted his brand new shoes, and shined on the big stage to win the national championship with a beautiful spike cross-court where the two defensive players could not dig the ball." Which choise best states the function of the underlined sentence in the overall structure of the text?
+**Example.** During practice, a volleyball player repeatedly slipped while moving away from the net because his shoes had lost their grip. <u>Although he had previously tolerated the problem, the approaching national championship made even a single preventable mistake seem too costly.</u> He therefore replaced the shoes before the match. Which choice best states the function of the underlined sentence in the overall structure of the text?
 
-// please underline the italicized portion
+- **A.** It explains why a problem the player had accepted now requires action.
+- **B.** It suggests that the player's concern about his shoes is unsupported.
+- **C.** It contrasts the player's performance in practice with his performance in the championship.
+- **D.** It establishes that slipping is the only kind of mistake that can affect a volleyball match.
 
-// add proper answer choices/solution to the question
+**A** is correct because the sentence connects the championship's importance to the player's decision to stop tolerating the worn shoes. **B** reverses the sentence's purpose: the approaching match supports his concern. **C** invents a comparison with a match that has not yet occurred, and **D** makes an unsupported absolute claim.
 
 </div>
 
 <div class="theorem-box">
 
-**Example.**
+**Example.** For decades, literary scholars treated the unusual punctuation in poet Mara Venn's notebooks as incidental marks added during hurried composition. A newly cataloged draft, however, contains the same marks arranged in recurring patterns beside passages that Venn later revised substantially. The draft does not establish what each mark meant, but it has led some scholars to reconsider the marks as part of Venn's revision system. Which choice best describes the function of the second sentence in the overall structure of the text?
 
-// please write out an actual story and then add a fill in the blank question with answers/solution
+- **A.** It presents evidence that complicates an established interpretation described earlier.
+- **B.** It identifies the precise meanings of marks whose purpose scholars had disputed.
+- **C.** It provides an example of a draft that scholars agree Venn never revised.
+- **D.** It explains why Venn's published poems contain more punctuation than her notebooks do.
+
+**A** is correct because the recurring marks near heavily revised passages challenge the view that the marks were incidental. **B** overstates the evidence; the next sentence explicitly says the meanings remain unknown. **C** contradicts the description of later revisions, and **D** introduces a comparison the text never makes.
 
 </div>
 
@@ -130,20 +138,25 @@ Do not select an answer merely because both passages mention the same topic. It 
 
 **Example.** Passage 1 argues that planting trees is the most effective way for a city to reduce summer street temperatures. Passage 2 agrees that trees help but argues that reflective roofing and shaded transit stops are also necessary. How would the author of Passage 2 most likely respond to Passage 1?
 
-The author of Passage 2 would agree that trees are useful but qualify the claim that they are sufficient by recommending additional measures. The passages do not completely disagree.
+- **A.** By agreeing that trees can reduce temperatures but disputing that they should be a city's only response
+- **B.** By rejecting the claim that trees have any effect on street temperatures
+- **C.** By arguing that reflective roofing works only when cities remove existing trees
+- **D.** By claiming that shaded transit stops are more effective than every other cooling measure
+
+**A** is correct because Passage 2 accepts the benefit of trees while arguing that additional measures are needed. **B** turns a qualification into complete disagreement. **C** invents a condition, and **D** invents a ranking that Passage 2 never gives.
 
 </div>
 
 <div class="theorem-box">
 
-**Example.** Passage 1 argues that remote work improves productivity because employees experience fewer office interruptions. Passage 2 reports that remote work can improve productivity for independent tasks but may slow projects requiring frequent collaboration. Which choice best describes the relationship between the passages?
+**Example.** Passage 1 argues that variations in the brightness of the star Lumen-4 are best explained by dark starspots rotating into and out of view; according to the passage, the variations repeat too regularly to be caused by orbiting dust. Passage 2 notes that the apparent regularity emerges only after several irregular observations are excluded and argues that a clumpy dust ring could account for both the excluded observations and the remaining pattern. Based on the passages, how would the author of Passage 2 most likely respond to the explanation in Passage 1?
 
-- **A.** Passage 2 completely rejects the conclusion of Passage 1.
-- **B.** Passage 2 qualifies Passage 1 by identifying a situation in which its conclusion may not apply.
-- **C.** Passage 2 provides historical evidence for Passage 1.
-- **D.** The passages discuss unrelated meanings of productivity.
+- **A.** The starspot explanation is plausible only if Lumen-4 has no dust anywhere near it.
+- **B.** The regular pattern decisively rules out dust even when all observations are considered.
+- **C.** The evidence for starspots depends on omitting observations that a dust-based explanation may accommodate.
+- **D.** Neither starspots nor dust could produce changes in a star's observed brightness.
 
-**B** is correct. Passage 2 accepts the benefit in some situations but places a limit on it. That is a qualification, not complete disagreement.
+**C** is correct because Passage 2 challenges Passage 1's treatment of the irregular observations and proposes that dust may explain the full data set. **A** imposes a condition Passage 2 does not state. **B** expresses Passage 1's conclusion rather than Passage 2's response, and **D** contradicts both proposed explanations.
 
 </div>
 

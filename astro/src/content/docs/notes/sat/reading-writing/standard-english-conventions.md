@@ -52,9 +52,14 @@ The easiest test is to read the clause by itself. If it leaves you waiting for t
 
 <div class="theorem-box">
 
-**Example.** Determine whether “Because the telescope collected more light” is a complete sentence, and explain what it needs.
+**Example.** During the nineteenth century, astronomer Maria Mitchell recorded the positions of celestial objects with remarkable precision. Because the instruments available to her, though advanced for the period, _____ Which choice completes the text so that it conforms to the conventions of Standard English?
 
-It has a subject (*the telescope*) and verb (*collected*), but *because* makes the idea dependent. The reader is waiting for a result. It needs an independent clause, such as: “Because the telescope collected more light, the image appeared brighter.”
+- **A.** imposed limits on what she could observe.
+- **B.** imposed limits on what she could observe, later astronomers reexamined some of her measurements with newer technology.
+- **C.** imposing limits on what she could observe, later astronomers reexamined some of her measurements with newer technology.
+- **D.** had imposed limits on what she could observe and newer technology.
+
+**B** is correct because *because* makes the first clause dependent, and the comma is followed by the independent clause “later astronomers reexamined some of her measurements with newer technology.” **A** leaves only a dependent clause. **C** removes the finite verb from the dependent clause, and **D** never supplies an independent clause to complete the sentence.
 
 </div>
 
@@ -68,32 +73,27 @@ If both sides are complete sentences, join them with:
 
 <div class="theorem-box">
 
-**Example.** Join the complete sentences “The experiment failed” and “The researchers repeated it.”
+**Example.** Which choice correctly joins the two complete sentences “The experiment failed” and “The researchers repeated it” while showing that the second event resulted from the first?
 
-All three of these constructions are correct:
+- **A.** The experiment failed, the researchers repeated it.
+- **B.** The experiment failed; consequently, the researchers repeated it.
+- **C.** The experiment failed, however the researchers repeated it.
+- **D.** The experiment failed because, the researchers repeated it.
 
-> The experiment failed. The researchers repeated it.
-
-> The experiment failed; the researchers repeated it.
-
-> The experiment failed, so the researchers repeated it.
-
-A comma alone creates a comma splice:
-
-> The experiment failed, the researchers repeated it.
+**B** is correct because the semicolon joins two independent clauses, and *consequently* expresses the result relationship. **A** is a comma splice. **C** uses *however* without a valid boundary and signals contrast rather than result. **D** places an unnecessary comma after the subordinating conjunction *because*.
 
 </div>
 
 <div class="theorem-box">
 
-**Example.** Choose the option that correctly completes the text: “The first design was inexpensive ___ it could not withstand high temperatures.”
+**Example.** Paleoclimatologist Nia Okafor cautions that a single sediment core cannot establish a region-wide drought pattern _____ samples from several distant lakes, however, reveal the same abrupt decline in moisture during the period. Which choice completes the text so that it conforms to the conventions of Standard English?
 
-- **A.** , however,
-- **B.** ; however,
-- **C.** however
-- **D.** ,
+- **A.** , samples
+- **B.**; samples
+- **C.** although samples
+- **D.** and, samples
 
-Both sides are complete sentences. *However* is a transition, not a coordinating conjunction, so it cannot join them with commas alone. **B** is correct: “The first design was inexpensive; however, it could not withstand high temperatures.”
+**B** is correct because the text contains two independent clauses, so a semicolon can separate them; *however* then functions within the second clause. **A** creates a comma splice. **C** makes the material after the blank dependent, leaving the first independent clause improperly attached without punctuation. **D** incorrectly places a comma after the coordinating conjunction.
 
 </div>
 
@@ -115,11 +115,14 @@ Everything before the colon must be able to stand alone. “The variables includ
 
 <div class="theorem-box">
 
-**Example.** Choose the punctuation that correctly completes the sentence: “The observatory tracks three kinds of objects ___ planets, comets, and asteroids.”
+**Example.** The newly translated inventory reveals a pattern that earlier accounts of the workshop had overlooked _____ apprentices, not master artisans, were responsible for producing most of its undecorated pottery. Which choice completes the text so that it conforms to the conventions of Standard English?
 
-The words before the blank form a complete sentence and the words after it provide the promised list, so a colon is correct:
+- **A.** , namely,
+- **B.**; namely
+- **C.**: namely,
+- **D.** namely:
 
-> The observatory tracks three kinds of objects: planets, comets, and asteroids.
+**C** is correct because the complete clause before the blank introduces a clarification, so a colon is appropriate; *namely* is then followed by a comma. **A** cannot join the two independent clauses with commas alone. **B** could separate the clauses, but *namely* requires a comma after it. **D** lacks punctuation before *namely* and incorrectly places the colon after it.
 
 </div>
 
@@ -155,11 +158,14 @@ Punctuation around nonessential information comes in pairs. If you open the phra
 
 <div class="theorem-box">
 
-**Example.** Choose the punctuation that correctly completes the sentence: “Mina Patel ___ the lead engineer on the project ___ presented the prototype.”
+**Example.** Marine biologist Ayana Ruiz's newest paper _____ a synthesis of twelve years of reef surveys _____ argues that the apparent recovery of one coral species masks declines among several others. Which choice completes the text so that it conforms to the conventions of Standard English?
 
-The phrase *the lead engineer on the project* merely adds information about Mina Patel. Remove it and the sentence still reads “Mina Patel presented the prototype.” Therefore, surround the phrase with matching commas or matching dashes:
+- **A.** , a synthesis of twelve years of reef surveys,
+- **B.** a synthesis of twelve years of reef surveys,
+- **C.** , a synthesis of twelve years of reef surveys
+- **D.**: a synthesis of twelve years of reef surveys,
 
-> Mina Patel, the lead engineer on the project, presented the prototype.
+**A** is correct because the phrase renames *paper* and can be removed without changing the core sentence, “Ayana Ruiz's newest paper argues.” The nonessential phrase therefore needs matching commas. **B** and **C** provide only one boundary, while **D** places a colon between the subject and its verb.
 
 </div>
 
@@ -225,20 +231,27 @@ In a sentence beginning with *there is* or *there are*, the subject follows the 
 
 <div class="theorem-box">
 
-**Example.** Choose the verb that correctly completes the sentence: “The collection of letters from the expedition ___ stored in the university archive.”
+**Example.** The collection of letters from the expedition, including several pages that describe an uncharted island, _____ stored in the university archive. Which choice completes the text so that it conforms to the conventions of Standard English?
 
-The subject is the singular noun *collection*. The phrase *of letters from the expedition* does not change its number, so the correct verb is *is*.
+- **A.** are
+- **B.** were
+- **C.** is
+- **D.** have been
+
+**C** is correct because the subject is the singular noun *collection*. The plural nouns *letters* and *pages* occur in modifying phrases and do not control the verb. **A**, **B**, and **D** are plural verb forms and therefore do not agree with the subject.
 
 </div>
 
 <div class="theorem-box">
 
-**Example.** Choose the correct verb: “Each of the murals painted by local artists ___ a different event from the town's history.”
+**Example.** Neither the detailed maps prepared by the surveyors nor the diary kept by the expedition's leader _____ why the group abandoned its original route. Which choice completes the text so that it conforms to the conventions of Standard English?
 
-- **A.** depict
-- **B.** depicts
+- **A.** explain
+- **B.** explains
+- **C.** have explained
+- **D.** are explaining
 
-The subject is *each*, which is singular. The plural nouns *murals* and *artists* appear inside modifying phrases and do not control the verb. Therefore, **B**, *depicts*, is correct.
+**B** is correct. With subjects joined by *neither...nor*, the verb agrees with the closer subject, *diary*, which is singular. **A**, **C**, and **D** are plural forms attracted by the more distant noun *maps*, but that noun does not control the verb here.
 
 </div>
 
@@ -270,14 +283,14 @@ Make sure every sentence has a finite verb:
 
 <div class="theorem-box">
 
-**Example.** Choose the correct verb form: “In 2018, the research team ___ the first complete survey of the reef.”
+**Example.** By the time conservators first examined the mural in 1998, moisture _____ several layers of pigment; since then, a climate-control system has prevented further damage. Which choice completes the text so that it conforms to the conventions of Standard English?
 
-- **A.** completes
-- **B.** has completed
-- **C.** completed
-- **D.** completing
+- **A.** penetrates
+- **B.** has penetrated
+- **C.** had penetrated
+- **D.** would penetrate
 
-The specific finished time *in 2018* calls for simple past, so **C**, *completed*, is correct. Present perfect generally does not pair with a finished past time.
+**C** is correct because the penetration occurred before another past event—the conservators' 1998 examination—so the past perfect *had penetrated* makes the sequence clear. **A** shifts to the present, **B** improperly connects the action to the present despite the explicit past reference point, and **D** places the penetration after the examination.
 
 </div>
 
@@ -311,11 +324,14 @@ The noun immediately after an introductory modifying phrase should logically per
 
 <div class="theorem-box">
 
-**Example.** Revise the sentence “After reviewing the final data, several errors were noticed by the research team” so that the introductory modifier clearly describes the correct subject.
+**Example.** Using pollen preserved in lake sediment, _____ Which choice completes the text so that the sentence has a logical modifier?
 
-The research team performed the reviewing, so it should appear immediately after the introductory phrase:
+- **A.** the region's vegetation from 8,000 years ago was reconstructed by ecologists.
+- **B.** ecologists reconstructed the region's vegetation from 8,000 years ago.
+- **C.** a reconstruction by ecologists revealed the region's vegetation 8,000 years ago.
+- **D.** lake sediment allowed the region's vegetation from 8,000 years ago to be reconstructed by ecologists.
 
-> After reviewing the final data, the research team noticed several errors.
+**B** is correct because *ecologists* are the people who used the preserved pollen, and the noun immediately after the introductory phrase must name whoever performed that action. In **A**, *vegetation* illogically appears to use the pollen. In **C**, *a reconstruction* appears to use it. In **D**, *lake sediment* appears to use pollen even though the pollen is contained in the sediment.
 
 </div>
 
@@ -339,14 +355,14 @@ Without *that of*, the sentence incorrectly compares a population with a state.
 
 <div class="theorem-box">
 
-**Example.** Choose the clearest and most parallel completion: “The internship required students to collect samples, analyze the results, and ___.”
+**Example.** The new archive allows researchers not only to compare early drafts with published poems _____ Which choice completes the text so that it conforms to the conventions of Standard English?
 
-- **A.** presenting their conclusions
-- **B.** presentation of their conclusions
-- **C.** present their conclusions
-- **D.** their conclusions were presented
+- **A.** but also tracing how editors shaped the poems' final forms.
+- **B.** but also to trace how editors shaped the poems' final forms.
+- **C.** and also the editorial shaping of the poems' final forms.
+- **D.** but also how editors shaped the poems' final forms could be traced.
 
-The first two items use the base verbs *collect* and *analyze*. **C**, *present*, continues that pattern. The other choices change grammatical form.
+**B** is correct because it preserves the parallel structure *not only to compare...but also to trace*. **A** shifts from an infinitive to a gerund. **C** does not correctly complete the paired construction *not only...but also*, and **D** changes from an active infinitive to a full passive clause.
 
 </div>
 

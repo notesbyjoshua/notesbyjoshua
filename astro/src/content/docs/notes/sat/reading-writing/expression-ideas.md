@@ -54,22 +54,35 @@ Rhetorical synthesis is not a test of how many notes you can include. Usually, t
 
 <div class="theorem-box">
 
-**Example.** A student's notes state that sculptor Amara Cole began working with recycled glass in 2018 and that sculptor Luis Ortega began using discarded metal in 2020. The student wants to emphasize a similarity between the artists. Write the information an effective answer must include.
+**Example.** A student's notes state that sculptor Amara Cole began working with recycled glass in 2018 and that sculptor Luis Ortega began using discarded metal in 2020. The student wants to emphasize a similarity between the artists. Which choice most effectively uses relevant information from the notes to accomplish this goal?
 
-The answer should mention both artists and their shared use of discarded materials, such as: “Both Cole and Ortega create sculptures using materials that would otherwise be discarded.” The dates are accurate but unnecessary for the stated goal.
+- **A.** Cole began working with recycled glass two years before Ortega began using discarded metal.
+- **B.** Both Cole and Ortega create sculptures using materials that would otherwise be discarded.
+- **C.** Cole works with glass, whereas Ortega began working with metal in 2020.
+- **D.** In 2018, Cole became a sculptor who used recycled glass.
+
+**B** is correct because it mentions both artists and emphasizes their shared use of discarded materials. **A** and **C** emphasize differences, while **D** discusses only Cole.
 
 </div>
 
 <div class="theorem-box">
 
-**Example.** A student's notes say that the Eastside Garden opened in 2012, occupies two acres, donates vegetables to a food pantry, and is maintained by neighborhood volunteers. The student wants to emphasize the garden's benefit to the wider community. Which choice most effectively accomplishes this goal?
+**Example.** While researching public art, a student has taken the following notes:
 
-- **A.** Opened in 2012, the Eastside Garden occupies two acres.
-- **B.** Neighborhood volunteers maintain the two-acre Eastside Garden.
-- **C.** The Eastside Garden supports the wider community by donating vegetables to a food pantry.
-- **D.** The Eastside Garden is maintained by volunteers and opened in 2012.
+- In 1986, artist Lidia Arce installed *Tidal Ledger*, a row of steel columns, along a harbor.
+- The columns' heights correspond to monthly high-water measurements recorded in 1985.
+- In 2022, the city moved the work inland because of repeated flooding.
+- Arce approved the move on the condition that the columns retain their original height differences.
+- Critics disagree about whether relocation changed the work's meaning.
 
-**C** is correct because it directly states a benefit beyond the garden itself. The other choices contain true information, but they do not fulfill the goal.
+The student wants to emphasize a tension between preserving the artwork's physical design and preserving its original context. Which choice most effectively uses relevant information from the notes to accomplish this goal?
+
+- **A.** Installed along a harbor in 1986, *Tidal Ledger* consists of steel columns based on high-water measurements from the previous year.
+- **B.** Although Arce required the relocated columns to retain their original height differences, moving *Tidal Ledger* inland separated the work from the harbor that its design records.
+- **C.** After repeated flooding, the city moved *Tidal Ledger* inland in 2022, a decision that Arce approved.
+- **D.** Critics disagree about the meaning of *Tidal Ledger*, which was installed in 1986 and relocated in 2022.
+
+**B** is correct because it directly contrasts the preserved physical relationship among the columns with the loss of the work's original harbor setting. **A** supplies background without addressing relocation. **C** mentions the move and Arce's approval but omits what was physically preserved and what contextual feature was lost. **D** reports disagreement without explaining the tension the student was asked to emphasize.
 
 </div>
 
@@ -101,22 +114,27 @@ Then select the transition that expresses that relationship. Do not choose based
 
 <div class="theorem-box">
 
-**Example.** Complete the sentences with a logical transition: “The material is inexpensive. ___, it is difficult to manufacture.”
+**Example.** Complete the sentences with the most logical transition: “The material is inexpensive. ___, it is difficult to manufacture.”
 
-The second sentence contrasts a benefit with a drawback, so *however* works. *Therefore* would incorrectly claim that the low cost causes the manufacturing difficulty.
+- **A.** Similarly,
+- **B.** Therefore,
+- **C.** However,
+- **D.** For example,
+
+**C** is correct because the second sentence contrasts a benefit with a drawback. **B** would incorrectly claim that the low cost causes the manufacturing difficulty, and **A** and **D** express relationships the sentences do not establish.
 
 </div>
 
 <div class="theorem-box">
 
-**Example.** Complete the text with the most logical transition: “Many desert plants open their stomata at night, reducing water loss during the hottest hours. ___, cacti use this adaptation to survive in extremely dry environments.”
+**Example.** Some historians interpret the standardized weights found at several Bronze Age ports as evidence that a central authority regulated trade across the region. The weights differ slightly from port to port, however, and those differences follow no clear geographic pattern. _____, archaeologist Ren Ito argues that merchants may have adjusted shared conventions locally rather than obeying a single authority. Which choice completes the text with the most logical transition?
 
-- **A.** Nevertheless,
-- **B.** For example,
-- **C.** Similarly,
-- **D.** Consequently,
+- **A.** Likewise,
+- **B.** Consequently,
+- **C.** For instance,
+- **D.** Nevertheless,
 
-The second sentence gives cacti as a specific case of the general statement, so **B**, *For example*, is correct. **D** is tempting because survival is a result of the adaptation, but the relationship between the two complete sentences is general claim to example.
+**B** is correct because Ito's interpretation follows from the unexplained local variation in the weights. **D** is tempting because Ito challenges the first interpretation, but the immediate relationship is evidence to conclusion, not concession. **A** signals similarity, and **C** would make Ito's conclusion an example of the variation rather than a conclusion drawn from it.
 
 </div>
 
@@ -126,9 +144,14 @@ Describe the relationship between the entire sentence before the blank and the e
 
 <div class="theorem-box">
 
-**Example.** Complete the text with a logical transition: “The first trial produced inconsistent measurements. ___, the researchers recalibrated the instrument before beginning the second trial.”
+**Example.** Complete the text with the most logical transition: “The first trial produced inconsistent measurements. ___, the researchers recalibrated the instrument before beginning the second trial.”
 
-The second sentence gives the result of the problem described in the first, so *therefore* or *consequently* fits. A contrast transition such as *however* would misrepresent the relationship.
+- **A.** Consequently,
+- **B.** Nevertheless,
+- **C.** Likewise,
+- **D.** For instance,
+
+**A** is correct because recalibration is a result of the inconsistent measurements. **B** signals concession, **C** signals similarity, and **D** introduces an example, none of which matches the relationship.
 
 </div>
 

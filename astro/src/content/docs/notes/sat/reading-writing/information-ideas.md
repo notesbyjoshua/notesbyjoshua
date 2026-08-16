@@ -46,20 +46,25 @@ Many passages follow a simple structure: background, a turn, and a conclusion. W
 
 **Example.** Biologists once assumed that urban noise only disrupted animal communication. Recent studies, however, show that some bird populations have adjusted by singing at higher pitches, allowing their calls to remain distinguishable from low-frequency traffic noise. Which choice best states the central idea of the text?
 
-The first sentence presents the older view, while the second gives the passage's main point: some birds have adapted their songs to communicate despite urban noise. An answer discussing only traffic noise would be too broad, and an answer claiming that all birds have adapted would be too strong.
+- **A.** Urban noise prevents most bird populations from communicating with one another.
+- **B.** Some birds have adapted their songs in ways that help them communicate despite urban noise.
+- **C.** Low-frequency sounds are easier for birds to produce than high-frequency sounds are.
+- **D.** Scientists no longer believe that urban noise affects animal communication.
+
+**B** is correct because it captures the passage's main development: some birds counter low-frequency traffic noise by singing at higher pitches. **A** and **D** contradict that finding, while **C** introduces a comparison the text does not make.
 
 </div>
 
 <div class="theorem-box">
 
-**Example.** A passage states: “For years, historians believed the settlement was abandoned after a drought. Newly analyzed trade records, however, show that goods continued to enter the settlement for decades afterward, suggesting that at least part of its population remained.” Which choice best states the main idea?
+**Example.** Ecologists have often treated the bright throat patches of male rivermouth fish as signals that evolved primarily through female mate choice. Yet females in several populations cannot distinguish the patches under the turbid conditions in which courtship usually occurs. Males, by contrast, display the patches during territorial confrontations near the water's clearer surface, and rivals respond more cautiously to males with brighter patches. These findings do not rule out a role for mate choice, but they indicate that competition among males may have contributed substantially to the patches' evolution. Which choice best states the main idea of the text?
 
-- **A.** Droughts frequently caused ancient settlements to be abandoned.
-- **B.** Trade records suggest that the settlement remained partly inhabited longer than historians once believed.
-- **C.** The settlement imported more goods than nearby settlements did.
-- **D.** Historians cannot reliably use environmental evidence.
+- **A.** Female rivermouth fish probably prefer bright throat patches even though the patches are difficult to see during courtship.
+- **B.** Evidence about where the patches are visible and how rival males respond suggests that male competition, not only mate choice, may have shaped the patches.
+- **C.** Turbid water has caused rivermouth fish to move courtship displays closer to the surface.
+- **D.** Bright throat patches evolved exclusively as signals used during territorial confrontations between males.
 
-**B** is correct. It includes the old belief, the new evidence, and the revised conclusion. **A** turns background into a broad claim. **C** invents a comparison. **D** makes a much stronger criticism than the passage supports.
+**B** is correct because it captures the conventional explanation, the contrasting evidence, and the qualified conclusion that male competition also mattered. **A** asserts a preference the text does not establish. **C** invents a behavioral change, and **D** ignores the passage's caution that mate choice may still have played a role.
 
 </div>
 
@@ -97,20 +102,25 @@ For example, suppose a passage states that rocky planets generally cannot produc
 
 **Example.** A museum tested two labels for the same painting. Visitors who read the shorter label spent more time looking at the painting, but both groups remembered the same number of factual details afterward. Which conclusion is best supported?
 
-The safest inference is that the shorter label was associated with longer viewing time but not better factual recall. We cannot conclude that the label *caused* visitors to enjoy the painting more because enjoyment was not measured.
+- **A.** Shorter labels cause visitors to enjoy paintings more.
+- **B.** Visitors who read longer labels remember fewer facts about paintings.
+- **C.** The shorter label was associated with longer viewing time but not with better factual recall.
+- **D.** Label length has no relationship to how visitors respond to paintings.
+
+**C** is correct because it states both measured results without claiming causation. **A** relies on enjoyment, which was not measured; **B** contradicts the equal recall result; and **D** ignores the difference in viewing time.
 
 </div>
 
 <div class="theorem-box">
 
-**Example.** Researchers placed the same species of plant in shaded and sunny plots. Plants in sunny plots produced more flowers, but the researchers did not measure seed production. Which conclusion is best supported?
+**Example.** A linguist compared two groups of adults learning an unfamiliar sound contrast. Both groups completed the same listening exercises, but one group also saw an animation showing tongue position. Immediately after training, the animation group distinguished the sounds more accurately than the other group. One month later, the groups performed equally on the original sounds, but the animation group was more accurate on new words spoken by unfamiliar speakers. Which conclusion is best supported?
 
-- **A.** Sunlight causes the species to produce more seeds.
-- **B.** The species cannot survive in shaded environments.
-- **C.** Under the tested conditions, plants in sunnier plots produced more flowers.
-- **D.** Flower production is the only factor affecting the species' reproduction.
+- **A.** Viewing tongue position prevented the animation group's accuracy from declining during the month after training.
+- **B.** The animation improved immediate performance and may have helped learners apply the sound contrast to unfamiliar speech a month later.
+- **C.** Listening exercises alone are ineffective for learning sound contrasts that do not occur in a learner's language.
+- **D.** The animation group would accurately distinguish any unfamiliar sound contrast after one month.
 
-**C** is correct because it restates the measured result and preserves the limits of the experiment. **A** switches from flowers to unmeasured seeds. **B** turns lower flower production into an unsupported claim about survival. **D** uses the extreme word *only* without evidence.
+**B** is correct because it reflects both measured advantages while cautiously describing the later transfer to new words and speakers. **A** is unsupported because the groups became equal on the original sounds, and the study does not establish each group's amount of decline. **C** contradicts the non-animation group's successful performance on the original sounds. **D** generalizes far beyond the single contrast tested.
 
 </div>
 
@@ -134,14 +144,14 @@ The strongest evidence does more than mention the same topic. It connects to the
 
 <div class="theorem-box">
 
-**Example.** A researcher claims that a new library program increased teen attendance by making events more relevant to teenagers. Which finding would most directly support the claim?
+**Example.** A researcher hypothesizes that the waxy coating on the leaves of the coastal shrub *M. littoralis* helps the plant tolerate salt by limiting the entry of salt through leaf surfaces, rather than by reducing water loss. Which finding, if true, would most directly support the hypothesis?
 
-- **A.** The library building was renovated during the same year.
-- **B.** Teen attendance rose after teens began helping select event topics, while attendance by other age groups remained about the same.
-- **C.** Many libraries offer programs for several age groups.
-- **D.** Teenagers reported that they visit libraries for many different reasons.
+- **A.** Coated leaves and leaves whose coating was removed lost water at similar rates in salt-free air, but the leaves without the coating accumulated more salt when sprayed with saltwater.
+- **B.** Plants with thicker coatings tended to grow closer to the shoreline than plants with thinner coatings did.
+- **C.** Removing the coating caused leaves to lose more water and accumulate more salt when sprayed with saltwater.
+- **D.** The roots of *M. littoralis* accumulated less salt than the roots of a related inland species did.
 
-**B** is correct because it connects the change in programming to the specific group and outcome in the claim. The other choices discuss libraries or teenagers but do not establish that relationship.
+**A** is correct because it isolates the proposed mechanism: removing the coating changes salt accumulation without changing water loss. **B** is correlational and does not identify what the coating does. **C** supports both possible explanations, so it cannot distinguish the salt-entry hypothesis from the water-loss alternative. **D** concerns roots rather than salt entering through leaf surfaces.
 
 </div>
 
@@ -171,15 +181,21 @@ An increase from 20% to 30% is an increase of 10 percentage points, but a 50% re
 
 <div class="theorem-box">
 
-**Example.** A graph shows that 35% of surveyed students biked to school in 2024, compared with 28% in 2023. State the numerical change that directly supports the conclusion that biking became more common.
+**Example.** A table reports the average germination rates of untreated seeds and heat-treated seeds from two plant populations.
 
-The share increased by
+| Population | Untreated | Heat-treated |
+| --- | ---: | ---: |
+| Ridge | 42% | 63% |
+| Valley | 58% | 61% |
 
-$$
-35\%-28\%=7.
-$$
+A student claims that heat treatment increased germination in both populations but had a much larger effect on Ridge seeds. Which choice most effectively uses data from the table to support the claim?
 
-This is an increase of 7 percentage points. Calling it a 7% increase would confuse percentage points with relative percent change.
+- **A.** Germination was 63% for heat-treated Ridge seeds and 61% for heat-treated Valley seeds.
+- **B.** Heat treatment increased germination by 21 percentage points for Ridge seeds, compared with 3 percentage points for Valley seeds.
+- **C.** Untreated Valley seeds germinated at a rate 16 percentage points higher than untreated Ridge seeds.
+- **D.** Heat-treated Ridge seeds germinated at a rate approximately 3% higher than heat-treated Valley seeds.
+
+**B** is correct because it compares the within-population changes: $$63-42=21$$ percentage points for Ridge and $$61-58=3$$ percentage points for Valley. **A** and **D** compare the treated groups with each other, not the effect of treatment within each population. **C** compares untreated groups and does not show that treatment increased germination.
 
 </div>
 
