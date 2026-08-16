@@ -4,6 +4,20 @@ sidebar:
   order: 4
 ---
 
+## Recognizing the Question Type
+
+| What changes in the choices | Likely question type |
+| --- | --- |
+| Commas, semicolons, periods, colons, or dashes | Boundaries or punctuation |
+| Apostrophes or singular and plural forms | Possessives and plurals |
+| Verb forms | Subject-verb agreement or verb tense |
+| Pronouns | Pronoun agreement or clarity |
+| Placement of a descriptive phrase | Modifiers |
+
+:::tip
+Compare the choices before solving. The differences tell you which grammar rule is being tested, so you can focus on sentence structure instead of judging what merely sounds natural.
+:::
+
 ## Where to Start
 
 When the choices differ mainly in punctuation, identify clauses before thinking about commas or semicolons. When the choices differ in verbs or pronouns, find the word that controls the agreement or meaning.

@@ -9,6 +9,22 @@ sidebar:
 
 These strategies apply to both Reading and Writing and Math. Section-specific methods are covered in the individual topic notes.
 
+## Recognizing the Question Type
+
+Before solving, identify the question's domain and specific task. Use the wording, answer choices, and information provided as clues.
+
+| Clue | Likely approach |
+| --- | --- |
+| A passage asks what is stated, implied, or supported | Locate the relevant evidence and avoid unsupported assumptions |
+| A passage asks what a word, sentence, or second text does | Use context and describe the relationship or function |
+| Bullet-point notes or a transition blank appears | Follow the stated rhetorical goal or identify the logical connection |
+| Choices differ mainly in grammar or punctuation | Identify the exact convention being tested |
+| Variables, a graph, a table, or a geometric figure appears | Name the mathematical topic and the requested quantity before calculating |
+
+:::tip
+Classifying the question is the first step of solving it. Your label should be specific enough to suggest a method, such as “linear system,” “transition—contrast,” or “central idea,” rather than simply “Math” or “Reading and Writing.”
+:::
+
 ## Build Your Study Plan from Evidence
 
 Start by identifying the topics that cost you the most points. Do not judge a topic only by whether an answer was correct: guessed answers also reveal skills that need work.

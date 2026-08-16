@@ -8,6 +8,17 @@ sidebar:
 
 This domain focuses on revising writing to accomplish a specific goal and connect ideas logically. These questions are less about interpreting a difficult passage and more about following instructions precisely.
 
+## Recognizing the Question Type
+
+| Question type | What you are being asked to do |
+| --- | --- |
+| Rhetorical synthesis | Use a set of notes to accomplish a specific writing goal |
+| Transitions | Choose the word or phrase that expresses the logical relationship between ideas |
+
+:::tip
+Look at the question stem and format before reading every detail. Bullet-point notes followed by a stated goal signal rhetorical synthesis; a blank between ideas with transition words in the choices signals a transitions question.
+:::
+
 There are two main jobs:
 
 - **Rhetorical synthesis:** select information from notes that fulfills a stated goal.
