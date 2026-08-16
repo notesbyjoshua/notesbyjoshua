@@ -172,11 +172,11 @@ Do not select an answer merely because both passages mention the same topic. It 
 
 **Text 1**
 
-Trees cool city streets in two ways: their canopies block solar radiation, and water released from their leaves lowers nearby air temperatures. Because a mature canopy can address both sources of heat at once, expanding street-tree coverage should be the central feature of municipal plans to reduce summer temperatures.
+Urban climatologist Dr. Mireya Solano argues that street trees mitigate the urban heat-island effect through two complementary mechanisms: canopies intercept shortwave solar radiation, while evapotranspiration—the release of water vapor from leaves—reduces sensible heat in the surrounding air. Because mature trees provide both radiative shading and evapotranspirative cooling, Solano recommends that expanding canopy coverage be the central feature of municipal heat-adaptation plans.
 
 **Text 2**
 
-Street trees provide valuable shade, but their benefits are uneven. Young trees may require decades to form broad canopies, and underground utilities prevent planting along some streets. Cities should therefore pair tree planting with measures that work in places trees cannot, including reflective roofs and shade structures at transit stops.
+Environmental engineer Dr. Kellan Ward acknowledges the microclimatic benefits of street trees but notes that canopy-based cooling is spatially and temporally uneven. Saplings may require decades to provide substantial shade, and subsurface utilities constrain root zones along many high-exposure corridors. Ward therefore recommends a portfolio approach that combines tree planting with high-albedo roofs and engineered shade structures capable of providing near-term cooling where mature canopy cover is infeasible.
 
 Based on the texts, how would the author of Text 2 most likely respond to the recommendation in Text 1?
 
@@ -185,7 +185,7 @@ Based on the texts, how would the author of Text 2 most likely respond to the re
 - **C.** By arguing that reflective roofing works only when cities remove existing trees
 - **D.** By claiming that shaded transit stops are more effective than every other cooling measure
 
-**A** is correct because Text 2 accepts that trees cool streets but explains why tree planting cannot address every place or provide immediate relief everywhere. **B** turns a qualification into complete disagreement. **C** invents a condition, and **D** invents a ranking that Text 2 never gives.
+**A** is correct because Ward accepts Solano's claim that trees provide cooling but explains why tree planting cannot address every location or provide immediate relief. Terms such as *microclimatic*, *subsurface*, and *high-albedo* add detail without changing Ward's main response: trees help, but cities need other measures too. **B** turns a qualification into complete disagreement. **C** invents a condition, and **D** invents a ranking that Text 2 never gives.
 
 </div>
 
@@ -195,11 +195,11 @@ Based on the texts, how would the author of Text 2 most likely respond to the re
 
 **Text 1**
 
-The star Lumen-4 dims at nearly uniform intervals. Such periodicity is characteristic of starspots—relatively cool, dark regions on a star's surface—rotating into and out of view. An orbiting dust cloud, by contrast, would disperse over time and produce increasingly irregular dimming. Thus, starspots best explain Lumen-4's brightness variations.
+Astrophysicist Dr. Anika Vey reports that photometric observations of the star Lumen-4 exhibit a nearly periodic attenuation in luminosity. Vey attributes this modulation to starspots—comparatively cool, low-radiance regions on the stellar photosphere—rotating into and out of the observer's line of sight. Because a diffuse circumstellar dust cloud would shear apart and produce increasingly aperiodic occultations, Vey concludes that photospheric activity best explains the brightness variations.
 
 **Text 2**
 
-The periodic pattern attributed to Lumen-4 appears only after three anomalously timed dimming events are omitted from the analysis. A narrow ring containing several dense clumps of dust could produce both kinds of observations: regularly spaced dimming as the largest clumps orbit the star and additional dimming as smaller clumps shift relative to one another. The full data set therefore remains compatible with orbiting dust.
+Astronomer Dr. Lucien Rhee notes that Lumen-4's apparent periodicity emerges only after three temporally anomalous attenuation events are excluded from Vey's analysis. Rhee's simulations indicate that a narrow circumstellar ring with heterogeneous dust density could generate both patterns: quasi-periodic occultations as its largest clumps orbit the star and irregular events as smaller clumps shift relative to one another. Rhee therefore maintains that the complete photometric data set remains compatible with a dust-based explanation.
 
 Based on the texts, how would the author of Text 2 most likely respond to the starspot explanation in Text 1?
 
@@ -208,7 +208,7 @@ Based on the texts, how would the author of Text 2 most likely respond to the st
 - **C.** The evidence for starspots depends on omitting observations that a dust-based explanation may accommodate.
 - **D.** Neither starspots nor dust could produce changes in a star's observed brightness.
 
-**C** is correct because Text 2 challenges Text 1's omission of the irregular observations and proposes that a clumpy dust ring may explain the full data set. **A** imposes a condition Text 2 does not state. **B** expresses Text 1's conclusion rather than Text 2's response, and **D** contradicts both proposed explanations.
+**C** is correct because Rhee challenges Vey's omission of the irregular observations and proposes that a heterogeneous dust ring may explain the full data set. In simpler terms, Text 2 argues that the evidence looks regular only after inconvenient data are removed. **A** imposes a condition Rhee does not state. **B** expresses Vey's conclusion rather than Rhee's response, and **D** contradicts both proposed explanations.
 
 </div>
 
