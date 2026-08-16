@@ -89,6 +89,21 @@ Content is what a sentence says. Function is why the author included it.
 
 State the function in your own words before reading the choices. The best answer should describe both the material and its role in the author's reasoning.
 
+Some questions use poems with older vocabulary, unusual word order, or long sentences that continue across several lines.
+
+:::strategy
+1. Read to the sentence's punctuation, not to the end of each poetic line. A line break does not necessarily end an idea.
+2. Replace older pronouns and verbs with modern forms: *ye* means *you*, *thy* means *your*, *hath* means *has*, and *doth* means *does*.
+3. Put inverted phrasing into normal subject-verb-object order. For example, “well those passions read” becomes “understood those passions well.”
+4. Identify the literal scene before interpreting a symbol or theme. Ask who is speaking, what is physically present, and what changes.
+5. Use contrast words and images to track the turn. In a poem, a shift from grandeur to ruins or from confidence to doubt often reveals the text's purpose.
+6. Paraphrase each sentence in plain language, then choose the answer that describes the whole movement of the text rather than one dramatic line.
+:::
+
+:::tip
+You do not need to decode every unfamiliar word. Use nearby concrete details and contrasts. If one word remains unclear, replace it with a neutral placeholder and determine what the sentence as a whole is doing.
+:::
+
 <div class="theorem-box">
 
 **Example.** During practice, a volleyball player repeatedly slipped while moving away from the net because his shoes had lost their grip. <u>Although he had previously tolerated the problem, the approaching national championship made even a single preventable mistake seem too costly.</u> He therefore replaced the shoes before the match. Which choice best states the function of the underlined sentence in the overall structure of the text?
@@ -104,14 +119,31 @@ State the function in your own words before reading the choices. The best answer
 
 <div class="theorem-box">
 
-**Example.** For decades, literary scholars treated the unusual punctuation in poet Mara Venn's notebooks as incidental marks added during hurried composition. A newly cataloged draft, however, contains the same marks arranged in recurring patterns beside passages that Venn later revised substantially. The draft does not establish what each mark meant, but it has led some scholars to reconsider the marks as part of Venn's revision system. Which choice best describes the function of the second sentence in the overall structure of the text?
+**Example.** The following text is taken from Percy Bysshe Shelley’s 1818 poem *Ozymandias*.
 
-- **A.** It presents evidence that complicates an established interpretation described earlier.
-- **B.** It identifies the precise meanings of marks whose purpose scholars had disputed.
-- **C.** It provides an example of a draft that scholars agree Venn never revised.
-- **D.** It explains why Venn's published poems contain more punctuation than her notebooks do.
+I met a traveler from an antique land
+Who said: Two vast and trunkless legs of stone
+Stand in the desert. Near them, on the sand,
+Half sunk, a shattered visage lies, whose frown,
+And wrinkled lip, and sneer of cold command,
+Tell that its sculptor well those passions read
+Which yet survive, stamped on these lifeless things,
+The hand that mocked them and the heart that fed:
+And on the pedestal these words appear:
+“My name is Ozymandias, King of Kings:
+Look on my works, ye Mighty, and despair!”
+No thing beside remains. Round the decay
+Of that colossal wreck, boundless and bare
+The long and level sands stretch far away.
 
-**A** is correct because the recurring marks near heavily revised passages challenge the view that the marks were incidental. **B** overstates the evidence; the next sentence explicitly says the meanings remain unknown. **C** contradicts the description of later revisions, and **D** introduces a comparison the text never makes.
+Which choice best describes the overall structure of the text?
+
+- **A.** The speaker describes impressive accomplishments, then argues that nature cannot be controlled.
+- **B.** The speaker describes impressive accomplishments, then highlights the transient nature of power.
+- **C.** The speaker describes meeting someone who has witnessed incredible sights and has changed their life as a result of their experiences.
+- **D.** The speaker describes the incredible achievements of a king and celebrates the lasting nature of power.
+
+**B** is correct because the poem first presents evidence of Ozymandias's former power: a colossal statue, a commanding expression, and an inscription ordering other powerful people to despair at his achievements. It then reveals that the statue is shattered and surrounded only by empty sand. That contrast shows that Ozymandias's power and monuments did not last. **A** is too broad because the poem focuses specifically on the impermanence of human power, not a general claim that nature cannot be controlled. **C** mistakes the traveler's description for a story about the traveler being personally transformed. **D** ignores the ruined statue and empty landscape, which undermine rather than celebrate the king's claim to lasting greatness.
 
 </div>
 
@@ -136,27 +168,47 @@ Do not select an answer merely because both passages mention the same topic. It 
 
 <div class="theorem-box">
 
-**Example.** Passage 1 argues that planting trees is the most effective way for a city to reduce summer street temperatures. Passage 2 agrees that trees help but argues that reflective roofing and shaded transit stops are also necessary. How would the author of Passage 2 most likely respond to Passage 1?
+**Example.**
+
+**Text 1**
+
+Trees cool city streets in two ways: their canopies block solar radiation, and water released from their leaves lowers nearby air temperatures. Because a mature canopy can address both sources of heat at once, expanding street-tree coverage should be the central feature of municipal plans to reduce summer temperatures.
+
+**Text 2**
+
+Street trees provide valuable shade, but their benefits are uneven. Young trees may require decades to form broad canopies, and underground utilities prevent planting along some streets. Cities should therefore pair tree planting with measures that work in places trees cannot, including reflective roofs and shade structures at transit stops.
+
+Based on the texts, how would the author of Text 2 most likely respond to the recommendation in Text 1?
 
 - **A.** By agreeing that trees can reduce temperatures but disputing that they should be a city's only response
 - **B.** By rejecting the claim that trees have any effect on street temperatures
 - **C.** By arguing that reflective roofing works only when cities remove existing trees
 - **D.** By claiming that shaded transit stops are more effective than every other cooling measure
 
-**A** is correct because Passage 2 accepts the benefit of trees while arguing that additional measures are needed. **B** turns a qualification into complete disagreement. **C** invents a condition, and **D** invents a ranking that Passage 2 never gives.
+**A** is correct because Text 2 accepts that trees cool streets but explains why tree planting cannot address every place or provide immediate relief everywhere. **B** turns a qualification into complete disagreement. **C** invents a condition, and **D** invents a ranking that Text 2 never gives.
 
 </div>
 
 <div class="theorem-box">
 
-**Example.** Passage 1 argues that variations in the brightness of the star Lumen-4 are best explained by dark starspots rotating into and out of view; according to the passage, the variations repeat too regularly to be caused by orbiting dust. Passage 2 notes that the apparent regularity emerges only after several irregular observations are excluded and argues that a clumpy dust ring could account for both the excluded observations and the remaining pattern. Based on the passages, how would the author of Passage 2 most likely respond to the explanation in Passage 1?
+**Example.**
+
+**Text 1**
+
+The star Lumen-4 dims at nearly uniform intervals. Such periodicity is characteristic of starspots—relatively cool, dark regions on a star's surface—rotating into and out of view. An orbiting dust cloud, by contrast, would disperse over time and produce increasingly irregular dimming. Thus, starspots best explain Lumen-4's brightness variations.
+
+**Text 2**
+
+The periodic pattern attributed to Lumen-4 appears only after three anomalously timed dimming events are omitted from the analysis. A narrow ring containing several dense clumps of dust could produce both kinds of observations: regularly spaced dimming as the largest clumps orbit the star and additional dimming as smaller clumps shift relative to one another. The full data set therefore remains compatible with orbiting dust.
+
+Based on the texts, how would the author of Text 2 most likely respond to the starspot explanation in Text 1?
 
 - **A.** The starspot explanation is plausible only if Lumen-4 has no dust anywhere near it.
 - **B.** The regular pattern decisively rules out dust even when all observations are considered.
 - **C.** The evidence for starspots depends on omitting observations that a dust-based explanation may accommodate.
 - **D.** Neither starspots nor dust could produce changes in a star's observed brightness.
 
-**C** is correct because Passage 2 challenges Passage 1's treatment of the irregular observations and proposes that dust may explain the full data set. **A** imposes a condition Passage 2 does not state. **B** expresses Passage 1's conclusion rather than Passage 2's response, and **D** contradicts both proposed explanations.
+**C** is correct because Text 2 challenges Text 1's omission of the irregular observations and proposes that a clumpy dust ring may explain the full data set. **A** imposes a condition Text 2 does not state. **B** expresses Text 1's conclusion rather than Text 2's response, and **D** contradicts both proposed explanations.
 
 </div>
 
