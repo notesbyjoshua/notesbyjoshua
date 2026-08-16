@@ -121,19 +121,19 @@ You do not need to decode every unfamiliar word. Use nearby concrete details and
 
 **Example.** The following text is taken from Percy Bysshe Shelley’s 1818 poem *Ozymandias*.
 
-I met a traveler from an antique land
-Who said: Two vast and trunkless legs of stone
-Stand in the desert. Near them, on the sand,
-Half sunk, a shattered visage lies, whose frown,
-And wrinkled lip, and sneer of cold command,
-Tell that its sculptor well those passions read
-Which yet survive, stamped on these lifeless things,
-The hand that mocked them and the heart that fed:
-And on the pedestal these words appear:
-“My name is Ozymandias, King of Kings:
-Look on my works, ye Mighty, and despair!”
-No thing beside remains. Round the decay
-Of that colossal wreck, boundless and bare
+I met a traveler from an antique land<br />
+Who said: Two vast and trunkless legs of stone<br />
+Stand in the desert. Near them, on the sand,<br />
+Half sunk, a shattered visage lies, whose frown,<br />
+And wrinkled lip, and sneer of cold command,<br />
+Tell that its sculptor well those passions read<br />
+Which yet survive, stamped on these lifeless things,<br />
+The hand that mocked them and the heart that fed:<br />
+And on the pedestal these words appear:<br />
+“My name is Ozymandias, King of Kings:<br />
+Look on my works, ye Mighty, and despair!”<br />
+No thing beside remains. Round the decay<br />
+Of that colossal wreck, boundless and bare<br />
 The long and level sands stretch far away.
 
 Which choice best describes the overall structure of the text?
