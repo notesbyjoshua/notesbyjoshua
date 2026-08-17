@@ -11,7 +11,9 @@ This repo is a Jekyll notes website. The agent's job is to help track note progr
 
 ## Git Workflow
 
-- After making requested changes, commit them and push the current branch unless the user explicitly says not to.
+- After making requested changes, commit them unless the user explicitly says not to.
+- Push backend/frontend changes and newly created notes unless the user explicitly says not to.
+- When editing existing note content, commit the changes locally but do not push unless the user explicitly asks you to push.
 - Keep commits focused on the requested work. Do not include unrelated generated churn or user changes.
 
 ## Notes Style
