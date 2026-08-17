@@ -162,22 +162,6 @@ Essentially, drag acts like a friction force for falling objects. At some point,
 
 **Example.** A $$5.0\ \text{kg}$$ box rests on a horizontal table. A spring pulls it to the right with force $$12\ \text{N}$$, a rope pulls it to the left with tension $$7.0\ \text{N}$$, and kinetic friction has coefficient $$\mu_k=0.20$$. Find the box's acceleration if it is sliding right.
 
-```tikz
-\usepackage{tikz}
-\usetikzlibrary{arrows.meta,decorations.pathmorphing}
-\begin{tikzpicture}[>=Stealth, font=\small]
-\draw[thick] (-3,-0.35) -- (3,-0.35);
-\draw[fill=gray!18] (-0.65,-0.35) rectangle (0.65,0.45);
-\node at (0,0.05) {$5.0\ \text{kg}$};
-\draw[decorate, decoration={coil,aspect=0.45,segment length=5pt,amplitude=4pt}, thick] (0.65,0.08) -- (2.3,0.08);
-\draw[thick] (2.3,-0.25) -- (2.3,0.55);
-\draw[->, red, very thick] (0.65,0.32) -- (1.85,0.32) node[above] {$12\ \text{N}$};
-\draw[->, blue, very thick] (-0.65,0.32) -- (-1.9,0.32) node[above] {$7.0\ \text{N}$};
-\draw[->, orange!90!black, very thick] (0,-0.18) -- (-1.0,-0.18) node[below] {$f_k$};
-\draw[->, gray, thick] (-0.25,-0.62) -- (0.9,-0.62) node[right] {$v$};
-\end{tikzpicture}
-```
-
 The weight is $$mg=(5.0)(9.8)=49\ \text{N}$$ downward. Since there is no vertical acceleration, the normal force is $$F_N=49\ \text{N}$$ upward. The box slides right, so kinetic friction points left:
 
 $$

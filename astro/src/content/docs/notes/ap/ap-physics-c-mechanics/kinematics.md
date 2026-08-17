@@ -115,20 +115,6 @@ A maximum or minimum of $$x(t)$$ occurs where $$v = 0$$ (the slope is momentaril
 
 **Example.** A cart moves along a line. Its velocity is $$+4\ \text{m/s}$$ and constant for the first $$3\ \text{s}$$, then ramps linearly down to $$-2\ \text{m/s}$$ over the next $$2\ \text{s}$$. Find the acceleration during each phase, the total displacement, and the distance traveled.
 
-```tikz
-\usepackage{pgfplots}
-\pgfplotsset{compat=1.16}
-\begin{tikzpicture}
-\begin{axis}[axis lines=middle,width=8cm,height=5cm,xmin=0,xmax=5.5,ymin=-3,ymax=5,xlabel={$t\ (\text{s})$},ylabel={$v\ (\text{m/s})$},xtick={0,3,5},ytick={-2,0,4},grid=both,grid style={gray!15}]
-\addplot[blue,very thick] coordinates {(0,4) (3,4) (5,-2)};
-\addplot[fill=blue!15,draw=none] coordinates {(0,0) (0,4) (3,4) (4.333,0)} -- cycle;
-\addplot[fill=red!15,draw=none] coordinates {(4.333,0) (5,-2) (5,0)} -- cycle;
-\node[blue] at (axis cs:1.6,2.0) {positive area};
-\node[red!70!black] at (axis cs:4.45,-1.55) {negative area};
-\end{axis}
-\end{tikzpicture}
-```
-
 During the first phase the $$v$$-$$t$$ graph is flat, so $$a_1 = 0$$. During the second phase,
 
 $$

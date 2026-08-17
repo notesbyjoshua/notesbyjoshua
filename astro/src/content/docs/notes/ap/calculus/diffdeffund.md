@@ -48,7 +48,7 @@ There are many interpretations of the derivative:
 \addplot[orange!85!black, thick, domain=0.75:2.45] {1.5*x-0.725};
 \addplot[only marks, mark=*, mark size=1.8pt, blue] coordinates {(1.5,1.525)};
 \addplot[only marks, mark=*, mark size=1.5pt, gray!70] coordinates {(3,4.9)};
-\node[gray!70!black, anchor=west] at (axis cs:2.55,4.45) {secant};
+\node[gray!70!black, anchor=west] at (axis cs:1.95,4.35) {secant};
 \node[blue, anchor=east] at (axis cs:1.45,1.55) {$x=a$};
 \node[orange!85!black, anchor=west] at (axis cs:2.15,2.35) {tangent};
 \end{axis}
