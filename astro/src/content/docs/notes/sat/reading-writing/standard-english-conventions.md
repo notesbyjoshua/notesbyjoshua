@@ -13,6 +13,7 @@ sidebar:
 | Verb forms | Subject-verb agreement or verb tense |
 | Pronouns | Pronoun agreement or clarity |
 | Placement of a descriptive phrase | Modifiers |
+| Wording length or repeated ideas | Concision and redundancy |
 
 :::tip
 Compare the choices before solving. The differences tell you which grammar rule is being tested, so you can focus on sentence structure instead of judging what merely sounds natural.
@@ -32,6 +33,13 @@ When the choices differ mainly in punctuation, identify clauses before thinking 
 
 :::tip
 Start with sentence boundaries. Learn to identify a complete sentence, then master periods, semicolons, commas with coordinating conjunctions, and colons. This one skill resolves many punctuation questions and makes later rules easier to understand.
+:::
+
+:::checklist
+- Read the full sentence and at least one sentence on either side when the grammar depends on context.
+- Mark words such as *not*, *least*, and *except* so that you do not solve the opposite task.
+- Compare the choices and name the tested rule before selecting an answer.
+- Treat a short or familiar-sounding option as a possibility, not proof; verify it against sentence structure and meaning.
 :::
 
 ## Boundaries
@@ -175,6 +183,14 @@ Do not place a comma between a subject and its verb or between a verb and its ob
 
 > The researchers examined the results.
 
+A comma also should not be inserted merely because a preposition or the word *that* appears nearby:
+
+> The samples from the coastal site were analyzed.
+
+> The researchers concluded that the change was significant.
+
+The rule is structural: add a comma only when a complete punctuation rule requires one. A comma before a pronoun such as *it*, *he*, *she*, or *they* often creates a comma splice when that pronoun begins a new independent clause.
+
 ### Fast Punctuation Decision Tree
 
 :::strategy
@@ -200,6 +216,12 @@ Use apostrophes for possession, not ordinary plurals:
 :::tip
 For *it's*, substitute *it is* or *it has*. If neither works, use *its*. For other nouns, first decide whether the sentence means more than one noun or something belonging to the noun.
 :::
+
+When two nouns appear together, determine their relationship before placing an apostrophe. If the first noun owns or describes the second, the possessive marker usually belongs on the first noun:
+
+> the researchers' findings
+
+Do not add an apostrophe to a noun merely because it is plural.
 
 ### Subject-Verb Agreement
 
@@ -259,6 +281,10 @@ In a sentence beginning with *there is* or *there are*, the subject follows the 
 Temporarily cross out prepositional phrases beginning with words such as *of*, *in*, *with*, or *among*. Then match the verb to the remaining subject.
 :::
 
+:::tip
+In the simple present, a singular third-person verb often ends in *-s* while a plural verb does not: “the scientist studies,” but “the scientists study.” This is the opposite of the usual noun pattern, so identify the subject before using the ending as a clue.
+:::
+
 ### Verb Tense and Form
 
 Use simple present for general facts and ideas discussed in a text, and simple past for completed past actions. A specific completed time usually requires simple past.
@@ -274,6 +300,12 @@ Use past perfect for the earlier of two past actions when the sequence needs cla
 Maintain the passage's timeframe unless there is a reason to change it. Literature is commonly discussed in the present tense.
 
 After a modal such as *can*, *may*, *must*, *should*, *will*, or *would*, use the base form of the verb. After *to*, generally use the base form; after a preposition, use a noun or gerund.
+
+When a modal refers to a past possibility or obligation, use *have*, never *of*:
+
+> The researchers might have overlooked the pattern.
+
+> The samples should have been refrigerated.
 
 Make sure every sentence has a finite verb:
 
@@ -314,6 +346,16 @@ For *who* and *whom*, substitute *he* and *him*: *he* corresponds to *who*, whil
 Identify the antecedent—the noun the pronoun replaces. Then check number, person, and clarity. If two different nouns could be the antecedent, the pronoun may be ambiguous.
 :::
 
+Keep pronoun point of view consistent. Do not shift without reason from *one* to *you* or from *we* to *people*. Singular *they* can be correct when its antecedent is clear; the important test is whether the reference remains consistent and unambiguous.
+
+Use relative pronouns according to what they refer to:
+
+- *who* or *whom* for people,
+- *which* for things,
+- *where* for places.
+
+Use *who* when the pronoun performs the action and *whom* when it receives the action or follows a preposition. The substitution test is useful: *he* corresponds to *who*, and *him* corresponds to *whom*.
+
 ### Modifiers
 
 Place a modifying phrase next to what it describes:
@@ -338,6 +380,34 @@ The noun immediately after an introductory modifying phrase should logically per
 :::tip
 Draw an arrow from the opening phrase to the noun immediately after the comma. If that noun cannot logically perform the action in the phrase, the modifier is misplaced.
 :::
+
+### Concision and Redundancy
+
+When several choices are grammatically correct and preserve the same meaning, prefer the clearest choice without repeated information.
+
+Watch for:
+
+- synonyms that repeat the same idea, such as *brief and short in duration*,
+- a general statement repeated by a more specific phrase,
+- unnecessary phrases such as *the reason is because* or *at this point in time*,
+- passive or indirect wording that hides a simpler relationship.
+
+Do not automatically choose the shortest answer. A shorter choice can omit necessary information or create an unclear reference. First verify grammar and meaning; use concision only when the remaining choices say the same thing.
+
+The word *being* is not automatically wrong. It is a warning sign only when it creates an unnecessary or incomplete construction. Keep it when the sentence genuinely needs a form of *be* as a gerund or participle.
+
+<div class="theorem-box">
+
+**Example.** Marine ecologist Dara Mensah found that juvenile fish were most abundant in seagrass beds with dense vegetation. Which choice most concisely expresses Mensah's explanation that dense vegetation provides shelter that protects juvenile fish from predators?
+
+- **A.** Mensah attributed this pattern to dense vegetation providing protective shelter from predators.
+- **B.** Mensah attributed this pattern to the fact that dense vegetation provides shelter that is protective protection from predators.
+- **C.** Mensah attributed this pattern to dense vegetation, which provides shelter, and the shelter protects juvenile fish from predators in a protective way.
+- **D.** Mensah attributed this pattern to the reason being because dense vegetation provides shelter from predators.
+
+**A** is correct because it preserves the causal relationship without repeating *protect* or adding an unnecessary phrase. **B** redundantly combines *protective* and *protection*. **C** repeats the shelter idea and uses the vague phrase *in a protective way*. **D** uses the redundant construction *the reason being because*.
+
+</div>
 
 ### Parallelism and Comparisons
 
@@ -398,5 +468,10 @@ Without *that of*, the sentence incorrectly compares a population with a state.
 | it's | *it is* or *it has* |
 | whose | possessive |
 | who's | *who is* or *who has* |
+
+## Further Review
+
+- [Complete SAT Grammar Rules](https://thecriticalreader.com/complete-sat-grammar-rules/) provides extended explanations of sentence boundaries, punctuation, agreement, modifiers, parallelism, comparisons, and concision.
+- [SAT/ACT Grammar Cheat Sheet](https://thecriticalreader.com/wp-content/uploads/2016/03/SAT_ACT-grammar-cheat-sheet.pdf) summarizes many of the same rules. Some shortcuts and question formats on the sheet were written for the older paper SAT or the ACT, so verify each heuristic against the sentence rather than treating it as an absolute rule.
 
 ## Practice
