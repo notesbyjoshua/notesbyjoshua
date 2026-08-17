@@ -19,29 +19,6 @@ sidebar:
 Compare the choices before solving. The differences tell you which grammar rule is being tested, so you can focus on sentence structure instead of judging what merely sounds natural.
 :::
 
-## Where to Start
-
-When the choices differ mainly in punctuation, identify clauses before thinking about commas or semicolons. When the choices differ in verbs or pronouns, find the word that controls the agreement or meaning.
-
-:::strategy
-1. Read the entire sentence, including the words after the blank.
-2. Identify what changes between the choices: punctuation, verb, pronoun, modifier, or another feature.
-3. Ignore interrupting phrases and find the sentence's basic structure.
-4. Apply a specific rule.
-5. Reread the completed sentence to check its meaning.
-:::
-
-:::tip
-Start with sentence boundaries. Learn to identify a complete sentence, then master periods, semicolons, commas with coordinating conjunctions, and colons. This one skill resolves many punctuation questions and makes later rules easier to understand.
-:::
-
-:::checklist
-- Read the full sentence and at least one sentence on either side when the grammar depends on context.
-- Mark words such as *not*, *least*, and *except* so that you do not solve the opposite task.
-- Compare the choices and name the tested rule before selecting an answer.
-- Treat a short or familiar-sounding option as a possibility, not proof; verify it against sentence structure and meaning.
-:::
-
 ## Boundaries
 
 ### Complete Sentences and Clauses
@@ -56,7 +33,7 @@ A dependent clause cannot stand alone:
 
 Words such as *although*, *because*, *while*, *when*, *if*, *since*, *unless*, and *whereas* (AWUBIS words) often create dependent clauses.
 
-The easiest test is to read the clause by itself. If it leaves you waiting for the rest—“Although the researchers analyzed the samples…what happened?”—it is dependent.
+The easiest test is to read the clause by itself. If it leaves you waiting for the rest(e.g. “Although the researchers analyzed the samples" … what happened after?) it is a dependent clause.
 
 <div class="theorem-box">
 
@@ -134,6 +111,43 @@ Everything before the colon must be able to stand alone. “The variables includ
 
 </div>
 
+### Lists
+
+Use commas to separate three or more simple items in a series:
+
+> The researchers measured temperature, pressure, and humidity.
+
+The commas show where one measured variable ends and the next begins. These notes use the serial comma before *and* for clarity.
+
+If one or more list items already contain commas, use semicolons between the main items:
+
+> The conference included speakers from Lima, Peru; Accra, Ghana; and Kyoto, Japan.
+
+The semicolons separate the three city-country pairs, while the commas stay inside each pair.
+
+Keep every item grammatically parallel. A list of nouns should remain a list of nouns, and a list of verb phrases should remain a list of verb phrases.
+
+Use a colon to introduce a list only when the words before the colon form a complete sentence:
+
+> The survey measured three atmospheric conditions: temperature, pressure, and humidity.
+
+Do not place a colon directly after a verb or preposition that already introduces the list:
+
+> The survey measured temperature, pressure, and humidity.
+
+<div class="theorem-box">
+
+**Example.** The archive contains correspondence from Valparaíso, Chile _____ Kingston, Jamaica _____ and Bristol, England. Which choice completes the text so that it conforms to the conventions of Standard English?
+
+- **A.** , / ,
+- **B.**; / ;
+- **C.**: / ,
+- **D.**; / ,
+
+**B** is correct because each list item already contains an internal comma separating a city from its country, so semicolons must separate the three main items. **A** makes the levels of the list difficult to distinguish. **C** incorrectly places a colon after an incomplete introduction, and **D** separates equivalent list items with inconsistent punctuation.
+
+</div>
+
 ### Transitions Between Sentences
 
 A transition such as *however* does not join two sentences with commas. Use:
@@ -144,7 +158,9 @@ or:
 
 > The substance is inexpensive. However, it is difficult to manufacture.
 
-### Introductory and Nonessential Information
+### Introductory and Non-essential Information
+
+An introductory dependent clause begins a sentence with a subject and verb but cannot stand alone because it starts with a subordinating word such as *although*, *because*, *when*, *if*, or *while*. It sets up a condition, cause, contrast, time, or other relationship that the following independent clause completes.
 
 Place a comma after an introductory dependent clause or phrase:
 
@@ -152,13 +168,30 @@ Place a comma after an introductory dependent clause or phrase:
 
 > After analyzing the samples, the researchers published their findings.
 
-Nonessential information can be removed without changing the sentence's basic meaning. Surround it with two commas or two dashes:
+In the first sentence, “Although the results were unexpected” has a subject and verb, but *although* leaves the thought unfinished. The comma marks the end of that introductory dependent clause. In the second sentence, “After analyzing the samples” is an introductory phrase rather than a clause because it has no finite verb; it still receives a comma.
+
+Nonessential information can be removed without changing the sentence's core identity or grammatical structure. The most common type is information surrounded with two commas or two em dashes:
 
 > Dr. Lee, a marine biologist, conducted the study.
+
+> Dr. Lee—a marine biologist—conducted the study.
+
+Both versions identify Dr. Lee before adding the removable description *a marine biologist*. Commas create a neutral interruption; em dashes create a stronger break. Do not use spaced hyphens in place of em dashes.
 
 Essential information identifies which person or thing the sentence means and does not receive surrounding commas:
 
 > Researchers who study marine ecosystems attended the conference.
+
+The clause *who study marine ecosystems* identifies which researchers attended, so it is essential and receives no commas.
+
+Nonessential information can take several forms:
+
+- **Appositive:** “Dr. Lee, **a marine biologist**, conducted the study.”
+- **Relative clause:** “The blue whale, **which is the largest living animal**, is a mammal.”
+- **Participial phrase:** “The samples, **collected during winter**, contained little pollen.”
+- **Prepositional phrase:** “The oldest sample, **from the northern site**, contained charcoal.”
+
+Prepositional phrases beginning with words such as *of*, *from*, *with*, or *in* are not automatically nonessential. Ask whether the phrase identifies the noun. In “the collection **of letters** is valuable,” the *of* phrase tells what kind of collection is meant and should not be separated by commas. In “the collection, **with several letters missing**, is still valuable,” the *with* phrase adds removable information and takes paired commas.
 
 :::warning
 Punctuation around nonessential information comes in pairs. If you open the phrase with a comma or dash, close it with matching punctuation.
@@ -191,7 +224,7 @@ A comma also should not be inserted merely because a preposition or the word *th
 
 The rule is structural: add a comma only when a complete punctuation rule requires one. A comma before a pronoun such as *it*, *he*, *she*, or *they* often creates a comma splice when that pronoun begins a new independent clause.
 
-### Fast Punctuation Decision Tree
+### Strategies to solve punctuation problems
 
 :::strategy
 1. Check whether the material on each side is a complete sentence.
@@ -205,7 +238,7 @@ The rule is structural: add a comma only when a complete punctuation rule requir
 
 ### Apostrophes
 
-Use apostrophes for possession, not ordinary plurals:
+Apostrophes indicate possession, not ordinary plurals:
 
 - singular possession: *the scientist's theory*,
 - plural possession: *the scientists' theories*,
@@ -221,15 +254,32 @@ When two nouns appear together, determine their relationship before placing an a
 
 > the researchers' findings
 
+Here, *researchers* is plural, and the findings belong to those researchers, so the apostrophe follows the plural *-s*.
+
 Do not add an apostrophe to a noun merely because it is plural.
+
+<div class="theorem-box">
+
+**Example.** The two laboratories compared their _____ analyses of the newly recovered _____ pigments. Which choice completes the text so that it conforms to the conventions of Standard English?
+
+- **A.** conservator's / mural's
+- **B.** conservators / murals
+- **C.** conservators' / mural's
+- **D.** conservators' / murals'
+
+**C** is correct. Each laboratory has multiple conservators whose analyses are being compared, so the plural possessive *conservators'* is required. The pigments belong to one newly recovered mural, so the singular possessive *mural's* is required. **A** incorrectly makes *conservator* singular, **B** omits both possessive apostrophes, and **D** incorrectly makes *murals* plural.
+
+</div>
 
 ### Subject-Verb Agreement
 
-Find the true subject and ignore intervening phrases:
+Subject-verb agreement is a very important part of SAT grammar and is often seen as the hardest part. The key point is to find the true subject and ignore intervening phrases:
 
 > The collection of paintings is valuable.
 
 > The paintings in the collection are valuable.
+
+In the first sentence, the subject is the singular noun *collection*, so the verb is *is*; the plural noun *paintings* is inside an *of* phrase. In the second, *paintings* is the plural subject, so the verb is *are*; *in the collection* merely describes the paintings.
 
 Subjects such as *each*, *every*, *either*, *neither*, *anyone*, *everyone*, *someone*, *nobody*, and *one* usually take singular verbs.
 
@@ -239,17 +289,25 @@ Subjects joined by *and* are generally plural. With *or* and *nor*, the verb agr
 
 > Neither the teacher nor the students are attending.
 
-Also distinguish:
+In the first sentence, the closer subject *teacher* is singular, so *is* agrees with it. In the second, the closer subject *students* is plural, so *are* agrees with it.
+
+Another potentially confusing distinction is *a number of* versus *the number of*. *A number of* means *several* and takes a plural verb. *The number of* refers to one numerical total and takes a singular verb.
 
 > A number of researchers are participating.
 
 > The number of researchers is increasing.
+
+The first sentence means “Several researchers are participating,” so *are* is correct. The second discusses one total—the number—so *is* is correct.
 
 In a sentence beginning with *there is* or *there are*, the subject follows the verb:
 
 > There is one reason.
 
 > There are several reasons.
+
+The true subjects follow the verbs: singular *one reason* requires *is*, while plural *several reasons* requires *are*.
+
+When determining subject-verb agreement, temporarily remove nonessential information. SAT questions may place a plural noun near a singular subject, or a singular noun near a plural subject, to distract from the word that actually controls the verb. Nonessential information never determines subject-verb agreement.
 
 <div class="theorem-box">
 
@@ -287,17 +345,29 @@ In the simple present, a singular third-person verb often ends in *-s* while a p
 
 ### Verb Tense and Form
 
-Use simple present for general facts and ideas discussed in a text, and simple past for completed past actions. A specific completed time usually requires simple past.
+A finite verb changes for tense or agreement and can serve as the main verb of a clause: *researchers analyze*, *a researcher analyzes*, or *researchers analyzed*. Every independent clause needs at least one finite verb.
 
-Use present perfect—*has* or *have* plus a past participle—for an action that began in the past and continues or remains relevant now, usually without a specific finished time:
+An infinitive usually consists of *to* plus the base form of a verb, as in *to analyze*. Infinitives can act as nouns, adjectives, or adverbs, but they do not by themselves provide the finite verb a sentence needs:
+
+> The researchers hope to analyze the samples.
+
+Here, *hope* is the finite verb because it agrees with *researchers* and establishes present tense. *To analyze* is an infinitive explaining what they hope to do.
+
+When choosing between forms, first ask whether the blank must supply the clause's main verb. If the clause has no other finite verb, choose a tense-bearing form. If the blank follows a verb such as *hope*, *plan*, *aim*, or *seek*, an infinitive may complete that verb's meaning.
+
+Generally, when solving for verb tense, prefer the simplest form that accurately expresses the timeline. Use simple present for general facts and ideas discussed in a text, and simple past for completed past actions. The present perfect (*has* or *have* plus a past participle) is used for an action that began in the past and continues or remains relevant now, usually without a specific finished time:
 
 > Researchers have studied the species for decades.
+
+The present perfect *have studied* is correct because the research began in the past and continues into the present; *for decades* names a duration rather than a finished past time.
 
 Use past perfect for the earlier of two past actions when the sequence needs clarification:
 
 > By the time the article appeared, the researchers had completed the study.
 
-Maintain the passage's timeframe unless there is a reason to change it. Literature is commonly discussed in the present tense.
+The past perfect *had completed* marks completion as earlier than the later past event *appeared*.
+
+Always remember to stay consistent with verb tense, especially when comparing present vs. past.
 
 After a modal such as *can*, *may*, *must*, *should*, *will*, or *would*, use the base form of the verb. After *to*, generally use the base form; after a preposition, use a noun or gerund.
 
@@ -307,11 +377,13 @@ When a modal refers to a past possibility or obligation, use *have*, never *of*:
 
 > The samples should have been refrigerated.
 
+In both sentences, a modal (*might* or *should*) is followed by *have* to refer to the past. *Might of* and *should of* are never standard constructions.
+
 Make sure every sentence has a finite verb:
 
 > The scientist conducting the experiment discovered an error.
 
-“The scientist conducting the experiment” alone is a fragment.
+The finite verb *discovered* completes the sentence. *Conducting* is a participle that modifies *scientist*; “The scientist conducting the experiment” alone is a fragment because it contains no finite verb.
 
 <div class="theorem-box">
 
@@ -328,11 +400,22 @@ Make sure every sentence has a finite verb:
 
 ### Pronouns
 
-A pronoun must agree with its antecedent and refer clearly to one person or thing:
+A pronoun must agree with its antecedent and refer clearly to one person or thing. Always remember that *he*, *she*, and *it* usually refer to singular nouns while *they*, *us*, and *we* normally refer to plural nouns:
 
 > The organization revised its policy.
 
 > The organizations revised their policies.
+
+In the first sentence, singular *organization* matches singular *its*. In the second, plural *organizations* matches plural *their*.
+
+There are important exceptions and special cases:
+
+- Singular *they* can refer to one person whose gender is unknown, irrelevant, or described with *they*: “Each participant submitted their response.”
+- *You* can refer to one person or multiple people.
+- Collective nouns such as *team*, *committee*, and *family* are usually singular in American English when the group acts as one unit: “The committee issued its report.”
+- Indefinite pronouns such as *everyone*, *someone*, *either*, and *neither* are grammatically singular: “Everyone has a ticket.”
+
+The SAT tests clarity and agreement, not a blanket ban on singular *they*. Make sure the reader can identify the antecedent without confusion.
 
 Use subject pronouns for subjects and object pronouns for objects. Remove the other person to test the form:
 
@@ -340,13 +423,13 @@ Use subject pronouns for subjects and object pronouns for objects. Remove the ot
 
 > The teacher praised me.
 
+The pronoun is an object of *praised*, so the object form *me* is correct. Removing *Maya and* makes the case easier to hear: “The teacher praised me,” not “The teacher praised I.” Use the same test for subjects: “Maya and I presented” becomes “I presented,” not “Me presented.”
+
 For *who* and *whom*, substitute *he* and *him*: *he* corresponds to *who*, while *him* corresponds to *whom*.
 
 :::tip
 Identify the antecedent—the noun the pronoun replaces. Then check number, person, and clarity. If two different nouns could be the antecedent, the pronoun may be ambiguous.
 :::
-
-Keep pronoun point of view consistent. Do not shift without reason from *one* to *you* or from *we* to *people*. Singular *they* can be correct when its antecedent is clear; the important test is whether the reference remains consistent and unambiguous.
 
 Use relative pronouns according to what they refer to:
 
@@ -356,13 +439,32 @@ Use relative pronouns according to what they refer to:
 
 Use *who* when the pronoun performs the action and *whom* when it receives the action or follows a preposition. The substitution test is useful: *he* corresponds to *who*, and *him* corresponds to *whom*.
 
+<div class="theorem-box">
+
+**Example.** The fellowship committee interviewed four engineers, each of _____ had designed water systems for remote communities. Which choice completes the text so that it conforms to the conventions of Standard English?
+
+- **A.** who
+- **B.** whom
+- **C.** they
+- **D.** them
+
+**B** is correct because the pronoun follows the preposition *of* and functions as its object. The substitution test gives “of him,” not “of he,” so *whom* is required. **A** uses the subject form, while **C** and **D** cannot introduce the relative clause *each of _____ had designed*.
+
+</div>
+
 ### Modifiers
 
-Place a modifying phrase next to what it describes:
+A modifier is a word, phrase, or clause that describes another part of a sentence. Modifiers should appear close to what they describe so that their meaning is clear.
+
+A **dangling modifier** has no logical word to modify in the sentence. For example, “Walking through the laboratory, an unusual sample caught the researcher's attention” makes *an unusual sample* appear to be walking.
+
+A **misplaced modifier** has a possible target but sits next to the wrong one. “The researcher nearly analyzed every sample” means the researcher almost performed the analysis but did not; “The researcher analyzed nearly every sample” means most, but not all, samples were analyzed.
+
+To avoid dangling modifiers, always remember to immediately answer the "question" posed by the modifier:
 
 > Walking through the laboratory, the researcher noticed an unusual sample.
 
-The noun immediately after an introductory modifying phrase should logically perform the action. “Walking through the laboratory, an unusual sample caught the researcher's attention” incorrectly suggests that the sample was walking.
+The introductory phrase asks, “Who was walking?” The noun immediately after the comma—*the researcher*—answers that question and logically performs the action.
 
 <div class="theorem-box">
 
@@ -381,39 +483,22 @@ The noun immediately after an introductory modifying phrase should logically per
 Draw an arrow from the opening phrase to the noun immediately after the comma. If that noun cannot logically perform the action in the phrase, the modifier is misplaced.
 :::
 
-### Concision and Redundancy
-
-When several choices are grammatically correct and preserve the same meaning, prefer the clearest choice without repeated information.
-
-Watch for:
-
-- synonyms that repeat the same idea, such as *brief and short in duration*,
-- a general statement repeated by a more specific phrase,
-- unnecessary phrases such as *the reason is because* or *at this point in time*,
-- passive or indirect wording that hides a simpler relationship.
-
-Do not automatically choose the shortest answer. A shorter choice can omit necessary information or create an unclear reference. First verify grammar and meaning; use concision only when the remaining choices say the same thing.
-
-The word *being* is not automatically wrong. It is a warning sign only when it creates an unnecessary or incomplete construction. Keep it when the sentence genuinely needs a form of *be* as a gerund or participle.
-
-<div class="theorem-box">
-
-**Example.** Marine ecologist Dara Mensah found that juvenile fish were most abundant in seagrass beds with dense vegetation. Which choice most concisely expresses Mensah's explanation that dense vegetation provides shelter that protects juvenile fish from predators?
-
-- **A.** Mensah attributed this pattern to dense vegetation providing protective shelter from predators.
-- **B.** Mensah attributed this pattern to the fact that dense vegetation provides shelter that is protective protection from predators.
-- **C.** Mensah attributed this pattern to dense vegetation, which provides shelter, and the shelter protects juvenile fish from predators in a protective way.
-- **D.** Mensah attributed this pattern to the reason being because dense vegetation provides shelter from predators.
-
-**A** is correct because it preserves the causal relationship without repeating *protect* or adding an unnecessary phrase. **B** redundantly combines *protective* and *protection*. **C** repeats the shelter idea and uses the vague phrase *in a protective way*. **D** uses the redundant construction *the reason being because*.
-
-</div>
-
 ### Parallelism and Comparisons
 
 Items in a series or comparison should use the same grammatical form:
 
 > The program teaches students to analyze data, interpret results, and present conclusions.
+
+The three items are parallel infinitive phrases sharing the word *to*: *to analyze*, *to interpret*, and *to present*. Do not mix forms such as *to analyze*, *interpreting*, and *a presentation of*.
+
+Parallelism applies to:
+
+- **Lists:** nouns with nouns, gerunds with gerunds, and infinitives with infinitives.
+- **Paired structures:** match the material after *both...and*, *either...or*, *neither...nor*, and *not only...but also*.
+- **Comparisons:** compare equivalent people, objects, actions, or qualities.
+- **Verb sequences:** use matching tense and voice when actions occur in the same timeframe and play the same role.
+
+Matching verb tense does not mean every verb in a sentence must be identical. A tense change is correct when the timeline changes: “The team completed the trial and now analyzes the results.” If both actions happened in the past, parallel tense is clearer: “The team completed the trial and analyzed the results.”
 
 Keep structures parallel after *both…and*, *either…or*, *neither…nor*, and *not only…but also*.
 
@@ -421,7 +506,7 @@ Compare logically equivalent things:
 
 > The population of California is larger than that of Nevada.
 
-Without *that of*, the sentence incorrectly compares a population with a state.
+The phrase *that of* stands for *the population of*, so the sentence compares one population with another. Without *that of*, it would illogically compare California's population with the state of Nevada.
 
 <div class="theorem-box">
 
@@ -435,6 +520,39 @@ Without *that of*, the sentence incorrectly compares a population with a state.
 **B** is correct because it preserves the parallel structure *not only to compare...but also to trace*. **A** shifts from an infinitive to a gerund. **C** does not correctly complete the paired construction *not only...but also*, and **D** changes from an active infinitive to a full passive clause.
 
 </div>
+
+## Simplifying Sentences
+
+Long SAT sentences often hide a simple grammatical structure inside names, prepositional phrases, appositives, and other modifiers. Temporarily removing those additions can reveal the subject, finite verb, clause boundary, or pronoun antecedent being tested.
+
+:::strategy
+1. Identify what changes among the choices: punctuation, agreement, tense, pronoun, or verb form.
+2. Find the core subject and finite verb of each clause.
+3. Cross out paired nonessential information between commas, dashes, or parentheses.
+4. Bracket prepositional phrases beginning with words such as *of*, *in*, *with*, *from*, or *among*. Keep in mind that these phrases may be essential to meaning even though they do not control subject-verb agreement.
+5. Replace long names and technical nouns with short labels such as *the study*, *it*, or *Group A*.
+6. Solve the simplified structure, then restore every removed phrase and reread the complete sentence to make sure the answer still fits its meaning and punctuation.
+:::
+
+Consider this sentence:
+
+> The collection of field recordings, including several tapes recovered from a damaged archive, is available online.
+
+Temporarily remove the interrupting phrase and bracket the *of* phrase:
+
+> The collection [of field recordings] is available online.
+
+The simplified sentence makes the singular subject-verb pair *collection is* easy to see. The plural nouns *recordings* and *tapes* do not control the verb.
+
+For clause-boundary questions, reduce each side of the blank separately:
+
+> Although the initial measurements from the coastal stations were inconsistent, the researchers recalibrated the instruments.
+
+The core structure is “Although measurements were inconsistent, researchers recalibrated.” The word *although* makes the first clause dependent, while the second clause can stand alone.
+
+:::warning
+Simplifying is a temporary diagnostic method. Restore the removed words before selecting an answer: those words may determine meaning, require paired punctuation, establish the timeline, or clarify which noun a pronoun refers to.
+:::
 
 ## Final Grammar Checklist
 
@@ -468,10 +586,5 @@ Without *that of*, the sentence incorrectly compares a population with a state.
 | it's | *it is* or *it has* |
 | whose | possessive |
 | who's | *who is* or *who has* |
-
-## Further Review
-
-- [Complete SAT Grammar Rules](https://thecriticalreader.com/complete-sat-grammar-rules/) provides extended explanations of sentence boundaries, punctuation, agreement, modifiers, parallelism, comparisons, and concision.
-- [SAT/ACT Grammar Cheat Sheet](https://thecriticalreader.com/wp-content/uploads/2016/03/SAT_ACT-grammar-cheat-sheet.pdf) summarizes many of the same rules. Some shortcuts and question formats on the sheet were written for the older paper SAT or the ACT, so verify each heuristic against the sentence rather than treating it as an absolute rule.
 
 ## Practice
