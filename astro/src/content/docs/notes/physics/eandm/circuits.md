@@ -1,8 +1,257 @@
 ---
 title: "Circuits"
-description: "USAPhO circuit notes on Joule heating, network theorems, RC transients, diode models, and matrix methods."
+description: "USAPhO circuit notes on charge transport, Joule heating, network theorems, RC transients, diodes, and matrix methods."
 sidebar:
   order: 3
+---
+
+## Motion of charges in conductors
+
+In a conductor with no applied electric field, mobile charges move randomly because of thermal motion. Their velocities point in all directions, so there is no net transport of charge.
+
+An applied field adds a small average **drift velocity** $$\vec v_d$$ to that random motion. A carrier accelerates between collisions, loses its directed momentum to the lattice, and accelerates again. The individual path is irregular, but the average drift is steady when the macroscopic current is steady.
+
+For carriers with charge $$q$$, the drift direction depends on the sign of $$q$$. Electrons drift opposite $$\vec E$$, but conventional current is defined in the direction positive charge would move and therefore points along $$\vec E$$ in an ohmic conductor.
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,decorations.pathmorphing}
+\begin{tikzpicture}[>=Stealth,font=\small]
+\draw[thick] (-4,-1) rectangle (4,1);
+\draw[->,very thick,blue] (-3.5,1.45) -- (3.5,1.45) node[right] {$\vec E,\ \vec I$};
+\draw[->,very thick,red] (2.8,-1.45) -- (-2.8,-1.45) node[left] {electron drift};
+\draw[decorate,decoration={random steps,segment length=5pt,amplitude=5pt},purple,thick,->] (3.2,0.15) -- (1.4,0.25);
+\draw[decorate,decoration={random steps,segment length=5pt,amplitude=5pt},purple,thick,->] (0.9,-0.25) -- (-0.8,-0.1);
+\draw[decorate,decoration={random steps,segment length=5pt,amplitude=5pt},purple,thick,->] (-1.3,0.3) -- (-3.1,0.15);
+\fill[purple] (3.2,0.15) circle (2pt); \fill[purple] (0.9,-0.25) circle (2pt); \fill[purple] (-1.3,0.3) circle (2pt);
+\node at (0,0.7) {random motion with a small average drift};
+\end{tikzpicture}
+```
+
+### Current and current density
+
+Current is the rate at which charge crosses a chosen surface:
+
+$$
+I=\frac{dQ}{dt}.
+$$
+
+Current is a scalar assigned a sign relative to a chosen direction through a wire. The **current density** $$\vec J$$ is a vector field describing both the local direction and the amount of current per unit area. The current through an oriented surface is its flux:
+
+$$
+I=\int_S\vec J\cdot d\vec A.
+$$
+
+For uniform current density perpendicular to a cross-section of area $$A$$,
+
+$$
+I=JA.
+$$
+
+If the mobile-carrier number density is $$n$$, each carrier has charge $$q$$, and their average drift velocity is $$\vec v_d$$, then
+
+$$
+\vec J=nq\vec v_d.
+$$
+
+For electrons, both $$q$$ and the component of $$\vec v_d$$ along conventional current are negative, so $$\vec J$$ still points in the conventional-current direction. In magnitude form,
+
+$$
+I=n\lvert q\rvert Av_d.
+$$
+
+<div class="theorem-box">
+
+**Proof (Drift-current relation).** In time $$dt$$, carriers drift distance $$v_d,dt$$. The cylinder of carriers that crosses an area $$A$$ has volume
+
+$$
+dV=Av_d,dt.
+$$
+
+It contains $$dN=nAv_d,dt$$ carriers, so the charge magnitude crossing the surface is
+
+$$
+dQ=\lvert q\rvert nAv_d,dt.
+$$
+
+Therefore
+
+$$
+I=\frac{dQ}{dt}=n\lvert q\rvert Av_d.
+$$
+
+The vector form restores the carrier sign and direction: $$\vec J=nq\vec v_d$$.
+
+</div>
+
+<div class="theorem-box">
+
+**Example.** A copper wire of cross-sectional area $$1.0\ \text{mm}^2$$ carries $$3.0\ \text{A}$$. Assume one mobile electron per atom and electron number density $$n=8.5\times10^{28}\ \text{m}^{-3}$$. Find the electron drift-speed magnitude.
+
+Use $$A=1.0\times10^{-6}\ \text{m}^2$$ and $$\lvert q\rvert=e=1.60\times10^{-19}\ \text{C}$$:
+
+$$
+v_d=\frac{I}{n e A}
+=\frac{3.0}{(8.5\times10^{28})(1.60\times10^{-19})(1.0\times10^{-6})}
+\approx2.2\times10^{-4}\ \text{m/s}.
+$$
+
+The carriers drift only about $$0.22\ \text{mm/s}$$. A circuit responds much faster than this because the electric field establishing the drift propagates through the circuit, rather than one electron traveling from the source to the device.
+
+</div>
+
+---
+
+## Charge conservation and current continuity
+
+Consider a fixed volume bounded by a closed surface. Outward current removes charge from the volume, so
+
+$$
+\frac{dQ_{\text{inside}}}{dt}
+=-\oint_S\vec J\cdot d\vec A.
+$$
+
+Writing $$Q_{\text{inside}}=\int_V\rho_q,dV$$, where $$\rho_q$$ is charge density, and applying the divergence theorem gives the local **continuity equation**:
+
+$$
+\frac{\partial\rho_q}{\partial t}+\nabla\cdot\vec J=0.
+$$
+
+This is charge conservation written at every point. A positive divergence means more current leaves a small region than enters it, so its charge density must decrease.
+
+For a steady current, $$\partial\rho_q/\partial t=0$$, and therefore
+
+$$
+\nabla\cdot\vec J=0.
+$$
+
+Equivalently, the total current entering any junction equals the total current leaving it. If that condition failed, charge would accumulate at the junction and change the local electric field until the currents adjusted.
+
+<div class="theorem-box">
+
+**Example.** A steady current $$I_1=5.0\ \text{A}$$ enters a junction through one wire. Currents $$I_2=1.5\ \text{A}$$ and $$I_3=2.0\ \text{A}$$ leave through two branches. Find the current and direction in a fourth branch.
+
+Charge does not accumulate at a steady-current junction, so
+
+$$
+I_1=I_2+I_3+I_4.
+$$
+
+Thus
+
+$$
+I_4=5.0-1.5-2.0=1.5\ \text{A}.
+$$
+
+The positive result means the fourth current leaves the junction as assumed.
+
+</div>
+
+---
+
+## Microscopic origin of Ohm's law
+
+An electric field exerts force $$q\vec E$$ on each carrier. Collisions continually remove directed momentum. A simple steady-state model represents the average resistive force as proportional and opposite to drift velocity:
+
+$$
+\vec F_R=-b\vec v_d.
+$$
+
+When the average drift stops changing, the forces balance:
+
+$$
+q\vec E-b\vec v_d=0.
+$$
+
+Therefore
+
+$$
+\vec v_d=\frac{q}{b}\vec E,
+$$
+
+and the current density becomes
+
+$$
+\vec J=nq\vec v_d
+=\frac{nq^2}{b}\vec E
+=\sigma\vec E.
+$$
+
+This is the differential form of Ohm's law. Conductivity and resistivity are
+
+$$
+\sigma=\frac{nq^2}{b},
+\qquad
+\rho=\frac1\sigma,
+$$
+
+so the equivalent form is
+
+$$
+\vec E=\rho\vec J.
+$$
+
+The proportional-drag assumption is a material model, not a fundamental law. It works for ohmic materials over an appropriate range of fields and temperatures; diodes and strongly heated filaments are important counterexamples.
+
+### From the local law to resistance
+
+For a uniform wire of length $$L$$ and area $$A$$, assume $$\vec E$$ and $$\vec J$$ are uniform and parallel to the wire. Then
+
+$$
+V=EL,
+\qquad
+I=JA.
+$$
+
+Using $$E=\rho J$$,
+
+$$
+V=\rho JL
+=\rho\frac{L}{A}I.
+$$
+
+Comparing this with $$V=IR$$ gives
+
+$$
+R=\rho\frac{L}{A}.
+$$
+
+This familiar formula requires a uniform material and constant cross-section. For a nonuniform conductor, add differential slices in series:
+
+$$
+R=\int\frac{\rho(\vec r)}{A(x)},dx
+$$
+
+when the current is effectively one-dimensional.
+
+<div class="theorem-box">
+
+**Example.** A conical conductor of length $$L$$ has resistivity $$\rho$$ and radius increasing linearly from $$a$$ to $$b$$. Assume current flows along its axis and each thin slice is approximately equipotential. Find its resistance.
+
+At position $$x$$,
+
+$$
+r(x)=a+\frac{b-a}{L}x,
+\qquad
+A(x)=\pi r(x)^2.
+$$
+
+Slices of thickness $$dx$$ are in series, so
+
+$$
+R=\int_0^L\frac{\rho,dx}{\pi\left(a+\frac{b-a}{L}x\right)^2}.
+$$
+
+Let $$u=a+(b-a)x/L$$. Then $$dx=L,du/(b-a)$$, giving
+
+$$
+R=\frac{\rho L}{\pi(b-a)}\int_a^b\frac{du}{u^2}
+=\frac{\rho L}{\pi(b-a)}\left(\frac1a-\frac1b\right)
+=\frac{\rho L}{\pi ab}.
+$$
+
+</div>
+
 ---
 
 ## Electric heating and Joule's law
@@ -972,6 +1221,9 @@ Reverse breakdown can damage an ordinary diode. Devices such as Zener diodes are
 ---
 
 :::summary{title="Circuit toolkit"}
+- Charge transport: $$\vec J=nq\vec v_d$$ and $$I=\int\vec J\cdot d\vec A$$.
+- Continuity: $$\partial\rho_q/\partial t+\nabla\cdot\vec J=0$$.
+- Ohmic conduction: $$\vec J=\sigma\vec E$$ and $$R=\rho L/A$$ for a uniform wire.
 - Joule heating: $$P=IV=I^2R=V^2/R$$ and $$p=\vec J\cdot\vec E$$.
 - Real battery: $$V_{\text{terminal}}=\mathcal E-Ir$$ while delivering current.
 - Series resistors share current; parallel resistors share voltage.
