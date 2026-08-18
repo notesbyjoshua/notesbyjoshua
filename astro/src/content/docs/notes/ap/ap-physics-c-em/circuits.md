@@ -276,6 +276,24 @@ $$
 
 </div>
 
+### Voltage and current division
+
+For series resistors carrying the same current, the total voltage divides in proportion to resistance:
+
+$$
+\Delta V_k=\Delta V_{\text{tot}}\frac{R_k}{\sum_iR_i}.
+$$
+
+For two parallel resistors carrying total current $$I$$, current divides inversely with resistance:
+
+$$
+I_1=I\frac{R_2}{R_1+R_2},
+\qquad
+I_2=I\frac{R_1}{R_1+R_2}.
+$$
+
+The resistor example below uses both shortcuts: voltage division locates the drop across the series parts, and current division predicts that the smaller parallel resistance carries the larger current.
+
 <div class="theorem-box">
 
 **Example.** A $$12\ \text{V}$$ battery (ideal) drives the network below: $$R_1 = 4\ \Omega$$ in series with a parallel combination of $$R_2 = 6\ \Omega$$ and $$R_3 = 3\ \Omega$$. Find the equivalent resistance, the total current from the battery, and the current through and voltage across each resistor.
