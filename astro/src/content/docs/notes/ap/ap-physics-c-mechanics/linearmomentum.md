@@ -206,12 +206,12 @@ So if $$m$$ changes,
 
 $$
 \frac{d\vec p}{dt}
-=m\frac{d\vec v}{dt}+\vec v\frac{dm}{dt}.
+=m\frac{d\vec v}{dt}+\vec v\frac{dm}{dt}
 $$
 
-That extra $$\vec v\,dm/dt$$ term is the part that is easy to forget. It represents momentum changing because mass is being added or removed, even if the velocity of the object itself is not changing at that instant.
+by the product rule. That extra $$\vec v\,dm/dt$$ term is the part that is easy to forget. It represents momentum changing because mass is being added or removed, even if the velocity of the object itself is not changing at that instant.
 
-The main warning: for an **open system**, $$\vec F_{\text{ext}}=d(m\vec v)/dt$$ is not automatically enough unless you are careful about the velocity of the entering or leaving mass. A good strategy is:
+However, for an **open system**, $$\vec F_{\text{ext}}=d(m\vec v)/dt$$ is not automatically enough unless you are careful about the velocity of the entering or leaving mass. A good strategy is:
 
 :::strategy
 1. Decide what object/system you are tracking.
@@ -225,7 +225,51 @@ For example, if a cart collects falling sand that has no horizontal velocity bef
 
 <div class="theorem-box">
 
-**Example.** Derive the ideal rocket equation for a rocket in deep space that ejects fuel backward at constant relative speed $$u$$. If the rocket's mass changes from $$m_0$$ to $$m_f$$, find its change in speed $$\Delta v$$.
+**Example.** A cart of initial mass $$m_0$$ moves frictionlessly at speed $$v_0$$. It passes under a hopper that drops sand vertically into the cart at constant rate $$\lambda$$, so the sand has zero horizontal velocity before landing. Find the cart's speed $$v(t)$$ after time $$t$$.
+
+Track the cart plus the sand already inside it. The mass is
+
+$$
+m(t)=m_0+\lambda t.
+$$
+
+There is no external horizontal force, and the incoming sand brings in zero horizontal momentum. Therefore the horizontal momentum of the cart-plus-collected-sand stays constant:
+
+$$
+m(t)v(t)=m_0v_0.
+$$
+
+So
+
+$$
+v(t)=\frac{m_0v_0}{m_0+\lambda t}.
+$$
+
+You can also see this from the product rule. Since horizontal momentum is constant,
+
+$$
+\frac{d}{dt}(mv)=0.
+$$
+
+Using the product rule,
+
+$$
+m\frac{dv}{dt}+v\frac{dm}{dt}=0.
+$$
+
+Here $$dm/dt=\lambda$$, so
+
+$$
+\frac{dv}{dt}=-\frac{\lambda}{m}v.
+$$
+
+The cart slows down not because an external horizontal force pulls it backward, but because it must share its horizontal momentum with newly added mass.
+
+</div>
+
+<div class="theorem-box">
+
+**Example.** Suppose a rocket in space (so assume there is no gravity or other effects) ejects fuel backward at constant relative speed $$u$$. If the rocket's mass changes from $$m_0$$ to $$m_f$$, find its change in speed $$\Delta v$$.
 
 Take the rocket's forward direction as positive. At some instant, the rocket has mass $$m$$ and speed $$v$$. It ejects a small positive amount of fuel $$dM$$ backward relative to the rocket, so the rocket's mass becomes $$m-dM$$ and its speed becomes $$v+dv$$. The exhaust moves at speed $$v-u$$ in the inertial frame.
 
@@ -280,50 +324,6 @@ $$
 $$
 
 The logarithm appears because each bit of fuel gives a larger speed gain later, when the rocket has less remaining mass.
-
-</div>
-
-<div class="theorem-box">
-
-**Example.** A cart of initial mass $$m_0$$ moves frictionlessly at speed $$v_0$$. It passes under a hopper that drops sand vertically into the cart at constant rate $$\lambda$$, so the sand has zero horizontal velocity before landing. Find the cart's speed $$v(t)$$ after time $$t$$.
-
-Track the cart plus the sand already inside it. The mass is
-
-$$
-m(t)=m_0+\lambda t.
-$$
-
-There is no external horizontal force, and the incoming sand brings in zero horizontal momentum. Therefore the horizontal momentum of the cart-plus-collected-sand stays constant:
-
-$$
-m(t)v(t)=m_0v_0.
-$$
-
-So
-
-$$
-v(t)=\frac{m_0v_0}{m_0+\lambda t}.
-$$
-
-You can also see this from the product rule. Since horizontal momentum is constant,
-
-$$
-\frac{d}{dt}(mv)=0.
-$$
-
-Using the product rule,
-
-$$
-m\frac{dv}{dt}+v\frac{dm}{dt}=0.
-$$
-
-Here $$dm/dt=\lambda$$, so
-
-$$
-\frac{dv}{dt}=-\frac{\lambda}{m}v.
-$$
-
-The cart slows down not because an external horizontal force pulls it backward, but because it must share its horizontal momentum with newly added mass.
 
 </div>
 
@@ -891,21 +891,11 @@ The struck puck recoils to the opposite side, balancing the $$y$$-momentum that 
 \begin{tikzpicture}[>=Stealth, font=\small]
 \coordinate (A) at (-0.62,0);
 \coordinate (B) at (0.62,0);
-\coordinate (C) at (0,1.07);
+\coordinate (C) at (0,2.85);
 \draw[fill=gray!15] (A) circle (0.62);
 \draw[fill=gray!15] (B) circle (0.62);
 \draw[fill=blue!12] (C) circle (0.62);
-\node at (A) {$1$};
-\node at (B) {$2$};
-\node at (C) {$3$};
-\draw[->, very thick, blue] (0,2.35) -- (0,1.75) node[midway,right] {$v$};
-\draw[dashed] (C) -- (A);
-\draw[dashed] (C) -- (B);
-\draw[->, thick, red] (A) -- ++(-0.95,-1.65) node[below left] {$u$};
-\draw[->, thick, red] (B) -- ++(0.95,-1.65) node[below right] {$u$};
-\draw[->, thick, blue] (C) -- ++(0,0.85) node[above] {$v_f$};
-\draw (0,0.72) arc[start angle=-90,end angle=-150,radius=0.35] node[midway,left] {$30^\circ$};
-\draw (0,0.72) arc[start angle=-90,end angle=-30,radius=0.35] node[midway,right] {$30^\circ$};
+\draw[->, very thick, blue] (0,4.15) -- (0,3.5) node[midway,right] {$v$};
 \end{tikzpicture}
 ```
 
