@@ -856,42 +856,70 @@ $$
 E=-\frac{GMm}{2a},
 $$
 
-where $$a$$ is the semi-major axis. $$E$$ represents the *total* mechanical energy of the orbiting system. A related speed formula, called the vis-viva equation, is
-
-$$
-v^2=GM\left(\frac{2}{r}-\frac{1}{a}\right).
-$$
+where $$a$$ is the semi-major axis. $$E$$ represents the *total* mechanical energy of the orbiting system.
 
 </div>
 
 <div class="theorem-box">
 
-**Proof (elliptical orbit mechanical energy).** For an elliptical orbit, use the vis-viva equation:
+**Proof (elliptical orbit mechanical energy).** Let $$r_p$$ be the periapsis distance and $$r_a$$ be the apoapsis distance. At those two points, the velocity is perpendicular to the radius, so angular momentum conservation gives
 
 $$
-v^2=GM\left(\frac{2}{r}-\frac{1}{a}\right).
+mr_pv_p=mr_av_a.
 $$
 
-The total mechanical energy is
+Thus
 
 $$
-E=K+U
-=\frac{1}{2}mv^2-\frac{GMm}{r}.
+v_a=\frac{r_p}{r_a}v_p.
 $$
 
-Substitute vis-viva into the kinetic energy term:
+Because mechanical energy is conserved,
 
 $$
-E=\frac{1}{2}mGM\left(\frac{2}{r}-\frac{1}{a}\right)-\frac{GMm}{r}.
+\frac{1}{2}mv_p^2-\frac{GMm}{r_p}
+=\frac{1}{2}mv_a^2-\frac{GMm}{r_a}.
 $$
 
-Distribute:
+Substitute $$v_a=(r_p/r_a)v_p$$:
 
 $$
-E=\frac{GMm}{r}-\frac{GMm}{2a}-\frac{GMm}{r}.
+\frac{1}{2}mv_p^2
+\left(1-\frac{r_p^2}{r_a^2}\right)
+=GMm\left(\frac{1}{r_p}-\frac{1}{r_a}\right).
 $$
 
-The two radius-dependent terms cancel, so
+Cancel $$m$$ and solve for $$v_p^2$$:
+
+$$
+v_p^2
+=2GM
+\frac{(1/r_p)-(1/r_a)}{1-(r_p^2/r_a^2)}
+=\frac{2GMr_a}{r_p(r_a+r_p)}.
+$$
+
+Now evaluate the total energy at periapsis:
+
+$$
+E=\frac{1}{2}mv_p^2-\frac{GMm}{r_p}
+=\frac{GMmr_a}{r_p(r_a+r_p)}-\frac{GMm}{r_p}.
+$$
+
+Combine the terms:
+
+$$
+E=\frac{GMm}{r_p}
+\left(\frac{r_a}{r_a+r_p}-1\right)
+=-\frac{GMm}{r_a+r_p}.
+$$
+
+For an ellipse, the periapsis and apoapsis distances satisfy
+
+$$
+r_p+r_a=2a.
+$$
+
+Therefore
 
 $$
 E=-\frac{GMm}{2a}.
@@ -907,7 +935,7 @@ For orbit problems, first decide which conservation law or orbit law is most dir
 1. Use gravity as centripetal force for circular orbit speed or period.
 2. Use Kepler's third law to compare periods and orbital sizes.
 3. Use angular momentum conservation to compare speeds at different radii in the same orbit.
-4. Use energy or vis-viva when the orbit is elliptical or escape speed is involved.
+4. Use energy when the orbit is elliptical or escape speed is involved.
 :::
 
 <div class="theorem-box">
