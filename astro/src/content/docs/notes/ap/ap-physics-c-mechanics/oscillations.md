@@ -488,19 +488,21 @@ However, as time went on, scientists changed the definition of the meter since g
 
 ```tikz
 \usepackage{tikz}
-\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
-\begin{tikzpicture}[>=Stealth, font=\small]
-\fill (0,2) circle (2pt) node[above] {pivot};
-\draw[dashed] (0,2) -- (0,-1.2);
-\draw[thick] (0,2) -- (0.42,1.25);
-\draw[thick, fill=gray!18, rotate around={-18:(0,2)}]
-  (-0.32,1.35) .. controls (0.12,0.90) and (0.08,0.25) .. (0.46,-0.35)
-  .. controls (0.05,-0.78) and (-0.55,-0.58) .. (-0.58,0.10)
-  .. controls (-0.78,0.75) and (-0.68,1.20) .. (-0.32,1.35);
-\coordinate (C) at (-0.16,0.45);
-\fill[red] (C) circle (2pt) node[right] {CM};
-\draw[->, red, thick] (C) -- ++(0,-1.05) node[below] {$mg$};
-\draw[<->] (0.05,1.72) -- (C) node[midway,right] {$d$};
+\usetikzlibrary{arrows.meta,calc}
+\begin{tikzpicture}[>=Stealth, font=\scriptsize, scale=0.82, transform shape]
+\path[use as bounding box] (-1.25,-0.95) rectangle (1.45,2.35);
+\coordinate (P) at (0,2);
+\coordinate (C) at (-0.22,0.62);
+\fill (P) circle (2.2pt) node[above=2pt] {pivot};
+\draw[dashed] (P) -- (0,-0.75);
+\draw[thick] (P) -- (0.50,1.20);
+\draw[thick, fill=gray!18, rotate around={-14:(P)}]
+  (-0.48,1.38) .. controls (-0.12,1.02) and (-0.12,0.38) .. (0.18,-0.12)
+  .. controls (-0.12,-0.40) and (-0.88,-0.35) .. (-0.95,0.22)
+  .. controls (-1.02,0.78) and (-0.86,1.18) .. (-0.48,1.38);
+\fill[red] (C) circle (2.2pt) node[right=2pt] {CM};
+\draw[->, red, thick] (C) -- ++(0,-0.78) node[below] {$mg$};
+\draw[<->, thick] ($(P)+(0.10,-0.06)$) -- (C) node[midway,right=2pt] {$d$};
 \end{tikzpicture}
 ```
 
