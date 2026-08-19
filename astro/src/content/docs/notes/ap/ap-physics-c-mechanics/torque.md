@@ -162,12 +162,16 @@ where $$r_{\perp}$$ is the lever arm, the perpendicular distance from the axis t
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
 \begin{tikzpicture}[>=Stealth, font=\small]
-\fill (0,0) circle (2pt) node[below] {pivot};
-\draw[very thick] (0,0) -- (3,1.2) node[midway, below] {$\vec r$};
-\draw[->, very thick, red] (3,1.2) -- (3,3.2) node[above] {$\vec F$};
-\draw[dashed] (0,0) -- (3,0); \draw[dashed] (3,1.2) -- (0.45,0.18);
-\draw[<->, blue] (0.55,0.22) -- (0.55,1.95) node[midway,left] {$r_\perp$};
-\draw (1.0,0.4) arc[start angle=22,end angle=90,radius=0.7] node[midway,above] {$\theta$};
+\coordinate (O) at (0,0);
+\coordinate (P) at (3,1.2);
+\fill (O) circle (2pt) node[below left] {pivot};
+\draw[very thick] (O) -- (P) node[midway, below right] {$\vec r$};
+\draw[->, very thick, red] (P) -- ++(0,1.65) node[above] {$\vec F$};
+\draw[dashed] (O) -- (3,0);
+\draw[dashed, red!60] (3,-0.25) -- (3,3.05);
+\draw[<->, blue, thick] (0,-0.32) -- (3,-0.32) node[midway,below] {$r_\perp$};
+\draw[dashed, gray] (O) -- (0,1.35);
+\draw (0.68,0.27) arc[start angle=21.8,end angle=90,radius=0.73] node[midway,above right] {$\theta$};
 \end{tikzpicture}
 ```
 
