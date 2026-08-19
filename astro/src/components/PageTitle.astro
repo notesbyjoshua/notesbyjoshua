@@ -139,7 +139,30 @@ const editHref = isNote && filePath ? `/admin/edit?path=${encodeURIComponent(`as
   const meta = document.getElementById('page-meta');
   if (meta) {
     const content = document.querySelector('.sl-markdown-content');
-    const words = (content?.textContent || '').trim().split(/\s+/).filter(Boolean).length;
+    const readingContent = content?.cloneNode(true) as HTMLElement | undefined;
+    const headingLevel = (el: Element) => Number(el.tagName.slice(1));
+    const isHeading = (el: Element | null): el is HTMLHeadingElement =>
+      !!el && /^H[1-6]$/.test(el.tagName);
+    const isPracticeHeading = (el: Element) => {
+      const text = (el.textContent || '')
+        .replace(/#/g, '')
+        .replace(/\s+/g, ' ')
+        .trim()
+        .toLowerCase();
+      return /^(practice( problems?)?|problems?|solutions?|answer key)$/.test(text);
+    };
+    readingContent?.querySelectorAll('h1,h2,h3,h4,h5,h6').forEach((heading) => {
+      if (!isPracticeHeading(heading)) return;
+      const level = headingLevel(heading);
+      let node: Element | null = heading;
+      while (node) {
+        const next = node.nextElementSibling;
+        node.remove();
+        if (!next || (isHeading(next) && headingLevel(next) <= level)) break;
+        node = next;
+      }
+    });
+    const words = (readingContent?.textContent || '').trim().split(/\s+/).filter(Boolean).length;
     const mins = Math.max(1, Math.round(words / 200));
     meta.textContent = `${mins} min read`;
     meta.hidden = false;
