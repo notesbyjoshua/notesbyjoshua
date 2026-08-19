@@ -208,6 +208,37 @@ $$
 
 In most AP Mechanics torque problems, the object lies in the page, so the torque vector points either out of the page or into the page. A dot $$\odot$$ means out of the page; a cross $$\otimes$$ means into the page. Once you choose counterclockwise as positive, out-of-page torque is positive and into-page torque is negative.
 
+If the vectors are given in components, the cross product can be found directly. For
+
+$$
+\vec A=\langle A_x,A_y,A_z\rangle
+$$
+
+and
+
+$$
+\vec B=\langle B_x,B_y,B_z\rangle,
+$$
+
+the cross product is
+
+$$
+\vec A\times \vec B
+=\left\langle
+A_yB_z-A_zB_y,\,
+A_zB_x-A_xB_z,\,
+A_xB_y-A_yB_x
+\right\rangle.
+$$
+
+For most AP torque problems in the $$xy$$-plane, both $$\vec r$$ and $$\vec F$$ have zero $$z$$-component, so only the $$z$$-component of torque survives:
+
+$$
+\tau_z=r_xF_y-r_yF_x.
+$$
+
+Positive $$\tau_z$$ points out of the page and means counterclockwise rotation; negative $$\tau_z$$ points into the page and means clockwise rotation.
+
 <div class="theorem-box">
 
 **Example.** A wrench grips a bolt at the origin. You push on the handle a distance $$r = 0.30\ \text{m}$$ from the bolt with force $$F=80\ \text{N}$$. The force is directed $$30^\circ$$ above the handle for the first push. Then you move your hand to $$r=0.45\ \text{m}$$ but can only push with $$55\ \text{N}$$ at $$70^\circ$$ to the handle. Which push produces more torque?
@@ -225,6 +256,32 @@ $$
 $$
 
 Even though the second push has less force, it produces more torque because the lever arm is longer and the force is closer to perpendicular. Torque rewards both distance from the pivot and perpendicularity.
+
+</div>
+
+<div class="theorem-box">
+
+**Example.** A force $$\vec F=\langle 12,18,0\rangle\ \text{N}$$ is applied at position $$\vec r=\langle 0.40,0.25,0\rangle\ \text{m}$$ relative to a pivot. Find the torque vector about the pivot and state the rotational direction.
+
+Use the component formula for the $$z$$-component:
+
+$$
+\tau_z=r_xF_y-r_yF_x.
+$$
+
+Substitute:
+
+$$
+\tau_z=(0.40)(18)-(0.25)(12)=7.2-3.0=4.2\ \text{N}\cdot\text{m}.
+$$
+
+So
+
+$$
+\vec\tau=\langle 0,0,4.2\rangle\ \text{N}\cdot\text{m}.
+$$
+
+The positive $$z$$ direction points out of the page, so this torque is counterclockwise.
 
 </div>
 

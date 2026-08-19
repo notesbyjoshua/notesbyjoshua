@@ -251,6 +251,50 @@ $$
 
 Differentiating gives $$v_{\text{cm}}=R\omega$$ and $$a_{\text{cm}}=R\alpha$$. If slipping occurs (e.g. the contact point slides along the surface before being rotated), these constraints fail; the object can translate too fast or too slowly for its spin.
 
+<div class="theorem-box">
+
+**Example.** A bicycle wheel of radius $$R=0.35\ \text{m}$$ rolls without slipping on level ground. The center of the wheel moves at $$6.0\ \text{m/s}$$. Find the wheel's angular speed, and find how many revolutions it makes while traveling $$42\ \text{m}$$.
+
+Rolling without slipping gives
+
+$$
+v_{\text{cm}}=R\omega.
+$$
+
+Thus
+
+$$
+\omega=\frac{v_{\text{cm}}}{R}
+=\frac{6.0}{0.35}
+=17.1\ \text{rad/s}.
+$$
+
+For the distance traveled, use
+
+$$
+\Delta x_{\text{cm}}=R\Delta\theta.
+$$
+
+So
+
+$$
+\Delta\theta=\frac{\Delta x_{\text{cm}}}{R}
+=\frac{42}{0.35}
+=120\ \text{rad}.
+$$
+
+Convert radians to revolutions:
+
+$$
+N=\frac{\Delta\theta}{2\pi}
+=\frac{120}{2\pi}
+\approx 19.1\ \text{revolutions}.
+$$
+
+No incline or forces were needed; this is purely the rolling constraint.
+
+</div>
+
 Note that rolling without slipping is only possible with enough friction, which prevents the contact point from ever sliding. That begs the question: will an infinitely large static friction stop a wheel from rolling down a ramp? Surprisingly, no! Static friction does not necessarily impede motion, it only prevents relative motion at the contact point, meaning that the wheel will still roll without slipping down the ramp. However, if there is a really large *kinetic* friction, the wheel will stop since kinetic friction does impede motion by removing kinetic energy!
 
 ### Rolling Down an Incline
@@ -675,9 +719,59 @@ Because the torque varied with time, we could not use $$\tau = I\alpha$$ with a 
 
 ---
 
-## Orbiting Particles and Central Forces
+## Orbiting Particles and Gravity
 
-Gravity is a **central force**: it points along the line connecting the orbiting object to the body it orbits. For a circular orbit, gravity supplies the centripetal force:
+Gravity is a **central force**, meaning that it points along the line connecting the orbiting object to the body it orbits. Since a central force points along $$\vec r$$, it produces no torque about the attracting body:
+
+<div class="theorem-box">
+
+**Proof (angular momentum conservation in a central force).** For gravity,
+
+$$
+\vec F_g=-\frac{GMm}{r^2}\hat r.
+$$
+
+The torque about the attracting body is
+
+$$
+\vec\tau=\vec r\times \vec F_g.
+$$
+
+Since $$\vec F_g$$ is parallel or antiparallel to $$\vec r$$,
+
+$$
+\vec r\times \vec F_g=\vec 0.
+$$
+
+Thus
+
+$$
+\frac{d\vec L}{dt}=\vec\tau=\vec 0,
+$$
+
+so angular momentum is conserved. This is why an object in an elliptical orbit moves fastest near periapsis and slowest near apoapsis: $$L=mrv_\perp$$ stays constant.
+
+</div>
+
+<div class="theorem-box">
+
+**Theorem.** For a circular orbit around a much larger mass $$M$$,
+
+$$
+v_{\text{orbit}}=\sqrt{\frac{GM}{r}},
+$$
+
+and
+
+$$
+T=2\pi\sqrt{\frac{r^3}{GM}}.
+$$
+
+</div>
+
+<div class="theorem-box">
+
+**Proof (circular orbit speed and period).** For a circular orbit, gravity supplies the centripetal force:
 
 $$
 \frac{GMm}{r^2}=m\frac{v_{\text{orbit}}^2}{r}.
@@ -696,53 +790,155 @@ T=\frac{2\pi r}{v_{\text{orbit}}}
 =2\pi\sqrt{\frac{r^3}{GM}}.
 $$
 
-Squaring gives Kepler's third law for circular orbits:
+</div>
 
-$$
-T^2=\frac{4\pi^2}{GM}r^3.
-$$
+<div class="theorem-box">
 
-For elliptical orbits, replace $$r$$ with the semi-major axis $$a$$:
+**Theorem (Kepler's third law).** For an orbit with semi-major axis $$a$$ around a much larger mass $$M$$,
 
 $$
 T^2=\frac{4\pi^2}{GM}a^3.
 $$
 
-Escape speed comes from the condition that total mechanical energy reaches zero at infinity:
+For circular orbits, $$a=r$$, so
+
+$$
+T^2=\frac{4\pi^2}{GM}r^3.
+$$
+
+</div>
+
+<div class="theorem-box">
+
+**Theorem (orbital energy and speed formulas).** For a mass $$m$$ orbiting a much larger mass $$M$$:
+
+$$
+E=-\frac{GMm}{2a},
+$$
+
+where $$a$$ is the semi-major axis. The vis-viva equation gives the speed at distance $$r$$:
+
+$$
+v^2=GM\left(\frac{2}{r}-\frac{1}{a}\right).
+$$
+
+The escape speed from distance $$r$$ is
 
 $$
 v_{\text{esc}}=\sqrt{\frac{2GM}{r}}.
 $$
 
-For a bound circular orbit, the total mechanical energy is
+</div>
+
+<div class="theorem-box">
+
+**Proof (circular orbit mechanical energy).** In a circular orbit,
+
+$$
+v^2=\frac{GM}{r}.
+$$
+
+Thus the kinetic energy is
+
+$$
+K=\frac{1}{2}mv^2
+=\frac{1}{2}m\left(\frac{GM}{r}\right)
+=\frac{GMm}{2r}.
+$$
+
+The gravitational potential energy is
+
+$$
+U=-\frac{GMm}{r}.
+$$
+
+So
 
 $$
 E=K+U
-=\frac{1}{2}m\left(\frac{GM}{r}\right)-\frac{GMm}{r}
+=\frac{GMm}{2r}-\frac{GMm}{r}
 =-\frac{GMm}{2r}.
 $$
 
-For an elliptical orbit, the corresponding result is
+This matches the elliptical formula $$E=-GMm/(2a)$$ when $$a=r$$.
+
+</div>
+
+:::strategy
+For orbit problems, first decide which conservation law or orbit law is most direct:
+
+1. Use gravity as centripetal force for circular orbit speed or period.
+2. Use Kepler's third law to compare periods and orbital sizes.
+3. Use angular momentum conservation to compare speeds at different radii in the same orbit.
+4. Use energy or vis-viva when the orbit is elliptical or escape speed is involved.
+:::
+
+<div class="theorem-box">
+
+**Example.** A satellite orbits Earth in a circular orbit of radius $$r$$ with period $$T$$. Another satellite orbits Earth at radius $$4r$$. Use Kepler's third law to find its period.
+
+For circular orbits around the same central mass,
 
 $$
-E=-\frac{GMm}{2a}.
+T^2\propto r^3.
 $$
 
-The more general speed formula is the **vis-viva equation**:
+Therefore
 
 $$
-v^2=GM\left(\frac{2}{r}-\frac{1}{a}\right),
+\frac{T_2^2}{T_1^2}=\frac{(4r)^3}{r^3}=64.
 $$
 
-where $$a$$ is the semi-major axis. A circular orbit is the special case $$a=r$$, which reduces back to $$v^2=GM/r$$.
-
-Because gravity is central, it produces no torque about the attracting mass:
+Taking the square root,
 
 $$
-\vec\tau=\vec r\times \vec F_g=\vec 0.
+\frac{T_2}{T_1}=8.
 $$
 
-Therefore angular momentum is conserved in orbital motion. This is why an object in an elliptical orbit moves fastest near periapsis and slowest near apoapsis: $$L=mrv_\perp$$ stays constant. Mechanical energy is also conserved if gravity is the only force doing work, so orbit problems often combine energy conservation with angular momentum conservation.
+So the farther satellite has period
+
+$$
+T_2=8T.
+$$
+
+Doubling radius does not merely double period; orbital period scales like $$r^{3/2}$$.
+
+</div>
+
+<div class="theorem-box">
+
+**Example.** A comet moves in an elliptical orbit around the Sun. Its perihelion distance is $$r_p=0.50\ \text{AU}$$ and its aphelion distance is $$r_a=4.5\ \text{AU}$$. Find the semi-major axis and the period in years.
+
+For an ellipse,
+
+$$
+a=\frac{r_p+r_a}{2}.
+$$
+
+Thus
+
+$$
+a=\frac{0.50+4.5}{2}=2.5\ \text{AU}.
+$$
+
+When using AU and years for orbits around the Sun, Kepler's third law becomes
+
+$$
+T^2=a^3.
+$$
+
+So
+
+$$
+T=\sqrt{a^3}
+=\sqrt{(2.5)^3}
+=\sqrt{15.625}
+\approx 4.0\ \text{yr}.
+$$
+
+The comet spends most of that time far from the Sun, moving slowly, because angular momentum is conserved.
+
+</div>
 
 ---
 
