@@ -194,60 +194,136 @@ The wall pushes back on the stream with an average force of $$20\ \text{N}$$ opp
 
 </div>
 
-### Varying Mass and Continuous Mass Flow
+### Varying Mass
 
-When mass enters or leaves a system continuously, think in terms of **momentum per second**. If mass flows at rate $$\dot{m}=dm/dt$$ and its velocity changes by $$\Delta \vec v$$ as it interacts with an object, then the force needed to cause that change is roughly
-
-$$
-\vec F=\frac{d\vec p}{dt}=\dot m\,\Delta\vec v.
-$$
-
-The direction matters: this force is the force on the flowing material. The force on the object doing the deflecting is the opposite by Newton's third law.
-
-For rockets, the cleanest safe statement is that thrust comes from throwing mass backward. If exhaust leaves the rocket with speed $$v_{\text{rel}}$$ relative to the rocket and the rocket loses mass at rate $$-\frac{dm}{dt}$$, the ideal thrust magnitude is
+Variable-mass problems are usually momentum problems where the mass of the object you are tracking changes with time. The key move is to remember that momentum is a product:
 
 $$
-F_{\text{thrust}}=v_{\text{rel}}\left(-\frac{dm}{dt}\right).
+\vec p=m\vec v.
 $$
 
-Use this form carefully: $$v_{\text{rel}}$$ is the exhaust speed relative to the rocket, not necessarily the exhaust speed relative to the ground.
+So if $$m$$ changes,
+
+$$
+\frac{d\vec p}{dt}
+=m\frac{d\vec v}{dt}+\vec v\frac{dm}{dt}.
+$$
+
+That extra $$\vec v\,dm/dt$$ term is the part that is easy to forget. It represents momentum changing because mass is being added or removed, even if the velocity of the object itself is not changing at that instant.
+
+The main warning: for an **open system**, $$\vec F_{\text{ext}}=d(m\vec v)/dt$$ is not automatically enough unless you are careful about the velocity of the entering or leaving mass. A good strategy is:
+
+:::strategy
+1. Decide what object/system you are tracking.
+2. Write the momentum of that system as $$m(t)\vec v(t)$$.
+3. Use the product rule: $$d(m\vec v)/dt=m\,d\vec v/dt+\vec v\,dm/dt$$.
+4. Account for the momentum carried in or out by entering/leaving mass.
+5. Keep signs consistent: mass entering has $$dm/dt>0$$ for your chosen system; mass leaving has $$dm/dt<0$$.
+:::
+
+For example, if a cart collects falling sand that has no horizontal velocity before landing, there is no external horizontal force, but the cart's horizontal momentum is spread over more mass. If a rocket ejects exhaust backward, the rocket gains forward momentum because the exhaust carries backward momentum away.
 
 <div class="theorem-box">
 
-**Example.** A hose sprays water at mass flow rate $$\dot m=3.0\ \text{kg/s}$$ horizontally into a wall. The water hits the wall at $$8.0\ \text{m/s}$$ and then runs down the wall with essentially zero horizontal velocity. Find the average horizontal force the water exerts on the wall.
+**Example.** Derive the ideal rocket equation for a rocket in deep space that ejects fuel backward at constant relative speed $$u$$. If the rocket's mass changes from $$m_0$$ to $$m_f$$, find its change in speed $$\Delta v$$.
 
-The water's horizontal velocity changes from $$+8.0\ \text{m/s}$$ to $$0$$, so the wall exerts force on the water
+Take the rocket's forward direction as positive. At some instant, the rocket has mass $$m$$ and speed $$v$$. It ejects a small positive amount of fuel $$dM$$ backward relative to the rocket, so the rocket's mass becomes $$m-dM$$ and its speed becomes $$v+dv$$. The exhaust moves at speed $$v-u$$ in the inertial frame.
 
-$$
-F_{\text{wall on water}}
-=\dot m\,\Delta v_x
-=(3.0)(0-8.0)
-=-24\ \text{N}.
-$$
-
-Thus the wall pushes the water left with $$24\ \text{N}$$. By Newton's third law, the water pushes the wall right with
+With no external force, conserve momentum over this tiny interval:
 
 $$
-24\ \text{N}.
+mv=(m-dM)(v+dv)+dM(v-u).
 $$
 
-This is the continuous version of impulse: instead of one object changing momentum, many tiny bits of water change momentum every second.
+Expand the right side:
+
+$$
+mv=mv+m\,dv-v\,dM-dM\,dv+dM\,v-u\,dM.
+$$
+
+The terms $$-v\,dM$$ and $$dM\,v$$ cancel. The product $$dM\,dv$$ is second-order small, so ignore it:
+
+$$
+mv=mv+m\,dv-u\,dM.
+$$
+
+Thus
+
+$$
+m\,dv=u\,dM.
+$$
+
+Since $$dM=-dm$$, where $$dm$$ is the change in rocket mass,
+
+$$
+m\,dv=-u\,dm.
+$$
+
+Separate variables:
+
+$$
+dv=-u\frac{dm}{m}.
+$$
+
+Integrate from initial mass $$m_0$$ to final mass $$m_f$$:
+
+$$
+\Delta v
+=-u\int_{m_0}^{m_f}\frac{dm}{m}
+=u\ln\left(\frac{m_0}{m_f}\right).
+$$
+
+So the ideal rocket equation is
+
+$$
+\Delta v=u\ln\left(\frac{m_0}{m_f}\right).
+$$
+
+The logarithm appears because each bit of fuel gives a larger speed gain later, when the rocket has less remaining mass.
 
 </div>
 
 <div class="theorem-box">
 
-**Example.** A small rocket in deep space ejects fuel backward at relative speed $$v_{\text{rel}}=900\ \text{m/s}$$. It burns fuel at a rate of $$0.20\ \text{kg/s}$$. Find the rocket's thrust.
+**Example.** A cart of initial mass $$m_0$$ moves frictionlessly at speed $$v_0$$. It passes under a hopper that drops sand vertically into the cart at constant rate $$\lambda$$, so the sand has zero horizontal velocity before landing. Find the cart's speed $$v(t)$$ after time $$t$$.
 
-The rocket loses mass, so $$dm/dt=-0.20\ \text{kg/s}$$. The thrust magnitude is
+Track the cart plus the sand already inside it. The mass is
 
 $$
-F_{\text{thrust}}=v_{\text{rel}}\left(-\frac{dm}{dt}\right)
-=(900)(0.20)
-=180\ \text{N}.
+m(t)=m_0+\lambda t.
 $$
 
-The exhaust gains backward momentum every second, so the rocket gains forward momentum every second.
+There is no external horizontal force, and the incoming sand brings in zero horizontal momentum. Therefore the horizontal momentum of the cart-plus-collected-sand stays constant:
+
+$$
+m(t)v(t)=m_0v_0.
+$$
+
+So
+
+$$
+v(t)=\frac{m_0v_0}{m_0+\lambda t}.
+$$
+
+You can also see this from the product rule. Since horizontal momentum is constant,
+
+$$
+\frac{d}{dt}(mv)=0.
+$$
+
+Using the product rule,
+
+$$
+m\frac{dv}{dt}+v\frac{dm}{dt}=0.
+$$
+
+Here $$dm/dt=\lambda$$, so
+
+$$
+\frac{dv}{dt}=-\frac{\lambda}{m}v.
+$$
+
+The cart slows down not because an external horizontal force pulls it backward, but because it must share its horizontal momentum with newly added mass.
 
 </div>
 
@@ -984,8 +1060,8 @@ This is where the CM frame is genuinely useful: the final stuck-together object 
 | Newton's second law (general) | $$\vec{F}_{\text{net}} = d\vec{p}/dt$$ |
 | Impulse | $$\vec{J} = \int \vec{F}\,dt = \Delta\vec{p}$$ |
 | Average force | $$\vec{F}_{\text{avg}} = \Delta\vec{p}/\Delta t$$ |
-| Continuous mass flow force | $$\vec F=\dot m\,\Delta\vec v$$ |
-| Ideal rocket thrust | $$F_{\text{thrust}}=v_{\text{rel}}\left(-dm/dt\right)$$ |
+| Variable-mass product rule | $$\dfrac{d}{dt}(m\vec v)=m\dfrac{d\vec v}{dt}+\vec v\dfrac{dm}{dt}$$ |
+| Ideal rocket equation | $$\Delta v=u\ln\left(\dfrac{m_0}{m_f}\right)$$ |
 | Conservation of momentum | $$\vec{P}_i = \vec{P}_f$$ (no external impulse) |
 | Center of mass (discrete) | $$\vec{r}_{\text{cm}} = \tfrac{1}{M}\sum_i m_i\vec{r}_i$$ |
 | Center of mass (continuous) | $$\vec{r}_{\text{cm}} = \tfrac{1}{M}\int \vec{r}\,dm$$ |
