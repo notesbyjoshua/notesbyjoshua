@@ -80,6 +80,41 @@ $$
 \vec{J} = \int_{t_i}^{t_f} \vec{F}_{\text{net}}\,dt = \Delta \vec{p}.
 $$
 
+This result is called the **impulse-momentum theorem**. It says a force changes motion by accumulating over time, not just by being large at one instant.
+
+<div class="theorem-box">
+
+**Proof (Impulse-Momentum Theorem).** Start with Newton's second law in momentum form:
+
+$$
+\vec{F}_{\text{net}}=\frac{d\vec{p}}{dt}.
+$$
+
+Multiply by $$dt$$:
+
+$$
+\vec{F}_{\text{net}}\,dt=d\vec{p}.
+$$
+
+Integrate over the time interval of the interaction:
+
+$$
+\int_{t_i}^{t_f}\vec{F}_{\text{net}}\,dt
+=\int_{\vec p_i}^{\vec p_f}d\vec p.
+$$
+
+The right side is just the change in momentum:
+
+$$
+\int_{t_i}^{t_f}\vec{F}_{\text{net}}\,dt
+=\vec p_f-\vec p_i
+=\Delta \vec p.
+$$
+
+By definition, the integral of force over time is impulse, so $$\vec J=\Delta\vec p$$.
+
+</div>
+
 For a constant force,
 
 $$
@@ -156,6 +191,63 @@ $$
 $$
 
 The wall pushes back on the stream with an average force of $$20\ \text{N}$$ opposing the incoming motion. By Newton's third law, the stream pushes on the wall with $$20\ \text{N}$$ in the direction of incoming travel. Note that if the balls instead *stuck* to the wall (no rebound), each $$\Delta p_{\text{one}}$$ would be only $$-mv$$, giving half the force: rebounding transfers twice the momentum of sticking. This same reasoning, written as $$F = \dot{m}\,v$$ for a continuous mass flow rate, handles water from a hose or gas from a thruster.
+
+</div>
+
+### Varying Mass and Continuous Mass Flow
+
+When mass enters or leaves a system continuously, think in terms of **momentum per second**. If mass flows at rate $$\dot{m}=dm/dt$$ and its velocity changes by $$\Delta \vec v$$ as it interacts with an object, then the force needed to cause that change is roughly
+
+$$
+\vec F=\frac{d\vec p}{dt}=\dot m\,\Delta\vec v.
+$$
+
+The direction matters: this force is the force on the flowing material. The force on the object doing the deflecting is the opposite by Newton's third law.
+
+For rockets, the cleanest safe statement is that thrust comes from throwing mass backward. If exhaust leaves the rocket with speed $$v_{\text{rel}}$$ relative to the rocket and the rocket loses mass at rate $$-\frac{dm}{dt}$$, the ideal thrust magnitude is
+
+$$
+F_{\text{thrust}}=v_{\text{rel}}\left(-\frac{dm}{dt}\right).
+$$
+
+Use this form carefully: $$v_{\text{rel}}$$ is the exhaust speed relative to the rocket, not necessarily the exhaust speed relative to the ground.
+
+<div class="theorem-box">
+
+**Example.** A hose sprays water at mass flow rate $$\dot m=3.0\ \text{kg/s}$$ horizontally into a wall. The water hits the wall at $$8.0\ \text{m/s}$$ and then runs down the wall with essentially zero horizontal velocity. Find the average horizontal force the water exerts on the wall.
+
+The water's horizontal velocity changes from $$+8.0\ \text{m/s}$$ to $$0$$, so the wall exerts force on the water
+
+$$
+F_{\text{wall on water}}
+=\dot m\,\Delta v_x
+=(3.0)(0-8.0)
+=-24\ \text{N}.
+$$
+
+Thus the wall pushes the water left with $$24\ \text{N}$$. By Newton's third law, the water pushes the wall right with
+
+$$
+24\ \text{N}.
+$$
+
+This is the continuous version of impulse: instead of one object changing momentum, many tiny bits of water change momentum every second.
+
+</div>
+
+<div class="theorem-box">
+
+**Example.** A small rocket in deep space ejects fuel backward at relative speed $$v_{\text{rel}}=900\ \text{m/s}$$. It burns fuel at a rate of $$0.20\ \text{kg/s}$$. Find the rocket's thrust.
+
+The rocket loses mass, so $$dm/dt=-0.20\ \text{kg/s}$$. The thrust magnitude is
+
+$$
+F_{\text{thrust}}=v_{\text{rel}}\left(-\frac{dm}{dt}\right)
+=(900)(0.20)
+=180\ \text{N}.
+$$
+
+The exhaust gains backward momentum every second, so the rocket gains forward momentum every second.
 
 </div>
 
@@ -715,23 +807,71 @@ The struck puck recoils to the opposite side, balancing the $$y$$-momentum that 
 
 <div class="theorem-box">
 
-**Example (2025 F=ma).** Three identical smooth disks are arranged so one moving disk with speed $$v$$ collides elastically with two initially stationary disks one at a time because of a slight misalignment. Each collision occurs along a line of centers making $$30^\circ$$ with the incoming disk's direction at that collision. Find the final speed of the originally moving disk after the two sequential collisions.
+**Example.** In Problem 2 of the 2025 F=ma Exam, three identical smooth disks lie on a frictionless table. Two disks are initially at rest and touching. A third disk is launched with speed $$v$$ directly toward the midpoint of the two stationary disks, so all three disks collide simultaneously and elastically. Find the final velocity of the originally moving disk.
 
-In an elastic collision between identical smooth disks, the component of the moving disk's velocity along the line of centers is transferred to the struck disk, while the perpendicular component remains with the originally moving disk.
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc}
+\begin{tikzpicture}[>=Stealth, font=\small]
+\coordinate (A) at (-0.62,0);
+\coordinate (B) at (0.62,0);
+\coordinate (C) at (0,1.07);
+\draw[fill=gray!15] (A) circle (0.62);
+\draw[fill=gray!15] (B) circle (0.62);
+\draw[fill=blue!12] (C) circle (0.62);
+\node at (A) {$1$};
+\node at (B) {$2$};
+\node at (C) {$3$};
+\draw[->, very thick, blue] (0,2.35) -- (0,1.75) node[midway,right] {$v$};
+\draw[dashed] (C) -- (A);
+\draw[dashed] (C) -- (B);
+\draw[->, thick, red] (A) -- ++(-0.95,-1.65) node[below left] {$u$};
+\draw[->, thick, red] (B) -- ++(0.95,-1.65) node[below right] {$u$};
+\draw[->, thick, blue] (C) -- ++(0,0.85) node[above] {$v_f$};
+\draw (0,0.72) arc[start angle=-90,end angle=-150,radius=0.35] node[midway,left] {$30^\circ$};
+\draw (0,0.72) arc[start angle=-90,end angle=-30,radius=0.35] node[midway,right] {$30^\circ$};
+\end{tikzpicture}
+```
 
-After the first collision, the originally moving disk keeps the component perpendicular to the first line of centers:
+By symmetry, the originally moving disk continues along the same axis after the collision. Let its final velocity along the original direction be $$v_f$$, where a negative value means it rebounds backward. Let each of the two originally stationary disks leave with speed $$u$$ along the line of centers. Those directions make $$30^\circ$$ with the original motion, so each contributes $$u\cos30^\circ$$ of forward momentum.
+
+Momentum along the original direction gives
 
 $$
-v_1=v\sin 30^\circ=\frac{v}{2}.
+mv=mv_f+2mu\cos30^\circ.
 $$
 
-Its new direction is such that, for the second collision, its velocity again has a component perpendicular to the next line of centers equal to $$v_1\sin 30^\circ$$. Therefore the final speed of the original disk is
+Cancel $$m$$ and use $$2\cos30^\circ=\sqrt{3}$$:
 
 $$
-v_f=v_1\sin 30^\circ=\frac{v}{2}\cdot\frac{1}{2}=\frac{v}{4}.
+v=v_f+\sqrt{3}u.
 $$
 
-The important idea is that a smooth elastic disk collision only changes the line-of-centers component; the perpendicular component passes through unchanged.
+Energy is conserved because the collision is perfectly elastic:
+
+$$
+\frac{1}{2}mv^2=\frac{1}{2}mv_f^2+2\left(\frac{1}{2}mu^2\right),
+$$
+
+so
+
+$$
+v^2=v_f^2+2u^2.
+$$
+
+From the momentum equation, $$u=(v-v_f)/\sqrt{3}$$. Substitute into energy:
+
+$$
+v^2=v_f^2+\frac{2}{3}(v-v_f)^2.
+$$
+
+Solving gives two mathematical roots. One is $$v_f=v$$, the no-collision case, so the physical collision root is
+
+$$
+v_f=-\frac{v}{5}.
+$$
+
+The originally moving disk rebounds with speed $$v/5$$ opposite its initial direction.
 
 </div>
 
@@ -790,7 +930,47 @@ $$
 v_{2f}=5.25+3.25=8.5\ \text{m/s}.
 $$
 
-This matches the formula result, but the CM-frame view makes the "reverse in elastic collisions" idea visible.
+</div>
+
+<div class="theorem-box">
+
+**Example.** A $$2.0\ \text{kg}$$ cart moving right at $$7.0\ \text{m/s}$$ collides with a $$3.0\ \text{kg}$$ cart moving left at $$3.0\ \text{m/s}$$. The carts stick together. Use the center-of-mass frame to find how much kinetic energy is lost in the collision.
+
+First find the center-of-mass velocity:
+
+$$
+v_{\text{cm}}
+=\frac{(2.0)(7.0)+(3.0)(-3.0)}{2.0+3.0}
+=\frac{14-9}{5.0}
+=1.0\ \text{m/s}.
+$$
+
+Now switch to the CM frame by subtracting $$v_{\text{cm}}$$:
+
+$$
+v'_{1i}=7.0-1.0=6.0\ \text{m/s},
+$$
+
+$$
+v'_{2i}=-3.0-1.0=-4.0\ \text{m/s}.
+$$
+
+Because the carts stick together, they are at rest in the CM frame after the collision. Therefore all kinetic energy that existed in the CM frame is lost to deformation, heat, and sound:
+
+$$
+K'_{\text{initial}}
+=\frac{1}{2}(2.0)(6.0)^2+\frac{1}{2}(3.0)(4.0)^2
+=36+24
+=60\ \text{J}.
+$$
+
+So the collision loses
+
+$$
+60\ \text{J}.
+$$
+
+This is where the CM frame is genuinely useful: the final stuck-together object has zero kinetic energy in the CM frame, so the lost energy is just the initial CM-frame kinetic energy. In the lab frame, you would have to compute the final speed and subtract final kinetic energy from initial kinetic energy.
 
 </div>
 
@@ -804,10 +984,13 @@ This matches the formula result, but the CM-frame view makes the "reverse in ela
 | Newton's second law (general) | $$\vec{F}_{\text{net}} = d\vec{p}/dt$$ |
 | Impulse | $$\vec{J} = \int \vec{F}\,dt = \Delta\vec{p}$$ |
 | Average force | $$\vec{F}_{\text{avg}} = \Delta\vec{p}/\Delta t$$ |
+| Continuous mass flow force | $$\vec F=\dot m\,\Delta\vec v$$ |
+| Ideal rocket thrust | $$F_{\text{thrust}}=v_{\text{rel}}\left(-dm/dt\right)$$ |
 | Conservation of momentum | $$\vec{P}_i = \vec{P}_f$$ (no external impulse) |
 | Center of mass (discrete) | $$\vec{r}_{\text{cm}} = \tfrac{1}{M}\sum_i m_i\vec{r}_i$$ |
 | Center of mass (continuous) | $$\vec{r}_{\text{cm}} = \tfrac{1}{M}\int \vec{r}\,dm$$ |
 | System momentum | $$\vec{P}_{\text{sys}} = M\vec{v}_{\text{cm}}$$ |
+| CM-frame energy lost when objects stick | $$\Delta E_{\text{lost}}=K'_{\text{initial}}$$ |
 | 1D elastic, relative speed | $$v_{1i}-v_{2i} = -(v_{1f}-v_{2f})$$ |
 | 1D elastic final velocities | $$v_{1f} = \tfrac{m_1-m_2}{m_1+m_2}v_{1i} + \tfrac{2m_2}{m_1+m_2}v_{2i}$$ |
 | Perfectly inelastic collision | $$m_1\vec{v}_{1i} + m_2\vec{v}_{2i} = (m_1+m_2)\vec{v}_f$$ |
