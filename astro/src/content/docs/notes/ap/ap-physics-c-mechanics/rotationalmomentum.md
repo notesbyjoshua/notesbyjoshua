@@ -794,11 +794,33 @@ T=\frac{\pi ab}{L/(2m)}
 =\frac{2\pi mab}{L}.
 $$
 
-For an inverse-square gravitational orbit, the semi-latus rectum satisfies
+Now we need one fact about the shape of a gravitational ellipse. If the attracting mass is placed at one focus, the orbit can be written in polar form as
 
 $$
-p=\frac{b^2}{a}
-\qquad\text{and}\qquad
+r=\frac{p}{1+e\cos\theta},
+$$
+
+where $$p$$ is the semi-latus rectum and $$e$$ is the eccentricity. From ellipse geometry,
+
+$$
+p=a(1-e^2).
+$$
+
+Since $$b^2=a^2(1-e^2)$$, this becomes
+
+$$
+p=\frac{b^2}{a}.
+$$
+
+The dynamics gives the other expression for $$p$$. For an inverse-square gravitational force, the orbit equation gives
+
+$$
+p=\frac{h^2}{GM},
+$$
+
+where $$h=rv_\perp$$ is the specific angular momentum. Since $$L=mrv_\perp=mh$$,
+
+$$
 p=\frac{L^2}{GMm^2}.
 $$
 
