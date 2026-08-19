@@ -749,48 +749,13 @@ $$
 \frac{d\vec L}{dt}=\vec\tau=\vec 0,
 $$
 
-so angular momentum is conserved. This is why an object in an elliptical orbit moves fastest near periapsis and slowest near apoapsis: $$L=mrv_\perp$$ stays constant.
+so angular momentum is conserved.
 
 </div>
 
-<div class="theorem-box">
+When dealing with gravity, we usually assume that an object, such as a planet or satellite, is orbiting around a much heavier object, such as a star or planet. Because the central mass is so much larger, we usually treat it as stationary and let the smaller mass move in an elliptical orbit around it.
 
-**Theorem.** For a circular orbit around a much larger mass $$M$$,
-
-$$
-v_{\text{orbit}}=\sqrt{\frac{GM}{r}},
-$$
-
-and
-
-$$
-T=2\pi\sqrt{\frac{r^3}{GM}}.
-$$
-
-</div>
-
-<div class="theorem-box">
-
-**Proof (circular orbit speed and period).** For a circular orbit, gravity supplies the centripetal force:
-
-$$
-\frac{GMm}{r^2}=m\frac{v_{\text{orbit}}^2}{r}.
-$$
-
-The orbiting mass cancels, giving
-
-$$
-v_{\text{orbit}}=\sqrt{\frac{GM}{r}}.
-$$
-
-The orbital period follows from circumference over speed:
-
-$$
-T=\frac{2\pi r}{v_{\text{orbit}}}
-=2\pi\sqrt{\frac{r^3}{GM}}.
-$$
-
-</div>
+The main orbit formulas below all come from the same two ideas. First, gravity is a central force, so it creates no torque about the attracting body and angular momentum is conserved. Second, gravity is conservative, so the total mechanical energy stays constant. Kepler's third law connects the size of the orbit to its period, while the orbital energy formula connects the size of the orbit to the total energy.
 
 <div class="theorem-box">
 
@@ -810,57 +775,107 @@ $$
 
 <div class="theorem-box">
 
-**Theorem (orbital energy and speed formulas).** For a mass $$m$$ orbiting a much larger mass $$M$$:
+**Proof (Kepler's third law).** Let the orbit be an ellipse with semi-major axis $$a$$ and semi-minor axis $$b$$. Since gravity creates no torque about the central mass, angular momentum is conserved:
+
+$$
+L=mrv_\perp.
+$$
+
+The areal velocity is the rate at which the radius vector sweeps out area. For a small time interval,
+
+$$
+\frac{dA}{dt}=\frac{1}{2}rv_\perp=\frac{L}{2m}.
+$$
+
+One full orbit sweeps out the full area of the ellipse, $$A=\pi ab$$, so
+
+$$
+T=\frac{\pi ab}{L/(2m)}
+=\frac{2\pi mab}{L}.
+$$
+
+For an inverse-square gravitational orbit, the semi-latus rectum satisfies
+
+$$
+p=\frac{b^2}{a}
+\qquad\text{and}\qquad
+p=\frac{L^2}{GMm^2}.
+$$
+
+Thus
+
+$$
+\frac{L^2}{GMm^2}=\frac{b^2}{a},
+$$
+
+so
+
+$$
+L^2=\frac{GMm^2b^2}{a}.
+$$
+
+Squaring the period formula gives
+
+$$
+T^2=\frac{4\pi^2m^2a^2b^2}{L^2}
+=\frac{4\pi^2m^2a^2b^2}{GMm^2b^2/a}
+=\frac{4\pi^2}{GM}a^3.
+$$
+
+This proves Kepler's third law for an elliptical orbit. For a circular orbit, $$a=r$$.
+
+</div>
+
+<div class="theorem-box">
+
+**Theorem (orbital energy).** For a mass $$m$$ orbiting a much larger mass $$M$$:
 
 $$
 E=-\frac{GMm}{2a},
 $$
 
-where $$a$$ is the semi-major axis. The vis-viva equation gives the speed at distance $$r$$:
+where $$a$$ is the semi-major axis. $$E$$ represents the *total* mechanical energy of the orbiting system. A related speed formula, called the vis-viva equation, is
 
 $$
 v^2=GM\left(\frac{2}{r}-\frac{1}{a}\right).
-$$
-
-The escape speed from distance $$r$$ is
-
-$$
-v_{\text{esc}}=\sqrt{\frac{2GM}{r}}.
 $$
 
 </div>
 
 <div class="theorem-box">
 
-**Proof (circular orbit mechanical energy).** In a circular orbit,
+**Proof (elliptical orbit mechanical energy).** For an elliptical orbit, use the vis-viva equation:
 
 $$
-v^2=\frac{GM}{r}.
+v^2=GM\left(\frac{2}{r}-\frac{1}{a}\right).
 $$
 
-Thus the kinetic energy is
-
-$$
-K=\frac{1}{2}mv^2
-=\frac{1}{2}m\left(\frac{GM}{r}\right)
-=\frac{GMm}{2r}.
-$$
-
-The gravitational potential energy is
-
-$$
-U=-\frac{GMm}{r}.
-$$
-
-So
+The total mechanical energy is
 
 $$
 E=K+U
-=\frac{GMm}{2r}-\frac{GMm}{r}
-=-\frac{GMm}{2r}.
+=\frac{1}{2}mv^2-\frac{GMm}{r}.
 $$
 
-This matches the elliptical formula $$E=-GMm/(2a)$$ when $$a=r$$.
+Substitute vis-viva into the kinetic energy term:
+
+$$
+E=\frac{1}{2}mGM\left(\frac{2}{r}-\frac{1}{a}\right)-\frac{GMm}{r}.
+$$
+
+Distribute:
+
+$$
+E=\frac{GMm}{r}-\frac{GMm}{2a}-\frac{GMm}{r}.
+$$
+
+The two radius-dependent terms cancel, so
+
+$$
+E=-\frac{GMm}{2a}.
+$$
+
+This means the total mechanical energy of a bound orbit depends only on the semi-major axis, not on where the object is along the ellipse.
 
 </div>
 
