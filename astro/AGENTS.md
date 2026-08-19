@@ -1,12 +1,18 @@
 ## Version control
 
-Commit and push your changes automatically once a task is complete, unless the
-user says otherwise. Don't wait to be asked to commit or push — do it by default.
+Commit changes automatically once a task is complete, unless the user says
+otherwise, but keep existing note-content edits uncommitted unless the user
+explicitly asks you to commit them.
 
 - Use a clear, descriptive commit message summarizing the change.
-- Push to the current branch (typically `main`) after committing.
-- Skip the automatic commit/push only when the user explicitly asks you not to,
-  or when the work is clearly incomplete / left in a broken state.
+- Push backend/frontend changes and newly created notes to the current branch
+  (typically `main`) after committing, unless the user explicitly says not to.
+- When editing existing note content, leave the changes uncommitted so the user
+  can write their own commit message.
+- Keep commits focused on the requested work. Do not include unrelated generated
+  churn or user changes.
+- Skip the automatic commit/push when the work is clearly incomplete or left in
+  a broken state.
 
 ## Development
 
