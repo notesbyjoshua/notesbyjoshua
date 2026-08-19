@@ -888,14 +888,14 @@ The struck puck recoils to the opposite side, balancing the $$y$$-momentum that 
 ```tikz
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta,calc}
-\begin{tikzpicture}[>=Stealth, font=\small]
-\coordinate (A) at (-0.62,0);
-\coordinate (B) at (0.62,0);
-\coordinate (C) at (0,2.85);
+\begin{tikzpicture}[>=Stealth, font=\small, scale=0.78]
+\coordinate (A) at (0,-0.62);
+\coordinate (B) at (0,0.62);
+\coordinate (C) at (-2.75,0);
 \draw[fill=gray!15] (A) circle (0.62);
 \draw[fill=gray!15] (B) circle (0.62);
 \draw[fill=blue!12] (C) circle (0.62);
-\draw[->, very thick, blue] (0,4.15) -- (0,3.5) node[midway,right] {$v$};
+\draw[->, very thick, blue] (-4.05,0) -- (-3.4,0) node[midway,above] {$v$};
 \end{tikzpicture}
 ```
 
