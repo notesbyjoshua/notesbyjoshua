@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 340" role="img" aria-labelledby="title desc">
+  <title id="title">Block on a scale mounted on an inclined wedge</title>
+  <desc id="desc">A block rests on a small platform scale mounted parallel to the surface of an inclined wedge.</desc>
+  <rect width="560" height="340" fill="#f8f7f3"/>
+  <path d="M95 270 L485 270 L485 95 Z" fill="#e5e7eb" stroke="#17202a" stroke-width="6" stroke-linejoin="round"/>
+  <g transform="rotate(-25 335 178)">
+    <rect x="250" y="164" width="148" height="22" rx="4" fill="#bfdbfe" stroke="#2563eb" stroke-width="4"/>
+    <rect x="289" y="105" width="70" height="60" rx="6" fill="#fee2e2" stroke="#ef4444" stroke-width="4"/>
+    <text x="324" y="143" text-anchor="middle" font-family="Georgia,serif" font-size="26" fill="#ef4444">m</text>
+    <text x="324" y="205" text-anchor="middle" font-family="Georgia,serif" font-size="20" fill="#2563eb">scale</text>
+  </g>
+  <path d="M390 270 A70 70 0 0 0 362 215" fill="none" stroke="#17202a" stroke-width="2"/>
+  <text x="388" y="242" font-family="Georgia,serif" font-size="26" fill="#17202a">θ</text>
+  <text x="97" y="295" font-family="Georgia,serif" font-size="22" fill="#17202a">wedge</text>
+</svg>

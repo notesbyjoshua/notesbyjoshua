@@ -23,7 +23,7 @@ sidebar:
 
 A **scalar** has magnitude only (examples: speed, distance, time). A **vector** has magnitude and direction (examples: displacement, velocity, acceleration). In one dimension, a sign attached to a scalar component encodes direction along an axis. When solving problems, always choose an origin and a positive direction along each axis. 
 
-**Displacement** $$\Delta x$$ is the change in position regardless of what path you take (can be negative) and **distance** is the length of the path traveled and is always nonnegative. **Average velocity** over an interval is
+**Displacement** $$\Delta x$$ is the change in position regardless of what path you take (can be negative) and **distance** is the length of the path traveled and is always nonnegative. **Average velocity** over an interval is defined as
 
 $$
 \bar{v} = \frac{\Delta x}{\Delta t}.
@@ -506,7 +506,13 @@ Note that with unequal launch and landing heights the trajectory is no longer sy
 
 ## Relative velocity (introduction)
 
-The velocity of object $$A$$ relative to object $$B$$ is written $$\vec{v}_{A/B}$$. With three objects (or frames), the usual composition rule is
+Sometimes, two objects may be moving at the same time, and we need to look at the motion of one object in the perspective of another. We define two frames: n **inertial frame** (or lab frame) and a **non-inertial frame** (in the frame of the object being analyzed).
+
+When working in the lab frame, it is as if you are standing to the side observing from the ground (for simplicity, we assume that the Earth is not moving), meaning that you are stationary. For example, viewing a F1 race from the stands is considered an inertial frame, since you are not moving.
+
+When working in the non-inertial frame, we are "moving" along with the object whose frame we have taken. For example, a non-inertial frame would be like you are a racecar driver speeding around a track. To you, you feel stationary while a person in the stands seems to race towards you. Obviously, this is not the case, and it is amazing that our brains are able to decipher this and correctly deduce that you are moving inside the racecar while the spectator is not!
+
+We will often represent quantities like velocities as vectors, since we can do vector addition. Suppose we define the velocity of object $$A$$ relative to object $$B$$ as $$\vec{v}_{A/B}$$ (it could be any quantity of motion, not just velocity). Suppose we want to analyze object C, while we are working in relative frames. Using vector addition, we can write
 
 $$
 \vec{v}_{A/C} = \vec{v}_{A/B} + \vec{v}_{B/C}.
@@ -516,14 +522,13 @@ $$
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
 \begin{tikzpicture}[>=Stealth, font=\small]
-\draw[->, very thick, blue] (0,0) -- (0,2.4) node[above] {$\vec v_{B/W}$};
-\draw[->, very thick, red] (0,2.4) -- (2.2,2.4) node[right] {$\vec v_{W/G}$};
-\draw[->, very thick, purple] (0,0) -- (2.2,2.4) node[midway, below right] {$\vec v_{B/G}$};
-\draw[gray] (-0.6,-0.2) rectangle (3.1,2.9); \node at (1.2,-0.55) {river-crossing vector addition};
+\draw[->, very thick, blue] (0,0) -- (0,2.4) node[above] {$\vec v_{A/B}$};
+\draw[->, very thick, red] (0,2.4) -- (2.2,2.4) node[right] {$\vec v_{B/C}$};
+\draw[->, very thick, purple] (0,0) -- (2.2,2.4) node[midway, below right] {$\vec v_{A/C}$};
 \end{tikzpicture}
 ```
 
-To visualize, you can draw the velocities as vectors, and do vector addition to get your final result. A useful consistency check is that swapping the subscripts negates the vector, $$\vec{v}_{A/B} = -\vec{v}_{B/A}$$.
+If you need a reminder of vector addition, check out AP Precalculus. A useful consistency check is that swapping the subscripts negates the vector, $$\vec{v}_{A/B} = -\vec{v}_{B/A}$$.
 
 <div class="theorem-box">
 
@@ -535,7 +540,7 @@ $$
 \vec{v}_{B/G} = \vec{v}_{B/W} + \vec{v}_{W/G}.
 $$
 
-These two pieces are perpendicular, so the ground speed is
+These two pieces are perpendicular (check it yourself), so the ground speed is
 
 $$
 v_{B/G} = \sqrt{4^2 + 3^2} = 5\ \text{m/s},
@@ -559,7 +564,7 @@ The key idea is that the perpendicular components are independent, just as in pr
 
 </div>
 
-You can find more on the [USAPhO section on mechanics](/notes/physics/advmech/).
+You can find more about relative motion on the [USAPhO section on mechanics](/notes/physics/advmech/).
 
 ---
 
@@ -587,18 +592,186 @@ You can find more on the [USAPhO section on mechanics](/notes/physics/advmech/).
 
 ## Practice
 
+### Multiple Choice
+
+::::problem
+1. A particle has $$v(t)=v_0-\beta t^2$$ with $$v_0,\beta>0$$. Which expression gives the distance traveled from $$t=0$$ until the particle first stops?
+
+(A) $$\int_0^{\sqrt{v_0/\beta}}(v_0-\beta t^2)\,dt$$
+
+(B) $$\int_0^{v_0/\beta}(v_0-\beta t^2)\,dt$$
+
+(C) $$\int_0^{\sqrt{v_0/\beta}}\lvert -2\beta t\rvert\,dt$$
+
+(D) $$v_0\sqrt{v_0/\beta}$$
+::::
+
+::::problem
+2. A particle moves along the $$x$$-axis with acceleration $$a(x)=\alpha x$$ and starts at $$x=x_0>0$$ from rest. Which expression gives its speed at $$x=2x_0$$?
+
+(A) $$\sqrt{\alpha x_0^2}$$
+
+(B) $$\sqrt{3\alpha x_0^2}$$
+
+(C) $$\sqrt{4\alpha x_0^2}$$
+
+(D) $$\sqrt{6\alpha x_0^2}$$
+::::
+
+::::problem
+3. A projectile is launched from level ground and lands back at the same height a fixed horizontal distance $$R$$ away. The launch speed is increased while $$R$$ is kept the same. Compared with the original two possible launch angles, the new two possible launch angles
+
+(A) move closer to $$45^\circ$$
+
+(B) move farther from $$45^\circ$$
+
+(C) both increase
+
+(D) both decrease
+::::
+
+::::problem
+4. A particle has $$x(t)=At^3-Bt$$ with $$A,B>0$$. At the instant when the particle's velocity is zero, its acceleration is
+
+(A) zero
+
+(B) $$2\sqrt{3AB}$$
+
+(C) $$6\sqrt{B/(3A)}$$
+
+(D) $$6A\sqrt{B/(3A)}$$
+::::
+
+::::problem
+5. A projectile is fired from height $$h$$ with speed $$v_0$$ at angle $$\theta$$ above horizontal. Air resistance is negligible. Which equation determines its time of flight if the ground is $$y=0$$?
+
+(A) $$0=h+v_0\sin\theta\,t-\dfrac{1}{2}gt^2$$
+
+(B) $$0=v_0\cos\theta\,t-\dfrac{1}{2}gt^2$$
+
+(C) $$h=v_0t-\dfrac{1}{2}gt^2$$
+
+(D) $$0=v_0\sin\theta-gt$$
+::::
+
+::::problem
+6. A boat always points directly across a river of width $$W$$ with speed $$v_b$$ relative to the water. The current is parallel to the banks and has speed $$u(y)=u_0y/W$$, where $$y$$ is distance across the river. Compared with a river whose current is everywhere $$u_0/2$$, the boat's downstream drift is
+
+(A) smaller
+
+(B) the same
+
+(C) larger
+
+(D) impossible to compare without $$v_b$$
+::::
+
+::::problem
+7. A particle moves in one dimension with acceleration $$a=-kv^2$$ when $$v>0$$, where $$k>0$$. Which statement must be true while the particle is moving in the positive direction?
+
+(A) The velocity-time graph is a straight line.
+
+(B) The velocity decreases, but the magnitude of the slope decreases as the particle slows.
+
+(C) The acceleration is constant and negative.
+
+(D) Equal decreases in speed take equal amounts of time.
+::::
+
+::::problem
+8. Two projectiles are launched from the same point with the same speed at complementary angles $$\theta$$ and $$90^\circ-\theta$$, where $$0<\theta<45^\circ$$. On level ground, the projectile launched at the larger angle has
+
+(A) the same range and a longer flight time
+
+(B) the same range and a shorter flight time
+
+(C) a longer range and a longer flight time
+
+(D) a shorter range and a shorter flight time
+::::
+
+::::problem
+9. A runner moves so that her speed depends on position according to $$v=v_0+kx$$, where $$v_0,k>0$$. Her acceleration as a function of position is
+
+(A) $$k$$
+
+(B) $$k(v_0+kx)$$
+
+(C) $$k/(v_0+kx)$$
+
+(D) $$v_0+kx$$
+::::
+
+::::problem
+10. A particle moves in the plane with $$x=bt$$ and $$y=ct^2-dt^3$$. At the instant when $$v_y=0$$, the acceleration vector points
+
+(A) purely horizontal
+
+(B) upward
+
+(C) downward
+
+(D) tangent to the trajectory
+::::
+
+::::problem
+11. A car travels around a circular track of radius $$R$$ with speed $$v=bt$$. At what time are the radial and tangential acceleration components equal in magnitude?
+
+(A) $$t=\sqrt{R/b}$$
+
+(B) $$t=R/b$$
+
+(C) $$t=b/R$$
+
+(D) They are never equal.
+::::
+
+::::problem
+12. A projectile is launched from level ground. At the top of its path, its speed is half its launch speed. What was the launch angle?
+
+(A) $$30^\circ$$
+
+(B) $$45^\circ$$
+
+(C) $$60^\circ$$
+
+(D) $$75^\circ$$
+::::
+
 ### FRQ
 
 ::::frq{id=ap-physics-c-mechanics-kinematics-1}
-1. _Temporary placeholder FRQ for wiring/testing — replace with a real free-response question for this unit._
+1. A bead moves along a straight track with acceleration $$a(x)=\alpha x-\beta$$, where $$\alpha$$ and $$\beta$$ are positive constants. At $$x=0$$, the bead has speed $$v_0$$ in the positive direction.
 
-   $$(A)$$ State one key idea from this unit and explain it in your own words.
+   $$(A)$$ Derive an expression for $$v^2$$ as a function of $$x$$.
 
-   $$(B)$$ Give a worked example or application of that idea.
+   $$(B)$$ Find the condition on $$v_0$$ for the bead to reach $$x=\beta/\alpha$$.
 
-:::solution
-$$(A)$$ _Placeholder solution._ Any accurate statement of a core concept from this unit, with a correct explanation, earns full credit.
+   $$(C)$$ If the bead turns around before reaching $$x=\beta/\alpha$$, determine the turning point.
 
-$$(B)$$ _Placeholder solution._ Any correct worked example or application consistent with part (A).
-:::
+   $$(D)$$ Explain how the result changes if the bead initially moves in the negative direction.
+::::
+
+::::frq{id=ap-physics-c-mechanics-kinematics-2}
+2. A projectile is launched from a cliff of height $$H$$ with initial speed $$v_0$$ at angle $$\theta$$ above horizontal. A horizontal wind causes constant acceleration $$a_w$$ in the same direction as the projectile's horizontal velocity.
+
+   $$(A)$$ Derive expressions for $$x(t)$$ and $$y(t)$$.
+
+   $$(B)$$ Find an equation for the time when the projectile reaches the ground.
+
+   $$(C)$$ Derive the horizontal distance from the base of the cliff where the projectile lands.
+
+   $$(D)$$ Determine whether increasing $$a_w$$ changes the time of flight, and justify your answer.
+::::
+
+::::frq{id=ap-physics-c-mechanics-kinematics-3}
+3. A particle moves along the $$x$$-axis. From $$t=0$$ to $$t=T$$, its velocity is $$v(t)=v_0(1-t/T)^2$$. From $$t=T$$ to $$t=2T$$, its acceleration is constant and chosen so the particle returns to its starting position at $$t=2T$$.
+
+   $$(A)$$ Find the displacement during the first interval.
+
+   $$(B)$$ Determine the velocity at $$t=T$$.
+
+   $$(C)$$ Find the constant acceleration during the second interval.
+
+   $$(D)$$ Sketch the velocity-time graph, labeling intercepts and areas with signs.
 ::::

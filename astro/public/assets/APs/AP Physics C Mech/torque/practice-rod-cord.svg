@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 330" role="img" aria-labelledby="title desc">
+  <title id="title">Rod hinged to a wall and held by a cord</title>
+  <desc id="desc">A horizontal rod is hinged at the wall, supports two hanging masses, and is held by a cord at an angle.</desc>
+  <rect width="560" height="330" fill="#f8f7f3"/>
+  <line x1="95" y1="58" x2="95" y2="282" stroke="#17202a" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="130" cy="200" r="13" fill="#17202a"/>
+  <line x1="130" y1="200" x2="485" y2="200" stroke="#17202a" stroke-width="8" stroke-linecap="round"/>
+  <line x1="485" y1="200" x2="312" y2="86" stroke="#2563eb" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="312" cy="86" r="8" fill="#2563eb"/>
+  <line x1="219" y1="200" x2="219" y2="260" stroke="#ef4444" stroke-width="4"/>
+  <rect x="191" y="260" width="56" height="36" rx="4" fill="#fee2e2" stroke="#ef4444" stroke-width="4"/>
+  <text x="219" y="286" text-anchor="middle" font-family="Georgia,serif" font-size="24" fill="#ef4444">m</text>
+  <line x1="396" y1="200" x2="396" y2="260" stroke="#ef4444" stroke-width="4"/>
+  <rect x="362" y="260" width="68" height="36" rx="4" fill="#fee2e2" stroke="#ef4444" stroke-width="4"/>
+  <text x="396" y="286" text-anchor="middle" font-family="Georgia,serif" font-size="24" fill="#ef4444">2m</text>
+  <path d="M445 200 A54 54 0 0 0 400 164" fill="none" stroke="#17202a" stroke-width="2"/>
+  <text x="420" y="188" font-family="Georgia,serif" font-size="25" fill="#17202a">θ</text>
+  <text x="132" y="228" font-family="Georgia,serif" font-size="20" fill="#17202a">hinge</text>
+  <text x="303" y="70" font-family="Georgia,serif" font-size="20" fill="#2563eb">cord</text>
+  <text x="480" y="224" font-family="Georgia,serif" font-size="22" fill="#17202a">L</text>
+</svg>

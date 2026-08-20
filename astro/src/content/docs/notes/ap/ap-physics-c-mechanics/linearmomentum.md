@@ -194,7 +194,7 @@ The wall pushes back on the stream with an average force of $$20\ \text{N}$$ opp
 
 </div>
 
-### Varying Mass
+### Variable-Mass Systems
 
 Variable-mass problems are usually momentum problems where the mass of the object you are tracking changes with time. The key move is to remember that momentum is a product:
 
@@ -883,7 +883,7 @@ The struck puck recoils to the opposite side, balancing the $$y$$-momentum that 
 
 <div class="theorem-box">
 
-**Example.** In Problem 2 of the 2025 F=ma Exam, three identical smooth disks lie on a frictionless table. Two disks are initially at rest and touching. A third disk is launched with speed $$v$$ directly toward the midpoint of the two stationary disks, so all three disks collide simultaneously and elastically. Find the final velocity of the originally moving disk.
+**Example.** Three identical smooth disks lie on a frictionless table. Two disks are initially at rest and touching. A third disk is launched with speed $$v$$ directly toward the midpoint of the two stationary disks, so all three disks collide simultaneously and elastically. Find the final velocity of the originally moving disk.
 
 ```tikz
 \usepackage{tikz}
@@ -1036,8 +1036,6 @@ $$
 60\ \text{J}.
 $$
 
-This is where the CM frame is genuinely useful: the final stuck-together object has zero kinetic energy in the CM frame, so the lost energy is just the initial CM-frame kinetic energy. In the lab frame, you would have to compute the final speed and subtract final kinetic energy from initial kinetic energy.
-
 </div>
 
 ---
@@ -1065,18 +1063,186 @@ This is where the CM frame is genuinely useful: the final stuck-together object 
 
 ## Practice
 
+### Multiple Choice
+
+::::problem
+1. A ball of mass $$0.20\ \text{kg}$$ hits a wall moving to the right at $$15\ \text{m/s}$$ and rebounds to the left at $$10\ \text{m/s}$$. If the contact time is $$0.050\ \text{s}$$, the magnitude of the average force exerted by the wall is
+
+(A) $$20\ \text{N}$$
+
+(B) $$60\ \text{N}$$
+
+(C) $$100\ \text{N}$$
+
+(D) $$250\ \text{N}$$
+::::
+
+::::problem
+2. A net force on a particle varies as $$F(t)=F_0(1-t/T)$$ from $$t=0$$ to $$t=T$$. The impulse is
+
+(A) $$F_0T$$
+
+(B) $$F_0T/2$$
+
+(C) $$F_0/T$$
+
+(D) zero
+::::
+
+::::problem
+3. A projectile explodes at the top of its path into two fragments of masses $$m$$ and $$3m$$. If the smaller fragment stops immediately after the explosion, the speed of the larger fragment immediately after is
+
+(A) $$v/3$$
+
+(B) $$v$$
+
+(C) $$4v/3$$
+
+(D) $$3v$$
+::::
+
+::::problem
+4. A mass $$m$$ moving right with speed $$v$$ collides elastically in one dimension with an initially stationary mass $$3m$$. After the collision, the velocity of the mass $$m$$ is
+
+(A) $$-v/2$$
+
+(B) $$-v/3$$
+
+(C) $$v/3$$
+
+(D) $$v/2$$
+::::
+
+::::problem
+5. Two skaters push off from rest on frictionless ice. One has three times the mass of the other. If no external horizontal force acts, the heavier skater's kinetic energy is
+
+(A) one-ninth the lighter skater's kinetic energy
+
+(B) one-third the lighter skater's kinetic energy
+
+(C) equal to the lighter skater's kinetic energy
+
+(D) three times the lighter skater's kinetic energy
+::::
+
+::::problem
+6. A cart of initial mass $$M$$ and speed $$v_0$$ collects rain falling vertically at rate $$\lambda$$. Neglect horizontal external forces. Its speed after time $$t$$ is
+
+(A) $$v_0$$
+
+(B) $$\dfrac{Mv_0}{M+\lambda t}$$
+
+(C) $$v_0+\lambda t/M$$
+
+(D) $$\dfrac{(M+\lambda t)v_0}{M}$$
+::::
+
+::::problem
+7. A rocket expels fuel backward at speed $$u$$ relative to the rocket. With no external force, the rocket's speed change as its mass decreases from $$M_i$$ to $$M_f$$ is
+
+(A) $$u\ln(M_i/M_f)$$
+
+(B) $$u\ln(M_f/M_i)$$
+
+(C) $$u(M_i-M_f)$$
+
+(D) $$u(M_f/M_i)$$
+::::
+
+::::problem
+8. A force on a mass $$m$$ is $$F(t)=F_0t/T$$ from $$t=0$$ to $$T$$ and then $$F(t)=F_0(2-t/T)$$ from $$t=T$$ to $$2T$$. If the mass starts from rest, its speed at $$t=2T$$ is
+
+(A) $$F_0T/m$$
+
+(B) $$F_0T/(2m)$$
+
+(C) $$2F_0T/m$$
+
+(D) $$\sqrt{F_0T/m}$$
+::::
+
+::::problem
+9. A stationary object explodes into three equal masses. Two pieces leave at speed $$v$$ with angle $$120^\circ$$ between their velocities. The third piece leaves with speed
+
+(A) $$0$$
+
+(B) $$v$$
+
+(C) $$\sqrt{3}v$$
+
+(D) $$2v$$
+::::
+
+::::problem
+10. A mass $$m$$ with speed $$5\ \text{m/s}$$ elastically collides head-on with a mass $$3m$$ initially moving toward it at $$1\ \text{m/s}$$. The final velocity of the mass $$m$$ is
+
+(A) $$-4\ \text{m/s}$$
+
+(B) $$-2\ \text{m/s}$$
+
+(C) $$1\ \text{m/s}$$
+
+(D) $$5\ \text{m/s}$$
+::::
+
+::::problem
+11. A system of particles has total mass $$M$$. Which equation remains true even if the particles collide inelastically with each other?
+
+(A) $$\sum\vec F_{\text{ext}}=M\vec a_{\text{cm}}$$
+
+(B) $$\sum\vec F_{\text{int}}=M\vec a_{\text{cm}}$$
+
+(C) $$K_i=K_f$$
+
+(D) $$\vec r_{\text{cm}}=\vec 0$$
+::::
+
+::::problem
+12. A cart moves to the right at $$4\ \text{m/s}$$ while sand leaks out vertically downward at rate $$2\ \text{kg/s}$$ relative to the ground. Ignoring external horizontal forces, the horizontal acceleration of the remaining cart-sand system is
+
+(A) zero
+
+(B) $$2\ \text{m/s}^2$$ to the right
+
+(C) $$2\ \text{m/s}^2$$ to the left
+
+(D) impossible to determine without the cart mass
+::::
+
 ### FRQ
 
 ::::frq{id=ap-physics-c-mechanics-linearmomentum-1}
-1. _Temporary placeholder FRQ for wiring/testing — replace with a real free-response question for this unit._
+1. A cart of initial mass $$M$$ moves on a frictionless horizontal track with speed $$v_0$$. Sand falls vertically into the cart at constant rate $$\lambda$$.
 
-   $$(A)$$ State one key idea from this unit and explain it in your own words.
+   $$(A)$$ Derive the cart's speed as a function of time.
 
-   $$(B)$$ Give a worked example or application of that idea.
+   $$(B)$$ Determine the horizontal force the cart exerts on newly collected sand.
 
-:::solution
-$$(A)$$ _Placeholder solution._ Any accurate statement of a core concept from this unit, with a correct explanation, earns full credit.
+   $$(C)$$ Determine the rate at which mechanical energy is lost.
 
-$$(B)$$ _Placeholder solution._ Any correct worked example or application consistent with part (A).
-:::
+   $$(D)$$ Explain why horizontal momentum is conserved even though kinetic energy is not.
+::::
+
+::::frq{id=ap-physics-c-mechanics-linearmomentum-2}
+2. A block of mass $$m$$ moving with speed $$v_0$$ collides with and sticks to a block of mass $$2m$$ attached to a spring of constant $$k$$ on a frictionless track.
+
+   $$(A)$$ Find the speed of the combined blocks just after the collision.
+
+   $$(B)$$ Determine the maximum compression of the spring.
+
+   $$(C)$$ Find the fraction of the initial kinetic energy lost in the collision.
+
+   $$(D)$$ Describe how the answer changes if the collision is elastic instead.
+::::
+
+::::frq{id=ap-physics-c-mechanics-linearmomentum-3}
+3. A projectile of mass $$3m$$ moving horizontally at speed $$v_0$$ explodes into three fragments of equal mass. One fragment moves straight upward at speed $$v_0$$, and a second moves at angle $$30^\circ$$ below the original direction with speed $$2v_0$$.
+
+   $$(A)$$ Determine the velocity components of the third fragment.
+
+   $$(B)$$ Determine the speed of the third fragment.
+
+   $$(C)$$ Compare the total kinetic energy before and after the explosion.
+
+   $$(D)$$ Explain what supplied the change in kinetic energy.
 ::::

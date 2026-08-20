@@ -19,29 +19,7 @@ sidebar:
 
 ## Variables of Rotation
 
-### Rotational Mechanical Advantage
-
-Rotational mechanical advantage is the same work tradeoff as linear mechanical advantage, but written with torque and angle. For an ideal rotational machine,
-
-$$
-W_{\text{in}}=W_{\text{out}},
-$$
-
-so
-
-$$
-\tau_{\text{in}}\Delta\theta_{\text{in}}
-=\tau_{\text{out}}\Delta\theta_{\text{out}}.
-$$
-
-Thus the ideal torque advantage is
-
-$$
-\frac{\tau_{\text{out}}}{\tau_{\text{in}}}
-=\frac{\Delta\theta_{\text{in}}}{\Delta\theta_{\text{out}}}.
-$$
-
-This is why gears, wheels and axles, and screw mechanisms can multiply torque: the input side turns through a larger angular displacement than the output side. In a real machine, friction makes $$W_{\text{out}}<W_{\text{in}}$$, so the actual torque advantage is smaller than the ideal ratio.
+Like kinematics, rotation also has counterparts for measurements of energy and other variables.
 
 ### Rotational Kinetic Energy
 
@@ -198,6 +176,8 @@ More generally, in vector form,
 $$
 \vec P = \vec{\tau} \cdot \vec{\omega}.
 $$
+
+This is consistent with the translational value for power.
 
 <div class="theorem-box">
 
@@ -372,7 +352,7 @@ Smaller $$\beta$$ means less mass far from the axis, less rotational inertia to 
 
 <div class="theorem-box">
 
-**Example.** In the 2011 F=ma Problem 25 setup, a hollow cylinder rolls without slipping down an incline of angle $$\theta$$ while a block slides down the same incline with coefficient of kinetic friction $$\mu$$. They start from rest at the same height and reach the bottom at the same time. Find $$\mu$$.
+**Example.** A hollow cylinder rolls without slipping down an incline of angle $$\theta$$ while a block slides down the same incline with coefficient of kinetic friction $$\mu$$. They start from rest at the same height and reach the bottom at the same time. Find $$\mu$$.
 
 If they start together and travel the same distance in the same time from rest, their accelerations down the incline are equal.
 
@@ -432,7 +412,7 @@ In general, when solving rolling without slipping problems, always:
 
 ## Angular Momentum of a Particle
 
-The angular momentum of a particle about a chosen origin is a cross product (refer to the previous units if you need a reminder of what the cross product is):
+The angular momentum of a particle about a chosen origin is a cross product (refer to the previous unit if you need a reminder of what the cross product is):
 
 $$
 \vec{L} = \vec{r}\times \vec{p}.
@@ -474,7 +454,7 @@ This simple form assumes the angular momentum vector is parallel to the angular 
 \draw[dashed] (0,-1.4) -- (0,1.75);
 \draw[->, very thick, blue] (0,0) -- (0,1.75) node[above] {$\vec L,\ \vec\omega$};
 \draw[->, thick] (1.25,0.45) arc[start angle=25,end angle=330,x radius=1.25,y radius=0.43];
-\node[right] at (1.55,0.05) {spin};
+\node[right] at (1.35,0.35) {spin};
 \end{tikzpicture}
 ```
 
@@ -648,7 +628,7 @@ $$
 **Step 3 — Moment of inertia after impact.** The rod about its end is $$I_{\text{rod}} = \tfrac13 ML^2$$, and the embedded bullet adds $$md^2$$:
 
 $$
-I = \tfrac13 ML^2 + md^2 = \tfrac13(1.0)(1.2)^2 + (0.010)(1.0)^2 = 0.480 + 0.010 = 0.490\ \text{kg}\cdot\text{m}^2.
+I = \tfrac13 ML^2 + md^2 = \tfrac13(1.0)(1.2)^2 + (0.010)(1.0)^2 = 0.490\ \text{kg}\cdot\text{m}^2.
 $$
 
 **Step 4 — Solve for $$\omega$$.** Angular momentum conservation $$L_i = I\omega$$ gives
@@ -800,7 +780,7 @@ $$
 r=\frac{p}{1+e\cos\theta},
 $$
 
-where $$p$$ is the semi-latus rectum and $$e$$ is the eccentricity. From ellipse geometry,
+where $$p$$ is the semi-latus rectum and $$e$$ is the eccentricity. You can see the proof of this in AP Precalculus. From ellipse geometry,
 
 $$
 p=a(1-e^2).
@@ -860,74 +840,7 @@ where $$a$$ is the semi-major axis. $$E$$ represents the *total* mechanical ener
 
 </div>
 
-<div class="theorem-box">
-
-**Proof (elliptical orbit mechanical energy).** Let $$r_p$$ be the periapsis distance and $$r_a$$ be the apoapsis distance. At those two points, the velocity is perpendicular to the radius, so angular momentum conservation gives
-
-$$
-mr_pv_p=mr_av_a.
-$$
-
-Thus
-
-$$
-v_a=\frac{r_p}{r_a}v_p.
-$$
-
-Because mechanical energy is conserved,
-
-$$
-\frac{1}{2}mv_p^2-\frac{GMm}{r_p}
-=\frac{1}{2}mv_a^2-\frac{GMm}{r_a}.
-$$
-
-Substitute $$v_a=(r_p/r_a)v_p$$:
-
-$$
-\frac{1}{2}mv_p^2
-\left(1-\frac{r_p^2}{r_a^2}\right)
-=GMm\left(\frac{1}{r_p}-\frac{1}{r_a}\right).
-$$
-
-Cancel $$m$$ and solve for $$v_p^2$$:
-
-$$
-v_p^2
-=2GM
-\frac{(1/r_p)-(1/r_a)}{1-(r_p^2/r_a^2)}
-=\frac{2GMr_a}{r_p(r_a+r_p)}.
-$$
-
-Now evaluate the total energy at periapsis:
-
-$$
-E=\frac{1}{2}mv_p^2-\frac{GMm}{r_p}
-=\frac{GMmr_a}{r_p(r_a+r_p)}-\frac{GMm}{r_p}.
-$$
-
-Combine the terms:
-
-$$
-E=\frac{GMm}{r_p}
-\left(\frac{r_a}{r_a+r_p}-1\right)
-=-\frac{GMm}{r_a+r_p}.
-$$
-
-For an ellipse, the periapsis and apoapsis distances satisfy
-
-$$
-r_p+r_a=2a.
-$$
-
-Therefore
-
-$$
-E=-\frac{GMm}{2a}.
-$$
-
-This means the total mechanical energy of a bound orbit depends only on the semi-major axis, not on where the object is along the ellipse.
-
-</div>
+The proof in the theorem is not shown since you have the opportunity to derive it yourself in FRQ #3 in the Practice section.
 
 :::strategy
 For orbit problems, first decide which conservation law or orbit law is most direct:
@@ -940,7 +853,7 @@ For orbit problems, first decide which conservation law or orbit law is most dir
 
 <div class="theorem-box">
 
-**Example.** A satellite orbits Earth in a circular orbit of radius $$r$$ with period $$T$$. Another satellite orbits Earth at radius $$4r$$. Use Kepler's third law to find its period.
+**Example.** A satellite orbits Earth in a circular orbit of radius $$r$$ with period $$T$$. Another satellite orbits Earth at radius $$4r$$. Find the period of the other satellite.
 
 For circular orbits around the same central mass,
 
@@ -1034,18 +947,186 @@ The comet spends most of that time far from the Sun, moving slowly, because angu
 
 ## Practice
 
+### Multiple Choice
+
+::::problem
+1. A solid sphere rolls without slipping down an incline from height $$H$$. A block slides frictionlessly from the same height. The ratio of the sphere's translational speed at the bottom to the block's speed at the bottom is
+
+(A) $$\sqrt{5/7}$$
+
+(B) $$\sqrt{2/5}$$
+
+(C) $$\sqrt{7/5}$$
+
+(D) $$1$$
+::::
+
+::::problem
+2. A hoop, disk, and solid sphere with the same mass and radius roll without slipping down the same incline. The object with the largest acceleration is the
+
+(A) hoop
+
+(B) disk
+
+(C) solid sphere
+
+(D) all tie
+::::
+
+::::problem
+3. Static friction does no work on a rigid object rolling without slipping on a fixed surface because
+
+(A) the contact point is instantaneously at rest
+
+(B) friction is always zero
+
+(C) the center of mass is at rest
+
+(D) rotational kinetic energy is constant
+::::
+
+::::problem
+4. A rigid object rolls without slipping with center-of-mass speed $$v$$. Its total kinetic energy is $$K=\dfrac{3}{4}Mv^2$$. If its radius is $$R$$, its moment of inertia about its center is
+
+(A) $$\dfrac{1}{4}MR^2$$
+
+(B) $$\dfrac{1}{2}MR^2$$
+
+(C) $$MR^2$$
+
+(D) $$\dfrac{3}{2}MR^2$$
+::::
+
+::::problem
+5. A disk spins freely on a frictionless axle. A student drops clay onto the disk at radius $$R/2$$, where it sticks. During the collision,
+
+(A) angular momentum about the axle is conserved but rotational kinetic energy decreases
+
+(B) rotational kinetic energy is conserved but angular momentum decreases
+
+(C) both angular momentum and rotational kinetic energy are conserved
+
+(D) neither angular momentum nor rotational kinetic energy is conserved
+::::
+
+::::problem
+6. A person sits on a spinning stool holding two masses. Pulling the masses inward increases angular speed because
+
+(A) angular momentum is conserved while moment of inertia decreases
+
+(B) kinetic energy is conserved while moment of inertia decreases
+
+(C) torque from gravity increases
+
+(D) the masses lose angular momentum to the stool
+::::
+
+::::problem
+7. A satellite in an elliptical orbit is closest to the planet at periapsis. From periapsis to apoapsis, its angular momentum about the planet
+
+(A) increases
+
+(B) decreases
+
+(C) remains constant
+
+(D) becomes zero at apoapsis
+::::
+
+::::problem
+8. A planet of mass $$m$$ moves in a circular orbit of radius $$r$$ around a star of mass $$M$$. If the star's mass were replaced by $$4M$$ while $$r$$ stayed the same, the planet's angular momentum magnitude would be multiplied by
+
+(A) $$1/2$$
+
+(B) $$1$$
+
+(C) $$2$$
+
+(D) $$4$$
+::::
+
+::::problem
+9. A rolling hoop and rolling disk have the same mass, radius, and center-of-mass speed. The hoop has
+
+(A) more total kinetic energy
+
+(B) less total kinetic energy
+
+(C) the same total kinetic energy
+
+(D) no rotational kinetic energy
+::::
+
+::::problem
+10. A central force always points along $$\vec r$$. Therefore, for motion under a central force,
+
+(A) angular momentum about the force center is conserved
+
+(B) mechanical energy is always conserved
+
+(C) speed is always constant
+
+(D) the orbit must be circular
+::::
+
+::::problem
+11. A wheel rolls without slipping up a rough incline. Static friction is present but there is no slipping or other dissipation. Which quantity is conserved during the upward motion?
+
+(A) translational kinetic energy only
+
+(B) rotational kinetic energy only
+
+(C) total mechanical energy
+
+(D) angular momentum about the center only
+::::
+
+::::problem
+12. A torque $$\tau(t)=\tau_0t/T$$ acts on a disk from $$t=0$$ to $$t=T$$. The angular impulse is
+
+(A) $$\tau_0T$$
+
+(B) $$\tau_0T/2$$
+
+(C) $$\tau_0/T$$
+
+(D) $$I\tau_0T$$
+::::
+
 ### FRQ
 
 ::::frq{id=ap-physics-c-mechanics-rotationalmomentum-1}
-1. _Temporary placeholder FRQ for wiring/testing — replace with a real free-response question for this unit._
+1. A solid sphere rolls without slipping down an incline of angle $$\theta$$ from rest.
 
-   $$(A)$$ State one key idea from this unit and explain it in your own words.
+   $$(A)$$ Derive its center-of-mass acceleration.
 
-   $$(B)$$ Give a worked example or application of that idea.
+   $$(B)$$ Determine the static friction force and its direction.
 
-:::solution
-$$(A)$$ _Placeholder solution._ Any accurate statement of a core concept from this unit, with a correct explanation, earns full credit.
+   $$(C)$$ Find the translational and rotational kinetic energies after descending height $$h$$.
 
-$$(B)$$ _Placeholder solution._ Any correct worked example or application consistent with part (A).
-:::
+   $$(D)$$ Compare the result with a hoop released from the same height.
+::::
+
+::::frq{id=ap-physics-c-mechanics-rotationalmomentum-2}
+2. A disk of rotational inertia $$I_0$$ spins freely with angular speed $$\omega_0$$. A small block of mass $$m$$ initially at the center slides outward along a frictionless radial slot and latches at radius $$R$$.
+
+   $$(A)$$ Determine the final angular speed.
+
+   $$(B)$$ Determine the change in rotational kinetic energy.
+
+   $$(C)$$ Explain where the missing mechanical energy goes during the latch.
+
+   $$(D)$$ If the block is pulled inward slowly by an internal mechanism instead, explain whether work must be done.
+::::
+
+::::frq{id=ap-physics-c-mechanics-rotationalmomentum-3}
+3. A satellite of mass $$m$$ moves in an elliptical orbit around a planet of mass $$M$$. Its periapsis and apoapsis distances are $$r_p$$ and $$r_a$$.
+
+   $$(A)$$ Use angular momentum conservation to relate $$v_p$$ and $$v_a$$.
+
+   $$(B)$$ Use mechanical energy conservation to solve for $$v_p$$.
+
+   $$(C)$$ Determine $$v_a$$.
+
+   $$(D)$$ Explain why the satellite moves fastest at periapsis without invoking the area law directly.
 ::::

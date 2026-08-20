@@ -188,18 +188,6 @@ The negative sign means the acceleration is leftward, so the object is slowing d
 
 **Example.** A $$70\ \text{kg}$$ skydiver falls downward through air with linear drag $$F_d=bv$$, where $$b=35\ \text{kg/s}$$. Find the terminal speed.
 
-```tikz
-\usepackage{tikz}
-\usetikzlibrary{arrows.meta}
-\begin{tikzpicture}[>=Stealth, font=\small]
-\fill[gray!35] (0,0) circle (0.24);
-\draw[thick] (-0.35,-0.25) -- (0.35,-0.25);
-\draw[->, red, very thick] (0,-0.25) -- (0,-1.7) node[below] {$mg$};
-\draw[->, blue, very thick] (0,0.25) -- (0,1.7) node[above] {$F_d=bv$};
-\draw[->, gray, thick] (0.75,0.7) -- (0.75,-0.7) node[midway,right] {$v$};
-\end{tikzpicture}
-```
-
 At terminal speed, acceleration is zero, so the upward drag equals the downward weight:
 
 $$
@@ -239,26 +227,6 @@ If the question asks only for acceleration of a connected system, the system app
 <div class="theorem-box">
 
 **Example.** A block of mass $$m_1 = 3.0\ \text{kg}$$ sits on a frictionless horizontal table. A light inextensible string runs from the block, over a frictionless pulley at the edge of the table, to a hanging block of mass $$m_2 = 2.0\ \text{kg}$$. Find the acceleration of the system and the tension in the string.
-
-```tikz
-\usepackage{tikz}
-\usetikzlibrary{arrows.meta}
-\begin{tikzpicture}[>=Stealth, font=\small]
-\draw[thick] (-3,-0.45) -- (1.35,-0.45);
-\draw[fill=gray!15] (-2.4,-0.45) rectangle (-1.35,0.25);
-\node at (-1.88,-0.1) {$m_1$};
-\draw[thick] (-1.35,-0.1) -- (1.35,-0.1);
-\draw[thick] (1.55,-0.1) circle (0.2);
-\draw[thick] (1.75,-0.1) -- (1.75,-1.25);
-\draw[fill=gray!15] (1.35,-2.05) rectangle (2.15,-1.25);
-\node at (1.75,-1.65) {$m_2$};
-\draw[->, blue, thick] (-1.35,0.08) -- (-0.45,0.08) node[above] {$T$};
-\draw[->, purple, thick] (-1.88,0.25) -- (-1.88,0.95) node[above] {$N$};
-\draw[->, red, thick] (-1.88,-0.45) -- (-1.88,-1.15) node[below] {$m_1g$};
-\draw[->, blue, thick] (1.75,-1.25) -- (1.75,-0.55) node[right] {$T$};
-\draw[->, red, thick] (1.75,-2.05) -- (1.75,-2.75) node[below] {$m_2g$};
-\end{tikzpicture}
-```
 
 Both blocks share the same acceleration magnitude $$a$$ because the string is inextensible: as $$m_2$$ falls, $$m_1$$ slides forward by the same amount.
 
@@ -313,28 +281,6 @@ For a frictionless incline, the acceleration down the plane is
 $$
 a = g\sin\theta.
 $$
-
-```tikz
-\usepackage{tikz}
-\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
-\begin{tikzpicture}[>=Stealth, font=\small]
-\coordinate (A) at (-3,-1.2);
-\coordinate (B) at (3,-1.2);
-\coordinate (C) at (3,1.0);
-\draw[thick] (A) -- (B) -- (C) -- cycle;
-\draw (2.25,-1.2) arc[start angle=0,end angle=20.6,radius=0.75] node[midway,right] {$\theta$};
-\begin{scope}[shift={(0.0,-0.02)}, rotate=20.6]
-\draw[fill=gray!20] (-0.55,0) rectangle (0.55,0.45);
-\node at (0.34,0.22) {$m$};
-\coordinate (O) at (-0.12,0.23);
-\draw[->, very thick, blue] (O) -- (0,1.45) node[above] {$N$};
-\draw[->, very thick, orange!90!black] (O) -- (-1.35,0) node[left] {$f$};
-\draw[->, dashed, red] (O) -- (-1.25,0) node[below left] {$mg\sin\theta$};
-\draw[->, dashed, red] (O) -- (0,-1.05) node[right] {$mg\cos\theta$};
-\end{scope}
-\draw[->, very thick, red] (-0.12,0.18) -- (-0.12,-1.85) node[below] {$mg$};
-\end{tikzpicture}
-```
 
 With friction, decide whether the block is moving or about to move. If it is moving, use kinetic friction. If it is at rest, static friction takes whatever value is needed up to $$\mu_sF_N$$. It is also helpful to use geometry/similar triangles to determine certain angles for vector decompositions. ALWAYS remember your normal force!
 
@@ -621,7 +567,7 @@ There is no special "centripetal force." The phrase describes the net inward for
 \begin{tikzpicture}[>=Stealth, font=\small]
 \draw[blue, thick] (0,0) circle (1.6); \fill (0,0) circle (1.5pt) node[below] {center};
 \fill (1.35,0.85) circle (2pt) node[above right] {$m$};
-\draw[->, very thick, red] (1.35,0.85) -- (0.25,0.3) node[midway, above, left] {$F_{net}$};
+\draw[->, very thick, red] (1.35,0.85) -- (0.25,0.3) node[above left] {$F_c$};
 \draw[->, very thick, blue] (1.35,0.85) -- (0.75,1.8) node[above] {$v$};
 \end{tikzpicture}
 ```
@@ -717,8 +663,8 @@ This is common in vertical circle problems, where gravity has a tangential compo
 \usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing,angles,quotes}
 \begin{tikzpicture}[>=Stealth, font=\small]
 \draw[blue, thick] (0,0) circle (1.7);
-\fill (0,1.7) circle (2pt); \node[above=8pt] at (0,1.7) {top};
-\fill (0,-1.7) circle (2pt); \node[below=8pt] at (0,-1.7) {bottom};
+\fill (0,1.7) circle (2pt);
+\fill (0,-1.7) circle (2pt);
 \draw[->, red, thick] (0,1.7) -- (0,0.7) node[midway,right] {$mg$}; \draw[->, blue, thick] (0,1.7) -- (0,0.2) node[midway,left] {$T$};
 \draw[->, red, thick] (0,-1.7) -- (0,-2.7) node[below] {$mg$}; \draw[->, blue, thick] (0,-1.7) -- (0,-0.5) node[midway,right] {$T$};
 \end{tikzpicture}
@@ -973,25 +919,6 @@ Pseudo-forces are not interaction forces and do not have third-law partners (sin
 
 **Example.** A block of mass $$m$$ rests on a frictionless incline of angle $$\theta$$ built on a cart. How fast must the cart accelerate horizontally (toward the foot of the incline) so that the block does not slide relative to the incline?
 
-```tikz
-\usepackage{tikz}
-\usetikzlibrary{arrows.meta,calc,patterns}
-\begin{tikzpicture}[>=Stealth, font=\small]
-\draw[fill=gray!10] (-2.7,-0.9) rectangle (2.7,-0.55);
-\draw[fill=gray!20] (-2.1,-0.55) -- (1.8,-0.55) -- (1.8,1.05) -- cycle;
-\draw[thick] (-2.1,-0.55) -- (1.8,1.05);
-\draw (-1.45,-0.55) arc[start angle=0,end angle=22,radius=0.65] node[midway,right] {$\theta$};
-\begin{scope}[shift={(0.05,0.25)}, rotate=22]
-\draw[fill=white] (-0.45,0) rectangle (0.45,0.35);
-\node at (0,0.18) {$m$};
-\coordinate (O) at (0,0.18);
-\end{scope}
-\draw[->, very thick, blue] (-2.2,-0.25) -- (-3.4,-0.25) node[left] {$a_{\text{cart}}$};
-\draw[->, red, thick] (0.0,0.39) -- (0.0,-0.95) node[below] {$mg$};
-\draw[->, orange!90!black, thick] (0.0,0.39) -- (1.25,0.39) node[right] {$ma_{\text{cart}}$};
-\end{tikzpicture}
-```
-
 Work in the cart's non-inertial frame, where the block is in equilibrium (not moving). Three forces act on it: gravity $$mg$$ downward, the normal force $$F_N$$ perpendicular to the incline surface, and the pseudo-force $$ma$$ pointing horizontally backward (opposite the cart's acceleration). Resolve along the incline, taking down-the-slope as positive. Gravity contributes $$mg\sin\theta$$ down the slope, while the pseudo-force contributes $$ma\cos\theta$$ up the slope. For the block not to slide, these must cancel:
 
 $$
@@ -1068,7 +995,7 @@ $$
 v(t) = v_t\left(1 - e^{-bt/m}\right).
 $$
 
-As $$t \to \infty$$, the exponential vanishes and $$v \to v_t$$, as expected. The quantity $$\tau = m/b$$ is the time constant: after one time constant the speed reaches about $$63\%$$ of terminal velocity. At early times the exponential expands as $$1 - bt/m + \dots$$, giving $$v \approx gt$$, the familiar free-fall limit before drag becomes significant.
+As $$t \to \infty$$, the exponential vanishes and $$v \to v_t$$, as expected. The quantity $$\tau = m/b$$ is the time constant: after one time constant the speed reaches about $$63\%$$ of terminal velocity. At early times the exponential expands as $$1 - bt/m + \dots$$, giving $$v \approx gt$$, which matches a non-drag scenario.
 
 </div>
 
@@ -1114,18 +1041,190 @@ As $$t \to \infty$$, the exponential vanishes and $$v \to v_t$$, as expected. Th
 
 ## Practice
 
+### Multiple Choice
+
+::::problem
+1. A block rests on a scale mounted on a wedge inclined at angle $$\theta$$. The wedge accelerates horizontally to the right with magnitude $$a$$, and the incline rises to the right. The block remains at rest relative to the scale. If the scale measures the normal force on the block, its reading is
+
+(A) $$m(g\cos\theta-a\sin\theta)$$
+
+(B) $$m(g\cos\theta+a\sin\theta)$$
+
+(C) $$m(g\sin\theta+a\cos\theta)$$
+
+(D) $$m(g+a)\cos\theta$$
+::::
+
+::::problem
+2. A block is pressed against a vertical wall by a horizontal force $$F$$. The coefficient of static friction is $$\mu_s$$. The smallest $$F$$ that can keep the block from sliding is
+
+(A) $$mg$$
+
+(B) $$\mu_s mg$$
+
+(C) $$mg/\mu_s$$
+
+(D) $$\mu_s/g$$
+::::
+
+::::problem
+3. A block of mass $$m$$ rests on a small platform scale mounted on an incline of angle $$\theta$$. The wedge and scale are at rest, and static friction prevents slipping.
+
+<img class="note-img note-img--w360" src="/assets/APs/AP Physics C Mech/forces/practice-incline-scale.svg" alt="Block on a scale mounted on an inclined wedge" loading="lazy" decoding="async" />
+
+If the scale measures the normal force on the block, its reading is
+
+(A) $$mg\sin\theta$$
+
+(B) $$mg\cos\theta$$
+
+(C) $$mg\tan\theta$$
+
+(D) $$mg$$
+::::
+
+::::problem
+4. A car travels over the top of a circular hill of radius $$R$$. At the top, the driver feels an apparent weight equal to one-third of their normal weight. The car's speed is
+
+(A) $$\sqrt{gR/3}$$
+
+(B) $$\sqrt{2gR/3}$$
+
+(C) $$\sqrt{gR}$$
+
+(D) $$\sqrt{4gR/3}$$
+::::
+
+::::problem
+5. An elevator accelerates upward with magnitude $$a$$. Inside it, a mass $$m$$ hangs from a spring scale while a horizontal force $$F$$ pulls the mass sideways so the supporting string makes angle $$\phi$$ with the vertical. The scale tension is
+
+(A) $$m(g+a)$$
+
+(B) $$\dfrac{m(g+a)}{\cos\phi}$$
+
+(C) $$\dfrac{mg}{\cos\phi}$$
+
+(D) $$m\sqrt{g^2+a^2}$$
+::::
+
+::::problem
+6. A falling object experiences drag force $$bv$$ upward. Taking downward as positive, which differential equation describes the motion?
+
+(A) $$m\dfrac{dv}{dt}=mg+bv$$
+
+(B) $$m\dfrac{dv}{dt}=mg-bv$$
+
+(C) $$m\dfrac{dv}{dt}=bv-mg$$
+
+(D) $$m\dfrac{dv}{dt}=-mg-bv$$
+::::
+
+::::problem
+7. A bead slides on a frictionless circular hoop in a vertical plane. At the side of the hoop, its speed is $$v$$. The normal force magnitude is
+
+(A) $$mg$$
+
+(B) $$mv^2/R$$
+
+(C) $$mg+mv^2/R$$
+
+(D) $$\sqrt{(mg)^2+(mv^2/R)^2}$$
+::::
+
+::::problem
+8. Two blocks of masses $$m$$ and $$2m$$ are connected by a light string and pulled across a frictionless table by force $$F$$ applied to the $$2m$$ block. The tension in the string is
+
+(A) $$F/3$$
+
+(B) $$F/2$$
+
+(C) $$2F/3$$
+
+(D) $$F$$
+::::
+
+::::problem
+9. A pendulum bob hangs motionless relative to a train accelerating horizontally with magnitude $$a$$. If the string makes angle $$\theta$$ with the vertical and the tension is $$T$$, which pair of equations is consistent with the bob's rest in the train frame?
+
+(A) $$T\sin\theta=ma$$ and $$T\cos\theta=mg$$
+
+(B) $$T\cos\theta=ma$$ and $$T\sin\theta=mg$$
+
+(C) $$T=mg$$ and $$\tan\theta=a/g$$
+
+(D) $$T=ma$$ and $$\tan\theta=g/a$$
+::::
+
+::::problem
+10. A block of mass $$m$$ sits on a rough incline of angle $$\theta$$. A horizontal force $$F$$ pushes the block into the incline. Which change most directly increases the maximum possible static friction?
+
+(A) Decreasing $$F$$
+
+(B) Increasing $$F$$
+
+(C) Decreasing $$m$$ while keeping $$F$$ fixed
+
+(D) Making the incline frictionless
+::::
+
+::::problem
+11. A small mass moves in a vertical circle on a string of length $$R$$. Its speeds at the bottom and top are $$v_b$$ and $$v_t$$. Which relation must hold if air resistance is negligible?
+
+(A) $$v_b^2=v_t^2+4gR$$
+
+(B) $$v_b^2=v_t^2+2gR$$
+
+(C) $$v_b=v_t$$
+
+(D) $$v_t^2=v_b^2+4gR$$
+::::
+
+::::problem
+12. A block sits on a rough horizontal turntable a distance $$r$$ from the center. The turntable has angular speed $$\omega$$ and angular acceleration $$\alpha$$. At the threshold of slipping, the coefficient of static friction satisfies
+
+(A) $$\mu_s g=r\omega^2$$
+
+(B) $$\mu_s g=r\alpha$$
+
+(C) $$\mu_s g=r\sqrt{\omega^4+\alpha^2}$$
+
+(D) $$\mu_s g=r(\omega^2+\alpha)$$
+::::
+
 ### FRQ
 
 ::::frq{id=ap-physics-c-mechanics-forces-1}
-1. _Temporary placeholder FRQ for wiring/testing — replace with a real free-response question for this unit._
+1. A block of mass $$m$$ is inside a box that accelerates horizontally with acceleration $$a$$. The block is pressed against the box's vertical wall and does not slip. The coefficient of static friction between the block and wall is $$\mu_s$$.
 
-   $$(A)$$ State one key idea from this unit and explain it in your own words.
+   $$(A)$$ Draw a free-body diagram for the block in the ground frame.
 
-   $$(B)$$ Give a worked example or application of that idea.
+   $$(B)$$ Derive the normal force exerted by the wall on the block.
 
-:::solution
-$$(A)$$ _Placeholder solution._ Any accurate statement of a core concept from this unit, with a correct explanation, earns full credit.
+   $$(C)$$ Determine the condition on $$a$$ for the block not to slide down.
 
-$$(B)$$ _Placeholder solution._ Any correct worked example or application consistent with part (A).
-:::
+   $$(D)$$ If the box also accelerates upward with acceleration $$a_y$$, derive the new no-slip condition.
+::::
+
+::::frq{id=ap-physics-c-mechanics-forces-2}
+2. A bead of mass $$m$$ slides without friction on a circular hoop of radius $$R$$ fixed in a vertical plane. At an angle $$\theta$$ measured from the bottom, the bead has speed $$v$$.
+
+   $$(A)$$ Draw a force diagram for the bead.
+
+   $$(B)$$ Write Newton's second law in the radial direction.
+
+   $$(C)$$ Write Newton's second law in the tangential direction.
+
+   $$(D)$$ Suppose the bead is released from rest at angle $$\theta_0$$. Find the normal force at the bottom of the hoop.
+::::
+
+::::frq{id=ap-physics-c-mechanics-forces-3}
+3. A mass $$m$$ falls from rest through a fluid with drag force $$F_d=bv^2$$ upward. Take downward as positive.
+
+   $$(A)$$ Write the differential equation for $$v(t)$$.
+
+   $$(B)$$ Determine the terminal speed.
+
+   $$(C)$$ Without solving fully for $$v(t)$$, determine whether the acceleration is increasing, decreasing, or constant as the object falls.
+
+   $$(D)$$ Design a linear graph that could be used to determine $$b$$ from measurements of speed and acceleration.
 ::::

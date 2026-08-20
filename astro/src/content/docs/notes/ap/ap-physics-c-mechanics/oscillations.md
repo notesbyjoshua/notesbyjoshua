@@ -486,27 +486,7 @@ However, as time went on, scientists changed the definition of the meter since g
 
 ### Physical Pendulums
 
-```tikz
-\usepackage{tikz}
-\usetikzlibrary{arrows.meta,calc}
-\begin{tikzpicture}[>=Stealth, font=\scriptsize, scale=0.82, transform shape]
-\path[use as bounding box] (-1.25,-0.95) rectangle (1.45,2.35);
-\coordinate (P) at (0,2);
-\coordinate (C) at (-0.22,0.62);
-\fill (P) circle (2.2pt) node[above=2pt] {pivot};
-\draw[dashed] (P) -- (0,-0.75);
-\draw[thick] (P) -- (0.50,1.20);
-\draw[thick, fill=gray!18, rotate around={-14:(P)}]
-  (-0.48,1.38) .. controls (-0.12,1.02) and (-0.12,0.38) .. (0.18,-0.12)
-  .. controls (-0.12,-0.40) and (-0.88,-0.35) .. (-0.95,0.22)
-  .. controls (-1.02,0.78) and (-0.86,1.18) .. (-0.48,1.38);
-\fill[red] (C) circle (2.2pt) node[right=2pt] {CM};
-\draw[->, red, thick] (C) -- ++(0,-0.78) node[below] {$mg$};
-\draw[<->, thick] ($(P)+(0.10,-0.06)$) -- (C) node[midway,right=2pt] {$d$};
-\end{tikzpicture}
-```
-
-While simple pendulums are very easy to solve, not all pendulums act this way. A rigid body swinging about a pivot is a **physical pendulum** and is subject to rotation about the pivot point. If the center of mass is distance $$d$$ from the pivot,
+While simple pendulums are very easy to solve, not all pendulums act like point masses. A rigid body swinging about a pivot is known as a **physical pendulum** and is subject to rotation about the pivot point. If the center of mass is distance $$d$$ from the pivot,
 
 $$
 \omega=\sqrt{\frac{mgd}{I}},
@@ -591,7 +571,10 @@ It is instructive to compare this to a *simple* pendulum of the same length $$L=
 Not every oscillator is a spring or a pendulum, but the same methods still apply.
 
 :::strategy
-The general recipe is always the same: displace the system by a small amount, find the net restoring force as a function of displacement, write it as $$F=-(\text{const})\,x$$, and read off $$\omega^2=\text{const}/m$$.
+1. Displace the system by a small displacement $$\Delta x$$ or a small angle $$\Delta \theta$$.
+2. Find the restoring force/torque from that small displacement.
+3. If the force/torque is linear in $$\Delta x$$/$$\Delta \theta$$, the system is in SHM.
+4. If the system is in SHM, write the system as $$F=-(\text{const})\,x$$ (or the torque equivalent) and read off $$\omega^2=\text{const}/m$$.
 :::
 
 <div class="theorem-box">
@@ -634,15 +617,7 @@ The area $$A$$ cancels, and the frequency depends only on the density ratio, $$g
 
 **Example.** A U-shaped tube of uniform cross-sectional area $$A$$ contains a liquid of density $$\rho$$, with total liquid column length $$L$$. The liquid is disturbed so one side rises by $$y$$ while the other falls by $$y$$. Find the period of the resulting oscillation.
 
-These formulas may be helpful:
-
-$$
-m=\rho V,
-\qquad
-W=mg.
-$$
-
-For a uniform tube, the liquid volume is cross-sectional area times length, $$V=AL$$. Weight is then the gravitational force on that mass.
+For a uniform tube, the liquid volume is cross-sectional area times length, $$V=AL$$ (since the object is a cylinder). Weight is then the gravitational force on that mass.
 
 When the left surface drops by $$y$$ and the right rises by $$y$$, the height difference between the two columns is $$2y$$. That excess column of height $$2y$$ and cross-section $$A$$ has weight
 
@@ -880,18 +855,186 @@ Notice we never needed the full shape of $$U$$ — only its second derivative at
 
 ## Practice
 
+### Multiple Choice
+
+::::problem
+1. A block of mass $$m$$ is attached to a spring of constant $$k$$ on a frictionless horizontal surface. A small constant horizontal force $$F_0$$ is then applied and left on. Compared with the original oscillator, the new motion has
+
+(A) the same angular frequency and an equilibrium shifted by $$F_0/k$$
+
+(B) angular frequency $$\sqrt{(k+F_0)/m}$$ and the same equilibrium
+
+(C) angular frequency $$\sqrt{k/(m+F_0/g)}$$ and an equilibrium shifted by $$F_0/k$$
+
+(D) no simple harmonic motion because the net force is not proportional to $$x$$
+::::
+
+::::problem
+2. A particle moves near $$x=0$$ in the potential $$U(x)=U_0+ax^2+bx^3+cx^4$$, where $$a>0$$. For sufficiently small oscillations, the angular frequency is
+
+(A) $$\sqrt{a/m}$$
+
+(B) $$\sqrt{2a/m}$$
+
+(C) $$\sqrt{6b/m}$$
+
+(D) $$\sqrt{12c/m}$$
+::::
+
+::::problem
+3. A mass $$m$$ on a vertical spring oscillates about its equilibrium position with period $$T$$. At the instant the mass passes through equilibrium moving downward, a second identical mass is gently attached. Immediately after attachment, the new equilibrium position is
+
+(A) unchanged
+
+(B) lower by $$mg/k$$
+
+(C) lower by $$2mg/k$$
+
+(D) higher by $$mg/k$$
+::::
+
+::::problem
+4. A solid cylinder of mass $$M$$ and radius $$R$$ is attached at its center to a horizontal spring of constant $$k$$ and rolls without slipping. Its angular frequency is
+
+(A) $$\sqrt{k/M}$$
+
+(B) $$\sqrt{2k/M}$$
+
+(C) $$\sqrt{2k/(3M)}$$
+
+(D) $$\sqrt{3k/(2M)}$$
+::::
+
+::::problem
+5. A pendulum bob of mass $$m$$ and length $$L$$ is also attached to a horizontal spring of constant $$k$$ that is relaxed when the bob hangs vertically. For small angles, compared with the same pendulum without the spring, the period is
+
+(A) larger
+
+(B) smaller
+
+(C) unchanged
+
+(D) zero because the forces cancel
+::::
+
+::::problem
+6. A bead slides without friction on a circular hoop of radius $$R$$ in a vertical plane. Near the bottom of the hoop, the coordinate along the arc is $$s=R\theta$$. The bead's small-oscillation angular frequency is
+
+(A) $$\sqrt{g/R}$$
+
+(B) $$\sqrt{R/g}$$
+
+(C) $$g/R$$
+
+(D) $$\sqrt{2g/R}$$
+::::
+
+::::problem
+7. A mass $$m$$ hangs from a spring of constant $$k$$ in a uniform gravitational field. It oscillates vertically about equilibrium with amplitude $$A$$. Which quantity depends on $$g$$?
+
+(A) The angular frequency
+
+(B) The period
+
+(C) The equilibrium extension
+
+(D) The speed at the equilibrium point measured relative to the oscillation amplitude
+::::
+
+::::problem
+8. A lightly damped oscillator has displacement amplitude $$A(t)=A_0e^{-bt/(2m)}$$. If the mass is doubled while $$b$$ and $$k$$ stay fixed, the time for the amplitude to fall to half its initial value
+
+(A) doubles
+
+(B) halves
+
+(C) stays the same
+
+(D) becomes $$\sqrt{2}$$ times larger
+::::
+
+::::problem
+9. A mass on a spring is released from rest at $$x=A$$. When it first reaches $$x=A/3$$, what fraction of the total mechanical energy is kinetic?
+
+(A) $$1/9$$
+
+(B) $$2/3$$
+
+(C) $$8/9$$
+
+(D) $$\sqrt{8}/3$$
+::::
+
+::::problem
+10. A particle oscillates in the potential $$U(x)=\dfrac{1}{2}kx^2+\epsilon x^4$$, where $$\epsilon>0$$. Compared with a pure spring of constant $$k$$, the period for finite-amplitude oscillations is best described as
+
+(A) exactly unchanged because the equilibrium is still at $$x=0$$
+
+(B) smaller for larger amplitudes because the restoring force grows faster than linearly
+
+(C) larger for larger amplitudes because the potential energy is larger
+
+(D) undefined because the motion is not periodic
+::::
+
+::::problem
+11. A block attached to a spring oscillates on a frictionless table. The block is replaced by two identical blocks glued together, and the amplitude is doubled. The maximum acceleration changes by a factor of
+
+(A) $$1/\sqrt{2}$$
+
+(B) $$1/2$$
+
+(C) $$\sqrt{2}$$
+
+(D) $$1$$
+::::
+
+::::problem
+12. A pendulum clock is taken to a planet where the gravitational field strength is $$g/4$$. To keep the same small-angle period, the pendulum length should be changed from $$L$$ to
+
+(A) $$4L$$
+
+(B) $$2L$$
+
+(C) $$L/2$$
+
+(D) $$L/4$$
+::::
+
 ### FRQ
 
 ::::frq{id=ap-physics-c-mechanics-oscillations-1}
-1. _Temporary placeholder FRQ for wiring/testing — replace with a real free-response question for this unit._
+1. A solid cylinder of mass $$M$$ and radius $$R$$ rests on a rough horizontal surface and rolls without slipping. A light spring of constant $$k$$ is attached to the cylinder's center, and the other end is fixed to a wall. The cylinder is displaced a small distance $$A$$ from equilibrium and released from rest.
 
-   $$(A)$$ State one key idea from this unit and explain it in your own words.
+   $$(A)$$ Using energy, derive an expression for the angular frequency of the oscillation in terms of $$M$$ and $$k$$.
 
-   $$(B)$$ Give a worked example or application of that idea.
+   $$(B)$$ Determine the maximum static friction force needed during the motion.
 
-:::solution
-$$(A)$$ _Placeholder solution._ Any accurate statement of a core concept from this unit, with a correct explanation, earns full credit.
+   $$(C)$$ Find the minimum coefficient of static friction required for rolling without slipping for the entire motion.
 
-$$(B)$$ _Placeholder solution._ Any correct worked example or application consistent with part (A).
-:::
+   $$(D)$$ Suppose the cylinder is replaced by a thin hoop with the same $$M$$ and $$R$$. Without redoing the full calculation, determine whether the period increases, decreases, or stays the same, and justify your answer.
+::::
+
+::::frq{id=ap-physics-c-mechanics-oscillations-2}
+2. A bead of mass $$m$$ slides without friction on a rigid circular wire of radius $$R$$ fixed in a vertical plane. The bead is also attached to a light spring of constant $$k$$ whose other end is fixed at the top of the circle. Let $$\theta$$ be the bead's angular displacement from the bottom of the circle.
+
+   $$(A)$$ Write the bead's gravitational potential energy and spring potential energy as functions of $$\theta$$, taking the bottom of the circle as zero gravitational potential.
+
+   $$(B)$$ Find the condition on $$k$$ and $$R$$ for the bottom of the circle to be a stable equilibrium.
+
+   $$(C)$$ For small oscillations about the bottom, derive the angular frequency in terms of $$m$$, $$g$$, $$R$$, and $$k$$.
+
+   $$(D)$$ Describe qualitatively how the equilibrium position changes if the spring constant is made very large.
+::::
+
+::::frq{id=ap-physics-c-mechanics-oscillations-3}
+3. A student studies a cart-spring oscillator on a horizontal track. The cart of mass $$M$$ has a small block of mass $$m$$ resting on top of it. The coefficient of static friction between the block and cart is $$\mu_s$$. The cart is pulled to amplitude $$A$$ and released from rest; the block does not slip at first.
+
+   $$(A)$$ Derive the period of the combined motion while the block does not slip.
+
+   $$(B)$$ Determine the maximum amplitude $$A_{\max}$$ for which the block can remain at rest relative to the cart throughout the motion.
+
+   $$(C)$$ The student measures the period for several added top-block masses $$m$$. Describe a graph that could be used to determine the spring constant $$k$$ from the data, including what should be plotted on each axis.
+
+   $$(D)$$ If the block begins to slip near the endpoints of the motion, explain whether the measured period should be expected to match the expression from part $$(A)$$. Your explanation should refer to the forces on the two objects, not just energy loss.
 ::::

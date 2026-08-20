@@ -52,57 +52,10 @@ the signed area under the force-position graph.
 \addplot[fill=blue!18, draw=none, domain=0:5.4, samples=120] {1.1+1.7*exp(-0.25*(x-2.3)^2)+0.45*sin(deg(1.35*x))} \closedcycle;
 \addplot[blue,very thick,domain=0:5.4,samples=120] {1.1+1.7*exp(-0.25*(x-2.3)^2)+0.45*sin(deg(1.35*x))};
 \draw[dashed] (axis cs:5.4,0) -- (axis cs:5.4,1.95);
-\node at (axis cs:2.5,1.2) {work};
+\node at (axis cs:2.4,1.2) (12pt) {Work};
 \end{axis}
 \end{tikzpicture}
 ```
-
-### Linear Mechanical Advantage
-
-Mechanical advantage compares the output force a machine gives to the input force you apply:
-
-$$
-\text{MA}=\frac{F_{\text{out}}}{F_{\text{in}}}.
-$$
-
-For an ideal machine with no energy loss, work in equals work out:
-
-$$
-F_{\text{in}}d_{\text{in}}=F_{\text{out}}d_{\text{out}}.
-$$
-
-Therefore
-
-$$
-\text{MA}=\frac{F_{\text{out}}}{F_{\text{in}}}
-=\frac{d_{\text{in}}}{d_{\text{out}}}.
-$$
-
-This is the basic tradeoff behind ramps, levers, and pulley systems: you can get a larger force out only by applying your input force over a larger distance. Real machines have efficiency below $$100\%$$, so $$W_{\text{out}}<W_{\text{in}}$$ and the actual mechanical advantage is smaller than the ideal value.
-
-<div class="theorem-box">
-
-**Example.** A frictionless ramp of length $$5.0\ \text{m}$$ raises a box by height $$1.0\ \text{m}$$ at constant speed. Find the ideal mechanical advantage and the force needed to lift a $$200\ \text{N}$$ box along the ramp.
-
-The output force is the box's weight, $$F_{\text{out}}=200\ \text{N}$$, and the distance ratio gives
-
-$$
-\text{MA}=\frac{d_{\text{in}}}{d_{\text{out}}}
-=\frac{5.0}{1.0}=5.0.
-$$
-
-Thus
-
-$$
-F_{\text{in}}=\frac{F_{\text{out}}}{\text{MA}}
-=\frac{200}{5.0}=40\ \text{N}.
-$$
-
-The ramp does not reduce the work; it spreads the same ideal work over a longer distance.
-
-</div>
-
----
 
 ### The geometry of the dot product
 
@@ -114,7 +67,7 @@ Since work is a dot product, it is a scalar quantity. However, to indicate the s
 \begin{tikzpicture}[>=Stealth, font=\small]
 \draw[->, very thick, blue] (0,0) -- (4,0) node[right] {$\Delta x$};
 \draw[->, very thick, red] (0,0) -- (2.7,1.8) node[above] {$\vec F$};
-\draw[dashed, red] (2.7,1.8) -- (2.7,0) node[below] {$F\cos\theta$};
+\draw[dashed, red] (2.7,1.8) -- (2.7,0);
 \draw[->, very thick, red] (0,-0.25) -- (2.7,-0.25) node[midway,below] {$F\cos\theta$};
 \draw (0.9,0) arc[start angle=0,end angle=34,radius=0.9] node[midway,right] {$\theta$};
 \end{tikzpicture}
@@ -181,7 +134,7 @@ Even though the force is negative over part of the interval and positive later, 
 
 ## Kinetic Energy and the Work-Energy Theorem
 
-Translational kinetic energy of a particle is defined as
+Kinetic energy is defined as the energy of motion. Translational kinetic energy of a particle is defined as
 
 $$
 K = \frac{1}{2}mv^2.
@@ -314,7 +267,7 @@ $$
 \Delta U_g = mg\Delta y.
 $$
 
-For universal gravitation, the natural zero is at infinity:
+For universal gravitation, the usual zero point is defined at infinity, resulting in:
 
 $$
 U_g(r) = -\frac{GMm}{r}.
@@ -506,7 +459,7 @@ $$
 E_{\text{mech}} = K + U.
 $$
 
-If only conservative forces do work (e.g. no friction),
+If only conservative forces do work (e.g. no friction), mechanical energy is conserved:
 
 $$
 K_i + U_i = K_f + U_f.
@@ -598,7 +551,7 @@ If you forgot the sign of a non-conservative force, just think about whether the
 
 ### Mechanical energy versus total energy
 
-It is worth being careful about two different "totals." **Total mechanical energy** $$E_{\text{mech}} = K + U$$ counts only kinetic and potential energy, and it is *not* conserved when nonconservative forces act — friction, drag, and inelastic deformation all bleed it away. **Total energy**, however, *is* always conserved: the mechanical energy lost to friction does not vanish, it reappears as thermal energy (and a little sound). If we write
+It is worth being careful about two different "totals." **Total mechanical energy** $$E_{\text{mech}} = K + U$$ counts only kinetic and potential energy, and it is *not* conserved when nonconservative forces act — friction, drag, and inelastic deformation all lessen it away. **Total energy**, however, *is* always conserved: the mechanical energy lost to friction does not vanish, it reappears as thermal energy (and a little sound). If we write
 
 $$
 \Delta E_{\text{mech}} + \Delta E_{\text{thermal}} + \cdots = 0,
@@ -690,28 +643,13 @@ The clean strategy: spring energy in, friction and gravitational potential out, 
 
 ## Energy Diagrams and Equilibrium
 
-In one-dimensional systems, a graph of $$U(x)$$ contains lots of useful information about force and an object's current state:
-
-
-```tikz
-\usepackage{pgfplots}
-\pgfplotsset{compat=1.16}
-\begin{tikzpicture}
-\begin{axis}[axis lines=middle,width=9cm,height=5cm,xmin=-3,xmax=5,ymin=-1,ymax=6,xlabel={$x$},ylabel={$U$},xtick=\empty,ytick=\empty]
-\addplot[blue,very thick,samples=240,domain=-2.6:4.6]{0.075*(x+2.1)^2*(x-0.45)^2+0.13*(x-2.55)^4-0.85*(x-2.55)^2+2.0+0.18*sin(deg(3.2*x))};
-\addplot[dashed] coordinates {(-3,3.2) (5,3.2)};
-\node at (axis cs:4.5,3.45) {$E$};
-\end{axis}
-\end{tikzpicture}
-```
-
-As a reminder, $$F_x = -\frac{dU}{dx}.$$ Equilibrium occurs where 
+In one-dimensional systems, a graph of $$U(x)$$ contains lots of useful information about force and an object's current state. As a reminder, $$F_x = -\frac{dU}{dx}.$$ Equilibrium occurs where 
 
 $$
 \frac{dU}{dx}=0,
 $$
 
-and at that point, the object has zero acceleration. The equilibrium is **stable** if $$U(x)$$ has a local minimum ($$\frac{d^2 U}{dx^2} > 0$$), **unstable** if it has a local maximum ($$\frac{d^2 U}{dx^2} < 0$$), and **neutral** if small displacements do not change $$U$$ to second order ($$\frac{d^2 U}{dx^2} = 0$$). A **metastable** (neutral) equilibrium is a local minimum that is stable for small disturbances but can escape if the total energy is high enough to cross a nearby barrier.
+and at that point, the object has zero acceleration (since force is zero). The equilibrium is **stable** if $$U(x)$$ has a local minimum ($$\frac{d^2 U}{dx^2} > 0$$), **unstable** if it has a local maximum ($$\frac{d^2 U}{dx^2} < 0$$), and **neutral** if small displacements do not change $$U$$ to second order ($$\frac{d^2 U}{dx^2} = 0$$). A **metastable** (neutral) equilibrium is a local minimum that is stable for small disturbances but can escape if the total energy is high enough to cross a nearby barrier.
 
 ```tikz
 \usepackage{tikz}
@@ -833,18 +771,186 @@ Equivalently, the engine supplies gravitational potential energy at the rate $$P
 
 ## Practice
 
+### Multiple Choice
+
+::::problem
+1. A force $$F(x)=3x^2-2x$$ acts on a particle from $$x=0$$ to $$x=L$$. The work done is
+
+(A) $$L^3-L^2$$
+
+(B) $$3L^2-2L$$
+
+(C) $$L^3+L^2$$
+
+(D) $$3L^3-L^2$$
+::::
+
+::::problem
+2. A block starts from rest at height $$H$$ above a horizontal spring, slides on a frictionless track, and compresses the spring a distance $$x$$. If the block instead starts from height $$4H$$, the new maximum compression is
+
+(A) $$x/2$$
+
+(B) $$x$$
+
+(C) $$2x$$
+
+(D) $$4x$$
+::::
+
+::::problem
+3. If $$U(x)=ax^4-bx^2$$ with $$a,b>0$$, the force is
+
+(A) $$F_x=4ax^3-2bx$$
+
+(B) $$F_x=-4ax^3+2bx$$
+
+(C) $$F_x=ax^4-bx^2$$
+
+(D) $$F_x=-a/x^4+b/x^2$$
+::::
+
+::::problem
+4. A particle moves in one dimension with potential energy $$U(x)$$. At a stable equilibrium,
+
+(A) $$U'=0$$ and $$U''>0$$
+
+(B) $$U'=0$$ and $$U''<0$$
+
+(C) $$U'>0$$ and $$U''=0$$
+
+(D) $$U<0$$ only
+::::
+
+::::problem
+5. A projectile is launched upward from the surface of a planet of radius $$R$$ with speed $$v_{\text{esc}}/2$$. Neglect air resistance. Its maximum distance from the planet's center is
+
+(A) $$4R/3$$
+
+(B) $$3R/2$$
+
+(C) $$2R$$
+
+(D) $$4R$$
+::::
+
+::::problem
+6. A force is always perpendicular to a particle's velocity. The force can change the particle's
+
+(A) speed but not direction
+
+(B) direction but not speed
+
+(C) kinetic energy only
+
+(D) total mechanical energy only
+::::
+
+::::problem
+7. A block moves through a region where a force $$F(x)=F_0e^{-x/L}$$ acts in the direction of motion. The work done from $$x=0$$ to $$x=2L$$ is
+
+(A) $$F_0L(1-e^{-2})$$
+
+(B) $$2F_0L$$
+
+(C) $$F_0L e^{-2}$$
+
+(D) $$F_0/L$$
+::::
+
+::::problem
+8. A spring with constant $$k$$ is cut into two equal halves. One half is used as a spring. Compared with the original spring, the energy stored for the same stretch $$x$$ is
+
+(A) half as large
+
+(B) the same
+
+(C) twice as large
+
+(D) four times as large
+::::
+
+::::problem
+9. A cart of mass $$m$$ moves under constant power $$P$$ from rest, with no resistive forces. Its speed after time $$t$$ is
+
+(A) $$Pt/m$$
+
+(B) $$\sqrt{2Pt/m}$$
+
+(C) $$2Pt/m$$
+
+(D) $$\sqrt{Pt/(2m)}$$
+::::
+
+::::problem
+10. A satellite moves outward from radius $$r$$ to radius $$2r$$ around a planet of mass $$M$$. The work done by gravity during this motion is
+
+(A) $$-\dfrac{GMm}{2r}$$
+
+(B) $$-\dfrac{GMm}{r}$$
+
+(C) $$\dfrac{GMm}{2r}$$
+
+(D) zero, because gravity is perpendicular to orbital motion
+::::
+
+::::problem
+11. A particle in potential $$U(x)=\dfrac{A}{x^2}-\dfrac{B}{x}$$, with $$A,B>0$$, has a stable equilibrium at
+
+(A) $$x=A/B$$
+
+(B) $$x=2A/B$$
+
+(C) $$x=B/A$$
+
+(D) $$x=\sqrt{A/B}$$
+::::
+
+::::problem
+12. A block slides up a rough incline and comes momentarily to rest. Compared with its mechanical energy at launch, its mechanical energy at the top is
+
+(A) greater
+
+(B) smaller
+
+(C) the same
+
+(D) zero
+::::
+
 ### FRQ
 
 ::::frq{id=ap-physics-c-mechanics-work-1}
-1. _Temporary placeholder FRQ for wiring/testing — replace with a real free-response question for this unit._
+1. A block of mass $$m$$ starts from rest at height $$H$$ on a frictionless curved track, then crosses a rough horizontal patch of length $$L$$ with coefficient of kinetic friction $$\mu_k$$ before compressing a spring of constant $$k$$.
 
-   $$(A)$$ State one key idea from this unit and explain it in your own words.
+   $$(A)$$ Derive the speed of the block just before the rough patch.
 
-   $$(B)$$ Give a worked example or application of that idea.
+   $$(B)$$ Determine the speed just after the rough patch.
 
-:::solution
-$$(A)$$ _Placeholder solution._ Any accurate statement of a core concept from this unit, with a correct explanation, earns full credit.
+   $$(C)$$ Find the maximum spring compression.
 
-$$(B)$$ _Placeholder solution._ Any correct worked example or application consistent with part (A).
-:::
+   $$(D)$$ Determine the condition on $$H$$ for the block to reach the spring.
+::::
+
+::::frq{id=ap-physics-c-mechanics-work-2}
+2. A particle of mass $$m$$ moves in the potential $$U(x)=ax^4-bx^2$$, where $$a,b>0$$.
+
+   $$(A)$$ Find all equilibrium positions.
+
+   $$(B)$$ Classify each equilibrium as stable or unstable.
+
+   $$(C)$$ If the particle has total energy $$E=0$$, find its turning points.
+
+   $$(D)$$ For small oscillations about a stable equilibrium, set up the expression for the angular frequency.
+::::
+
+::::frq{id=ap-physics-c-mechanics-work-3}
+3. A small spacecraft of mass $$m$$ moves radially away from a planet of mass $$M$$. Its engine supplies constant power $$P$$ for time $$t_0$$, starting from rest at radius $$R$$. Ignore air resistance and the changing mass of the spacecraft.
+
+   $$(A)$$ Write an energy equation relating the spacecraft's speed and radius after the burn.
+
+   $$(B)$$ Determine the minimum engine energy needed for escape if the burn ends at radius $$r_f$$.
+
+   $$(C)$$ Explain whether delivering the same energy quickly or slowly changes the escape condition in this idealized model.
+
+   $$(D)$$ Identify one assumption in the model that would fail for a real rocket.
 ::::

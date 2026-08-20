@@ -76,6 +76,8 @@ These hold only for constant acceleration; if $$a$$ varies, integrate instead.
 - Kinetic friction: $$f_k = \mu_k F_N$$, usually $$\mu_s > \mu_k$$
 - Hooke's law (spring): $$\vec{F}_s = -k\vec{x}$$
 - Linear drag: $$\vec{F}_d = -b\vec{v}$$; terminal velocity $$v_t = mg/b$$
+- Falling from rest with linear drag (down positive): $$v(t)=v_t\left(1-e^{-bt/m}\right),\qquad v_t=\dfrac{mg}{b}$$
+- Quadratic drag: $$F_d\propto v^2$$ opposite the velocity (use the model stated in the problem)
 
 ### Inclines and slipping
 
@@ -102,6 +104,7 @@ These hold only for constant acceleration; if $$a$$ varies, integrate instead.
 
 - Center-of-mass dynamics: $$\sum\vec{F}_{\text{ext}} = M\vec{a}_{\text{cm}}$$ (internal forces cancel in pairs)
 - Pseudo-force in an accelerating frame: $$\vec{F}_{\text{pseudo}} = -m\vec{a}_{\text{frame}}$$
+- Effective gravity in an accelerating frame: $$\vec{g}_{\text{eff}}=\vec{g}-\vec{a}_{\text{frame}}$$
 
 ---
 
@@ -129,9 +132,10 @@ These hold only for constant acceleration; if $$a$$ varies, integrate instead.
 
 ### Conservation of energy
 
+- Total mechanical energy: $$E_{\text{mech}}=K+U$$
 - Only conservative forces: $$K_i + U_i = K_f + U_f$$
 - With nonconservative work: $$K_i + U_i + W_{\text{nc}} = K_f + U_f$$, equivalently $$W_{\text{nc}} = \Delta E_{\text{mech}}$$
-- Energy diagrams: equilibrium where $$\dfrac{dU}{dx} = 0$$; stable if $$\dfrac{d^2U}{dx^2} > 0$$, unstable if $$\dfrac{d^2U}{dx^2} < 0$$; turning points where $$E = U(x)$$.
+- Energy diagrams: equilibrium where $$\dfrac{dU}{dx} = 0$$; stable if $$\dfrac{d^2U}{dx^2} > 0$$, unstable if $$\dfrac{d^2U}{dx^2} < 0$$, neutral if $$\dfrac{d^2U}{dx^2}=0$$; turning points where $$E = U(x)$$.
 
 ### Power
 
@@ -149,6 +153,13 @@ These hold only for constant acceleration; if $$a$$ varies, integrate instead.
 - Impulse: $$\vec{J} = \displaystyle\int_{t_i}^{t_f}\vec{F}_{\text{net}}\,dt = \Delta\vec{p}$$ (area under an $$F$$-$$t$$ graph)
 - Average force: $$\vec{F}_{\text{avg}} = \dfrac{\vec{J}}{\Delta t} = \dfrac{\Delta\vec{p}}{\Delta t}$$
 
+### Variable mass
+
+- Product rule: $$\dfrac{d}{dt}(m\vec v)=m\dfrac{d\vec v}{dt}+\vec v\dfrac{dm}{dt}$$
+- In 1D, keep signs with: $$F_{\text{ext}}=m\dfrac{dv}{dt}+v\dfrac{dm}{dt}$$ for the chosen system.
+- Object collecting mass with no incoming velocity in the direction of motion: $$m\dfrac{dv}{dt}+v\dfrac{dm}{dt}=0$$
+- Ideal rocket in empty space: $$dv=-u\dfrac{dm}{m}$$, so $$\Delta v=u\ln\left(\dfrac{m_0}{m_f}\right)$$
+
 ### Conservation of momentum
 
 - If $$\sum\vec{F}_{\text{ext}} = 0$$ (or its impulse is negligible): $$\vec{P}_i = \vec{P}_f$$
@@ -159,6 +170,7 @@ These hold only for constant acceleration; if $$a$$ varies, integrate instead.
 - Discrete: $$\vec{r}_{\text{cm}} = \dfrac{1}{M}\displaystyle\sum_i m_i\vec{r}_i$$
 - Continuous: $$\vec{r}_{\text{cm}} = \dfrac{1}{M}\displaystyle\int\vec{r}\,dm$$
 - System momentum: $$\vec{P}_{\text{sys}} = M\vec{v}_{\text{cm}}$$
+- Center of mass velocity: $$\vec v_{\text{cm}}=\dfrac{1}{M}\displaystyle\sum_i m_i\vec v_i$$
 
 ### Collisions
 
@@ -176,7 +188,7 @@ v_{2f} = \frac{2m_1}{m_1+m_2}v_{1i} + \frac{m_2-m_1}{m_1+m_2}v_{2i}
 $$
 
 - Equal masses in 1D elastic collision exchange velocities.
-- Variable mass (rocket equation): $$\Delta v = u\ln\dfrac{m_0}{m_f}$$
+- CM-frame energy lost when objects stick: $$\Delta E_{\text{lost}}=K'_{\text{initial}}$$
 
 ---
 
@@ -185,7 +197,8 @@ $$
 ### Angular kinematics
 
 - Definitions: $$\omega = \dfrac{d\theta}{dt},\qquad \alpha = \dfrac{d\omega}{dt} = \dfrac{d^2\theta}{dt^2}$$
-- Constant $$\alpha$$: $$\omega_f = \omega_i + \alpha t,\quad \theta_f - \theta_i = \omega_i t + \tfrac{1}{2}\alpha t^2,\quad \omega_f^2 = \omega_i^2 + 2\alpha(\theta_f - \theta_i)$$
+- Constant $$\alpha$$: $$\omega_f = \omega_i + \alpha t,\quad \Delta\theta = \omega_i t + \tfrac{1}{2}\alpha t^2,\quad \Delta\theta = \omega_f t - \tfrac{1}{2}\alpha t^2$$
+- Constant $$\alpha$$ without time: $$\omega_f^2 = \omega_i^2 + 2\alpha\Delta\theta,\qquad \Delta\theta=\dfrac{\omega_i+\omega_f}{2}t$$
 - Linear-angular links: $$s = r\theta,\quad v_t = r\omega,\quad a_t = r\alpha,\quad a_r = r\omega^2$$
 
 ### Torque
@@ -218,11 +231,14 @@ $$
 - Fixed axis: $$\sum\tau = I\alpha$$
 - About the center of mass: $$\sum\vec{\tau}_{\text{cm}} = I_{\text{cm}}\vec{\alpha}$$, with $$\sum\vec{F}_{\text{ext}} = M\vec{a}_{\text{cm}}$$
 - Static equilibrium: $$\sum\vec{F} = 0$$ and $$\sum\vec{\tau} = 0$$ (in equilibrium, torque is zero about every axis—pivot at an unknown force).
+- Massive pulley Atwood setup: $$(T_2-T_1)R=I\alpha,\qquad a=R\alpha$$
 
 ### Rolling without slipping
 
 - Constraints: $$v_{\text{cm}} = R\omega,\qquad a_{\text{cm}} = R\alpha$$
 - Acceleration down an incline: $$a = \dfrac{g\sin\theta}{1 + I_{\text{cm}}/MR^2}$$ (sphere fastest, then disk, then hoop)
+- If $$I_{\text{cm}}=\beta MR^2$$, then $$a=\dfrac{g\sin\theta}{1+\beta},\qquad f=\dfrac{\beta}{1+\beta}Mg\sin\theta$$
+- Special rolling inclines: sphere $$a=\tfrac57g\sin\theta$$, disk/cylinder $$a=\tfrac23g\sin\theta$$, hoop $$a=\tfrac12g\sin\theta$$
 
 ---
 
@@ -233,6 +249,7 @@ $$
 - Rotational kinetic energy: $$K_{\text{rot}} = \tfrac{1}{2}I\omega^2$$
 - Total (translation + rotation): $$K = \tfrac{1}{2}Mv_{\text{cm}}^2 + \tfrac{1}{2}I_{\text{cm}}\omega^2$$
 - Rolling speed from height: $$v = \sqrt{\dfrac{2gh}{1 + I_{\text{cm}}/MR^2}}$$
+- For $$I_{\text{cm}}=\beta MR^2$$, rolling speed from height becomes $$v=\sqrt{\dfrac{2gh}{1+\beta}}$$
 - Rotational work: $$W_{\text{rot}} = \displaystyle\int\tau\,d\theta$$, with $$W_{\text{net,rot}} = \Delta K_{\text{rot}}$$
 - Rotational power: $$P = \tau\omega = \vec{\tau}\cdot\vec{\omega}$$
 
@@ -244,6 +261,7 @@ $$
 - Conservation (zero external torque): $$\vec{L}_i = \vec{L}_f$$, i.e. $$I_i\omega_i = I_f\omega_f$$
 - Angular impulse: $$\displaystyle\int_{t_i}^{t_f}\vec{\tau}_{\text{ext}}\,dt = \Delta\vec{L}$$
 - Central force (e.g. gravity): torque about center is zero, so $$L$$ is conserved; areal velocity $$\dfrac{dA}{dt} = \dfrac{L}{2m}$$ is constant (Kepler's second law).
+- Periapsis/apoapsis angular momentum: $$r_pv_p=r_av_a$$
 
 Note: $$L$$ is conserved whenever external torque vanishes, but $$K_{\text{rot}}$$ need not be (sticking/merging lowers it; pulling mass inward raises it).
 
@@ -257,6 +275,7 @@ Note: $$L$$ is conserved whenever external torque vanishes, but $$K_{\text{rot}}
 - General solution: $$x(t) = A\cos(\omega t + \phi)$$
 - Velocity and acceleration: $$v(t) = -A\omega\sin(\omega t + \phi),\qquad a(t) = -A\omega^2\cos(\omega t + \phi)$$
 - Amplitude from initial conditions: $$A = \sqrt{x_0^2 + (v_0/\omega)^2}$$
+- Phase from initial conditions: $$\tan\phi=-\dfrac{v_0}{\omega x_0}$$ (check the quadrant)
 - Maxima: $$v_{\max} = A\omega,\qquad a_{\max} = A\omega^2$$
 - Speed vs position: $$v(x) = \pm\omega\sqrt{A^2 - x^2}$$
 - Period and frequency: $$\omega = 2\pi f = \dfrac{2\pi}{T}$$
@@ -266,8 +285,11 @@ Note: $$L$$ is conserved whenever external torque vanishes, but $$K_{\text{rot}}
 - Mass-spring: $$\omega = \sqrt{\dfrac{k}{m}},\qquad T = 2\pi\sqrt{\dfrac{m}{k}}$$ (independent of amplitude)
 - Springs in parallel: $$k_{\text{eff}} = k_1 + k_2$$ (stiffer)
 - Springs in series: $$\dfrac{1}{k_{\text{eff}}} = \dfrac{1}{k_1} + \dfrac{1}{k_2}$$ (softer)
+- General spring geometry: match total spring energy to $$U=\tfrac12k_{\text{eff}}x^2$$
 - Simple pendulum (small angle): $$\omega = \sqrt{\dfrac{g}{L}},\qquad T = 2\pi\sqrt{\dfrac{L}{g}}$$
 - Physical pendulum ($$I$$ about the pivot, $$d$$ to the CM): $$T = 2\pi\sqrt{\dfrac{I}{mgd}}$$
+- Floating object: $$\omega=\sqrt{\dfrac{\rho_{\text{liq}}g}{\rho_{\text{obj}}h}}$$
+- U-tube liquid oscillator: $$\omega=\sqrt{\dfrac{2g}{L}},\qquad T=2\pi\sqrt{\dfrac{L}{2g}}$$
 - Small oscillations near a potential minimum: $$k_{\text{eff}} = U''(x_0),\qquad \omega = \sqrt{\dfrac{U''(x_0)}{m}}$$
 
 ### Energy in SHM
@@ -294,9 +316,13 @@ Note: $$L$$ is conserved whenever external torque vanishes, but $$K_{\text{rot}}
 ### Orbits and escape
 
 - Circular orbit (gravity supplies the centripetal force): $$\dfrac{GMm}{r^2} = \dfrac{mv^2}{r}\ \Rightarrow\ v_{\text{orbit}} = \sqrt{\dfrac{GM}{r}}$$
+- Circular orbit period: $$T=2\pi\sqrt{\dfrac{r^3}{GM}}$$
 - Escape speed: $$v_{\text{esc}} = \sqrt{\dfrac{2GM}{R}} = \sqrt{2gR}$$
-- Kepler's third law (circular orbit): $$T^2 = \dfrac{4\pi^2}{GM}r^3$$
-- Angular momentum is conserved in any orbit (central force), so $$v_p r_p = v_a r_a$$ at perihelion and aphelion.
+- Kepler's third law: $$T^2 = \dfrac{4\pi^2}{GM}a^3$$, where $$a$$ is the semi-major axis.
+- Around the Sun using years and AU: $$T^2=a^3$$
+- Orbital mechanical energy: $$E=-\dfrac{GMm}{2a}$$
+- Angular momentum is conserved in any orbit (central force), so $$v_p r_p = v_a r_a$$ at perihelion/periapsis and aphelion/apoapsis.
+- Areal velocity: $$\dfrac{dA}{dt}=\dfrac{L}{2m}$$
 
 ---
 

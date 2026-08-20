@@ -6,7 +6,7 @@ sidebar:
 ---
 
 :::variables
-- $$\theta$$ = angular position (Units: radians)
+- $$\theta$$ = angular displacement (Units: radians)
 - $$\omega$$ = angular velocity (Units: $$\text{rad/s}$$)
 - $$\alpha$$ = angular acceleration (Units: $$\text{rad/s}^2$$)
 - $$\tau$$ = torque (Units: $$\text{N}\cdot\text{m}$$)
@@ -19,7 +19,9 @@ sidebar:
 
 ## Angular Kinematics
 
-Sometimes, an object does not have to be moving for it to have motion. Angular kinematics deals with rotation around a fixed axis. For a rigid body rotating about a fixed axis, angular variables mirror linear variables, except it applies to rotations instead of linear translation:
+Angular kinematics deals with rotation around a fixed axis, like a top spinning in place or a CD spinning on a disk player. For a rigid body rotating about a fixed axis, angular variables mirror linear variables, except it applies to rotations instead of linear translation.
+
+**Angular displacement** $$\theta$$ is the change in angle of an object, where the standard is to always give the positive angles with the direction (e.g. $$30 \circ$$ counterclockwise or $$210 \circ$$ clockwise). **Angular velocity** $$\omega$$ and **angular acceleration** $$\alpha$$ are defined below:
 
 $$
 \omega = \frac{d\theta}{dt}, \qquad \alpha = \frac{d\omega}{dt} = \frac{d^2\theta}{dt^2}.
@@ -39,7 +41,7 @@ $$
 \omega_f^2 = \omega_i^2 + 2\alpha(\theta_f-\theta_i).
 $$
 
-This is the rotational equivalent of the Big 5 equations from Unit 1. Radians are dimensionless in SI, but keeping them visible helps avoid mixing angular and linear quantities.
+As you can see, $$\theta$$ maps to $$x$$, $$\omega$$ maps to $$v$$, and $$\alpha$$ maps to $$a$$. Fittingly, all of the rotational variables are named the same as their translational counterparts with the addition of "angular." The equations are the rotational equivalent of the Big 5 equations from Unit 1. Radians are dimensionless in SI, but keeping them visible helps avoid mixing angular and linear quantities.
 
 ### Connecting Linear and Angular Motion
 
@@ -168,7 +170,7 @@ where $$r_{\perp}$$ is the lever arm, the perpendicular distance from the axis t
 \draw[very thick] (O) -- (P) node[midway, below right] {$\vec r$};
 \draw[->, very thick, red] (P) -- ++(0,1.65) node[above] {$\vec F$};
 \draw[dashed] (O) -- (3,0);
-\draw[dashed, red!60] (3,-0.25) -- (3,3.05);
+\draw[dashed, red!60] (3,0) -- (3,2.5);
 \draw[<->, blue, thick] (0,-0.32) -- (3,-0.32) node[midway,below] {$r_\perp$};
 \draw[dashed, gray] (O) -- (0,1.35);
 \draw (0.68,0.27) arc[start angle=21.8,end angle=90,radius=0.73] node[midway,above right] {$\theta$};
@@ -186,21 +188,21 @@ There are two equivalent ways to read $$\tau = rF\sin\theta$$, and switching bet
 
 The direction of torque follows the **right-hand rule** applied to $$\vec\tau = \vec r\times\vec F$$: point the fingers along $$\vec r$$ (from axis to application point), curl them toward $$\vec F$$, and the thumb gives $$\vec\tau$$. In planar problems the torque vector points either out of or into the page, so we replace the vector bookkeeping with signs: **counterclockwise torques positive, clockwise torques negative**. Pick that sign convention once at the start of a problem and apply it to every torque.
 
-### Cross Products and the Right-Hand Rule
+### Geometry of Cross Products and the Right-Hand Rule
 
-A cross product takes two vectors and produces a third vector perpendicular to both:
+In the previous section, we defined torque as
 
 $$
 \vec{\tau}=\vec r\times \vec F.
 $$
 
-Its magnitude is
+The "x" in the middle is actual not multiplication in the traditional sense. It represents the **cross product**, which is a way of multiplying vectors. The magnitude of a cross product (using torque as an example) is defined as
 
 $$
 \lvert \vec r\times \vec F\rvert=rF\sin\theta,
 $$
 
-where $$\theta$$ is the smaller angle between the vectors. The direction is found with the right-hand rule: point your fingers along the first vector, curl toward the second vector, and your thumb points in the direction of the cross product. This is why order matters:
+where $$\theta$$ is the smaller angle between the vectors (to prove this, you need to know Linear Algebra). Unlike the dot product, the cross product is found with the right-hand rule: point your fingers along the first vector, curl toward the second vector, and your thumb points in the direction of the cross product. This is why order matters:
 
 $$
 \vec r\times \vec F=-(\vec F\times \vec r).
@@ -347,8 +349,8 @@ To solve for moments of inertia,
    - linear density $$\lambda=M/L$$ gives $$dm=\lambda\,dx$$,
    - surface density $$\sigma=M/A$$ gives $$dm=\sigma\,dA$$,
    - volume density $$\rho=M/V$$ gives $$dm=\rho\,dV$$.
-4. Integrate $$I=\int r^2\,dm$$ over the entire object.
-5. If the axis is shifted from a center-of-mass axis, use the parallel-axis theorem $$I=I_{\text{cm}}+Md^2$$ instead of redoing a harder integral.
+4. Express density in terms of mass and radius.
+5. Integrate $$I=\int r^2\,dm$$ over the entire object.
 :::
 
 Below are example proofs of how to derive these formulas:
@@ -766,7 +768,7 @@ The standard trick is to put the pivot at the **location of an unknown force**. 
 \usetikzlibrary{arrows.meta}
 \begin{tikzpicture}[>=Stealth, font=\small]
 \draw[line width=4pt] (0,0) -- (5,0);
-\fill (0,0) circle (2pt) node[below] {hinge};
+\fill (0,0) circle (2pt);
 \draw[line width=3pt] (0,-1.4) -- (0,2.4);
 \draw[red, thick] (5,0) -- (0,2.4) node[midway,above right] {cable};
 \draw[->,blue,thick] (5,0) -- (4.0,0.48) node[above] {$T$};
@@ -846,7 +848,7 @@ The minus sign in the algebra means $$N_A$$ actually points **down**: support $$
 Now use vertical force balance to get $$N_B$$. Be careful with the sign: with $$N_A$$ acting downward ($$-1098\ \text{N}$$ in the up-positive convention),
 
 $$
-N_A + N_B - mg - W = 0\ \Rightarrow\ N_B = mg + W - N_A = 294 + 600 - (-1098) = 1992\ \text{N}.
+N_A + N_B - mg - W = 0\ \Rightarrow\ N_B = mg + W - N_A = 1992\ \text{N}.
 $$
 
 So support $$B$$ (the fulcrum near the diver) carries a large upward force of about $$1990\ \text{N}$$, while support $$A$$ (the anchored end) is held down with about $$1100\ \text{N}$$. As a check, the net upward force is $$1992 - 1098 = 894\ \text{N}$$, which equals the total downward weight $$294 + 600 = 894\ \text{N}$$.
@@ -872,18 +874,190 @@ So support $$B$$ (the fulcrum near the diver) carries a large upward force of ab
 
 ## Practice
 
+### Multiple Choice
+
+::::problem
+1. Two forces of magnitude $$F$$ are applied to the end of a rod of length $$L$$ pivoted at the other end. One force is perpendicular to the rod, and the other makes angle $$\theta$$ with the rod in the opposite rotational sense. The net torque magnitude about the pivot is
+
+(A) $$FL(1-\sin\theta)$$
+
+(B) $$FL(1-\cos\theta)$$
+
+(C) $$FL\sin\theta$$
+
+(D) $$FL\cos\theta$$
+::::
+
+::::problem
+2. A point mass $$m$$ is attached to the end of a massless rod of length $$L$$. About an axis perpendicular to the rod through a point $$L/3$$ from the mass, its moment of inertia is
+
+(A) $$mL^2$$
+
+(B) $$mL^2/9$$
+
+(C) $$4mL^2/9$$
+
+(D) $$mL^2/3$$
+::::
+
+::::problem
+3. A uniform disk of mass $$M$$ and radius $$R$$ rotates about an axis perpendicular to its face and passing through a point halfway between its center and rim. Its moment of inertia is
+
+(A) $$\dfrac{1}{2}MR^2$$
+
+(B) $$\dfrac{3}{4}MR^2$$
+
+(C) $$MR^2$$
+
+(D) $$\dfrac{3}{2}MR^2$$
+::::
+
+::::problem
+4. A uniform rod of length $$L$$ is pivoted at one end and held horizontally. A mass $$m$$ hangs from the rod at distance $$2L/3$$ from the pivot. The rod has mass $$M$$. The hinge force has a vertical component equal to
+
+(A) $$Mg+mg$$
+
+(B) $$Mg/2+2mg/3$$
+
+(C) $$Mg+mg-T$$ for some tension $$T$$
+
+(D) zero
+::::
+
+::::problem
+5. A rigid body is in static equilibrium under exactly three nonparallel forces. Which statement must be true?
+
+(A) The forces are parallel.
+
+(B) The lines of action pass through a common point.
+
+(C) The forces have equal magnitudes.
+
+(D) The net torque is nonzero.
+::::
+
+::::problem
+6. A thin rod of length $$L$$ has linear density $$\lambda(x)=Cx$$ measured from one end. Its moment of inertia about that end is
+
+(A) $$\dfrac{1}{2}ML^2$$
+
+(B) $$\dfrac{2}{3}ML^2$$
+
+(C) $$\dfrac{1}{3}ML^2$$
+
+(D) $$\dfrac{1}{4}ML^2$$
+::::
+
+::::problem
+7. A massive pulley of radius $$R$$ and rotational inertia $$I$$ has two tensions $$T_1$$ and $$T_2$$ applied by a non-slipping string. Its angular acceleration is
+
+(A) $$\dfrac{(T_2-T_1)R}{I}$$
+
+(B) $$\dfrac{T_1+T_2}{IR}$$
+
+(C) $$\dfrac{I}{(T_2-T_1)R}$$
+
+(D) $$\dfrac{(T_2-T_1)}{IR}$$
+::::
+
+::::problem
+8. A ladder leans against a frictionless wall and rests on a rough floor. A person climbs upward along the ladder. Before slipping occurs, the horizontal force from the wall
+
+(A) decreases
+
+(B) increases
+
+(C) stays constant
+
+(D) is always zero
+::::
+
+::::problem
+9. A disk and a hoop have the same mass and radius. The same torque is applied to each from rest for the same time. The disk's final angular speed is
+
+(A) larger than the hoop's
+
+(B) smaller than the hoop's
+
+(C) equal to the hoop's
+
+(D) impossible to compare without the torque value
+::::
+
+::::problem
+10. The perpendicular-axis theorem applies to
+
+(A) any three-dimensional rigid body
+
+(B) point masses only
+
+(C) flat laminae
+
+(D) rolling objects only
+::::
+
+::::problem
+11. A yo-yo unwinds from rest without slipping. If its axle radius is $$r$$ and rotational inertia is $$I$$, the tension is less than $$mg$$ because
+
+(A) the string stretches
+
+(B) gravity must both translate and rotate the yo-yo
+
+(C) angular momentum is conserved about the center
+
+(D) mechanical energy is not conserved
+::::
+
+::::problem
+12. A horizontal rod of length $$L$$ is hinged to a wall and held by a cord making angle $$\theta$$ with the rod. Masses $$m$$ and $$2m$$ hang from the rod at distances $$L/4$$ and $$3L/4$$ from the hinge. Neglect the rod's mass.
+
+<img class="note-img note-img--w360" src="/assets/APs/AP Physics C Mech/torque/practice-rod-cord.svg" alt="Horizontal rod held by an angled cord with two hanging masses" loading="lazy" decoding="async" />
+
+The tension in the cord is
+
+(A) $$\dfrac{7mg}{4\sin\theta}$$
+
+(B) $$\dfrac{7mg}{4\cos\theta}$$
+
+(C) $$\dfrac{5mg}{4\sin\theta}$$
+
+(D) $$\dfrac{3mg}{2\sin\theta}$$
+::::
+
 ### FRQ
 
 ::::frq{id=ap-physics-c-mechanics-torque-1}
-1. _Temporary placeholder FRQ for wiring/testing — replace with a real free-response question for this unit._
+1. A nonuniform rod of length $$L$$ and mass $$M$$ has density $$\lambda(x)=Cx^2$$ measured from the left end. It is pivoted at the left end and held horizontally by a vertical string at the right end.
 
-   $$(A)$$ State one key idea from this unit and explain it in your own words.
+   $$(A)$$ Determine $$C$$ in terms of $$M$$ and $$L$$.
 
-   $$(B)$$ Give a worked example or application of that idea.
+   $$(B)$$ Find the rod's center of mass.
 
-:::solution
-$$(A)$$ _Placeholder solution._ Any accurate statement of a core concept from this unit, with a correct explanation, earns full credit.
+   $$(C)$$ Determine the tension in the string.
 
-$$(B)$$ _Placeholder solution._ Any correct worked example or application consistent with part (A).
-:::
+   $$(D)$$ Determine the horizontal and vertical hinge force components.
+::::
+
+::::frq{id=ap-physics-c-mechanics-torque-2}
+2. Two blocks of masses $$m_1$$ and $$m_2$$ are connected by a light string over a pulley modeled as a disk of mass $$M$$ and radius $$R$$. The string does not slip and $$m_2>m_1$$.
+
+   $$(A)$$ Draw force diagrams for the blocks and a torque diagram for the pulley.
+
+   $$(B)$$ Derive the acceleration of the blocks.
+
+   $$(C)$$ Find both string tensions.
+
+   $$(D)$$ Determine the limiting acceleration as $$M\to 0$$ and explain why it makes sense.
+::::
+
+::::frq{id=ap-physics-c-mechanics-torque-3}
+3. A rigid bar is pivoted at one end and released from rest at angle $$\theta_0$$ above the horizontal. A small mass is attached at the free end, and the bar itself has mass $$M$$.
+
+   $$(A)$$ Write the moment of inertia of the system about the pivot.
+
+   $$(B)$$ Determine the initial angular acceleration.
+
+   $$(C)$$ Use energy to find the angular speed when the bar reaches horizontal.
+
+   $$(D)$$ Determine the speed of the attached mass at that instant.
 ::::
