@@ -70,33 +70,8 @@
 	/* Starlight uses --sl-font for the whole UI. */
 	--sl-font: var(--font-ui);
 
-	/* Dot-grid paper backdrop (tuned per theme below). */
-	--paper-dot: rgba(20, 24, 32, 0.07);
-	--paper-dot-size: 1.2px;
+	/* Paper backdrop. Blueprint overrides this with its own graph-paper grid. */
 	--paper-dot-spacing: 28px;
-
-	/* Animated paper canvas (paper-canvas.ts reads these). Matches the static
-	   dot-grid above so the swap from static→animated is seamless. */
-	--canvas-dot-spacing: 28;
-	--canvas-dot-size: 1.22;
-	--canvas-parallax-rate: 0.25;
-}
-
-/* The animated canvas draws its own dots; hide the static CSS dot-grid (keep
-   the solid paper color) while it's running so we don't double up. */
-:root.paper-canvas-active body::before {
-	background-image: none;
-}
-
-/* Fixed full-viewport canvas, painted behind all page content. */
-canvas.paper-canvas {
-	position: fixed;
-	inset: 0;
-	z-index: -1;
-	width: 100%;
-	height: 100%;
-	pointer-events: none;
-	display: block;
 }
 
 /* ============================================================================
@@ -126,10 +101,6 @@ canvas.paper-canvas {
 	--sl-color-bg-inline-code: #1c2230;
 }
 
-[data-theme='dark'] {
-	--paper-dot: rgba(232, 236, 244, 0.06);
-}
-
 /* ============================================================================
    LIGHT MODE  (warm cream paper, terracotta accent)
    ============================================================================ */
@@ -155,16 +126,12 @@ canvas.paper-canvas {
 	--sl-color-bg-nav: #fffcf7;
 	--sl-color-bg-sidebar: #ebe6dc;
 	--sl-color-bg-inline-code: #ede9e1;
-
-	--paper-dot: rgba(20, 24, 32, 0.07);
 }
 
 /* ============================================================================
-   Dot-grid paper backdrop
-   A fixed layer behind everything; it stays put while content scrolls over it,
-   giving the gentle parallax feel of the source site's animated canvas without
-   the heavy per-frame physics. Surfaces (sidebar, content) sit on solid bg, so
-   the dots read mainly through the page gutters.
+   Paper backdrop
+   A fixed layer behind everything. The default handwritten theme uses plain
+   paper color; Blueprint adds its own static graph-paper grid below.
    ============================================================================ */
 body::before {
 	content: '';
@@ -173,11 +140,6 @@ body::before {
 	z-index: -1;
 	pointer-events: none;
 	background-color: var(--sl-color-bg);
-	background-image: radial-gradient(
-		var(--paper-dot) var(--paper-dot-size),
-		transparent calc(var(--paper-dot-size) + 0.5px)
-	);
-	background-size: var(--paper-dot-spacing) var(--paper-dot-spacing);
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -1,8 +1,6 @@
 ---
-// Override of Starlight's <Head> — used as a universal mount point (it renders
-// on every page, splash + docs) for the animated "paper canvas" background, and
-// to emit JSON-LD structured data on note pages so search engines understand
-// them as free learning resources / articles.
+// Override of Starlight's <Head> — emits JSON-LD structured data on note pages
+// so search engines understand them as free learning resources / articles.
 import Default from '@astrojs/starlight/components/Head.astro';
 
 const SITE_URL = 'https://notesbyjoshua.github.io';
@@ -72,8 +70,3 @@ if (isHome) {
 <Default><slot /></Default>
 {willHaveMinimap && <script is:inline>document.documentElement.classList.add("has-minimap")</script>}
 {jsonLd && <script type="application/ld+json" is:inline set:html={jsonLd} />}
-
-<script>
-  import { mountPaperCanvas } from '../scripts/paper-canvas';
-  mountPaperCanvas();
-</script>
