@@ -858,79 +858,7 @@ Notice we never needed the full shape of $$U$$ — only its second derivative at
 ### Multiple Choice
 
 ::::problem
-1. A block of mass $$m$$ is attached to a spring of constant $$k$$ on a frictionless horizontal surface. A small constant horizontal force $$F_0$$ is then applied and left on. Compared with the original oscillator, the new motion has
-
-(A) the same angular frequency and an equilibrium shifted by $$F_0/k$$
-
-(B) angular frequency $$\sqrt{(k+F_0)/m}$$ and the same equilibrium
-
-(C) angular frequency $$\sqrt{k/(m+F_0/g)}$$ and an equilibrium shifted by $$F_0/k$$
-
-(D) no simple harmonic motion because the net force is not proportional to $$x$$
-::::
-
-::::problem
-2. A particle moves near $$x=0$$ in the potential $$U(x)=U_0+ax^2+bx^3+cx^4$$, where $$a>0$$. For sufficiently small oscillations, the angular frequency is
-
-(A) $$\sqrt{a/m}$$
-
-(B) $$\sqrt{2a/m}$$
-
-(C) $$\sqrt{6b/m}$$
-
-(D) $$\sqrt{12c/m}$$
-::::
-
-::::problem
-3. A mass $$m$$ on a vertical spring oscillates about its equilibrium position with period $$T$$. At the instant the mass passes through equilibrium moving downward, a second identical mass is gently attached. Immediately after attachment, the new equilibrium position is
-
-(A) unchanged
-
-(B) lower by $$mg/k$$
-
-(C) lower by $$2mg/k$$
-
-(D) higher by $$mg/k$$
-::::
-
-::::problem
-4. A solid cylinder of mass $$M$$ and radius $$R$$ is attached at its center to a horizontal spring of constant $$k$$ and rolls without slipping. Its angular frequency is
-
-(A) $$\sqrt{k/M}$$
-
-(B) $$\sqrt{2k/M}$$
-
-(C) $$\sqrt{2k/(3M)}$$
-
-(D) $$\sqrt{3k/(2M)}$$
-::::
-
-::::problem
-5. A pendulum bob of mass $$m$$ and length $$L$$ is also attached to a horizontal spring of constant $$k$$ that is relaxed when the bob hangs vertically. For small angles, compared with the same pendulum without the spring, the period is
-
-(A) larger
-
-(B) smaller
-
-(C) unchanged
-
-(D) zero because the forces cancel
-::::
-
-::::problem
-6. A bead slides without friction on a circular hoop of radius $$R$$ in a vertical plane. Near the bottom of the hoop, the coordinate along the arc is $$s=R\theta$$. The bead's small-oscillation angular frequency is
-
-(A) $$\sqrt{g/R}$$
-
-(B) $$\sqrt{R/g}$$
-
-(C) $$g/R$$
-
-(D) $$\sqrt{2g/R}$$
-::::
-
-::::problem
-7. A mass $$m$$ hangs from a spring of constant $$k$$ in a uniform gravitational field. It oscillates vertically about equilibrium with amplitude $$A$$. Which quantity depends on $$g$$?
+1. A mass $$m$$ hangs from a spring of constant $$k$$ in a uniform gravitational field. It oscillates vertically about equilibrium with amplitude $$A$$. Which quantity depends on $$g$$?
 
 (A) The angular frequency
 
@@ -939,58 +867,29 @@ Notice we never needed the full shape of $$U$$ — only its second derivative at
 (C) The equilibrium extension
 
 (D) The speed at the equilibrium point measured relative to the oscillation amplitude
+
+
+:::solution
+For a vertical spring, gravity adds a constant downward force. A constant force shifts the equilibrium point but does not change the slope of the restoring force.
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,decorations.pathmorphing}
+\begin{tikzpicture}[>=Stealth, font=\small, scale=0.85]
+  \draw[thick] (0,-0.5) -- (0,1.1);
+  \draw[decorate, decoration={coil, aspect=0.45, segment length=4pt, amplitude=4pt}, thick] (0,0.3) -- (2.1,0.3);
+  \draw[fill=blue!10, thick] (2.1,-0.15) rectangle (3.0,0.75) node[midway] {$m$};
+  \draw[->, thick, red!75] (2.55,0.95) -- (3.6,0.95) node[right] {$x$};
+  \draw[->, thick] (2.55,-0.15) -- (2.55,-0.9) node[below] {$mg$};
+\end{tikzpicture}
+```
+
+At equilibrium, $$kx_0=mg$$, so $$x_0=mg/k$$. But if displacement is measured from that new equilibrium, the net restoring force is still $$F=-kx$$, giving $$\omega=\sqrt{k/m}$$ and the same period formula. Therefore the quantity that depends on $$g$$ is the equilibrium extension. The answer is $$\boxed{\text{C}}$$.
+:::
 ::::
 
 ::::problem
-8. A lightly damped oscillator has displacement amplitude $$A(t)=A_0e^{-bt/(2m)}$$. If the mass is doubled while $$b$$ and $$k$$ stay fixed, the time for the amplitude to fall to half its initial value
-
-(A) doubles
-
-(B) halves
-
-(C) stays the same
-
-(D) becomes $$\sqrt{2}$$ times larger
-::::
-
-::::problem
-9. A mass on a spring is released from rest at $$x=A$$. When it first reaches $$x=A/3$$, what fraction of the total mechanical energy is kinetic?
-
-(A) $$1/9$$
-
-(B) $$2/3$$
-
-(C) $$8/9$$
-
-(D) $$\sqrt{8}/3$$
-::::
-
-::::problem
-10. A particle oscillates in the potential $$U(x)=\dfrac{1}{2}kx^2+\epsilon x^4$$, where $$\epsilon>0$$. Compared with a pure spring of constant $$k$$, the period for finite-amplitude oscillations is best described as
-
-(A) exactly unchanged because the equilibrium is still at $$x=0$$
-
-(B) smaller for larger amplitudes because the restoring force grows faster than linearly
-
-(C) larger for larger amplitudes because the potential energy is larger
-
-(D) undefined because the motion is not periodic
-::::
-
-::::problem
-11. A block attached to a spring oscillates on a frictionless table. The block is replaced by two identical blocks glued together, and the amplitude is doubled. The maximum acceleration changes by a factor of
-
-(A) $$1/\sqrt{2}$$
-
-(B) $$1/2$$
-
-(C) $$\sqrt{2}$$
-
-(D) $$1$$
-::::
-
-::::problem
-12. A pendulum clock is taken to a planet where the gravitational field strength is $$g/4$$. To keep the same small-angle period, the pendulum length should be changed from $$L$$ to
+2. A pendulum clock is taken to a planet where the gravitational field strength is $$g/4$$. To keep the same small-angle period, the pendulum length should be changed from $$L$$ to
 
 (A) $$4L$$
 
@@ -999,6 +898,368 @@ Notice we never needed the full shape of $$U$$ — only its second derivative at
 (C) $$L/2$$
 
 (D) $$L/4$$
+
+
+:::solution
+The small-angle pendulum period is
+
+$$
+T=2\pi\sqrt{\frac{L}{g}}.
+$$
+
+To keep $$T$$ the same, the ratio $$L/g$$ must stay the same.
+
+
+If the new gravitational field is $$g/4$$, then the new length must satisfy
+
+$$
+\frac{L_{\text{new}}}{g/4}=\frac{L}{g}.
+$$
+
+So $$L_{\text{new}}=L/4$$, and the answer is $$\boxed{\text{D}}$$.
+:::
+::::
+
+::::problem
+3. A mass on a spring is released from rest at $$x=A$$. When it first reaches $$x=A/3$$, what fraction of the total mechanical energy is kinetic?
+
+(A) $$1/9$$
+
+(B) $$2/3$$
+
+(C) $$8/9$$
+
+(D) $$\sqrt{8}/3$$
+
+
+:::solution
+The mass is released from rest at amplitude $$A$$, so the total mechanical energy is
+
+$$
+E=\frac12kA^2.
+$$
+
+At $$x=A/3$$, the spring potential energy is
+
+$$
+U=\frac12k\left(\frac{A}{3}\right)^2=\frac19\left(\frac12kA^2\right)=\frac19E.
+$$
+
+Therefore the kinetic energy is the remaining $$8/9$$ of the total. The answer is $$\boxed{\text{C}}$$.
+:::
+::::
+
+::::problem
+4. A block of mass $$m$$ is attached to a spring of constant $$k$$ on a frictionless horizontal surface. A small constant horizontal force $$F_0$$ is then applied and left on. Compared with the original oscillator, the new motion has
+
+(A) the same angular frequency and an equilibrium shifted by $$F_0/k$$
+
+(B) angular frequency $$\sqrt{(k+F_0)/m}$$ and the same equilibrium
+
+(C) angular frequency $$\sqrt{k/(m+F_0/g)}$$ and an equilibrium shifted by $$F_0/k$$
+
+(D) no simple harmonic motion because the net force is not proportional to $$x$$
+
+
+:::solution
+The net force is
+
+$$
+F_{\text{net}}=F_0-kx.
+$$
+
+Equilibrium occurs where this is zero:
+
+$$
+F_0-kx_{\text{eq}}=0
+\quad\Rightarrow\quad
+x_{\text{eq}}=\frac{F_0}{k}.
+$$
+
+
+Let $$u=x-x_{\text{eq}}$$ be displacement from the new equilibrium. Then the net force becomes $$F=-ku$$, so the angular frequency is still $$\omega=\sqrt{k/m}$$. The answer is $$\boxed{\text{A}}$$.
+:::
+::::
+
+::::problem
+5. A bead slides without friction on a circular hoop of radius $$R$$ in a vertical plane. Near the bottom of the hoop, the coordinate along the arc is $$s=R\theta$$. The bead's small-oscillation angular frequency is
+
+(A) $$\sqrt{g/R}$$
+
+(B) $$\sqrt{R/g}$$
+
+(C) $$g/R$$
+
+(D) $$\sqrt{2g/R}$$
+
+
+:::solution
+Near the bottom of the hoop, the tangential component of gravity is approximately
+
+$$
+F_t=-mg\sin\theta\approx -mg\theta.
+$$
+
+Since arc displacement is $$s=R\theta$$, this becomes
+
+$$
+F_t\approx -mg\frac{s}{R}.
+$$
+
+
+Thus
+
+$$
+ma_s=-\frac{mg}{R}s,
+$$
+
+so $$\omega^2=g/R$$ and $$\omega=\sqrt{g/R}$$. The answer is $$\boxed{\text{A}}$$.
+:::
+::::
+
+::::problem
+6. A mass $$m$$ is attached between two horizontal springs with constants $$k_1$$ and $$k_2$$ on a frictionless track, one spring on each side. Both springs are relaxed when the mass is at $$x=0$$. If the mass is displaced slightly, its angular frequency is
+
+(A) $$\sqrt{\dfrac{k_1+k_2}{m}}$$
+
+(B) $$\sqrt{\dfrac{k_1k_2}{m(k_1+k_2)}}$$
+
+(C) $$\sqrt{\dfrac{k_1-k_2}{m}}$$
+
+(D) $$\sqrt{\dfrac{k_1}{m}}+\sqrt{\dfrac{k_2}{m}}$$
+
+
+:::solution
+If the mass is displaced right by $$x$$, the left spring is stretched and pulls left, while the right spring is compressed and also pushes left.
+
+The restoring forces add:
+
+$$
+F= -k_1x-k_2x=-(k_1+k_2)x.
+$$
+
+So the effective spring constant is $$k_1+k_2$$, and
+
+$$
+\omega=\sqrt{\frac{k_1+k_2}{m}}.
+$$
+
+The answer is $$\boxed{\text{A}}$$.
+:::
+::::
+
+::::problem
+7. A block attached to a spring oscillates on a frictionless table. The block is replaced by two identical blocks glued together, and the amplitude is doubled. The maximum acceleration changes by a factor of
+
+(A) $$1/\sqrt{2}$$
+
+(B) $$1/2$$
+
+(C) $$\sqrt{2}$$
+
+(D) $$1$$
+
+
+:::solution
+For a spring oscillator,
+
+$$
+a=-\omega^2x,
+\qquad
+\omega^2=\frac{k}{m}.
+$$
+
+The maximum acceleration happens at the endpoints where $$\lvert x\rvert=A$$:
+
+$$
+a_{\max}=A\frac{k}{m}.
+$$
+
+
+The new amplitude is $$2A$$, but the new mass is $$2m$$, so
+
+$$
+a_{\max,new}=(2A)\frac{k}{2m}=A\frac{k}{m}.
+$$
+
+The factor is $$1$$, so the answer is $$\boxed{\text{D}}$$.
+:::
+::::
+
+::::problem
+8. A mass $$m$$ on a vertical spring oscillates about its equilibrium position with period $$T$$. At the instant the mass passes through equilibrium moving downward, a second identical mass is gently attached. Immediately after attachment, the new equilibrium position is
+
+(A) unchanged
+
+(B) lower by $$mg/k$$
+
+(C) lower by $$2mg/k$$
+
+(D) higher by $$mg/k$$
+
+
+:::solution
+The equilibrium extension of a vertical spring is found by balancing spring force with weight.
+
+Before attachment,
+
+$$
+kx_1=mg
+\quad\Rightarrow\quad
+x_1=\frac{mg}{k}.
+$$
+
+After an identical mass is attached, the total mass is $$2m$$, so
+
+$$
+kx_2=2mg
+\quad\Rightarrow\quad
+x_2=\frac{2mg}{k}.
+$$
+
+The equilibrium position shifts lower by $$x_2-x_1=mg/k$$. The answer is $$\boxed{\text{B}}$$.
+:::
+::::
+
+::::problem
+9. A pendulum bob of mass $$m$$ and length $$L$$ is also attached to a horizontal spring of constant $$k$$ that is relaxed when the bob hangs vertically. For small angles, compared with the same pendulum without the spring, the period is
+
+(A) larger
+
+(B) smaller
+
+(C) unchanged
+
+(D) zero because the forces cancel
+
+
+:::solution
+For small angles, the bob moves horizontally by approximately $$x=L\theta$$. The horizontal spring force is then approximately $$F_s=-kL\theta$$.
+
+This spring force adds an extra restoring torque in the same direction as gravity's restoring torque. More restoring torque means a larger effective angular frequency. Since
+
+$$
+T=\frac{2\pi}{\omega},
+$$
+
+a larger $$\omega$$ means a smaller period. The answer is $$\boxed{\text{B}}$$.
+:::
+::::
+
+::::problem
+10. A particle moves in the potential $$U(x)=\dfrac{1}{2}kx^2+\epsilon x^4$$, where $$k,\epsilon>0$$. For sufficiently small oscillations about $$x=0$$, the angular frequency is
+
+(A) $$\sqrt{k/m}$$
+
+(B) $$\sqrt{(k+4\epsilon)/m}$$
+
+(C) $$\sqrt{\epsilon/m}$$
+
+(D) dependent on amplitude even in the small-amplitude limit
+
+
+:::solution
+For very small oscillations about equilibrium, approximate the potential by its quadratic part. The quartic term is much smaller than $$x^2$$ near $$x=0$$.
+
+
+More formally,
+
+$$
+\omega=\sqrt{\frac{U''(0)}{m}}.
+$$
+
+For
+
+$$
+U(x)=\frac12kx^2+\epsilon x^4,
+$$
+
+we have $$U''(0)=k$$. Therefore
+
+$$
+\omega=\sqrt{\frac{k}{m}}.
+$$
+
+The answer is $$\boxed{\text{A}}$$.
+:::
+::::
+
+::::problem
+11. A particle moves near $$x=0$$ in the potential $$U(x)=U_0+ax^2+bx^3+cx^4$$, where $$a>0$$. For sufficiently small oscillations, the angular frequency is
+
+(A) $$\sqrt{a/m}$$
+
+(B) $$\sqrt{2a/m}$$
+
+(C) $$\sqrt{6b/m}$$
+
+(D) $$\sqrt{12c/m}$$
+
+
+:::solution
+For small oscillations near an equilibrium, the angular frequency depends on the curvature of the potential at that point:
+
+$$
+\omega=\sqrt{\frac{U''(0)}{m}}.
+$$
+
+Differentiate twice:
+
+$$
+U'(x)=2ax+3bx^2+4cx^3,
+$$
+
+$$
+U''(x)=2a+6bx+12cx^2.
+$$
+
+At $$x=0$$,
+
+$$
+U''(0)=2a.
+$$
+
+Thus $$\omega=\sqrt{2a/m}$$, and the answer is $$\boxed{\text{B}}$$.
+
+The cubic and quartic terms can affect larger-amplitude motion, but in the small-amplitude limit their contribution to the curvature at $$x=0$$ does not change the leading frequency.
+:::
+::::
+
+::::problem
+12. A solid cylinder of mass $$M$$ and radius $$R$$ is attached at its center to a horizontal spring of constant $$k$$ and rolls without slipping. Its angular frequency is
+
+(A) $$\sqrt{k/M}$$
+
+(B) $$\sqrt{2k/M}$$
+
+(C) $$\sqrt{2k/(3M)}$$
+
+(D) $$\sqrt{3k/(2M)}$$
+
+
+:::solution
+The spring pulls on the cylinder's center, but because the cylinder rolls, some energy goes into rotation.
+
+The kinetic energy is
+
+$$
+K=\frac12M\dot x^2+\frac12I\left(\frac{\dot x}{R}\right)^2.
+$$
+
+For a solid cylinder, $$I=\frac12MR^2$$, so the effective inertia is
+
+$$
+M+\frac{I}{R^2}=M+\frac12M=\frac32M.
+$$
+
+Therefore
+
+$$
+\omega=\sqrt{\frac{k}{(3/2)M}}=\sqrt{\frac{2k}{3M}}.
+$$
+
+The answer is $$\boxed{\text{C}}$$.
+:::
 ::::
 
 ### FRQ
@@ -1013,10 +1274,72 @@ Notice we never needed the full shape of $$U$$ — only its second derivative at
    $$(C)$$ Find the minimum coefficient of static friction required for rolling without slipping for the entire motion.
 
    $$(D)$$ Suppose the cylinder is replaced by a thin hoop with the same $$M$$ and $$R$$. Without redoing the full calculation, determine whether the period increases, decreases, or stays the same, and justify your answer.
+
+
+:::solution
+$$(A)$$ Use energy with the rolling constraint. The cylinder's center moves with speed $$\dot x$$, and rolling without slipping gives $$\omega_{\text{rot}}=\dot x/R$$.
+
+The kinetic energy is
+
+$$
+K=\frac12M\dot x^2+\frac12I\omega_{\text{rot}}^2.
+$$
+
+For a solid cylinder, $$I=\frac12MR^2$$, so
+
+$$
+K=\frac12M\dot x^2+\frac12\left(\frac12MR^2\right)\left(\frac{\dot x}{R}\right)^2
+=\frac34M\dot x^2.
+$$
+
+Write this as $$K=\frac12M_{\text{eff}}\dot x^2$$, so $$M_{\text{eff}}=3M/2$$. The spring potential is $$U=\frac12kx^2$$, so
+
+$$
+\boxed{\omega=\sqrt{\frac{k}{M_{\text{eff}}}}=\sqrt{\frac{2k}{3M}}}.
+$$
+
+$$(B)$$ The center acceleration is
+
+$$
+a=-\omega^2x=-\frac{2k}{3M}x.
+$$
+
+Static friction supplies the torque for angular acceleration. Using $$fR=I\alpha$$ and $$a=\alpha R$$,
+
+$$
+f=\frac{I}{R^2}\lvert a\rvert=\frac{M}{2}\lvert a\rvert.
+$$
+
+The largest acceleration occurs at $$\lvert x\rvert=A$$, so
+
+$$
+\boxed{f_{\max}=\frac{M}{2}\left(\frac{2k}{3M}A\right)=\frac{kA}{3}}.
+$$
+
+$$(C)$$ Rolling without slipping requires the needed static friction to be no larger than the maximum available static friction:
+
+$$
+f_{\max}\le \mu_sMg.
+$$
+
+Thus
+
+$$
+\frac{kA}{3}\le \mu_sMg,
+$$
+
+so
+
+$$
+\boxed{\mu_s\ge \frac{kA}{3Mg}}.
+$$
+
+$$(D)$$ A hoop has larger rotational inertia, $$I=MR^2$$, so the effective inertia $$M+I/R^2$$ is larger. A larger effective inertia with the same spring constant means smaller angular frequency and therefore a longer period.
+:::
 ::::
 
 ::::frq{id=ap-physics-c-mechanics-oscillations-2}
-2. A bead of mass $$m$$ slides without friction on a rigid circular wire of radius $$R$$ fixed in a vertical plane. The bead is also attached to a light spring of constant $$k$$ whose other end is fixed at the top of the circle. Let $$\theta$$ be the bead's angular displacement from the bottom of the circle.
+2. A bead of mass $$m$$ slides without friction on a rigid circular wire of radius $$R$$ fixed in a vertical plane. The bead is also attached to a light spring of constant $$k$$ and negligible relaxed length whose other end is fixed at the top of the circle. Let $$\theta$$ be the bead's angular displacement from the bottom of the circle.
 
    $$(A)$$ Write the bead's gravitational potential energy and spring potential energy as functions of $$\theta$$, taking the bottom of the circle as zero gravitational potential.
 
@@ -1025,6 +1348,74 @@ Notice we never needed the full shape of $$U$$ — only its second derivative at
    $$(C)$$ For small oscillations about the bottom, derive the angular frequency in terms of $$m$$, $$g$$, $$R$$, and $$k$$.
 
    $$(D)$$ Describe qualitatively how the equilibrium position changes if the spring constant is made very large.
+
+
+:::solution
+$$(A)$$ Taking the bottom as zero gravitational potential, the bead rises a height $$R(1-\cos\theta)$$ when it is at angle $$\theta$$ from the bottom.
+
+
+So
+
+$$
+\boxed{U_g=mgR(1-\cos\theta)}.
+$$
+
+The spring has negligible relaxed length, so its potential is $$\frac12k\ell^2$$. The distance from the top of the circle to the bead is the chord length. The central angle between the top and the bead is $$\pi-\theta$$, giving
+
+$$
+\ell^2=2R^2(1-\cos(\pi-\theta))=2R^2(1+\cos\theta).
+$$
+
+Thus
+
+$$
+\boxed{U_s=\frac12k\ell^2=kR^2(1+\cos\theta)}.
+$$
+
+$$(B)$$ The bottom is stable if the total potential has positive curvature at $$\theta=0$$. The total potential is
+
+$$
+U(\theta)=mgR(1-\cos\theta)+kR^2(1+\cos\theta).
+$$
+
+Differentiate twice:
+
+$$
+U''(\theta)=mgR\cos\theta-kR^2\cos\theta.
+$$
+
+At the bottom,
+
+$$
+U''(0)=mgR-kR^2.
+$$
+
+For stability,
+
+$$
+\boxed{kR<mg}.
+$$
+
+$$(C)$$ For small angular motion, the kinetic energy is
+
+$$
+K=\frac12mR^2\dot\theta^2.
+$$
+
+Near stable equilibrium, $$U\approx U(0)+\frac12U''(0)\theta^2$$, so
+
+$$
+\omega=\sqrt{\frac{U''(0)}{mR^2}}.
+$$
+
+Therefore
+
+$$
+\boxed{\omega=\sqrt{\frac{g}{R}-\frac{k}{m}}}.
+$$
+
+$$(D)$$ If $$k$$ is very large, the spring strongly favors making its length small, which pulls the bead toward the top anchor. Then the bottom is no longer stable, and the stable equilibrium shifts upward away from the bottom.
+:::
 ::::
 
 ::::frq{id=ap-physics-c-mechanics-oscillations-3}
@@ -1037,4 +1428,57 @@ Notice we never needed the full shape of $$U$$ — only its second derivative at
    $$(C)$$ The student measures the period for several added top-block masses $$m$$. Describe a graph that could be used to determine the spring constant $$k$$ from the data, including what should be plotted on each axis.
 
    $$(D)$$ If the block begins to slip near the endpoints of the motion, explain whether the measured period should be expected to match the expression from part $$(A)$$. Your explanation should refer to the forces on the two objects, not just energy loss.
+
+
+:::solution
+$$(A)$$ If the top block does not slip, the cart and block move together as one object of total mass $$M+m$$.
+
+
+The oscillator is therefore a spring attached to mass $$M+m$$, so
+
+$$
+\boxed{T=2\pi\sqrt{\frac{M+m}{k}}}.
+$$
+
+$$(B)$$ The largest acceleration in SHM occurs at the endpoints:
+
+$$
+a_{\max}=A\omega^2=A\frac{k}{M+m}.
+$$
+
+The only horizontal force on the top block is static friction, so static friction must provide
+
+$$
+f_s=ma_{\max}=m\frac{Ak}{M+m}.
+$$
+
+For no slipping, this must not exceed $$\mu_smg$$:
+
+$$
+m\frac{Ak}{M+m}\le \mu_smg.
+$$
+
+Cancel $$m$$ and solve for $$A$$:
+
+$$
+\boxed{A_{\max}=\frac{\mu_sg(M+m)}{k}}.
+$$
+
+$$(C)$$ Square the period equation:
+
+$$
+T^2=\frac{4\pi^2}{k}(M+m).
+$$
+
+So a graph of $$T^2$$ on the vertical axis versus $$M+m$$ on the horizontal axis should be linear.
+
+
+The slope is $$4\pi^2/k$$, so
+
+$$
+\boxed{k=\frac{4\pi^2}{\text{slope}}}.
+$$
+
+$$(D)$$ If the block slips, the two masses no longer share one acceleration. Static friction is no longer whatever value is needed to enforce common motion; once slipping begins, the interaction force changes and the cart is not simply attached to a single combined mass $$M+m$$. Therefore the measured period should not match the expression in part $$(A)$$.
+:::
 ::::

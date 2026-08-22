@@ -877,15 +877,23 @@ So support $$B$$ (the fulcrum near the diver) carries a large upward force of ab
 ### Multiple Choice
 
 ::::problem
-1. Two forces of magnitude $$F$$ are applied to the end of a rod of length $$L$$ pivoted at the other end. One force is perpendicular to the rod, and the other makes angle $$\theta$$ with the rod in the opposite rotational sense. The net torque magnitude about the pivot is
+1. The perpendicular-axis theorem applies to
 
-(A) $$FL(1-\sin\theta)$$
+(A) any three-dimensional rigid body
 
-(B) $$FL(1-\cos\theta)$$
+(B) point masses only
 
-(C) $$FL\sin\theta$$
+(C) flat laminae
 
-(D) $$FL\cos\theta$$
+(D) rolling objects only
+
+
+:::solution
+The perpendicular-axis theorem is only for a flat object lying in a plane, usually called a lamina.
+
+
+The theorem relates the moment of inertia about an axis perpendicular to the sheet to two perpendicular axes in the sheet. It does not apply to a general three-dimensional rigid body. Therefore the answer is $$\boxed{\text{C}}$$.
+:::
 ::::
 
 ::::problem
@@ -898,82 +906,56 @@ So support $$B$$ (the fulcrum near the diver) carries a large upward force of ab
 (C) $$4mL^2/9$$
 
 (D) $$mL^2/3$$
+
+
+:::solution
+For a point mass, moment of inertia is just
+
+$$
+I=mr^2,
+$$
+
+where $$r$$ is the perpendicular distance from the axis.
+
+The axis is $$L/3$$ from the mass, so
+
+$$
+I=m\left(\frac{L}{3}\right)^2=\frac{mL^2}{9}.
+$$
+
+The answer is $$\boxed{\text{B}}$$.
+
+The rod is massless, so it contributes no moment of inertia; only the point mass matters.
+:::
 ::::
 
 ::::problem
-3. A uniform disk of mass $$M$$ and radius $$R$$ rotates about an axis perpendicular to its face and passing through a point halfway between its center and rim. Its moment of inertia is
+3. Two forces of magnitude $$F$$ are applied to the end of a rod of length $$L$$ pivoted at the other end. One force is perpendicular to the rod, and the other makes angle $$\theta$$ with the rod in the opposite rotational sense. The net torque magnitude about the pivot is
 
-(A) $$\dfrac{1}{2}MR^2$$
+(A) $$FL(1-\sin\theta)$$
 
-(B) $$\dfrac{3}{4}MR^2$$
+(B) $$FL(1-\cos\theta)$$
 
-(C) $$MR^2$$
+(C) $$FL\sin\theta$$
 
-(D) $$\dfrac{3}{2}MR^2$$
+(D) $$FL\cos\theta$$
+
+
+:::solution
+Torque comes from the perpendicular component of force. The perpendicular force produces torque $$FL$$. The angled force has perpendicular component $$F\sin\theta$$ and acts in the opposite rotational sense.
+
+Therefore the net torque magnitude is
+
+$$
+FL-FL\sin\theta=FL(1-\sin\theta).
+$$
+
+The answer is $$\boxed{\text{A}}$$.
+:::
 ::::
 
 ::::problem
-4. A uniform rod of length $$L$$ is pivoted at one end and held horizontally. A mass $$m$$ hangs from the rod at distance $$2L/3$$ from the pivot. The rod has mass $$M$$. The hinge force has a vertical component equal to
-
-(A) $$Mg+mg$$
-
-(B) $$Mg/2+2mg/3$$
-
-(C) $$Mg+mg-T$$ for some tension $$T$$
-
-(D) zero
-::::
-
-::::problem
-5. A rigid body is in static equilibrium under exactly three nonparallel forces. Which statement must be true?
-
-(A) The forces are parallel.
-
-(B) The lines of action pass through a common point.
-
-(C) The forces have equal magnitudes.
-
-(D) The net torque is nonzero.
-::::
-
-::::problem
-6. A thin rod of length $$L$$ has linear density $$\lambda(x)=Cx$$ measured from one end. Its moment of inertia about that end is
-
-(A) $$\dfrac{1}{2}ML^2$$
-
-(B) $$\dfrac{2}{3}ML^2$$
-
-(C) $$\dfrac{1}{3}ML^2$$
-
-(D) $$\dfrac{1}{4}ML^2$$
-::::
-
-::::problem
-7. A massive pulley of radius $$R$$ and rotational inertia $$I$$ has two tensions $$T_1$$ and $$T_2$$ applied by a non-slipping string. Its angular acceleration is
-
-(A) $$\dfrac{(T_2-T_1)R}{I}$$
-
-(B) $$\dfrac{T_1+T_2}{IR}$$
-
-(C) $$\dfrac{I}{(T_2-T_1)R}$$
-
-(D) $$\dfrac{(T_2-T_1)}{IR}$$
-::::
-
-::::problem
-8. A ladder leans against a frictionless wall and rests on a rough floor. A person climbs upward along the ladder. Before slipping occurs, the horizontal force from the wall
-
-(A) decreases
-
-(B) increases
-
-(C) stays constant
-
-(D) is always zero
-::::
-
-::::problem
-9. A disk and a hoop have the same mass and radius. The same torque is applied to each from rest for the same time. The disk's final angular speed is
+4. A disk and a hoop have the same mass and radius. The same torque is applied to each from rest for the same time. The disk's final angular speed is
 
 (A) larger than the hoop's
 
@@ -982,36 +964,220 @@ So support $$B$$ (the fulcrum near the diver) carries a large upward force of ab
 (C) equal to the hoop's
 
 (D) impossible to compare without the torque value
+
+
+:::solution
+The same torque applied for the same time gives the same angular impulse:
+
+$$
+\Delta L=\tau\Delta t.
+$$
+
+Both start from rest, so both receive the same final angular momentum. But
+
+$$
+L=I\omega.
+$$
+
+A disk has $$I=\frac12MR^2$$, while a hoop has $$I=MR^2$$. With smaller $$I$$ for the same $$L$$, the disk must have larger $$\omega$$. The answer is $$\boxed{\text{A}}$$.
+:::
 ::::
 
 ::::problem
-10. The perpendicular-axis theorem applies to
+5. A massive pulley of radius $$R$$ and rotational inertia $$I$$ has two tensions $$T_1$$ and $$T_2$$ applied by a non-slipping string. Its angular acceleration is
 
-(A) any three-dimensional rigid body
+(A) $$\dfrac{(T_2-T_1)R}{I}$$
 
-(B) point masses only
+(B) $$\dfrac{T_1+T_2}{IR}$$
 
-(C) flat laminae
+(C) $$\dfrac{I}{(T_2-T_1)R}$$
 
-(D) rolling objects only
+(D) $$\dfrac{(T_2-T_1)}{IR}$$
+
+
+:::solution
+Each tension acts tangentially at radius $$R$$, so each torque has magnitude $$TR$$. The tensions rotate the pulley in opposite directions.
+
+Taking the sense of $$T_2$$ as positive,
+
+$$
+\sum\tau=(T_2-T_1)R=I\alpha.
+$$
+
+Thus
+
+$$
+\alpha=\frac{(T_2-T_1)R}{I}.
+$$
+
+The answer is $$\boxed{\text{A}}$$.
+:::
 ::::
 
 ::::problem
-11. A yo-yo unwinds from rest without slipping. If its axle radius is $$r$$ and rotational inertia is $$I$$, the tension is less than $$mg$$ because
+6. A uniform disk of mass $$M$$ and radius $$R$$ rotates about an axis perpendicular to its face and passing through a point halfway between its center and rim. Its moment of inertia is
+
+(A) $$\dfrac{1}{2}MR^2$$
+
+(B) $$\dfrac{3}{4}MR^2$$
+
+(C) $$MR^2$$
+
+(D) $$\dfrac{3}{2}MR^2$$
+
+
+:::solution
+The disk's known central moment of inertia is
+
+$$
+I_{\text{cm}}=\frac12MR^2.
+$$
+
+The new axis is parallel to the central axis and shifted by $$d=R/2$$, so use the parallel-axis theorem:
+
+$$
+I=I_{\text{cm}}+Md^2
+=\frac12MR^2+M\left(\frac{R}{2}\right)^2
+=\frac34MR^2.
+$$
+
+The answer is $$\boxed{\text{B}}$$.
+:::
+::::
+
+::::problem
+7. A uniform rod of length $$L$$ is pivoted at one end and held horizontally by a vertical string attached to the other end. A mass $$m$$ hangs from the rod at distance $$2L/3$$ from the pivot. The rod has mass $$M$$. The string tension is
+
+(A) $$Mg+mg$$
+
+(B) $$Mg/2+2mg/3$$
+
+(C) $$Mg+mg-T$$ for some tension $$T$$
+
+(D) zero
+
+
+:::solution
+Take torques about the pivot so the unknown hinge force creates no torque.
+
+The tension creates counterclockwise torque $$TL$$. The rod's weight and hanging mass create clockwise torques:
+
+$$
+TL=Mg\left(\frac{L}{2}\right)+mg\left(\frac{2L}{3}\right).
+$$
+
+Divide by $$L$$:
+
+$$
+T=\frac{Mg}{2}+\frac{2mg}{3}.
+$$
+
+The answer is $$\boxed{\text{B}}$$.
+:::
+::::
+
+::::problem
+8. A rigid body is in static equilibrium under exactly three nonparallel forces. Which statement must be true?
+
+(A) The forces are parallel.
+
+(B) The lines of action pass through a common point.
+
+(C) The forces have equal magnitudes.
+
+(D) The net torque is nonzero.
+
+
+:::solution
+For static equilibrium, both net force and net torque must be zero. If three nonparallel forces do not share a common intersection point, choose the torque axis at the intersection of two of them.
+
+The first two forces produce zero torque about that point, so the third force would have to produce zero torque too. That only happens if its line of action also passes through the same point. Thus the answer is $$\boxed{\text{B}}$$.
+:::
+::::
+
+::::problem
+9. A ladder leans against a frictionless wall and rests on a rough floor. A person climbs upward along the ladder. Before slipping occurs, the horizontal force from the wall
+
+(A) decreases
+
+(B) increases
+
+(C) stays constant
+
+(D) is always zero
+
+
+:::solution
+Take torques about the floor contact. The floor forces then produce no torque about that point. The wall is frictionless, so it pushes horizontally at the top of the ladder.
+
+As the person climbs, their weight acts farther from the floor contact, increasing the clockwise torque. To keep net torque zero, the counterclockwise torque from the wall force must increase. Since its lever arm is fixed by the ladder geometry, the wall force itself must increase. The answer is $$\boxed{\text{B}}$$.
+:::
+::::
+
+::::problem
+10. A yo-yo unwinds from rest without slipping. If its axle radius is $$r$$ and rotational inertia is $$I$$, the tension is less than $$mg$$ because
 
 (A) the string stretches
 
 (B) gravity must both translate and rotate the yo-yo
 
-(C) angular momentum is conserved about the center
+(C) the net force on the yo-yo is zero
 
 (D) mechanical energy is not conserved
+
+
+:::solution
+If the yo-yo's center of mass accelerates downward, the downward force must be larger than the upward tension.
+
+Newton's second law for translation is
+
+$$
+mg-T=ma.
+$$
+
+Because $$a>0$$ downward, $$mg-T>0$$, so $$T<mg$$. The missing part of gravity's effect is not gone; gravity is also providing the energy/torque needed for rotation as the string unwinds. The answer is $$\boxed{\text{B}}$$.
+:::
+::::
+
+::::problem
+11. A thin rod of length $$L$$ has linear density $$\lambda(x)=Cx$$ measured from one end. Its moment of inertia about that end is
+
+(A) $$\dfrac{1}{2}ML^2$$
+
+(B) $$\dfrac{2}{3}ML^2$$
+
+(C) $$\dfrac{1}{3}ML^2$$
+
+(D) $$\dfrac{1}{4}ML^2$$
+
+
+:::solution
+For a nonuniform rod, use $$dm=\lambda(x)dx=Cx\,dx$$.
+
+First express $$C$$ using the total mass:
+
+$$
+M=\int_0^L Cx\,dx=\frac{CL^2}{2}.
+$$
+
+The moment of inertia about the end is
+
+$$
+I=\int_0^Lx^2\,dm=\int_0^Lx^2(Cx)\,dx=\frac{CL^4}{4}.
+$$
+
+Since $$C=2M/L^2$$,
+
+$$
+I=\frac{ML^2}{2}.
+$$
+
+The answer is $$\boxed{\text{A}}$$.
+:::
 ::::
 
 ::::problem
 12. A horizontal rod of length $$L$$ is hinged to a wall and held by a cord making angle $$\theta$$ with the rod. Masses $$m$$ and $$2m$$ hang from the rod at distances $$L/4$$ and $$3L/4$$ from the hinge. Neglect the rod's mass.
-
-<img class="note-img note-img--w360" src="/assets/APs/AP Physics C Mech/torque/practice-rod-cord.svg" alt="Horizontal rod held by an angled cord with two hanging masses" loading="lazy" decoding="async" />
 
 The tension in the cord is
 
@@ -1022,6 +1188,31 @@ The tension in the cord is
 (C) $$\dfrac{5mg}{4\sin\theta}$$
 
 (D) $$\dfrac{3mg}{2\sin\theta}$$
+
+
+:::solution
+Take torques about the hinge so the hinge force disappears from the equation. Only the vertical component of the cord tension produces torque about the hinge.
+
+The counterclockwise torque from the cord is $$(T\sin\theta)L$$. The clockwise torques from the two masses are
+
+$$
+mg\left(\frac{L}{4}\right)+2mg\left(\frac{3L}{4}\right).
+$$
+
+Set net torque to zero:
+
+$$
+(T\sin\theta)L=\frac{mgL}{4}+\frac{6mgL}{4}=\frac{7mgL}{4}.
+$$
+
+So
+
+$$
+T=\frac{7mg}{4\sin\theta}.
+$$
+
+The answer is $$\boxed{\text{A}}$$.
+:::
 ::::
 
 ### FRQ
@@ -1036,6 +1227,74 @@ The tension in the cord is
    $$(C)$$ Determine the tension in the string.
 
    $$(D)$$ Determine the horizontal and vertical hinge force components.
+
+
+:::solution
+$$(A)$$ The density is $$\lambda(x)=Cx^2$$, so a small piece of rod has mass $$dm=Cx^2dx$$.
+
+The total mass is
+
+$$
+M=\int_0^L dm=\int_0^LCx^2dx=\frac{CL^3}{3}.
+$$
+
+Therefore
+
+$$
+\boxed{C=\frac{3M}{L^3}}.
+$$
+
+$$(B)$$ The center of mass is a weighted average position:
+
+$$
+x_{\text{cm}}=\frac{1}{M}\int_0^L x\,dm
+=\frac{1}{M}\int_0^Lx(Cx^2)dx.
+$$
+
+So
+
+$$
+x_{\text{cm}}=\frac{1}{M}\frac{CL^4}{4}.
+$$
+
+Using $$C=3M/L^3$$,
+
+$$
+\boxed{x_{\text{cm}}=\frac{3L}{4}}.
+$$
+
+$$(C)$$ Take torques about the pivot. The hinge force produces no torque about the hinge, so only the string tension and weight matter.
+
+Torque balance gives
+
+$$
+TL=Mg\left(\frac{3L}{4}\right).
+$$
+
+Thus
+
+$$
+\boxed{T=\frac{3Mg}{4}}.
+$$
+
+$$(D)$$ There are no horizontal applied forces besides the hinge, so horizontal force balance gives
+
+$$
+\boxed{H_x=0}.
+$$
+
+Vertically, the rod is not accelerating:
+
+$$
+H_y+T-Mg=0.
+$$
+
+Substitute $$T=3Mg/4$$:
+
+$$
+H_y=Mg-\frac{3Mg}{4}=\boxed{\frac{Mg}{4}}.
+$$
+:::
 ::::
 
 ::::frq{id=ap-physics-c-mechanics-torque-2}
@@ -1048,16 +1307,137 @@ The tension in the cord is
    $$(C)$$ Find both string tensions.
 
    $$(D)$$ Determine the limiting acceleration as $$M\to 0$$ and explain why it makes sense.
+
+
+:::solution
+$$(A)$$ The two hanging blocks each have weight and tension. Because the pulley has rotational inertia, the two tensions are not equal.
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\begin{tikzpicture}[>=Stealth, font=\small, scale=0.9]
+  \draw[thick] (0,1.2) circle (0.65);
+  \draw[thick] (-0.65,1.2) -- (-0.65,-0.4);
+  \draw[thick] (0.65,1.2) -- (0.65,-0.4);
+  \draw[fill=blue!10, thick] (-1.05,-1.15) rectangle (-0.25,-0.4);
+  \draw[fill=blue!10, thick] (0.25,-1.35) rectangle (1.05,-0.4);
+  \draw[->, thick] (-0.65,-0.78) -- ++(0,1.15) node[above left] {$T_1$};
+  \draw[->, thick] (-0.65,-0.78) -- ++(0,-1.05) node[below] {$m_1g$};
+  \draw[->, thick] (0.65,-0.88) -- ++(0,1.25) node[above right] {$T_2$};
+  \draw[->, thick] (0.65,-0.88) -- ++(0,-1.05) node[below] {$m_2g$};
+  \draw[->, red!75, thick] (1.35,0.5) -- ++(0,-0.75) node[below] {$a$};
+  \draw[->, blue!70, thick] (0.78,1.85) arc[start angle=55,end angle=-20,radius=0.8] node[right] {$\alpha$};
+  \node[align=left] at (3.2,1.25) {pulley torque:\\$T_2R$ clockwise,\\$T_1R$ counterclockwise};
+\end{tikzpicture}
+```
+
+$$(B)$$ Choose positive so that $$m_2$$ accelerates downward and $$m_1$$ accelerates upward. For $$m_2$$,
+
+$$
+m_2g-T_2=m_2a.
+$$
+
+For $$m_1$$,
+
+$$
+T_1-m_1g=m_1a.
+$$
+
+For the pulley, the net torque is caused by the tension difference:
+
+$$
+(T_2-T_1)R=I\alpha.
+$$
+
+The string does not slip, so $$a=\alpha R$$, and for a disk $$I=\frac12MR^2$$. Therefore
+
+$$
+T_2-T_1=\frac{I\alpha}{R}=\frac{I}{R^2}a=\frac{M}{2}a.
+$$
+
+Add the three equations so the tensions cancel:
+
+$$
+(m_2-m_1)g=(m_1+m_2+M/2)a.
+$$
+
+Thus
+
+$$
+\boxed{a=\frac{(m_2-m_1)g}{m_1+m_2+M/2}}.
+$$
+
+$$(C)$$ Substitute this acceleration back into the block equations:
+
+$$
+\boxed{T_1=m_1(g+a)},
+\qquad
+\boxed{T_2=m_2(g-a)}.
+$$
+
+$$(D)$$ As $$M\to0$$, the pulley contributes no rotational inertia, so the denominator becomes $$m_1+m_2$$:
+
+$$
+\boxed{a\to\frac{(m_2-m_1)g}{m_1+m_2}}.
+$$
+
+That is the usual ideal Atwood-machine result, which makes sense because a massless pulley needs no torque to spin.
+:::
 ::::
 
 ::::frq{id=ap-physics-c-mechanics-torque-3}
-3. A rigid bar is pivoted at one end and released from rest at angle $$\theta_0$$ above the horizontal. A small mass is attached at the free end, and the bar itself has mass $$M$$.
+3. A rigid bar is pivoted at one end and released from rest at angle $$\theta_0$$ above the horizontal. A small mass $$m$$ is attached at the free end, and the bar itself has mass $$M$$ and length $$L$$.
 
    $$(A)$$ Write the moment of inertia of the system about the pivot.
 
-   $$(B)$$ Determine the initial angular acceleration.
+   $$(B)$$ Determine the net torque about the pivot at the instant the system is released.
 
-   $$(C)$$ Use energy to find the angular speed when the bar reaches horizontal.
+   $$(C)$$ Determine the initial angular acceleration.
 
-   $$(D)$$ Determine the speed of the attached mass at that instant.
+   $$(D)$$ Determine the initial tangential acceleration of the attached mass and state its direction.
+
+
+:::solution
+$$(A)$$ Add the moment of inertia of the rod about one end and the point mass at the far end.
+
+For the rod, $$I_{\text{rod}}=\frac13ML^2$$. For the attached mass, $$I_m=mL^2$$. Thus
+
+$$
+\boxed{I=\left(m+\frac{M}{3}\right)L^2}.
+$$
+
+$$(B)$$ Gravity acts downward. When the bar is at angle $$\theta_0$$ above horizontal, the perpendicular lever arm for a downward force at distance $$r$$ along the bar is $$r\cos\theta_0$$.
+
+The attached mass contributes torque $$mgL\cos\theta_0$$. The rod's weight acts at its center, distance $$L/2$$ from the pivot, so it contributes $$Mg(L/2)\cos\theta_0$$. The total clockwise torque magnitude is
+
+$$
+\boxed{\tau=\left(m+\frac{M}{2}\right)gL\cos\theta_0}.
+$$
+
+$$(C)$$ If counterclockwise is positive, the torque from gravity is negative because it tends to rotate the bar clockwise. Using $$\sum\tau=I\alpha$$,
+
+$$
+\alpha=\frac{-\left(m+\frac{M}{2}\right)gL\cos\theta_0}{\left(m+\frac{M}{3}\right)L^2}.
+$$
+
+So
+
+$$
+\boxed{\alpha=-\frac{(m+M/2)gL\cos\theta_0}{(m+M/3)L^2}}.
+$$
+
+$$(D)$$ The attached mass is a distance $$L$$ from the pivot, so its tangential acceleration is
+
+$$
+a_t=\lvert\alpha\rvert L.
+$$
+
+Therefore
+
+$$
+\boxed{a_t=\frac{(m+M/2)g\cos\theta_0}{m+M/3}}.
+$$
+
+Its direction is clockwise, perpendicular to the bar at the instant of release.
+:::
 ::::

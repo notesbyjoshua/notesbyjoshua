@@ -774,67 +774,7 @@ Equivalently, the engine supplies gravitational potential energy at the rate $$P
 ### Multiple Choice
 
 ::::problem
-1. A force $$F(x)=3x^2-2x$$ acts on a particle from $$x=0$$ to $$x=L$$. The work done is
-
-(A) $$L^3-L^2$$
-
-(B) $$3L^2-2L$$
-
-(C) $$L^3+L^2$$
-
-(D) $$3L^3-L^2$$
-::::
-
-::::problem
-2. A block starts from rest at height $$H$$ above a horizontal spring, slides on a frictionless track, and compresses the spring a distance $$x$$. If the block instead starts from height $$4H$$, the new maximum compression is
-
-(A) $$x/2$$
-
-(B) $$x$$
-
-(C) $$2x$$
-
-(D) $$4x$$
-::::
-
-::::problem
-3. If $$U(x)=ax^4-bx^2$$ with $$a,b>0$$, the force is
-
-(A) $$F_x=4ax^3-2bx$$
-
-(B) $$F_x=-4ax^3+2bx$$
-
-(C) $$F_x=ax^4-bx^2$$
-
-(D) $$F_x=-a/x^4+b/x^2$$
-::::
-
-::::problem
-4. A particle moves in one dimension with potential energy $$U(x)$$. At a stable equilibrium,
-
-(A) $$U'=0$$ and $$U''>0$$
-
-(B) $$U'=0$$ and $$U''<0$$
-
-(C) $$U'>0$$ and $$U''=0$$
-
-(D) $$U<0$$ only
-::::
-
-::::problem
-5. A projectile is launched upward from the surface of a planet of radius $$R$$ with speed $$v_{\text{esc}}/2$$. Neglect air resistance. Its maximum distance from the planet's center is
-
-(A) $$4R/3$$
-
-(B) $$3R/2$$
-
-(C) $$2R$$
-
-(D) $$4R$$
-::::
-
-::::problem
-6. A force is always perpendicular to a particle's velocity. The force can change the particle's
+1. A force is always perpendicular to a particle's velocity. The force can change the particle's
 
 (A) speed but not direction
 
@@ -843,22 +783,173 @@ Equivalently, the engine supplies gravitational potential energy at the rate $$P
 (C) kinetic energy only
 
 (D) total mechanical energy only
+
+
+:::solution
+The rate at which a force changes kinetic energy is power:
+
+$$
+P=\vec F\cdot\vec v.
+$$
+
+Here the force is always perpendicular to the velocity, so the dot product is zero.
+
+
+Since $$P=dK/dt=0$$, the kinetic energy and speed do not change. However, a perpendicular force can still bend the path by changing the direction of $$\vec v$$, like centripetal force does in circular motion. The answer is $$\boxed{\text{B}}$$.
+
+The second-derivative test would then confirm whether that equilibrium is stable, but the question only asks for the location.
+:::
 ::::
 
 ::::problem
-7. A block moves through a region where a force $$F(x)=F_0e^{-x/L}$$ acts in the direction of motion. The work done from $$x=0$$ to $$x=2L$$ is
+2. A block slides up a rough incline and comes momentarily to rest. Compared with its mechanical energy at launch, its mechanical energy at the top is
 
-(A) $$F_0L(1-e^{-2})$$
+(A) greater
 
-(B) $$2F_0L$$
+(B) smaller
 
-(C) $$F_0L e^{-2}$$
+(C) the same
 
-(D) $$F_0/L$$
+(D) zero
+
+
+:::solution
+Mechanical energy changes when nonconservative forces do work. On the way up the incline, kinetic friction points opposite the motion, so its work is negative.
+
+Using
+
+$$
+\Delta E_{\text{mech}}=W_{\text{fric}},
+$$
+
+and $$W_{\text{fric}}<0$$, the final mechanical energy must be smaller than the launch mechanical energy. The answer is $$\boxed{\text{B}}$$.
+:::
 ::::
 
 ::::problem
-8. A spring with constant $$k$$ is cut into two equal halves. One half is used as a spring. Compared with the original spring, the energy stored for the same stretch $$x$$ is
+3. A force $$F(x)=3x^2-2x$$ acts on a particle from $$x=0$$ to $$x=L$$. The work done is
+
+(A) $$L^3-L^2$$
+
+(B) $$3L^2-2L$$
+
+(C) $$L^3+L^2$$
+
+(D) $$3L^3-L^2$$
+
+
+:::solution
+For a position-dependent force, work is the signed area under the $$F$$ versus $$x$$ graph, not just force times distance.
+
+
+Compute
+
+$$
+W=\int_0^L(3x^2-2x)\,dx
+=\left[x^3-x^2\right]_0^L
+=L^3-L^2.
+$$
+
+Therefore the answer is $$\boxed{\text{A}}$$.
+
+The result can be positive or negative depending on $$L$$, which is allowed because work is signed area, not ordinary geometric area.
+:::
+::::
+
+::::problem
+4. If $$U(x)=ax^4-bx^2$$ with $$a,b>0$$, the force is
+
+(A) $$F_x=4ax^3-2bx$$
+
+(B) $$F_x=-4ax^3+2bx$$
+
+(C) $$F_x=ax^4-bx^2$$
+
+(D) $$F_x=-a/x^4+b/x^2$$
+
+
+:::solution
+Force points in the direction that lowers potential energy, which is why there is a minus sign:
+
+$$
+F_x=-\frac{dU}{dx}.
+$$
+
+Differentiate the potential:
+
+$$
+\frac{dU}{dx}=4ax^3-2bx.
+$$
+
+Then apply the negative sign:
+
+$$
+F_x=-4ax^3+2bx.
+$$
+
+The minus sign is the common trap: the force is not the slope of the potential; it is the negative slope. So the answer is $$\boxed{\text{B}}$$.
+:::
+::::
+
+::::problem
+5. A particle moves in one dimension with potential energy $$U(x)$$. At a stable equilibrium,
+
+(A) $$U'=0$$ and $$U''>0$$
+
+(B) $$U'=0$$ and $$U''<0$$
+
+(C) $$U'>0$$ and $$U''=0$$
+
+(D) $$U<0$$ only
+
+
+:::solution
+Equilibrium requires zero force. Since $$F=-U'$$, that means
+
+$$
+U'=0.
+$$
+
+Stable equilibrium means that if the particle is displaced slightly, the force pushes it back toward equilibrium. On an energy graph, that is a local minimum:
+
+
+A local minimum has positive curvature, so $$U''>0$$. The answer is $$\boxed{\text{A}}$$.
+:::
+::::
+
+::::problem
+6. A block starts from rest at height $$H$$ above a horizontal spring, slides on a frictionless track, and compresses the spring a distance $$x$$. If the block instead starts from height $$4H$$, the new maximum compression is
+
+(A) $$x/2$$
+
+(B) $$x$$
+
+(C) $$2x$$
+
+(D) $$4x$$
+
+
+:::solution
+At maximum compression, the block is momentarily at rest, so the lost gravitational potential energy has become spring potential energy.
+
+For the original release,
+
+$$
+mgH=\frac12kx^2.
+$$
+
+If the height becomes $$4H$$, then
+
+$$
+mg(4H)=\frac12kx_{\text{new}}^2.
+$$
+
+The available energy is four times larger, so $$x_{\text{new}}^2=4x^2$$ and $$x_{\text{new}}=2x$$. The answer is $$\boxed{\text{C}}$$.
+:::
+::::
+
+::::problem
+7. A spring with constant $$k$$ is cut into two equal halves. One half is used as a spring. Compared with the original spring, the energy stored for the same stretch $$x$$ is
 
 (A) half as large
 
@@ -867,6 +958,58 @@ Equivalently, the engine supplies gravitational potential energy at the rate $$P
 (C) twice as large
 
 (D) four times as large
+
+
+:::solution
+Cutting a uniform spring in half makes it stiffer because the same force stretches a shorter length. Each half has spring constant $$2k$$.
+
+
+For the same stretch $$x$$,
+
+$$
+U_{\text{half}}=\frac12(2k)x^2=kx^2,
+$$
+
+while the original stored
+
+$$
+U_{\text{orig}}=\frac12kx^2.
+$$
+
+Thus the half-spring stores twice as much energy. The answer is $$\boxed{\text{C}}$$.
+:::
+::::
+
+::::problem
+8. A block moves through a region where a force $$F(x)=F_0e^{-x/L}$$ acts in the direction of motion. The work done from $$x=0$$ to $$x=2L$$ is
+
+(A) $$F_0L(1-e^{-2})$$
+
+(B) $$2F_0L$$
+
+(C) $$F_0L e^{-2}$$
+
+(D) $$F_0/L$$
+
+
+:::solution
+The force changes with position, so work is the integral of the force over the displacement.
+
+
+Compute
+
+$$
+W=\int_0^{2L}F_0e^{-x/L}\,dx.
+$$
+
+An antiderivative is $$-F_0Le^{-x/L}$$, so
+
+$$
+W=\left[-F_0Le^{-x/L}\right]_0^{2L}=F_0L(1-e^{-2}).
+$$
+
+The answer is $$\boxed{\text{A}}$$.
+:::
 ::::
 
 ::::problem
@@ -879,6 +1022,29 @@ Equivalently, the engine supplies gravitational potential energy at the rate $$P
 (C) $$2Pt/m$$
 
 (D) $$\sqrt{Pt/(2m)}$$
+
+
+:::solution
+Power is the rate of energy transfer. If the power is constant and the cart starts from rest, then after time $$t$$ the work done is
+
+$$
+W=Pt.
+$$
+
+With no resistive forces, that work becomes kinetic energy:
+
+$$
+\frac12mv^2=Pt.
+$$
+
+Solving for speed,
+
+$$
+v=\sqrt{\frac{2Pt}{m}}.
+$$
+
+The answer is $$\boxed{\text{B}}$$.
+:::
 ::::
 
 ::::problem
@@ -891,6 +1057,29 @@ Equivalently, the engine supplies gravitational potential energy at the rate $$P
 (C) $$\dfrac{GMm}{2r}$$
 
 (D) zero, because gravity is perpendicular to orbital motion
+
+
+:::solution
+Gravity is conservative, so its work is the negative change in gravitational potential energy:
+
+$$
+W_g=-\Delta U.
+$$
+
+The potential is $$U=-GMm/r$$. Moving outward from $$r$$ to $$2r$$ increases the potential energy from $$-GMm/r$$ to $$-GMm/(2r)$$:
+
+$$
+\Delta U=-\frac{GMm}{2r}+\frac{GMm}{r}=\frac{GMm}{2r}.
+$$
+
+Therefore
+
+$$
+W_g=-\frac{GMm}{2r}.
+$$
+
+The answer is $$\boxed{\text{A}}$$.
+:::
 ::::
 
 ::::problem
@@ -903,18 +1092,75 @@ Equivalently, the engine supplies gravitational potential energy at the rate $$P
 (C) $$x=B/A$$
 
 (D) $$x=\sqrt{A/B}$$
+
+
+:::solution
+Equilibrium occurs where the force is zero, which is the same as $$dU/dx=0$$.
+
+Differentiate:
+
+$$
+\frac{dU}{dx}=-\frac{2A}{x^3}+\frac{B}{x^2}.
+$$
+
+Set this equal to zero and multiply by $$x^3$$:
+
+$$
+-2A+Bx=0.
+$$
+
+So
+
+$$
+x=\frac{2A}{B}.
+$$
+
+The answer is $$\boxed{\text{B}}$$.
+
+The second-derivative test would then confirm whether that equilibrium is stable, but the question only asks for the location.
+:::
 ::::
 
 ::::problem
-12. A block slides up a rough incline and comes momentarily to rest. Compared with its mechanical energy at launch, its mechanical energy at the top is
+12. A projectile is launched upward from the surface of a planet of radius $$R$$ with speed $$v_{\text{esc}}/2$$. Neglect air resistance. Its maximum distance from the planet's center is
 
-(A) greater
+(A) $$4R/3$$
 
-(B) smaller
+(B) $$3R/2$$
 
-(C) the same
+(C) $$2R$$
 
-(D) zero
+(D) $$4R$$
+
+
+:::solution
+Use total mechanical energy. The launch speed is half of escape speed, and
+
+$$
+v_{\text{esc}}^2=\frac{2GM}{R}.
+$$
+
+Thus
+
+$$
+K_i=\frac12m\left(\frac{v_{\text{esc}}}{2}\right)^2
+=\frac18m\frac{2GM}{R}=\frac{GMm}{4R}.
+$$
+
+The initial total energy is
+
+$$
+E=\frac{GMm}{4R}-\frac{GMm}{R}=-\frac{3GMm}{4R}.
+$$
+
+At maximum radius, the speed is zero, so
+
+$$
+-\frac{GMm}{r_{\max}}=-\frac{3GMm}{4R}.
+$$
+
+Therefore $$r_{\max}=4R/3$$, and the answer is $$\boxed{\text{A}}$$.
+:::
 ::::
 
 ### FRQ
@@ -929,10 +1175,69 @@ Equivalently, the engine supplies gravitational potential energy at the rate $$P
    $$(C)$$ Find the maximum spring compression.
 
    $$(D)$$ Determine the condition on $$H$$ for the block to reach the spring.
+
+
+:::solution
+$$(A)$$ On the curved part of the track there is no friction, so mechanical energy is conserved.
+
+Starting from rest,
+
+$$
+mgH=\frac12mv^2.
+$$
+
+Cancel $$m$$ and solve:
+
+$$
+\boxed{v=\sqrt{2gH}}.
+$$
+
+$$(B)$$ Across the rough patch, kinetic friction does negative work. The friction force is $$f_k=\mu_kmg$$, so the work over distance $$L$$ is
+
+$$
+W_f=-\mu_kmgL.
+$$
+
+Use energy before and after the patch:
+
+$$
+\frac12mv_{\text{after}}^2=mgH-\mu_kmgL.
+$$
+
+Thus
+
+$$
+\boxed{v_{\text{after}}=\sqrt{2g(H-\mu_kL)}}.
+$$
+
+$$(C)$$ At maximum spring compression, the block is instantaneously at rest, so all remaining mechanical energy is spring potential energy:
+
+$$
+\frac12kx^2=mgH-\mu_kmgL.
+$$
+
+Solving,
+
+$$
+\boxed{x=\sqrt{\frac{2mg(H-\mu_kL)}{k}}}.
+$$
+
+$$(D)$$ The block reaches the spring only if it still has nonnegative kinetic energy after the rough patch:
+
+$$
+mgH-\mu_kmgL\ge0.
+$$
+
+Cancel $$mg$$ to get
+
+$$
+\boxed{H\ge\mu_kL}.
+$$
+:::
 ::::
 
 ::::frq{id=ap-physics-c-mechanics-work-2}
-2. A particle of mass $$m$$ moves in the potential $$U(x)=ax^4-bx^2$$, where $$a,b>0$$.
+2. A particle of mass $$m$$ moves in the potential $$U(x)=ax^4-bx^2$$, where $$a,b>0$$
 
    $$(A)$$ Find all equilibrium positions.
 
@@ -940,7 +1245,57 @@ Equivalently, the engine supplies gravitational potential energy at the rate $$P
 
    $$(C)$$ If the particle has total energy $$E=0$$, find its turning points.
 
-   $$(D)$$ For small oscillations about a stable equilibrium, set up the expression for the angular frequency.
+   $$(D)$$ If the particle has total energy $$E=0$$, determine where its speed is greatest and justify your answer using the energy diagram.
+
+
+:::solution
+$$(A)$$ Equilibrium means zero force, and $$F=-dU/dx$$. Therefore set $$dU/dx=0$$:
+
+$$
+\frac{dU}{dx}=4ax^3-2bx=2x(2ax^2-b)=0.
+$$
+
+So the equilibrium positions are
+
+$$
+\boxed{x=0,\qquad x=\pm\sqrt{\frac{b}{2a}}}.
+$$
+
+$$(B)$$ Use the curvature of the potential to classify them:
+
+$$
+U''(x)=12ax^2-2b.
+$$
+
+At $$x=0$$, $$U''=-2b<0$$, so the point is a local maximum and is unstable. At $$x=\pm\sqrt{b/(2a)}$$,
+
+$$
+U''=12a\left(\frac{b}{2a}\right)-2b=4b>0,
+$$
+
+so those are local minima and are stable.
+
+
+$$(C)$$ Turning points occur where $$K=0$$, so $$E=U(x)$$. For $$E=0$$,
+
+$$
+ax^4-bx^2=0
+\quad\Rightarrow\quad
+x^2(ax^2-b)=0.
+$$
+
+Thus
+
+$$
+\boxed{x=0,\qquad x=\pm\sqrt{\frac{b}{a}}}.
+$$
+
+$$(D)$$ Since $$E=K+U$$, the kinetic energy is $$K=E-U=-U$$. The speed is greatest where $$K$$ is greatest, which means where $$U$$ is smallest. From part $$(B)$$, the minima occur at
+
+$$
+\boxed{x=\pm\sqrt{\frac{b}{2a}}}.
+$$
+:::
 ::::
 
 ::::frq{id=ap-physics-c-mechanics-work-3}
@@ -953,4 +1308,27 @@ Equivalently, the engine supplies gravitational potential energy at the rate $$P
    $$(C)$$ Explain whether delivering the same energy quickly or slowly changes the escape condition in this idealized model.
 
    $$(D)$$ Identify one assumption in the model that would fail for a real rocket.
+
+
+:::solution
+$$(A)$$ The engine adds energy $$Pt_0$$ during the burn. Gravity is handled through potential energy, so the total mechanical energy after the burn is the initial mechanical energy plus the engine work.
+
+Thus
+
+$$
+\boxed{\frac12mv^2-\frac{GMm}{r}=-\frac{GMm}{R}+Pt_0}.
+$$
+
+$$(B)$$ Escape means the spacecraft can reach infinity with nonnegative kinetic energy. Since $$U(\infty)=0$$, this requires total energy $$E\ge0$$. Starting from rest at radius $$R$$, the initial energy is $$-GMm/R$$, so the minimum engine energy needed is
+
+$$
+\boxed{\frac{GMm}{R}}.
+$$
+
+If the burn ends at $$r_f$$, the same criterion is applied to the final total energy there: $$\frac12mv_f^2-GMm/r_f\ge0$$.
+
+$$(C)$$ In this idealized model, only the total engine energy matters, not the rate at which it is delivered. Delivering the same energy quickly or slowly gives the same escape condition as long as the model assumptions remain true.
+
+$$(D)$$ A real rocket changes mass as fuel is expelled, so treating $$m$$ as constant is a major failed assumption. Real rockets also have finite thrust direction, exhaust speed limits, drag, and inefficiencies, any of which would change the motion.
+:::
 ::::

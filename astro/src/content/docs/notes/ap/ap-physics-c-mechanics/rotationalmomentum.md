@@ -950,31 +950,7 @@ The comet spends most of that time far from the Sun, moving slowly, because angu
 ### Multiple Choice
 
 ::::problem
-1. A solid sphere rolls without slipping down an incline from height $$H$$. A block slides frictionlessly from the same height. The ratio of the sphere's translational speed at the bottom to the block's speed at the bottom is
-
-(A) $$\sqrt{5/7}$$
-
-(B) $$\sqrt{2/5}$$
-
-(C) $$\sqrt{7/5}$$
-
-(D) $$1$$
-::::
-
-::::problem
-2. A hoop, disk, and solid sphere with the same mass and radius roll without slipping down the same incline. The object with the largest acceleration is the
-
-(A) hoop
-
-(B) disk
-
-(C) solid sphere
-
-(D) all tie
-::::
-
-::::problem
-3. Static friction does no work on a rigid object rolling without slipping on a fixed surface because
+1. Static friction does no work on a rigid object rolling without slipping on a fixed surface because
 
 (A) the contact point is instantaneously at rest
 
@@ -983,106 +959,17 @@ The comet spends most of that time far from the Sun, moving slowly, because angu
 (C) the center of mass is at rest
 
 (D) rotational kinetic energy is constant
+
+
+:::solution
+In rolling without slipping, the point touching the floor is instantaneously at rest relative to the floor.
+
+Work requires displacement of the point where the force acts. Since static friction acts at the instantaneously stationary contact point, its instantaneous power is zero. It can redistribute energy between translation and rotation, but it does not remove mechanical energy. The answer is $$\boxed{\text{A}}$$.
+:::
 ::::
 
 ::::problem
-4. A rigid object rolls without slipping with center-of-mass speed $$v$$. Its total kinetic energy is $$K=\dfrac{3}{4}Mv^2$$. If its radius is $$R$$, its moment of inertia about its center is
-
-(A) $$\dfrac{1}{4}MR^2$$
-
-(B) $$\dfrac{1}{2}MR^2$$
-
-(C) $$MR^2$$
-
-(D) $$\dfrac{3}{2}MR^2$$
-::::
-
-::::problem
-5. A disk spins freely on a frictionless axle. A student drops clay onto the disk at radius $$R/2$$, where it sticks. During the collision,
-
-(A) angular momentum about the axle is conserved but rotational kinetic energy decreases
-
-(B) rotational kinetic energy is conserved but angular momentum decreases
-
-(C) both angular momentum and rotational kinetic energy are conserved
-
-(D) neither angular momentum nor rotational kinetic energy is conserved
-::::
-
-::::problem
-6. A person sits on a spinning stool holding two masses. Pulling the masses inward increases angular speed because
-
-(A) angular momentum is conserved while moment of inertia decreases
-
-(B) kinetic energy is conserved while moment of inertia decreases
-
-(C) torque from gravity increases
-
-(D) the masses lose angular momentum to the stool
-::::
-
-::::problem
-7. A satellite in an elliptical orbit is closest to the planet at periapsis. From periapsis to apoapsis, its angular momentum about the planet
-
-(A) increases
-
-(B) decreases
-
-(C) remains constant
-
-(D) becomes zero at apoapsis
-::::
-
-::::problem
-8. A planet of mass $$m$$ moves in a circular orbit of radius $$r$$ around a star of mass $$M$$. If the star's mass were replaced by $$4M$$ while $$r$$ stayed the same, the planet's angular momentum magnitude would be multiplied by
-
-(A) $$1/2$$
-
-(B) $$1$$
-
-(C) $$2$$
-
-(D) $$4$$
-::::
-
-::::problem
-9. A rolling hoop and rolling disk have the same mass, radius, and center-of-mass speed. The hoop has
-
-(A) more total kinetic energy
-
-(B) less total kinetic energy
-
-(C) the same total kinetic energy
-
-(D) no rotational kinetic energy
-::::
-
-::::problem
-10. A central force always points along $$\vec r$$. Therefore, for motion under a central force,
-
-(A) angular momentum about the force center is conserved
-
-(B) mechanical energy is always conserved
-
-(C) speed is always constant
-
-(D) the orbit must be circular
-::::
-
-::::problem
-11. A wheel rolls without slipping up a rough incline. Static friction is present but there is no slipping or other dissipation. Which quantity is conserved during the upward motion?
-
-(A) translational kinetic energy only
-
-(B) rotational kinetic energy only
-
-(C) total mechanical energy
-
-(D) angular momentum about the center only
-::::
-
-::::problem
-12. A torque $$\tau(t)=\tau_0t/T$$ acts on a disk from $$t=0$$ to $$t=T$$. The angular impulse is
+2. A torque $$\tau(t)=\tau_0t/T$$ acts on a disk from $$t=0$$ to $$t=T$$. The angular impulse is
 
 (A) $$\tau_0T$$
 
@@ -1091,6 +978,289 @@ The comet spends most of that time far from the Sun, moving slowly, because angu
 (C) $$\tau_0/T$$
 
 (D) $$I\tau_0T$$
+
+
+:::solution
+Angular impulse is the area under the torque-time graph.
+
+
+The graph is a triangle with base $$T$$ and height $$\tau_0$$, so
+
+$$
+J_{\text{ang}}=\int_0^T\frac{\tau_0t}{T}\,dt=\frac{\tau_0T}{2}.
+$$
+
+The answer is $$\boxed{\text{B}}$$.
+
+This is the angular version of linear impulse: the area under torque-time changes angular momentum.
+:::
+::::
+
+::::problem
+3. A central force always points along $$\vec r$$. Therefore, for motion under a central force,
+
+(A) angular momentum about the force center is conserved
+
+(B) mechanical energy is always conserved
+
+(C) speed is always constant
+
+(D) the orbit must be circular
+
+
+:::solution
+A central force points along the radius vector, so $$\vec r$$ and $$\vec F$$ are parallel or antiparallel.
+
+
+The torque about the force center is
+
+$$
+\vec\tau=\vec r\times\vec F=0.
+$$
+
+Since $$d\vec L/dt=\vec\tau_{\text{ext}}$$, zero torque means angular momentum about that center is conserved. The answer is $$\boxed{\text{A}}$$.
+:::
+::::
+
+::::problem
+4. A rolling hoop and rolling disk have the same mass, radius, and center-of-mass speed. The hoop has
+
+(A) more total kinetic energy
+
+(B) less total kinetic energy
+
+(C) the same total kinetic energy
+
+(D) no rotational kinetic energy
+
+
+:::solution
+Both objects have the same translational kinetic energy because they have the same $$M$$ and center-of-mass speed $$v$$. The difference is rotational kinetic energy.
+
+
+For rolling without slipping, $$\omega=v/R$$. The hoop has $$I=MR^2$$ while the disk has $$I=\frac12MR^2$$, so the hoop has larger $$\frac12I\omega^2$$. Therefore it has more total kinetic energy. The answer is $$\boxed{\text{A}}$$.
+:::
+::::
+
+::::problem
+5. A hoop, disk, and solid sphere with the same mass and radius roll without slipping down the same incline. The object with the largest acceleration is the
+
+(A) hoop
+
+(B) disk
+
+(C) solid sphere
+
+(D) all tie
+
+
+:::solution
+For rolling objects on the same incline,
+
+$$
+a=\frac{g\sin\theta}{1+I/(MR^2)}.
+$$
+
+The hoop has $$I/(MR^2)=1$$, the disk has $$1/2$$, and the solid sphere has $$2/5$$. The smallest denominator belongs to the solid sphere, so it has the largest acceleration. The answer is $$\boxed{\text{C}}$$.
+
+The radius and orbiting mass do not change, so the factor change in $$L$$ is exactly the factor change in speed.
+:::
+::::
+
+::::problem
+6. A solid sphere rolls without slipping down an incline from height $$H$$. A block slides frictionlessly from the same height. The ratio of the sphere's translational speed at the bottom to the block's speed at the bottom is
+
+(A) $$\sqrt{5/7}$$
+
+(B) $$\sqrt{2/5}$$
+
+(C) $$\sqrt{7/5}$$
+
+(D) $$1$$
+
+
+:::solution
+Both objects start from the same height, so both lose gravitational potential energy $$mgH$$. The block puts all of that into translation, while the sphere splits it between translation and rotation.
+
+For the sphere,
+
+$$
+mgH=\frac12Mv^2+\frac12\left(\frac25MR^2\right)\left(\frac{v}{R}\right)^2
+=\frac{7}{10}Mv^2.
+$$
+
+For the sliding block,
+
+$$
+mgH=\frac12Mv_b^2.
+$$
+
+Thus $$v^2=\frac{10}{7}gH$$ and $$v_b^2=2gH$$, so
+
+$$
+\frac{v}{v_b}=\sqrt{\frac{5}{7}}.
+$$
+
+The answer is $$\boxed{\text{A}}$$.
+:::
+::::
+
+::::problem
+7. A rigid object rolls without slipping with center-of-mass speed $$v$$. Its total kinetic energy is $$K=\dfrac{3}{4}Mv^2$$. If its radius is $$R$$, its moment of inertia about its center is
+
+(A) $$\dfrac{1}{4}MR^2$$
+
+(B) $$\dfrac{1}{2}MR^2$$
+
+(C) $$MR^2$$
+
+(D) $$\dfrac{3}{2}MR^2$$
+
+
+:::solution
+Rolling kinetic energy has translational and rotational pieces:
+
+$$
+K=\frac12Mv^2+\frac12I\omega^2.
+$$
+
+Because the object rolls without slipping, $$\omega=v/R$$. Substitute:
+
+$$
+K=\frac12Mv^2+\frac12I\frac{v^2}{R^2}.
+$$
+
+Set this equal to the given total kinetic energy:
+
+$$
+\frac34Mv^2=\frac12Mv^2+\frac12I\frac{v^2}{R^2}.
+$$
+
+The rotational part must be $$\frac14Mv^2$$, so $$I=\frac12MR^2$$. The answer is $$\boxed{\text{B}}$$.
+:::
+::::
+
+::::problem
+8. A wheel rolls without slipping up a rough incline. Static friction is present but there is no slipping or other dissipation. Which quantity is conserved during the upward motion?
+
+(A) translational kinetic energy only
+
+(B) rotational kinetic energy only
+
+(C) total mechanical energy
+
+(D) angular momentum about the center only
+
+
+:::solution
+The wheel is moving upward, so translational and rotational kinetic energy may change as gravitational potential energy changes. However, the contact is static, not kinetic.
+
+Static friction at a fixed surface does no work on an ideal rolling body because the contact point has zero instantaneous displacement. With no slipping and no other dissipative force, total mechanical energy is conserved. The answer is $$\boxed{\text{C}}$$.
+:::
+::::
+
+::::problem
+9. A disk spins freely on a frictionless axle. A student drops clay onto the disk at radius $$R/2$$, where it sticks. During the collision,
+
+(A) angular momentum about the axle is conserved but rotational kinetic energy decreases
+
+(B) rotational kinetic energy is conserved but angular momentum decreases
+
+(C) both angular momentum and rotational kinetic energy are conserved
+
+(D) neither angular momentum nor rotational kinetic energy is conserved
+
+
+:::solution
+During the short sticking collision, the axle exerts forces but no torque about the axle itself. Therefore angular momentum about the axle is conserved.
+
+But the collision is inelastic because the clay sticks. In inelastic collisions, kinetic energy is not conserved; some becomes internal energy, sound, or deformation. Thus angular momentum is conserved while rotational kinetic energy decreases. The answer is $$\boxed{\text{A}}$$.
+:::
+::::
+
+::::problem
+10. A person sits on a spinning stool holding two masses. Pulling the masses inward increases angular speed because
+
+(A) angular momentum is conserved while moment of inertia decreases
+
+(B) kinetic energy is conserved while moment of inertia decreases
+
+(C) torque from gravity increases
+
+(D) the masses lose angular momentum to the stool
+
+
+:::solution
+The person, stool, and masses form a system with negligible external torque about the spin axis.
+
+Angular momentum is
+
+$$
+L=I\omega.
+$$
+
+If $$L$$ stays constant and $$I$$ decreases, then $$\omega$$ must increase. The person does work while pulling the masses inward, so kinetic energy is not the conserved quantity. The answer is $$\boxed{\text{A}}$$.
+:::
+::::
+
+::::problem
+11. A satellite in an elliptical orbit is closest to the planet at periapsis. From periapsis to apoapsis, its angular momentum about the planet
+
+(A) increases
+
+(B) decreases
+
+(C) remains constant
+
+(D) becomes zero at apoapsis
+
+
+:::solution
+Gravity points along the line from the satellite to the planet, so the gravitational force has zero lever arm about the planet.
+
+Therefore
+
+$$
+\vec\tau=\vec r\times\vec F=0,
+$$
+
+and angular momentum about the planet remains constant throughout the orbit. The answer is $$\boxed{\text{C}}$$.
+:::
+::::
+
+::::problem
+12. A planet of mass $$m$$ moves in a circular orbit of radius $$r$$ around a star of mass $$M$$. If the star's mass were replaced by $$4M$$ while $$r$$ stayed the same, the planet's angular momentum magnitude would be multiplied by
+
+(A) $$1/2$$
+
+(B) $$1$$
+
+(C) $$2$$
+
+(D) $$4$$
+
+
+:::solution
+For a circular orbit, gravity supplies centripetal force:
+
+$$
+\frac{GMm}{r^2}=\frac{mv^2}{r}.
+$$
+
+So
+
+$$
+v=\sqrt{\frac{GM}{r}}.
+$$
+
+If $$M$$ becomes $$4M$$ while $$r$$ stays fixed, then
+
+$$
+v\to \sqrt{4}\,v=2v.
+$$
+
+The angular momentum magnitude is $$L=mrv$$, so doubling $$v$$ doubles $$L$$. The answer is $$\boxed{\text{C}}$$.
+:::
 ::::
 
 ### FRQ
@@ -1105,6 +1275,98 @@ The comet spends most of that time far from the Sun, moving slowly, because angu
    $$(C)$$ Find the translational and rotational kinetic energies after descending height $$h$$.
 
    $$(D)$$ Compare the result with a hoop released from the same height.
+
+
+:::solution
+$$(A)$$ Draw the forces along the incline. Gravity pulls down the ramp, while static friction points up the ramp because it supplies the torque needed for rolling.
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,decorations.pathmorphing}
+\begin{tikzpicture}[>=Stealth, font=\small, scale=0.85]
+  \draw[thick] (0,0) -- (4.4,1.7);
+  \draw[dashed] (0,0) -- (4.4,0);
+  \draw (0.75,0) arc[start angle=0,end angle=21,radius=0.75] node[midway,right] {$\theta$};
+  \begin{scope}[shift={(2.15,0.83)}, rotate=21]
+    \draw[fill=blue!10, thick] (0,0.45) circle (0.45);
+    \fill (0,0.45) circle (1.5pt);
+    \coordinate (c) at (0,0.45);
+    \draw[->, thick] (c) -- ++(0,1.25) node[above] {$N$};
+    \draw[->, thick, green!55!black] (0,0) -- ++(1.2,0) node[below] {$f$};
+    \draw[->, red!75, thick] (-0.55,0.72) -- ++(-1.15,0) node[left] {$a$};
+  \end{scope}
+  \draw[->, thick] (c) -- ++(0,-1.35) node[below] {$Mg$};
+\end{tikzpicture}
+```
+
+Translation along the incline gives
+
+$$
+Mg\sin\theta-f=Ma.
+$$
+
+Rotation about the center gives
+
+$$
+fR=I\alpha.
+$$
+
+For a solid sphere, $$I=2MR^2/5$$, and rolling without slipping gives $$a=\alpha R$$. Therefore
+
+$$
+fR=\frac25MR^2\frac{a}{R}
+\quad\Rightarrow\quad
+f=\frac25Ma.
+$$
+
+Substitute into the translation equation:
+
+$$
+Mg\sin\theta-\frac25Ma=Ma.
+$$
+
+Thus
+
+$$
+\boxed{a=\frac57g\sin\theta}.
+$$
+
+$$(B)$$ Now use $$f=2Ma/5$$:
+
+$$
+f=\frac25M\left(\frac57g\sin\theta\right)=\boxed{\frac27Mg\sin\theta}.
+$$
+
+The direction is up the incline, because that direction gives the clockwise torque needed for the sphere to roll as it moves down the ramp.
+
+$$(C)$$ After descending height $$h$$, energy conservation gives
+
+$$
+Mgh=K_{\text{trans}}+K_{\text{rot}}.
+$$
+
+For rolling,
+
+$$
+K_{\text{trans}}=\frac12Mv^2,
+\qquad
+K_{\text{rot}}=\frac12\left(\frac25MR^2\right)\left(\frac{v}{R}\right)^2=\frac15Mv^2.
+$$
+
+So
+
+$$
+Mgh=\frac{7}{10}Mv^2.
+$$
+
+The translational fraction is $$(1/2)/(7/10)=5/7$$ and the rotational fraction is $$(1/5)/(7/10)=2/7$$:
+
+$$
+\boxed{K_{\text{trans}}=\frac57Mgh,\qquad K_{\text{rot}}=\frac27Mgh}.
+$$
+
+$$(D)$$ A hoop has larger rotational inertia, $$I=MR^2$$, so more of the same gravitational energy must go into rotation. It therefore has a smaller center-of-mass acceleration and a smaller translational speed at the bottom than the solid sphere.
+:::
 ::::
 
 ::::frq{id=ap-physics-c-mechanics-rotationalmomentum-2}
@@ -1117,6 +1379,60 @@ The comet spends most of that time far from the Sun, moving slowly, because angu
    $$(C)$$ Explain where the missing mechanical energy goes during the latch.
 
    $$(D)$$ If the block is pulled inward slowly by an internal mechanism instead, explain whether work must be done.
+
+
+:::solution
+$$(A)$$ There is no external torque about the axle, so angular momentum about the axle is conserved while the block moves and latches.
+
+Initially,
+
+$$
+L_i=I_0\omega_0.
+$$
+
+Finally, the block contributes $$mR^2$$ to the rotational inertia, so
+
+$$
+L_f=(I_0+mR^2)\omega_f.
+$$
+
+Set $$L_i=L_f$$:
+
+$$
+\boxed{\omega_f=\frac{I_0}{I_0+mR^2}\omega_0}.
+$$
+
+$$(B)$$ The initial kinetic energy is
+
+$$
+K_i=\frac12I_0\omega_0^2.
+$$
+
+The final kinetic energy is
+
+$$
+K_f=\frac12(I_0+mR^2)\omega_f^2
+=\frac12(I_0+mR^2)\left(\frac{I_0}{I_0+mR^2}\omega_0\right)^2.
+$$
+
+Thus
+
+$$
+K_f=\frac12\frac{I_0^2}{I_0+mR^2}\omega_0^2,
+$$
+
+and
+
+$$
+\boxed{\Delta K=-\frac12\frac{I_0mR^2}{I_0+mR^2}\omega_0^2}.
+$$
+
+The negative sign is expected because the latch is an inelastic process.
+
+$$(C)$$ The missing mechanical energy becomes internal energy, sound, and deformation in the latch. Angular momentum is conserved because there is no external torque, but kinetic energy does not have to be conserved in a sticking interaction.
+
+$$(D)$$ If the block is pulled inward slowly, the moment of inertia decreases. With angular momentum conserved, $$\omega$$ increases and the rotational kinetic energy increases. That extra kinetic energy must come from positive work done by the internal pulling mechanism.
+:::
 ::::
 
 ::::frq{id=ap-physics-c-mechanics-rotationalmomentum-3}
@@ -1128,5 +1444,68 @@ The comet spends most of that time far from the Sun, moving slowly, because angu
 
    $$(C)$$ Determine $$v_a$$.
 
-   $$(D)$$ Explain why the satellite moves fastest at periapsis without invoking the area law directly.
+   $$(D)$$ Explain why the satellite moves fastest at periapsis.
+
+
+:::solution
+$$(A)$$ Gravity is a central force, so it exerts no torque about the planet. Angular momentum about the planet is conserved. At periapsis and apoapsis, the velocity is tangent to the orbit, so the angular momentum magnitude is $$L=mrv$$.
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,decorations.pathmorphing}
+\begin{tikzpicture}[>=Stealth, font=\small, scale=0.9]
+  \fill[yellow!70!orange] (0,0) circle (0.18) node[below] {planet};
+  \draw[thick, blue!65] (0,0) ellipse (2.2 and 1.05);
+  \fill[blue!70] (-2.2,0) circle (2.2pt) node[left] {periapsis};
+  \fill[blue!70] (2.2,0) circle (2.2pt) node[right] {apoapsis};
+  \draw[->, red!75, thick] (-2.2,0) -- (-2.2,0.8) node[above] {$v_p$};
+  \draw[->, red!75, thick] (2.2,0) -- (2.2,-0.45) node[below] {$v_a$};
+\end{tikzpicture}
+```
+
+Thus
+
+$$
+mr_pv_p=mr_av_a,
+$$
+
+or
+
+$$
+\boxed{r_pv_p=r_av_a}.
+$$
+
+$$(B)$$ Mechanical energy is also conserved because gravity is conservative:
+
+$$
+\frac12v_p^2-\frac{GM}{r_p}=\frac12v_a^2-\frac{GM}{r_a}.
+$$
+
+From part $$(A)$$,
+
+$$
+v_a=\frac{r_p}{r_a}v_p.
+$$
+
+Substitute into energy conservation:
+
+$$
+\frac12v_p^2-\frac12\left(\frac{r_p}{r_a}\right)^2v_p^2
+=GM\left(\frac{1}{r_p}-\frac{1}{r_a}\right).
+$$
+
+Solving gives
+
+$$
+\boxed{v_p=\sqrt{\frac{2GMr_a}{r_p(r_p+r_a)}}}.
+$$
+
+$$(C)$$ Use the angular momentum relation again:
+
+$$
+\boxed{v_a=\frac{r_p}{r_a}v_p=\sqrt{\frac{2GMr_p}{r_a(r_p+r_a)}}}.
+$$
+
+$$(D)$$ Since $$mrv$$ is constant at periapsis and apoapsis and $$r_p<r_a$$, the speed must be larger at periapsis.
+:::
 ::::

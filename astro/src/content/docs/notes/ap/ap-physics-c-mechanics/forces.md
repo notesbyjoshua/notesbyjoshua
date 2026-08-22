@@ -1044,15 +1044,48 @@ As $$t \to \infty$$, the exponential vanishes and $$v \to v_t$$, as expected. Th
 ### Multiple Choice
 
 ::::problem
-1. A block rests on a scale mounted on a wedge inclined at angle $$\theta$$. The wedge accelerates horizontally to the right with magnitude $$a$$, and the incline rises to the right. The block remains at rest relative to the scale. If the scale measures the normal force on the block, its reading is
+1. A block of mass $$m$$ rests on a small platform scale mounted on an incline of angle $$\theta$$. The wedge and scale are at rest, and static friction prevents slipping.
 
-(A) $$m(g\cos\theta-a\sin\theta)$$
+If the scale measures the normal force on the block, its reading is
 
-(B) $$m(g\cos\theta+a\sin\theta)$$
+(A) $$mg\sin\theta$$
 
-(C) $$m(g\sin\theta+a\cos\theta)$$
+(B) $$mg\cos\theta$$
 
-(D) $$m(g+a)\cos\theta$$
+(C) $$mg\tan\theta$$
+
+(D) $$mg$$
+
+
+:::solution
+Draw axes parallel and perpendicular to the incline. The scale can only push perpendicular to its surface, so its reading is the normal force $$N$$.
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,decorations.pathmorphing}
+\begin{tikzpicture}[>=Stealth, font=\small, scale=0.85]
+  \draw[thick] (0,0) -- (4.4,1.7);
+  \draw[dashed] (0,0) -- (4.4,0);
+  \draw (0.75,0) arc[start angle=0,end angle=21,radius=0.75] node[midway,right] {$\theta$};
+  \begin{scope}[shift={(2.15,0.83)}, rotate=21]
+    \draw[fill=gray!30, thick] (-0.58,0) rectangle (0.58,0.1);
+    \draw[fill=blue!10, thick] (-0.48,0.1) rectangle (0.48,0.7);
+    \coordinate (c) at (0,0.4);
+    \draw[->, thick] (c) -- ++(0,1.3) node[above] {$N$};
+    \draw[->, thick, green!55!black] (0,0.1) -- ++(1.25,0) node[above] {$f_s$};
+  \end{scope}
+  \draw[->, thick] (c) -- ++(0,-1.35) node[below] {$mg$};
+\end{tikzpicture}
+```
+
+The block has no acceleration perpendicular to the plane. The perpendicular component of gravity is $$mg\cos\theta$$ into the scale, while static friction acts along the incline and has no perpendicular component. Therefore
+
+$$
+N-mg\cos\theta=0.
+$$
+
+So the scale reads $$N=mg\cos\theta$$, and the answer is $$\boxed{\text{B}}$$.
+:::
 ::::
 
 ::::problem
@@ -1065,74 +1098,43 @@ As $$t \to \infty$$, the exponential vanishes and $$v \to v_t$$, as expected. Th
 (C) $$mg/\mu_s$$
 
 (D) $$\mu_s/g$$
+
+
+:::solution
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,decorations.pathmorphing}
+\begin{tikzpicture}[>=Stealth, font=\small, scale=0.85]
+  \fill[gray!20] (2.25,0) rectangle (2.43,2.6);
+  \draw[thick] (2.25,0) -- (2.25,2.6);
+  \draw[fill=blue!10, thick] (1.15,0.95) rectangle (2.25,1.75);
+  \coordinate (c) at (1.7,1.35);
+  \draw[->, thick, red!75] (c) -- ++(1.0,0) node[right] {$F$};
+  \draw[->, thick] (c) -- ++(-1.0,0) node[left] {$N$};
+  \draw[->, thick] (c) -- ++(0,-1.15) node[below] {$mg$};
+  \draw[->, thick, green!55!black] (c) -- ++(0,1.15) node[above] {$f_s$};
+\end{tikzpicture}
+```
+
+The applied force presses the block horizontally into the wall, so the wall pushes back with normal force $$N$$. Since there is no horizontal acceleration,
+
+$$
+N=F.
+$$
+
+The block would tend to slide downward, so static friction points upward. The largest available static friction is $$f_{s,\max}=\mu_sN=\mu_sF$$. To barely keep the block from sliding,
+
+$$
+\mu_sF=mg.
+$$
+
+Note that friction would act on the contacting surface but is drawn in the middle of the block for a clearer demonstration. Thus the smallest force is $$F=mg/\mu_s$$, so the answer is $$\boxed{\text{C}}$$.
+:::
 ::::
 
 ::::problem
-3. A block of mass $$m$$ rests on a small platform scale mounted on an incline of angle $$\theta$$. The wedge and scale are at rest, and static friction prevents slipping.
-
-<img class="note-img note-img--w360" src="/assets/APs/AP Physics C Mech/forces/practice-incline-scale.svg" alt="Block on a scale mounted on an inclined wedge" loading="lazy" decoding="async" />
-
-If the scale measures the normal force on the block, its reading is
-
-(A) $$mg\sin\theta$$
-
-(B) $$mg\cos\theta$$
-
-(C) $$mg\tan\theta$$
-
-(D) $$mg$$
-::::
-
-::::problem
-4. A car travels over the top of a circular hill of radius $$R$$. At the top, the driver feels an apparent weight equal to one-third of their normal weight. The car's speed is
-
-(A) $$\sqrt{gR/3}$$
-
-(B) $$\sqrt{2gR/3}$$
-
-(C) $$\sqrt{gR}$$
-
-(D) $$\sqrt{4gR/3}$$
-::::
-
-::::problem
-5. An elevator accelerates upward with magnitude $$a$$. Inside it, a mass $$m$$ hangs from a spring scale while a horizontal force $$F$$ pulls the mass sideways so the supporting string makes angle $$\phi$$ with the vertical. The scale tension is
-
-(A) $$m(g+a)$$
-
-(B) $$\dfrac{m(g+a)}{\cos\phi}$$
-
-(C) $$\dfrac{mg}{\cos\phi}$$
-
-(D) $$m\sqrt{g^2+a^2}$$
-::::
-
-::::problem
-6. A falling object experiences drag force $$bv$$ upward. Taking downward as positive, which differential equation describes the motion?
-
-(A) $$m\dfrac{dv}{dt}=mg+bv$$
-
-(B) $$m\dfrac{dv}{dt}=mg-bv$$
-
-(C) $$m\dfrac{dv}{dt}=bv-mg$$
-
-(D) $$m\dfrac{dv}{dt}=-mg-bv$$
-::::
-
-::::problem
-7. A bead slides on a frictionless circular hoop in a vertical plane. At the side of the hoop, its speed is $$v$$. The normal force magnitude is
-
-(A) $$mg$$
-
-(B) $$mv^2/R$$
-
-(C) $$mg+mv^2/R$$
-
-(D) $$\sqrt{(mg)^2+(mv^2/R)^2}$$
-::::
-
-::::problem
-8. Two blocks of masses $$m$$ and $$2m$$ are connected by a light string and pulled across a frictionless table by force $$F$$ applied to the $$2m$$ block. The tension in the string is
+3. Two blocks of masses $$m$$ and $$2m$$ are connected by a light string and pulled across a frictionless table by force $$F$$ applied to the $$2m$$ block. The tension in the string is
 
 (A) $$F/3$$
 
@@ -1141,22 +1143,54 @@ If the scale measures the normal force on the block, its reading is
 (C) $$2F/3$$
 
 (D) $$F$$
+
+
+:::solution
+First find the acceleration of the whole system, because both blocks share the same acceleration.
+
+For the two blocks together, the string tension is internal and cancels, so the only external horizontal force is $$F$$ on total mass $$3m$$:
+
+$$
+F=(3m)a \quad\Rightarrow\quad a=\frac{F}{3m}.
+$$
+
+Now look only at the $$m$$ block. The only horizontal force on it is tension, so
+
+$$
+T=ma=m\left(\frac{F}{3m}\right)=\frac{F}{3}.
+$$
+
+Therefore the answer is $$\boxed{\text{A}}$$.
+:::
 ::::
 
 ::::problem
-9. A pendulum bob hangs motionless relative to a train accelerating horizontally with magnitude $$a$$. If the string makes angle $$\theta$$ with the vertical and the tension is $$T$$, which pair of equations is consistent with the bob's rest in the train frame?
+4. A falling object experiences drag force $$bv$$ upward. Taking downward as positive, which differential equation describes the motion?
 
-(A) $$T\sin\theta=ma$$ and $$T\cos\theta=mg$$
+(A) $$m\dfrac{dv}{dt}=mg+bv$$
 
-(B) $$T\cos\theta=ma$$ and $$T\sin\theta=mg$$
+(B) $$m\dfrac{dv}{dt}=mg-bv$$
 
-(C) $$T=mg$$ and $$\tan\theta=a/g$$
+(C) $$m\dfrac{dv}{dt}=bv-mg$$
 
-(D) $$T=ma$$ and $$\tan\theta=g/a$$
+(D) $$m\dfrac{dv}{dt}=-mg-bv$$
+
+
+:::solution
+The sign convention is the whole problem. Since downward is positive, gravity is a positive force and drag is negative because it acts upward while the object falls downward.
+
+Newton's second law gives
+
+$$
+\sum F_y=mg-bv=m\frac{dv}{dt}.
+$$
+
+So the correct differential equation is $$m\dfrac{dv}{dt}=mg-bv$$, and the answer is $$\boxed{\text{B}}$$.
+:::
 ::::
 
 ::::problem
-10. A block of mass $$m$$ sits on a rough incline of angle $$\theta$$. A horizontal force $$F$$ pushes the block into the incline. Which change most directly increases the maximum possible static friction?
+5. A block of mass $$m$$ sits on a rough incline of angle $$\theta$$. A horizontal force $$F$$ pushes the block into the incline. Which change most directly increases the maximum possible static friction?
 
 (A) Decreasing $$F$$
 
@@ -1165,30 +1199,331 @@ If the scale measures the normal force on the block, its reading is
 (C) Decreasing $$m$$ while keeping $$F$$ fixed
 
 (D) Making the incline frictionless
+
+
+:::solution
+The maximum static friction is not a separate force law; it is a limit:
+
+$$
+f_s\le \mu_sN.
+$$
+
+So to increase the largest possible static friction, you need to increase the normal force. A horizontal push into the incline has a component perpendicular to the surface, so it presses the block harder into the plane.
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,decorations.pathmorphing}
+\begin{tikzpicture}[>=Stealth, font=\small, scale=0.85]
+  \draw[thick] (0,0) -- (4.4,1.7);
+  \draw[dashed] (0,0) -- (4.4,0);
+  \draw (0.75,0) arc[start angle=0,end angle=21,radius=0.75] node[midway,right] {$\theta$};
+  \begin{scope}[shift={(2.15,0.83)}, rotate=21]
+    \draw[fill=blue!10, thick] (-0.5,0) rectangle (0.5,0.6);
+    \coordinate (c) at (0,0.3);
+    \draw[->, thick] (c) -- ++(0,1.3) node[above] {$N$};
+  \end{scope}
+  \draw[->, thick] (c) -- ++(0,-1.35) node[below] {$mg$};
+  \draw[->, thick, red!75] (c) -- ++(1.45,0) node[right] {$F$};
+\end{tikzpicture}
+```
+
+Increasing $$F$$ therefore increases $$N$$ and increases $$f_{s,\max}=\mu_sN$$. The answer is $$\boxed{\text{B}}$$.
+:::
 ::::
 
 ::::problem
-11. A small mass moves in a vertical circle on a string of length $$R$$. Its speeds at the bottom and top are $$v_b$$ and $$v_t$$. Which relation must hold if air resistance is negligible?
+6. A pendulum bob hangs motionless relative to a train accelerating horizontally with magnitude $$a$$. If the string makes angle $$\theta$$ with the vertical and the tension is $$T$$, which pair of equations is consistent with the bob's rest in the *train's* frame?
 
-(A) $$v_b^2=v_t^2+4gR$$
+(A) $$T\sin\theta=ma$$ and $$T\cos\theta=mg$$
 
-(B) $$v_b^2=v_t^2+2gR$$
+(B) $$T\cos\theta=ma$$ and $$T\sin\theta=mg$$
 
-(C) $$v_b=v_t$$
+(C) $$T=mg$$ and $$\tan\theta=a/g$$
 
-(D) $$v_t^2=v_b^2+4gR$$
+(D) $$T=ma$$ and $$\tan\theta=g/a$$
+
+
+:::solution
+In the ground frame, the bob is not vertically accelerating, but it shares the train's horizontal acceleration $$a$$. Break the tension into horizontal and vertical components:
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\begin{tikzpicture}[>=Stealth, font=\small]
+  \coordinate (O) at (0,2.2); \coordinate (B) at (-0.8,0.4);
+  \draw[dashed] (O) -- ++(0,-2.3);
+  \draw[thick] (O) -- (B);
+  \fill[blue!65] (B) circle (4pt);
+  \draw[->, thick] (B) -- (O) node[midway,left] {$T$};
+  \draw[->, thick] (B) -- ++(0,-1.15) node[below] {$mg$};
+  \draw[->, red!75, thick] (B) -- ++(1.2,0) node[right] {$a$};
+  \draw[->, blue!70] (B) -- ++(0,1.35) node[above] {$T\cos\theta$};
+  \draw[->, blue!70] (B) -- ++(0.6,0) node[below right] {$T\sin\theta$};
+  \draw (0,1.72) arc[start angle=-90,end angle=-114,radius=0.48];
+  \node at (-0.12,1.43) {$\theta$};
+\end{tikzpicture}
+```
+
+The horizontal component of tension is what accelerates the bob:
+
+$$
+T\sin\theta=ma.
+$$
+
+The vertical component balances weight because there is no vertical acceleration:
+
+$$
+T\cos\theta=mg.
+$$
+
+Thus the answer is $$\boxed{\text{A}}$$.
+:::
 ::::
 
 ::::problem
-12. A block sits on a rough horizontal turntable a distance $$r$$ from the center. The turntable has angular speed $$\omega$$ and angular acceleration $$\alpha$$. At the threshold of slipping, the coefficient of static friction satisfies
+7. A car travels over the top of a circular hill of radius $$R$$. At the top, the driver feels an apparent weight equal to one-third of their normal weight. The car's speed is
 
-(A) $$\mu_s g=r\omega^2$$
+(A) $$\sqrt{gR/3}$$
 
-(B) $$\mu_s g=r\alpha$$
+(B) $$\sqrt{2gR/3}$$
 
-(C) $$\mu_s g=r\sqrt{\omega^4+\alpha^2}$$
+(C) $$\sqrt{gR}$$
 
-(D) $$\mu_s g=r(\omega^2+\alpha)$$
+(D) $$\sqrt{4gR/3}$$
+
+
+:::solution
+At the top of the hill, the center of the circle is downward. That means the required centripetal acceleration points downward.
+
+The driver feels apparent weight through the normal force, so $$N=mg/3$$. Taking downward as the radial positive direction,
+
+$$
+mg-N=\frac{mv^2}{R}.
+$$
+
+Substitute $$N=mg/3$$:
+
+$$
+mg-\frac{mg}{3}=\frac{mv^2}{R}
+\quad\Rightarrow\quad
+\frac{2g}{3}=\frac{v^2}{R}.
+$$
+
+So $$v=\sqrt{2gR/3}$$, and the answer is $$\boxed{\text{B}}$$.
+:::
+::::
+
+::::problem
+8. A bead slides on a frictionless circular hoop in a vertical plane. At the side of the hoop, its speed is $$v$$. The normal force magnitude is
+
+(A) $$mg$$
+
+(B) $$mv^2/R$$
+
+(C) $$mg+mv^2/R$$
+
+(D) $$\sqrt{(mg)^2+(mv^2/R)^2}$$
+
+
+:::solution
+At the side of the hoop, the radial direction points horizontally toward the center. Gravity points straight down, which is tangent to the circle at that point, not radial.
+
+
+Since gravity has no radial component there, the normal force alone supplies the centripetal force:
+
+$$
+N=\frac{mv^2}{R}.
+$$
+
+Therefore the answer is $$\boxed{\text{B}}$$.
+:::
+::::
+
+::::problem
+9. An elevator accelerates upward with magnitude $$a$$. Inside it, a mass $$m$$ hangs from a spring scale while a horizontal force $$F$$ pulls the mass sideways so the supporting string makes angle $$\phi$$ with the vertical. The tension in the string is
+
+(A) $$m(g+a)$$
+
+(B) $$\dfrac{m(g+a)}{\cos\phi}$$
+
+(C) $$\dfrac{mg}{\cos\phi}$$
+
+(D) $$m\sqrt{g^2+a^2}$$
+
+
+:::solution
+The scale reads the string tension $$T$$, not just the vertical component of tension. Since the mass accelerates upward with the elevator, the vertical forces cannot simply balance.
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\begin{tikzpicture}[>=Stealth, font=\small]
+  \draw[fill=gray!5, thick] (-1.8,-1.35) rectangle (1.8,2.4);
+  \node[gray!70] at (-1.05,2.1) {elevator};
+  \coordinate (O) at (0,2.0); \coordinate (M) at (0.75,0.3);
+  \fill (O) circle (2pt);
+  \draw[dashed] (O) -- ++(0,-1.9);
+  \draw[thick] (O) -- (M); \fill[blue!65] (M) circle (4pt) node[below right] {$m$};
+  \draw[->, thick] (M) -- (O) node[midway,right] {$T$};
+  \draw[->, thick] (M) -- ++(0,-1.1) node[below] {$mg$};
+  \draw[->, thick, red!75] (M) -- ++(1.1,0) node[below right] {$F$};
+  \draw[->, blue!70] (M) -- ++(0,1.25) node[above] {$T\cos\phi$};
+  \draw[->, blue!70] (M) -- ++(-0.55,0) node[below] {$T\sin\phi$};
+  \draw (0,1.52) arc[start angle=-90,end angle=-66,radius=0.48];
+  \node at (0.13,1.23) {$\phi$};
+  \draw[->, red!75, thick] (2.05,0.4) -- ++(0,1.0) node[above] {$a$};
+\end{tikzpicture}
+```
+
+The vertical component of tension is $$T\cos\phi$$. Applying Newton's second law vertically,
+
+$$
+T\cos\phi-mg=ma.
+$$
+
+Solving for the full tension gives
+
+$$
+T=\frac{m(g+a)}{\cos\phi}.
+$$
+
+So the answer is $$\boxed{\text{B}}$$.
+:::
+::::
+
+::::problem
+10. A block rests on a scale mounted on a wedge inclined at angle $$\theta$$. The wedge accelerates horizontally to the right with magnitude $$a$$, and the incline rises to the right. The block remains at rest relative to the scale. If the scale measures the normal force on the block, its reading is
+
+(A) $$m(g\cos\theta-a\sin\theta)$$
+
+(B) $$m(g\cos\theta+a\sin\theta)$$
+
+(C) $$m(g\sin\theta+a\cos\theta)$$
+
+(D) $$m(g+a)\cos\theta$$
+
+
+:::solution
+The block stays fixed relative to the wedge, so in the ground frame it accelerates horizontally with the wedge. The scale reading is still the normal force perpendicular to the incline.
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,decorations.pathmorphing}
+\begin{tikzpicture}[>=Stealth, font=\small, scale=0.85]
+  \draw[fill=gray!8, thick] (0,0) -- (4.4,0) -- (4.4,1.7) -- cycle;
+  \draw[dashed] (0,0) -- (4.4,0);
+  \draw (0.75,0) arc[start angle=0,end angle=21,radius=0.75] node[midway,right=2pt] {$\theta$};
+  \begin{scope}[shift={(2.15,0.83)}, rotate=21]
+    \draw[fill=gray!30, thick] (-0.58,0) rectangle (0.58,0.12);
+    \draw[fill=blue!10, thick] (-0.48,0.12) rectangle (0.48,0.72);
+    \coordinate (c) at (0,0.42);
+    \draw[->, thick] (c) -- ++(0,1.25) node[above] {$N$};
+  \end{scope}
+  \draw[->, thick] (c) -- ++(0,-1.3) node[below] {$mg$};
+  \draw[->, thick, red!75] (3.15,2.0) -- ++(1.0,0) node[right] {$a$};
+\end{tikzpicture}
+```
+
+Take the outward normal direction from the incline as positive. The normal component of the block's horizontal acceleration is $$-a\sin\theta$$ because the wedge's acceleration has a component into the plane. Newton's second law perpendicular to the incline is
+
+$$
+N-mg\cos\theta=m(-a\sin\theta).
+$$
+
+Therefore
+
+$$
+N=m(g\cos\theta-a\sin\theta),
+$$
+
+so the answer is $$\boxed{\text{A}}$$.
+:::
+::::
+
+::::problem
+11. A small mass moves in a vertical circle on a string of length $$R$$. Its speeds at the bottom and top are $$v_b$$ and $$v_t$$, and the corresponding string tensions are $$T_b$$ and $$T_t$$. Which relation follows from Newton's second law in the radial direction?
+
+(A) $$T_b-T_t=\dfrac{m(v_b^2-v_t^2)}{R}+2mg$$
+
+(B) $$T_b-T_t=\dfrac{m(v_b^2-v_t^2)}{R}$$
+
+(C) $$T_b+T_t=\dfrac{m(v_b^2+v_t^2)}{R}$$
+
+(D) $$T_b-T_t=2mg-\dfrac{m(v_b^2-v_t^2)}{R}$$
+
+
+:::solution
+Write the radial equation separately at the bottom and top, always taking inward toward the center as positive.
+
+At the bottom,
+
+$$
+T_b-mg=\frac{mv_b^2}{R}.
+$$
+
+At the top, both tension and gravity point inward, so
+
+$$
+T_t+mg=\frac{mv_t^2}{R}.
+$$
+
+Rearrange these as $$T_b=mv_b^2/R+mg$$ and $$T_t=mv_t^2/R-mg$$. Subtracting gives
+
+$$
+T_b-T_t=\frac{m(v_b^2-v_t^2)}{R}+2mg.
+$$
+
+Thus the answer is $$\boxed{\text{A}}$$.
+:::
+::::
+
+::::problem
+12. A block of mass $$m$$ rests on the floor of an elevator that accelerates upward with magnitude $$a_y$$ while also accelerating horizontally with magnitude $$a_x$$. The block does not slip relative to the floor. The minimum coefficient of static friction required is
+
+(A) $$\dfrac{a_x}{g+a_y}$$
+
+(B) $$\dfrac{a_x}{g}$$
+
+(C) $$\dfrac{g+a_y}{a_x}$$
+
+(D) $$\dfrac{\sqrt{a_x^2+(g+a_y)^2}}{g}$$
+
+
+:::solution
+The floor pushes up with normal force $$N$$ and horizontally with static friction $$f_s$$. The block shares both components of the elevator's acceleration.
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\begin{tikzpicture}[>=Stealth, font=\small]
+  \draw[fill=gray!5, thick] (-1.5,-1.3) rectangle (1.5,1.35);
+  \draw[thick] (-1.3,-0.45) -- (1.3,-0.45);
+  \draw[fill=blue!10, thick] (-0.45,-0.45) rectangle (0.45,0.25);
+  \coordinate (c) at (0,-0.1);
+  \draw[->, thick] (c) -- ++(0,1.15) node[right] {$N$};
+  \draw[->, thick] (c) -- ++(0,-1.15) node[below] {$mg$};
+  \draw[->, thick, green!55!black] (c) -- ++(1.15,0) node[above] {$f_s$};
+  \draw[->, red!75, thick] (1.75,0.35) -- ++(0.75,0.75) node[right] {$\vec a$};
+  \node[gray!70] at (-0.75,1.05) {elevator};
+\end{tikzpicture}
+```
+
+Vertically, the block accelerates upward, so
+
+$$
+N-mg=ma_y.
+$$
+
+This is why the normal force is $$N=m(g+a_y)$$: it must both support the weight and provide the extra upward acceleration. Horizontally, static friction is the only force accelerating the block, so $$f_s=ma_x$$. For no slipping,
+
+$$
+f_s\le \mu_sN
+\quad\Rightarrow\quad
+ma_x\le \mu_s m(g+a_y).
+$$
+
+Thus $$\mu_s\ge a_x/(g+a_y)$$, so the answer is $$\boxed{\text{A}}$$.
+:::
 ::::
 
 ### FRQ
@@ -1203,10 +1538,68 @@ If the scale measures the normal force on the block, its reading is
    $$(C)$$ Determine the condition on $$a$$ for the block not to slide down.
 
    $$(D)$$ If the box also accelerates upward with acceleration $$a_y$$, derive the new no-slip condition.
+
+
+:::solution
+$$(A)$$ The block is accelerating horizontally with the box, so the wall must push it horizontally. The block would slide downward without friction, so static friction points upward.
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,decorations.pathmorphing}
+\begin{tikzpicture}[>=Stealth, font=\small, scale=0.85]
+  \draw[fill=gray!5, thick] (0,0) rectangle (3.2,2.6);
+  \fill[gray!20] (0,0) rectangle (0.22,2.6);
+  \draw[fill=blue!10, thick] (0.22,0.95) rectangle (1.32,1.75);
+  \coordinate (c) at (0.77,1.35);
+  \draw[->, thick] (c) -- ++(1.15,0) node[right] {$N$};
+  \draw[->, thick] (c) -- ++(0,-1.15) node[right] {$mg$};
+  \draw[->, thick, green!55!black] (c) -- ++(0,1.15) node[above] {$f_s$};
+  \draw[->, thick, red!75] (1.55,2.25) -- ++(1.15,0) node[right] {$a$};
+\end{tikzpicture}
+```
+
+Thus the forces on the block are weight $$mg$$ downward, normal force $$N$$ from the wall horizontally, and static friction $$f_s$$ upward. Note that friction would act on the contacting surface but is drawn in the middle of the block for a clearer demonstration.
+
+$$(B)$$ Horizontally,
+
+$$
+\boxed{N=ma}.
+$$
+
+This equation is not a friction condition; it is just Newton's second law in the horizontal direction. The normal force is the only horizontal force on the block, so it must provide the block's horizontal acceleration.
+
+$$(C)$$ To avoid sliding,
+
+$$
+mg\le \mu_sN=\mu_sma,
+$$
+
+so
+
+$$
+\boxed{a\ge \frac{g}{\mu_s}}.
+$$
+
+At the threshold, static friction is at its maximum. If $$a$$ is smaller than this, then $$N=ma$$ is too small, so $$\mu_sN$$ cannot support the weight.
+
+$$(D)$$ If the box accelerates upward, the required friction is $$m(g+a_y)$$. Since $$N=ma$$,
+
+$$
+m(g+a_y)\le \mu_sma,
+$$
+
+so
+
+$$
+\boxed{a\ge \frac{g+a_y}{\mu_s}}.
+$$
+
+The upward acceleration increases the required upward net force. Friction must now both balance gravity and create upward acceleration, which is why $$g$$ becomes $$g+a_y$$.
+:::
 ::::
 
 ::::frq{id=ap-physics-c-mechanics-forces-2}
-2. A bead of mass $$m$$ slides without friction on a circular hoop of radius $$R$$ fixed in a vertical plane. At an angle $$\theta$$ measured from the bottom, the bead has speed $$v$$.
+2. A bead of mass $$m$$ slides without friction on a circular hoop of radius $$R$$ fixed in a vertical plane. At an angle $$\theta$$ measured from the bottom, the bead has speed $$v$$
 
    $$(A)$$ Draw a force diagram for the bead.
 
@@ -1214,11 +1607,64 @@ If the scale measures the normal force on the block, its reading is
 
    $$(C)$$ Write Newton's second law in the tangential direction.
 
-   $$(D)$$ Suppose the bead is released from rest at angle $$\theta_0$$. Find the normal force at the bottom of the hoop.
+   $$(D)$$ At angle $$\theta$$, determine the speed at which the bead would just lose contact with the hoop, if such a speed is possible.
+
+
+:::solution
+$$(A)$$ The bead only touches the hoop, so the contact force is normal to the hoop. Since the hoop is frictionless, there is no tangential contact force.
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,angles,quotes}
+\begin{tikzpicture}[>=Stealth, font=\small, scale=0.95]
+  \coordinate (O) at (0,0); \coordinate (B) at (0.95,-0.95); \coordinate (D) at (0,-1.35);
+  \draw[thick] (O) circle (1.35); \fill (O) circle (1.5pt);
+  \draw[dashed] (O) -- (D); \draw[dashed] (O) -- (B);
+  \fill[blue!65] (B) circle (4pt);
+  \draw[->, thick] (B) -- (0.18,-0.18) node[midway,above] {$N$};
+  \draw[->, thick] (B) -- ++(0,-1.15) node[below] {$mg$};
+  \draw pic[draw, "$\theta$", angle radius=0.45cm] {angle=D--O--B};
+\end{tikzpicture}
+```
+
+The forces are weight $$mg$$ downward and normal force $$N$$ along the radius.
+
+$$(B)$$ Taking inward as positive,
+
+$$
+\boxed{N-mg\cos\theta=\frac{mv^2}{R}}.
+$$
+
+The term $$mg\cos\theta$$ appears because the angle is measured from the bottom, so the component of gravity along the outward radial direction is $$mg\cos\theta$$. With inward positive, that component enters with a minus sign.
+
+$$(C)$$ Taking increasing $$\theta$$ as positive tangential direction,
+
+$$
+\boxed{-mg\sin\theta=ma_t}.
+$$
+
+The normal force has no tangential component, so only gravity changes the bead's speed along the hoop.
+
+$$(D)$$ Loss of contact means $$N=0$$, so
+
+$$
+-mg\cos\theta=\frac{mv^2}{R}.
+$$
+
+Thus
+
+$$
+\boxed{v=\sqrt{-gR\cos\theta}},
+$$
+
+which is possible only when $$\cos\theta\le0$$.
+
+That condition says the bead can only lose contact in the upper half of the hoop. In the lower half, gravity's radial component points the wrong way to supply the required inward centripetal acceleration by itself.
+:::
 ::::
 
 ::::frq{id=ap-physics-c-mechanics-forces-3}
-3. A mass $$m$$ falls from rest through a fluid with drag force $$F_d=bv^2$$ upward. Take downward as positive.
+3. A mass $$m$$ falls from rest through a fluid with drag force $$F_d=bv$$ upward. Take downward as positive.
 
    $$(A)$$ Write the differential equation for $$v(t)$$.
 
@@ -1227,4 +1673,44 @@ If the scale measures the normal force on the block, its reading is
    $$(C)$$ Without solving fully for $$v(t)$$, determine whether the acceleration is increasing, decreasing, or constant as the object falls.
 
    $$(D)$$ Design a linear graph that could be used to determine $$b$$ from measurements of speed and acceleration.
+
+
+:::solution
+$$(A)$$ Taking downward as positive, gravity is positive and drag is negative because it points opposite the downward velocity.
+
+
+$$
+\boxed{m\frac{dv}{dt}=mg-bv}.
+$$
+
+$$(B)$$ At terminal speed, the velocity is no longer changing, so $$dv/dt=0$$. The drag force has grown large enough to balance the weight:
+
+$$
+\boxed{v_t=\frac{mg}{b}}.
+$$
+
+$$(C)$$ Divide the differential equation by $$m$$:
+
+$$
+a=\frac{dv}{dt}=g-\frac{b}{m}v.
+$$
+
+As the object speeds up, $$v$$ increases, so the drag term $$bv/m$$ increases. Therefore the acceleration decreases, approaching zero as $$v$$ approaches terminal speed.
+
+$$(D)$$ Graph $$a$$ on the vertical axis versus $$v$$ on the horizontal axis.
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\begin{tikzpicture}[>=Stealth, font=\small, x=2.0cm, y=1.7cm]
+  \draw[->] (0,0) -- (2.25,0) node[right] {$v$};
+  \draw[->] (0,0) -- (0,1.35) node[above] {$a$};
+  \draw[very thick, blue!70] (0,1) node[left] {$g$} -- (1.65,0) node[below] {$v_t=mg/b$};
+  \node[blue!70, rotate=-27] at (0.95,0.62) {slope $=-b/m$};
+\end{tikzpicture}
+```
+
+
+The equation $$a=g-(b/m)v$$ is linear with slope $$-b/m$$, so $$b=-m(\text{slope})$$.
+:::
 ::::

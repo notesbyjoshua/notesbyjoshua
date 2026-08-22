@@ -595,39 +595,99 @@ You can find more about relative motion on the [USAPhO section on mechanics](/no
 ### Multiple Choice
 
 ::::problem
-1. A particle has $$v(t)=v_0-\beta t^2$$ with $$v_0,\beta>0$$. Which expression gives the distance traveled from $$t=0$$ until the particle first stops?
+1. A projectile is fired from height $$h$$ with speed $$v_0$$ at angle $$\theta$$ above horizontal. Air resistance is negligible. Which equation determines its time of flight if the ground is $$y=0$$?
 
-(A) $$\int_0^{\sqrt{v_0/\beta}}(v_0-\beta t^2)\,dt$$
+(A) $$0=h+v_0\sin\theta\,t-\dfrac{1}{2}gt^2$$
 
-(B) $$\int_0^{v_0/\beta}(v_0-\beta t^2)\,dt$$
+(B) $$0=v_0\cos\theta\,t-\dfrac{1}{2}gt^2$$
 
-(C) $$\int_0^{\sqrt{v_0/\beta}}\lvert -2\beta t\rvert\,dt$$
+(C) $$h=v_0t-\dfrac{1}{2}gt^2$$
 
-(D) $$v_0\sqrt{v_0/\beta}$$
+(D) $$0=v_0\sin\theta-gt$$
+
+
+:::solution
+The time of flight is controlled by vertical motion, because the projectile lands when its vertical position reaches ground level.
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,decorations.pathmorphing}
+\begin{tikzpicture}[>=Stealth, font=\small, scale=0.85]
+  \draw[->] (0,0) -- (5.2,0) node[right] {$x$};
+  \draw[->] (0,0) -- (0,3.0) node[above] {$y$};
+  \draw[dashed] (0,0.75) -- (5,0.75) node[right] {ground};
+  \draw[very thick, blue!65] (0.35,1.65) parabola bend (2.35,2.65) (4.75,0.75);
+  \fill (0.35,1.65) circle (2pt) node[left] {launch};
+  \draw[->, red!75, thick] (0.35,1.65) -- ++(0.95,0.65) node[above] {$v_0$};
+  \draw[->, red!75] (1.05,1.65) arc[start angle=0,end angle=34,radius=0.7];
+  \node[red!75] at (1.15,1.95) {$\theta$};
+\end{tikzpicture}
+```
+
+The initial vertical velocity is $$v_0\sin\theta$$ and the vertical acceleration is $$-g$$, so
+
+$$
+y(t)=h+v_0\sin\theta\,t-\frac12gt^2.
+$$
+
+Set $$y(t)=0$$ at landing. This gives $$0=h+v_0\sin\theta\,t-\dfrac12gt^2$$, so the answer is $$\boxed{\text{A}}$$.
+:::
 ::::
 
 ::::problem
-2. A particle moves along the $$x$$-axis with acceleration $$a(x)=\alpha x$$ and starts at $$x=x_0>0$$ from rest. Which expression gives its speed at $$x=2x_0$$?
+2. A projectile is launched from level ground. At the top of its path, its speed is half its launch speed. What was the launch angle?
 
-(A) $$\sqrt{\alpha x_0^2}$$
+(A) $$30^\circ$$
 
-(B) $$\sqrt{3\alpha x_0^2}$$
+(B) $$45^\circ$$
 
-(C) $$\sqrt{4\alpha x_0^2}$$
+(C) $$60^\circ$$
 
-(D) $$\sqrt{6\alpha x_0^2}$$
+(D) $$75^\circ$$
+
+
+:::solution
+At the top of the path, the vertical velocity is zero, but the horizontal velocity is unchanged.
+
+So the speed at the top is just
+
+$$
+v_{\text{top}}=v_0\cos\theta.
+$$
+
+The problem says this is half the launch speed:
+
+$$
+v_0\cos\theta=\frac{v_0}{2}.
+$$
+
+Cancel $$v_0$$ to get $$\cos\theta=1/2$$, so $$\theta=60^\circ$$. The answer is $$\boxed{\text{C}}$$.
+:::
 ::::
 
 ::::problem
-3. A projectile is launched from level ground and lands back at the same height a fixed horizontal distance $$R$$ away. The launch speed is increased while $$R$$ is kept the same. Compared with the original two possible launch angles, the new two possible launch angles
+3. Two projectiles are launched from the same point with the same speed at complementary angles $$\theta$$ and $$90^\circ-\theta$$, where $$0<\theta<45^\circ$$. On level ground, the projectile launched at the larger angle has
 
-(A) move closer to $$45^\circ$$
+(A) the same range and a longer flight time
 
-(B) move farther from $$45^\circ$$
+(B) the same range and a shorter flight time
 
-(C) both increase
+(C) a longer range and a longer flight time
 
-(D) both decrease
+(D) a shorter range and a shorter flight time
+
+
+:::solution
+For level-ground projectile motion, range depends on $$\sin 2\theta$$, while flight time depends on the vertical component $$v_0\sin\theta$$.
+
+Complementary launch angles have the same range because
+
+$$
+\sin(2(90^\circ-\theta))=\sin(180^\circ-2\theta)=\sin2\theta.
+$$
+
+The larger angle has a larger vertical component, so it stays in the air longer. Therefore the answer is $$\boxed{\text{A}}$$.
+:::
 ::::
 
 ::::problem
@@ -640,70 +700,39 @@ You can find more about relative motion on the [USAPhO section on mechanics](/no
 (C) $$6\sqrt{B/(3A)}$$
 
 (D) $$6A\sqrt{B/(3A)}$$
+
+
+:::solution
+Velocity is the derivative of position, and acceleration is the derivative of velocity. Start from
+
+$$
+x(t)=At^3-Bt.
+$$
+
+Then
+
+$$
+v(t)=\frac{dx}{dt}=3At^2-B.
+$$
+
+The instant requested is when $$v=0$$:
+
+$$
+3At^2-B=0 \quad\Rightarrow\quad t=\sqrt{\frac{B}{3A}}.
+$$
+
+Now evaluate the acceleration $$a(t)=dv/dt=6At$$ at that time:
+
+$$
+a=6A\sqrt{\frac{B}{3A}}.
+$$
+
+So the answer is $$\boxed{\text{D}}$$.
+:::
 ::::
 
 ::::problem
-5. A projectile is fired from height $$h$$ with speed $$v_0$$ at angle $$\theta$$ above horizontal. Air resistance is negligible. Which equation determines its time of flight if the ground is $$y=0$$?
-
-(A) $$0=h+v_0\sin\theta\,t-\dfrac{1}{2}gt^2$$
-
-(B) $$0=v_0\cos\theta\,t-\dfrac{1}{2}gt^2$$
-
-(C) $$h=v_0t-\dfrac{1}{2}gt^2$$
-
-(D) $$0=v_0\sin\theta-gt$$
-::::
-
-::::problem
-6. A boat always points directly across a river of width $$W$$ with speed $$v_b$$ relative to the water. The current is parallel to the banks and has speed $$u(y)=u_0y/W$$, where $$y$$ is distance across the river. Compared with a river whose current is everywhere $$u_0/2$$, the boat's downstream drift is
-
-(A) smaller
-
-(B) the same
-
-(C) larger
-
-(D) impossible to compare without $$v_b$$
-::::
-
-::::problem
-7. A particle moves in one dimension with acceleration $$a=-kv^2$$ when $$v>0$$, where $$k>0$$. Which statement must be true while the particle is moving in the positive direction?
-
-(A) The velocity-time graph is a straight line.
-
-(B) The velocity decreases, but the magnitude of the slope decreases as the particle slows.
-
-(C) The acceleration is constant and negative.
-
-(D) Equal decreases in speed take equal amounts of time.
-::::
-
-::::problem
-8. Two projectiles are launched from the same point with the same speed at complementary angles $$\theta$$ and $$90^\circ-\theta$$, where $$0<\theta<45^\circ$$. On level ground, the projectile launched at the larger angle has
-
-(A) the same range and a longer flight time
-
-(B) the same range and a shorter flight time
-
-(C) a longer range and a longer flight time
-
-(D) a shorter range and a shorter flight time
-::::
-
-::::problem
-9. A runner moves so that her speed depends on position according to $$v=v_0+kx$$, where $$v_0,k>0$$. Her acceleration as a function of position is
-
-(A) $$k$$
-
-(B) $$k(v_0+kx)$$
-
-(C) $$k/(v_0+kx)$$
-
-(D) $$v_0+kx$$
-::::
-
-::::problem
-10. A particle moves in the plane with $$x=bt$$ and $$y=ct^2-dt^3$$. At the instant when $$v_y=0$$, the acceleration vector points
+5. A particle moves in the plane with $$x=bt$$ and $$y=ct^2-dt^3$$. At the instant when $$v_y=0$$, the acceleration vector points
 
 (A) purely horizontal
 
@@ -712,30 +741,268 @@ You can find more about relative motion on the [USAPhO section on mechanics](/no
 (C) downward
 
 (D) tangent to the trajectory
+
+
+:::solution
+The horizontal motion is uniform because $$x=bt$$, so the direction of the acceleration comes entirely from the vertical coordinate.
+
+
+Differentiate $$y=ct^2-dt^3$$:
+
+$$
+v_y=2ct-3dt^2,
+\qquad
+a_y=2c-6dt.
+$$
+
+The nonzero instant when $$v_y=0$$ is
+
+$$
+2ct-3dt^2=0
+\quad\Rightarrow\quad
+ t=\frac{2c}{3d}.
+$$
+
+At that time,
+
+$$
+a_y=2c-6d\left(\frac{2c}{3d}\right)=-2c.
+$$
+
+Since $$c>0$$, this is downward. The answer is $$\boxed{\text{C}}$$.
+:::
 ::::
 
 ::::problem
-11. A car travels around a circular track of radius $$R$$ with speed $$v=bt$$. At what time are the radial and tangential acceleration components equal in magnitude?
+6. A runner moves so that her speed depends on position according to $$v=v_0+kx$$, where $$v_0,k>0$$. Her acceleration as a function of position is
 
-(A) $$t=\sqrt{R/b}$$
+(A) $$k$$
 
-(B) $$t=R/b$$
+(B) $$k(v_0+kx)$$
 
-(C) $$t=b/R$$
+(C) $$k/(v_0+kx)$$
 
-(D) They are never equal.
+(D) $$v_0+kx$$
+
+
+:::solution
+Because the speed is given as a function of position, use the chain-rule form
+
+$$
+a=\frac{dv}{dt}=\frac{dv}{dx}\frac{dx}{dt}=v\frac{dv}{dx}.
+$$
+
+Here
+
+$$
+v=v_0+kx,
+\qquad
+\frac{dv}{dx}=k.
+$$
+
+Therefore
+
+$$
+a=(v_0+kx)k=k(v_0+kx).
+$$
+
+The answer is $$\boxed{\text{B}}$$.
+
+The units also check: $$k$$ has units of inverse time because $$kx$$ is a speed, so $$k(v_0+kx)$$ has units of acceleration.
+:::
 ::::
 
 ::::problem
-12. A projectile is launched from level ground. At the top of its path, its speed is half its launch speed. What was the launch angle?
+7. A particle has $$v(t)=v_0-\beta t^2$$ with $$v_0,\beta>0$$. Which expression gives the distance traveled from $$t=0$$ until the particle first stops?
 
-(A) $$30^\circ$$
+(A) $$\int_0^{\sqrt{v_0/\beta}}(v_0-\beta t^2)\,dt$$
 
-(B) $$45^\circ$$
+(B) $$\int_0^{v_0/\beta}(v_0-\beta t^2)\,dt$$
 
-(C) $$60^\circ$$
+(C) $$\int_0^{\sqrt{v_0/\beta}}\lvert -2\beta t\rvert\,dt$$
 
-(D) $$75^\circ$$
+(D) $$v_0\sqrt{v_0/\beta}$$
+
+
+:::solution
+Distance is the integral of speed. Since the particle moves in the positive direction until it first stops, velocity and speed are the same on that interval.
+
+
+Find the stopping time:
+
+$$
+v_0-\beta t^2=0
+\quad\Rightarrow\quad
+ t=\sqrt{\frac{v_0}{\beta}}.
+$$
+
+So the distance traveled is
+
+$$
+\int_0^{\sqrt{v_0/\beta}}(v_0-\beta t^2)\,dt.
+$$
+
+The answer is $$\boxed{\text{A}}$$.
+:::
+::::
+
+::::problem
+8. A particle moves along the $$x$$-axis with velocity $$v(t)=v_0-\alpha t^2$$, where $$v_0,\alpha>0$$. At what time is the particle's displacement from its starting point greatest?
+
+(A) $$t=\sqrt{v_0/\alpha}$$
+
+(B) $$t=v_0/\alpha$$
+
+(C) $$t=\sqrt{v_0/(3\alpha)}$$
+
+(D) $$t=2v_0/\alpha$$
+
+
+:::solution
+Displacement from the start increases while $$v>0$$ and decreases once $$v<0$$. Therefore the greatest displacement occurs exactly when the velocity first reaches zero.
+
+
+Set
+
+$$
+v_0-\alpha t^2=0.
+$$
+
+This gives
+
+$$
+t=\sqrt{\frac{v_0}{\alpha}}.
+$$
+
+So the answer is $$\boxed{\text{A}}$$.
+:::
+::::
+
+::::problem
+9. A boat always points directly across a river of width $$W$$ with speed $$v_b$$ relative to the water. The current is parallel to the banks and has speed $$u(y)=u_0y/W$$, where $$y$$ is distance across the river. Compared with a river whose current is everywhere $$u_0/2$$, the boat's downstream drift is
+
+(A) smaller
+
+(B) the same
+
+(C) larger
+
+(D) impossible to compare without $$v_b$$
+
+
+:::solution
+The boat's across-river speed is constant, so its position across the river is $$y=v_bt$$. The downstream drift is the integral of the current speed over the crossing time.
+
+The crossing time is $$W/v_b$$, so
+
+$$
+\Delta x=\int_0^{W/v_b} u(y(t))\,dt
+=\int_0^{W/v_b}\frac{u_0v_bt}{W}\,dt
+=\frac{u_0W}{2v_b}.
+$$
+
+A uniform current $$u_0/2$$ for the same time gives
+
+$$
+\Delta x=\frac{u_0}{2}\frac{W}{v_b}=\frac{u_0W}{2v_b}.
+$$
+
+The drifts are the same, so the answer is $$\boxed{\text{B}}$$.
+:::
+::::
+
+::::problem
+10. A projectile is launched from level ground and lands back at the same height a fixed horizontal distance $$R$$ away. The launch speed is increased while $$R$$ is kept the same. Compared with the original two possible launch angles, the new two possible launch angles
+
+(A) move closer to $$45^\circ$$
+
+(B) move farther from $$45^\circ$$
+
+(C) both increase
+
+(D) both decrease
+
+
+:::solution
+For level-ground projectile range,
+
+$$
+R=\frac{v_0^2\sin2\theta}{g}.
+$$
+
+If $$R$$ is fixed while $$v_0$$ increases, then $$\sin2\theta$$ must decrease.
+
+The two possible angles are complementary, one below $$45^\circ$$ and one above $$45^\circ$$. Decreasing $$\sin2\theta$$ pushes them farther away from $$45^\circ$$. Thus the answer is $$\boxed{\text{B}}$$.
+:::
+::::
+
+::::problem
+11. A particle moves along the $$x$$-axis with acceleration $$a(x)=\alpha x$$ and starts at $$x=x_0>0$$ from rest. Which expression gives its speed at $$x=2x_0$$?
+
+(A) $$\sqrt{\alpha x_0^2}$$
+
+(B) $$\sqrt{3\alpha x_0^2}$$
+
+(C) $$\sqrt{4\alpha x_0^2}$$
+
+(D) $$\sqrt{6\alpha x_0^2}$$
+
+
+:::solution
+Since acceleration is given as a function of position, use
+
+$$
+a=v\frac{dv}{dx}.
+$$
+
+Then
+
+$$
+v\,dv=\alpha x\,dx.
+$$
+
+Integrate from $$x=x_0$$, $$v=0$$ to $$x=2x_0$$, $$v=v_f$$:
+
+$$
+\int_0^{v_f}v\,dv=\int_{x_0}^{2x_0}\alpha x\,dx.
+$$
+
+This gives
+
+$$
+\frac12v_f^2=\frac{\alpha}{2}(4x_0^2-x_0^2)=\frac{3\alpha x_0^2}{2}.
+$$
+
+So $$v_f=\sqrt{3\alpha x_0^2}$$, and the answer is $$\boxed{\text{B}}$$.
+
+This also makes physical sense: because $$a=\alpha x$$ grows as the particle moves right, the speed gain from $$x_0$$ to $$2x_0$$ is larger than it would be for constant acceleration equal to $$\alpha x_0$$.
+:::
+::::
+
+::::problem
+12. A particle moves in one dimension with acceleration $$a=-kv^2$$ when $$v>0$$, where $$k>0$$. Which statement must be true while the particle is moving in the positive direction?
+
+(A) The velocity-time graph is a straight line.
+
+(B) The velocity decreases, but the magnitude of the slope decreases as the particle slows.
+
+(C) The acceleration is constant and negative.
+
+(D) Equal decreases in speed take equal amounts of time.
+
+
+:::solution
+The acceleration is negative because the particle is moving in the positive direction but $$a=-kv^2$$.
+
+
+The slope of a velocity-time graph is acceleration. Since
+
+$$
+\lvert a\rvert=kv^2,
+$$
+
+the magnitude of the slope is large when the particle is fast and smaller after it slows down. Therefore the velocity decreases, but the slope becomes less steep in magnitude. The answer is $$\boxed{\text{B}}$$.
+:::
 ::::
 
 ### FRQ
@@ -750,6 +1017,73 @@ You can find more about relative motion on the [USAPhO section on mechanics](/no
    $$(C)$$ If the bead turns around before reaching $$x=\beta/\alpha$$, determine the turning point.
 
    $$(D)$$ Explain how the result changes if the bead initially moves in the negative direction.
+
+
+:::solution
+$$(A)$$ Since acceleration is given as a function of position, use the chain-rule version of acceleration:
+
+$$
+a=\frac{dv}{dt}=\frac{dv}{dx}\frac{dx}{dt}=v\frac{dv}{dx}.
+$$
+
+
+Thus
+
+$$
+v\frac{dv}{dx}=\alpha x-\beta.
+$$
+
+Integrating from $$x=0,\,v=v_0$$ to a general position $$x$$ gives
+
+$$
+\int_{v_0}^{v}v\,dv=\int_0^x(\alpha x-\beta)\,dx,
+$$
+
+so
+
+$$
+\frac12(v^2-v_0^2)=\frac12\alpha x^2-\beta x.
+$$
+
+Therefore
+
+$$
+\boxed{v^2=v_0^2+\,\alpha x^2-2\beta x}.
+$$
+
+$$(B)$$ To reach $$x=\beta/\alpha$$, the expression for $$v^2$$ must still be nonnegative there:
+
+$$
+v^2=v_0^2+\alpha\left(\frac{\beta}{\alpha}\right)^2-2\beta\left(\frac{\beta}{\alpha}\right)
+=v_0^2-\frac{\beta^2}{\alpha}.
+$$
+
+So the condition is
+
+$$
+\boxed{v_0\ge \frac{\beta}{\sqrt{\alpha}}}.
+$$
+
+$$(C)$$ A turning point occurs when the bead's speed reaches zero before that location:
+
+$$
+0=v_0^2+\alpha x^2-2\beta x.
+$$
+
+Using the quadratic formula,
+
+$$
+x=\frac{\beta\pm\sqrt{\beta^2-\alpha v_0^2}}{\alpha}.
+$$
+
+The first point encountered while moving right is the smaller root:
+
+$$
+\boxed{x=\frac{\beta-\sqrt{\beta^2-\alpha v_0^2}}{\alpha}}.
+$$
+
+$$(D)$$ The equation for $$v^2(x)$$ is unchanged because it came from the same force field and energy-like integral. What changes is the direction of motion. If the bead initially moves negative, it heads toward $$x<0$$, where $$\alpha x-\beta$$ is still negative, so the acceleration is also negative and the bead speeds up to the left rather than approaching $$x=\beta/\alpha$$.
+:::
 ::::
 
 ::::frq{id=ap-physics-c-mechanics-kinematics-2}
@@ -762,6 +1096,37 @@ You can find more about relative motion on the [USAPhO section on mechanics](/no
    $$(C)$$ Derive the horizontal distance from the base of the cliff where the projectile lands.
 
    $$(D)$$ Determine whether increasing $$a_w$$ changes the time of flight, and justify your answer.
+
+
+:::solution
+$$(A)$$ Horizontal and vertical accelerations are independent. The wind changes only the horizontal acceleration, while gravity changes only the vertical acceleration.
+
+Thus
+
+$$
+\boxed{x(t)=v_0\cos\theta\,t+\frac12a_wt^2},
+\qquad
+\boxed{y(t)=H+v_0\sin\theta\,t-\frac12gt^2}.
+$$
+
+$$(B)$$ The projectile reaches the ground when its vertical position is zero, so the time of flight is determined by
+
+$$
+\boxed{0=H+v_0\sin\theta\,t-\frac12gt^2}.
+$$
+
+Use the positive root because time after launch must be positive.
+
+$$(C)$$ Once the positive root $$t_f$$ is found from the vertical equation, substitute it into the horizontal equation:
+
+$$
+\boxed{x_f=v_0\cos\theta\,t_f+\frac12a_wt_f^2}.
+$$
+
+This is the horizontal distance from the base of the cliff because the launch point was chosen directly above the base.
+
+$$(D)$$ Increasing $$a_w$$ does not change the time of flight because $$a_w$$ does not appear in the vertical equation. It does increase the horizontal distance, since the horizontal velocity grows during the flight.
+:::
 ::::
 
 ::::frq{id=ap-physics-c-mechanics-kinematics-3}
@@ -774,4 +1139,57 @@ You can find more about relative motion on the [USAPhO section on mechanics](/no
    $$(C)$$ Find the constant acceleration during the second interval.
 
    $$(D)$$ Sketch the velocity-time graph, labeling intercepts and areas with signs.
+
+
+:::solution
+$$(A)$$ Displacement is the signed area under the velocity-time graph.
+
+
+So
+
+$$
+\Delta x_1=\int_0^T v_0\left(1-\frac{t}{T}\right)^2dt.
+$$
+
+Let $$u=1-t/T$$, or expand the square; either way,
+
+$$
+\Delta x_1=\boxed{\frac{v_0T}{3}}.
+$$
+
+$$(B)$$ At $$t=T$$,
+
+$$
+v(T)=v_0(1-1)^2=\boxed{0}.
+$$
+
+$$(C)$$ The particle must return to its starting point by $$t=2T$$, so the second interval must have displacement $$-v_0T/3$$. It starts that interval from rest and has constant acceleration for time $$T$$:
+
+$$
+\Delta x_2=0\cdot T+\frac12aT^2=-\frac{v_0T}{3}.
+$$
+
+Solving,
+
+$$
+\boxed{a=-\frac{2v_0}{3T}}.
+$$
+
+$$(D)$$ From $$0$$ to $$T$$, the graph is a positive decreasing parabola with area $$+v_0T/3$$. From $$T$$ to $$2T$$, the graph is a straight line below the axis, ending at $$v=-2v_0/3$$, and its triangular area is $$-v_0T/3$$. The positive and negative areas cancel, which matches the return to the starting position.
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,patterns}
+\begin{tikzpicture}[>=Stealth, font=\small, x=2.0cm, y=2.0cm]
+  \draw[->] (0,0) -- (2.25,0) node[right] {$t$};
+  \draw[->] (0,-0.9) -- (0,1.25) node[above] {$v$};
+  \draw[very thick, blue!70, domain=0:1, samples=60] plot (\x,{(1-\x)^2});
+  \draw[very thick, blue!70] (1,0) -- (2,-0.667);
+  \draw[dashed] (1,-0.8) -- (1,1.1) node[above] {$T$};
+  \draw[dashed] (2,-0.667) -- (2,0) node[above right] {$2T$};
+  \node[left] at (0,1) {$v_0$};
+  \node[left] at (0,-0.667) {$-2v_0/3$};
+\end{tikzpicture}
+```
+:::
 ::::

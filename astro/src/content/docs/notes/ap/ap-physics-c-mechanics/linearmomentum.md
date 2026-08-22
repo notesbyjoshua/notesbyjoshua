@@ -1066,19 +1066,7 @@ $$
 ### Multiple Choice
 
 ::::problem
-1. A ball of mass $$0.20\ \text{kg}$$ hits a wall moving to the right at $$15\ \text{m/s}$$ and rebounds to the left at $$10\ \text{m/s}$$. If the contact time is $$0.050\ \text{s}$$, the magnitude of the average force exerted by the wall is
-
-(A) $$20\ \text{N}$$
-
-(B) $$60\ \text{N}$$
-
-(C) $$100\ \text{N}$$
-
-(D) $$250\ \text{N}$$
-::::
-
-::::problem
-2. A net force on a particle varies as $$F(t)=F_0(1-t/T)$$ from $$t=0$$ to $$t=T$$. The impulse is
+1. A net force on a particle varies as $$F(t)=F_0(1-t/T)$$ from $$t=0$$ to $$t=T$$. The impulse is
 
 (A) $$F_0T$$
 
@@ -1087,10 +1075,79 @@ $$
 (C) $$F_0/T$$
 
 (D) zero
+
+
+:::solution
+Impulse is the area under the force-time graph.
+
+
+The graph is a triangle with base $$T$$ and height $$F_0$$, so
+
+$$
+J=\frac12(F_0)(T)=\frac{F_0T}{2}.
+$$
+
+Equivalently, integrating $$F_0(1-t/T)$$ gives the same result. The answer is $$\boxed{\text{B}}$$.
+:::
 ::::
 
 ::::problem
-3. A projectile explodes at the top of its path into two fragments of masses $$m$$ and $$3m$$. If the smaller fragment stops immediately after the explosion, the speed of the larger fragment immediately after is
+2. A ball of mass $$0.20\ \text{kg}$$ hits a wall moving to the right at $$15\ \text{m/s}$$ and rebounds to the left at $$10\ \text{m/s}$$. If the contact time is $$0.050\ \text{s}$$, the magnitude of the average force exerted by the wall is
+
+(A) $$20\ \text{N}$$
+
+(B) $$60\ \text{N}$$
+
+(C) $$100\ \text{N}$$
+
+(D) $$250\ \text{N}$$
+
+
+:::solution
+Take right as positive. The ball changes from $$+15\ \text{m/s}$$ to $$-10\ \text{m/s}$$, so its momentum change is
+
+$$
+\Delta p=m(v_f-v_i)=0.20(-10-15)=-5.0\ \text{kg}\cdot\text{m/s}.
+$$
+
+The wall's average force magnitude is impulse divided by contact time:
+
+$$
+F_{\text{avg}}=\frac{\lvert\Delta p\rvert}{\Delta t}=\frac{5.0}{0.050}=100\ \text{N}.
+$$
+
+The answer is $$\boxed{\text{C}}$$.
+:::
+::::
+
+::::problem
+3. A system of particles has total mass $$M$$. Which equation remains true even if the particles collide inelastically with each other?
+
+(A) $$\sum\vec F_{\text{ext}}=M\vec a_{\text{cm}}$$
+
+(B) $$\sum\vec F_{\text{int}}=M\vec a_{\text{cm}}$$
+
+(C) $$K_i=K_f$$
+
+(D) $$\vec r_{\text{cm}}=\vec 0$$
+
+
+:::solution
+Internal forces can rearrange energy inside the system, but they cancel in pairs when finding the motion of the center of mass.
+
+
+For any system of total mass $$M$$,
+
+$$
+\sum \vec F_{\text{ext}}=M\vec a_{\text{cm}}.
+$$
+
+This remains true for elastic, inelastic, and messy internal collisions. The answer is $$\boxed{\text{A}}$$.
+:::
+::::
+
+::::problem
+4. A projectile explodes at the top of its path into two fragments of masses $$m$$ and $$3m$$. If the smaller fragment stops immediately after the explosion, the speed of the larger fragment immediately after is
 
 (A) $$v/3$$
 
@@ -1099,18 +1156,25 @@ $$
 (C) $$4v/3$$
 
 (D) $$3v$$
-::::
 
-::::problem
-4. A mass $$m$$ moving right with speed $$v$$ collides elastically in one dimension with an initially stationary mass $$3m$$. After the collision, the velocity of the mass $$m$$ is
 
-(A) $$-v/2$$
+:::solution
+At the top of the projectile's path, the velocity is horizontal with speed $$v$$. During the explosion, external impulse is negligible, so horizontal momentum is conserved.
 
-(B) $$-v/3$$
+Before the explosion,
 
-(C) $$v/3$$
+$$
+p_i=(4m)v.
+$$
 
-(D) $$v/2$$
+Afterward, the smaller fragment has zero momentum, so
+
+$$
+3mV=4mv.
+$$
+
+Thus $$V=4v/3$$, and the answer is $$\boxed{\text{C}}$$.
+:::
 ::::
 
 ::::problem
@@ -1123,34 +1187,30 @@ $$
 (C) equal to the lighter skater's kinetic energy
 
 (D) three times the lighter skater's kinetic energy
+
+
+:::solution
+The skaters start from rest, so total momentum is initially zero. With no external horizontal force, their final momenta must be equal in magnitude and opposite in direction.
+
+
+For a given momentum magnitude, we can modify kinetic energy:
+
+$$
+K=\frac{1}{2} m v^2=\frac{1}{2} \frac{{(mv)}^2}{m}=\frac{p^2}{2m}.
+$$
+
+The heavier skater has mass $$3m$$, so their kinetic energy is
+
+$$
+K_{\text{heavy}}=\frac{p^2}{2(3m)}=\frac13\frac{p^2}{2m}.
+$$
+
+Thus the heavier skater has one-third the lighter skater's kinetic energy. The answer is $$\boxed{\text{B}}$$.
+:::
 ::::
 
 ::::problem
-6. A cart of initial mass $$M$$ and speed $$v_0$$ collects rain falling vertically at rate $$\lambda$$. Neglect horizontal external forces. Its speed after time $$t$$ is
-
-(A) $$v_0$$
-
-(B) $$\dfrac{Mv_0}{M+\lambda t}$$
-
-(C) $$v_0+\lambda t/M$$
-
-(D) $$\dfrac{(M+\lambda t)v_0}{M}$$
-::::
-
-::::problem
-7. A rocket expels fuel backward at speed $$u$$ relative to the rocket. With no external force, the rocket's speed change as its mass decreases from $$M_i$$ to $$M_f$$ is
-
-(A) $$u\ln(M_i/M_f)$$
-
-(B) $$u\ln(M_f/M_i)$$
-
-(C) $$u(M_i-M_f)$$
-
-(D) $$u(M_f/M_i)$$
-::::
-
-::::problem
-8. A force on a mass $$m$$ is $$F(t)=F_0t/T$$ from $$t=0$$ to $$T$$ and then $$F(t)=F_0(2-t/T)$$ from $$t=T$$ to $$2T$$. If the mass starts from rest, its speed at $$t=2T$$ is
+6. A force on a mass $$m$$ is $$F(t)=F_0t/T$$ from $$t=0$$ to $$T$$ and then $$F(t)=F_0(2-t/T)$$ from $$t=T$$ to $$2T$$. If the mass starts from rest, its speed at $$t=2T$$ is
 
 (A) $$F_0T/m$$
 
@@ -1159,10 +1219,30 @@ $$
 (C) $$2F_0T/m$$
 
 (D) $$\sqrt{F_0T/m}$$
+
+
+:::solution
+Impulse equals the area under the force-time graph. Here the force rises linearly to $$F_0$$ and then falls linearly back to zero.
+
+
+The area is a triangle with base $$2T$$ and height $$F_0$$:
+
+$$
+J=\frac12(2T)(F_0)=F_0T.
+$$
+
+Starting from rest, $$J=\Delta p=mv$$, so
+
+$$
+v=\frac{F_0T}{m}.
+$$
+
+The answer is $$\boxed{\text{A}}$$.
+:::
 ::::
 
 ::::problem
-9. A stationary object explodes into three equal masses. Two pieces leave at speed $$v$$ with angle $$120^\circ$$ between their velocities. The third piece leaves with speed
+7. A stationary object explodes into three equal masses. Two pieces leave at speed $$v$$ with angle $$120^\circ$$ between their velocities. The third piece leaves with speed
 
 (A) $$0$$
 
@@ -1171,10 +1251,53 @@ $$
 (C) $$\sqrt{3}v$$
 
 (D) $$2v$$
+
+
+:::solution
+The object was initially at rest, so the final vector sum of the three momenta must be zero.
+
+
+The first two pieces have equal momentum magnitude $$mv$$. The magnitude of their vector sum is
+
+$$
+\sqrt{(mv)^2+(mv)^2+2(mv)^2\cos120^\circ}=mv.
+$$
+
+The third fragment must have momentum $$mv$$ in the opposite direction. Since its mass is also $$m$$, its speed is $$v$$. The answer is $$\boxed{\text{B}}$$.
+:::
 ::::
 
 ::::problem
-10. A mass $$m$$ with speed $$5\ \text{m/s}$$ elastically collides head-on with a mass $$3m$$ initially moving toward it at $$1\ \text{m/s}$$. The final velocity of the mass $$m$$ is
+8. A mass $$m$$ moving right with speed $$v$$ collides elastically in one dimension with an initially stationary mass $$3m$$. After the collision, the velocity of the mass $$m$$ is
+
+(A) $$-v/2$$
+
+(B) $$-v/3$$
+
+(C) $$v/3$$
+
+(D) $$v/2$$
+
+
+:::solution
+For a one-dimensional elastic collision with target initially at rest,
+
+$$
+v_{1f}=\frac{m_1-m_2}{m_1+m_2}v_{1i}.
+$$
+
+Here $$m_1=m$$ and $$m_2=3m$$, so
+
+$$
+v_{1f}=\frac{m-3m}{m+3m}v=-\frac{v}{2}.
+$$
+
+The negative sign means the smaller mass rebounds. The answer is $$\boxed{\text{A}}$$.
+:::
+::::
+
+::::problem
+9. A mass $$m$$ with speed $$5\ \text{m/s}$$ elastically collides head-on with a mass $$3m$$ initially moving toward it at $$1\ \text{m/s}$$. The final velocity of the mass $$m$$ is
 
 (A) $$-4\ \text{m/s}$$
 
@@ -1183,22 +1306,29 @@ $$
 (C) $$1\ \text{m/s}$$
 
 (D) $$5\ \text{m/s}$$
+
+
+:::solution
+Take right as positive. The incoming velocities are $$v_{1i}=+5\ \text{m/s}$$ for mass $$m$$ and $$v_{2i}=-1\ \text{m/s}$$ for mass $$3m$$.
+
+For a one-dimensional elastic collision,
+
+$$
+v_{1f}=\frac{m_1-m_2}{m_1+m_2}v_{1i}+\frac{2m_2}{m_1+m_2}v_{2i}.
+$$
+
+Substitute $$m_1=m$$ and $$m_2=3m$$:
+
+$$
+v_{1f}=\frac{m-3m}{4m}(5)+\frac{2(3m)}{4m}(-1)=-\frac52-\frac32=-4\ \text{m/s}.
+$$
+
+The answer is $$\boxed{\text{A}}$$.
+:::
 ::::
 
 ::::problem
-11. A system of particles has total mass $$M$$. Which equation remains true even if the particles collide inelastically with each other?
-
-(A) $$\sum\vec F_{\text{ext}}=M\vec a_{\text{cm}}$$
-
-(B) $$\sum\vec F_{\text{int}}=M\vec a_{\text{cm}}$$
-
-(C) $$K_i=K_f$$
-
-(D) $$\vec r_{\text{cm}}=\vec 0$$
-::::
-
-::::problem
-12. A cart moves to the right at $$4\ \text{m/s}$$ while sand leaks out vertically downward at rate $$2\ \text{kg/s}$$ relative to the ground. Ignoring external horizontal forces, the horizontal acceleration of the remaining cart-sand system is
+10. A cart moves to the right at $$4\ \text{m/s}$$ while sand leaks out vertically downward at rate $$2\ \text{kg/s}$$ relative to the ground. Ignoring external horizontal forces, the horizontal acceleration of the remaining cart-sand system is
 
 (A) zero
 
@@ -1207,6 +1337,82 @@ $$
 (C) $$2\ \text{m/s}^2$$ to the left
 
 (D) impossible to determine without the cart mass
+
+
+:::solution
+The key is the direction of the relative motion of the leaking sand. It leaves vertically downward, so at the instant it separates it still has the same horizontal velocity as the cart.
+
+Because the leaving mass carries away exactly its share of horizontal momentum, the remaining cart-sand system is not pushed horizontally. With no external horizontal force and no horizontal relative exhaust speed,
+
+$$
+a_x=0.
+$$
+
+The answer is $$\boxed{\text{A}}$$.
+:::
+::::
+
+::::problem
+11. A cart of initial mass $$M$$ and speed $$v_0$$ collects rain falling vertically at rate $$\lambda$$. Neglect horizontal external forces. Its speed after time $$t$$ is
+
+(A) $$v_0$$
+
+(B) $$\dfrac{Mv_0}{M+\lambda t}$$
+
+(C) $$v_0+\lambda t/M$$
+
+(D) $$\dfrac{(M+\lambda t)v_0}{M}$$
+
+
+:::solution
+The rain falls vertically, so it brings in mass with zero horizontal momentum before it joins the cart. There is no external horizontal force, so total horizontal momentum is conserved.
+
+Initially the cart's horizontal momentum is $$Mv_0$$. After time $$t$$, the combined moving mass is $$M+\lambda t$$, so
+
+$$
+Mv_0=(M+\lambda t)v.
+$$
+
+Solving gives
+
+$$
+v=\frac{Mv_0}{M+\lambda t}.
+$$
+
+The answer is $$\boxed{\text{B}}$$.
+:::
+::::
+
+::::problem
+12. A rocket expels fuel backward at speed $$u$$ relative to the rocket. With no external force, the rocket's speed change as its mass decreases from $$M_i$$ to $$M_f$$ is
+
+(A) $$u\ln(M_i/M_f)$$
+
+(B) $$u\ln(M_f/M_i)$$
+
+(C) $$u(M_i-M_f)$$
+
+(D) $$u(M_f/M_i)$$
+
+
+:::solution
+For a rocket, the fuel is expelled backward relative to the rocket, so the rocket gains forward speed as its mass decreases.
+
+With no external force, the differential rocket equation is
+
+$$
+dv=-u\frac{dm}{m},
+$$
+
+where $$dm<0$$ for the rocket because its mass is decreasing. Integrate from $$M_i$$ to $$M_f$$:
+
+$$
+\Delta v=-u\int_{M_i}^{M_f}\frac{dm}{m}
+=u\ln\left(\frac{M_i}{M_f}\right).
+$$
+
+The answer is $$\boxed{\text{A}}$$.
+:::
 ::::
 
 ### FRQ
@@ -1221,6 +1427,55 @@ $$
    $$(C)$$ Determine the rate at which mechanical energy is lost.
 
    $$(D)$$ Explain why horizontal momentum is conserved even though kinetic energy is not.
+
+
+:::solution
+$$(A)$$ The falling sand has no horizontal velocity before it lands in the cart. With no external horizontal force on the cart-plus-collected-sand system, horizontal momentum is conserved.
+
+At time $$t$$, the moving mass is $$M+\lambda t$$, so
+
+$$
+Mv_0=(M+\lambda t)v(t).
+$$
+
+Therefore
+
+$$
+\boxed{v(t)=\frac{Mv_0}{M+\lambda t}}.
+$$
+
+$$(B)$$ Newly collected sand must be accelerated horizontally from zero to the cart speed $$v(t)$$. The rate at which horizontal momentum is given to the incoming sand is
+
+$$
+F=\frac{dp}{dt}=\lambda v(t).
+$$
+
+Thus
+
+$$
+\boxed{F=\frac{\lambda Mv_0}{M+\lambda t}}.
+$$
+
+This is the force of the cart on the newly collected sand; the sand exerts an equal and opposite backward force on the cart.
+
+$$(C)$$ The kinetic energy of the moving cart-plus-sand is
+
+$$
+K=\frac12(M+\lambda t)v^2
+=\frac12(M+\lambda t)\left(\frac{Mv_0}{M+\lambda t}\right)^2
+=\frac12\frac{M^2v_0^2}{M+\lambda t}.
+$$
+
+Differentiate:
+
+$$
+\boxed{\frac{dK}{dt}=-\frac{\lambda M^2v_0^2}{2(M+\lambda t)^2}}.
+$$
+
+The negative sign means mechanical energy is being lost.
+
+$$(D)$$ Momentum is conserved because there is no external horizontal impulse. Kinetic energy is not conserved because each bit of sand sticks to the cart in an inelastic process; some mechanical energy becomes thermal/internal energy during the sticking.
+:::
 ::::
 
 ::::frq{id=ap-physics-c-mechanics-linearmomentum-2}
@@ -1233,6 +1488,53 @@ $$
    $$(C)$$ Find the fraction of the initial kinetic energy lost in the collision.
 
    $$(D)$$ Describe how the answer changes if the collision is elastic instead.
+
+
+:::solution
+$$(A)$$ During the short collision, the spring's impulse is negligible, so use momentum conservation for the two blocks.
+
+$$
+mv_0=(m+2m)v_f=3mv_f.
+$$
+
+Thus
+
+$$
+\boxed{v_f=\frac{v_0}{3}}.
+$$
+
+$$(B)$$ After the collision, the combined mass compresses the spring. Now mechanical energy is conserved because the track is frictionless and the spring is conservative:
+
+$$
+\frac12(3m)\left(\frac{v_0}{3}\right)^2=\frac12kx^2.
+$$
+
+Solving,
+
+$$
+\boxed{x=v_0\sqrt{\frac{m}{3k}}}.
+$$
+
+$$(C)$$ Before collision,
+
+$$
+K_i=\frac12mv_0^2.
+$$
+
+Immediately after collision,
+
+$$
+K_f=\frac12(3m)\left(\frac{v_0}{3}\right)^2=\frac16mv_0^2.
+$$
+
+The lost fraction is
+
+$$
+\frac{K_i-K_f}{K_i}=\frac{\frac12-\frac16}{\frac12}=\boxed{\frac23}.
+$$
+
+$$(D)$$ If the collision is elastic, the blocks do not stick and kinetic energy is conserved during the collision. The spring compression would be found from the kinetic energy of the $$2m$$ block after the collision, not from a combined $$3m$$ mass.
+:::
 ::::
 
 ::::frq{id=ap-physics-c-mechanics-linearmomentum-3}
@@ -1245,4 +1547,62 @@ $$
    $$(C)$$ Compare the total kinetic energy before and after the explosion.
 
    $$(D)$$ Explain what supplied the change in kinetic energy.
+
+
+:::solution
+$$(A)$$ Use conservation of momentum in components. Initially the projectile has horizontal momentum $$3mv_0$$ and zero vertical momentum.
+
+For the $$x$$ direction,
+
+$$
+3mv_0=0+m(2v_0\cos30^\circ)+mv_{3x}.
+$$
+
+Since $$2v_0\cos30^\circ=\sqrt3v_0$$,
+
+$$
+\boxed{v_{3x}=(3-\sqrt3)v_0}.
+$$
+
+For the $$y$$ direction,
+
+$$
+0=mv_0+m(-2v_0\sin30^\circ)+mv_{3y}.
+$$
+
+Because $$2v_0\sin30^\circ=v_0$$, the first two vertical momenta cancel, so
+
+$$
+\boxed{v_{3y}=0}.
+$$
+
+$$(B)$$ Since the third fragment has zero vertical component, its speed is just the magnitude of its horizontal component:
+
+$$
+\boxed{v_3=(3-\sqrt3)v_0}.
+$$
+
+$$(C)$$ Initially,
+
+$$
+K_i=\frac12(3m)v_0^2=\frac32mv_0^2.
+$$
+
+After the explosion,
+
+$$
+K_f=\frac12m(v_0^2)+\frac12m(2v_0)^2+\frac12m\left((3-\sqrt3)v_0\right)^2.
+$$
+
+So
+
+$$
+K_f=\frac12mv_0^2\left[1+4+(3-\sqrt3)^2\right]
+=\frac12mv_0^2(17-6\sqrt3).
+$$
+
+This is greater than $$K_i$$, so kinetic energy increased.
+
+$$(D)$$ The extra kinetic energy comes from internal energy released by the explosion. Momentum is still conserved because the explosion forces are internal, but kinetic energy can increase when stored internal energy is converted into motion.
+:::
 ::::
