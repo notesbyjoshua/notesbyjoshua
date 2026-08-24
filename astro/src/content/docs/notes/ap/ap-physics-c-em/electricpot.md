@@ -5,8 +5,6 @@ sidebar:
   order: 2
 ---
 
----
-
 :::variables
 - $$V$$ = electric potential, or voltage (Units: volts, $$\text{V} = \text{J/C}$$)
 - $$U$$ = electric potential energy (Units: joules, $$\text{J}$$)
@@ -21,6 +19,8 @@ sidebar:
 :::
 
 ---
+
+Michael's a bum
 
 ## Electric potential energy
 
