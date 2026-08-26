@@ -40,4 +40,4 @@ These notes will roughly follow a AP curriculum but might have some extra stuff 
 
 - ### [AP Statistics hub](/notes/ap/statistics/)
 
-- ### AP US History 🚧
+- ### [AP United States History hub](/notes/ap/apush/)

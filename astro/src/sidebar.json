@@ -304,6 +304,55 @@
             "link": "/notes/ap/stats/reganalysis/"
           }
         ]
+      },
+      {
+        "label": "AP United States History",
+        "items": [
+          {
+            "label": "AP United States History Home",
+            "link": "/notes/ap/apush/"
+          },
+          {
+            "label": "Unit 1: Period 1: 1491–1607",
+            "link": "/notes/ap/apush/period1/"
+          },
+          {
+            "label": "Unit 2: Period 2: 1607–1754",
+            "link": "/notes/ap/apush/period2/"
+          },
+          {
+            "label": "Unit 3: Period 3: 1754–1800",
+            "link": "/notes/ap/apush/period3/"
+          },
+          {
+            "label": "Unit 4: Period 4: 1800–1848",
+            "link": "/notes/ap/apush/period4/"
+          },
+          {
+            "label": "Unit 5: Period 5: 1844–1877",
+            "link": "/notes/ap/apush/period5/"
+          },
+          {
+            "label": "Unit 6: Period 6: 1865–1898",
+            "link": "/notes/ap/apush/period6/"
+          },
+          {
+            "label": "Unit 7: Period 7: 1890–1945",
+            "link": "/notes/ap/apush/period7/"
+          },
+          {
+            "label": "Unit 8: Period 8: 1945–1980",
+            "link": "/notes/ap/apush/period8/"
+          },
+          {
+            "label": "Unit 9: Period 9: 1980–Present",
+            "link": "/notes/ap/apush/period9/"
+          },
+          {
+            "label": "AP U.S. History Essay Writing Tips",
+            "link": "/notes/ap/apush/essay-writing-tips/"
+          }
+        ]
       }
     ]
   },
