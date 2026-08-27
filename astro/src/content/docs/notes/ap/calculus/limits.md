@@ -300,10 +300,10 @@ $$
 \lim_{x \to 0} \frac{\tan x}{x} = 1.
 $$
 
-They are frequently used after rewriting a trig expression into a form that matches one of these limits. It is important to note that $$\cos x$$ is not a part of this because the limit of $$\lim_{x \to 0} \frac{\cos x}{x}$$ can be easily solved by plugging $$0$$ into the expression.
+They are frequently used after rewriting a trig expression into a form that matches one of these limits. It is important to note that $$\cos x$$ is not a part of this because the limit of $$\lim_{x \to 0} \frac{\cos x}{x}$$ can be easily solved by plugging $$0$$ into the expression (it diverges so its limit DNE).
 
 :::conditions
-These two trig limits are valid only when the angle is measured in **radians**.
+These two trig limits are valid only when the angle is measured in **radians**. As an exercise, you can try to derive the corresponding versions when $$x$$ is in degrees.
 :::
 
 <div class="theorem-box">
