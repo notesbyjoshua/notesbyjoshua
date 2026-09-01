@@ -1,5 +1,5 @@
 ---
-title: "Unit 1: Vectors and Euclidean Geometry in R3"
+title: "Unit 1: Vectors and Euclidean Geometry in 3D"
 sidebar:
   order: 1
 ---

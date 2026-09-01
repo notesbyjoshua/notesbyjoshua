@@ -338,6 +338,108 @@ The Big Five do not apply because acceleration is not constant. The definitions 
 
 </div>
 
+### Example: Drag acceleration
+
+Air resistance (drag) is one of the most common reasons acceleration is not constant. The drag force points opposite the velocity, so as an object speeds up, the drag force changes.
+
+Two common drag models are:
+
+:::equations
+| Model | Drag magnitude | When it is used |
+| --- | --- | --- |
+| Linear drag | $$F_d=bv$$ | slower motion through a fluid, mathematically easier |
+| Quadratic drag | $$F_d=cv^2$$ | faster motion through air, more realistic for many projectiles |
+:::
+
+The sign matters more than the formula name. If downward is positive for a falling object, then gravity is positive and drag is negative:
+
+$$
+a=\frac{dv}{dt}=g-\frac{b}{m}v.
+$$
+
+At first, $$v=0$$, so drag is zero and the acceleration is $$g$$. As the object speeds up, $$bv$$ grows, so the acceleration decreases. Eventually drag balances weight, and the object reaches **terminal velocity**:
+
+$$
+mg-bv_T=0
+\quad\Rightarrow\quad
+v_T=\frac{mg}{b}.
+$$
+
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning}
+\begin{tikzpicture}[>=Stealth, font=\small, scale=0.9]
+  \draw[->] (0,0) -- (5.2,0) node[right] {$t$};
+  \draw[->] (0,0) -- (0,3.0) node[above] {$v$};
+  \draw[dashed] (0,2.2) -- (5.0,2.2) node[right] {$v_T$};
+  \draw[very thick, blue!70, domain=0:4.7, samples=80] plot (\x,{2.2*(1-exp(-0.8*\x))});
+\end{tikzpicture}
+```
+
+For linear drag, the differential equation can actually be solved.
+
+<div class="theorem-box">
+
+**Example.** A ball of mass $$m$$ is dropped from rest through air with linear drag force $$F_d=bv$$ upward. Take downward as positive. Find $$v(t)$$, then find the terminal velocity in two ways.
+
+Since downward is positive, gravity is $$+mg$$ and drag is $$-bv$$. Newton's second law gives
+
+$$
+m\frac{dv}{dt}=mg-bv.
+$$
+
+Divide by $$m$$:
+
+$$
+\frac{dv}{dt}=g-\frac{b}{m}v.
+$$
+
+Separate variables:
+
+$$
+\frac{dv}{g-\frac{b}{m}v}=dt.
+$$
+
+Now integrate both sides. Let $$u=g-\frac{b}{m}v$$, so $$du=-\frac{b}{m}dv$$:
+
+$$
+-\frac{m}{b}\ln\left(g-\frac{b}{m}v\right)=t+C.
+$$
+
+Use the initial condition $$v(0)=0$$. A cleaner way to write the result after solving for $$v$$ is
+
+$$
+v(t)=\frac{mg}{b}\left(1-e^{-bt/m}\right).
+$$
+
+Method 1 for terminal velocity: take the limit as $$t\to\infty$$. Since $$e^{-bt/m}\to0$$,
+
+$$
+v_T=\lim_{t\to\infty}v(t)=\frac{mg}{b}.
+$$
+
+Method 2 for terminal velocity: terminal velocity means acceleration is zero, so plug $$dv/dt=0$$ into the original differential equation:
+
+$$
+0=mg-bv_T.
+$$
+
+Solving gives
+
+$$
+v_T=\frac{mg}{b},
+$$
+
+which matches the limit from $$v(t)$$.
+
+</div>
+
+What if instead of linear drag, we use quadratic drag? However, changing to quadratic drag increases the integration level by a lot, so as an extension and practice to integration, you can try to find $$v(t)$$ for quadratic drag (hint: you may need to use the hyperbolic tangent function).
+
+:::warning
+Do not use projectile-motion shortcuts like $$R=\frac{v_0^2\sin2\theta}{g}$$ when drag is present. With drag, the horizontal and vertical motions are no longer the simple constant-acceleration equations from ordinary projectile motion.
+:::
+
 ---
 
 ## Two dimensions and projectile motion
@@ -937,45 +1039,71 @@ The two possible angles are complementary, one below $$45^\circ$$ and one above 
 ::::
 
 ::::problem
-11. A particle moves along the $$x$$-axis with acceleration $$a(x)=\alpha x$$ and starts at $$x=x_0>0$$ from rest. Which expression gives its speed at $$x=2x_0$$?
+11. A small cart moves to the right with initial speed $$v_0$$ through a medium that produces resistive acceleration
 
-(A) $$\sqrt{\alpha x_0^2}$$
+$$
+a=-kv\left(1+\frac{v}{V}\right)
+$$
 
-(B) $$\sqrt{3\alpha x_0^2}$$
+while $$v>0$$, where $$k>0$$ and $$V>0$$ are constants. Which expression gives the cart's velocity?
 
-(C) $$\sqrt{4\alpha x_0^2}$$
+(A) $$v(t)=\dfrac{Vv_0e^{-kt}}{V+v_0\left(1-e^{-kt}\right)}$$
 
-(D) $$\sqrt{6\alpha x_0^2}$$
+(B) $$v(t)=\dfrac{Vv_0}{V+kv_0t}$$
+
+(C) $$v(t)=v_0e^{-kt}$$
+
+(D) $$v(t)=V\left(e^{-kt}-1\right)+v_0$$
 
 
 :::solution
-Since acceleration is given as a function of position, use
+The acceleration is given as a function of velocity, so start with
 
 $$
-a=v\frac{dv}{dx}.
+\frac{dv}{dt}=-kv\left(1+\frac{v}{V}\right).
 $$
 
-Then
+Separate variables:
 
 $$
-v\,dv=\alpha x\,dx.
+\frac{dv}{v\left(1+\frac{v}{V}\right)}=-k\,dt.
 $$
 
-Integrate from $$x=x_0$$, $$v=0$$ to $$x=2x_0$$, $$v=v_f$$:
+Rewrite the left side so it is easier to integrate:
 
 $$
-\int_0^{v_f}v\,dv=\int_{x_0}^{2x_0}\alpha x\,dx.
+\frac{1}{v\left(1+\frac{v}{V}\right)}
+=\frac{V}{v(V+v)}
+=\frac{1}{v}-\frac{1}{V+v}.
+$$
+
+Therefore
+
+$$
+\int\left(\frac{1}{v}-\frac{1}{V+v}\right)\,dv
+=\int -k\,dt.
 $$
 
 This gives
 
 $$
-\frac12v_f^2=\frac{\alpha}{2}(4x_0^2-x_0^2)=\frac{3\alpha x_0^2}{2}.
+\ln\left(\frac{v}{V+v}\right)=-kt+C.
 $$
 
-So $$v_f=\sqrt{3\alpha x_0^2}$$, and the answer is $$\boxed{\text{B}}$$.
+Use $$v(0)=v_0$$:
 
-This also makes physical sense: because $$a=\alpha x$$ grows as the particle moves right, the speed gain from $$x_0$$ to $$2x_0$$ is larger than it would be for constant acceleration equal to $$\alpha x_0$$.
+$$
+\frac{v}{V+v}
+=\frac{v_0}{V+v_0}e^{-kt}.
+$$
+
+Solving for $$v$$ gives
+
+$$
+v(t)=\frac{Vv_0e^{-kt}}{V+v_0\left(1-e^{-kt}\right)}.
+$$
+
+This is harder than ordinary linear drag because the separation needs partial fractions. It still makes sense physically: $$v(0)=v_0$$ and $$v(t)$$ approaches $$0$$ as $$t\to\infty$$. The answer is $$\boxed{\text{A}}$$.
 :::
 ::::
 
