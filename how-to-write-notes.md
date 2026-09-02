@@ -174,6 +174,16 @@ When writing the question statement, always end with what you are trying to find
 
 Use a plain `**Example.**` lead-in — **do not** tag examples with a parenthetical subject (e.g. not `**Example (Finding rate laws).**`).
 
+When simplifying a limit, keep the limit symbol on each algebraic step that still
+contains the variable approaching the target. Once the expression no longer
+contains that variable, you can write the numerical value without the limit
+symbol.
+
+When writing new practice questions, aim slightly above standard AP difficulty
+unless asked otherwise. Include multi-step algebra, subtle one-sided behavior,
+mixed representations, or justification parts so the problems prepare students
+for harder versions of exam ideas.
+
 ### Theorems
 
 idk I might do this I might not
