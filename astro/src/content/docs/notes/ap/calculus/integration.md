@@ -45,6 +45,7 @@ The sample point determines the type of Riemann sum. There are three types of re
 \draw[orange!30, fill=orange!18] (axis cs:0.5,0) rectangle (axis cs:1,1);
 \draw[orange!30, fill=orange!18] (axis cs:1,0) rectangle (axis cs:1.5,2.25);
 \draw[orange!30, fill=orange!18] (axis cs:1.5,0) rectangle (axis cs:2,4);
+\addplot[blue, thick, samples=80, domain=0:2] {x^2};
 \end{axis}
 \begin{axis}[rs, at={(11.8cm,0cm)}, title={Midpoint}]
 \addplot[blue, thick, samples=80, domain=0:2] {x^2};
@@ -56,7 +57,6 @@ The sample point determines the type of Riemann sum. There are three types of re
 \end{axis}
 \end{tikzpicture}
 ```
-// there is no curve for the right Riemann sums
 
 ### Left Riemann sums
 
@@ -651,7 +651,7 @@ for odd functions.
 
 <div class="theorem-box">
 
-**Example.**Evaluate
+**Example.** Evaluate
 
 $$
 \int_{-3}^{3}(x^2+1)\,dx
@@ -674,23 +674,177 @@ $$
 **Example.** Evaluate
 
 $$
-\int_{-4\pi}^{4\pi}(sin^3{x}cos^4{x})\,dx.
+\int_{-4\pi}^{4\pi}\sin^3{x}\cos^4{x}\,dx.
 $$
 
-The function $$sin^3{x}cos^4{x}$$ is odd because
+The function $$\sin^3{x}\cos^4{x}$$ is odd because
 
 $$
-sin^3{-x}cos^4{-x}=-sin^3{x}cos^4{x}.
+\sin^3(-x)\cos^4(-x)=-\sin^3{x}\cos^4{x}.
 $$
 
 If you don't see why, make sure to brush up on your trig rules. Since the interval is symmetric,
 
 $$
-\int_{-4\pi}^{4\pi}(sin^3{x}cos^4{x})\,dx=0.
+\int_{-4\pi}^{4\pi}\sin^3{x}\cos^4{x}\,dx=0.
 $$
 
 </div>
-// please fix the formatting
+
+### King's rule and Queen's rule
+
+King's rule and Queen's rule are symmetry shortcuts for definite integrals. King's rule says that
+
+$$
+\int_a^b f(x)\,dx
+=
+\int_a^b f(a+b-x)\,dx.
+$$
+
+This comes from the substitution $$u=a+b-x$$. It reflects the input across the midpoint of the interval. The most common move is to write the integral once normally, write it again using King's rule, and then add the two versions.
+
+Queen's rule is a related way to split an interval in half:
+
+$$
+\int_0^{2a} f(x)\,dx
+=
+\int_0^a \left[f(x)+f(2a-x)\right]\,dx.
+$$
+
+This is useful when the whole interval has symmetry around $$x=a$$, but adding the two mirrored pieces is easier than working on the full interval. Both rules are relatively easy to prove, and it is left to the reader to prove.
+
+:::tip
+Use King's rule when replacing $$x$$ with $$a+b-x$$ makes the integrand pair nicely with the original. Use Queen's rule when the interval is $$[0,2a]$$ and the expression has midpoint symmetry. These are especially helpful when the integrand has $$x$$ mixed with trig symmetry, such as $$\sin(\pi-x)=\sin x$$ or $$\cos(\pi-x)=-\cos x$$.
+:::
+
+:::warning
+These rules are only helpful if the reflected integrand simplifies. If the substitution only gives the same integral back with no new cancellation, use a different method.
+:::
+
+<div class="theorem-box">
+
+**Example.** Evaluate
+
+$$
+I=\int_0^{\pi/2}\frac{\sin x}{\sin x+\cos x}\,dx.
+$$
+
+Here $$a=0$$ and $$b=\frac{\pi}{2}$$, so King's rule uses
+
+$$
+x\mapsto \frac{\pi}{2}-x.
+$$
+
+Then
+
+$$
+I
+=
+\int_0^{\pi/2}
+\frac{\sin\left(\frac{\pi}{2}-x\right)}
+{\sin\left(\frac{\pi}{2}-x\right)+\cos\left(\frac{\pi}{2}-x\right)}
+\,dx.
+$$
+
+Use $$\sin\left(\frac{\pi}{2}-x\right)=\cos x$$ and $$\cos\left(\frac{\pi}{2}-x\right)=\sin x$$:
+
+$$
+I
+=
+\int_0^{\pi/2}\frac{\cos x}{\sin x+\cos x}\,dx.
+$$
+
+Add this to the original integral:
+
+$$
+2I
+=
+\int_0^{\pi/2}
+\frac{\sin x+\cos x}{\sin x+\cos x}\,dx
+=
+\int_0^{\pi/2}1\,dx
+=
+\frac{\pi}{2}.
+$$
+
+Therefore
+
+$$
+I=\frac{\pi}{4}.
+$$
+
+</div>
+
+<div class="theorem-box">
+
+**Example.** Evaluate
+
+$$
+I=\int_0^\pi \frac{x\sin x}{1+\cos^2 x}\,dx.
+$$
+
+The interval $$[0,\pi]$$ has midpoint $$\frac{\pi}{2}$$, so write it in Queen's-rule form with $$2a=\pi$$:
+
+$$
+I
+=
+\int_0^{\pi/2}
+\left[
+\frac{x\sin x}{1+\cos^2 x}
++
+\frac{(\pi-x)\sin(\pi-x)}{1+\cos^2(\pi-x)}
+\right]\,dx.
+$$
+
+Use
+
+$$
+\sin(\pi-x)=\sin x,
+\qquad
+\cos(\pi-x)=-\cos x.
+$$
+
+Since $$\cos^2(\pi-x)=\cos^2x$$, the integrand becomes
+
+$$
+\frac{x\sin x}{1+\cos^2 x}
++
+\frac{(\pi-x)\sin x}{1+\cos^2x}
+=
+\frac{\pi\sin x}{1+\cos^2x}.
+$$
+
+So
+
+$$
+I
+=
+\pi\int_0^{\pi/2}\frac{\sin x}{1+\cos^2x}\,dx.
+$$
+
+Use $$u=\cos x$$, so $$du=-\sin x\,dx$$. The bounds change from $$x=0$$ to $$u=1$$ and from $$x=\frac{\pi}{2}$$ to $$u=0$$:
+
+$$
+I
+=
+\pi\int_1^0\frac{-1}{1+u^2}\,du
+=
+\pi\int_0^1\frac{1}{1+u^2}\,du.
+$$
+
+Therefore
+
+$$
+I
+=
+\pi\left[\arctan u\right]_0^1
+=
+\pi\cdot\frac{\pi}{4}
+=
+\frac{\pi^2}{4}.
+$$
+
+</div>
 
 ### U-substitution
 

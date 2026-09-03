@@ -99,11 +99,7 @@ Notice that $$f(2)=5$$, but that does not change the limit. The limit depends on
 
 <div class="theorem-box">
 
-**Example.** The graph of $$f$$ is shown below. Evaluate
-
-$$
-\lim_{x\to0} f(1-x^2).
-$$
+**Example.** The graph of $$f$$ is shown below. Evaluate $$\lim_{x\to0} f(1-x^2).$$
 
 ```tikz
 \usepackage{pgfplots}
