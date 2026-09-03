@@ -340,29 +340,29 @@ The Big Five do not apply because acceleration is not constant. The definitions 
 
 ### Example: Drag acceleration
 
-Air resistance (drag) is one of the most common reasons acceleration is not constant. The drag force points opposite the velocity, so as an object speeds up, the drag force changes.
+Air resistance (drag) is one of the most common reasons acceleration is not constant. Since this is still the kinematics unit, we will model drag as an acceleration directly instead of using forces. Drag points opposite the velocity, so as an object speeds up, the drag acceleration changes.
 
 Two common drag models are:
 
 :::equations
-| Model | Drag magnitude | When it is used |
+| Model | Drag acceleration magnitude | When it is used |
 | --- | --- | --- |
-| Linear drag | $$F_d=bv$$ | slower motion through a fluid, mathematically easier |
-| Quadratic drag | $$F_d=cv^2$$ | faster motion through air, more realistic for many projectiles |
+| Linear drag | $$a_d=bv$$ | slower motion through a fluid, mathematically easier |
+| Quadratic drag | $$a_d=cv^2$$ | faster motion through air, more realistic for many projectiles |
 :::
 
 The sign matters more than the formula name. If downward is positive for a falling object, then gravity is positive and drag is negative:
 
 $$
-a=\frac{dv}{dt}=g-\frac{b}{m}v.
+a=\frac{dv}{dt}=g-bv.
 $$
 
-At first, $$v=0$$, so drag is zero and the acceleration is $$g$$. As the object speeds up, $$bv$$ grows, so the acceleration decreases. Eventually drag balances weight, and the object reaches **terminal velocity**:
+At first, $$v=0$$, so drag is zero and the acceleration is $$g$$. As the object speeds up, $$bv$$ grows, so the acceleration decreases. Eventually the total acceleration becomes zero, and the object reaches **terminal velocity**:
 
 $$
-mg-bv_T=0
+g-bv_T=0
 \quad\Rightarrow\quad
-v_T=\frac{mg}{b}.
+v_T=\frac{g}{b}.
 $$
 
 ```tikz
@@ -380,54 +380,48 @@ For linear drag, the differential equation can actually be solved.
 
 <div class="theorem-box">
 
-**Example.** A ball of mass $$m$$ is dropped from rest through air with linear drag force $$F_d=bv$$ upward. Take downward as positive. Find $$v(t)$$, then find the terminal velocity in two ways.
+**Example.** A ball is dropped from rest through air with linear drag acceleration $$a_d=bv$$ upward. Take downward as positive. Find $$v(t)$$, then find the terminal velocity in two ways.
 
-Since downward is positive, gravity is $$+mg$$ and drag is $$-bv$$. Newton's second law gives
-
-$$
-m\frac{dv}{dt}=mg-bv.
-$$
-
-Divide by $$m$$:
+Since downward is positive, gravitational acceleration is $$+g$$ and drag acceleration is $$-bv$$. Therefore
 
 $$
-\frac{dv}{dt}=g-\frac{b}{m}v.
+\frac{dv}{dt}=g-bv.
 $$
 
 Separate variables:
 
 $$
-\frac{dv}{g-\frac{b}{m}v}=dt.
+\frac{dv}{g-bv}=dt.
 $$
 
-Now integrate both sides. Let $$u=g-\frac{b}{m}v$$, so $$du=-\frac{b}{m}dv$$:
+Now integrate both sides. Let $$u=g-bv$$, so $$du=-b\,dv$$:
 
 $$
--\frac{m}{b}\ln\left(g-\frac{b}{m}v\right)=t+C.
+-\frac{1}{b}\ln(g-bv)=t+C.
 $$
 
 Use the initial condition $$v(0)=0$$. A cleaner way to write the result after solving for $$v$$ is
 
 $$
-v(t)=\frac{mg}{b}\left(1-e^{-bt/m}\right).
+v(t)=\frac{g}{b}\left(1-e^{-bt}\right).
 $$
 
-Method 1 for terminal velocity: take the limit as $$t\to\infty$$. Since $$e^{-bt/m}\to0$$,
+Method 1 for terminal velocity: take the limit as $$t\to\infty$$. Since $$e^{-bt}\to0$$,
 
 $$
-v_T=\lim_{t\to\infty}v(t)=\frac{mg}{b}.
+v_T=\lim_{t\to\infty}v(t)=\frac{g}{b}.
 $$
 
 Method 2 for terminal velocity: terminal velocity means acceleration is zero, so plug $$dv/dt=0$$ into the original differential equation:
 
 $$
-0=mg-bv_T.
+0=g-bv_T.
 $$
 
 Solving gives
 
 $$
-v_T=\frac{mg}{b},
+v_T=\frac{g}{b},
 $$
 
 which matches the limit from $$v(t)$$.
