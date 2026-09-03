@@ -184,6 +184,11 @@ unless asked otherwise. Include multi-step algebra, subtle one-sided behavior,
 mixed representations, or justification parts so the problems prepare students
 for harder versions of exam ideas.
 
+For AP Calculus and Physics free-response practice, keep using `::::frq` blocks
+so the page formatting and filters stay consistent, but include written
+`:::solution` answers. The site should not attach AI grading to Calculus or
+Physics FRQs because math-heavy grading is better handled by a clear answer key.
+
 ### Theorems
 
 idk I might do this I might not

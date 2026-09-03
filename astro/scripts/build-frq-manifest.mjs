@@ -31,6 +31,15 @@ const OUT_FILE = join(OUT_DIR, 'frq-manifest.json');
 
 const FRQ_OPEN = /^(:{3,})frq\{([^}]*)\}\s*$/;
 const SOLUTION_OPEN = /^(:{3,})solution\b/;
+const GRADER_EXCLUDED_PATHS = [
+  'notes/ap/calculus/',
+  'notes/math/multivariable-calculus/',
+  'notes/ap/ap-physics-c-mechanics/',
+  'notes/ap/ap-physics-c-em/',
+  'notes/physics/',
+  'practiceproblems/ap-physics-c-mechanics',
+  'practiceproblems/ap-physics-c-e-m',
+];
 // Question "parts" are written as $$(A)$$ or a bare (A).
 const PART_RE = /\$\$\(([A-Z])\)\$\$|\(([A-Z])\)/g;
 
@@ -55,6 +64,10 @@ function pathMeta(rel) {
 
 function sitePathFromRel(rel) {
   return `/${rel.replace(/\.mdx?$/, '').toLowerCase()}/`;
+}
+
+function isGraderExcluded(rel) {
+  return GRADER_EXCLUDED_PATHS.some((prefix) => rel.startsWith(prefix));
 }
 
 function extractParts(text) {
@@ -166,9 +179,11 @@ function main() {
   for (const abs of walkMd(DOCS)) {
     const raw = readFileSync(abs, 'utf8');
     if (!/:{3,}frq\{/.test(raw)) continue;
-    fileCount += 1;
 
     const rel = relative(DOCS, abs).replace(/\\/g, '/');
+    if (isGraderExcluded(rel)) continue;
+
+    fileCount += 1;
     const sitePath = sitePathFromRel(rel);
     const { domain, courseFolder } = pathMeta(rel);
     const tags = keywordsFrom(raw);

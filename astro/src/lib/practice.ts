@@ -5,10 +5,9 @@
 //   <div class="problem-box frq-block" data-frq data-frq-id="…"> … <div data-solution hidden> … </div></div>
 //
 // Every box gets a "Show solution" toggle that reveals its co-located solution.
-// FRQ boxes additionally get an answer box + "Grade my answer" button that calls
-// the grade-frq backend (PUBLIC_FRQ_GRADER_URL). If that URL is unset (e.g.
-// before the Supabase function is deployed), the grader UI is omitted but the
-// "Show solution" toggle still works.
+// FRQ boxes additionally get an answer box + "Grade my answer" button unless
+// the subject is excluded from AI grading. If the grader URL is unset, the
+// grader UI is omitted but the "Show solution" toggle still works.
 //
 // Called once from PageTitle.astro's note-page script.
 
@@ -16,6 +15,25 @@ import { SUPABASE_ANON_KEY } from './supabase';
 
 const GRADER_URL = import.meta.env.PUBLIC_FRQ_GRADER_URL as string | undefined;
 const ANON_ID_KEY = 'notes_frq_anon_id';
+const GRADER_EXCLUDED_PATH_PREFIXES = [
+  '/notes/ap/calculus/',
+  '/notes/math/analyticalappdiff/',
+  '/notes/math/appintegration/',
+  '/notes/math/contextappdiff/',
+  '/notes/math/diffcomplex/',
+  '/notes/math/diffdeffund/',
+  '/notes/math/diffeq/',
+  '/notes/math/infsumseries/',
+  '/notes/math/integration/',
+  '/notes/math/limits/',
+  '/notes/math/multivariable-calculus/',
+  '/notes/math/ppvvfunc/',
+  '/notes/ap/ap-physics-c-mechanics/',
+  '/notes/ap/ap-physics-c-em/',
+  '/notes/physics/',
+  '/practiceproblems/ap-physics-c-mechanics/',
+  '/practiceproblems/ap-physics-c-e-m/',
+];
 
 type GradePart = {
   partId?: string;
@@ -52,6 +70,11 @@ function escapeHtml(s: string): string {
 function graderPagePath(): string {
   const path = location.pathname;
   return path.endsWith('/') ? path : `${path}/`;
+}
+
+function graderEnabledForPage(): boolean {
+  const pagePath = graderPagePath();
+  return !GRADER_EXCLUDED_PATH_PREFIXES.some((prefix) => pagePath.startsWith(prefix));
 }
 
 function getAnonUserId(): string {
@@ -249,9 +272,10 @@ function enhanceBox(box: HTMLElement) {
 
   const solution = box.querySelector<HTMLElement>('[data-solution]');
   const isFrq = box.hasAttribute('data-frq');
+  const canGrade = isFrq && Boolean(GRADER_URL) && graderEnabledForPage();
 
   let output: HTMLElement | null = null;
-  if (isFrq && GRADER_URL) {
+  if (canGrade) {
     const label = document.createElement('label');
     label.className = 'frq-grader__label';
     label.textContent = 'Your answer';
@@ -271,7 +295,7 @@ function enhanceBox(box: HTMLElement) {
 
   const actions = document.createElement('div');
   actions.className = 'problem-actions';
-  if (isFrq && GRADER_URL) {
+  if (canGrade) {
     actions.appendChild(makeButton('problem-btn problem-btn--primary', 'Grade my answer')).setAttribute(
       'data-frq-grade',
       '',
