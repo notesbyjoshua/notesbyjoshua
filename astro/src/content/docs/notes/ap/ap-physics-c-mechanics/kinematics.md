@@ -388,19 +388,79 @@ $$
 \frac{dv}{dt}=g-bv.
 $$
 
-Separate variables:
+We want velocity as a function of time, so separate variables:
 
 $$
 \frac{dv}{g-bv}=dt.
 $$
 
-Now integrate both sides. Let $$u=g-bv$$, so $$du=-b\,dv$$:
+Because the ball is dropped from rest, $$v(0)=0$$. Integrate from the initial velocity $$0$$ to the velocity at time $$t$$:
 
 $$
--\frac{1}{b}\ln(g-bv)=t+C.
+\int_0^{v(t)} \frac{1}{g-bv}\,dv=\int_0^t dt.
 $$
 
-Use the initial condition $$v(0)=0$$. A cleaner way to write the result after solving for $$v$$ is
+For the left side, use the substitution
+
+$$
+u=g-bv,
+\qquad
+du=-b\,dv.
+$$
+
+When $$v=0$$, $$u=g$$. When $$v=v(t)$$, $$u=g-bv(t)$$. Therefore
+
+$$
+\int_0^{v(t)} \frac{1}{g-bv}\,dv
+=-\frac{1}{b}\int_g^{g-bv(t)}\frac{1}{u}\,du.
+$$
+
+Evaluate the integral:
+
+$$
+-\frac{1}{b}\int_g^{g-bv(t)}\frac{1}{u}\,du
+=-\frac{1}{b}\left[\ln\lvert u\rvert\right]_g^{g-bv(t)}.
+$$
+
+So
+
+$$
+-\frac{1}{b}\left(\ln\lvert g-bv(t)\rvert-\ln g\right)=t.
+$$
+
+Combine the logarithms:
+
+$$
+-\frac{1}{b}\ln\left\lvert \frac{g-bv(t)}{g}\right\rvert=t.
+$$
+
+Multiply by $$-b$$:
+
+$$
+\ln\left\lvert \frac{g-bv(t)}{g}\right\rvert=-bt.
+$$
+
+Since the ball starts from rest and approaches terminal velocity from below, $$0\le v(t)<\frac{g}{b}$$ while it is speeding up. Thus $$g-bv(t)>0$$, so the absolute value can be removed:
+
+$$
+\ln\left(\frac{g-bv(t)}{g}\right)=-bt.
+$$
+
+Exponentiate both sides:
+
+$$
+\frac{g-bv(t)}{g}=e^{-bt}.
+$$
+
+Now isolate $$v(t)$$:
+
+$$
+g-bv(t)=ge^{-bt},
+$$
+
+$$
+bv(t)=g-ge^{-bt},
+$$
 
 $$
 v(t)=\frac{g}{b}\left(1-e^{-bt}\right).
