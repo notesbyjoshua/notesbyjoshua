@@ -340,18 +340,18 @@ The Big Five do not apply because acceleration is not constant. The definitions 
 
 ### Example: Drag acceleration
 
-Air resistance (drag) is one of the most common reasons acceleration is not constant. Since this is still the kinematics unit, we will model drag as an acceleration directly instead of using forces. Drag points opposite the velocity, so as an object speeds up, the drag acceleration changes.
+Air resistance (drag) is one of the most common type of non-constant acceleration that appears on physics problems. Since this is still the kinematics unit, we will model drag as an acceleration directly instead of using forces, even though drag and gravity are both forces. Air resistance occurs when the falling object collide with air molecules, causing friction within each collision, which provides an upward acceleration that opposes gravity.
 
 Two common drag models are:
 
 :::equations
 | Model | Drag acceleration magnitude | When it is used |
 | --- | --- | --- |
-| Linear drag | $$a_d=bv$$ | slower motion through a fluid, mathematically easier |
+| Linear drag | $$a_d=bv$$ | slower motion through a fluid |
 | Quadratic drag | $$a_d=cv^2$$ | faster motion through air, more realistic for many projectiles |
 :::
 
-The sign matters more than the formula name. If downward is positive for a falling object, then gravity is positive and drag is negative:
+For most purposes, linear drag is the used model, since quadratic drag is very hard to mathematically work with. If downward is positive for a falling object, then gravity is positive and drag is negative:
 
 $$
 a=\frac{dv}{dt}=g-bv.
@@ -429,10 +429,6 @@ which matches the limit from $$v(t)$$.
 </div>
 
 What if instead of linear drag, we use quadratic drag? However, changing to quadratic drag increases the integration level by a lot, so as an extension and practice to integration, you can try to find $$v(t)$$ for quadratic drag (hint: you may need to use the hyperbolic tangent function).
-
-:::warning
-Do not use projectile-motion shortcuts like $$R=\frac{v_0^2\sin2\theta}{g}$$ when drag is present. With drag, the horizontal and vertical motions are no longer the simple constant-acceleration equations from ordinary projectile motion.
-:::
 
 ---
 

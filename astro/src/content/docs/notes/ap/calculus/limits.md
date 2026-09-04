@@ -56,12 +56,6 @@ $$
 
 If the left-hand and right-hand limits disagree, then the two-sided limit does not exist.
 
-Common reasons a limit fails to exist:
-
-- Jump discontinuity,
-- Vertical asymptote with unbounded behavior,
-- Oscillation, such as $$\sin(1/x)$$ near $$x = 0$$.
-
 <div class="theorem-box">
 
 **Example.** Evaluate $$\displaystyle\lim_{x\to2} f(x)$$ for
@@ -228,71 +222,6 @@ $$
 $$
 
 does not exist.
-
-</div>
-
----
-
-## Continuity
-
-<div class="theorem-box">
-
-A function is said to be *continuous* at $$x = a$$ when:
-
-1. $$f(a)$$ exists,
-2. $$\lim_{x \to a} f(x)$$ exists,
-3. $$\lim_{x \to a} f(x) = f(a).$$
-
-Continuity means the nearby behavior of the function matches the value at the point.
-
-</div>
-
-A break in continuity is called a discontinuity, and can come in many types. For example,
-
-- Holes: One missing point in the graph
-- Jumps: Left and right limits differ
-- Infinite discontinuity: a vertical asymptote
-- Oscillatory discontinuity: no single nearby trend
-
-For piecewise functions, continuity at the switching point is a limit-matching problem. The left-hand limit, right-hand limit, and actual function value must all agree.
-
-<div class="theorem-box">
-
-**Example.** Find $$k$$ so that
-
-$$
-f(x)=
-\begin{cases}
-x^2+k, & x<2,\\
-3x, & x\ge 2
-\end{cases}
-$$
-
-is continuous at $$x=2$$.
-
-The right-hand value is controlled by the second branch (since it is fixed):
-
-$$
-f(2)=3(2)=6.
-$$
-
-The left-hand limit comes from the first branch:
-
-$$
-\lim_{x\to2^-}(x^2+k)=4+k.
-$$
-
-For continuity, the left-hand limit must equal the value:
-
-$$
-4+k=6.
-$$
-
-Thus
-
-$$
-k=2.
-$$
 
 </div>
 
@@ -808,6 +737,73 @@ $$
 $$
 
 </div>
+
+---
+
+## Continuity
+
+<div class="theorem-box">
+
+A function is said to be *continuous* at $$x = a$$ when:
+
+1. $$f(a)$$ exists,
+2. $$\lim_{x \to a} f(x)$$ exists,
+3. $$\lim_{x \to a} f(x) = f(a).$$
+
+Continuity means the nearby behavior of the function matches the value at the point.
+
+</div>
+
+A break in continuity is called a discontinuity, and can come in many types. For example,
+
+- Holes: $$\lim_{x \to a} f(x)$$ exists, but $$\lim_{x \to a} f(x) \ne f(a).$$
+- Jumps: Left hand and right hand limits differ
+- Infinite discontinuity: A vertical asymptote, basically when any one-sided limit becomes $$\pm \infty$$
+- Oscillatory discontinuity: no single nearby trend, most applicable to trig functions
+
+For piecewise functions, continuity at the switching point is a limit-matching problem. The left-hand limit, right-hand limit, and actual function value must all agree.
+
+<div class="theorem-box">
+
+**Example.** Find $$k$$ so that
+
+$$
+f(x)=
+\begin{cases}
+x^2+k, & x<2,\\
+3x, & x\ge 2
+\end{cases}
+$$
+
+is continuous at $$x=2$$.
+
+The right-hand value is controlled by the second branch (since it is fixed):
+
+$$
+f(2)=3(2)=6.
+$$
+
+The left-hand limit comes from the first branch:
+
+$$
+\lim_{x\to2^-}(x^2+k)=4+k.
+$$
+
+For continuity, the left-hand limit must equal the value:
+
+$$
+4+k=6.
+$$
+
+Thus
+
+$$
+k=2.
+$$
+
+</div>
+
+// add some more stuff and theorems and stuff
 
 ---
 
